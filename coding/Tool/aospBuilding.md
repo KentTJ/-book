@@ -122,7 +122,7 @@ https://blog.csdn.net/cl769796350/article/details/102676674?utm_medium=distribut
 
 1. source build/envsetup.sh
 
-2. lunch     ------->     看一下有哪些选项，很多64版本的
+2. lunch     ------>     看一下有哪些选项，很多64版本的
 
    aosp_sailfish-userdebug   //这里选userdebug版本，拥有root权限
 

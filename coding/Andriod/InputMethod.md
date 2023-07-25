@@ -291,6 +291,25 @@ mInputMethodManagerInternal.hideCurrentInputMethod(
 
 
 
+### 引用分析之INPUT_METHOD_SERVICE
+
+context.getSystemService(Context.INPUT_METHOD_SERVICE)
+Activity ----> context
+
+
+
+要修改这么多context？
+
+![image-20230726003539275](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20230726003539275.png)
+
+---------> 最终统一追溯到SystemServiceRegistry.getSystemService ？？？
+
+
+
+
+
+
+
 ## 参考：multi
 
 ```
