@@ -34,6 +34,26 @@ https://android.googlesource.com/platform/frameworks
 
 ![image-20230711004823845](AndriodSystem.assets/image-20230711004823845.png)
 
+# 对系统的理解与疑问
+
+系统是status在时间上的流淌，即status(t)-----> 以帧来理解系统
+
+那么多status，抓主status（次要status为主要服务）
+
+如何理解dump？即一帧status
+
+
+
+疑问：
+
+那么多进程与线程，如何做到协调？ -------》 一定是有大的结构协调（小协调依附于大协调）
+
+​                                                                        抛开代码不谈，事物的本质？
+
+如何协调硬件资源？
+
+
+
 
 
 #    0层

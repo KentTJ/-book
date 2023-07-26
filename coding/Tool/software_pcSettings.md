@@ -913,17 +913,17 @@ https://cs.android.com/
 
 ### Typora 设置标题自动编号
 
-参考：
-
-> https://erik-ly.blog.csdn.net/article/details/123948859?spm=1001.2101.3001.6650.15&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-15-123948859-blog-125467325.pc_relevant_multi_platform_whitelistv3&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-15-123948859-blog-125467325.pc_relevant_multi_platform_whitelistv3&utm_relevant_index=20      
 
 
-
-%accordion%github.user.css： %accordion%
+%accordion%修改github.css： %accordion%
 
 
 
 ```java
+#write {
+    max-width: 1024px;
+}
+
 body {
     counter-reset: body;
 }
@@ -1189,6 +1189,10 @@ jadx-1.4.7
 
 ![image-20230714000310717](software_pcSettings.assets/image-20230714000310717.png)
 
+
+
+
+
 # 计算机其他问题及设置
 
 ## 软件最优的使用方式----免安装
@@ -1391,11 +1395,11 @@ wifi的驱动，禁止关闭
 
 
 
+
 <details>
 <summary>Want to ruin the surprise?</summary>
 Well, you asked for it!
 </details>
-
 
 
 

@@ -300,7 +300,7 @@ Activity ----> context
 
 要修改这么多context？
 
-![image-20230726003539275](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20230726003539275.png)
+![image-20230726003539275](D:\working\markdownsFile\markdownsFiles\coding\Andriod\InputMethod.assets\image-20230726003539275.png)
 
 ---------> 最终统一追溯到SystemServiceRegistry.getSystemService ？？？
 
@@ -316,6 +316,8 @@ Activity ----> context
 final boolean perDisplayFocusEnabled = mContext.getResources().getBoolean(
         com.android.internal.R.bool.config_perDisplayFocusEnabled);
 ```
+
+
 
 
 
