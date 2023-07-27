@@ -209,7 +209,7 @@ https://source.android.google.cn/devices/tech/display/multi_display/ime-support?
 
 dump中如何判定？点击左右屏幕
 
-![image-20230727233629322](D:\working\markdownsFile\markdownsFiles\coding\Andriod\InputMethod.assets\image-20230727233629322.png)
+![image-20230727233629322](InputMethod.assets\image-20230727233629322.png)
 
 只有一个focusDisplay，只有一个mCurrentFocus window （ANR的除外，也focus了）
 
@@ -221,7 +221,7 @@ dump中如何判定？点击左右屏幕
 
 1、~~分别点击左右框，输入法会切换~~       --------> 自然， 因为焦点只有一个（只能是一个diaplay的一个window）
 
-![image-20230727234259759](D:\working\markdownsFile\markdownsFiles\coding\Andriod\InputMethod.assets\image-20230727234259759.png)
+![image-20230727234259759](InputMethod.assets\image-20230727234259759.png)
 
 2、~~如果设置了在非默认屏弹输入法（setPolicy），则输入法会在两边切换~~   -------->自然， 因为焦点只有一个
 
