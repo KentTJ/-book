@@ -42,6 +42,12 @@ https://android.googlesource.com/platform/frameworks
 
 如何理解dump？即一帧status
 
+规定：
+
+> 1、**每一个status都要只要adb 设置的的方法，和get的方法** ，比如 perDisplayFocusEnabled设置是xml，获取是 WindowManagerService#mPerDisplayFocusEnabled debug可以看
+>
+> 2、永远不相信任何一个set（只有经历get之后，才能确定）
+
 
 
 疑问：

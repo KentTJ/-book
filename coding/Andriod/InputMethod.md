@@ -102,15 +102,22 @@ Android 13：
 
 （1）多屏 焦点： ~~将 `config_perDisplayFocusEnabled` 设置为 `true`  （frameworks/base/core/res/res/values/config.xml）~~
 
-（2）非默认屏幕运行的应用：
+（2）非默认屏幕显示输入法：
 
 ```java
-WMS.setDispalyImePolicy(1, 0)
-0---- displayId
-1-----WindowManger.DISPLAY_IME_POLICY_LOCAL
+WMS.setDispalyImePolicy(2, 0)
+2---- displayId
+0-----WindowManger.DISPLAY_IME_POLICY_LOCAL  //作用：输入法显示在本地，非默认屏
 ```
 
--------->  TODO: 作用是啥？他怎么知道这个的？
+等价于？：
+
+```java
+DisplayWindowSettings#shouldShowImeLocked()
+DisplayWindowSettings#setShouldShowImeLocked()
+```
+
+​        
 
 2、应用侧
 
@@ -173,6 +180,80 @@ https://source.android.google.cn/devices/tech/display/multi_display/ime-support?
 ## 分布式输入法流程
 
  见AndriodSystem_Others
+
+
+
+# 输入法的前提----焦点
+
+焦点、焦点窗口、每屏焦点
+
+## 单个display 
+
+焦点 是window级别。在window之间切换
+
+## 多个display  -------焦点窗口
+
+### 单屏焦点
+
+焦点 是display级别，先看是哪个mTopFocusedDisplayId  （关键词------------dump window）
+
+​                                            哪个window？（关键词mCurrentFocus=------------dump window）
+
+
+
+即   1、 set：   perDisplayFocusEnabled xml中配置false   
+
+​        2、get： WindowManagerService#mPerDisplayFocusEnabled
+
+
+
+dump中如何判定？点击左右屏幕
+
+![image-20230727233629322](D:\working\markdownsFile\markdownsFiles\coding\Andriod\InputMethod.assets\image-20230727233629322.png)
+
+只有一个focusDisplay，只有一个mCurrentFocus window （ANR的除外，也focus了）
+
+
+
+
+
+现象：
+
+1、~~分别点击左右框，输入法会切换~~       --------> 自然， 因为焦点只有一个
+
+![image-20230727234259759](D:\working\markdownsFile\markdownsFiles\coding\Andriod\InputMethod.assets\image-20230727234259759.png)
+
+2、~~如果设置了在非默认屏弹输入法（setPolicy），则输入法会在两边切换~~   -------->自然， 因为焦点只有一个
+
+
+
+
+
+
+
+### 多屏焦点
+
+判定get： WindowManagerService#mPerDisplayFocusEnabled
+
+
+
+
+
+1、如何dump看出来？
+
+2、
+
+
+
+
+
+## 焦点0层
+
+
+
+https://source.android.google.cn/docs/core/display/multi_display/displays?authuser=0&hl=zh-cn#focus
+
+
 
 
 
@@ -300,7 +381,7 @@ Activity ----> context
 
 要修改这么多context？
 
-![image-20230726003539275](D:\working\markdownsFile\markdownsFiles\coding\Andriod\InputMethod.assets\image-20230726003539275.png)
+![image-20230727214317906](D:\working\markdownsFile\markdownsFiles\coding\Andriod\InputMethod.assets\image-20230727214317906.png)
 
 ---------> 最终统一追溯到SystemServiceRegistry.getSystemService ？？？
 
