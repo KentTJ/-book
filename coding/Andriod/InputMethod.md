@@ -219,7 +219,7 @@ dump中如何判定？点击左右屏幕
 
 现象：
 
-1、~~分别点击左右框，输入法会切换~~       --------> 自然， 因为焦点只有一个
+1、~~分别点击左右框，输入法会切换~~       --------> 自然， 因为焦点只有一个（只能是一个diaplay的一个window）
 
 ![image-20230727234259759](D:\working\markdownsFile\markdownsFiles\coding\Andriod\InputMethod.assets\image-20230727234259759.png)
 
@@ -233,9 +233,9 @@ dump中如何判定？点击左右屏幕
 
 ### 多屏焦点
 
-判定get： WindowManagerService#mPerDisplayFocusEnabled
+即   1、 set：   perDisplayFocusEnabled xml中配置false   
 
-
+​        2、判定get： WindowManagerService#mPerDisplayFocusEnabled
 
 
 
