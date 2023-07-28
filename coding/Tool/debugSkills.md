@@ -1053,7 +1053,7 @@ iml文件会新增：
 
 法二：修改app/build.gradle  ----->  在android的域中添加sourcesets项,  指定JAVA的源码目录(java.srcDirs为服务器的java源码目录)
 
-优点：1、服务器代码不用copy到 本地工程目录   2、可以引入多个
+优点：1、服务器代码不用copy到 本地工程目录   2、可以引入多个，甚至不同盘之间
 
 缺点：对网速要求高
 
@@ -1106,7 +1106,7 @@ android {
 
 利用iml来改进：**按需放开的原则：**
 
-app/build.gradle   -----> 添加了  frameworks  作为source
+app/build.gradle   -----> 添加了  frameworks  作为source （**注意，这个时候，把根目录加进去，不要分多个！！！！！！！**！利用iml去分！！！）
 
 iml  ----->    excludeFolder排除整个 frameworks  （即相当于整个工程啥也没引进来，然后按需放开）
 
@@ -1126,7 +1126,7 @@ iml  ----->    excludeFolder排除整个 frameworks  （即相当于整个工程
 
 进一步改进：
 
-Java目录都放开为source ------> 永久保存对应.iml 复用
+编程遍历所有含“Java”目录都放开为source ------> 永久保存对应.iml 复用
 
 
 
