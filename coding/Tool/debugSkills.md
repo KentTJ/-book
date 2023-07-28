@@ -839,9 +839,9 @@ sourceSets{ //目录指向配置
 
 再同步，直到成功 ---》保证环境
 
-### 最重要一点：
+### 配置跳转优先级  .iml文件：
 
-配置跳转优先级（点击鼠标左键时）：这里当然是把jdk和sdk的依赖放到最后---》可以优先依赖到sourceFolder
+配置跳转优先级（点击鼠标左键时）：这里当然是把jdk和sdk的依赖放到最后--->   可以优先依赖到sourceFolder
 
 frameworks.iml 文件：
 
@@ -854,6 +854,14 @@ frameworks.iml 文件：
 补充：对于`linux下 AS`，该文件处于：
 
 ![image-20230105205524941](debugSkills.assets/image-20230105205524941.png)
+
+补充：如果idea没有自动生成，打开iml自动产生
+
+参考：~~https://www.cnblogs.com/wanglongjiang/p/17315700.html~~
+
+![img](https://img2023.cnblogs.com/blog/3068292/202304/3068292-20230413152458621-1977143471.png)
+
+
 
 ### 最重要第二点：
 
@@ -994,7 +1002,7 @@ demo和源码放到同一工程，作为不同module，可以同时调试   应�
 同包却无法引用-------》
 1、方法1：右键，将包名上一级即java作为source --->缺点：source里不能嵌套source，需要将base取消
 
-2、方法2：修改iml文件，可以source嵌套source！！！
+2、方法2：修改iml文件，可以source嵌套source！
 
 添加：
 
@@ -1045,19 +1053,32 @@ iml文件会新增：
 android {
       compileSdkVersion 28
       ..........
-      sourceSets {
-         main {
-            // 在此处添加你需要的代码路径(注意是java目录) 
-            java.srcDirs = ['X:\\agpdev\\foundation\\graphic\\java\\src',
-                         'X:\\foundation\\graphic\\test\\agp_sample\\demo_app\\app\\src\\main\\java',
-                        ]
+     
+          sourceSets {
+        main {
+            java {
+                // 在此处添加你需要的代码路径(注意是java目录)
+                srcDirs = [
+                        'E:\\dockerSharedFiles_Gpan\\aosp12_r28\\frameworks',
+                ]
+//
+//                //在此处排除目录、文件 ----> 只是不进行打包,不代表不能跳转
+//                excludes = [
+//                        'zincStudy/*.java',
+//                        'SoundPicker\\.*',
+//                ]
+                //为啥还有这个？
+//                includes = ["com/zinc/gradlestudy/MainActivity.java"]
 
-            // 在此处添加你需要的资源路径 
-            //resources.srcDirs = ['W:\\WCL_WorkSpase\\EMUI10.0_GP\\packages\\apps\\Settings\\app\\src\\main\\res']
 
-            // 清单文件路径
-            //manifest.srcFile = 'W:\\app\\src\\main\\ AndroidManifest.xml'
-	}
+                // 在此处添加你需要的资源路径
+                //resources.srcDirs = ['W:\\WCL_WorkSpase\\EMUI10.0_GP\\packages\\apps\\Settings\\app\\src\\main\\res']
+
+                // 清单文件路径
+                //manifest.srcFile = 'W:\\app\\src\\main\\ AndroidManifest.xml'
+            }
+        }
+    }
 }
 ```
 
