@@ -1130,6 +1130,14 @@ iml  ----->    excludeFolder排除整个 frameworks  （即相当于整个工程
 
 
 
+
+
+总结：优点：
+
+无需copy代码，无需同步修改
+
+
+
 ## ~~用源码搭建java断点调试环境----法三，有问题~~
 
 settings.gradle中添加：
