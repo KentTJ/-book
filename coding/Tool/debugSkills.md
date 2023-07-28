@@ -1039,7 +1039,17 @@ iml文件会新增：
 
 
 
-## ~~用源码搭建java断点调试环境----法二，有问题~~
+### 本地代码与服务器代码的 修改同步
+
+**这一点是该方法最大的痛点**
+
+法一：copyToRemote
+
+法二：FreeFileSync软件同步文件夹
+
+![image-20230729035732596](debugSkills.assets/image-20230729035732596.png)
+
+## 用源码搭建java断点调试环境----法二，最优
 
 法二：修改app/build.gradle  ----->  在android的域中添加sourcesets项,  指定JAVA的源码目录(java.srcDirs为服务器的java源码目录)
 
@@ -1091,6 +1101,34 @@ android {
 
 
 参考： 《源码导入IDE说明java_cpp跳转.pdf》
+
+
+
+利用iml来改进：**按需放开的原则：**
+
+app/build.gradle   -----> 添加了  frameworks  作为source
+
+iml  ----->    excludeFolder排除整个 frameworks  （即相当于整个工程啥也没引进来，然后按需放开）
+
+```java
+    <content url="file://$MODULE_DIR$/../../../../../dockerSharedFiles_Gpan">
+      <sourceFolder url="file://$MODULE_DIR$/../../../../../dockerSharedFiles_Gpan/aosp12_r28/frameworks/base/core" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../../../dockerSharedFiles_Gpan/aosp12_r28/frameworks/base/services" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../../../dockerSharedFiles_Gpan/aosp12_r28/frameworks" isTestSource="false" />
+        
+        
+       //先排除总的
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../dockerSharedFiles_Gpan/aosp12_r28/frameworks" />
+    </content>
+```
+
+
+
+进一步改进：
+
+Java目录都放开为source ------> 永久保存对应.iml 复用
+
+
 
 ## ~~用源码搭建java断点调试环境----法三，有问题~~
 
