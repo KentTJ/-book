@@ -1,0 +1,1417 @@
+[TOC]
+
+
+
+
+
+
+
+# 其他次要软件/工具
+
+## 软件大全
+
+推荐使用：
+
+| 录屏软件 | EV录屏 |      |      |
+| -------- | ------ | ---- | ---- |
+|          |        |      |      |
+|          |        |      |      |
+|          |        |      |      |
+
+
+
+## Source Insight
+
+见《sourceInsight.md》
+
+
+
+
+
+## vscode
+
+编译环境的搭建：
+https://chowdera.com/2020/12/20201229202248553i.html
+
+https://code.visualstudio.com/docs/languages/cpp   官方文档
+
+AddressSanitizer工具
+https://docs.microsoft.com/en-us/cpp/sanitizers/asan?view=msvc-170   
+
+
+
+高亮变量: vscode的highlight-words：
+https://blog.csdn.net/u013171226/article/details/108868425                 
+
+
+
+​      TODO: Ubutu上安装vscode，并搭建Frame native断点调试环境    :
+https://www.jianshu.com/p/d84a2ec948be     使用VsCode调试Android Framework C/C++源代码
+https://blog.csdn.net/zhaojia92/article/details/99774704                                                                                                                                                                                                                                                                                                                                                                                                              
+
+## markdown
+
+### 设置 编辑器 的宽度
+
+（也是主题）的宽度
+
+https://blog.csdn.net/xiaojin21cen/article/details/90292315#2___12
+
+
+
+## Q-dir
+
+![image-20211212195602724](software_pcSettings.assets/image-20211212195602724.png)
+
+## 截图工具Snipaste 
+
+
+
+1、可以截取多张图片，悬浮在屏幕里---》对照方便
+
+![image-20221015210542437](software_pcSettings.assets/image-20221015210542437.png)
+
+2、绘图展示
+
+![image-20221015211200936](software_pcSettings.assets/image-20221015211200936.png)
+
+3、放大缩小：
+
+4、透明度改变
+
+
+
+
+
+
+
+## mobaXterm
+
+copy将整个页面：
+1、关掉右键粘贴
+
+![image-20220116230751906](software_pcSettings.assets/image-20220116230751906.png)
+
+2、复制全部或
+
+![image-20220116230922824](software_pcSettings.assets/image-20220116230922824.png)
+
+
+
++号默认打开的是宿主机子win的c盘位置，相当于 打开本地的cmd   ----> TODO: 这其实是很好的入口，用linux环境，做一些cmd初始化的工作
+
+![image-20221024221643976](software_pcSettings.assets/image-20221024221643976.png)
+
+
+
+
+
+
+
+### 提高效率的做法
+
+同时开几个窗口 + 且用tmux：
+
+
+
+> ![image-20230617210505103](software_pcSettings.assets/image-20230617210505103.png)
+
+
+
+### 启动sh，可以定制一些东西
+
+这一点同Linux、win的 sh脚本一样
+
+
+
+Bash启动：
+
+![image-20221110020126021](software_pcSettings.assets/image-20221110020126021.png)
+
+
+
+会自动执行profile文件：----> 在这里source  sh文件，自定义function
+
+![image-20221110020650476](software_pcSettings.assets/image-20221110020650476.png)
+
+
+
+
+
+### 技巧1：
+
+bash.exe环境 是 linux下shell环境:----------->  命令友好
+
+但是 缺少 win环境变量（比如adb，python）
+
+----->  方法：极优   linux环境 + win环境变量（即win环境）：
+
+
+
+
+
+%accordion%~~步骤：~~%accordion%
+
+> 在bash环境下，先进入cmd（拿到win环境），再exit回到 bash环境
+>
+> ![image-20230621212531871](software_pcSettings.assets/image-20230621212531871.png)
+
+
+
+%/accordion%
+
+### 技巧2：
+
+可以在win下任意路径，进入bash环境
+
+
+
+%accordion%即%accordion%
+
+> ![image-20230621212806649](software_pcSettings.assets/image-20230621212806649.png)
+
+
+
+%/accordion%
+
+
+
+### 极优的点：
+
+整个win系统的硬盘都挂在了/drives
+
+------------->  整个win硬盘，bash都可以访问
+
+
+
+![image-20230624183030105](software_pcSettings.assets/image-20230624183030105.png)
+
+## 远程桌面：
+
+### 远程桌面之内网穿透
+
+淘宝有卖
+
+远程桌面需要的条件：局域网（没有公共IP） 或者 公网ip 或者内网穿透
+
+https://zhuanlan.zhihu.com/p/115826053?utm_source=wechat_session&utm_medium=social&utm_oi=903075405244817408&utm_campaign=shareopn
+
+
+
+### 远程桌面之  公网ip（ipV6）
+
+#### 目标 一：有个可以在广域网ping通的ipv6
+
+可以测试的网站：
+
+> https://ipw.cn/
+>
+> ![image-20230514014408452](software_pcSettings.assets/image-20230514014408452.png)
+>
+> 
+>
+> https://test-ipv6.com/
+>
+> ![image-20230514014336244](software_pcSettings.assets/image-20230514014336244.png)
+>
+> http://test6.ustc.edu.cn/
+>
+> ![image-20230514014433482](software_pcSettings.assets/image-20230514014433482.png)
+
+
+
+#### 步骤1：1级光猫配置（可直接使用光猫wifi的 ipv6）
+
+登录：http://192.168.1.1/cu.html          参考：https://zhidao.baidu.com/question/1930330333758025547.html       
+
+```java
+联通光猫wo_27s的网址；192.168.1.1/cu.html
+超级用户名：CUAdmin
+密码：CUAdmin
+```
+
+拨号的配置：
+
+![image-20230514014812197](software_pcSettings.assets/image-20230514014812197.png)
+
+![image-20230514015137523](software_pcSettings.assets/image-20230514015137523.png)
+
+![image-20230514015155593](software_pcSettings.assets/image-20230514015155593.png)
+
+
+
+防火墙设置：iPv4防火墙设置低；iPv6防火墙直接删掉
+
+![image-20230514014916183](software_pcSettings.assets/image-20230514014916183.png)
+
+
+
+**核心要点：关闭各种防火墙**--------pc防火墙 + 路由器防火墙
+
+> https://blog.csdn.net/weixin_43245095/article/details/125237294        IPv6连接测试通过，但是无法ping成功问题解决（记录）
+>
+> ![image-20230514020100519](software_pcSettings.assets/image-20230514020100519.png)
+>
+> https://blog.csdn.net/hua0721/article/details/128223801   ipv6外网能ping通，但无法访问服务(自建网站,远程桌面等)
+>
+> 
+
+
+
+**注意：此时可以使用光猫wifi的 ipv6 ----》 可以被广域网 ping到。可以远程使用**
+
+
+
+#### 步骤2：二级路由器的设置
+
+联网设置：
+
+（1）物理网线连接 光猫
+
+（2）登录  http://192.168.2.1/    **<font color='red'>ipv6相关设置：</font>** 账号admin
+
+![image-20230514021028629](software_pcSettings.assets/image-20230514021028629.png)
+
+![image-20230514021435514](software_pcSettings.assets/image-20230514021435514.png)
+
+#### 二级路由器也存在防火墙关闭问题：
+
+同上面，也要关闭防火墙
+
+
+
+
+
+方法一：路由器设置界面可以关掉
+
+**方法二：路由器界面就没有防火墙--------> 大招，进入系统：**
+
+参考：  https://zhuanlan.zhihu.com/p/547389653    关闭服务器防火墙
+
+
+
+进入路由器系统的方法：
+
+> （1）打开ssh开关 ：
+>
+> 登录 http://192.168.2.1/api/set/telnet     账号admin
+>
+> ![image-20230514233456488](software_pcSettings.assets/image-20230514233456488.png)
+>
+> 参考： https://429006.com/article/tag/openw
+>
+> （2）进入： C:\Users\24234>ssh  -l   root 192.168.2.1
+
+
+
+
+
+##### 方式一：将ipv6防火墙全部关闭
+
+```java
+root@VS010:~# cd /
+root@VS010:/# config2 default/
+root@VS010:/#  ip6tables -F
+root@VS010:/#  ip6tables -X
+root@VS010:/# ip6tables -P INPUT ACCEPT
+root@VS010:/# ip6tables -P OUTPUT ACCEPT
+root@VS010:/# ip6tables -P FORWARD ACCEPT
+root@VS010:/#
+
+//总之，
+config2 default/  && ip6tables -F && ip6tables -X && ip6tables -P INPUT ACCEPT && ip6tables -P OUTPUT ACCEPT &&  ip6tables -P FORWARD ACCEPT
+
+
+```
+
+远程桌面，只需要IP即可
+
+![image-20230514224137033](software_pcSettings.assets/image-20230514224137033.png)
+
+##### 方式二：在防火墙开一两个端口（将远程桌面的端口3389开）
+
+ 优点---------》  **安全性非常好**
+
+
+
+参考：http://app.myzaker.com/news/article.php?pk=626eae9d8e9f095e4a34d66f   
+
+```java
+// 开放5001
+ip6tables -I forwarding_rule -p tcp --dport 5010 -j ACCEPT  
+ip6tables -I forwarding_rule -p udp --dport 5010 -j ACCEPT
+// 开放3389
+ip6tables -I forwarding_rule -p tcp --dport 3389 -j ACCEPT
+ip6tables -I forwarding_rule -p udp --dport 3389 -j ACCEPT
+
+路由器开机后自动开启 5000 和 3389 端口，这个端口号是可以根据自己的需求更改或者增加的。Windows 系统的远程桌面端口认是 3389，如果觉得不安全，可以换一个端口号。
+```
+
+远程桌面：  [ipv6地址]:端口，比如  [ipv6地址]:3389
+
+
+
+优化1：
+
+>  Windows 系统的远程桌面端口认是 3389，不安全 ------>  修改端口为5010
+>
+>  参考：
+>
+>  ​            https://xinzhi.wenda.so.com/a/1630119419206952
+>
+>  远程桌面：  [ipv6地址]:5001
+
+
+
+
+
+优化2：把脚本写进路由器开机启动里
+
+参考：http://app.myzaker.com/news/article.php?pk=626eae9d8e9f095e4a34d66f   
+
+写入文件：vi /etc/rc.local
+
+
+
+
+
+### 优化之 ipv6租约时间
+
+路由器定时修改ipc的 IPv4和ipv6???
+
+------------>  解析，固定为个人域名
+
+https://github.com/jeessy2/ddns-go
+
+具体步骤，见md
+
+### 远程桌面之 音频传输
+
+远程桌面连接后听不到remote pc的视频播放声音：
+
+> 1、相关的配置：   https://www.anyviewer.cn/how-to/rdp-audio-not-working-6540.html
+>
+> 1_1、重启本地+远程pc
+>
+> 2、确定remote pc已安装声卡和驱动 + 耳机，换句话说就是remote pc可以出声
+>
+> 3、本地pc远程：
+>
+> ​     ![img](software_pcSettings.assets/023b5bb5c9ea15cedbdf3f9e9bc16efa3b87b2bb.png@f_auto)
+
+
+
+
+
+一个坑：
+
+> 验证步骤2时，不能用RDP远程操作。办法：  用向日葵或直接远程pc登录验证
+
+
+
+## git bash
+
+好处：
+
+> 1、git作用
+>
+> 2、**将win文件系统变成linux（极优）** -------->  一切在linux下的命令，都可以用在win下
+>
+> ​      比如： ls  -l、执行sh、git管理文件
+>
+> 3、任意win目录都可以变成linux目录
+
+
+
+安装：
+
+https://blog.csdn.net/aixueai/article/details/119574135
+
+
+
+第一次使用，设置你的名字和Email地址：
+
+>  <---------git commit需要！！！
+>
+>  ```cpp
+>  git config --global user.email "you@example.com"
+>  git config --global user.name "Your Name"
+>  ```
+>
+>  
+
+
+
+git push需要：
+
+
+
+## gitBook----个人网站
+
+### 环境搭建：
+
+https://blog.csdn.net/YunWQ/article/details/120197926?spm=1001.2101.3001.6650.3&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-3-120197926-blog-122971465.235%5Ev36%5Epc_relevant_default_base3&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-3-120197926-blog-122971465.235%5Ev36%5Epc_relevant_default_base3&utm_relevant_index=4
+
+
+
+https://www.jianshu.com/p/a9c6b5cba8cf
+
+https://blog.csdn.net/qlql489/article/details/122971465
+
+TODO:https://docs.docker.com/get-started/overview/   ---> 看一下别人如何搭建这么好的
+![image-20221101203328305](software_pcSettings.assets/image-20221101203328305.png)
+
+
+
+
+
+
+
+#### gitbook init报TypeError [ERR_INVALID_ARG_TYPE]
+
+https://blog.csdn.net/qq_33641175/article/details/122508473
+
+
+
+#### 选择github作为网页page的仓时
+
+每次push，网站会自动校验 pages build ：
+
+%accordion%影响%accordion%
+
+1、通不过，无法访问网站github.io 网站
+
+2、这也解释了为啥push上去，要等很久，才更新网页（校验build需要时间）
+
+![image-20230529235926525](software_pcSettings.assets/image-20230529235926525.png)
+
+%/accordion%
+
+### PC本地调试，优
+
+命令gitbook  serve(注意是serve不是server)
+
+并生成http://localhost:4000本地访问地址 
+
+
+
+### 各种插件
+
+https://blog.csdn.net/ming_97y/article/details/115202048      Gitbook详解（五）-插件的配置和使用详解
+
+https://blog.csdn.net/xixihahalelehehe/article/details/125115239  
+
+```json
+  "plugins": [
+    "anchor-navigation-ex",
+	"toggle-chapters",
+	"expandable-chapters-small",
+	"splitter",
+	"code",
+	"page-treeview",
+	"popup",
+	"-search", 
+	"-lunr",
+	"search-pro"
+  ],
+```
+
+《-------gitbook install   安装上述所有
+
+
+
+
+
+gitbook功能插件有：
+
+%accordion%插件%accordion%
+
+> 1. [gitbook 介绍](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125132380)【updated】
+> 2. [gitbook 开始](https://link.zhihu.com/?target=https%3A//ghostwritten.blog.csdn.net/article/details/122589778)【updated】
+> 3. [gitbook 安装](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125113561)【updated】
+> 4. [gitbook README.md](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125113695)【updated】
+> 5. [gitbook SUMMARY.md](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125113749)【updated】
+> 6. [gitbook book.json 定制功能](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125113876)【updated】
+> 7. [gitbook 发布 github pages](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125115061)【updated】
+> 8. [gitbook 更新 github pages](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125115112)【updated】
+> 9. [gitbook 插件](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125115239)【updated】
+> 10. [gitbook  插件 gitbook-summary](https://link.zhihu.com/?target=https%3A//ghostwritten.blog.csdn.net/article/details/122621967)【updated】
+> 11. [gitbook 插件 GitBook-auto-summary](https://link.zhihu.com/?target=https%3A//ghostwritten.blog.csdn.net/article/details/125111340)【updated】
+> 12. [gtibook 插件 侧边导航](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125116260)【updated】
+> 13. [gitbook 插件 文章目录导航](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125116703)【updated】
+> 14. [gitbook 插件 文章 TOC 目录](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125117549)【updated】
+> 15. [gitbook 插件 提示与强调](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125117680)【updated】
+> 16. [gtibook 插件 代码块](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125120709)【updated】
+> 17. [gitbook 插件 分享](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125120975)【updated】
+> 18. [gitbook 插件 赞赏](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125121014)【updated】
+> 19. [gitbook 插件 查询](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125121129)【updated】
+> 20. [gitbook 插件 评论](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125121239)【updated】【adding】
+>
+> 21. [gitbook 插件 版权声明](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125124233)【updated】
+>
+> 22. [gitbook 插件 背景设置](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125124343)【updated】
+> 23. [gitbook 插件 图片查看](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125124629)【updated】
+> 24. [gitbook 插件 图标与LOGO](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125125018)【updated】
+> 25. [gitbook 插件 github](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125126984)【updated】
+> 26. [gitbook 插件 Emoji 表情](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125127079)【updated】
+> 27. [gitbook 插件 文本隐藏](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125127400)【updated】
+> 28. [gitbook 插件 TODO 代办](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125127719)【updated】
+> 29. [gitbook 插件 页面编辑](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125127764)【updated】
+> 30. [gitbook 插件 RSS](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125127814)【updated】
+> 31. [gitbook 插件 视频](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125127851)【updated】
+> 32. [gitbook 插件 SEO](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125131861) 【updated】
+> 33. [gitbook 插件 访问统计](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125124085)【updated】
+> 34. [gtibook 插件 顶部导航](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125230540)【updated】
+> 35. [gitbook 插件 主题](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125252522)【updated】
+> 36. [gitbook 插件 标签](https://link.zhihu.com/?target=https%3A//ghostwritten.blog.csdn.net/article/details/125275741)【updated】
+> 37. [gitbook 插件 pdf](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125357029)【updated】
+> 38. [gitbook 插件 阅读更多](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/125364518)【updated】
+> 39. [gitbook 插件：音乐](https://link.zhihu.com/?target=https%3A//blog.csdn.net/xixihahalelehehe/article/details/126268858)【updated】
+
+%/accordion%
+
+
+
+#### accordion隐藏插件
+
+%accordion%Some title here%accordion%
+
+Any content here
+
+121321434345325243
+
+324324324324324
+
+%/accordion%
+
+```
+%accordion%Some title here%accordion%
+
+Any content here
+
+121321434345325243
+
+324324324324324
+
+%/accordion%
+```
+
+
+
+ 注：click-reveal插件，github仓编译校验不过
+
+
+
+
+
+
+
+### md、html 生成ok标准：
+
+md、html、md-->  html  验证标准
+
+html中搜索png，没有png、img出现  ---》所有的png图片都已经融入html中了
+
+
+
+
+
+gitbook的 bug：不能以为行首
+
+> ```cpp
+> <font color='red'>   
+> ```
+>
+> 否则，会造成，后面的所有格式失效（包括图片）
+>
+> 例子： 
+>
+> ​                          md的source code模式：
+>
+> ![image-20230529095944711](software_pcSettings.assets/image-20230529095944711.png)
+>
+> ​                       html：
+>
+> ![image-20230529100004872](software_pcSettings.assets/image-20230529100004872.png)
+>
+> 方法： 打破以 ...为首
+>
+> 比如：目到前面
+>
+> 比如： 加粗
+>
+> ![image-20230529104312470](software_pcSettings.assets/image-20230529104312470.png)
+>
+> 比如：加任意字符
+>
+> ```
+> -<font color='red'>
+> ```
+>
+> 
+
+
+
+
+
+
+
+体会：
+
+> md看问题，一定要在source code模式下看，因为更本质
+
+
+
+
+
+
+
+### GitHub
+
+1、git push 到gitHub失败：
+
+方法：无需关闭代理
+git config --global http.proxy ""
+
+注意：上述方法，网页访问速度没有改善 ----》技巧：用手机看网页
+
+### 优化之book sm
+
+自动生成Summary.md文件
+
+
+
+https://www.jianshu.com/p/4471c20fbafe  Gitbook使用教程
+
+```cpp
+- Summary插件：`npm install -g gitbook-summary`
+```
+
+
+
+
+
+
+
+## EA
+
+### 自动生成类图
+
+#### 目的
+
+(1)找出主要类（以及主要调用方向）  
+
+(2)包之间依赖关系
+
+ (3)初步判断信息流向
+
+
+
+方法：
+https://www.codenong.com/cs107101145/
+
+
+
+### 以java文件的粒度，创建 导入一个class 模型
+
+技巧：class模型 ---> 自动生成方法签名 ---> copy
+
+以java文件的粒度,导入一个class 模型:  `很快速`
+
+
+
+注意: 可以同时生成多个class模型-----》 ctrl+点击多个类模型
+
+
+
+### ~~EA中边界框架的添加方法~~
+
+见docker
+
+ ![image-20230529001020294](software_pcSettings.assets/image-20230529001020294.png)
+
+
+
+### EA的缺点：
+
+没有重点!!!!---》 1、所以，手动画，一定要突出重点   2、TODO: EA是否能改变呢？
+
+## ~~Edraw~~
+
+https://www.edrawmax.cn/support/ShapeOperation/ShapesOperation
+
+### ~~1、`技巧`：edraw的**组合**~~
+
+ -----> 可以用来定制自己的view组件 ----->`后面可以重复利用了`~~
+
+![image-20220927005209323](software_pcSettings.assets/image-20220927005209323.png)
+
+
+
+### ~~2、自定义view组件存储的地方：~~
+
+![image-20220927010931438](software_pcSettings.assets/image-20220927010931438.png)
+
+### ~~3、技巧：选中主题，有外框和标注~~
+
+![image-20220927012338918](software_pcSettings.assets/image-20220927012338918.png)
+
+### 对齐与大小同步
+
+![image-20221201221605724](software_pcSettings.assets/image-20221201221605724.png)
+
+使用方法：
+
+1、选择多个元素
+
+2、Tab键选择标准
+
+3、点击按钮
+
+### 画图基本元素
+
+选用下面这个。原因：文字框在实体框内部
+
+![image-20221201221419049](software_pcSettings.assets/image-20221201221419049.png)
+
+文字框在实体框外部：<font color='red'>错误，禁止使用</font>
+
+![image-20221201221536939](software_pcSettings.assets/image-20221201221536939.png)
+
+总之，使用给定的元素，尽量不要自己造元素
+
+### 链接线不允许手动画
+
+自动向四个方向延展：
+
+![image-20221201222150728](software_pcSettings.assets/image-20221201222150728.png)
+
+### 格式刷 刷链接线
+
+
+
+![image-20221201222401102](software_pcSettings.assets/image-20221201222401102.png)
+
+万不得已，不要自己组合元素 ----->  这样后期，格式化可以统一刷
+
+### 文字如何统一修改格式？
+
+框选多个元素
+
+![image-20221201223222515](software_pcSettings.assets/image-20221201223222515.png)
+
+### 如何统一修改框的格式
+
+方法一： 框选多个，统一修改
+
+方法二：格式刷
+
+
+
+### 亿图截图方法
+
+不要直接截图，而是选中，复制+粘贴  ------》 <font color='red'>极优：高清</font>
+
+![image-20230312001917695](software_pcSettings.assets/image-20230312001917695.png)
+
+
+
+## Andriod Code Search
+
+------》下面一切都是围绕着搜索，一切为了搜索方法
+
+https://cs.android.com/
+
+1、查看某一笔提交的所有改动：场景：安卓所有改动点，Z侧这些点也要注意！！！！！
+
+![image-20210514005139372](software_pcSettings.assets/image-20210514005139372.png)
+
+![image-20210514005210317](software_pcSettings.assets/image-20210514005210317.png)
+
+2、返回与前进：相当于AS的返回与前进！！！
+
+![image-20210514005655226](software_pcSettings.assets/image-20210514005655226.png)
+
+3、文件的结构：
+![image-20210514005930424](software_pcSettings.assets/image-20210514005930424.png)
+
+4、查看某一行的最新改动的提交
+
+![image-20210514012047863](software_pcSettings.assets/image-20210514012047863.png)
+
+5、所有历史提交！！！！！
+
+![image-20210514012141496](software_pcSettings.assets/image-20210514012141496.png)
+
+6、
+
+## Everything
+
+### ~~限定路径搜索~~
+
+![image-20221102180551206](software_pcSettings.assets/image-20221102180551206.png)
+
+![image-20221102180523062](software_pcSettings.assets/image-20221102180523062.png)
+
+
+
+## Typora
+
+### 快捷键
+
+参考：https://www.jianshu.com/p/ca2d0420c9ea    Typora 快捷键 shortcut keys   
+
+
+
+1、`Ctrl+K, 创建超链接：`           
+
+```shell
+// 自动生成：
+[创建超链接](#id22)
+```
+
+1、超链接`被链接CTR + L` (与Ctrl+K搭配使用)
+
+```shell
+// 自动生成：
+<a id=''>被链接</a>
+```
+
+ 原理：
+
+![image-20221103013503393](software_pcSettings.assets/image-20221103013503393.png)
+
+
+
+2、Ctrl+T, 创建表格
+
+3、`Ctrl+shift + K, 创建代码框：`    
+
+4、Ctrl + shift + Q ：引用quota
+
+![image-20221103194850330](software_pcSettings.assets/image-20221103194850330.png)
+
+5、 Ctrl + Shift + V    ~~Paste As Plain Text   ---> 自然~~
+
+
+
+5、自定义的热键  ---》 <font color='red'>TODO:</font> 提炼所有软件自定义热键的方法，以后可以在各个软件里自定义热键了！！！！！！！
+
+对于Typora.exe有：
+
+![image-20221103011910388](software_pcSettings.assets/image-20221103011910388.png)
+
+
+
+
+
+
+
+### Typora 设置标题自动编号
+
+
+
+%accordion%自动编号：%accordion%
+
+
+
+
+
+```java
+#write {
+    max-width: 1024px;
+}
+
+body {
+    counter-reset: body;
+}
+
+/* 正文标题自动序号 */
+h1 {
+    counter-reset: h1;
+}
+
+h2 {
+    counter-reset: h2;
+}
+h3 {
+    counter-reset: h3;
+}
+h4 {
+    counter-reset: h4;
+}
+h5 {
+    counter-reset: h5;
+}
+h6 {
+    counter-reset: h6;
+}
+
+h1:before {
+    counter-increment: body;
+    content: counter(body) " ";
+}
+
+h2:before {
+    counter-increment: h1;
+    content: counter(body) "." counter(h1) " ";
+}
+
+h3:before {
+    counter-increment: h2;
+    content: counter(body) "." counter(h1)"." counter(h2) " ";
+}
+h4:before {
+    counter-increment: h3;
+    content: counter(body) "." counter(h1)"." counter(h2)"." counter(h3) " ";
+}
+h5:before {
+    counter-increment: h4;
+    content: counter(body) "." counter(h1)"." counter(h2)"." counter(h3)"." counter(h4) " ";
+}
+h6:before {
+    counter-increment: h5;
+    content: counter(body) "." counter(h1)"." counter(h2)"." counter(h3)"." counter(h4)"." counter(h5) " ";
+}
+
+/* 侧边大纲自动序号 */
+.sidebar-content {
+    counter-reset: h1
+}
+ 
+.outline-h1 {
+    counter-reset: h2
+}
+ 
+.outline-h2 {
+    counter-reset: h3
+}
+ 
+.outline-h3 {
+    counter-reset: h4
+}
+ 
+.outline-h4 {
+    counter-reset: h5
+}
+ 
+.outline-h5 {
+    counter-reset: h6
+}
+ 
+.outline-h1>.outline-item>.outline-label:before {
+    counter-increment: h1;
+    content: counter(h1) " "
+}
+ 
+.outline-h2>.outline-item>.outline-label:before {
+    counter-increment: h2;
+    content: counter(h1) "." counter(h2) " "
+}
+ 
+.outline-h3>.outline-item>.outline-label:before {
+    counter-increment: h3;
+    content: counter(h1) "." counter(h2) "." counter(h3) " "
+}
+ 
+.outline-h4>.outline-item>.outline-label:before {
+    counter-increment: h4;
+    content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) " "
+}
+ 
+.outline-h5>.outline-item>.outline-label:before {
+    counter-increment: h5;
+    content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) " "
+}
+ 
+.outline-h6>.outline-item>.outline-label:before {
+    counter-increment: h6;
+    content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) " "
+}
+
+/* TOC 自动序号 */
+.md-toc-inner {
+    text-decoration: none;
+}
+ 
+.md-toc-content {
+    counter-reset: h1toc
+}
+ 
+.md-toc-h1 {
+    margin-left: 0;
+    counter-reset: h2toc
+}
+ 
+.md-toc-h2 {
+    margin-left: 1rem;
+    counter-reset: h3toc
+}
+ 
+.md-toc-h3 {
+    margin-left: 2rem;
+    counter-reset: h4toc
+}
+ 
+.md-toc-h4 {
+    margin-left: 3rem;
+    counter-reset: h5toc
+}
+ 
+.md-toc-h5 {
+    margin-left: 4rem;
+    counter-reset: h6toc
+}
+ 
+.md-toc-h6 {
+    margin-left: 5rem;
+}
+ 
+.md-toc-h1:before {
+    counter-increment: h1toc;
+    content: counter(h1toc) " "
+}
+ 
+.md-toc-h1 .md-toc-inner {
+    margin-left: 0;
+}
+ 
+.md-toc-h2:before {
+    counter-increment: h2toc;
+    content: counter(h1toc) ". " counter(h2toc) " "
+}
+ 
+.md-toc-h2 .md-toc-inner {
+    margin-left: 0;
+}
+ 
+.md-toc-h3:before {
+    counter-increment: h3toc;
+    content: counter(h1toc) ". " counter(h2toc) ". " counter(h3toc) " "
+}
+ 
+.md-toc-h3 .md-toc-inner {
+    margin-left: 0;
+}
+ 
+.md-toc-h4:before {
+    counter-increment: h4toc;
+    content: counter(h1toc) ". " counter(h2toc) ". " counter(h3toc) ". " counter(h4toc) " "
+}
+ 
+.md-toc-h4 .md-toc-inner {
+    margin-left: 0;
+}
+ 
+.md-toc-h5:before {
+    counter-increment: h5toc;
+    content: counter(h1toc) ". " counter(h2toc) ". " counter(h3toc) ". " counter(h4toc) ". " counter(h5toc) " "
+}
+ 
+.md-toc-h5 .md-toc-inner {
+    margin-left: 0;
+}
+ 
+.md-toc-h6:before {
+    counter-increment: h6toc;
+    content: counter(h1toc) ". " counter(h2toc) ". " counter(h3toc) ". " counter(h4toc) ". " counter(h5toc) ". " counter(h6toc) " "
+}
+ 
+.md-toc-h6 .md-toc-inner {
+    margin-left: 0;
+}
+
+```
+
+ 
+
+%/accordion%
+
+
+
+## 所有软件自定义热键的方法
+
+ AutoHotkey软件
+
+-----> 极优： 原因在于，可以根据当前窗口，定义快捷键。。。。<font color='red'>即， 可以定义软件级别的快捷键</font>
+
+
+
+> 例子：和Typora结合：
+
+>  **https://blog.csdn.net/Timi_Toro/article/details/119824280**
+
+
+
+
+
+
+
+## 屏幕亮度/对比度 软件调节
+
+Monitorian
+
+https://blog.csdn.net/acecandy/article/details/126058229
+
+
+
+## 屏幕分区软件MaxTo
+
+
+
+见： I:\working_pan\softWare\MaxToSetup151110
+
+使用：
+
+>  https://maxto.net/zh-hans#pricing
+>
+>  ![image-20230617233344566](software_pcSettings.assets/image-20230617233344566.png)
+>
+>  
+>
+>  
+
+优点：
+
+> 1、自定义分区大小
+>
+> 
+
+
+
+
+
+## 反编译工具
+
+jadx-1.4.7
+
+优点：1、界面化操作。拖动即解析
+
+​           2、完美的把.apk向下解析了 ----> source code
+
+
+
+![image-20230714000310717](software_pcSettings.assets/image-20230714000310717.png)
+
+
+
+
+
+# 计算机其他问题及设置
+
+## 软件最优的使用方式----免安装
+
+有很多<font color='red'>优点</font>：
+
+1、一次破解，终生使用
+
+2、一台机器安装，所有机器都可以使用
+
+3、规避安装需要管理员权限（不需要安装）
+
+4、越过安装复杂的流程
+
+5、可以放在任意盘里，即使U盘
+
+---------------------> 平时记得把大型复杂的软件都保存成免安装软件
+
+
+
+## 删除文件/文件夹，有进程正在占用
+
+比如：
+
+> 删除H:\docker_install\DockerDesktop\DockerDesktop.vhdx
+>
+> 出现报错：文件被占用
+
+
+
+方法：
+
+> 在Handles中搜索 DockerDesktop.vhdx （**很有可能搜不到，因为handle的是上一层文件夹、上上一层文件夹**）
+>
+> 如果不行，搜索上一级  DockerDesktop
+>
+> ![image-20230528173432913](software_pcSettings.assets/image-20230528173432913.png)
+>
+> 
+>
+> 
+
+
+
+
+
+## 蓝牙设备添加
+
+![image-20210711102659137](software_pcSettings.assets/image-20210711102659137.png)
+
+
+
+
+
+## 磁盘修复及优化
+
+1、修复：
+
+参照： https://www.reneelab.com.cn/m/external-hard-drive-repair-software.html
+
+```shell
+// cmd， x盘符
+chkdsk X: /r /f
+```
+
+2、优化：
+
+![image-20221112215556265](software_pcSettings.assets/image-20221112215556265.png)
+
+## 装最纯净的win10系统
+
+https://zhuanlan.zhihu.com/p/219902401?utm_source=wechat_session
+
+为什么要用最纯净的win?
+
+1、稳定，驱动没有被其他软件更新过，不容易蓝屏
+
+2、很干净，cpu使用率极低：
+
+![image-20221225005701082](software_pcSettings.assets/image-20221225005701082.png)
+
+
+
+## 常见最优设置
+
+###  剪切板，多个历史 复制值
+
+优： 剪切板，多个历史 复制值  选择粘贴：
+
+![image-20221126001145797](software_pcSettings.assets/image-20221126001145797.png)
+
+
+
+![image-20221126001306176](software_pcSettings.assets/image-20221126001306176.png)
+
+### 双屏，次屏幕隐藏任务栏
+
+空间更大
+
+
+
+## 垃圾
+
+目前没有完成的磁盘：
+
+H盘
+
+
+
+## 蓝屏问题
+
+1、用纯净的系统，不要更新驱动  
+
+2、磁盘修复
+
+3、超频有可能造成蓝屏
+
+4、硬件问题
+
+
+
+## 电脑wifi经常掉
+
+wifi的驱动，禁止关闭
+
+![image-20230714222550640](software_pcSettings.assets/image-20230714222550640.png)
+
+## 网络较慢
+
+1、360安全卫士解决一下
+
+2、使用外置的无线网卡。记得控制面板里选择
+
+3、使用 ipv4，关闭ipv6
+
+![image-20221225010253673](software_pcSettings.assets/image-20221225010253673.png)
+
+
+
+## 关于HDMI连接 无响应
+
+很可能是HDMI驱动出了问题
+
+不一定是硬件问题
+
+## 远程桌面
+
+### 远程电脑  访问  本地电脑磁盘的方法
+
+#### 方法一：将本地的 磁盘driver 挂到远程电脑上
+
+![image-20230114192708392](software_pcSettings.assets/image-20230114192708392.png)
+
+效果：H盘挂过来
+
+![image-20230114192816419](software_pcSettings.assets/image-20230114192816419.png)
+
+
+
+注意：
+
+可以直挂部分磁盘
+
+
+
+![image-20230114192857844](software_pcSettings.assets/image-20230114192857844.png)
+
+#### 方法二：  共享文件夹
+
+
+
+
+
+# 格式
+
+%accordion%折叠%accordion%
+
+> 网站上显示能折叠图片
+>
+> ![image-20230114192857844](software_pcSettings.assets/image-20230114192857844.png)
+
+
+
+%/accordion%
+
+
+
+
+其他折叠：
+
+<details><summary>点击显示答案</summary><p>
+折叠图片不是太方便。。。。适合折叠文字
+<img src="tools.assets/image-20230114192857844.png"/> 
+</p></details>
+
+
+
+
+
+
+
+
+<details>
+<summary>Want to ruin the surprise?</summary>
+Well, you asked for it!
+</details>
+
+
+
+
+%accordion%hideContent%accordion%
+
+%/accordion%
+
+
+
+
+
