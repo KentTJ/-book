@@ -1149,7 +1149,7 @@ blockquote,
 
 blockquote {
 	font-style: italic;
-	border-left: 5px solid;
+	border-left: 4px solid #1fe36e;
 	margin-left: 2em;
 	padding-left: 1em;
 }
@@ -1169,6 +1169,40 @@ code {
     background-color: #f3f4f4;
     padding: 0 2px 0 2px;
 }
+
+
+/*==选中背景高亮==*/
+mark {
+    background: #ffffff;
+    color: #db3f1e;
+    font-weight: bold;
+    border-bottom: 0px solid #ffffff;
+    padding: 0.0px;
+    margin: 0 0px;
+}
+
+
+/* 表格样式：tr（即table row）th（即table header）是表格里的第一行的元素，td是表格里的除了第一行之外的其他元素*/
+
+table tr:nth-child(2n),
+thead {
+	background-color: #f8f8f8;
+}
+table tr th{
+	font-weight: bold;
+	border: 1px solid #db3f1e;
+	border-bottom: 0;
+	margin: 0;
+	padding: 6px 13px;
+}
+
+table tr td {
+	font-weight: bold;
+	border: 1px solid #dfe2e5;
+	margin: 0;
+	padding: 6px 13px;
+}
+
 
 
 ```

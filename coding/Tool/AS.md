@@ -227,7 +227,7 @@ https://github.com/zielu/GitToolBox/wiki/Manual
 AS里找这个操作的快捷键
 ALT + Shift + B  --》`查看commit所有信息`
 
---------》所以,   阅读工具对应的英文文档、github英文文档，很有效
+--------> 所以,   阅读工具对应的英文文档、github英文文档，很有效
 
 
 
@@ -243,7 +243,7 @@ ALT + Shift + B  --》`查看commit所有信息`
 
 ### AS 搜索方法使用地方：
 
-------》  修改为： alt  + f
+------>  修改为： alt  + f
 
 
 
@@ -483,3 +483,11 @@ ALT + F (个人定制)  ----->  Find Usages:(<font color='red'>很优：</font> 
 
 %/accordion%
 
+
+
+| qwqw     | qwqwq      | wqwq      | wqw  | wqwq | wqw  |
+| -------- | ---------- | --------- | ---- | ---- | ---- |
+| asdasdas | sdasdadasd | adasdasda |      |      |      |
+| asdsd    | asdasda    | adasda    |      |      |      |
+
+a

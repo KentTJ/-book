@@ -57,6 +57,12 @@ Trace.asyncTraceEnd
 
 python systrace.py [options] [categories]
 
+目录: 
+
+```java
+‪E:\softWare\softWare\systrace\platform-tools_r33.0.0-windows\platform-tools\systrace\systrace.py
+```
+
 
 
 #### [options]
@@ -69,11 +75,8 @@ python systrace.py [options] [categories]
 
 ![在这里插入图片描述](Systrace.assets/2020110419195148.png)
 
-```
-例子：
-python systrace.py -o mynewtrace.html sched freq idle am wm gfx view \
-        binder_driver hal dalvik camera input res
-        
+```java
+	        
 my例子：
 python systrace.py -o mynewtrace.html  \
 -a com.example.aospsourcecode2 com.android.launcher3    \
@@ -103,6 +106,10 @@ https://www.jianshu.com/p/a14bfdc4109a?utm_campaign=maleskine&utm_content=note&u
 方法二：~~直接点html，这样有进程名~~，更优
 
 ![image-20221125005831779](Systrace.assets/image-20221125005831779.png)
+
+方法三：优选
+
+> https://ui.perfetto.dev/
 
 
 
@@ -220,9 +227,29 @@ systrace的生母，谷歌开源项目https://chromium.googlesource.com/catapult
 
 
 
+
+
 ## 遇到的坑：
 
 1、platform-tools下找不到systrace文件夹  https://www.jianshu.com/p/626eaebaa6a8
+
+## 实战
+
+TODO:  其他章节用systrace来分析
+
+## 参考：
+
+https://www.androidperformance.com/2019/05/28/Android-Systrace-About/#/%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95       
+
+![image-20230802004751045](Systrace.assets/image-20230802004751045.png)
+
+https://www.jianshu.com/p/a14bfdc4109a?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation  
+
+
+
+
+
+https://blog.csdn.net/qq_23452385/article/details/131567881  Perfetto 命令行工具（Android 10 及更高版本）_android perfetto_xhBruce的博客-CSDN博客
 
 
 
@@ -308,9 +335,7 @@ ADB之间影响
 
 # 参考
 
-https://www.androidperformance.com/2019/05/28/Android-Systrace-About/#/%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95       
 
-https://www.jianshu.com/p/a14bfdc4109a?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation  
 
 
 
@@ -319,6 +344,8 @@ https://blog.csdn.net/innost/article/details/9008691
 
 
 https://blog.csdn.net/u011578734/article/details/109497064
+
+
 
 
 
@@ -337,3 +364,6 @@ adb shell perfetto -o /data/misc/perfetto-traces/trace_file.perfetto-trace -t 20
 注意native进程是不能用kill -3来打trace的，而是使用debuggerd.
 
 https://droid10.com/Android/Android%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/
+
+
+

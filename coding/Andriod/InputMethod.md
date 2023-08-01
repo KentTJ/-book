@@ -72,6 +72,10 @@ IMS.requestHideSelf ----> IMMS.hideMySoftInput ----> IMS.hideSoftInput()
 
 
 
+## 从systrace角度分析输入法
+
+TODO:
+
 
 
 # 多屏多会话输入法
