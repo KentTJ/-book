@@ -492,6 +492,20 @@ SERVICE_META_DATA：表示服务的元数据。在查询服务信息时，可以
 
 
 
+比如：下面输入法应用都有
+
+```java
+3929e0d79086:~/workingSpace/aosp_android1000_r28$ grep "android.view.InputMethod"  -rl ./
+/development/samples/SoftKeyboard/AndroidManifest.xml
+./development/samples/browseable/CommitContentSampleIME/AndroidManifest.xml
+./packages/apps/Car/tests/RotaryIME/AndroidManifest.xml
+./packages/apps/Car/LatinIME/AndroidManifest.xml
+./packages/inputmethods/LeanbackIME/AndroidManifest.xml
+./packages/inputmethods/LatinIME/java/AndroidManifest.xml
+```
+
+
+
 ### 指定的输入法是怎么从设置来的？
 
 ```java

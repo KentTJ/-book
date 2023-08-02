@@ -2006,9 +2006,9 @@ log与trace的结合
 
 <font color='red'>显示问题，关键点：</font>
 
-1、layer的层级位置      TaskDisplayArea.adjustRootTaskLayer()
+1、layer的层级位置：     TaskDisplayArea.adjustRootTaskLayer()
 
-2、
+2、surface可见性决定的地方：  surfaceControl.hide  或者  cpp surfaceFlinger的入口， SurfaceComposerClient.setFlag
 
 
 
