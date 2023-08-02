@@ -511,7 +511,7 @@ SERVICE_META_DATA：表示服务的元数据。在查询服务信息时，可以
 ```java
 //startInputUncheckedLocked
 
-InputMethodInfo info = mMethodMap.get(mCurMethodId);//关键mCurMethodId
+InputMethodInfo info = mMethodMap.get(mCurMethodId);//关键 mCurMethodId
 mCurIntent = new Intent(InputMethod.SERVICE_INTERFACE);
 ```
 
