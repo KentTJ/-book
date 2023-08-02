@@ -492,7 +492,7 @@ SERVICE_META_DATA：表示服务的元数据。在查询服务信息时，可以
 
 
 
-比如：下面输入法应用都有
+比如：下面输入法应用都有   
 
 ```java
 3929e0d79086:~/workingSpace/aosp_android1000_r28$ grep "android.view.InputMethod"  -rl ./
@@ -506,7 +506,7 @@ SERVICE_META_DATA：表示服务的元数据。在查询服务信息时，可以
 
 
 
-### 指定的输入法是怎么从设置来的？
+###  指定的输入法是怎么从设置来的？
 
 ```java
 //startInputUncheckedLocked
