@@ -1818,6 +1818,12 @@ Google、baidu、new Bing、bibili
 
 2、关闭动画？
 
+方法一：设置中关闭
+
+方法二：代码里关闭动画：
+
+
+
 3、select an APP可以不ANR的
 
 ![image-20230722003148677](debugSkills.assets/image-20230722003148677.png)

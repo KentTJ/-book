@@ -511,7 +511,7 @@ SERVICE_META_DATA：表示服务的元数据。在查询服务信息时，可以
 ```java
 //startInputUncheckedLocked
 
-InputMethodInfo info = mMethodMap.get(mCurMethodId);//关键 mCurMethodId
+InputMethodInfo info = mMethodMap.get(mCurMethodId);//关键 mCurMethodId是指定要展示的输入法
 mCurIntent = new Intent(InputMethod.SERVICE_INTERFACE);
 ```
 
@@ -536,3 +536,18 @@ switchToInputMethod
 ​                 《-----DEFAULT_INPUT_METHOD = "default_input_method"
 
 ​                               《-------   Settings.getStringForUser
+
+
+
+默认输入是如何决定的？
+
+> xml是硬盘里输入法
+>
+> mCurMethodId是IMMS帧的输入法
+>
+> ims是最后呈现的输入法
+
+
+
+# Settings信息详解
+
