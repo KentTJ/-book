@@ -32,7 +32,7 @@
 >
 > 3、每笔commit，都要验证基本功能OK：
 >
-> ​    （1）attach system_server进程，不会挂   
+> ​    （1）**attach system_server进程，不会挂**   
 >
 > ​     （2）业务基本功能OK
 
@@ -122,9 +122,17 @@ if (严格条件) {
 
 修改的代码，用动态开关
 
+```java
+static boolean isSwitchOn = false; 
 
+if (isSwitchOn) {
+    //新增代码
+}
+```
 
+----------> 为啥要这样做？
 
+如果新增代码，验证后是一个无用的代码 ----> 重启便可以恢复新增代码之前，<font color='red'>减少了再次编译的时间</font>
 
 
 

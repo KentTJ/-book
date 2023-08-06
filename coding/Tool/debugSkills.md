@@ -611,6 +611,14 @@ watch把自己要观察的多级内层的一个值，外提
 
 ---->  TODO
 
+
+
+补充：
+
+> idea是可以做到force   return，并返回你设置的值.......<font color='red'>很优</font>，见 ：  https://blog.jetbrains.com/idea/2015/09/intellij-idea-15-eap-improves-debugger-and-git-support/                  https://help.eclipse.org/latest/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Freference%2Fviews%2Fshared%2Fref-forcereturn.htm         https://blog.csdn.net/u010675669/article/details/124225873
+>
+> 但是，idea的remote  debug（即As）是不行的
+
 ### 注意事项：
 
 为了防止调试过程中应用被系统AMS干掉，先把开发者选项中的【显示所有应用程序无响应】开关打开，不打开的情况下断点调试过程中应用进程很容易挂掉。
@@ -1820,9 +1828,11 @@ Google、baidu、new Bing、bibili
 
 方法一：设置中关闭
 
-方法二：代码里关闭动画：
+方法二：<font color='red'>代码里关闭动画：</font>
 
+```
 
+```
 
 3、select an APP可以不ANR的
 
@@ -1922,7 +1932,11 @@ ctrl+alt+shift+i
 
 ## 加log技巧
 
-1、log也要注意判断null，否则直接crash，浪费编译时间
+1、log也要**注意判断null，**否则直接crash，浪费编译时间
+
+​       加log，可能导致attach system_process挂了
+
+​        ------> **规定**：（1）每次加完，验证一下   （2）**加log要谨慎，判空要做好**
 
 2、log和调用栈一起使用
 
