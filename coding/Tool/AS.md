@@ -422,6 +422,10 @@ adb connect host.docker.internal:7788
 
 ![image-20221211210350117](AS.assets/image-20221211210350117.png)
 
+# Device Monitor启动
+
+https://blog.csdn.net/weixin_55545941/article/details/130883921
+
 
 
 ## 快捷键
@@ -468,6 +472,13 @@ Shift + Shift  ------>  **全局** 查找 **符号**
 ALT + F (个人定制)  ----->  Find Usages:(<font color='red'>很优：</font> ~~当引用的地方非常多时，read、write已经极大缩小范围了~~)
 
 ![image-20230628222643763](AS.assets/image-20230628222643763.png)
+
+# AS技巧官方教程
+
+TODO:
+https://www.youtube.com/hashtag/androiddevsummit
+
+ 其中： https://www.youtube.com/watch?v=rjlhSDhFwzM&t=703s
 
 
 
