@@ -551,3 +551,88 @@ switchToInputMethod
 
 # Settings信息详解
 
+https://blog.csdn.net/dongxianfei/article/details/120436477
+
+https://blog.csdn.net/qq_37580586/article/details/122327215
+
+https://blog.csdn.net/xiaowang_lj/article/details/125077473?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-125077473-blog-122327215.235^v38^pc_relevant_anti_t3&spm=1001.2101.3001.4242.1&utm_relevant_index=3       ----> 详解
+
+1. **Global**：所有的偏好设置对系统的所有用户公开，第三方APP有读没有写的权限；
+2. **System**：包含各种各样的用户偏好系统设置，第三方APP有读没有写的权限；
+3. **Secure**：安全性的用户偏好系统设置，第三方APP有读没有写的权限。
+
+默认值的加载 ：
+
+​      [overlay](https://so.csdn.net/so/search?q=overlay&spm=1001.2101.3001.7020)文件位于device/google/atv/overlay/frameworks/base/packages/SettingsProvider/res/values/defaults.xml
+
+
+
+关于
+
+设置属性： setprop persist.sys.binary_xml false 
+
+重启
+
+![image-20230807234159754](InputMethod.assets/image-20230807234159754.png)
+
+设置后：
+
+![image-20230807234217612](InputMethod.assets/image-20230807234217612.png)
+
+
+
+-------> <font color='red'>但是 settings_secure.xml  仍然是二进制的</font>
+
+
+
+https://blog.csdn.net/wenzhi20102321/article/details/130646878    Android13 xml配置文件乱码问题解决
+
+
+
+
+
+## 关于setDisplayImePolicy最终生效的文件
+
+注：setDisplayImePolicy与settings无关，但是原理一样
+
+```java
+WMS.setDisplayImePolicy
+   DisplayWindowSettings.setDisplayImePolicy
+       SettingsProvider.updateOverrideSettings(
+	       mOverrideSettings.updateSettingsEntry(info, overrides)
+		        DisplayWindowSettingsProvider.writeSettings，其中，文件路径vendorFile = new File(Environment.getVendorDirectory(),VENDOR_DISPLAY_SETTINGS_FILE_PATH);
+				    XmlSerializer ----->  写入/vendor/etc/display_settings.xml
+```
+
+
+
+getImePolicyLocked时：
+
+```java
+    @DisplayImePolicy int getImePolicyLocked(DisplayContent dc) {
+        if (dc.getDisplayId() == Display.DEFAULT_DISPLAY) {
+            // Default display should show IME.
+            return DISPLAY_IME_POLICY_LOCAL;
+        }
+
+        final DisplayInfo displayInfo = dc.getDisplayInfo();
+        final SettingsProvider.SettingsEntry settings = mSettingsProvider.getSettings(displayInfo);
+        return settings.mImePolicy != null ? settings.mImePolicy
+                : DISPLAY_IME_POLICY_FALLBACK_DISPLAY;
+    }
+```
+
+<font color='red'>显示ime的规则：</font>
+
+1、主屏，默认0（在本屏幕显示ime）
+
+2、其次，获取 /vendor/etc/display_settings.xml 配置里的数据
+
+3、再其次，默认在主屏显示ime
+
+
+
+## Settings中值的监听----ContentObserver
+
+以输入法的settingObserver为例
+
