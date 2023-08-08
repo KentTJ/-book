@@ -419,6 +419,10 @@ final boolean perDisplayFocusEnabled = mContext.getResources().getBoolean(
 
 
 
+
+
+
+
 ## 修改
 
 
@@ -431,6 +435,46 @@ public void onStart() {
 ```
 
 ​		----> 也可以参考multi的
+
+
+
+
+
+# 硬件键盘与输入法软键盘
+
+## 硬件键盘的事件流程
+
+待验证：
+
+> 1、软件盘能弹出的时候：
+>
+> 我记得是先分发给焦点窗口对应的view里了（keyEvent），然后再传给输入法的（输入法拿到keyEvent，相当于输入了）
+>
+> 2、软键盘设置不能弹出时：
+>
+> 似乎直接输入到view的？？？？？？
+
+
+
+## 硬件键盘插入与软件盘之间的关系
+
+能否显示软键盘，
+
+**设置入口1：**
+
+![image-20230809004142023](InputMethod.assets/image-20230809004142023.png)
+
+
+
+![image-20230809004207839](InputMethod.assets/image-20230809004207839.png)
+
+
+
+![image-20230809004730493](InputMethod.assets/image-20230809004730493.png)
+
+**设置入口2：**
+
+![image-20230809004816230](InputMethod.assets/image-20230809004816230.png)
 
 
 
