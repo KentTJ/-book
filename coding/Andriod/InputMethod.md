@@ -476,6 +476,16 @@ public void onStart() {
 
 ![image-20230809004816230](InputMethod.assets/image-20230809004816230.png)
 
+注意：
+
+> 搜狗输入法并没有受到系统这个限制--------> 如何做到的？
+
+com.android.inputmethod.latin/.LatinIME  --------> 受限
+
+com.baidu.input/.ImeService   --------> 受限
+
+com.sohu.inputmethod.sogou/.SogouIME  --------> 不受限
+
 
 
 # 一些琐碎的补充
