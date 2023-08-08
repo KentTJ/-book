@@ -524,7 +524,7 @@ if (displays.length > 1) {
 
 
 
-<font color='red'>疑问:</font> 按道理，之前imms2的 userId 是有问题的。
+-<font color='red'>疑问:</font> 按道理，之前imms2的 userId 是有问题的。
 
 1、用了user0的输入法配置 ？似乎没有呀  ........难道后面复写掉了？
 
@@ -676,7 +676,7 @@ getImePolicyLocked时：
     }
 ```
 
-<font color='red'>显示ime的规则：</font>
+-<font color='red'>显示ime的规则：</font>
 
 1、主屏，默认0（在本屏幕显示ime）
 
