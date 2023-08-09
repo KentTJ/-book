@@ -569,9 +569,9 @@ InputMethodInfo info = mMethodMap.get(mCurMethodId);//关键 mCurMethodId是指�
 mCurIntent = new Intent(InputMethod.SERVICE_INTERFACE);
 ```
 
-《------------setInputMethodLocked 唯一赋值点
+<------------ setInputMethodLocked 唯一赋值点
 
-​         《------------updateInputMethodsFromSettingsLocked
+​         <----------------updateInputMethodsFromSettingsLocked
 
 ​                             
 
@@ -587,9 +587,9 @@ setInputMethodWithSubtypeIdLocked
 switchToInputMethod
 ```
 
-​                 《-----DEFAULT_INPUT_METHOD = "default_input_method"
+​                 <-----------DEFAULT_INPUT_METHOD = "default_input_method"
 
-​                               《-------   Settings.getStringForUser
+​                               <--------ui------   Settings.getStringForUser
 
 
 
@@ -705,3 +705,20 @@ getImePolicyLocked时：
 代码态、编译态、手机中jar、运行态
 
 手机磁盘静态、运行态
+
+
+
+# 抛开输入法不谈，有哪些深刻的点？
+
+## 输入与焦点
+
+抛开代码不谈：键盘（无论软硬）是个工具，对目标进行输入 --------->  必然有个绑定关系，这里就是焦点的概念
+
+进一步，抛开键盘不谈：  输入 与  输入对象之间如何对应？  -------->  焦点
+
+总之：
+
+1、任何输入（键盘、鼠标、软键盘）必然依赖于焦点：<font color='red'>焦点的本质是绑定关系</font>
+
+2、触摸下为什么安卓没有焦点？**因为绑定太明确了**，坐标在view范围内
+
