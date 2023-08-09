@@ -60,6 +60,12 @@ https://android.googlesource.com/platform/frameworks
 
 
 
+安卓是一个大的Binder应用
+
+> APP-----系统服务
+
+
+
 
 
 #    0层
