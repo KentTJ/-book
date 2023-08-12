@@ -36,6 +36,28 @@ https://www.jianshu.com/p/a14bfdc4109a?utm_campaign=maleskine&utm_content=note&u
 
 ## Systrace场景
 
+包含的信息内容：
+
+> 工作**线程**：内核+框架+应用
+>
+>  系统模块**状态** ：**CPU频率/GPU频率**/system property 赋值/frame buffer队列.
+
+优点：
+
+> 1、<font color='red'>图形化</font>   ---->  **技巧：**  自己做工具，也可以这样做
+>
+> 2、按照时间铺开
+
+关注点：
+
+> 运行时间
+>
+> 线程
+>
+> CPU工作频率
+>
+> CPU 抢占
+
 ## Systrace工具的使用
 
 ### 代码中触发
@@ -99,21 +121,42 @@ https://www.jianshu.com/p/a14bfdc4109a?utm_campaign=maleskine&utm_content=note&u
 
 
 
-### 阅读报告
+## 阅读报告
 
-方法一：~~使用 chrome://tracing/~~ 
+阅读网站：
 
-方法二：~~直接点html，这样有进程名~~，更优
+> 方法一：~~使用 chrome://tracing/~~ 
+>
+> 方法二：~~直接点html，这样有进程名~~，更优
+>
+> ![image-20221125005831779](Systrace.assets/image-20221125005831779.png)
+>
+> 方法三：优选
+>
+> > https://ui.perfetto.dev/
+>
 
-![image-20221125005831779](Systrace.assets/image-20221125005831779.png)
+### 页面结构
 
-方法三：优选
-
-> https://ui.perfetto.dev/
+![image-20230812141848274](Systrace.assets/image-20230812141848274.png)
 
 
 
-#### **状态不同的线程**：
+CPU大纲：红色代表cpu<font color='red'>核心负载高</font>
+
+CPU使用具体页面展开：
+
+​                                  1、每个cpu在做哪些工作
+
+​                                 2、颜色代表  <font color='red'>线程状态</font> （见下） -------><font color='green'> 错误！！！！这里是cpu的，不是线程！！！</font>
+
+事件：
+
+
+
+
+
+### **线程的不同状态-------颜色**：
 
 参考： https://www.androidperformance.com/2019/07/23/Android-Systrace-Pre/#/%E6%AD%A3%E6%96%87
 
@@ -125,9 +168,7 @@ https://www.jianshu.com/p/a14bfdc4109a?utm_campaign=maleskine&utm_content=note&u
 >
 > 对于在等待序列中的进程，需要查看是否有过多任务在等待、等待时间是否过长等。
 >
-> 白色 --> 休眠中 Sleeping
->
-> 这里一般是在等事件驱动。
+> 白色 --> 休眠中 Sleeping： 这里一般是在等事件驱动。
 >
 > 橘色 --> 不可中断的睡眠态_IO_Block Uninterruptible Sleep | WakeKill - Block I/O
 >
@@ -145,7 +186,7 @@ https://www.jianshu.com/p/a14bfdc4109a?utm_campaign=maleskine&utm_content=note&u
 
 ![image-20221125010038993](Systrace.assets/image-20221125010038993.png)
 
-#### 线程唤醒者分析
+### 线程唤醒者分析
 
 注意:  看似函数一直在走,但是线程已经 sleep了.  说明函数运行 sleep了.
 
@@ -171,7 +212,7 @@ https://www.jianshu.com/p/a14bfdc4109a?utm_campaign=maleskine&utm_content=note&u
 
 ![image-20221125230430679](Systrace.assets/image-20221125230430679.png)
 
-#### 如何找唤醒过程对应的代码级呢？ 
+### 如何找唤醒过程对应的代码级呢？ 
 
 
 
@@ -250,6 +291,8 @@ https://www.jianshu.com/p/a14bfdc4109a?utm_campaign=maleskine&utm_content=note&u
 
 
 https://blog.csdn.net/qq_23452385/article/details/131567881  Perfetto 命令行工具（Android 10 及更高版本）_android perfetto_xhBruce的博客-CSDN博客
+
+https://perfetto.dev/docs/data-sources/cpu-scheduling   <font color='red'>perfetto的官方文档 </font>
 
 
 

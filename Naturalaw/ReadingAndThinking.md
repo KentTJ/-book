@@ -1786,9 +1786,13 @@ https://zhuanlan.zhihu.com/p/30489002?utm_source=wechat_session&utm_medium=socia
 
 
 
-### 对个人成长无益
+### 英语是个好东西
 
-价值，价值
+原因在于：
+
+1、是你成为迈进高阶大门的 钥匙
+
+2、**将大部分人拦在门外**
 
 
 
