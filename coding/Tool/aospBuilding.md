@@ -565,11 +565,13 @@ lunch sdk_x86_64
 
 **注意点：**
 
-> 1、out/target/product/emulator_x86_64/    路径下，有-qemu.img，尽量用带-qemu.img的：
+> 1、out/target/product/emulator_x86_64/   
 >
-> ramdisk-qemu.img,system-qemu.img,vendor-qemu.img   ----> 
+> ![image-20230813021530529](aospBuilding.assets/image-20230813021530529.png)
 >
-> 2、最大限度替换：尽量把 win下里的文件都替换掉
+> ----> 注意将*ramdisk-qemu.img,system-qemu.img,vendor-qemu.img*这三个文件<font color='red'>重命名为</font>*ramdisk.img,system.img,vendor.img*。
+>
+> 2、替换：把win下  android-31\google_apis\x86_64下里的文件替换掉
 >
 > C:\Users\用户名\AppData\Local\Android\Sdk\system-images\android-30\google_apis_playstore\x86_64
 
