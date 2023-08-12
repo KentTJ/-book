@@ -1617,6 +1617,22 @@ H盘
 
 
 
+## 查找磁盘大文件
+
+各种软件会告诉你的c盘容量被什么吃掉了
+
+---------------> 虽然一键瘦身 要会员。。。<font color='red'>但是指明了 磁盘没空间的原因，一个个解就好</font>
+
+![image-20230813010257108](software_pcSettings.assets/image-20230813010257108.png)
+
+## 更改虚拟内存为E盘
+
+释放c盘空间
+
+https://www.rstk.cn/news/730355.html?action=onClick
+
+
+
 ## 电脑wifi经常掉
 
 wifi的驱动，禁止关闭

@@ -109,6 +109,10 @@ sched freq idle  am  wm sm input view
 
 
 
+#### perfetto命令行
+
+adb shell perfetto -h             https://juejin.cn/post/6974368361283059719
+
 
 
 ### 键盘快捷键
@@ -118,6 +122,14 @@ https://www.jianshu.com/p/a14bfdc4109a?utm_campaign=maleskine&utm_content=note&u
 ![在这里插入图片描述](Systrace.assets/20201104192158742.png)
 
 ### 使用命令行捕获Systreace报告文件
+
+
+
+### 模拟器 perfetto命令 抓取 trace
+
+https://blog.csdn.net/Redmoon955331/article/details/129736238
+
+https://blog.csdn.net/tyearlin/article/details/123426616
 
 
 
@@ -294,7 +306,7 @@ https://blog.csdn.net/qq_23452385/article/details/131567881  Perfetto 命令行�
 
 https://perfetto.dev/docs/data-sources/cpu-scheduling   <font color='red'>perfetto的官方文档 </font>
 
-
+https://huaweicloud.csdn.net/63563dbad3efff3090b5be9c.html?spm=1001.2101.3001.6650.7&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Eactivity-7-126672666-blog-129736238.235%5Ev38%5Epc_relevant_anti_t3&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Eactivity-7-126672666-blog-129736238.235%5Ev38%5Epc_relevant_anti_t3&utm_relevant_index=8    高阶
 
 
 
@@ -409,4 +421,16 @@ adb shell perfetto -o /data/misc/perfetto-traces/trace_file.perfetto-trace -t 20
 https://droid10.com/Android/Android%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/
 
 
+
+# TODO:
+
+https://zhuanlan.zhihu.com/p/348548041  Android性能优化机制-优先级反转问题
+
+
+
+
+
+https://pyautogui.readthedocs.io/en/latest/index.html    pyautogui操作电脑
+
+https://blog.csdn.net/toopoo/article/details/124660769?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-5-124660769-blog-112331887.235^v38^pc_relevant_anti_t3&spm=1001.2101.3001.4242.4&utm_relevant_index=6     
 
