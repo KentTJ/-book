@@ -62,12 +62,24 @@ https://www.jianshu.com/p/a14bfdc4109a?utm_campaign=maleskine&utm_content=note&u
 
 ### 代码中触发
 
-```
+有些要看的内容没有在现有的trace里，<font color='red'>不够需要自己加TAG：</font>
+
+
+
+```java
+//
+Trace.traceBegin(Trace.TRACE_TAG_VIEW, "onCreate");
+................
+Trace.traceEnd(Trace.TRACE_TAG_VIEW);
+
+
+
+//
 Trace.beginsection ("onConfigurationChanged"); // systemTrace, 性能
 ...................
 Trace.endSection();
 
-
+//
 Trace.asyncTraceBegin
 ...................
 Trace.asyncTraceEnd
@@ -76,6 +88,10 @@ Trace.asyncTraceEnd
 
 
 ### 命令行
+
+
+
+
 
 python systrace.py [options] [categories]
 
@@ -130,6 +146,33 @@ https://www.jianshu.com/p/a14bfdc4109a?utm_campaign=maleskine&utm_content=note&u
 https://blog.csdn.net/Redmoon955331/article/details/129736238
 
 https://blog.csdn.net/tyearlin/article/details/123426616
+
+
+
+### ~~atrace~~
+
+
+
+adb shell atrace sched freq idle am wm gfx view sync ss power rs res binder driver binder _lock input hal camera aidl disk -b 96000 -t 5
+
+atrace优点：<font color='red'>安卓新老版本都能 使用</font>
+
+详解：
+
+```shell
+adb shell atrace  \
+sched freq idle \  CPU的排程和频率
+am wm gfx view sync ss power rs res \framework层
+binder driver binder _lock \binder调用关系
+input hal camera aidl disk \驱动：输入、相机
+-b 96000 -t 5    \ buffer大小10M左右，时间5s
+```
+
+### perfetto
+
+优点：
+
+<font color='red'>可视化做的更好</font>。可以跳转，有箭头链接 
 
 
 
@@ -230,7 +273,218 @@ CPU使用具体页面展开：
 
 
 
-### 看报告操作
+
+
+### mark标尺：快捷键m
+
+1、方法一：选中**某一slice**，m
+
+> 就有了从上至下的标尺 -----> <font color='red'>作用：统一时间段观察</font>
+>
+> ![image-20230813142935457](Systrace.assets/image-20230813142935457.png)
+>
+> 
+>
+> 
+
+
+
+
+
+方法二： 点击空白区域，任意新增mark标尺
+
+> ![image-20230813194848752](Systrace.assets/image-20230813194848752.png)
+
+标尺的删除，与改变颜色：
+
+> 先选中：
+>
+> ![image-20230813144954267](Systrace.assets/image-20230813144954267.png)
+
+
+
+
+
+### ~~关于log（次要）~~
+
+1、选中log，<font color='red'>给出log图形化的位置，可以和其他链接起来</font>
+
+2、可以过滤
+
+![image-20230813144633124](Systrace.assets/image-20230813144633124.png)
+
+
+
+### 选中一段时间为base
+
+#### 如何选中一段时间？
+
+
+
+> ![image-20230813144422987](Systrace.assets/image-20230813144422987.png)
+>
+> 或者在大纲里选一段时间
+>
+> 或者在内容中框选
+>
+> ![image-20230813163503405](Systrace.assets/image-20230813163503405.png)
+
+如何反选？
+
+> 鼠标左键。**选中时间，只是一个临时选中**
+
+
+
+TODO: 能否有标尺？
+
+
+
+#### 基于选中的时间，看各个统计量
+
+这段时间的log：
+
+> ![image-20230813144525597](Systrace.assets/image-20230813144525597.png)
+
+#### 前三个cpu的 统计：
+
+期间，前三个cpu的 有哪些线程、进程
+
+![image-20230813170904694](Systrace.assets/image-20230813170904694.png)
+
+
+
+#### Binder流的数量
+
+当前时间 + 选中的进程的：
+
+> ![image-20230813171625769](Systrace.assets/image-20230813171625769.png)
+
+
+
+## 高阶---SQL语言统计信息
+
+### google已经添加的sample
+
+> （1）所有进程：
+>
+> ![image-20230813173535260](Systrace.assets/image-20230813173535260.png)
+>
+> （2）进程占用的cpu时间：
+>
+> ![image-20230813174228247](Systrace.assets/image-20230813174228247.png)
+
+
+
+
+
+### 统计**各个进程的 总占时，且排序**：
+
+```java
+select
+  process.pid,
+  process.name, sum(dur)/1e9 as cpu_sec
+from sched
+join thread using (utid)
+join process using (upid)
+group by upid, pid order by cpu_sec desc;
+
+```
+
+可见，前几名耗时的是audioserer、allocator、..............
+
+![image-20230813175040323](Systrace.assets/image-20230813175040323.png)
+
+<font color='red'>cpu占用率计算</font>（以system_server为例子）：
+
+> 0.282787991/10s的trace*4个cpu核  = 0.0028
+
+<font color='red'>cpu核心空闲时长：</font>
+
+> pid = 0 占用了34s  -------> swapper是占空的？也就是40s内，有34s cpu核心是没有用的
+
+### 统计**各个线程的 总占时，且排序**：
+
+```shell
+select
+  thread.name as threadname,
+  thread. tid as tid,
+round (sum(dur) / 1e9,2) as cpu_sec
+from sched
+inner join thread using (utid) group by threadname, tid
+order by cpu_sec desc
+```
+
+可见，**Render线程还是很耗时的**。而且每个应用一个render线程
+
+![image-20230813190353998](Systrace.assets/image-20230813190353998.png)
+
+cpu占有率计算，同上
+
+
+
+### 查询与某一线程 有相关调用的线程
+
+即：弄清楚线程的交互关系
+
+TODO: 没弄懂，如何找到waker.name？
+
+```java
+DROP VIEW IF EXISTS wakee_table; 
+CREATE VIEW wakee_table AS
+SELECT
+  waker.tid as waker_tid, wakee_runnable.utid as wakee_utid
+FROM thread AS waker
+JOIN thread_state AS wakee_runnable ON waker.utid = wakee_runnable.waker_utid 
+WHERE waker.name = "EvtQ_c2.qti.avc":
+
+SELECT waker_tid, thread. tid, thread.name
+FROM wakee_table
+JOIN thread ON thread. utid=wakee_table.wakee_utid;
+```
+
+
+
+
+
+## binder跨进程调用
+
+### 调用点跳转（回跳）：
+
+图形化的好处，可以点击跳转，方便
+
+#### 选中箭头，然后点Flows的跳转箭头
+
+> binder async rcv : <font color='red'>异步接收端</font> 
+>
+> ![image-20230813193109269](Systrace.assets/image-20230813193109269.png)
+
+同理，<font color='red'>binder transaction async 异步调用端</font>，点击箭头，**回跳**
+
+![image-20230813193345048](Systrace.assets/image-20230813193345048.png)
+
+![image-20230813193551418](Systrace.assets/image-20230813193551418.png)
+
+------------>  没有return的one-way调用
+
+#### <font color='red'>对应的binder流：</font>  耗时，调用者，被调用者
+
+> ![image-20230813193707026](Systrace.assets/image-20230813193707026.png)
+
+
+
+对于trace看binder调用的优点：
+
+> 跨进程binder调用，比同进程调用（很多时候，没有添加），更容易发现一些
+
+
+
+### Perfetto快捷键
+
+![e0e45471107bc0cb6fef9655e7ee897d.png](Systrace.assets/e0e45471107bc0cb6fef9655e7ee897d.png)
+
+技巧：
+
+> 用a与d 放大缩小时，**鼠标左键点击，成为放缩的中心**
 
 
 
@@ -309,6 +563,12 @@ https://perfetto.dev/docs/data-sources/cpu-scheduling   <font color='red'>perfet
 https://huaweicloud.csdn.net/63563dbad3efff3090b5be9c.html?spm=1001.2101.3001.6650.7&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Eactivity-7-126672666-blog-129736238.235%5Ev38%5Epc_relevant_anti_t3&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Eactivity-7-126672666-blog-129736238.235%5Ev38%5Epc_relevant_anti_t3&utm_relevant_index=8    高阶
 
 
+
+## TODO:
+
+通过transactionid找对应的方法WW
+
+![image-20230813093339758](Systrace.assets/image-20230813093339758.png)
 
 # Oprofile
 
