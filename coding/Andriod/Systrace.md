@@ -263,7 +263,7 @@ CPU使用具体页面展开：
 
 ![image-20221125010038993](Systrace.assets/image-20221125010038993.png)
 
-### 线程唤醒者分析
+### 线程唤醒者分析---atrace
 
 注意:  看似函数一直在走,但是线程已经 sleep了.  说明函数运行 sleep了.
 
@@ -288,6 +288,42 @@ CPU使用具体页面展开：
 即结论：render线程唤醒了ui线程
 
 ![image-20221125230430679](Systrace.assets/image-20221125230430679.png)
+
+### 线程唤醒者分析(函数调用者分析)----perfetto
+
+例子：
+
+找System_server中startActivityInner是谁调用的？（<font color='red'>如何查找调用者问题</font>）
+
+<-----------> 等价命题：即 这个线程是谁唤醒的？（<font color='red'>线程唤醒问题</font>）
+
+​                                   即：**线程状态怎么转成Running？**
+
+![image-20230814012659358](Systrace.assets/image-20230814012659358.png)
+
+
+
+步骤：
+
+1、选中Running  slice
+
+注：**小的Runnable可能跟锁有关，先不管**  -----> <font color='red'>TODO</font>
+
+![image-20230814013551792](Systrace.assets/image-20230814013551792.png)
+
+选择大的Runnable后面的slice
+
+![image-20230814013753767](Systrace.assets/image-20230814013753767.png)
+
+2、Running on CPU 1  跳转CPU1
+
+被cpu0的 com.android.launcher3 1101唤醒
+
+![image-20230814014026896](Systrace.assets/image-20230814014026896.png)
+
+总之：
+
+> <font color='red'>没有看代码，完全依照图形，找到了函数的调用者</font>
 
 ### 如何找唤醒过程对应的代码级呢？ 
 
@@ -424,7 +460,7 @@ group by upid, pid order by cpu_sec desc;
 
 > 0.282787991/10s的trace*4个cpu核  = 0.0028
 
-<font color='red'>cpu核心空闲时长：</font>
+<font color='red'>cpu核心空闲时长：</font> swapper是CPU线程唤醒机制
 
 > pid = 0 占用了34s  -------> swapper是占空的？也就是40s内，有34s cpu核心是没有用的
 
@@ -536,6 +572,8 @@ google已经为我们准备好了一些锚点-----> 大的TAG：
 
 ### bufferTX
 
+统计surfaceFlinger中每一个layer
+
 
 
 ## 小技巧：
@@ -556,9 +594,11 @@ google已经为我们准备好了一些锚点-----> 大的TAG：
 
 atrace下
 
-## 终极目标：挪动线程到一起，串点成线：
+## 终极目标：拼图
 
--------------》  <font color='red'>TODO: 这个是阅读trace的唯一目标？</font>
+<font color='red'>挪动线程到一起，串点成线：</font>
+
+------------->   <font color='red'>TODO: 这个是阅读trace的唯一目标？</font>
 
 
 
@@ -713,6 +753,10 @@ https://huaweicloud.csdn.net/63563dbad3efff3090b5be9c.html?spm=1001.2101.3001.66
 3、binder Traction调用，时间轴上是往回的呢？
 
 4、多看几次视频，学会精髓
+
+5、普通trace与perfetto的转换
+
+
 
 # Oprofile
 
