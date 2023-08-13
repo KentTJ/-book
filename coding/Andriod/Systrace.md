@@ -64,7 +64,7 @@ https://www.jianshu.com/p/a14bfdc4109a?utm_campaign=maleskine&utm_content=note&u
 
 有些要看的内容没有在现有的trace里，<font color='red'>不够需要自己加TAG：</font>
 
-
+java：
 
 ```java
 //
@@ -83,6 +83,28 @@ Trace.endSection();
 Trace.asyncTraceBegin
 ...................
 Trace.asyncTraceEnd
+```
+
+
+
+framework native添加：
+
+```cpp
+#define ATRACE_TAG ATRACE_TAG_VIEW
+ATRACE_NAME(base::StringPrintf("LoadApkAssets(%s)", path.c_str()).c_str());
+
+
+ATRACE_CALL(); //
+```
+
+或：
+
+```cpp
+#include <cutils/trace.h>
+
+ATRACE_BEGIN(trace.c_str());
+.............
+ATRACE_END();
 ```
 
 
@@ -361,6 +383,10 @@ TODO: 能否有标尺？
 
 
 
+
+
+
+
 ## 高阶---SQL语言统计信息
 
 ### google已经添加的sample
@@ -478,7 +504,100 @@ JOIN thread ON thread. utid=wakee_table.wakee_utid;
 
 
 
-### Perfetto快捷键
+
+
+## 小技巧：
+
+### 锚点
+
+google已经为我们准备好了一些锚点-----> 大的TAG：
+
+<font color='red'>以这些为锚点，找其他的</font>
+
+1、Andriod App Startups
+
+![image-20230813225647711](Systrace.assets/image-20230813225647711.png)
+
+
+
+这段做了啥事情？
+
+> 从进程起来---->  到 第一帧绘出来
+>
+> ![image-20230813230045763](Systrace.assets/image-20230813230045763.png)
+
+-----------> **注意，这就是APP冷启动时间**
+
+
+
+
+
+### 浏览器全屏F11
+
+看trace**纵向是稀缺资源** ，所以，浏览器全屏F11
+
+
+
+## 挪动主要线程到一起，串点成线：
+
+-------------》  <font color='red'>TODO: 这个是阅读trace的唯一目标？</font>
+
+
+
+标准：
+
+> 没有空白； 
+>
+> binder调用链条完整
+
+作用：
+
+> 逻辑上完整
+>
+> **减少上下的滚动**  ------>  <font color='red'>美好</font>
+
+![image-20230813232307253](Systrace.assets/image-20230813232307253.png)
+
+
+
+## 实战
+
+
+
+### 应用冷启动--以Launch点击应用图标为例
+
+《见startApp》
+
+### TODO:  其他章节用systrace来分析
+
+
+
+## Systrace的原理
+
+参考：
+
+https://blog.csdn.net/feelabclihu/article/details/106247862  好文
+
+
+
+简易的流程图：
+
+![img](Systrace.assets/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9kNGhvWUpseE9qT3BxZTc0Z2hYaWNVdklsOEZmaWFDV0xBSnE2UUZVb01RSmxhSDRzUGVXamliblE4TWNhU2ExaGZvYVhySlpBMlFHRjBCanp2VVI2QWV1Zy82NDA)
+
+**具体实现：**
+
+![img](Systrace.assets/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9kNGhvWUpseE9qT3BxZTc0Z2hYaWNVdklsOEZmaWFDV0xBaWNseUdaMG5pY2JuT085UDBXaWJaQnMydHRwa0ZmZVJJb050a05aN1FEYzNpYm1vdmxETDNaczNqQS82NDA)
+
+Systrace抓取的trace数据，总体上可以分为两类：
+一类是Java和Native在用户层发生的函数调用，一类是内核态的事件信息。
+
+
+
+### 开源代码
+
+systrace的生母，谷歌开源项目https://chromium.googlesource.com/catapult。
+
+## Perfetto快捷键
 
 ![e0e45471107bc0cb6fef9655e7ee897d.png](Systrace.assets/e0e45471107bc0cb6fef9655e7ee897d.png)
 
@@ -507,42 +626,13 @@ JOIN thread ON thread. utid=wakee_table.wakee_utid;
 
 ![image-20221125010842627](Systrace.assets/image-20221125010842627.png)
 
-## Systrace的原理
-
-参考：
-
-https://blog.csdn.net/feelabclihu/article/details/106247862  好文
-
-
-
-简易的流程图：
-
-![img](Systrace.assets/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9kNGhvWUpseE9qT3BxZTc0Z2hYaWNVdklsOEZmaWFDV0xBSnE2UUZVb01RSmxhSDRzUGVXamliblE4TWNhU2ExaGZvYVhySlpBMlFHRjBCanp2VVI2QWV1Zy82NDA)
-
-**具体实现：**
-
-![img](Systrace.assets/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9kNGhvWUpseE9qT3BxZTc0Z2hYaWNVdklsOEZmaWFDV0xBaWNseUdaMG5pY2JuT085UDBXaWJaQnMydHRwa0ZmZVJJb050a05aN1FEYzNpYm1vdmxETDNaczNqQS82NDA)
-
-Systrace抓取的trace数据，总体上可以分为两类：
-一类是Java和Native在用户层发生的函数调用，一类是内核态的事件信息。
-
-
-
-### 开源代码
-
-systrace的生母，谷歌开源项目https://chromium.googlesource.com/catapult。
-
-
-
 
 
 ## 遇到的坑：
 
 1、platform-tools下找不到systrace文件夹  https://www.jianshu.com/p/626eaebaa6a8
 
-## 实战
 
-TODO:  其他章节用systrace来分析
 
 ## 参考：
 
@@ -569,6 +659,14 @@ https://huaweicloud.csdn.net/63563dbad3efff3090b5be9c.html?spm=1001.2101.3001.66
 通过transactionid找对应的方法WW
 
 ![image-20230813093339758](Systrace.assets/image-20230813093339758.png)
+
+2、如何把竖向弄窄一点儿？
+
+
+
+3、binder Traction调用，时间轴上是往回的呢？
+
+4、多看几次视频，学会精髓
 
 # Oprofile
 
