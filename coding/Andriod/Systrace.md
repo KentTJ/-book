@@ -454,6 +454,8 @@ cpu占有率计算，同上
 
 TODO: 没弄懂，如何找到waker.name？
 
+比如：**查找InputDispatcher线程  唤醒 哪些线程？**
+
 ```java
 DROP VIEW IF EXISTS wakee_table; 
 CREATE VIEW wakee_table AS
@@ -461,16 +463,22 @@ SELECT
   waker.tid as waker_tid, wakee_runnable.utid as wakee_utid
 FROM thread AS waker
 JOIN thread_state AS wakee_runnable ON waker.utid = wakee_runnable.waker_utid 
-WHERE waker.name = "EvtQ_c2.qti.avc":
+    WHERE waker.name = "InputDispatcher";
 
 SELECT waker_tid, thread. tid, thread.name
 FROM wakee_table
 JOIN thread ON thread. utid=wakee_table.wakee_utid;
 ```
 
+唤醒的：
+
+![image-20230814005438004](Systrace.assets/image-20230814005438004.png)
 
 
 
+### TODO: 理解SQL语句含义
+
+后面写自己的语句
 
 ## binder跨进程调用
 
@@ -536,9 +544,11 @@ google已经为我们准备好了一些锚点-----> 大的TAG：
 
 看trace**纵向是稀缺资源** ，所以，浏览器全屏F11
 
+### 两个搜索联合使用：
 
+![image-20230814004954130](Systrace.assets/image-20230814004954130.png)
 
-## 挪动主要线程到一起，串点成线：
+## 挪动线程到一起，串点成线：
 
 -------------》  <font color='red'>TODO: 这个是阅读trace的唯一目标？</font>
 
@@ -559,6 +569,26 @@ google已经为我们准备好了一些锚点-----> 大的TAG：
 ![image-20230813232307253](Systrace.assets/image-20230813232307253.png)
 
 
+
+关联法：
+
+> <font color='red'>抛开代码，</font>去连图  ------->  搭建框架
+>
+> <font color='red'>极优：不依赖于代码知识！！！！！</font> -------->  所以，**不需要看代码，而是看图说话**
+>
+> 
+
+技巧：
+
+> 动态调整
+
+
+
+步骤：
+
+1、按照大的概念，把各个模块凑起来：
+
+2、
 
 ## 实战
 
