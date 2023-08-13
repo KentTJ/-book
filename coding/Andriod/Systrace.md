@@ -194,7 +194,7 @@ input hal camera aidl disk \驱动：输入、相机
 
 优点：
 
-<font color='red'>可视化做的更好</font>。可以跳转，有箭头链接 
+-<font color='red'>可视化做的更好</font>。可以跳转，有箭头链接 
 
 
 
@@ -460,11 +460,11 @@ group by upid, pid order by cpu_sec desc;
 
 ![image-20230813175040323](Systrace.assets/image-20230813175040323.png)
 
-<font color='red'>cpu占用率计算</font>（以system_server为例子）：
+-<font color='red'>cpu占用率计算</font>（以system_server为例子）：
 
 > 0.282787991/10s的trace*4个cpu核  = 0.0028
 
-<font color='red'>cpu核心空闲时长：</font> swapper是CPU线程唤醒机制
+-<font color='red'>cpu核心空闲时长：</font> swapper是CPU线程唤醒机制
 
 > pid = 0 占用了34s  -------> swapper是占空的？也就是40s内，有34s cpu核心是没有用的
 
@@ -558,7 +558,7 @@ JOIN thread ON thread. utid=wakee_table.wakee_utid;
 
 google已经为我们准备好了一些锚点-----> 大的TAG：
 
-<font color='red'>以这些为锚点，找其他的</font>
+-<font color='red'>以这些为锚点，找其他的</font>
 
 1、Andriod App Startups
 
@@ -600,7 +600,7 @@ atrace下
 
 ## 终极目标：拼图
 
-<font color='red'>挪动线程到一起，串点成线：</font>
+-<font color='red'>挪动线程到一起，串点成线：</font>
 
 ------------->   <font color='red'>TODO: 这个是阅读trace的唯一目标？</font>
 
