@@ -615,6 +615,14 @@ TODO:
 
 
 
+## 1层框架
+
+
+
+![img](AndriodSystem.assets/26874665-79225531199ba7ce.png)
+
+来自： https://www.jianshu.com/p/37370c1d17fc
+
 ## 三缓冲+vsync：从显示屏显示讲起，为什么要这么设计
 
 ### 背景：
@@ -1084,6 +1092,12 @@ performTraversals
     performLayout
     performDraw
 ```
+
+
+
+
+
+TODO: 对应代码的开关在哪里？
 
 
 
