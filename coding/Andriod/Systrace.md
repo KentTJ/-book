@@ -552,7 +552,7 @@ JOIN thread ON thread. utid=wakee_table.wakee_utid;
 
 ------------>  没有return的one-way调用
 
-#### <font color='red'>对应的binder流：</font>  耗时，调用者，被调用者
+#### -<font color='red'>对应的binder流：</font>  耗时，调用者，被调用者
 
 > ![image-20230813193707026](Systrace.assets/image-20230813193707026.png)
 
@@ -562,7 +562,15 @@ JOIN thread ON thread. utid=wakee_table.wakee_utid;
 
 > 跨进程binder调用，比同进程调用（很多时候，没有添加），更容易发现一些
 
+#### 特点
 
+-<font color='red'>trace监控了所有的binder调用。</font>
+
+在binder层面做的监控 -----> 所以没有名字
+
+**推论：**
+
+> 所有的跨进程调用，都会在trace中体现 --------> 问题在于，<font color='red'>TODO：如何和代码对应？</font>
 
 ## 已知
 
@@ -705,7 +713,7 @@ systrace的生母，谷歌开源项目https://chromium.googlesource.com/catapult
 
 技巧：
 
-> 用a与d 放大缩小时，**鼠标左键点击，成为放缩的中心**
+> 用a与d 放大缩小时，**鼠标左键点击（或者<font color='red'>鼠标悬停</font>），成为放缩的中心**
 
 
 
@@ -732,9 +740,23 @@ systrace的生母，谷歌开源项目https://chromium.googlesource.com/catapult
 
 ## 遇到的坑：
 
-1、platform-tools下找不到systrace文件夹  https://www.jianshu.com/p/626eaebaa6a8
+### platform-tools下找不到systrace文件夹
 
+  https://www.jianshu.com/p/626eaebaa6a8
 
+### 没有写入权限：
+
+> （1）主要这个文件路径不能删除
+>
+> （2）这个路径是专门为trace准备的。结果不能存放在其他目录
+
+![image-20230816005817965](Systrace.assets/image-20230816005817965.png)
+
+解决办法：
+
+> 重新刷机
+>
+> 模拟器，重新替换img
 
 ## 参考：
 
