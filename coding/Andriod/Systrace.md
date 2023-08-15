@@ -572,6 +572,10 @@ JOIN thread ON thread. utid=wakee_table.wakee_utid;
 
 > 所有的跨进程调用，都会在trace中体现 --------> 问题在于，<font color='red'>TODO：如何和代码对应？</font>
 
+## 锁竞争(`lock contention`)
+
+https://blog.csdn.net/SOHU_TECH/article/details/131118616
+
 ## 已知
 
 ### 锚点
