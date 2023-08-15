@@ -331,6 +331,18 @@ CPU使用具体页面展开：
 
 ![image-20230814014238341](Systrace.assets/image-20230814014238341.png)
 
+### binder线程唤醒者分析----perfetto
+
+1、binder线程不用像非binder线程那么麻烦，<font color='red'>因为只要点击slice</font>（<font color='red'>binder  transaction</font>或者 <font color='red'>binder reply</font>），就会有调用连线:
+
+![image-20230816000734724](Systrace.assets/image-20230816000734724.png)
+
+2、注：箭头描述的调用，时间是不准确的：
+
+
+
+
+
 ### 如何找唤醒过程对应的代码级呢？ 
 
 
