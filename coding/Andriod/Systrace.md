@@ -572,6 +572,38 @@ JOIN thread ON thread. utid=wakee_table.wakee_utid;
 
 > 所有的跨进程调用，都会在trace中体现 --------> 问题在于，<font color='red'>TODO：如何和代码对应？</font>
 
+
+
+### 两种binder调用的画法不同
+
+1、oneway形式的（没有返回）：
+
+> -<font color='red'>图中特征：</font>
+>
+> （1）<font color='red'>有小箭头</font>
+>
+> （2）、调用点一定在被调用之前
+>
+> ![image-20230816231614226](Systrace.assets/image-20230816231614226.png)
+
+2、有返回值的
+
+即同步调用
+
+-<font color='red'>图中特征：</font>
+
+（1）<font color='red'>binder transaction  & binder reply</font>
+
+（2）图中画线调用点在被调用之后（<font color='green'>画的有问题？</font>），但实际上，
+
+> -<font color='red'>A、调用点为红色框点；</font>
+>
+> -<font color='red'>B、返回点是binder transaction结束点（此时拿到返回值）</font>
+
+![image-20230817001843797](Systrace.assets/image-20230817001843797.png)
+
+
+
 ## 锁竞争(`lock contention`)
 
 https://blog.csdn.net/SOHU_TECH/article/details/131118616
@@ -762,9 +794,33 @@ systrace的生母，谷歌开源项目https://chromium.googlesource.com/catapult
 
 解决办法：
 
-> 重新刷机
+> 方法一：重新刷机
 >
-> 模拟器，重新替换img
+> 方法二：模拟器，重新替换img
+>
+> 方法三（<font color='red'>优</font>）：adb shell setenforce 0           ------> 实际上就是关闭**Selinux权限**     
+>
+> 参考：https://blog.csdn.net/qq_19004627/article/details/119612924
+
+
+
+```java
+使用setenforce 命令进行设置:
+adb shell setenforce 0 //设置成permissive 模式
+adb shell setenforce 1 //设置成enforce 模式
+```
+
+
+
+### ~~超长slice~~.
+
+原因：
+
+> (1)、没有加成对的tag
+>
+> （2）、很多的超长slice  ----->  buffer不够，tag掉了
+
+![image-20230816232506223](Systrace.assets/image-20230816232506223.png)
 
 ## 参考：
 
