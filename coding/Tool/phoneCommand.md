@@ -1221,6 +1221,48 @@ Elements in the buffer: 0
 >
 > 这其实是输出：从上到下沿Z轴的应用token
 
+### 技巧之 循环dump
+
+**针对于对一段流程**，不停做切片   ---->  <font color='red'>status思想、帧动画思想</font>   TODO: 扩展
+
+```java
+::getLayersFrames.bat
+    
+set Folder="DumpInfo_log"
+set n=20
+mkdir %Folder%
+::for /L %% Variable in (Start#,Step#,End#) do Command
+for /L %%i in (1,1,%n%) do (
+     adb shell dumpsys SurfaceFlinger > %Folder%/layers%%i%.txt
+)
+
+echo log抓取完成
+timeout  /t  50
+exit
+
+```
+
+
+
+```java
+::getWindowFrames.bat
+set Folder="DumpInfo_log"
+set n=20
+mkdir %Folder%
+::for /L %% Variable in (Start#,Step#,End#) do Command
+for /L %%i in (1,1,%n%) do (
+     adb shell dumpsys window  > %Folder%/window%%i%.txt
+)
+
+echo log抓取完成
+timeout  /t  50
+exit
+```
+
+TODO: 基于这种思想，可以扩展至任意status  的dump中
+
+
+
 ### 推论：获取当前 最前面activty的脚本：
 
 ```java
