@@ -402,8 +402,6 @@ lucy 吃汉堡包，如果自己做，那么依赖 汉堡包，牛肉，vegetabl
 
 
 
-
-
 安卓中的例子：
 
 在Android系统中，我们经常会通过Context获取系统级别的服务，如WindowsManagerService、ActivityManagerService等，
@@ -458,7 +456,13 @@ lucy 吃汉堡包，如果自己做，那么依赖 汉堡包，牛肉，vegetabl
 
 
 
-####  静态内部类实现单例模式(非常推荐)
+####  静态内部类实现单例模式(<font color='red'>非常推荐</font>)
+
+-<font color='red'>对于java</font>，非常推荐这种方式-------------利用了Jvm的线程互斥（**很机智**）
+
+
+
+比如：qing的util
 
 
 
@@ -485,6 +489,24 @@ lucy 吃汉堡包，如果自己做，那么依赖 汉堡包，牛肉，vegetabl
 2、注意：java侧的 serviceManager  不是 ---->  工具类
 
 ​               native侧的 serviceManager 是单例！！
+
+
+
+
+
+#### 何时会使用单例（场景）？
+
+结合例子体会：
+
+（1）调用点，形式上： 当<font color='red'>调用点很多</font>  且<font color='red'>分散在 非常多个文件里</font>
+
+------->  比如 context、manager
+
+本质：**谁都能随时随地找到大管家**
+
+（2）
+
+
 
 
 

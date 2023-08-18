@@ -1680,6 +1680,8 @@ out/development/ide/clion/frameworks/native/libs/ui/libui-arm64-android/CMakeLis
 
 新建总的CMakeLists.txt放到 **源代码根目录上**
 
+%accordion%具体CMakeLists.txt %accordion%
+
 ```shell
 cmake_minimum_required(VERSION 3.6)
 project(AOSP-Native)
@@ -1725,6 +1727,10 @@ add_subdirectory(${CMAKE_DIRECTORY_FOR_CLION}/system/core/lmkd/liblmkd_utils-arm
 add_subdirectory(${CMAKE_DIRECTORY_FOR_CLION}/system/core/lmkd/lmkd-arm-android)
 
 ```
+
+%/accordion%
+
+
 
 3、导入
 
@@ -1968,7 +1974,7 @@ log与debug结合？
 
 
 
-log的分层模型设计 《---------如何打印log？？？一级log、二级log
+log的分层模型设计  <--------- 如何打印log？？？一级log、二级log
 
 log如何处理多线程？
 

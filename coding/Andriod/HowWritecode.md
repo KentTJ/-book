@@ -136,6 +136,106 @@ if (isSwitchOn) {
 
 
 
+### <font color='red'>避免空指针</font>是写代码的第一要义
+
+<font color='red'>加log</font>(定位问题) 也是写代码，也要特别注意 空指针
+
+否则：
+
+> 1、log会将程序崩溃
+>
+> 2、有时候，崩溃在子线程，还没有报错   ---->   **根本看不出来，难以定位**
+>
+> 3、debug时 attach一些进程，直接vm挂掉
+
+如何避免空指针？
+
+### 准则1：怀疑一切使用的量
+
+1、对一切量进行校验
+
+2、除了下面的准则里的，百分百确认的
+
+### 准则2：他人用过的不用校验
+
+比如，
+
+mContext使用过了，在图中2处，便不需要校验，可直接使用
+
+![image-20230818231823448](HowWritecode.assets/image-20230818231823448.png)
+
+### 准则2：他人待用的暂时不用校验
+
+比如，
+
+mContext使用过了，在图1处可以直接使用
+
+------->  前提：
+
+**其他人没校验使用沒有问题** （一般来说可以）
+
+![image-20230818231823448](HowWritecode.assets/image-20230818231823448.png)
+
+### 准则3：构造方法中传过来，且用过，且不会置为null ----> 不用校验
+
+除了以上，其他的都要校验
+
+
+
+### 准则4：利用<font color='red'>空实现</font>来替代<font color='red'>判定空</font>
+
+
+
+例子：安卓中
+
+```java
+public abstract class InputMethodManagerInternal {
+    
+}
+```
+
+
+
+获取   -------InputMethodManagerInternal协议-------实现
+
+因为InputMethodManagerInternal是协议，我们不能保证我们获取到的非null
+
+
+
+
+
+何时会这样做？
+
+结合例子体会：
+
+（1）当<font color='red'>调用点很多</font>  且<font color='red'>分散在 非常多个文件里</font>     (TODO: 疑问：很多对外接口都能做到，为什么没这样做呢？)
+
+------->  单例（见《设计模式之单例》）
+
+（2）我们保证不了返回值不为null ------> 那么<font color='red'>意味着大量的调用点，都要判空</font>
+
+-------->  避免这种情况：为null时，返回空实现
+
+```
+    public static InputMethodManagerInternal get() {
+        final InputMethodManagerInternal instance =
+                LocalServices.getService(InputMethodManagerInternal.class);
+        return instance != null ? instance : NOP;
+    }
+```
+
+背后思想：
+
+1、以空实现替代 判空
+
+2、 
+
+好处是什么？真的有好处嘛？
+
+好处：
+
+给其他文件用的接口（尤其大量被调用的），最好不要返回null
+
 
 
 ### 利用chatgpt写代码

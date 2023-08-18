@@ -1276,8 +1276,9 @@ SendInput {TEXT}`%/accordion`%
 
 myAutoHotKey.ahk:
 
-```java
 
+
+```java
 
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; #Warn  ; Enable warnings to assist with detecting common errors.
@@ -1285,7 +1286,7 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
-; 使用版本AutoHotkey v1.1.35.00，不同版本，语法不一样
+; 使用版本AutoHotkey v1.1.35.00
 ;教程： E:\programFiles\AutoHotkey\AutoHotkey\v1.1.35.00\AutoHotkey.chm
 
 
@@ -1309,8 +1310,9 @@ IfWinActive ahk_exe Typora.exe
 	; Ctrl+l 设置 超链接被链接
     ^l::addLink()
 	
-	;Ctrl+Alt+h 隐藏标识
+	;Ctrl+Alt+shift+h 隐藏标识
     ^!+h::hide()
+
 }
 
 
@@ -1340,7 +1342,7 @@ addLink(){
     }
 }
 
-; 定义函数： (与Ctrl+Alt +h 隐藏标识搭配使用)
+; 定义函数： (与Ctrl+Alt+shift+h 隐藏标识搭配使用)
 hide(){
     clipboard := "" ; 清空剪切板
     Send {ctrl down}c{ctrl up} ; 复制
@@ -1360,9 +1362,17 @@ hide(){
 
 
 
+
+
 ```
 
+
+
+
+
 ![image-20230730152433542](software_pcSettings.assets/image-20230730152433542.png)
+
+
 
 
 
