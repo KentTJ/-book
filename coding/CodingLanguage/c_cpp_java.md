@@ -1444,6 +1444,46 @@ Drawable  ----》 可以画的对象
 
 
 
+## 编译器优化:
+
+### final的log开关DEBUG
+
+![image-20230820020812468](c_cpp_java.assets/image-20230820020812468.png)
+
+```java
+//
+        private boolean isChangingPackagesOfCurrentUserLocked() {
+            final int userId = getChangingUserId();
+            final boolean retval = userId == mSettings.getCurrentUserId();
+            if (DEBUG) {
+                if (!retval) {
+                    Slog.d(TAG, "--- ignore this call back from a background user: " + userId);
+                }
+            }
+            return retval;
+        }
+```
+
+**反编译services.jar**，如下：
+
+![image-20230820021041361](c_cpp_java.assets/image-20230820021041361.png)
+
+**可以看出：**
+
+1、编译器做了很多优化
+
+2、编译器对<font color='red'> final的</font> log开关DEBUG做了优化 ： 因为final，**编译过程**直接去掉 相关log（<font color='red'>自然，因为永远无法走到，编译器一定会去掉的</font>）
+
+---------->  缺点：
+
+> 难以debug修改开关DEBUG，来打印日志！！！
+>
+> 
+
+
+
+
+
 # JNI
 
 ## 0层

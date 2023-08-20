@@ -1942,7 +1942,11 @@ ctrl+alt+shift+i
 
 ​       加log，可能导致attach system_process挂了
 
-​        ------> **规定**：（1）每次加完，验证一下   （2）**加log要谨慎，判空要做好**
+​        ------>   **规定**：
+
+> ​      （1）每次加完，验证一下  
+>
+> ​      （2）**加log要谨慎，判空要做好**
 
 2、log和调用栈一起使用
 
@@ -2035,6 +2039,10 @@ log与trace的结合
 1、layer的层级位置：     TaskDisplayArea.adjustRootTaskLayer()
 
 2、surface可见性决定的地方：  surfaceControl.hide  或者  cpp surfaceFlinger的入口， SurfaceComposerClient.setFlag
+
+​       TODO: 按道理，所有的窗口级别的hide，都会走到这里
+
+3、看一下生命周期是否紊乱
 
 
 

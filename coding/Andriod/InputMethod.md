@@ -26,8 +26,6 @@ IMS.requestHideSelf ----> IMMS.hideMySoftInput ----> IMS.hideSoftInput()
 
 
 
-
-
 ## 普通输入法需要支持的功能------功能角度
 
 也是验证角度
