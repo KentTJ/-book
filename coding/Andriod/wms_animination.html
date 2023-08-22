@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>ANR Crash · Kent的博客</title>
+        <title>Wms Animination · Kent的博客</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -101,10 +101,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="APK_64bit_32bit.html" />
+    <link rel="next" href="WMS.html" />
     
     
-    <link rel="prev" href="AndriodSystem.html" />
+    <link rel="prev" href="Systrace.html" />
     
 
     </head>
@@ -213,7 +213,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.1.4" data-path="ANR_crash.html">
+        <li class="chapter " data-level="1.2.1.4" data-path="ANR_crash.html">
             
                 <a href="ANR_crash.html">
             
@@ -395,7 +395,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.18" data-path="wms_animination.html">
+        <li class="chapter active" data-level="1.2.1.18" data-path="wms_animination.html">
             
                 <a href="wms_animination.html">
             
@@ -868,7 +868,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >ANR Crash</a>
+        <a href="../.." >Wms Animination</a>
     </h1>
 </div>
 
@@ -883,18 +883,139 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x76EE;&#x5F55;"><b>1. </b>&#x76EE;&#x5F55;</a></li><li><span class="title-icon "></span><a href="#anr"><b>2. </b>ANR</a></li><li><span class="title-icon "></span><a href="#crash"><b>3. </b>crash</a></li></ul></div><a href="#&#x76EE;&#x5F55;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
-<li><div><a href="#anr">ANR</a><i></i></div></li>
-<li><div><a href="#crash">crash</a><i></i></div></li>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#wms&#x52A8;&#x753B;&#x7CFB;&#x7EDF;"><b>1. </b>WMS&#x52A8;&#x753B;&#x7CFB;&#x7EDF;</a></li><li><span class="title-icon "></span><a href="#android-&#x52A8;&#x753B;&#x539F;&#x7406;"><b>2. </b>Android &#x52A8;&#x753B;&#x539F;&#x7406;</a></li><ul><li><span class="title-icon "></span><a href="#animation-&#x548C;-transform"><b>2.1. </b>Animation &#x548C; Transform</a></li><li><span class="title-icon "></span><a href="#choreographer"><b>2.2. </b>Choreographer</a></li></ul><li><span class="title-icon "></span><a href="#&#x7A97;&#x53E3;&#x52A8;&#x753B;"><b>3. </b>&#x7A97;&#x53E3;&#x52A8;&#x753B;</a></li><li><span class="title-icon "></span><a href="#&#x8FC7;&#x6E21;&#x52A8;&#x753B;"><b>4. </b>&#x8FC7;&#x6E21;&#x52A8;&#x753B;</a></li><li><span class="title-icon "></span><a href="#&#x5C4F;&#x5E55;&#x65CB;&#x8F6C;&#x52A8;&#x753B;"><b>5. </b>&#x5C4F;&#x5E55;&#x65CB;&#x8F6C;&#x52A8;&#x753B;</a></li><ul><li><span class="title-icon "></span><a href="#&#x52A8;&#x753B;&#x4E4B;&#x56FE;&#x7247;"><b>5.1. </b>&#x52A8;&#x753B;&#x4E4B;&#x56FE;&#x7247;</a></li><li><span class="title-icon "></span><a href="#&#x6A2A;&#x7AD6;&#x5C4F;&#x5207;&#x6362;&#x52A8;&#x753B;&#x65F6;&#x95F4;&#x4F18;&#x5316;&#x65B9;&#x6848;"><b>5.2. </b>&#x6A2A;&#x7AD6;&#x5C4F;&#x5207;&#x6362;&#x52A8;&#x753B;&#x65F6;&#x95F4;&#x4F18;&#x5316;&#x65B9;&#x6848;</a></li></ul><li><span class="title-icon "></span><a href="#&#x53C2;&#x8003;"><b>6. </b>&#x53C2;&#x8003;</a></li><li><span class="title-icon "></span><a href="#&#x629B;&#x5F00;&#x52A8;&#x753B;&#x4EE3;&#x7801;"><b>7. </b>&#x629B;&#x5F00;&#x52A8;&#x753B;&#x4EE3;&#x7801;</a></li><li><span class="title-icon "></span><a href="#&#x52A8;&#x753B;&#x80CC;&#x540E;&#x7684;&#x601D;&#x60F3;"><b>8. </b>&#x52A8;&#x753B;&#x80CC;&#x540E;&#x7684;&#x601D;&#x60F3;</a></li></ul></div><a href="#wms&#x52A8;&#x753B;&#x7CFB;&#x7EDF;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+<li><div><a href="#android-&#x52A8;&#x753B;&#x539F;&#x7406;">Android &#x52A8;&#x753B;&#x539F;&#x7406;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#animation-&#x548C;-transform">Animation &#x548C; Transform</a><i></i></div></li>
+<li><div><a href="#choreographer">Choreographer</a><i></i></div></li>
+</ul></li>
+<li><div><a href="#&#x7A97;&#x53E3;&#x52A8;&#x753B;">&#x7A97;&#x53E3;&#x52A8;&#x753B;</a><i></i></div></li>
+<li><div><a href="#&#x8FC7;&#x6E21;&#x52A8;&#x753B;">&#x8FC7;&#x6E21;&#x52A8;&#x753B;</a><i></i></div></li>
+<li><div><a href="#&#x5C4F;&#x5E55;&#x65CB;&#x8F6C;&#x52A8;&#x753B;">&#x5C4F;&#x5E55;&#x65CB;&#x8F6C;&#x52A8;&#x753B;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#&#x52A8;&#x753B;&#x4E4B;&#x56FE;&#x7247;">&#x52A8;&#x753B;&#x4E4B;&#x56FE;&#x7247;</a><i></i></div></li>
+<li><div><a href="#&#x6A2A;&#x7AD6;&#x5C4F;&#x5207;&#x6362;&#x52A8;&#x753B;&#x65F6;&#x95F4;&#x4F18;&#x5316;&#x65B9;&#x6848;">&#x6A2A;&#x7AD6;&#x5C4F;&#x5207;&#x6362;&#x52A8;&#x753B;&#x65F6;&#x95F4;&#x4F18;&#x5316;&#x65B9;&#x6848;</a><i></i></div></li>
+</ul></li>
+<li><div><a href="#&#x53C2;&#x8003;">&#x53C2;&#x8003;</a><i></i></div></li>
+<li><div><a href="#&#x629B;&#x5F00;&#x52A8;&#x753B;&#x4EE3;&#x7801;">&#x629B;&#x5F00;&#x52A8;&#x753B;&#x4EE3;&#x7801;</a><i></i></div></li>
+<li><div><a href="#&#x52A8;&#x753B;&#x80CC;&#x540E;&#x7684;&#x601D;&#x60F3;">&#x52A8;&#x753B;&#x80CC;&#x540E;&#x7684;&#x601D;&#x60F3;</a><i></i></div></li>
 </ul>
 </div>
 
-<h1 id="&#x76EE;&#x5F55;"><a name="&#x76EE;&#x5F55;" class="anchor-navigation-ex-anchor" href="#&#x76EE;&#x5F55;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x76EE;&#x5F55;</h1>
-<p>[TOC]</p>
-<h1 id="anr"><a name="anr" class="anchor-navigation-ex-anchor" href="#anr"><i class="fa fa-link" aria-hidden="true"></i></a>2. ANR</h1>
-<p>ANR &#x95EE;&#x9898;</p>
-<p>&#x53C2;&#x8003;&#xFF1A;  ANR&#x95EE;&#x9898;&#x7684;&#x4EA7;&#x751F;&#x673A;&#x5236;.pdf</p>
-<h1 id="crash"><a name="crash" class="anchor-navigation-ex-anchor" href="#crash"><i class="fa fa-link" aria-hidden="true"></i></a>3. crash</h1>
+<h1 id="wms&#x52A8;&#x753B;&#x7CFB;&#x7EDF;"><a name="wms&#x52A8;&#x753B;&#x7CFB;&#x7EDF;" class="anchor-navigation-ex-anchor" href="#wms&#x52A8;&#x753B;&#x7CFB;&#x7EDF;"><i class="fa fa-link" aria-hidden="true"></i></a>1. WMS&#x52A8;&#x753B;&#x7CFB;&#x7EDF;</h1>
+<p>&#x5206;&#x7C7B;&#xFF1A;</p>
+<blockquote>
+<p>&#x7A97;&#x53E3;&#x52A8;&#x753B;</p>
+<p>&#x8FC7;&#x6E21;&#x52A8;&#x753B;</p>
+<p>&#x5C4F;&#x5E55;&#x65CB;&#x8F6C;&#x52A8;&#x753B;</p>
+</blockquote>
+<p>TODO: &#x533A;&#x522B;</p>
+<h1 id="android-&#x52A8;&#x753B;&#x539F;&#x7406;"><a name="android-&#x52A8;&#x753B;&#x539F;&#x7406;" class="anchor-navigation-ex-anchor" href="#android-&#x52A8;&#x753B;&#x539F;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>2. Android &#x52A8;&#x753B;&#x539F;&#x7406;</h1>
+<p>Android&#x4E2D;&#x52A8;&#x753B;&#x7684;&#x5DE5;&#x4F5C;&#x8FC7;&#x7A0B;&#xFF1A;
+&#x5728;&#x67D0;&#x4E00;&#x4E2A;&#x65F6;&#x95F4;&#x70B9;&#xFF0C;&#x8C03;&#x7528;getTransformation()&#xFF0C;&#x6839;&#x636E;mStartTime&#x548C;mDuration&#xFF0C;<strong>&#x8BA1;&#x7B97;&#x51FA;&#x5F53;&#x524D;&#x7684;&#x8FDB;&#x5EA6;&#xFF0C;</strong>&#x5728;&#x6839;&#x636E;mInterpolator&#x8BA1;&#x7B97;&#x51FA;&#x8F6C;&#x6362;&#x7684;&#x8FDB;&#x5EA6;&#xFF0C;&#x7136;&#x540E;&#x8BA1;&#x7B97;&#x51FA;&#x5C5E;&#x6027;&#x7684;&#x5F53;&#x524D;&#x503C;&#xFF0C;&#x4FDD;&#x5B58;&#x5728;matrix&#x4E2D;&#x3002; &#x518D;&#x8C03;&#x7528;Matrix.getValues&#x5C06;&#x5C5E;&#x6027;&#x503C;&#x53D6;&#x51FA;&#xFF0C;&#x8FD0;&#x7528;&#x5728;&#x52A8;&#x753B;&#x76EE;&#x6807;&#x4E0A;&#x3002;</p>
+<h2 id="animation-&#x548C;-transform"><a name="animation-&#x548C;-transform" class="anchor-navigation-ex-anchor" href="#animation-&#x548C;-transform"><i class="fa fa-link" aria-hidden="true"></i></a>2.1. Animation &#x548C; Transform</h2>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1becffecc3f6446084da6de642f79b95~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp?" alt="img"></p>
+<p>Animation &#xFF1A;</p>
+<p>&#x200B;           &#x7ED9;&#x5B9A;&#x4E86;&#x521D;&#x59CB;&#x72B6;&#x6001;&#x3001;&#x7ED3;&#x675F;&#x72B6;&#x6001;&#x3001;&#x542F;&#x52A8;&#x65F6;&#x95F4;&#x4E0E;&#x6301;&#x7EED;&#x65F6;&#x95F4;  ------&gt;  <strong>&#x7528;&#x4E8E;&#x8BA1;&#x7B97; Transformation</strong></p>
+<p>Transformation&#xFF1A;</p>
+<p>&#x200B;             Transformation &#x63CF;&#x8FF0;&#x4E86;&#x4E00;&#x4E2A;&#x53D8;&#x6362;&#xFF0C;&#x5373;&#xFF1A;&#x900F;&#x660E;&#x5EA6;&#x548C;&#x4E00;&#x4E2A;&#x4E8C;&#x7EF4;&#x53D8;&#x6362;&#x77E9;&#x9635;</p>
+<p>&#x8865;&#x5145;Animation &#x5B50;&#x7C7B;&#xFF1A;</p>
+<blockquote>
+<p>&#x5B50;&#x7C7B;&#xFF1A;TranslateAnimation&#xFF0C;ScaleAnimation&#xFF0C;RotateAnimation&#xFF0C;AlphaAnimation</p>
+</blockquote>
+<h2 id="choreographer"><a name="choreographer" class="anchor-navigation-ex-anchor" href="#choreographer"><i class="fa fa-link" aria-hidden="true"></i></a>2.2. Choreographer</h2>
+<p>VSync&#x4FE1;&#x53F7;&#x9A71;&#x52A8;&#x52A8;&#x753B;</p>
+<h1 id="&#x7A97;&#x53E3;&#x52A8;&#x753B;"><a name="&#x7A97;&#x53E3;&#x52A8;&#x753B;" class="anchor-navigation-ex-anchor" href="#&#x7A97;&#x53E3;&#x52A8;&#x753B;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x7A97;&#x53E3;&#x52A8;&#x753B;</h1>
+<h1 id="&#x8FC7;&#x6E21;&#x52A8;&#x753B;"><a name="&#x8FC7;&#x6E21;&#x52A8;&#x753B;" class="anchor-navigation-ex-anchor" href="#&#x8FC7;&#x6E21;&#x52A8;&#x753B;"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x8FC7;&#x6E21;&#x52A8;&#x753B;</h1>
+<h1 id="&#x5C4F;&#x5E55;&#x65CB;&#x8F6C;&#x52A8;&#x753B;"><a name="&#x5C4F;&#x5E55;&#x65CB;&#x8F6C;&#x52A8;&#x753B;" class="anchor-navigation-ex-anchor" href="#&#x5C4F;&#x5E55;&#x65CB;&#x8F6C;&#x52A8;&#x753B;"><i class="fa fa-link" aria-hidden="true"></i></a>5. &#x5C4F;&#x5E55;&#x65CB;&#x8F6C;&#x52A8;&#x753B;</h1>
+<p>&#x53C2;&#x8003;&#xFF1A;<a href="https://juejin.cn/post/7026611124482670600" target="_blank">https://juejin.cn/post/7026611124482670600</a></p>
+<p>&#x89E6;&#x53D1;&#x70B9;&#xFF08;&#x81EA;&#x7136;&#x65F6;&#x673A;&#xFF09;&#xFF1A; </p>
+<p>&#x200B;       &#x5C4F;&#x5E55;&#x65CB;&#x8F6C;<font color="red">&#x4E4B;&#x540E;</font>   &#x6CE8;&#x610F;&#xFF1A;&#x6B64;&#x65F6;&#x52A8;&#x753B;&#x8FD8;&#x6CA1;&#x5F00;&#x542F;</p>
+<p>&#x4EE3;&#x7801;&#x89E6;&#x53D1;&#x70B9;&#xFF1A;</p>
+<blockquote>
+<p>TODO: &#x5177;&#x4F53;&#x54EA;&#x4E2A;&#x6A21;&#x5757;&#xFF1F;</p>
+<p>OrientationListener#onProposedRotationChanged</p>
+<p>&#x200B;         -------&gt; WMS#updateRotation</p>
+</blockquote>
+<h2 id="&#x52A8;&#x753B;&#x4E4B;&#x56FE;&#x7247;"><a name="&#x52A8;&#x753B;&#x4E4B;&#x56FE;&#x7247;" class="anchor-navigation-ex-anchor" href="#&#x52A8;&#x753B;&#x4E4B;&#x56FE;&#x7247;"><i class="fa fa-link" aria-hidden="true"></i></a>5.1. &#x52A8;&#x753B;&#x4E4B;&#x56FE;&#x7247;</h2>
+<p>&#x52A8;&#x753B;&#x542F;&#x52A8;&#x7684;&#x6700;&#x57FA;&#x672C;&#x5143;&#x7D20;</p>
+<p>&#x6765;&#x6E90;&#xFF0C; &#x622A;&#x56FE;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-comment">// ScreenRotationAnimation</span>
+
+<span class="hljs-keyword">final</span> SurfaceControl.Transaction t = mService.mTransactionFactory.get();
+SurfaceControl.LayerCaptureArgs args =
+    <span class="hljs-keyword">new</span> SurfaceControl.LayerCaptureArgs.Builder(displayContent.getSurfaceControl())
+    .setCaptureSecureLayers(<span class="hljs-keyword">true</span>)
+    .setAllowProtected(<span class="hljs-keyword">true</span>)
+    .setSourceCrop(<span class="hljs-keyword">new</span> Rect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, mWidth, mHeight))
+    .build();
+SurfaceControl.ScreenshotHardwareBuffer screenshotBuffer =
+    SurfaceControl.captureLayers(args);
+
+<span class="hljs-comment">// &#x8FD9;&#x4E00;&#x5927;&#x6BB5;&#x5C31;&#x662F;&#x6293;&#x53D6;&#x622A;&#x56FE;&#x7ED1;&#x5B9A;&#x5230;mScreenshotLayer</span>
+GraphicBuffer buffer = GraphicBuffer.createFromHardwareBuffer(
+    screenshotBuffer.getHardwareBuffer());
+t.setBuffer(mScreenshotLayer, buffer);
+</code></pre>
+<p>&#x627F;&#x8F7D;&#x7684;surface&#xFF1A;</p>
+<pre><code class="lang-java"> <span class="hljs-comment">// mScreenshotLayer&#x662F;&#x771F;&#x6B63;&#x7528;&#x4E8E;&#x65CB;&#x8F6C;&#x52A8;&#x753B;&#x7684;surface           </span>
+mScreenshotLayer = displayContent.makeOverlay()
+</code></pre>
+<p>setRotationTransform &#x4E2D;  mScreenshotLayer&#x627F;&#x8F7D;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x88AB;&#x65CB;&#x8F6C;
+        t.setPosition(mScreenshotLayer, x, y);
+        t.setMatrix(mScreenshotLayer,
+                mTmpFloats[Matrix.MSCALE_X], mTmpFloats[Matrix.MSKEW_Y],
+                mTmpFloats[Matrix.MSKEW_X], mTmpFloats[Matrix.MSCALE_Y]);</p>
+<pre><code>    t.setAlpha(mScreenshotLayer, (float) 1.0);
+    t.show(mScreenshotLayer);
+</code></pre><p>&#x622A;&#x56FE;&#x83B7;&#x53D6;bitmap&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">final</span> SurfaceControl.ScreenshotHardwareBuffer screenshotBuffer =
+    SurfaceControl.captureDisplay(captureArgs);
+screenshot = screenshotBuffer == <span class="hljs-keyword">null</span> ? <span class="hljs-keyword">null</span> : screenshotBuffer.asBitmap();
+
+<span class="hljs-comment">// &#x53C2;&#x8003;&#xFF1A; https://blog.csdn.net/weixin_46297800/article/details/131939823</span>
+
+
+<span class="hljs-comment">// &#x8F6C;&#x6210;png</span>
+Bitmap bitmap = screenshotBuffer.asBitmap();
+OutputStream os = <span class="hljs-keyword">new</span> FileOutputStream(<span class="hljs-string">&quot;/sdcard/screen.png&quot;</span>);
+bitmap.compress(Bitmap.CompressFormat.PNG, <span class="hljs-number">100</span>, os);
+os.flush();
+os.close();
+</code></pre>
+<pre><code>Bitmap bitmap = null;
+Class&lt;?&gt; cls  = Class.forName(&quot;android.view.SurfaceControl&quot;);
+Method method = cls.getMethod(&quot;screenshot&quot;, Rect.class, int.class, int.class, int.class);
+Object obj = method.invoke(null, new Rect(0, 0, 500, 1000), 500, 1000, 0);
+bitmap = (Bitmap) obj;
+</code></pre><pre><code>        String  name = &quot;app&quot;;
+        File cacheDir = context.getCacheDir();
+        Log.i(&quot;liuhongliang&quot;,&quot;cacheDir&quot; + cacheDir.toString());
+        cachePath = &quot;/sdcard/&quot; + name + &quot;.png&quot;;
+        String cmd = &quot;screencap -p /sdcard/&quot; + name + &quot;.png&quot;;
+        // &#x6743;&#x9650;&#x8BBE;&#x7F6E;
+        Process p = Runtime.getRuntime().exec(&quot;sh&quot;);
+        // &#x83B7;&#x53D6;&#x8F93;&#x51FA;&#x6D41;
+        OutputStream outputStream = p.getOutputStream();
+        DataOutputStream dataOutputStream = new DataOutputStream(
+        outputStream);
+        // &#x5C06;&#x547D;&#x4EE4;&#x5199;&#x5165;
+        dataOutputStream.writeBytes(cmd);
+        // &#x63D0;&#x4EA4;&#x547D;&#x4EE4;
+        dataOutputStream.flush();
+        // &#x5173;&#x95ED;&#x6D41;&#x64CD;&#x4F5C;
+        dataOutputStream.close();
+        outputStream.close();
+&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;
+&#x7248;&#x6743;&#x58F0;&#x660E;&#xFF1A;&#x672C;&#x6587;&#x4E3A;CSDN&#x535A;&#x4E3B;&#x300C;&#x5C0F;&#x5218;&#x4E0D;&#x4E0A;&#x73ED;&#x300D;&#x7684;&#x539F;&#x521B;&#x6587;&#x7AE0;&#xFF0C;&#x9075;&#x5FAA;CC 4.0 BY-SA&#x7248;&#x6743;&#x534F;&#x8BAE;&#xFF0C;&#x8F6C;&#x8F7D;&#x8BF7;&#x9644;&#x4E0A;&#x539F;&#x6587;&#x51FA;&#x5904;&#x94FE;&#x63A5;&#x53CA;&#x672C;&#x58F0;&#x660E;&#x3002;
+&#x539F;&#x6587;&#x94FE;&#x63A5;&#xFF1A;https://blog.csdn.net/weixin_46297800/article/details/131939823
+</code></pre><p>TODO:  </p>
+<p><strong>&#x51BB;&#x5C4F;&#x52A8;&#x753B;</strong>&#x6216;&#x8005;<strong>&#x65E0;&#x7F1D;&#x52A8;&#x753B;</strong></p>
+<h2 id="&#x6A2A;&#x7AD6;&#x5C4F;&#x5207;&#x6362;&#x52A8;&#x753B;&#x65F6;&#x95F4;&#x4F18;&#x5316;&#x65B9;&#x6848;"><a name="&#x6A2A;&#x7AD6;&#x5C4F;&#x5207;&#x6362;&#x52A8;&#x753B;&#x65F6;&#x95F4;&#x4F18;&#x5316;&#x65B9;&#x6848;" class="anchor-navigation-ex-anchor" href="#&#x6A2A;&#x7AD6;&#x5C4F;&#x5207;&#x6362;&#x52A8;&#x753B;&#x65F6;&#x95F4;&#x4F18;&#x5316;&#x65B9;&#x6848;"><i class="fa fa-link" aria-hidden="true"></i></a>5.2. &#x6A2A;&#x7AD6;&#x5C4F;&#x5207;&#x6362;&#x52A8;&#x753B;&#x65F6;&#x95F4;&#x4F18;&#x5316;&#x65B9;&#x6848;</h2>
+<p><a href="https://zhuanlan.zhihu.com/p/265291842" target="_blank">https://zhuanlan.zhihu.com/p/265291842</a></p>
+<h1 id="&#x53C2;&#x8003;"><a name="&#x53C2;&#x8003;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x8003;"><i class="fa fa-link" aria-hidden="true"></i></a>6. &#x53C2;&#x8003;</h1>
+<h1 id="&#x629B;&#x5F00;&#x52A8;&#x753B;&#x4EE3;&#x7801;"><a name="&#x629B;&#x5F00;&#x52A8;&#x753B;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x629B;&#x5F00;&#x52A8;&#x753B;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>7. &#x629B;&#x5F00;&#x52A8;&#x753B;&#x4EE3;&#x7801;</h1>
+<h1 id="&#x52A8;&#x753B;&#x80CC;&#x540E;&#x7684;&#x601D;&#x60F3;"><a name="&#x52A8;&#x753B;&#x80CC;&#x540E;&#x7684;&#x601D;&#x60F3;" class="anchor-navigation-ex-anchor" href="#&#x52A8;&#x753B;&#x80CC;&#x540E;&#x7684;&#x601D;&#x60F3;"><i class="fa fa-link" aria-hidden="true"></i></a>8. &#x52A8;&#x753B;&#x80CC;&#x540E;&#x7684;&#x601D;&#x60F3;</h1>
 
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -923,12 +1044,12 @@
 
             
                 
-                <a href="AndriodSystem.html" class="navigation navigation-prev " aria-label="Previous page: Andriod System">
+                <a href="Systrace.html" class="navigation navigation-prev " aria-label="Previous page: Systrace">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="APK_64bit_32bit.html" class="navigation navigation-next " aria-label="Next page: APK 64 Bit 32 Bit">
+                <a href="WMS.html" class="navigation navigation-next " aria-label="Next page: WMS">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -939,7 +1060,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ANR Crash","level":"1.2.1.4","depth":3,"next":{"title":"APK 64 Bit 32 Bit","level":"1.2.1.5","depth":3,"path":"coding/Andriod/APK_64bit_32bit.md","ref":"coding/Andriod/APK_64bit_32bit.md","articles":[]},"previous":{"title":"Andriod System","level":"1.2.1.3","depth":3,"path":"coding/Andriod/AndriodSystem.md","ref":"coding/Andriod/AndriodSystem.md","articles":[]},"dir":"ltr"},"config":{"//":["这是多行注释：    anchor-navigation-ex 是","anchor-navigation-ex 是","click-reveal 本地使用ok，但是github在build pages时，不识别click-reveal","accordion 也是折叠代码段","anchor-navigation-ex 是"],"plugins":["anchor-navigation-ex","toggle-chapters","expandable-chapters-small","splitter","code","page-treeview","popup","-search","-lunr","sidebar-style","auto-scroll-table","click-reveal","accordion","pageview-count","search-pro"],"root":"./markdownsFiles","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"Kent","title":"《知行，行知》"},"tbfed-pagefooter":{"copyright":"Copyright &copy ershouche-FE 2019","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"disqus":{"shortName":"gitbookuse"},"splitter":{},"search-pro":{},"accordion":{},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":200000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"pageview-count":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bookname":"笔记","variables":{},"title":"Kent的博客","gitbook":"*"},"file":{"path":"coding/Andriod/ANR_crash.md","mtime":"2023-03-21T14:50:58.138Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-22T17:55:03.508Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Wms Animination","level":"1.2.1.18","depth":3,"next":{"title":"WMS","level":"1.2.1.19","depth":3,"path":"coding/Andriod/WMS.md","ref":"coding/Andriod/WMS.md","articles":[]},"previous":{"title":"Systrace","level":"1.2.1.17","depth":3,"path":"coding/Andriod/Systrace.md","ref":"coding/Andriod/Systrace.md","articles":[]},"dir":"ltr"},"config":{"//":["这是多行注释：    anchor-navigation-ex 是","anchor-navigation-ex 是","click-reveal 本地使用ok，但是github在build pages时，不识别click-reveal","accordion 也是折叠代码段","anchor-navigation-ex 是"],"plugins":["anchor-navigation-ex","toggle-chapters","expandable-chapters-small","splitter","code","page-treeview","popup","-search","-lunr","sidebar-style","auto-scroll-table","click-reveal","accordion","pageview-count","search-pro"],"root":"./markdownsFiles","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"Kent","title":"《知行，行知》"},"tbfed-pagefooter":{"copyright":"Copyright &copy ershouche-FE 2019","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"disqus":{"shortName":"gitbookuse"},"splitter":{},"search-pro":{},"accordion":{},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":200000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"pageview-count":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bookname":"笔记","variables":{},"title":"Kent的博客","gitbook":"*"},"file":{"path":"coding/Andriod/wms_animination.md","mtime":"2023-08-22T17:51:54.435Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-22T17:55:03.508Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
