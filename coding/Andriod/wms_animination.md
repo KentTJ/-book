@@ -149,13 +149,13 @@ bitmap = (Bitmap) obj;
 
 
 ```
-        String  name = "app";
+        String  name = "app2";
         File cacheDir = context.getCacheDir();
         Log.i("liuhongliang","cacheDir" + cacheDir.toString());
         cachePath = "/sdcard/" + name + ".png";
         String cmd = "screencap -p /sdcard/" + name + ".png";
         // 权限设置
-        Process p = Runtime.getRuntime().exec("sh");
+        Process p = Runtime.getRuntime().exec("sh"); //Process process = rt.exec("su");
         // 获取输出流
         OutputStream outputStream = p.getOutputStream();
         DataOutputStream dataOutputStream = new DataOutputStream(
