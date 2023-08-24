@@ -184,6 +184,44 @@ https://zhuanlan.zhihu.com/p/265291842
 
 
 
+## 旋转屏幕的一些认知
+
+1、<font color='red'>横向永远是x</font>（即旋转后，x值更大）
+
+2、更新surface位置   <------------>  布局窗口relayoutWindow  何时？
+
+**最终逃不过的点，不得不：** 
+
+> SurfaceControl.setPosition
+
+```
+setPosition:2756, SurfaceControl$Transaction (android.view)
+lambda$new$1$WindowState:854, WindowState (com.android.server.wm)
+accept:-1, WindowState$$ExternalSyntheticLambda3 (com.android.server.wm)
+updateSurfacePosition:5547, WindowState (com.android.server.wm)
+updateSurfacePositionNonOrganized:3042, WindowContainer (com.android.server.wm)
+prepareSurfaces:5491, WindowState (com.android.server.wm)
+prepareSurfaces:2445, WindowContainer (com.android.server.wm)
+prepareSurfaces:2445, WindowContainer (com.android.server.wm)
+prepareSurfaces:2445, WindowContainer (com.android.server.wm)
+prepareSurfaces:644, DisplayArea$Dimmable (com.android.server.wm)
+prepareSurfaces:4879, DisplayContent (com.android.server.wm)
+applySurfaceChangesTransaction:4335, DisplayContent (com.android.server.wm)
+applySurfaceChangesTransaction:1068, RootWindowContainer (com.android.server.wm)
+performSurfacePlacementNoTrace:844, RootWindowContainer (com.android.server.wm)
+performSurfacePlacement:797, RootWindowContainer (com.android.server.wm)
+performSurfacePlacementLoop:177, WindowSurfacePlacer (com.android.server.wm)  ------>  这里，所有
+performSurfacePlacement:126, WindowSurfacePlacer (com.android.server.wm)
+relayoutWindow:2386, WindowManagerService (com.android.server.wm)
+relayout:235, Session (com.android.server.wm)
+onTransact:735, IWindowSession$Stub (android.view)
+onTransact:169, Session (com.android.server.wm)
+execTransactInternal:1184, Binder (android.os)
+execTransact:1143, Binder (android.os)
+```
+
+
+
 
 
 # 参考
