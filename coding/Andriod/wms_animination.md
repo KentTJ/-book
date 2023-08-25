@@ -194,7 +194,7 @@ https://zhuanlan.zhihu.com/p/265291842
 
 > SurfaceControl.setPosition
 
-```
+```java
 setPosition:2756, SurfaceControl$Transaction (android.view)
 lambda$new$1$WindowState:854, WindowState (com.android.server.wm)
 accept:-1, WindowState$$ExternalSyntheticLambda3 (com.android.server.wm)
@@ -232,7 +232,11 @@ execTransact:1143, Binder (android.os)
 
 https://blog.csdn.net/SSSxCCC/article/details/119324066    转屏动画 - 安卓R
 
+https://juejin.cn/post/6982153383880687624#heading-7     Android R WindowManagerService模块(7) 屏幕旋转流程(2)
 
+
+
+https://www.cnblogs.com/dyufei/p/8081936.html    [Android 7.1 WindowManagerService 屏幕旋转流程分析 ](https://www.cnblogs.com/dyufei/p/8081936.html)
 
 
 

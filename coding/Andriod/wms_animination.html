@@ -1021,32 +1021,35 @@ bitmap = (Bitmap) obj;
 <blockquote>
 <p>SurfaceControl.setPosition</p>
 </blockquote>
-<pre><code>setPosition:2756, SurfaceControl$Transaction (android.view)
-lambda$new$1$WindowState:854, WindowState (com.android.server.wm)
-accept:-1, WindowState$$ExternalSyntheticLambda3 (com.android.server.wm)
-updateSurfacePosition:5547, WindowState (com.android.server.wm)
-updateSurfacePositionNonOrganized:3042, WindowContainer (com.android.server.wm)
-prepareSurfaces:5491, WindowState (com.android.server.wm)
-prepareSurfaces:2445, WindowContainer (com.android.server.wm)
-prepareSurfaces:2445, WindowContainer (com.android.server.wm)
-prepareSurfaces:2445, WindowContainer (com.android.server.wm)
-prepareSurfaces:644, DisplayArea$Dimmable (com.android.server.wm)
-prepareSurfaces:4879, DisplayContent (com.android.server.wm)
-applySurfaceChangesTransaction:4335, DisplayContent (com.android.server.wm)
-applySurfaceChangesTransaction:1068, RootWindowContainer (com.android.server.wm)
-performSurfacePlacementNoTrace:844, RootWindowContainer (com.android.server.wm)
-performSurfacePlacement:797, RootWindowContainer (com.android.server.wm)
-performSurfacePlacementLoop:177, WindowSurfacePlacer (com.android.server.wm)  ------&gt;  &#x8FD9;&#x91CC;&#xFF0C;&#x6240;&#x6709;
-performSurfacePlacement:126, WindowSurfacePlacer (com.android.server.wm)
-relayoutWindow:2386, WindowManagerService (com.android.server.wm)
-relayout:235, Session (com.android.server.wm)
-onTransact:735, IWindowSession$Stub (android.view)
-onTransact:169, Session (com.android.server.wm)
-execTransactInternal:1184, Binder (android.os)
-execTransact:1143, Binder (android.os)
-</code></pre><p><img src="wms_animination.assets/image-20230825013906246.png" alt="image-20230825013906246"></p>
+<pre><code class="lang-java">setPosition:<span class="hljs-number">2756</span>, SurfaceControl$Transaction (android.view)
+lambda$<span class="hljs-keyword">new</span>$<span class="hljs-number">1</span>$WindowState:<span class="hljs-number">854</span>, WindowState (com.android.server.wm)
+accept:-<span class="hljs-number">1</span>, WindowState$$ExternalSyntheticLambda3 (com.android.server.wm)
+updateSurfacePosition:<span class="hljs-number">5547</span>, WindowState (com.android.server.wm)
+updateSurfacePositionNonOrganized:<span class="hljs-number">3042</span>, WindowContainer (com.android.server.wm)
+prepareSurfaces:<span class="hljs-number">5491</span>, WindowState (com.android.server.wm)
+prepareSurfaces:<span class="hljs-number">2445</span>, WindowContainer (com.android.server.wm)
+prepareSurfaces:<span class="hljs-number">2445</span>, WindowContainer (com.android.server.wm)
+prepareSurfaces:<span class="hljs-number">2445</span>, WindowContainer (com.android.server.wm)
+prepareSurfaces:<span class="hljs-number">644</span>, DisplayArea$Dimmable (com.android.server.wm)
+prepareSurfaces:<span class="hljs-number">4879</span>, DisplayContent (com.android.server.wm)
+applySurfaceChangesTransaction:<span class="hljs-number">4335</span>, DisplayContent (com.android.server.wm)
+applySurfaceChangesTransaction:<span class="hljs-number">1068</span>, RootWindowContainer (com.android.server.wm)
+performSurfacePlacementNoTrace:<span class="hljs-number">844</span>, RootWindowContainer (com.android.server.wm)
+performSurfacePlacement:<span class="hljs-number">797</span>, RootWindowContainer (com.android.server.wm)
+performSurfacePlacementLoop:<span class="hljs-number">177</span>, WindowSurfacePlacer (com.android.server.wm)  ------&gt;  &#x8FD9;&#x91CC;&#xFF0C;&#x6240;&#x6709;
+performSurfacePlacement:<span class="hljs-number">126</span>, WindowSurfacePlacer (com.android.server.wm)
+relayoutWindow:<span class="hljs-number">2386</span>, WindowManagerService (com.android.server.wm)
+relayout:<span class="hljs-number">235</span>, Session (com.android.server.wm)
+onTransact:<span class="hljs-number">735</span>, IWindowSession$Stub (android.view)
+onTransact:<span class="hljs-number">169</span>, Session (com.android.server.wm)
+execTransactInternal:<span class="hljs-number">1184</span>, Binder (android.os)
+execTransact:<span class="hljs-number">1143</span>, Binder (android.os)
+</code></pre>
+<p><img src="wms_animination.assets/image-20230825013906246.png" alt="image-20230825013906246"></p>
 <h1 id="&#x53C2;&#x8003;"><a name="&#x53C2;&#x8003;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x8003;"><i class="fa fa-link" aria-hidden="true"></i></a>6. &#x53C2;&#x8003;</h1>
 <p><a href="https://blog.csdn.net/SSSxCCC/article/details/119324066" target="_blank">https://blog.csdn.net/SSSxCCC/article/details/119324066</a>    &#x8F6C;&#x5C4F;&#x52A8;&#x753B; - &#x5B89;&#x5353;R</p>
+<p><a href="https://juejin.cn/post/6982153383880687624#heading-7" target="_blank">https://juejin.cn/post/6982153383880687624#heading-7</a>     Android R WindowManagerService&#x6A21;&#x5757;(7) &#x5C4F;&#x5E55;&#x65CB;&#x8F6C;&#x6D41;&#x7A0B;(2)</p>
+<p><a href="https://www.cnblogs.com/dyufei/p/8081936.html" target="_blank">https://www.cnblogs.com/dyufei/p/8081936.html</a>    <a href="https://www.cnblogs.com/dyufei/p/8081936.html" target="_blank">Android 7.1 WindowManagerService &#x5C4F;&#x5E55;&#x65CB;&#x8F6C;&#x6D41;&#x7A0B;&#x5206;&#x6790; </a></p>
 <h1 id="&#x629B;&#x5F00;&#x52A8;&#x753B;&#x4EE3;&#x7801;"><a name="&#x629B;&#x5F00;&#x52A8;&#x753B;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x629B;&#x5F00;&#x52A8;&#x753B;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>7. &#x629B;&#x5F00;&#x52A8;&#x753B;&#x4EE3;&#x7801;</h1>
 <h1 id="&#x52A8;&#x753B;&#x80CC;&#x540E;&#x7684;&#x601D;&#x60F3;"><a name="&#x52A8;&#x753B;&#x80CC;&#x540E;&#x7684;&#x601D;&#x60F3;" class="anchor-navigation-ex-anchor" href="#&#x52A8;&#x753B;&#x80CC;&#x540E;&#x7684;&#x601D;&#x60F3;"><i class="fa fa-link" aria-hidden="true"></i></a>8. &#x52A8;&#x753B;&#x80CC;&#x540E;&#x7684;&#x601D;&#x60F3;</h1>
 
@@ -1093,7 +1096,7 @@ execTransact:1143, Binder (android.os)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Wms Animination","level":"1.2.1.18","depth":3,"next":{"title":"WMS","level":"1.2.1.19","depth":3,"path":"coding/Andriod/WMS.md","ref":"coding/Andriod/WMS.md","articles":[]},"previous":{"title":"Systrace","level":"1.2.1.17","depth":3,"path":"coding/Andriod/Systrace.md","ref":"coding/Andriod/Systrace.md","articles":[]},"dir":"ltr"},"config":{"//":["这是多行注释：    anchor-navigation-ex 是","anchor-navigation-ex 是","click-reveal 本地使用ok，但是github在build pages时，不识别click-reveal","accordion 也是折叠代码段","anchor-navigation-ex 是"],"plugins":["anchor-navigation-ex","toggle-chapters","expandable-chapters-small","splitter","code","page-treeview","popup","-search","-lunr","sidebar-style","auto-scroll-table","click-reveal","accordion","pageview-count","search-pro"],"root":"./markdownsFiles","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"Kent","title":"《知行，行知》"},"tbfed-pagefooter":{"copyright":"Copyright &copy ershouche-FE 2019","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"disqus":{"shortName":"gitbookuse"},"splitter":{},"search-pro":{},"accordion":{},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":200000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"pageview-count":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bookname":"笔记","variables":{},"title":"Kent的博客","gitbook":"*"},"file":{"path":"coding/Andriod/wms_animination.md","mtime":"2023-08-25T16:31:05.706Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-25T16:31:13.406Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Wms Animination","level":"1.2.1.18","depth":3,"next":{"title":"WMS","level":"1.2.1.19","depth":3,"path":"coding/Andriod/WMS.md","ref":"coding/Andriod/WMS.md","articles":[]},"previous":{"title":"Systrace","level":"1.2.1.17","depth":3,"path":"coding/Andriod/Systrace.md","ref":"coding/Andriod/Systrace.md","articles":[]},"dir":"ltr"},"config":{"//":["这是多行注释：    anchor-navigation-ex 是","anchor-navigation-ex 是","click-reveal 本地使用ok，但是github在build pages时，不识别click-reveal","accordion 也是折叠代码段","anchor-navigation-ex 是"],"plugins":["anchor-navigation-ex","toggle-chapters","expandable-chapters-small","splitter","code","page-treeview","popup","-search","-lunr","sidebar-style","auto-scroll-table","click-reveal","accordion","pageview-count","search-pro"],"root":"./markdownsFiles","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"Kent","title":"《知行，行知》"},"tbfed-pagefooter":{"copyright":"Copyright &copy ershouche-FE 2019","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"disqus":{"shortName":"gitbookuse"},"splitter":{},"search-pro":{},"accordion":{},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":200000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"pageview-count":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bookname":"笔记","variables":{},"title":"Kent的博客","gitbook":"*"},"file":{"path":"coding/Andriod/wms_animination.md","mtime":"2023-08-25T16:37:52.357Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-25T16:37:58.553Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
