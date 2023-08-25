@@ -230,6 +230,10 @@ execTransact:1143, Binder (android.os)
 
 # 参考
 
+https://blog.csdn.net/SSSxCCC/article/details/119324066    转屏动画 - 安卓R
+
+
+
 
 
 # 抛开动画代码
