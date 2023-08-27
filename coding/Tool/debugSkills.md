@@ -1963,14 +1963,16 @@ ctrl+alt+shift+i
 ## 权限问题的解决
 
 1、即使在系统进程里，代码里也**申请不了su权限**，linux侧安卓做了严格校验。。。TODO
-2、关闭selinux权限后，代码里可以申请sh权限： 
-      Runtime.getRuntime().exec("sh")   ---->  adb shell setenforce 0
+2、关闭selinux权限后，~~代码里可以申请sh权限：~~   ------》 <font color='red'>规定：统一不管，用system权限。</font>文件夹也用system
+      ~~Runtime.getRuntime().exec("sh")~~   ---->  adb shell setenforce 0
 3、------> 其实可以不用申请。直接运行cmd命令。比如截图：Runtime.getRuntime().exec("screencap -p /data/local/tmp/1111.png");
 4、操作相关的文件夹权限也要放开：
    （1）所有者以及用户不能是root。system和shell似乎都可以？
 chmod 777 /data/local/tmp
 chown -R system /data/local/tmp
 chgrp  -R system /data/local/tmp
+
+![image-20230828013335195](debugSkills.assets/image-20230828013335195.png)
 
 补充：见com的《写文件权限》
 
@@ -1984,7 +1986,55 @@ chgrp  -R system /data/local/tmp
 
 TODO：《com》
 
+方法一：adb截图
+
+方法二：surfacecontrol
+
+
+
 ## 应用之源码中dump信息
+
+
+
+```java
+        // cg add for test
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    // 执行CMD命令
+                    Slog.d(TAG,"cmd start");
+                    java.lang.Process process = Runtime.getRuntime().exec("screencap -p /data/local/tmp/1111.png");
+//                    java.lang.Process process2 = Runtime.getRuntime().exec("dumpsys window windows > /data/local/tmp/windows.txt");
+                    java.lang.Process process2 = Runtime.getRuntime().exec("dumpsys display > /data/local/tmp/display.txt");
+                    Slog.d(TAG,"process " + process.toString());
+
+                    // 获取命令的输出流
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+                    String line;
+                    Slog.d(TAG, "chen, out1: ");
+                    while ((line = reader.readLine()) != null) {
+                        // 输出命令的结果
+                        Slog.d(TAG, "chen, out2: " + line);
+                    }
+
+                    // 等待命令执行完成
+                    process.waitFor();
+                    reader.close();
+
+                    Slog.d(TAG,"cmd end");
+                } catch (IOException | InterruptedException e) {
+                    e.printStackTrace();
+                    Slog.d(TAG, "chen, out3: e:" + e);
+                    Slog.d(TAG, "chen, out3: e:" + e.getStackTrace());
+                }
+            }
+        }).start();
+```
+
+
+
+
 
 ## 技巧
 
