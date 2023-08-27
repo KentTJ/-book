@@ -1952,6 +1952,60 @@ ctrl+alt+shift+i
 
 
 
+# 在源码中adb（dump、截图、操作、、、）
+
+打通了源码中执行adb  ----->  <font color='red'>极其优，可以做的事情非常非常多</font>
+
+精髓：
+
+-<font color='red'>可以精确的保存当时案发现场</font>
+
+## 权限问题的解决
+
+1、即使在系统进程里，代码里也**申请不了su权限**，linux侧安卓做了严格校验。。。TODO
+2、关闭selinux权限后，代码里可以申请sh权限： 
+      Runtime.getRuntime().exec("sh")   ---->  adb shell setenforce 0
+3、------> 其实可以不用申请。直接运行cmd命令。比如截图：Runtime.getRuntime().exec("screencap -p /data/local/tmp/1111.png");
+4、操作相关的文件夹权限也要放开：
+   （1）所有者以及用户不能是root。system和shell似乎都可以？
+chmod 777 /data/local/tmp
+chown -R system /data/local/tmp
+chgrp  -R system /data/local/tmp
+
+补充：见com的《写文件权限》
+
+注：
+断点调试下，可以在window下cmd执行。也可以利用Runtime执行cmd
+但是注意：当断点系统进程时，am pm等被卡住了，不一定能执行出结果；window下cmd也如此
+
+## 应用之源码中截图，保存png
+
+精确保存当时的图片。<font color='red'>注意点：</font> 抛到子线程操作，不要影响主要流程
+
+TODO：《com》
+
+## 应用之源码中dump信息
+
+## 技巧
+
+可以在debug下先验证代码是否可以运行
+
+## TODO：其他方式
+
+https://zhaoyf.cn/2021/01/21/selinux-shell-cmd/
+
+
+
+https://blog.csdn.net/liaosongmao1/article/details/130502382   安卓车机系统adb shell cmd 源码原理分析
+
+
+
+## 遇到的问题：
+
+“java.io.IOException: Cannot run program "/system/xbin/su": error=13, Permission denied
+
+-------->selinux权限、文件权限
+
 
 
 # log、debug适用的场景
@@ -1987,6 +2041,10 @@ log如何处理多线程？
 log与trace的结合
 
 ​      
+
+# dump
+
+## 具体含义见各章节
 
 
 

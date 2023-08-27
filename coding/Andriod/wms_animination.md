@@ -63,9 +63,19 @@ VSync信号驱动动画
 >
 > ​         -------> WMS#updateRotation
 
+## 0层
+
+![img](wms_animination.assets/4103403-e5e77d696bd11e8b)
+
+图片来源： https://www.jianshu.com/p/217d0239ca19
 
 
-## 动画之图片
+
+
+
+
+
+## 动画素材来源----截图
 
 动画启动的最基本元素
 
@@ -111,7 +121,7 @@ setRotationTransform 中  mScreenshotLayer承载的数据，被旋转
 
         t.setAlpha(mScreenshotLayer, (float) 1.0);
         t.show(mScreenshotLayer);
-       
+
 
 
 
@@ -178,6 +188,74 @@ TODO:
 
 
 
+最开始截图，需要调整一下**初始位置**：
+
+![image-20230827174247085](wms_animination.assets/image-20230827174247085.png)
+
+参考： https://blog.csdn.net/learnframework/article/details/129972954
+
+TODO：补充画面重新加载，方向变化的图
+
+
+
+
+
+几个结论：
+
+1、物理屏幕的旋转，是<font color='red'>基于物理世界的</font>，（想象是<font color='red'>黑屏下</font>）没有旋转中心 或者  以任意旋转中心    ------> 所以，对代码没有任何影响
+
+​     **物理屏幕没有 坐标原点的概念**
+
+2、没有重新加载的画面的旋转：-----><font color='red'> 即是动画截屏的第一帧</font>
+
+​    （1）图片相对于屏幕完全静止
+
+​    （2）有坐标原点的概念：基于物理屏幕，坐标原点是物理屏幕的左上角   ----------->  给代码模型用的
+
+​      
+
+3、1和2本质上是一个操作，即物理屏幕旋转 + 画面相对于物理屏没动
+
+4、基于3，截图开始动
+
+5、新的画面重新加载，方向也变化了
+
+
+
+
+
+
+
+```java
+04-05 16:16:41.723   565   586 I WindowManager: createAnimationLeash type = screen_rotation
+04-05 16:16:41.723   565   586 I WindowManager: java.lang.Exception
+04-05 16:16:41.723   565   586 I WindowManager: 	at com.android.server.wm.SurfaceAnimator.createAnimationLeash(SurfaceAnimator.java:458)
+04-05 16:16:41.723   565   586 I WindowManager: 	at com.android.server.wm.SurfaceAnimator.startAnimation(SurfaceAnimator.java:184)
+04-05 16:16:41.723   565   586 I WindowManager: 	at com.android.server.wm.SurfaceAnimator.startAnimation(SurfaceAnimator.java:213)
+04-05 16:16:41.723   565   586 I WindowManager: 	at com.android.server.wm.ScreenRotationAnimation$SurfaceRotationAnimationController.startAnimation(ScreenRotationAnimation.java:697)
+04-05 16:16:41.723   565   586 I WindowManager: 	at com.android.server.wm.ScreenRotationAnimation$SurfaceRotationAnimationController.startDisplayRotation(ScreenRotationAnimation.java:580)
+04-05 16:16:41.723   565   586 I WindowManager: 	at com.android.server.wm.ScreenRotationAnimation$SurfaceRotationAnimationController.startScreenRotationAnimation(ScreenRotationAnimation.java:563)
+04-05 16:16:41.723   565   586 I WindowManager: 	at com.android.server.wm.ScreenRotationAnimation.startAnimation(ScreenRotationAnimation.java:422)
+04-05 16:16:41.723   565   586 I WindowManager: 	at com.android.server.wm.ScreenRotationAnimation.dismiss(ScreenRotationAnimation.java:440)
+04-05 16:16:41.723   565   586 I WindowManager: 	at com.android.server.wm.WindowManagerService.doStopFreezingDisplayLocked(WindowManagerService.java:6157)
+04-05 16:16:41.723   565   586 I WindowManager: 	at com.android.server.wm.WindowManagerService.stopFreezingDisplayLocked(WindowManagerService.java:6116)
+04-05 16:16:41.723   565   586 I WindowManager: 	at com.android.server.wm.RootWindowContainer.performSurfacePlacementNoTrace(RootWindowContainer.java:890)
+04-05 16:16:41.723   565   586 I WindowManager: 	at com.android.server.wm.RootWindowContainer.performSurfacePlacement(RootWindowContainer.java:784)
+04-05 16:16:41.723   565   586 I WindowManager: 	at com.android.server.wm.WindowSurfacePlacer.performSurfacePlacementLoop(WindowSurfacePlacer.java:177)
+04-05 16:16:41.723   565   586 I WindowManager: 	at com.android.server.wm.WindowSurfacePlacer.performSurfacePlacement(WindowSurfacePlacer.java:126)
+04-05 16:16:41.723   565   586 I WindowManager: 	at com.android.server.wm.WindowSurfacePlacer.performSurfacePlacement(WindowSurfacePlacer.java:115)
+04-05 16:16:41.723   565   586 I WindowManager: 	at com.android.server.wm.WindowSurfacePlacer$Traverser.run(WindowSurfacePlacer.java:57)
+04-05 16:16:41.723   565   586 I WindowManager: 	at android.os.Handler.handleCallback(Handler.java:942)
+04-05 16:16:41.723   565   586 I WindowManager: 	at android.os.Handler.dispatchMessage(Handler.java:99)
+04-05 16:16:41.723   565   586 I WindowManager: 	at android.os.Looper.loopOnce(Looper.java:201)
+04-05 16:16:41.723   565   586 I WindowManager: 	at android.os.Looper.loop(Looper.java:288)
+04-05 16:16:41.723   565   586 I WindowManager: 	at android.os.HandlerThread.run(HandlerThread.java:67)
+04-05 16:16:41.723   565   586 I WindowManager: 	at com.android.server.ServiceThread.run(ServiceThread.java:44)
+
+```
+
+
+
 ## 横竖屏切换动画时间优化方案
 
 https://zhuanlan.zhihu.com/p/265291842
@@ -225,6 +303,14 @@ execTransact:1143, Binder (android.os)
 
 
 ![image-20230825013906246](wms_animination.assets/image-20230825013906246.png)
+
+
+
+#  View动画 
+
+https://www.youtube.com/watch?v=S20kdGUOnAw
+
+
 
 
 
