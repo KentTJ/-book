@@ -2094,7 +2094,21 @@ add_subdirectory(${CMAKE_DIRECTORY_FOR_CLION}/system/core/lmkd/lmkd-arm-android)
 <h1 id="&#x5728;&#x6E90;&#x7801;&#x4E2D;adb&#xFF08;dump&#x3001;&#x622A;&#x56FE;&#x3001;&#x64CD;&#x4F5C;&#x3001;&#x3001;&#x3001;&#xFF09;"><a name="&#x5728;&#x6E90;&#x7801;&#x4E2D;adb&#xFF08;dump&#x3001;&#x622A;&#x56FE;&#x3001;&#x64CD;&#x4F5C;&#x3001;&#x3001;&#x3001;&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x5728;&#x6E90;&#x7801;&#x4E2D;adb&#xFF08;dump&#x3001;&#x622A;&#x56FE;&#x3001;&#x64CD;&#x4F5C;&#x3001;&#x3001;&#x3001;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x5728;&#x6E90;&#x7801;&#x4E2D;adb&#xFF08;dump&#x3001;&#x622A;&#x56FE;&#x3001;&#x64CD;&#x4F5C;&#x3001;&#x3001;&#x3001;&#xFF09;</h1>
 <p>&#x6253;&#x901A;&#x4E86;&#x6E90;&#x7801;&#x4E2D;&#x6267;&#x884C;adb  -----&gt;  <font color="red">&#x6781;&#x5176;&#x4F18;&#xFF0C;&#x53EF;&#x4EE5;&#x505A;&#x7684;&#x4E8B;&#x60C5;&#x975E;&#x5E38;&#x975E;&#x5E38;&#x591A;</font></p>
 <p>&#x7CBE;&#x9AD3;&#xFF1A;</p>
+<blockquote>
 <p>-<font color="red">&#x53EF;&#x4EE5;&#x7CBE;&#x786E;&#x7684;&#x4FDD;&#x5B58;&#x5F53;&#x65F6;&#x6848;&#x53D1;&#x73B0;&#x573A;</font></p>
+</blockquote>
+<p>&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-comment">// &#x6CD5;&#x4E00;&#xFF1A;</span>
+Runtime.getRuntime().exec(<span class="hljs-string">&quot;screencap -p /data/local/tmp/1111.png&quot;</span>);
+
+
+<span class="hljs-comment">// &#x6CD5;&#x4E8C;&#xFF1A;</span>
+TODO&#xFF1A;com
+</code></pre>
+<p>-<font color="red">&#x7279;&#x522B;&#x6CE8;&#x610F;&#x7684;&#x70B9;&#xFF1A;</font></p>
+<blockquote>
+<p>&#x547D;&#x4EE4;&#x4E0D;&#x80FD;&#x7528;&#x91CD;&#x5B9A;&#x5411;&#xFF0C;&#x6BD4;&#x5982;  dumpsys display &gt; /data/local/tmp/display.txt</p>
+</blockquote>
 <h2 id="&#x6743;&#x9650;&#x95EE;&#x9898;&#x7684;&#x89E3;&#x51B3;"><a name="&#x6743;&#x9650;&#x95EE;&#x9898;&#x7684;&#x89E3;&#x51B3;" class="anchor-navigation-ex-anchor" href="#&#x6743;&#x9650;&#x95EE;&#x9898;&#x7684;&#x89E3;&#x51B3;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1. &#x6743;&#x9650;&#x95EE;&#x9898;&#x7684;&#x89E3;&#x51B3;</h2>
 <p>1&#x3001;&#x5373;&#x4F7F;&#x5728;&#x7CFB;&#x7EDF;&#x8FDB;&#x7A0B;&#x91CC;&#xFF0C;&#x4EE3;&#x7801;&#x91CC;&#x4E5F;<strong>&#x7533;&#x8BF7;&#x4E0D;&#x4E86;su&#x6743;&#x9650;</strong>&#xFF0C;linux&#x4FA7;&#x5B89;&#x5353;&#x505A;&#x4E86;&#x4E25;&#x683C;&#x6821;&#x9A8C;&#x3002;&#x3002;&#x3002;TODO
 2&#x3001;&#x5173;&#x95ED;selinux&#x6743;&#x9650;&#x540E;&#xFF0C;<del>&#x4EE3;&#x7801;&#x91CC;&#x53EF;&#x4EE5;&#x7533;&#x8BF7;sh&#x6743;&#x9650;&#xFF1A;</del>   ------&#x300B; <font color="red">&#x89C4;&#x5B9A;&#xFF1A;&#x7EDF;&#x4E00;&#x4E0D;&#x7BA1;&#xFF0C;&#x7528;system&#x6743;&#x9650;&#x3002;</font>&#x6587;&#x4EF6;&#x5939;&#x4E5F;&#x7528;system
@@ -2116,45 +2130,68 @@ chgrp  -R system /data/local/tmp</p>
 <p>&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;adb&#x622A;&#x56FE;</p>
 <p>&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;surfacecontrol</p>
 <h2 id="&#x5E94;&#x7528;&#x4E4B;&#x6E90;&#x7801;&#x4E2D;dump&#x4FE1;&#x606F;"><a name="&#x5E94;&#x7528;&#x4E4B;&#x6E90;&#x7801;&#x4E2D;dump&#x4FE1;&#x606F;" class="anchor-navigation-ex-anchor" href="#&#x5E94;&#x7528;&#x4E4B;&#x6E90;&#x7801;&#x4E2D;dump&#x4FE1;&#x606F;"><i class="fa fa-link" aria-hidden="true"></i></a>3.3. &#x5E94;&#x7528;&#x4E4B;&#x6E90;&#x7801;&#x4E2D;dump&#x4FE1;&#x606F;</h2>
-<pre><code class="lang-java">        <span class="hljs-comment">// cg add for test</span>
+<pre><code class="lang-java">     <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">myDump</span><span class="hljs-params">(String cmd, String outPath)</span> </span>{
+        <span class="hljs-comment">//EX:     myDump(&quot;dumpsys SurfaceFlinger&quot;,&quot;/data/local/tmp/sf.txt&quot;);</span>
+        <span class="hljs-comment">//        myDump(&quot;dumpsys window&quot;,&quot;/data/local/tmp/window.txt&quot;);</span>
         <span class="hljs-keyword">new</span> Thread(<span class="hljs-keyword">new</span> Runnable() {
             <span class="hljs-meta">@Override</span>
             <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+                java.io.FileOutputStream fileOutputStream = <span class="hljs-keyword">null</span>;
+                java.io.InputStream inputStream = <span class="hljs-keyword">null</span>;
                 <span class="hljs-keyword">try</span> {
                     <span class="hljs-comment">// &#x6267;&#x884C;CMD&#x547D;&#x4EE4;</span>
                     Slog.d(TAG,<span class="hljs-string">&quot;cmd start&quot;</span>);
-                    java.lang.Process process = Runtime.getRuntime().exec(<span class="hljs-string">&quot;screencap -p /data/local/tmp/1111.png&quot;</span>);
-<span class="hljs-comment">//                    java.lang.Process process2 = Runtime.getRuntime().exec(&quot;dumpsys window windows &gt; /data/local/tmp/windows.txt&quot;);</span>
-                    java.lang.Process process2 = Runtime.getRuntime().exec(<span class="hljs-string">&quot;dumpsys display &gt; /data/local/tmp/display.txt&quot;</span>);
-                    Slog.d(TAG,<span class="hljs-string">&quot;process &quot;</span> + process.toString());
+                    java.lang.Process process = Runtime.getRuntime().exec(cmd);
+                    Slog.d(TAG,<span class="hljs-string">&quot;cmd exec done&quot;</span>);
+                    fileOutputStream = <span class="hljs-keyword">new</span> java.io.FileOutputStream(outPath);
 
-                    <span class="hljs-comment">// &#x83B7;&#x53D6;&#x547D;&#x4EE4;&#x7684;&#x8F93;&#x51FA;&#x6D41;</span>
-                    BufferedReader reader = <span class="hljs-keyword">new</span> BufferedReader(<span class="hljs-keyword">new</span> InputStreamReader(process.getInputStream()));
-                    String line;
-                    Slog.d(TAG, <span class="hljs-string">&quot;chen, out1: &quot;</span>);
-                    <span class="hljs-keyword">while</span> ((line = reader.readLine()) != <span class="hljs-keyword">null</span>) {
-                        <span class="hljs-comment">// &#x8F93;&#x51FA;&#x547D;&#x4EE4;&#x7684;&#x7ED3;&#x679C;</span>
-                        Slog.d(TAG, <span class="hljs-string">&quot;chen, out2: &quot;</span> + line);
+                    <span class="hljs-comment">// &#x83B7;&#x53D6;&#x547D;&#x4EE4;&#x7684;&#x8F93;&#x51FA;&#x6D41;, line&#x7528;&#x6765;&#x89C2;&#x5BDF;&#x4E2D;&#x95F4;&#x6570;&#x636E;&#xFF01;&#xFF01;&#xFF01;</span>
+<span class="hljs-comment">//                    BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));</span>
+<span class="hljs-comment">//                    String line = reader.readLine();</span>
+
+                    inputStream = process.getInputStream();
+                    <span class="hljs-keyword">byte</span>[] buffer = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">1024</span>];
+                    <span class="hljs-keyword">while</span> ((inputStream.read(buffer)) != -<span class="hljs-number">1</span>) {
+                        fileOutputStream.write(buffer);
                     }
 
-                    <span class="hljs-comment">// &#x7B49;&#x5F85;&#x547D;&#x4EE4;&#x6267;&#x884C;&#x5B8C;&#x6210;</span>
-                    process.waitFor();
-                    reader.close();
+                    <span class="hljs-comment">// &#x7B49;&#x5F85;&#x547D;&#x4EE4;&#x6267;&#x884C;&#x5B8C;&#x6210;:&#x63D0;&#x65E9;&#x5173;&#x95ED;&#xFF0C;&#x4F1A;&#x62FF;&#x4E0D;&#x5230;&#x6570;&#x636E;</span>
+                    <span class="hljs-keyword">int</span> waitValue = process.waitFor();<span class="hljs-comment">// -----&gt; &#x6709;&#x65F6;&#x5019;&#x4F1A;&#x5361;, &#x600E;&#x4E48;&#x529E;&#xFF1F;</span>
+                    Slog.d(TAG,<span class="hljs-string">&quot;waitValue:&quot;</span> + waitValue);
 
-                    Slog.d(TAG,<span class="hljs-string">&quot;cmd end&quot;</span>);
-                } <span class="hljs-keyword">catch</span> (IOException | InterruptedException e) {
+                    fileOutputStream.close();
+                    inputStream.close();
+                    Slog.d(TAG,<span class="hljs-string">&quot;fileOutputStream close&quot;</span>);
+                } <span class="hljs-keyword">catch</span> (IOException|InterruptedException e) {
+                    <span class="hljs-keyword">try</span> {
+                        fileOutputStream.close();
+                        inputStream.close();
+                    } <span class="hljs-keyword">catch</span> (Exception e1) {
+                        e.printStackTrace();
+                        Slog.d(TAG, <span class="hljs-string">&quot;chen, out3: e:&quot;</span> + e1);
+                        Slog.d(TAG, <span class="hljs-string">&quot;chen, out3: e:&quot;</span> + e1.getStackTrace());
+                    }
                     e.printStackTrace();
                     Slog.d(TAG, <span class="hljs-string">&quot;chen, out3: e:&quot;</span> + e);
                     Slog.d(TAG, <span class="hljs-string">&quot;chen, out3: e:&quot;</span> + e.getStackTrace());
                 }
+                Slog.d(TAG,<span class="hljs-string">&quot;cmd end&quot;</span>);
             }
         }).start();
+    }
 </code></pre>
+<p>Runtime.getRuntime().exec&#x6CE8;&#x610F;&#xFF1A;</p>
+<blockquote>
+<p>&#x52A0;&#x4E0A;&#x8DEF;&#x5F84;&#x540E;&#xFF0C;<strong>&#x4F1A;&#x6267;&#x884C;&#x6210;&#x529F;&#xFF0C;&#x4F46;&#x662F;&#x6CA1;&#x6709;&#x8F93;&#x51FA;&#x6587;&#x4EF6;</strong>  -----&gt; &#x6CA1;&#x6709;&#x62A5;&#x9519;&#xFF0C;  <font color="red">&#x5F88;&#x96BE;&#x5B9A;&#x4F4D;</font></p>
+<pre><code class="lang-java">java.lang.Process process2 = Runtime.getRuntime().exec(<span class="hljs-string">&quot;dumpsys display &gt; /data/local/tmp/display.txt&quot;</span>);
+</code></pre>
+</blockquote>
 <h2 id="&#x6280;&#x5DE7;"><a name="&#x6280;&#x5DE7;" class="anchor-navigation-ex-anchor" href="#&#x6280;&#x5DE7;"><i class="fa fa-link" aria-hidden="true"></i></a>3.4. &#x6280;&#x5DE7;</h2>
 <p>&#x53EF;&#x4EE5;&#x5728;debug&#x4E0B;&#x5148;&#x9A8C;&#x8BC1;&#x4EE3;&#x7801;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;</p>
 <h2 id="todo&#xFF1A;&#x5176;&#x4ED6;&#x65B9;&#x5F0F;"><a name="todo&#xFF1A;&#x5176;&#x4ED6;&#x65B9;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#todo&#xFF1A;&#x5176;&#x4ED6;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>3.5. TODO&#xFF1A;&#x5176;&#x4ED6;&#x65B9;&#x5F0F;</h2>
 <p><a href="https://zhaoyf.cn/2021/01/21/selinux-shell-cmd/" target="_blank">https://zhaoyf.cn/2021/01/21/selinux-shell-cmd/</a></p>
 <p><a href="https://blog.csdn.net/liaosongmao1/article/details/130502382" target="_blank">https://blog.csdn.net/liaosongmao1/article/details/130502382</a>   &#x5B89;&#x5353;&#x8F66;&#x673A;&#x7CFB;&#x7EDF;adb shell cmd &#x6E90;&#x7801;&#x539F;&#x7406;&#x5206;&#x6790;</p>
+<p>TODO&#xFF1A;&#x8FDE;&#x7EED;&#x6267;&#x884C;&#x591A;&#x4E2A;cmd&#x547D;&#x4EE4;&#x5462;&#xFF1F;</p>
 <h2 id="&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;&#xFF1A;"><a name="&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>3.6. &#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;&#xFF1A;</h2>
 <p>&#x201C;java.io.IOException: Cannot run program &quot;/system/xbin/su&quot;: error=13, Permission denied</p>
 <p>--------&gt;selinux&#x6743;&#x9650;&#x3001;&#x6587;&#x4EF6;&#x6743;&#x9650;</p>
@@ -2280,7 +2317,7 @@ chgrp  -R system /data/local/tmp</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Debug Skills","level":"1.2.4.5","depth":3,"next":{"title":"Docker","level":"1.2.4.6","depth":3,"path":"coding/Tool/Docker.md","ref":"coding/Tool/Docker.md","articles":[]},"previous":{"title":"Command","level":"1.2.4.4","depth":3,"path":"coding/Tool/command.md","ref":"coding/Tool/command.md","articles":[]},"dir":"ltr"},"config":{"//":["这是多行注释：    anchor-navigation-ex 是","anchor-navigation-ex 是","click-reveal 本地使用ok，但是github在build pages时，不识别click-reveal","accordion 也是折叠代码段","anchor-navigation-ex 是"],"plugins":["anchor-navigation-ex","toggle-chapters","expandable-chapters-small","splitter","code","page-treeview","popup","-search","-lunr","sidebar-style","auto-scroll-table","click-reveal","accordion","pageview-count","search-pro"],"root":"./markdownsFiles","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"Kent","title":"《知行，行知》"},"tbfed-pagefooter":{"copyright":"Copyright &copy ershouche-FE 2019","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"disqus":{"shortName":"gitbookuse"},"splitter":{},"search-pro":{},"accordion":{},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":200000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"pageview-count":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bookname":"笔记","variables":{},"title":"Kent的博客","gitbook":"*"},"file":{"path":"coding/Tool/debugSkills.md","mtime":"2023-08-27T18:13:38.389Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-28T13:37:11.307Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Debug Skills","level":"1.2.4.5","depth":3,"next":{"title":"Docker","level":"1.2.4.6","depth":3,"path":"coding/Tool/Docker.md","ref":"coding/Tool/Docker.md","articles":[]},"previous":{"title":"Command","level":"1.2.4.4","depth":3,"path":"coding/Tool/command.md","ref":"coding/Tool/command.md","articles":[]},"dir":"ltr"},"config":{"//":["这是多行注释：    anchor-navigation-ex 是","anchor-navigation-ex 是","click-reveal 本地使用ok，但是github在build pages时，不识别click-reveal","accordion 也是折叠代码段","anchor-navigation-ex 是"],"plugins":["anchor-navigation-ex","toggle-chapters","expandable-chapters-small","splitter","code","page-treeview","popup","-search","-lunr","sidebar-style","auto-scroll-table","click-reveal","accordion","pageview-count","search-pro"],"root":"./markdownsFiles","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"Kent","title":"《知行，行知》"},"tbfed-pagefooter":{"copyright":"Copyright &copy ershouche-FE 2019","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"disqus":{"shortName":"gitbookuse"},"splitter":{},"search-pro":{},"accordion":{},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":200000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"pageview-count":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bookname":"笔记","variables":{},"title":"Kent的博客","gitbook":"*"},"file":{"path":"coding/Tool/debugSkills.md","mtime":"2023-08-28T15:43:50.515Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-28T15:43:58.732Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

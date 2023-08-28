@@ -1958,7 +1958,24 @@ ctrl+alt+shift+i
 
 精髓：
 
--<font color='red'>可以精确的保存当时案发现场</font>
+> -<font color='red'>可以精确的保存当时案发现场</font>
+
+
+
+两种方式：
+
+```java
+// 法一：
+Runtime.getRuntime().exec("screencap -p /data/local/tmp/1111.png");
+
+
+// 法二：
+TODO：com
+```
+
+-<font color='red'>特别注意的点：</font>
+
+> 命令不能用重定向，比如  dumpsys display > /data/local/tmp/display.txt
 
 ## 权限问题的解决
 
@@ -1994,45 +2011,67 @@ TODO：《com》
 
 ## 应用之源码中dump信息
 
-
-
 ```java
-        // cg add for test
+     private void myDump(String cmd, String outPath) {
+        //EX:     myDump("dumpsys SurfaceFlinger","/data/local/tmp/sf.txt");
+        //        myDump("dumpsys window","/data/local/tmp/window.txt");
         new Thread(new Runnable() {
             @Override
             public void run() {
+                java.io.FileOutputStream fileOutputStream = null;
+                java.io.InputStream inputStream = null;
                 try {
                     // 执行CMD命令
                     Slog.d(TAG,"cmd start");
-                    java.lang.Process process = Runtime.getRuntime().exec("screencap -p /data/local/tmp/1111.png");
-//                    java.lang.Process process2 = Runtime.getRuntime().exec("dumpsys window windows > /data/local/tmp/windows.txt");
-                    java.lang.Process process2 = Runtime.getRuntime().exec("dumpsys display > /data/local/tmp/display.txt");
-                    Slog.d(TAG,"process " + process.toString());
+                    java.lang.Process process = Runtime.getRuntime().exec(cmd);
+                    Slog.d(TAG,"cmd exec done");
+                    fileOutputStream = new java.io.FileOutputStream(outPath);
 
-                    // 获取命令的输出流
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-                    String line;
-                    Slog.d(TAG, "chen, out1: ");
-                    while ((line = reader.readLine()) != null) {
-                        // 输出命令的结果
-                        Slog.d(TAG, "chen, out2: " + line);
+                    // 获取命令的输出流, line用来观察中间数据！！！
+//                    BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+//                    String line = reader.readLine();
+
+                    inputStream = process.getInputStream();
+                    byte[] buffer = new byte[1024];
+                    while ((inputStream.read(buffer)) != -1) {
+                        fileOutputStream.write(buffer);
                     }
 
-                    // 等待命令执行完成
-                    process.waitFor();
-                    reader.close();
+                    // 等待命令执行完成:提早关闭，会拿不到数据
+                    int waitValue = process.waitFor();// -----> 有时候会卡, 怎么办？
+                    Slog.d(TAG,"waitValue:" + waitValue);
 
-                    Slog.d(TAG,"cmd end");
-                } catch (IOException | InterruptedException e) {
+                    fileOutputStream.close();
+                    inputStream.close();
+                    Slog.d(TAG,"fileOutputStream close");
+                } catch (IOException|InterruptedException e) {
+                    try {
+                        fileOutputStream.close();
+                        inputStream.close();
+                    } catch (Exception e1) {
+                        e.printStackTrace();
+                        Slog.d(TAG, "chen, out3: e:" + e1);
+                        Slog.d(TAG, "chen, out3: e:" + e1.getStackTrace());
+                    }
                     e.printStackTrace();
                     Slog.d(TAG, "chen, out3: e:" + e);
                     Slog.d(TAG, "chen, out3: e:" + e.getStackTrace());
                 }
+                Slog.d(TAG,"cmd end");
             }
         }).start();
+    }
 ```
 
 
+
+Runtime.getRuntime().exec注意：
+
+> 加上路径后，**会执行成功，但是没有输出文件**  -----> 没有报错，  <font color='red'>很难定位</font>
+>
+> ```java
+> java.lang.Process process2 = Runtime.getRuntime().exec("dumpsys display > /data/local/tmp/display.txt");
+> ```
 
 
 
@@ -2047,6 +2086,10 @@ https://zhaoyf.cn/2021/01/21/selinux-shell-cmd/
 
 
 https://blog.csdn.net/liaosongmao1/article/details/130502382   安卓车机系统adb shell cmd 源码原理分析
+
+
+
+TODO：连续执行多个cmd命令呢？
 
 
 
