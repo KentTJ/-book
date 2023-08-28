@@ -52,9 +52,21 @@ https://android.googlesource.com/platform/frameworks
 
 疑问：
 
-那么多进程与线程，如何做到协调？ -------》 一定是有大的结构协调（小协调依附于大协调）
+那么多进程与线程，<font color='red'>如何做到协调</font>？ 
+
+------->   <font color='red'>一定是有大的结构协调</font>（小协调依附于大协调）:  房子是框架与框架协调决定的，而不是砖与砖之间协调决定的
 
 ​                                                                        抛开代码不谈，事物的本质？
+
+TODO：  大的结构指的是啥？
+
+
+
+模块之间如何协调？（**同进程的**）
+
+
+
+
 
 如何协调硬件资源？
 
@@ -63,6 +75,8 @@ https://android.googlesource.com/platform/frameworks
 安卓是一个大的Binder应用
 
 > APP-----系统服务
+
+
 
 
 
