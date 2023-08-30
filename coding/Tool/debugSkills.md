@@ -2149,6 +2149,8 @@ TODO：连续执行多个cmd命令呢？
 
 安卓的很多工具都在这里：
 
+比如截图、
+
 ![image-20230831014619657](debugSkills.assets/image-20230831014619657.png)
 
 # log、debug适用的场景
