@@ -1952,7 +1952,7 @@ ctrl+alt+shift+i
 
 
 
-# 在源码中adb（dump、截图、操作、、、）
+# 在源码中adb（dump、截图、ui、操作、、、）
 
 打通了源码中执行adb  ----->  <font color='red'>极其优，可以做的事情非常非常多</font>
 
@@ -2073,6 +2073,17 @@ Runtime.getRuntime().exec注意：
 > java.lang.Process process2 = Runtime.getRuntime().exec("dumpsys display > /data/local/tmp/display.txt");
 > ```
 
+很神奇的一个点：
+
+> 
+>
+> ```java
+> String cmd = "uiautomator dump --compressed -d 0  /data/local/tmp/uidump.xml";
+> java.lang.Process process = Runtime.getRuntime().exec(cmd);
+> ```
+>
+> **在断点下，执行后，没有任何输出**。在代码里，可以
+
 
 
 ## 技巧
@@ -2100,6 +2111,20 @@ TODO：连续执行多个cmd命令呢？
 -------->selinux权限、文件权限
 
 
+
+# 认识工具、发展工具
+
+这是一个思想：
+
+-<font color='red'>见到任何工具，规定：</font>
+
+1、了解背后的原理, 拆开来看   ----->  定位工具bug、扩展功能
+
+>    比如：
+>
+>   ![image-20230831013856508](debugSkills.assets/image-20230831013856508.png)
+
+2、了解背后的思想 ------------->  才可以拓展自己的
 
 # log、debug适用的场景
 
