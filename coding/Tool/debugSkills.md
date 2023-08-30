@@ -2129,6 +2129,24 @@ TODO：连续执行多个cmd命令呢？
 
 
 
+没有文件输出：
+
+> 找命令执行的脚本---> 对应代码
+
+
+
+## 参考：
+
+https://blog.csdn.net/qq_37858386/article/details/125002811      2022-05-27 Android Android getRuntime()、exec 执行命令（linux 下的bin文件等）并解得到返回值、执行ping命令
+
+
+
+
+
+
+
+
+
 # 认识工具、发展工具
 
 这是一个思想：
@@ -2152,6 +2170,14 @@ TODO：连续执行多个cmd命令呢？
 比如截图、
 
 ![image-20230831014619657](debugSkills.assets/image-20230831014619657.png)
+
+
+
+TODO：
+
+如何破坏各种权限？
+
+
 
 # log、debug适用的场景
 
