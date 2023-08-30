@@ -2011,6 +2011,12 @@ TODO：《com》
 
 ## 应用之源码中dump信息
 
+
+
+%accordion%具体代码%accordion%
+
+
+
 ```java
   	 private void myDump(String cmd, String outPath) {
         //EX:     myDump("dumpsys SurfaceFlinger","/data/local/tmp/sf.txt");
@@ -2079,6 +2085,10 @@ TODO：《com》
     }
 
 ```
+
+
+
+%/accordion%
 
 
 
