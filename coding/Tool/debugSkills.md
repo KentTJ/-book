@@ -2012,9 +2012,11 @@ TODO：《com》
 ## 应用之源码中dump信息
 
 ```java
-     private void myDump(String cmd, String outPath) {
+  	 private void myDump(String cmd, String outPath) {
         //EX:     myDump("dumpsys SurfaceFlinger","/data/local/tmp/sf.txt");
         //        myDump("dumpsys window","/data/local/tmp/window.txt");
+        //        myDump("duiautomator dump --compressed -d 0  /data/local/tmp/uidump.xml", null);
+        //        myDump("screencap -p /sdcard/app.png", null);
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -2025,25 +2027,28 @@ TODO：《com》
                     Slog.d(TAG,"cmd start");
                     java.lang.Process process = Runtime.getRuntime().exec(cmd);
                     Slog.d(TAG,"cmd exec done");
-                    fileOutputStream = new java.io.FileOutputStream(outPath);
 
-                    // 获取命令的输出流, line用来观察中间数据！！！
+                    if (outPath != null) {
+                        fileOutputStream = new java.io.FileOutputStream(outPath);
+
+                        // 获取命令的输出流, line用来观察中间数据！！！
 //                    BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 //                    String line = reader.readLine();
 
-                    inputStream = process.getInputStream();
-                    byte[] buffer = new byte[1024];
-                    while ((inputStream.read(buffer)) != -1) {
-                        fileOutputStream.write(buffer);
+                        inputStream = process.getInputStream();
+                        byte[] buffer = new byte[1024];
+                        while ((inputStream.read(buffer)) != -1) {
+                            fileOutputStream.write(buffer);
+                        }
+
+                        // 等待命令执行完成:提早关闭，会拿不到数据
+                        int waitValue = process.waitFor();// -----> 有时候会卡, 怎么办？
+                        Slog.d(TAG,"waitValue:" + waitValue);
+
+                        fileOutputStream.close();
+                        inputStream.close();
+                        Slog.d(TAG,"fileOutputStream close");
                     }
-
-                    // 等待命令执行完成:提早关闭，会拿不到数据
-                    int waitValue = process.waitFor();// -----> 有时候会卡, 怎么办？
-                    Slog.d(TAG,"waitValue:" + waitValue);
-
-                    fileOutputStream.close();
-                    inputStream.close();
-                    Slog.d(TAG,"fileOutputStream close");
                 } catch (IOException|InterruptedException e) {
                     try {
                         fileOutputStream.close();
@@ -2058,9 +2063,21 @@ TODO：《com》
                     Slog.d(TAG, "chen, out3: e:" + e.getStackTrace());
                 }
                 Slog.d(TAG,"cmd end");
+
+
+                //cg add for test
+                try {
+                    Slog.d("chen","cmd2 exec start:");
+                    String cmd = "uiautomator dump --compressed -d 0  /data/local/tmp/uidump.xml";
+                    java.lang.Process process = Runtime.getRuntime().exec(cmd);
+                    Slog.d("chen","cmd2 exec done:" + cmd);
+                } catch (Exception e) {
+                    Slog.d("chen","cmd2 exec Exception:" + e);
+                }
             }
         }).start();
     }
+
 ```
 
 
@@ -2125,6 +2142,14 @@ TODO：连续执行多个cmd命令呢？
 >   ![image-20230831013856508](debugSkills.assets/image-20230831013856508.png)
 
 2、了解背后的思想 ------------->  才可以拓展自己的
+
+
+
+## TODO
+
+安卓的很多工具都在这里：
+
+![image-20230831014619657](debugSkills.assets/image-20230831014619657.png)
 
 # log、debug适用的场景
 
