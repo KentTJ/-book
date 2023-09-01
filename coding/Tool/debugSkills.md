@@ -2018,47 +2018,59 @@ TODO：《com》
 
 
 ```java
-  	 private void myDump(String cmd, String outPath) {
-        //EX:     myDump("dumpsys SurfaceFlinger","/data/local/tmp/sf.txt");
-        //        myDump("dumpsys window","/data/local/tmp/window.txt");
-        //        myDump("duiautomator dump --compressed -d 0  /data/local/tmp/uidump.xml", null);
-        //        myDump("screencap -p /sdcard/app.png", null);
+Log.d(TAG, "start dump:" + getSystemTime());
+myDump("dumpsys SurfaceFlinger","/data/local/tmp/sf.txt");
+myDump("dumpsys window windows","/data/local/tmp/window.txt");
+myDump("screencap -p /data/local/tmp/app.png",null);
+myDump("uiautomator dump --compressed -d 0  /data/local/tmp/uidump.xml",null);  	
+
+
+ private static void myDump(String cmd, String outPath) {
         new Thread(new Runnable() {
             @Override
             public void run() {
                 java.io.FileOutputStream fileOutputStream = null;
-                java.io.InputStream inputStream = null;
+                java.io.InputStream fileInputStream = null;
                 try {
                     // 执行CMD命令
-                    Slog.d(TAG,"cmd start");
+                    Slog.d(TAG,"cmd start: " + getSystemTime() + " " + cmd);
                     java.lang.Process process = Runtime.getRuntime().exec(cmd);
-                    Slog.d(TAG,"cmd exec done");
+                    Slog.d(TAG,"cmd exec done" + getSystemTime());
 
                     if (outPath != null) {
                         fileOutputStream = new java.io.FileOutputStream(outPath);
 
                         // 获取命令的输出流, line用来观察中间数据！！！
-//                    BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-//                    String line = reader.readLine();
+//                        BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+//                        String line;
+//                        while ((line = reader.readLine()) != null ) {
+//                            line = line + System.getProperty("line.separator");//换行符
+//                            byte[] bytes = line.getBytes(StandardCharsets.UTF_8);
+//                            fileOutputStream.write(bytes);
+//                        }
+//                        Slog.d(TAG,"fileOutputStream.write down:" + getSystemTime());
 
-                        inputStream = process.getInputStream();
-                        byte[] buffer = new byte[1024];
-                        while ((inputStream.read(buffer)) != -1) {
+                        fileInputStream = process.getInputStream();
+                        byte[] buffer = new byte[2048];  //这里需要足够大，否则数据会丢失
+                        while ((fileInputStream.read(buffer)) != -1) {
                             fileOutputStream.write(buffer);
                         }
 
                         // 等待命令执行完成:提早关闭，会拿不到数据
                         int waitValue = process.waitFor();// -----> 有时候会卡, 怎么办？
-                        Slog.d(TAG,"waitValue:" + waitValue);
+                        Slog.d(TAG,"waitValue:" + waitValue + getSystemTime());
 
+                        fileOutputStream.flush();
                         fileOutputStream.close();
-                        inputStream.close();
-                        Slog.d(TAG,"fileOutputStream close");
+                        fileInputStream.close();
+                    } else {
+                        int waitValue = process.waitFor();
+                        Slog.d(TAG,"waitValue:" + waitValue + getSystemTime());
                     }
-                } catch (IOException|InterruptedException e) {
+                } catch (IOException | InterruptedException e) {
                     try {
                         fileOutputStream.close();
-                        inputStream.close();
+                        fileInputStream.close();
                     } catch (Exception e1) {
                         e.printStackTrace();
                         Slog.d(TAG, "chen, out3: e:" + e1);
@@ -2070,22 +2082,27 @@ TODO：《com》
                 }
                 Slog.d(TAG,"cmd end");
 
-
-                //cg add for test
-                try {
-                    Slog.d("chen","cmd2 exec start:");
-                    String cmd = "uiautomator dump --compressed -d 0  /data/local/tmp/uidump.xml";
-                    java.lang.Process process = Runtime.getRuntime().exec(cmd);
-                    Slog.d("chen","cmd2 exec done:" + cmd);
-                } catch (Exception e) {
-                    Slog.d("chen","cmd2 exec Exception:" + e);
-                }
             }
         }).start();
     }
 
+
+    private static String getSystemTime() {
+        long currentTimeInMillis = System.currentTimeMillis();
+        java.text.SimpleDateFormat dateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+        return " " + dateFormat.format(currentTimeInMillis);
+    }
 ```
 
+
+
+%/accordion%
+
+
+
+%accordion%**具体每个dump中修改**：%accordion%
+
+wms：
 
 
 %/accordion%
@@ -2113,9 +2130,144 @@ Runtime.getRuntime().exec注意：
 
 
 
+## 一些注意点
+
+（1）<font color='red'>log不阻塞情况下</font>，log时间戳 =  系统时间（真正dump时间）
+
+---------->  结论：log时间点，暂时可以替代  抛出dump的时间点
+
+![image-20230902001036170](debugSkills.assets/image-20230902001036170.png)
+
+时间戳的加法：
+
+```java
+Log.d(TAG, "screencap -p end" + getSystemTime());
+```
+
+时间戳的最终呈现：
+
+> log形式 、
+>
+> **直接加在dump.txt中**   ------>  会更加精细
+
+（2）要非常<font color='red'>清楚耗时段在哪里</font>：
+
+**规定: 大耗时必须有日志<font color='red'>夹出时间段</font>**
+
+> 1、抛出dump 时刻   与  dump真正执行时刻 ----> **大耗时，加日志**
+>
+> 2、~~新起线程，<font color='red'>不阻塞，</font>1ms时间差，不用前后都加日志~~
+>
+> ![image-20230902003234462](debugSkills.assets/image-20230902003234462.png)
+>
+> 3、 **dump windows 耗时 6ms**   ----> 一般情况下可以忽略
+>
+> ![image-20230902011631599](debugSkills.assets/image-20230902011631599.png)
+
+
+
+（3）抛出dump 时刻   与  dump真正执行时刻 ，<font color='red'>是有差距的</font>，**大概40ms**
+
+![image-20230902001516130](debugSkills.assets/image-20230902001516130.png)
+
+ ------>  如何解决这个问题？
+
+方法一：
+
+> -<font color='red'>将调用点往前挪动，直至log  时间点 与 dump时间点比较接近！！</font> 
+>
+> 技巧： 当前函数，向上两个函数都要加log
+
+
+
+方法二：TODO：精确做法：
+
+> 能否做到不经过cmd命令呢？
+
+
+
+## 精确时间点dump：
+
+```java
+// dumpsys window windows 对应代码
+java.io.FileOutputStream fileOutputStream= new java.io.FileOutputStream("/data/local/tmp/111.txt");
+com.android.internal.util.FastPrintWriter pw = new com.android.internal.util.FastPrintWriter(fileOutputStream);
+//new java.io.PrintWriter(fileOutputStream);
+WindowManagerService.this.dumpWindowsLocked(pw, true, null);
+```
+
+---------------->  验证ok
+
+缺点：
+
+> <font color='red'>难以在系统源码中任意调用？</font> （**shell dump可以任意位置，甚至APP侧！**）
+>
+> TODO： 要不要反射？ 要不要启动新线程？
+
+优点：
+
+> <font color='red'>时间很精确</font>（**shell dump做不到**）  调用点，和执行开始点是一个。总耗时5ms
+>
+> ![image-20230902022006685](debugSkills.assets/image-20230902022006685.png)
+
+
+
+最终封装， **系统进程任意可用**：
+
+```java
+// wms.LocalService:(WindowManagerInternal也要改)
+
+
+        public void dumpWindowsLocked(String outFile) {
+
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            java.io.FileOutputStream fileOutputStream= new java.io.FileOutputStream(outFile);
+                            com.android.internal.util.FastPrintWriter pw = new com.android.internal.util.FastPrintWriter(fileOutputStream);
+                            WindowManagerService.this.dumpWindowsLocked(pw, true, null);
+                        } catch (Exception e){
+                            Log.d(TAG, "dumpWindowsLocked: Exception" + e.getStackTrace());
+                        }
+                    }
+                }).start();
+        }
+
+
+//精确使用：
+LocalServices.getService(WindowManagerInternal.class).dumpWindowsLocked("/data/local/tmp/WINDOWS.txt");
+```
+
+
+
+
+
+TODO：
+
+1、推广至AMS：
+
+
+
+
+
+### 技巧：
+
+模仿源码是怎么调用的！找到上游调用
+
+![image-20230902011146023](debugSkills.assets/image-20230902011146023.png)
+
 ## 技巧
 
 可以在debug下先验证代码是否可以运行
+
+
+
+
+
+对于要<font color='red'>经常</font>复制到陌生环境的代码，不要import：
+
+![image-20230902005235589](debugSkills.assets/image-20230902005235589.png)
 
 ## TODO：其他方式
 
@@ -2142,6 +2294,12 @@ TODO：连续执行多个cmd命令呢？
 没有文件输出：
 
 > 找命令执行的脚本---> 对应代码
+
+
+
+dump时刻与调用点时刻的差距：
+
+
 
 
 
