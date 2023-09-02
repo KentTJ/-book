@@ -2100,6 +2100,10 @@ myDump("uiautomator dump --compressed -d 0  /data/local/tmp/uidump.xml",null);
 
 
 
+<font color='red'>系统时间currentTimeMillis作为整个trace、log、dump的唯一统一者</font>
+
+
+
 %accordion%**具体每个dump中修改**：%accordion%
 
 wms：
@@ -2180,13 +2184,13 @@ Log.d(TAG, "screencap -p end" + getSystemTime());
 
 
 
-方法二：TODO：精确做法：
-
-> 能否做到不经过cmd命令呢？
+方法二：精确做法：见下
 
 
 
-## 精确时间点dump-------不是好的选择：
+
+
+## 精确时间点dump-------更好的选择：
 
 ```java
 // dumpsys window windows 对应代码
@@ -2272,8 +2276,8 @@ LocalServices.getService(WindowManagerInternal.class).dumpWindowsLocked("/data/l
 // WindowState.java
     @Override
     void dump(PrintWriter pw, String prefix, boolean dumpAll) {
-        //cg add test
-        if (!(toString().contains("myapplication") || toString().contains("InputMethod"))) { // 过滤
+        //cg add
+        if (!(toString().contains("myapplicat") || toString().contains("InputMet"))) { // 过滤
             Log.d(TAG, toString() + "dump in" + getSystemTime());
             return;
         }
