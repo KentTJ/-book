@@ -2397,7 +2397,7 @@ https://blog.csdn.net/qq_37858386/article/details/125002811      2022-05-27 Andr
 
 
 
-**if过滤技巧：** 模糊匹配
+**if过滤技巧：** toString +  模糊匹配
 
 ```java
 // 模糊匹配com.example.myapplication   和   InputMethod输入法两个应用
