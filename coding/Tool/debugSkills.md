@@ -2087,10 +2087,10 @@ myDump("uiautomator dump --compressed -d 0  /data/local/tmp/uidump.xml",null);
     }
 
 
+    static java.text.SimpleDateFormat mdateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
     private static String getSystemTime() {
         long currentTimeInMillis = System.currentTimeMillis();
-        java.text.SimpleDateFormat dateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
-        return " " + dateFormat.format(currentTimeInMillis);
+        return " " + mdateFormat.format(currentTimeInMillis);
     }
 ```
 
@@ -2186,7 +2186,7 @@ Log.d(TAG, "screencap -p end" + getSystemTime());
 
 
 
-## 精确时间点dump：
+## 精确时间点dump-------不是好的选择：
 
 ```java
 // dumpsys window windows 对应代码
@@ -2198,17 +2198,23 @@ WindowManagerService.this.dumpWindowsLocked(pw, true, null);
 
 ---------------->  验证ok
 
-缺点：
-
-> <font color='red'>难以在系统源码中任意调用？</font> （**shell dump可以任意位置，甚至APP侧！**）
->
-> TODO： 要不要反射？ 要不要启动新线程？
-
 优点：
 
-> <font color='red'>时间很精确</font>（**shell dump做不到**）  调用点，和执行开始点是一个。总耗时5ms
+> <font color='red'>时间很精确</font>（**shell dump做不到**）  调用点，和执行开始点是一个。
 >
 > ![image-20230902022006685](debugSkills.assets/image-20230902022006685.png)
+
+缺点：
+
+> **限于在系统源码中任意调用（****shell dump可以任意位置，甚至APP侧！**）
+>
+> TODO： 要不要反射？ 要不要启动新线程？
+>
+> <font color='red'>总耗时不可控： 比如商业应用整个display 的 window过多 需要50ms。但demo只需要5ms</font>    
+>
+> -------->  这是最大的问题： **造成调用点的精确，无意义**
+
+
 
 
 
@@ -2219,7 +2225,6 @@ WindowManagerService.this.dumpWindowsLocked(pw, true, null);
 
 
         public void dumpWindowsLocked(String outFile) {
-
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
@@ -2227,8 +2232,12 @@ WindowManagerService.this.dumpWindowsLocked(pw, true, null);
                             java.io.FileOutputStream fileOutputStream= new java.io.FileOutputStream(outFile);
                             com.android.internal.util.FastPrintWriter pw = new com.android.internal.util.FastPrintWriter(fileOutputStream);
                             WindowManagerService.this.dumpWindowsLocked(pw, true, null);
+
+                            pw.flush();
+                            pw.close();
+                            fileOutputStream.close();
                         } catch (Exception e){
-                            Log.d(TAG, "dumpWindowsLocked: Exception" + e.getStackTrace());
+                            Log.d(TAG, "dumpWindowsLocked: Exception" + Arrays.toString(e.getStackTrace()));
                         }
                     }
                 }).start();
@@ -2236,8 +2245,47 @@ WindowManagerService.this.dumpWindowsLocked(pw, true, null);
 
 
 //精确使用：
-LocalServices.getService(WindowManagerInternal.class).dumpWindowsLocked("/data/local/tmp/WINDOWS.txt");
+Slog.e("chen", "chen dumpWindowsLocked start");
+LocalServices.getService(WindowManagerInternal.class).dumpWindowsLocked("/data/local/tmp/windows_All.txt");
 ```
+
+
+
+
+
+### 精确dump时间优化
+
+1、<font color='red'>过滤，减少dump的window个数：</font>，因为io非常耗时  
+
+------>  **规定：减少至1~2个，这样便一刻完成**
+
+![image-20230903013810445](debugSkills.assets/image-20230903013810445.png)
+
+```java
+    static java.text.SimpleDateFormat mdateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+    private static String getSystemTime() {
+        long currentTimeInMillis = System.currentTimeMillis();
+        return " " + mdateFormat.format(currentTimeInMillis);
+    }
+
+
+// WindowState.java
+    @Override
+    void dump(PrintWriter pw, String prefix, boolean dumpAll) {
+        //cg add test
+        if (!(toString().contains("myapplication") || toString().contains("InputMethod"))) { // 过滤
+            Log.d(TAG, toString() + "dump in" + getSystemTime());
+            return;
+        }
+```
+
+
+
+2、稍稍提前5ms
+
+
+
+
 
 
 
@@ -2246,6 +2294,16 @@ LocalServices.getService(WindowManagerInternal.class).dumpWindowsLocked("/data/l
 TODO：
 
 1、推广至AMS：
+
+
+
+
+
+
+
+
+
+## 总之，过滤+提前
 
 
 
@@ -2311,6 +2369,40 @@ https://blog.csdn.net/qq_37858386/article/details/125002811      2022-05-27 Andr
 
 
 
+# 过滤之dump、log、断点debug
+
+**循环之恶：**
+
+> log循环造成log疯狂打印  ----->  跟踪耗费精力
+>
+> dump 循环多个window，造成io时间过长，难以抓第一现场
+>
+> 断点debug ：造成一直停顿----->  跟踪耗费精力
+
+对付循环的技巧：
+
+> **过滤**  -------->  注意力 配置合理化
+
+---<font color='red'>规定：</font>
+
+​     （1）频繁打印的log。。。。。。**一定要加if 过滤**
+
+​     （2）dump内容，**加if过滤**  只打印自己关注的window
+
+​     （3）debug，条件断点 **if 过滤**
+
+
+
+**if过滤技巧：** 模糊匹配
+
+```java
+// 模糊匹配com.example.myapplication   和   InputMethod输入法两个应用
+if (!(toString().contains("myappli") || toString().contains("InputMet"))) {  
+    Log.d(TAG, toString() + "dump in" + getSystemTime());
+    return;
+}
+```
+
 
 
 
@@ -2344,6 +2436,10 @@ https://blog.csdn.net/qq_37858386/article/details/125002811      2022-05-27 Andr
 TODO：
 
 如何破坏各种权限？
+
+
+
+
 
 
 
