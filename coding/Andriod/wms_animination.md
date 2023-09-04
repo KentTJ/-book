@@ -63,7 +63,7 @@ VSync信号驱动动画
 >
 > ​         -------> WMS#updateRotation
 
-## 0层
+## 0层框架
 
 ![img](wms_animination.assets/4103403-e5e77d696bd11e8b)
 
@@ -72,6 +72,16 @@ VSync信号驱动动画
 
 
 
+
+## 0层纵向
+
+基于0层框架，不得不：
+
+1、**屏幕旋转的核心 -----> 必然是wms**：承载了window的新建，以及动画
+
+2、when： 旋转的信号是谁通知的wms？传感器 ----> SensorService   ----> WMS
+
+3、what：做了啥事？
 
 
 

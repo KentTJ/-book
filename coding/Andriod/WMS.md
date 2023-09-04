@@ -207,6 +207,80 @@ viewRootImpl-----------window级别
 见
 
 
+
+
+
+# window体系-----系统侧
+
+
+
+WindowContainer
+
+![在这里插入图片描述](WMS.assets/4d8172828ac04f50a8a3b9f358bc12d2.png)
+
+
+
+## <font color='red'>持有关系-----重要</font>
+
+![img](WMS.assets/6bd53379e6f54a9b80ab527264a671aa.png)
+
+参考：  https://blog.csdn.net/lizhenjun114/article/details/130015066?spm=1001.2101.3001.6650.7&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-7-130015066-blog-129101781.235%5Ev38%5Epc_relevant_anti_t3&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-7-130015066-blog-129101781.235%5Ev38%5Epc_relevant_anti_t3&utm_relevant_index=8
+
+## 继承关系----类似view的继承关系
+
+![img](WMS.assets/d02ea1e718ec4226ba5cb8619a394e2c.jpeg)
+
+
+
+## 系统侧window体系 与 APP侧 view体系
+
+系统侧window体系 与 APP侧 view体系  极其相似： 如何认识view体系，就如何认识window体系
+
+1、都是<font color='red'>树结构：</font>  window树  、 view树
+
+2、基于树结构： 有view的布局  relayout
+
+​                            同样，window有布局： relayoutWindow
+
+3、基于树结构：
+
+​                      树的节点：  windowContainer(集合)、viewGroup(集合)
+
+​                      树根：windowState、  view
+
+
+
+
+
+对比下的认知：
+
+view有测量measure，系统侧 window有测量嘛？
+
+
+
+
+
+TODO：
+
+系统侧window数据何时同步给 应用侧的？
+
+
+
+-
+
+
+
+
+
+## 参考：
+
+https://blog.csdn.net/learnframework/article/details/129101781
+
+https://blog.csdn.net/lizhenjun114/article/details/130015066?spm=1001.2101.3001.6650.7&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-7-130015066-blog-129101781.235%5Ev38%5Epc_relevant_anti_t3&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-7-130015066-blog-129101781.235%5Ev38%5Epc_relevant_anti_t3&utm_relevant_index=8    displayArea学习
+
+
+
+
 # WMS
 
 
