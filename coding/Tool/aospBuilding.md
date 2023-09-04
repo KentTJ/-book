@@ -604,6 +604,24 @@ set emulator_exe=D:\Users\Administrator\AppData\Local\Android\Sdk\emulator\emula
 -sysdir D:\Green_Sorft\Android\Sdk\system-images\android-30\default\x86_64-aosp
 ```
 
+### emulator的一些特殊点
+
+由于编译的img是   lunch sdk_x86_64
+
+------> 所以：
+
+ 1、后续编译 jar和 so 都需要基于 sdk_x86_64
+
+2、导入jar前 **需要删除 x86**，而不是 arm
+
+![image-20230904114057398](aospBuilding.assets/image-20230904114057398.png)
+
+```
+adb shell rm -rf /system/framework/x86
+adb shell rm -rf /system/framework/x86_64
+adb shell rm -rf /system/framework/oat/
+```
+
 
 
 ### 常用emulator命令：
@@ -857,7 +875,7 @@ https://blog.csdn.net/iamdy/article/details/111272854?spm=1001.2014.3001.5501
 
 https://blog.csdn.net/yjsz2010/article/details/103705510
 
--<font color='red'> 原因二：-----》已经验证</font>
+-<font color='red'> 原因二：-----> 已经验证</font>
 
 push程序framework.jar失效问题：
 
@@ -876,7 +894,9 @@ adb shell rm -rf /system/framework/ota
 adb push framework.jar   /system/framework
 ```
 
+注意：
 
+> 校验了<font color='red'>部分framework.jar</font>中的java文件的改动，<font color='red'>不是所有</font>
 
 
 

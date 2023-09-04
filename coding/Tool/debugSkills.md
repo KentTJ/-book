@@ -2150,9 +2150,24 @@ Log.d(TAG, "screencap -p end" + getSystemTime());
 
 时间戳的最终呈现：
 
-> log形式 、
+> （1）log形式 、
 >
 > **直接加在dump.txt中**   ------>  会更加精细
+>
+> （2）
+>
+> ```java
+>     @Override
+>     void dump(PrintWriter pw, String prefix, boolean dumpAll) {
+>         //cg add
+>         if (!(toString().contains("myapplication") || toString().contains("InputMethod"))) {
+>             Log.d(TAG, toString() + "dump in" + getSystemTime());
+>             return;
+>         }
+>         pw.print(prefix + "formattedDate=" + getSystemTime());   // 写进dump里
+> ```
+>
+> 
 
 （2）要非常<font color='red'>清楚耗时段在哪里</font>：
 
@@ -2259,7 +2274,7 @@ LocalServices.getService(WindowManagerInternal.class).dumpWindowsLocked("/data/l
 
 ### 精确dump时间优化
 
-1、<font color='red'>过滤，减少dump的window个数：</font>，因为io非常耗时  
+1、<font color='red'>过滤，减少dump的window个数，我们关注的，一般也就一两个</font>，因为io非常耗时  
 
 ------>  **规定：减少至1~2个，这样便一刻完成**
 
@@ -2307,9 +2322,63 @@ TODO：
 
 
 
-## 总之，过滤+提前
+### 总之，所有改动点
+
+#### dump window
+
+```java
+// WindowState.java   过滤 + dump时间写入 
+static java.text.SimpleDateFormat mdateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+    private static String getSystemTime() {
+        long currentTimeInMillis = System.currentTimeMillis();
+        return " " + mdateFormat.format(currentTimeInMillis);
+    }
+
+    @Override
+    void dump(PrintWriter pw, String prefix, boolean dumpAll) {
+        //cg add
+        String name = toString();
+        if (!(name.contains("myapplication") || name.contains("InputMethod"))) {
+            Log.d(TAG, name + "dump in" + getSystemTime());
+            return;
+        }
+        pw.print(prefix + "formattedDate=" + getSystemTime());
+```
 
 
+
+```java
+// wms.LocalService添加:(WindowManagerInternal也要改)
+
+
+        public void dumpWindowsLocked(String outFile) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            java.io.FileOutputStream fileOutputStream= new java.io.FileOutputStream(outFile);
+                            com.android.internal.util.FastPrintWriter pw = new com.android.internal.util.FastPrintWriter(fileOutputStream);
+                            WindowManagerService.this.dumpWindowsLocked(pw, true, null); // true区分 dump window与dump window Windows
+
+                            pw.flush();
+                            pw.close();
+                            fileOutputStream.close();
+                        } catch (Exception e){
+                            Log.d(TAG, "dumpWindowsLocked: Exception" + Arrays.toString(e.getStackTrace()));
+                        }
+                    }
+                }).start();
+        }
+
+
+//系统进程任意点，精确使用：
+Slog.e("chen", "chen dumpWindowsLocked start");
+LocalServices.getService(WindowManagerInternal.class).dumpWindowsLocked("/data/local/tmp/windows_All.txt");
+```
+
+
+
+#### dump activity
 
 
 
