@@ -129,8 +129,10 @@ setRotationTransform 中  mScreenshotLayer承载的数据，被旋转
                 mTmpFloats[Matrix.MSCALE_X], mTmpFloats[Matrix.MSKEW_Y],
                 mTmpFloats[Matrix.MSKEW_X], mTmpFloats[Matrix.MSCALE_Y]);
 
-        t.setAlpha(mScreenshotLayer, (float) 1.0);
-        t.show(mScreenshotLayer);
+```java
+    t.setAlpha(mScreenshotLayer, (float) 1.0);
+    t.show(mScreenshotLayer);
+```
 
 
 
@@ -142,7 +144,6 @@ setRotationTransform 中  mScreenshotLayer承载的数据，被旋转
 final SurfaceControl.ScreenshotHardwareBuffer screenshotBuffer =
     SurfaceControl.captureDisplay(captureArgs);
 screenshot = screenshotBuffer == null ? null : screenshotBuffer.asBitmap();
-
 // 参考： https://blog.csdn.net/weixin_46297800/article/details/131939823
 
 
@@ -168,28 +169,26 @@ bitmap = (Bitmap) obj;
 
 
 
-```
-        String  name = "app2";
-        File cacheDir = context.getCacheDir();
-        Log.i("liuhongliang","cacheDir" + cacheDir.toString());
-        cachePath = "/sdcard/" + name + ".png";
-        String cmd = "screencap -p /sdcard/" + name + ".png";
-        // 权限设置
-        Process p = Runtime.getRuntime().exec("sh"); //Process process = rt.exec("su");
-        // 获取输出流
-        OutputStream outputStream = p.getOutputStream();
-        DataOutputStream dataOutputStream = new DataOutputStream(
-        outputStream);
-        // 将命令写入
-        dataOutputStream.writeBytes(cmd);
-        // 提交命令
-        dataOutputStream.flush();
-        // 关闭流操作
-        dataOutputStream.close();
-        outputStream.close();
-————————————————
-版权声明：本文为CSDN博主「小刘不上班」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/weixin_46297800/article/details/131939823
+```java
+String  name = "app2";
+File cacheDir = context.getCacheDir();
+Log.i("liuhongliang","cacheDir" + cacheDir.toString());
+cachePath = "/sdcard/" + name + ".png";
+String cmd = "screencap -p /sdcard/" + name + ".png";
+// 权限设置
+Process p = Runtime.getRuntime().exec("sh"); //Process process = rt.exec("su");
+// 获取输出流
+OutputStream outputStream = p.getOutputStream();
+DataOutputStream dataOutputStream = new DataOutputStream(
+    outputStream);
+// 将命令写入
+dataOutputStream.writeBytes(cmd);
+// 提交命令
+dataOutputStream.flush();
+// 关闭流操作
+dataOutputStream.close();
+outputStream.close();
+
 ```
 
 TODO:  

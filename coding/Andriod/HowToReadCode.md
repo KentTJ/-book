@@ -1702,6 +1702,8 @@ EX2，也可以反过来：PowerManagerService extends SystemService，其内部
 
 观察角度： 0层结构、核心结构（对应关键函数）
 
+观察角度：**任何一个系统**（系统、模块、类、函数、测试用例、老化......生物系统、地球.......），都是可以从  **I/O角度分析**，即一个系统的输入与输出分析
+
 规定：为了体现主次：对主要调用栈， 标注：  cheduleTransaction(clientTransaction);// main process  
 
 
