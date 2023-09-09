@@ -8,7 +8,7 @@
 
 
 
-# window体系
+# window体系-----APP侧
 
 ##  Window（次要）
 
@@ -303,6 +303,19 @@ https://ericchows.github.io/Android-Window-Mechanism/
 ~~IWindowManager和IAcitivityManger 是一个自然的桥梁，~~客户端对wms和AMS的引用~~  ----》系统服务 开机初始化 注册的缘故
 
 IwindowSession桥梁是 桥梁 IWindowManager创建的。为什么要这一条？
+
+## 显示的生活化比喻
+
+![img](WMS.assets/2a7fb1bdd8b747afa8220641afeb9b64.jpeg)
+
+**整个显示的生活化比喻**，就像一出由N 个演员参与的话剧： **SurfaceFlinger 是摄像机， WMS 是导演， ViewRoot**
+**则是演员个体。**
+
+摄像机（ SurfaceFlinger）一一它负责客观地捕获当前的画面，然后真实地呈现给观众； 
+
+导演（ WMS ） 则会考虑到话剧的舞台效果和视觉美感， 如他需要根据实际情况来安排各个演员的排序站位， 谁在前谁在后， 都会影响到演出的“ 画面效果”与“ 剧情编排”
+
+ 而各个演员的民相和表情（ ViewRoot ） ，则更多地取决于他们自身的条件与努力。正是通过这三者的“各司其职”，才能最终为观众呈现出一场美妙绝伦的“视觉盛宴”
 
 
 
