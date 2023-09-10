@@ -289,7 +289,25 @@ CPU使用具体页面展开：
 
 ![image-20221125230430679](Systrace.assets/image-20221125230430679.png)
 
-### 线程唤醒者分析(函数调用者分析)----perfetto
+### 线程状态切换之 Runnable -----> Running
+
+
+
+![image-20230910172048299](Systrace.assets/image-20230910172048299.png)
+
+一些结论：
+
+>  Runnable -----> Running  一般都是cpu调度（时间片轮转）造成的。<font color='red'>不是开发者代码引起的</font>
+>
+> sleep ---->   Running   线程角度： 线程唤醒      代码角度：<font color='red'>开发者代码 同步调用 结束</font>
+
+注：同一个线程，由于调度，一会儿在cpu1运行，一会儿在cpu2运行
+
+
+
+
+
+### 线程唤醒者分析sleep---> Running (函数调用者分析)----perfetto
 
 例子：
 
@@ -324,6 +342,20 @@ CPU使用具体页面展开：
 总之：
 
 > <font color='red'>没有看代码，完全依照图形，找到了函数的调用者</font>
+
+
+
+
+
+-**<font color='red'>核心思想：</font>**
+
+> 通过CPU之间的线程唤醒者  ----->  找到线程之间的调用关系
+>
+> ![image-20230910170832885](Systrace.assets/image-20230910170832885.png)
+>
+> 可以是<font color='red'>两个进程</font>的两个线程（binder调用），也可以是<font color='red'>同进程</font>
+
+
 
 
 
@@ -601,6 +633,40 @@ JOIN thread ON thread. utid=wakee_table.wakee_utid;
 > -<font color='red'>B、返回点是binder transaction结束点（此时拿到返回值）</font>
 
 ![image-20230817001843797](Systrace.assets/image-20230817001843797.png)
+
+
+
+## 线程 之间 同步（同进程）
+
+原理见：《线程唤醒者分析(函数调用者分析)----perfetto》
+
+**等价于： 线程状态 sleep---> Running**
+
+特征：
+
+**1、会有系统调用 sys_futex**
+
+![image-20230910170138078](Systrace.assets/image-20230910170138078.png)
+
+2、**在sys_futex上方，线程是sleep状态**，没有执行
+
+![image-20230910170323296](Systrace.assets/image-20230910170323296.png)
+
+3、被调用线程在结束时，也会有sys_futex：
+
+![image-20230910172825127](Systrace.assets/image-20230910172825127.png)
+
+
+
+
+
+如何找主线程在等待哪个线程？ <-------->   即 主线程调用了哪个线程？  <-------->   即 主线程 被 哪个线程阻塞住了？  <-------->  即 主线程
+
+---<font color='red'>性能优化经验：</font>
+
+> 一旦 一个线程阻塞了另一个线程，大概率是有优化空间的
+
+
 
 
 
