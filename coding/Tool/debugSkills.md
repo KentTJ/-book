@@ -1738,12 +1738,22 @@ add_subdirectory(${CMAKE_DIRECTORY_FOR_CLION}/system/core/lmkd/lmkd-arm-android)
 选择「New CMake Project from Sources」
 指定包含 CMakeLists.txt 
 
-4、**clion编译器配置：**
-**技巧：选择aosp cmakeList指定的clang**  。 用Ubuntu的gcc和clang，编译基本上有问题
+4、 <font color='red'> **clion编译器配置：** </font>
+**技巧：选择aosp cmakeList指定的clang**  。 **用Ubuntu的gcc和clang，编译基本上有问题**
 
-![image-20221030174913842](debugSkills.assets/image-20221030174913842.png)
+![image-20230912001738000](debugSkills.assets/image-20230912001738000.png)
 
 
+
+----------------->  配置:
+
+![image-20230912001621124](debugSkills.assets/image-20230912001621124.png)
+
+
+
+编译结果：
+
+![image-20230912001658517](debugSkills.assets/image-20230912001658517.png)
 
 ### 一些问题：
 
