@@ -45,7 +45,7 @@ aptitude   install gcc gcc-c++
 
 
 
-**优选清华镜像** + 开启代理 （为啥不开代理会失败呢？）
+**优选清华镜像** + linux开启代理 （为啥不开代理会失败呢？）
 
 ```java
 repo init -u https://mirrors.tuna.tsinghua.edu.cn/git/AOSP/platform/manifest -b android-12.0.0_r28
