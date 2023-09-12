@@ -237,10 +237,49 @@ Android平台的基础是Linux内核，比如ART虚拟机最终调用底层Linux
 
 
 
-### 墙 Syscall && JNI
+### 墙 Syscall 
 
 - Native与Kernel之间有一层系统调用(SysCall)层，见[Linux系统调用(Syscall)原理](http://gityuan.com/2016/05/21/syscall/);
-- Java层与Native(C/C++)层之间的纽带JNI，见[Android JNI原理分析](http://gityuan.com/2016/05/28/android-jni/)。
+
+
+
+​	Q：**为什么要有Syscall墙？**（等价问题：为什么要有内核空间和用户空间？）
+
+​    A：<font color='red'>它确实就是一道墙</font>，目的也是墙的作用：
+
+​              -<font color='red'>保护硬件资源</font>不会被随便访问，从而保证内核稳定性 （等价的表述：~~让用户态程序能**受限**访问硬件设备，比如申请系统资源，操作设备读写，创建新进程等。用户空间发生请求，内核空间负责执行，这些接口便是用户空间和内核空间共同识别的桥梁，这里提到两个字“受限”，是由于为了保证内核稳定性，而不能让用户空间程序随意更改系统，必须是内核对外开放的且满足权限的程序才能调用相应接口-----http://gityuan.com/2016/05/21/syscall/~~）
+
+![image-20230913010341708](InitSystem.assets/image-20230913010341708.png)
+
+
+
+一些认知：
+
+> 1、native代码也是用户态
+>
+> 2、APP、系统服务都是用户态
+>
+> 3、APP 打开文件 ----> JVM ----> native ---> Syscall  ---> 内核 ---> 驱动
+>
+> ​    **以上流程，不涉及系统服务**
+
+
+
+关于线程：
+
+> -<font color='red'>Syscall墙 隔离的是代码，不是线程。是同一个线程</font>。（即：~~线程的用户态和内核态指的是同一个线程上下文中不同的代码执行。用户态是应用程序的代码，而内核态是内核代码、设备驱动代码等运行在线程的上下文中。例如，中断和系统调用会将执行权交给内核态代码。~~ ）
+
+
+
+
+
+具体的 Syscall 的实现，见《linux》
+
+
+
+###  墙JNI
+
+Java层与Native(C/C++)层之间的纽带JNI，见[Android JNI原理分析](http://gityuan.com/2016/05/28/android-jni/)。
 
 
 
