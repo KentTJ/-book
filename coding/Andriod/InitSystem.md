@@ -641,11 +641,17 @@ void AndroidRuntime::start(const char* className, const Vector<String8>& options
 
 
 
-**<font color='red'>记忆</font>：**AndroidRuntime::start()中完成：即**RunTime做了啥？**<a id='sirenwu'>四个任务</a>
+-**<font color='red'>记忆</font>：**AndroidRuntime::start()中完成：即**RunTime做了啥？**<a id='sirenwu'>四个任务</a>
 ①　~~startVm(&mJavaVM, &env) 启动虚拟机~~ 。自然，必须第一个，<font color='red'>java-native之间的墙</font>
 ②　onVmCreated(env)        虚拟机启动后的初始化
 ③　~~startReg(env)           注册JNI函数~~。 自然，<font color='red'>基于墙，架起梯子</font>
 ④　~~env->CallStaticVoidMethod(startClass, startMeth, strArray) 调用ZygoteInit类的main函数开创java世界~~。自然，<font color='red'>架起梯子，翻过native，进入java世界大门</font>
+
+
+
+TODO： 
+
+> 所以RunTime就是指的虚拟机这些嘛？
 
 
 
