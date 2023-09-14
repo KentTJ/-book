@@ -484,6 +484,26 @@ RUN set -x; buildDeps='gcc libc6-dev make wget' \
 
 ![image-20220731145005969](Docker.assets/image-20220731145005969.png)
 
+
+
+-<font color='red'>注意： squash 能生效是有前提的：</font>
+
+至少：
+
+```java
+  "experimental": true,
+
+    "buildkit": true
+```
+
+![image-20230915004242984](Docker.assets/image-20230915004242984.png)
+
+
+
+对应设置界面：
+
+
+
 ### docker puase
 
 ```
@@ -550,6 +570,20 @@ docker push tag 1be049d70e93  chen85/ubuntu16.04_aosp1000_r17:v1
 ```
 
 见：https://www.cnblogs.com/kevingrace/p/9599988.html    [通过容器提交镜像（docker commit）以及推送镜像（docker push）笔记](https://www.cnblogs.com/kevingrace/p/9599988.html)  下载
+
+
+
+
+
+### 根据镜像id修改镜像tag名
+
+修改镜像tag：
+
+```java
+docker tag $IMAGE_ID <NEW_IMAGE_NAME>:<NEW_TAG>
+    
+docker tag 194d8716 chengang/ubuntu16.04_aosp1200_r28:last
+```
 
 
 
@@ -633,6 +667,55 @@ https://www.cnblogs.com/wswang/p/10736726.html
 https://segmentfault.com/q/1010000020545464
 
 https://www.jianshu.com/p/9174914ec07d
+
+
+
+## docker 配置修改优化
+
+原则：
+
+1、从**配置文件修改（优）**，而不是界面操作  < --------- 界面化操作需要先进入，然后重启
+
+​                                                                                    没启动docker时，从配置文件修改，只需要启动一次
+
+比如：
+
+```java
+"dataFolder": "D:\\programFiles\\dockerDesktop\\DockerDesktop",
+
+```
+
+![image-20230915003554954](Docker.assets/image-20230915003554954.png)
+
+对应设置：
+
+
+
+
+
+
+
+![image-20230915004242984](Docker.assets/image-20230915004242984.png)
+
+
+
+对应设置界面：
+
+
+
+## docker优化之 复制 DockerDesktop.vhdx
+
+1、做备份
+
+2、磁盘太小，需要挪盘
+
+
+
+-<font color='red'>移动文件需要everyone权限</font>
+
+![image-20220722223854271](Docker.assets/image-20220722223854271.png)
+
+
 
 
 
