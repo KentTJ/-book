@@ -618,6 +618,20 @@ docker save  chengang/ubuntu16.04_aosp1000_r17:vnc_ok  -o  H:\docker_jarFiles\ub
 C:\Users\xixi>docker load -i  F:\VirtualMachine\Docker\ubuntu.tar
 ```
 
+
+
+#### 优化之 保存jar
+
+规定（<font color='red'>优</font>）： 
+
+1、在物理磁盘小的情况下，build+ 保存jar，先删除源码   --------> 节省最终存储jar的空间
+
+2、保存jar时，如果出现no space。见《build或者保存jar，no space》
+
+
+
+
+
 ### docker rmi  删除镜像
 
 方法一：通过imageID： docker rmi       ee7cbd482336
@@ -787,7 +801,31 @@ TODO: 以后备份都用.vhdx？ 而不是jar？
 
 
 
+### build或者保存jar，no space
 
+报错：
+
+```java
+Error response from daemon: write /var/lib/docker/tmp/docker-export-1172560351/26512da3e9ed0583440e8dee1123b7548cef5b82a5cc9954ba36e354a 3db6e57/layer.tar: no space left on device
+```
+
+![image-20230915223615835](Docker.assets/image-20230915223615835.png)
+
+
+
+问题根因：
+
+> 这里给docker的空间小了（相比于已经存在的img）
+>
+> ![image-20230915224728576](Docker.assets/image-20230915224728576.png)
+>
+> ![image-20230915224716660](Docker.assets/image-20230915224716660.png)
+
+办法：
+
+> 设置扩大diskSizeMiB
+>
+> --------------》  如果物理磁盘不够了，就挪动到其他盘。方法，见《docker优化之 复制 DockerDesktop.vhdx》
 
 
 
