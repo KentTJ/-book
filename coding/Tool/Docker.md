@@ -829,6 +829,8 @@ Error response from daemon: write /var/lib/docker/tmp/docker-export-1172560351/2
 
 
 
+
+
 ## docker连 主机pc连的安卓设备
 
 1、宿主为windows：
@@ -866,7 +868,7 @@ https://testerhome.com/topics/8049     https://blog.csdn.net/qq_42693848/article
     $ adb connect 10.0.0.1:7788
     ```
 
-​                 <font color='red'>万能方法</font>：  为了方便docker提供了专门的标志表示母机的ip：host.docker.internal
+​                 -<font color='red'>万能方法</font>：  为了方便docker提供了专门的标志表示母机的ip：host.docker.internal
 ​           见：https://blog.csdn.net/qq_42693848/article/details/109505849
 
 ```CPP
