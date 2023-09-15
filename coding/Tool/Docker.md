@@ -761,11 +761,25 @@ https://www.jianshu.com/p/9174914ec07d
 
 ![image-20230916005014534](Docker.assets/image-20230916005014534.png)
 
+### 优化之  任何差异保存到window路径下
+
+目的：减少commit
+
+1、 <font color='red'>把变化保存在windows里，不进行commit</font>
+
+比如 .myfunction.sh  .my_start.sh
+
+![image-20230916012925941](Docker.assets/image-20230916012925941.png)
+
+
+
+
+
 ### 优化之  保存jar 与 进入容器使用 并行
 
 这个两个 可以并行：docker 与 容器内，可以并行
 
-
+-----> 节省时间
 
 ## error
 
