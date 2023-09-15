@@ -309,7 +309,7 @@ docker run -t -i  -v   F:\shareFiles:/home/chen/workingSpace/local   f2bab1877e1
 需修改： <font color='red'> 13874e71186c </font>
 
 docker run   -p   10000:22   -t -i  -v    G:\dockerSharedFiles:/home/chen/workingSpace/local  -v     H:\dockerSharedFiles_Gpan\dockerSharedFiles_Gpan:/home/chen/workingSpace/local2       403c641a0264 /bin/bash
-----》目前：10000需要改成20000
+---->目前：10000需要改成20000
 
 
 
@@ -382,7 +382,7 @@ Ubuntu镜像
 
 规定提交的格式为：
 1、 docker tag 1be049d70e93  chen85/ubuntu16.04_aosp1000_r17:v1
----》这个是docker hub push识别的格式
+--->这个是docker hub push识别的格式
 2、或：docker commit  7a96e91 chen/ubuntu16.04_aosp1000_r17:v1
 
 
@@ -394,7 +394,7 @@ Ubuntu镜像
 
 docker build使用 Dockerfile 定制镜像
 
----》防止image臃肿
+--->防止image臃肿
 
 
 
@@ -472,7 +472,7 @@ RUN set -x; buildDeps='gcc libc6-dev make wget' \
  docker build --squash -t chen85/ubuntu16.04_aosp1000_r17:v4 .
 ```
 
----》默认使用了Dockerfile，需要修改
+--->默认使用了Dockerfile，需要修改
 
 ![image-20221121005402258](Docker.assets/image-20221121005402258.png)
 
@@ -510,9 +510,9 @@ RUN set -x; buildDeps='gcc libc6-dev make wget' \
 docker pause/unpause <container-id>
 ```
 
-不用时，docker puase  ---》 sleep所有进程
+不用时，docker puase  ---> sleep所有进程
 
-------》极大的降低CPU使用率
+------>极大的降低CPU使用率
 
 ### Docker 容器连接的优化：
 
@@ -626,7 +626,7 @@ C:\Users\xixi>docker load -i  F:\VirtualMachine\Docker\ubuntu.tar
 
 1、在物理磁盘小的情况下，build+ 保存jar，先删除源码   --------> 节省最终存储jar的空间
 
-2、保存jar时，如果出现no space。见《build或者保存jar，no space》
+2、保存jar时，如果出现no space。见《build或者保存jar，no space>
 
 
 
@@ -719,17 +719,7 @@ https://www.jianshu.com/p/9174914ec07d
 
 
 
-### 优化之 复制 DockerDesktop.vhdx
 
-1、做备份
-
-2、磁盘太小，需要挪盘
-
-
-
--<font color='red'>移动文件需要everyone权限</font>
-
-![image-20220722223854271](Docker.assets/image-20220722223854271.png)
 
 ### 优化之  只保存系统jar
 
@@ -761,7 +751,7 @@ https://www.jianshu.com/p/9174914ec07d
 
 ![image-20230916005014534](Docker.assets/image-20230916005014534.png)
 
-### 优化之  任何差异保存到window路径下
+### 优化之  任何差异保存到window路径下----减少commit
 
 目的：减少commit
 
@@ -773,7 +763,19 @@ https://www.jianshu.com/p/9174914ec07d
 
 
 
+### 优化之 复制 DockerDesktop.vhdx----->save jar的保底
 
+目的：
+
+1、尽管减少commit，但是随着演进，img越来越大。最终导致磁盘太小，<font color='red'>无法save jar，需要挪盘----->save jar的保底</font>
+
+2、做备份
+
+
+
+-<font color='red'>移动文件需要everyone权限</font>
+
+![image-20220722223854271](Docker.assets/image-20220722223854271.png)
 
 ### 优化之  保存jar 与 进入容器使用 并行
 
@@ -796,7 +798,7 @@ cmd报错：open //./pipe/docker_engine: The system cannot find the file specifi
 ~~reset to factory defaults~~   ---->  `规定：后面不准用这种方法，会造成setting改变`
 
 
-### 启动异常报错--》方法2:
+### 启动异常报错-->方法2:
 
 运行docker出现System.InvalidOperationException错误
 
@@ -830,8 +832,8 @@ cmd报错：open //./pipe/docker_engine: The system cannot find the file specifi
 
 ~~reset to factory defaults仍然报错~~   ---->  `规定：后面不准用这种方法，会造成setting改变`
 
----》技巧：不要重新装docker软件
-关闭docker，重启win，删除DockerDesktop.vhdx，启动docker ----》docker会自动生成
+--->技巧：不要重新装docker软件
+关闭docker，重启win，删除DockerDesktop.vhdx，启动docker ---->docker会自动生成
 
 优点：**不用重新装docker，setting不会变**
 
@@ -873,7 +875,7 @@ Error response from daemon: write /var/lib/docker/tmp/docker-export-1172560351/2
 
 > 设置扩大diskSizeMiB
 >
-> --------------》  如果物理磁盘不够了，就挪动到其他盘。方法，见《docker优化之 复制 DockerDesktop.vhdx》
+> -------------->  如果物理磁盘不够了，就挪动到其他盘。方法，见《docker优化之 复制 DockerDesktop.vhdx>
 
 
 
@@ -957,9 +959,9 @@ VNC远程win： tigervncserver -vncClient
  -v   H:\dockerSharedFiles_Gpan\dockerSharedFiles_Gpan:/home/chen/workingSpace/local2   8ea41f5aa2f9 /bin/bash
  
 :: /usr/sbin/sshd -D &
-::  -p  10000:22  用于ssh登录 ---》使用win ip  + 10000 ： 192.168.1.4:10000 
-:: -p 15901:5901  用于VNC界面登录 ---》使用win 的Ethernet adapter ip  + 15901: 172.18.28.1:15901
-                                                                   或  127.0.0.1::15901 ----》 永恒不变
+::  -p  10000:22  用于ssh登录 --->使用win ip  + 10000 ： 192.168.1.4:10000 
+:: -p 15901:5901  用于VNC界面登录 --->使用win 的Ethernet adapter ip  + 15901: 172.18.28.1:15901
+                                                                   或  127.0.0.1::15901 ----> 永恒不变
 ```
 
 
@@ -996,7 +998,7 @@ vncserver :1 -localhost no -geometry=1920x1080
 
 
 // 2、如果上述不行，看有没有提示：
-Warning: 4fcb1df56031:1 is taken because of /tmp/.X1-lock   ----》删掉这个文件
+Warning: 4fcb1df56031:1 is taken because of /tmp/.X1-lock   ---->删掉这个文件
 Remove this file if there is no X server 4fcb1df56031:1
 ```
 
