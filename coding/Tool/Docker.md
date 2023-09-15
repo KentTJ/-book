@@ -684,7 +684,9 @@ https://www.jianshu.com/p/9174914ec07d
 
 
 
-## docker 配置修改优化
+## 优化
+
+### 配置修改优化
 
 原则：
 
@@ -717,7 +719,7 @@ https://www.jianshu.com/p/9174914ec07d
 
 
 
-## docker优化之 复制 DockerDesktop.vhdx
+### 优化之 复制 DockerDesktop.vhdx
 
 1、做备份
 
@@ -729,7 +731,39 @@ https://www.jianshu.com/p/9174914ec07d
 
 ![image-20220722223854271](Docker.assets/image-20220722223854271.png)
 
+### 优化之  只保存系统jar
 
+**规定：**
+
+1、导出jar时，<font color='red'>只保存系统，不保存代码</font>       ------->  背后思想，提取重复
+
+方法：squash过程中删除代码
+
+![image-20230916003538219](Docker.assets/image-20230916003538219.png)
+
+
+
+2、<font color='red'>代码+系统的演进，仍然用squash之前的</font>  ------>  **因为包含代码**
+
+​     squash后的img导出jar后，就删除！
+
+
+
+关系如图：
+
+> 演进的始终是一个东西
+>
+> 版本只是一个时间点的快照
+
+![image-20230916003820830](Docker.assets/image-20230916003820830.png)
+
+大大减小了版本快照大小。且不影响 演进
+
+![image-20230916005014534](Docker.assets/image-20230916005014534.png)
+
+### 优化之  保存jar 与 进入容器使用 并行
+
+这个两个 可以并行：docker 与 容器内，可以并行
 
 
 
