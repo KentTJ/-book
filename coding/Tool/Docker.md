@@ -753,13 +753,21 @@ https://www.jianshu.com/p/9174914ec07d
 
 ### 优化之  任何差异保存到window路径下----减少commit
 
-目的：减少commit
+-<font color='red'>极优</font>
 
-1、 <font color='red'>把变化保存在windows里，不进行commit</font>
+目的：减少commit  
 
-比如 .myfunction.sh  .my_start.sh
 
-![image-20230916012925941](Docker.assets/image-20230916012925941.png)
+
+步骤：
+
+> 1、 <font color='red'>把变化保存在windows里，不进行commit</font>
+>
+> 比如 .myfunction.sh  .my_start.sh
+>
+> 2、在启动时候，从win复制过去
+>
+> ![image-20230916012925941](Docker.assets/image-20230916012925941.png)
 
 
 
