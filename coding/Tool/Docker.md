@@ -892,6 +892,10 @@ Error response from daemon: write /var/lib/docker/tmp/docker-export-1172560351/2
 
 
 
+参考：
+
+https://devpress.csdn.net/cloud-native/645cf29477f0ca41cb317090.html?dp_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NDUyNjk2LCJleHAiOjE2OTUzMTIzMDQsImlhdCI6MTY5NDcwNzUwNCwidXNlcm5hbWUiOiJ3ZWl4aW5fMzgxOTkzODEifQ.xIBvzCJnk72YDqUIB6k1ZsDN6yx0IlPq-bCs7XSvrr0 
+
 ## docker连 主机pc连的安卓设备
 
 1、宿主为windows：
