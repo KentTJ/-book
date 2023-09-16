@@ -1667,6 +1667,13 @@ wifi的驱动，禁止关闭
 
 不一定是硬件问题
 
+
+
+## 网页视频音量太小
+
+Volume Booster
+![image-20230917021306873](software_pcSettings.assets/image-20230917021306873.png)
+
 ## 远程桌面
 
 ### 远程电脑  访问  本地电脑磁盘的方法
