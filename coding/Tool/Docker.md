@@ -100,7 +100,7 @@ https://www.cnblogs.com/brock0624/p/9792203.html
 
 ![image-20220912172121827](Docker.assets/image-20220912172121827.png)
 
-```
+```java
 {
   "builder": {
     "gc": {
@@ -113,6 +113,7 @@ https://www.cnblogs.com/brock0624/p/9792203.html
   "http://hub-mirror.c.163.com",
   "https://docker.mirrors.ustc.edu.cn"
   ],
+  "debug": true,
   "experimental": true,
   "features": {
     "buildkit": true
