@@ -741,7 +741,11 @@ D  PDF本身的目录OCR
 
 ![image-20230917150937684](software_pcSettings.assets/image-20230917150937684.png)
 
+**原则：**
 
+实际页号是2，修改  文本中为2  <font color='cornflowerblue'> 不用管右下角标注的页号</font>
+
+![image-20230917192636666](software_pcSettings.assets/image-20230917192636666.png)
 
 ### 最终结果展示：
 
