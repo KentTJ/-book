@@ -3125,7 +3125,7 @@ KaTex-->C(...)
 
 # 随时记录美好
 
-<font color='red'>美好的东西，本身就值钱</font>
+-<font color='red'>美好的东西，本身就值钱</font>
 
 
 
@@ -3141,5 +3141,8 @@ KaTex-->C(...)
 
 扩展： 多屏输入法
 
-2、
+2、美好： 
 
+perfetto 把图形trace 和 log结合到一起了，结合点时间
+
+3、
