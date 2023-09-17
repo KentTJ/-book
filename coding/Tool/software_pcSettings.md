@@ -691,7 +691,47 @@ https://www.jianshu.com/p/4471c20fbafe  Gitbook使用教程
 
 
 
+## pdf电子书制作
 
+### 教程：
+
+1、纸质书籍---->  pdf电子书籍： 手机夸克  教程： https://www.bilibili.com/video/BV1d8411z7fR/?spm_id_from=333.337.search-card.all.click  
+
+2、给电子书加书签：
+
+参考： https://www.bilibili.com/video/BV1hX4y1V7Fi/?buvid=XYA50C4AE9D0FD435535889530C0CC38FFE8A&is_story_h5=false&mid=3rb72hWRTB8TwF8P3lhSvg%3D%3D&p=1&plat_id=114&share_from=ugc&share_medium=android&share_plat=android&share_session_id=bd6ffdc5-4350-4b23-b2d2-e761eb6897ee&share_source=WEIXIN&share_tag=s_i&timestamp=1694924796&unique_k=ZRxWlbM&up_id=234080369&vd_source=3eebd10b94a8a76eaf4b78bee8f23884
+
+步骤：
+
+（1）先生成目录标签的空文件
+
+![image-20230917150420812](software_pcSettings.assets/image-20230917150420812.png)
+
+（2）编辑目录标签文件
+
+![image-20230917150520290](software_pcSettings.assets/image-20230917150520290.png)
+
+
+
+![image-20230917150556336](software_pcSettings.assets/image-20230917150556336.png)
+
+（3）上面编辑内容的来源：
+
+A. 纸质书籍对应的出版社官网有
+
+B. 京东上 卖书的链接有
+
+C 网上搜
+
+（4） 目录和前沿占据了前14页：整体后挪14页
+
+![image-20230917150937684](software_pcSettings.assets/image-20230917150937684.png)
+
+
+
+### 最终结果展示：
+
+![image-20230917151148002](software_pcSettings.assets/image-20230917151148002.png)
 
 ## EA
 
