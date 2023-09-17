@@ -723,7 +723,21 @@ B. 京东上 卖书的链接有
 
 C 网上搜
 
-（4） 目录和前沿占据了前14页：整体后挪14页
+D  PDF本身的目录OCR
+
+![image-20230917183442007](software_pcSettings.assets/image-20230917183442007.png)
+
+
+
+（4） pdf挂书签
+
+![image-20230917185315625](software_pcSettings.assets/image-20230917185315625.png)
+
+-<font color='red'>失败原因：pdf被打开了</font>
+
+![image-20230917185246288](software_pcSettings.assets/image-20230917185246288.png)
+
+（5） 目录和前沿占据了前14页：整体后挪14页
 
 ![image-20230917150937684](software_pcSettings.assets/image-20230917150937684.png)
 
