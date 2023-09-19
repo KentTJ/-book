@@ -1563,6 +1563,16 @@ MOD是ALT键。详见： https://www.ngui.cc/zz/2053439.html?action=onClick
 
 3、本是github开源项目。
 
+
+
+
+
+## wmWare
+
+### adb连手机
+
+https://blog.csdn.net/lspqq10086/article/details/127447126?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-127447126-blog-123850238.235%5Ev38%5Epc_relevant_anti_t3&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-127447126-blog-123850238.235%5Ev38%5Epc_relevant_anti_t3&utm_relevant_index=2
+
 # 计算机其他问题及设置
 
 ## 软件最优的使用方式----免安装
