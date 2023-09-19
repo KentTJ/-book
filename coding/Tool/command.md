@@ -1180,121 +1180,196 @@ exit (或 quit)            -- 退出调试器
 ```cpp
 #! /bin/bash
 
-echo "cg, this is \MobaXterm\slash\etc\myfun.sh which is sourced by profile!!!"
+echo "cg, this is \MobaXterm\slash\etc\myDefinedfun.sh which is sourced by profile!!!"
 
 
 function my_he 
 {
-	echo "=========================adb=============================="
-	echo "adb shell logcat -b events | findstr "am_ wm_"  "
-	echo "adb shell input keyevent KEYCODE_POWER  "
+    echo "--------------真机环境信息------------------
+         编译时间：adb shell getprop | findstr date 
+         adb shell dumpsys package com.byd.btsetting
+         adb she11 dumpsys activity activities | findstr Resumed
+         adb shell getprop ro.build.type"
+	echo "=========================dump=========================
+		屏幕尺寸：adb shell um size
+		adb shell dumpsys package com.tencent.mm 或 adb shell dumpsys-package | findstr SystemUI
+		adb shell dumpsys SurfaceFlinger > SurfaceFlinger.txt ,   HWC l
+		adb shell dumpsys display > display.txt, DisplayDeviceinto. displayld
+		adb shell dumpsys window windows > windows.txt,   Window #, touchableRegion
+		adb shell dumpsys activity activities | findstr Resumed
+		adb shell dumpsys input > input.txt     | findstr touchableRegion
+		adb shell uiautomator dump -d 0  --compressed /data/local/tmp/uidump.xml & adb pull /data/local/tmp/uidump.xml"
+
+    echo "=========================adb==============================
+        adb shell logcat -b events | findstr "am_ wm_"  
+        adb shell input keyevent KEYCODE_POWER  
+		查看服务： adb shell service 1ist
+		Di6切ivi: adb shell switchadb *#9352*232#*
+        Di6切ivi: adb shell switchadb *#9352*232#* -s 0
+		
+		python systrace.py -t 5 -o mynewtrace.html sched freq idle am wm view binder_driver hal dalvik camera input res
+		#adb shell am force-stop com.tencent.mm
+		#adb shell screencap -p /sdcard/app.png 5 adb pull/sdcard/app.png adb shell screencap pd2/sdcard/app2.png adb puadcard/app2.png
+		#adb-shell cmd window tracing start & adb shell-su-root service call Surfaceplinger 1025 i32 1 &&  
+		#adb shell screenrecord --time-limit 6 /sdcard/demo.mp4 && adb pull /sdcard/demo.mp4 screenRecord.mp4
+		# aub shell and window tracing stop's adb shell no-coot service call Surfaceringer 1025 132 0
+		#edb-poll /data/misc/umt.rece/vm trace winscope vm trace winscope & adh pull /data/misc/wmtrace/layers trace.winscope layers trace.wingcope & a
+
+        startDocker.bat
+        my_start; my_sleep_pc; my_restart_pc
+        my_pause
+        my_unpause
+        docker_build_save_load.bat
+        
+        docker images -a
+        docker rmi ee7cbd482336
+        docker ps -l
+        docker pause 2619ca372120
+        docker commit  7a0d4b22ae06 chengang/ubuntu16.04_aosp1200_r28:vnc_ok
+        docker load -i  F:\VirtualMachine\Docker\ubuntu.tar
+        
+        docker_build_save_load.bat 替代:
+            docker save  chengang/ubuntu16.04_aosp1000_r17:vnc_ok  -o  H:\docker_jarFiles\ubuntu16.04_aosp1000_r17_vnc_20221026.jar
+            docker build --squash -t  chengang/ubuntu16.04_aosp1200_r28:as_ok2 ."
+
+
+    echo "=========================虚拟屏=============================
+	adb shell settings put global overlay_display_devices "1920x1080/320,secure" 
+    adb shell am start --display 4 com.example.myapplication/.MainActivity (查diaplay1D: adb shell dumpays display | findstr "1080" )
+	adb shell input -d 4 tap 250 300 
+	"
 	
-	echo "startDocker.bat"
-	echo "my_start; my_sleep_pc; my_restart_pc"
-	echo "my_pause"
-	echo "my_unpause"
-	echo "docker_build_save_load.bat"
-	
-	echo "docker images -a"
-	echo "docker rmi ee7cbd482336"
-	echo "docker ps -l"
-	echo "docker pause 2619ca372120"
-	echo "docker commit  7a0d4b22ae06 chengang/ubuntu16.04_aosp1000_r17:vnc_ok"
-	echo "docker load -i  F:\VirtualMachine\Docker\ubuntu.tar"
-	echo "docker save  chengang/ubuntu16.04_aosp1000_r17:vnc_ok  -o  H:\docker_jarFiles\ubuntu16.04_aosp1000_r17_vnc_20221026.jar"
-	echo "docker build --squash -t  chengang/ubuntu16.04_aosp1000_r17:as_ok2 ."
-	echo ""
+	echo "=========================分身=============================
+	创建：adb shell pm create-user --profileOf 0 --managed fensten ; adb shell pm remove-user 10
+    所有用户：adb shell pm list users
+    激活：adb shell am start-user 10
+    分身应用启动：adb shell am start --user 10 --display 2 -n "com.example.myapplication/.MainActivity"
+
+	"
+
+
+#adb shell am force-stop.com.tencent..mm
+#adb shell screencap p/sdcard/app.png & adb pull /sdcard/app.png
+#adh shell screencap -p-d 2/sdcard/app2.png adb pull/sdcard/app2.png
+#adb shell cmd window tracing startadh shell an root service call SurfaceFlinger 1025 132-1 & adb shell screenrecord --time-limit-fi/sdo
+#adb shell cmd window tracing stop s adb-shell su root service call Surfaceringer 1025-132 0
+#adb pull-/data/misc/wmtrace/wm trace.Winscope wil trace.winscope & adb purl /data/misc/umtrace/layers trace.winscope layers trace, winscope i
+#echo " =虚拟用:
+#adb shell settings put global overlay display devices "1920x1080/320, secure" adb shell am start display 4 com.example.myapplication/MainActivity 4diaplay Dr adb shell dumpsys display I findet: "1000"
+#adb shell input d 4 tap 250-300"
+#Bladb shell pm create-user profileof-0--managed-fenshen adb shell to remove user 10
+#: adb shell pm list users id:adb shell am start-user-10-
+#DA: adb shell am start user 20-display "com.example.myapplication/ MainActivity" #u10: adb shell dumpays package com.tengent.mt findste installed-
+#9 adb shell dumpsys package com.tencent..at findstr installed-"
+#echo
+#"s Protolog#: 
+#adb shell wm logging enable-text WM_DEBUG_ORIENTATION
+#Log.i(TAG, "chen, loadKeyboard" + Log.getStackTraceString(new Throwable())); 
+#echo
+#adb shell setenforce 0
+# adb shell getenforce (196ermissive)
+#echo "
+#Linux
+#adb shell ps -A > process.txt #pid Adb shell ps-findst fly adb shell pAT p 7209 pidi Tad shell pa AT F
+#动态标记(联合操作识别),线程维度:
+#adb shell top-top: Shift+< El Shift+s Fl
+#adb shell top-p 7209 限定pid
+#双过滤: | grep 7209 | grep Render
+#action my keyword
+#echo "
+#echo "fatal. boot error"
+#echo fam
 }
 
 function my_start
 {
-	./myStart.bat
-	echo ""
+    ./myStart.bat
+    echo ""
 }
 
 function my_sleep_pc
 {
-	rundll32.exe powrprof.dll,SetSuspendState 0,1,0
-	echo ""
+    rundll32.exe powrprof.dll,SetSuspendState 0,1,0
+    echo ""
 }
 
 function my_restart_pc
 {
-	{
-	  docker pause my_container && \
-	  docker stop $(docker ps -a -q) && \   #全关
-	  echo "docker 关闭成功"
-	} ||  {
-	  echo "docker 关闭失败"
-	}
-	sleep 4
+    {
+      docker pause my_container && \
+      docker stop $(docker ps -a -q) && \   #全关
+      echo "docker 关闭成功"
+    } ||  {
+      echo "docker 关闭失败"
+    }
+    sleep 4
 
-	shutdown -r now   #立刻重启
-	echo ""
+    shutdown -r now   #立刻重启
+    echo ""
 }
 
 function my_pause
 {
-	docker pause my_container 
+    docker pause my_container 
 }
 
 function my_unpause
 {
-	docker unpause my_container 
+    docker unpause my_container 
 }
 
 function my_adb_win
 {
-	cp /drives/d/Users/Administrator/AppData/Local/Android/Sdk/adb.exe /drives/d/Users/Administrator/AppData/Local/Android/Sdk/platform-tools/adb.exe
+    cp /drives/d/Users/Administrator/AppData/Local/Android/Sdk/adb.exe /drives/d/Users/Administrator/AppData/Local/Android/Sdk/platform-tools/adb.exe
 }
 
 function my_adb_linux
 {
-	rm -rf /drives/d/Users/Administrator/AppData/Local/Android/Sdk/platform-tools/adb.exe
+    rm -rf /drives/d/Users/Administrator/AppData/Local/Android/Sdk/platform-tools/adb.exe
 }
 
 function my_win2linuxPath
 {
-	# usage: my_win2linux_path "C:\Users\asus\Anaconda3"
+    # usage: my_win2linux_path "C:\Users\asus\Anaconda3"
 
-	win_path=$1 # 脚本的第一个参数就是windows路径
-	#win_path="C:\Users\asus\Anaconda3" # 一个示例路径
+    win_path=$1 # 脚本的第一个参数就是windows路径
+    #win_path="C:\Users\asus\Anaconda3" # 一个示例路径
 
-	tmp_path=${win_path/:/} # 将冒号删掉
-	tmp_path=${tmp_path//\\/\/} # 将\\替换为/
+    tmp_path=${win_path/:/} # 将冒号删掉
+    tmp_path=${tmp_path//\\/\/} # 将\\替换为/
 
-	disk_id=${tmp_path:0:1} # 取出第一个字母，也就是C盘的C，冒号后面第一个0指的是从下标为0的地方开始提取，第二个冒号后面的1表示提取一个字母
-	disk_id=$(echo $disk_id | tr [:upper:] [:lower:]) # 大写转小写
-	#echo $disk_id
+    disk_id=${tmp_path:0:1} # 取出第一个字母，也就是C盘的C，冒号后面第一个0指的是从下标为0的地方开始提取，第二个冒号后面的1表示提取一个字母
+    disk_id=$(echo $disk_id | tr [:upper:] [:lower:]) # 大写转小写
+    #echo $disk_id
 
-	other_path=${tmp_path:1} # 路径中除了磁盘以外的部分
+    other_path=${tmp_path:1} # 路径中除了磁盘以外的部分
 
-	linux_path="/drives/"${disk_id}${other_path} # 需要将/mnt/接在路径最前方
-	echo "windows path is "${win_path}
-	echo "linux path is "${linux_path}
+    linux_path="/drives/"${disk_id}${other_path} # 需要将/mnt/接在路径最前方
+    echo "windows path is "${win_path}
+    echo "linux path is "${linux_path}
 }
 
 function my_linux2winPath 
 {
-	#当前linux路径转win  #比如："./my_Command"
-	curr_path=$(pwd)
-	Input_path=$1  #
-	echo $Input_path
-	cd $Input_path
+    #当前linux路径转win  #比如："./my_Command"
+    curr_path=$(pwd)
+    Input_path=$1  #
+    echo $Input_path
+    cd $Input_path
 
-	explorer.exe .  #核心：通过explorer.exe 转换linux路径到win
-	cd $curr_path
+    explorer.exe .  #核心：通过explorer.exe 转换linux路径到win
+    cd $curr_path
 }
 
 function my_sourceMappath
 {
-	# usage: my_win2linux_path "C:\Users\asus\Anaconda3"
+    # usage: my_win2linux_path "C:\Users\asus\Anaconda3"
 
-	win_path=$1 # 脚本的第一个参数就是windows路径
-	#win_path="C:\Users\asus\Anaconda3" # 一个示例路径
-	echo $win_path
-	python myOpenWinPath.py $win_path
-	#python myOpenWinPath.py "I:\working_pan\Demo\AOSPsourceCode2_win\sourceroot\packages\apps\Launcher3\iconloaderlib\src\com\android\launcher3\icons\BaseIconFactory.java"
+    win_path=$1 # 脚本的第一个参数就是windows路径
+    #win_path="C:\Users\asus\Anaconda3" # 一个示例路径
+    echo $win_path
+    python myOpenWinPath.py $win_path
+    #python myOpenWinPath.py "I:\working_pan\Demo\AOSPsourceCode2_win\sourceroot\packages\apps\Launcher3\iconloaderlib\src\com\android\launcher3\icons\BaseIconFactory.java"
 }
 
 

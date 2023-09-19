@@ -1641,59 +1641,134 @@ exit (&#x6216; quit)            -- &#x9000;&#x51FA;&#x8C03;&#x8BD5;&#x5668;</p>
 <h2 id="&#x5DF2;&#x7ECF;&#x5236;&#x4F5C;&#x597D;&#x7684;&#x811A;&#x672C;-&#x5907;&#x4EFD;"><a name="&#x5DF2;&#x7ECF;&#x5236;&#x4F5C;&#x597D;&#x7684;&#x811A;&#x672C;-&#x5907;&#x4EFD;" class="anchor-navigation-ex-anchor" href="#&#x5DF2;&#x7ECF;&#x5236;&#x4F5C;&#x597D;&#x7684;&#x811A;&#x672C;-&#x5907;&#x4EFD;"><i class="fa fa-link" aria-hidden="true"></i></a>1.9. &#x5DF2;&#x7ECF;&#x5236;&#x4F5C;&#x597D;&#x7684;&#x811A;&#x672C; &#x5907;&#x4EFD;</h2>
 <h3 id="win&#x4E0B;---myfunsh"><a name="win&#x4E0B;---myfunsh" class="anchor-navigation-ex-anchor" href="#win&#x4E0B;---myfunsh"><i class="fa fa-link" aria-hidden="true"></i></a>1.9.1. win&#x4E0B;   myfun.sh</h3>
 <div class="accordion accordionClose"><div class="accordionButton"><div class="accordionTitle">&#x5C55;&#x5F00;</div><div class="accordionSpinnerBox"><div class="accordionSpinner"></div></div></div><div class="accordionContent">
-<pre><code class="lang-cpp"><span class="hljs-meta">#! /bin/bash</span>
+<pre><code class="lang-cpp">#! /bin/bash
 
-echo <span class="hljs-string">&quot;cg, this is \MobaXterm\slash\etc\myfun.sh which is sourced by profile!!!&quot;</span>
+echo &quot;cg, this is \MobaXterm\slash\etc\myDefinedfun.sh which is sourced by profile!!!&quot;
 
 
 function my_he 
 {
-    echo <span class="hljs-string">&quot;=========================adb==============================&quot;</span>
-    echo <span class="hljs-string">&quot;adb shell logcat -b events | findstr &quot;</span>am_ wm_<span class="hljs-string">&quot;  &quot;</span>
-    echo <span class="hljs-string">&quot;adb shell input keyevent KEYCODE_POWER  &quot;</span>
+    echo &quot;--------------&#x771F;&#x673A;&#x73AF;&#x5883;&#x4FE1;&#x606F;------------------
+         &#x7F16;&#x8BD1;&#x65F6;&#x95F4;&#xFF1A;adb shell getprop | findstr date 
+         adb shell dumpsys package com.byd.btsetting
+         adb she11 dumpsys activity activities | findstr Resumed
+         adb shell getprop ro.build.type&quot;
+    echo &quot;=========================dump=========================
+        &#x5C4F;&#x5E55;&#x5C3A;&#x5BF8;&#xFF1A;adb shell um size
+        adb shell dumpsys package com.tencent.mm &#x6216; adb shell dumpsys-package | findstr SystemUI
+        adb shell dumpsys SurfaceFlinger &gt; SurfaceFlinger.txt ,   HWC l
+        adb shell dumpsys display &gt; display.txt, DisplayDeviceinto. displayld
+        adb shell dumpsys window windows &gt; windows.txt,   Window #, touchableRegion
+        adb shell dumpsys activity activities | findstr Resumed
+        adb shell dumpsys input &gt; input.txt     | findstr touchableRegion
+        adb shell uiautomator dump -d 0  --compressed /data/local/tmp/uidump.xml &amp; adb pull /data/local/tmp/uidump.xml&quot;
 
-    echo <span class="hljs-string">&quot;startDocker.bat&quot;</span>
-    echo <span class="hljs-string">&quot;my_start; my_sleep_pc; my_restart_pc&quot;</span>
-    echo <span class="hljs-string">&quot;my_pause&quot;</span>
-    echo <span class="hljs-string">&quot;my_unpause&quot;</span>
-    echo <span class="hljs-string">&quot;docker_build_save_load.bat&quot;</span>
+    echo &quot;=========================adb==============================
+        adb shell logcat -b events | findstr &quot;am_ wm_&quot;  
+        adb shell input keyevent KEYCODE_POWER  
+        &#x67E5;&#x770B;&#x670D;&#x52A1;&#xFF1A; adb shell service 1ist
+        Di6&#x5207;ivi: adb shell switchadb *#9352*232#*
+        Di6&#x5207;ivi: adb shell switchadb *#9352*232#* -s 0
 
-    echo <span class="hljs-string">&quot;docker images -a&quot;</span>
-    echo <span class="hljs-string">&quot;docker rmi ee7cbd482336&quot;</span>
-    echo <span class="hljs-string">&quot;docker ps -l&quot;</span>
-    echo <span class="hljs-string">&quot;docker pause 2619ca372120&quot;</span>
-    echo <span class="hljs-string">&quot;docker commit  7a0d4b22ae06 chengang/ubuntu16.04_aosp1000_r17:vnc_ok&quot;</span>
-    echo <span class="hljs-string">&quot;docker load -i  F:\VirtualMachine\Docker\ubuntu.tar&quot;</span>
-    echo <span class="hljs-string">&quot;docker save  chengang/ubuntu16.04_aosp1000_r17:vnc_ok  -o  H:\docker_jarFiles\ubuntu16.04_aosp1000_r17_vnc_20221026.jar&quot;</span>
-    echo <span class="hljs-string">&quot;docker build --squash -t  chengang/ubuntu16.04_aosp1000_r17:as_ok2 .&quot;</span>
-    echo <span class="hljs-string">&quot;&quot;</span>
+        python systrace.py -t 5 -o mynewtrace.html sched freq idle am wm view binder_driver hal dalvik camera input res
+        #adb shell am force-stop com.tencent.mm
+        #adb shell screencap -p /sdcard/app.png 5 adb pull/sdcard/app.png adb shell screencap pd2/sdcard/app2.png adb puadcard/app2.png
+        #adb-shell cmd window tracing start &amp; adb shell-su-root service call Surfaceplinger 1025 i32 1 &amp;&amp;  
+        #adb shell screenrecord --time-limit 6 /sdcard/demo.mp4 &amp;&amp; adb pull /sdcard/demo.mp4 screenRecord.mp4
+        # aub shell and window tracing stop&apos;s adb shell no-coot service call Surfaceringer 1025 132 0
+        #edb-poll /data/misc/umt.rece/vm trace winscope vm trace winscope &amp; adh pull /data/misc/wmtrace/layers trace.winscope layers trace.wingcope &amp; a
+
+        startDocker.bat
+        my_start; my_sleep_pc; my_restart_pc
+        my_pause
+        my_unpause
+        docker_build_save_load.bat
+
+        docker images -a
+        docker rmi ee7cbd482336
+        docker ps -l
+        docker pause 2619ca372120
+        docker commit  7a0d4b22ae06 chengang/ubuntu16.04_aosp1200_r28:vnc_ok
+        docker load -i  F:\VirtualMachine\Docker\ubuntu.tar
+
+        docker_build_save_load.bat &#x66FF;&#x4EE3;:
+            docker save  chengang/ubuntu16.04_aosp1000_r17:vnc_ok  -o  H:\docker_jarFiles\ubuntu16.04_aosp1000_r17_vnc_20221026.jar
+            docker build --squash -t  chengang/ubuntu16.04_aosp1200_r28:as_ok2 .&quot;
+
+
+    echo &quot;=========================&#x865A;&#x62DF;&#x5C4F;=============================
+    adb shell settings put global overlay_display_devices &quot;1920x1080/320,secure&quot; 
+    adb shell am start --display 4 com.example.myapplication/.MainActivity (&#x67E5;diaplay1D: adb shell dumpays display | findstr &quot;1080&quot; )
+    adb shell input -d 4 tap 250 300 
+    &quot;
+
+    echo &quot;=========================&#x5206;&#x8EAB;=============================
+    &#x521B;&#x5EFA;&#xFF1A;adb shell pm create-user --profileOf 0 --managed fensten ; adb shell pm remove-user 10
+    &#x6240;&#x6709;&#x7528;&#x6237;&#xFF1A;adb shell pm list users
+    &#x6FC0;&#x6D3B;&#xFF1A;adb shell am start-user 10
+    &#x5206;&#x8EAB;&#x5E94;&#x7528;&#x542F;&#x52A8;&#xFF1A;adb shell am start --user 10 --display 2 -n &quot;com.example.myapplication/.MainActivity&quot;
+
+    &quot;
+
+
+#adb shell am force-stop.com.tencent..mm
+#adb shell screencap p/sdcard/app.png &amp; adb pull /sdcard/app.png
+#adh shell screencap -p-d 2/sdcard/app2.png adb pull/sdcard/app2.png
+#adb shell cmd window tracing startadh shell an root service call SurfaceFlinger 1025 132-1 &amp; adb shell screenrecord --time-limit-fi/sdo
+#adb shell cmd window tracing stop s adb-shell su root service call Surfaceringer 1025-132 0
+#adb pull-/data/misc/wmtrace/wm trace.Winscope wil trace.winscope &amp; adb purl /data/misc/umtrace/layers trace.winscope layers trace, winscope i
+#echo &quot; =&#x865A;&#x62DF;&#x7528;:
+#adb shell settings put global overlay display devices &quot;1920x1080/320, secure&quot; adb shell am start display 4 com.example.myapplication/MainActivity 4diaplay Dr adb shell dumpsys display I findet: &quot;1000&quot;
+#adb shell input d 4 tap 250-300&quot;
+#Bladb shell pm create-user profileof-0--managed-fenshen adb shell to remove user 10
+#: adb shell pm list users id:adb shell am start-user-10-
+#DA: adb shell am start user 20-display &quot;com.example.myapplication/ MainActivity&quot; #u10: adb shell dumpays package com.tengent.mt findste installed-
+#9 adb shell dumpsys package com.tencent..at findstr installed-&quot;
+#echo
+#&quot;s Protolog#: 
+#adb shell wm logging enable-text WM_DEBUG_ORIENTATION
+#Log.i(TAG, &quot;chen, loadKeyboard&quot; + Log.getStackTraceString(new Throwable())); 
+#echo
+#adb shell setenforce 0
+# adb shell getenforce (196ermissive)
+#echo &quot;
+#Linux
+#adb shell ps -A &gt; process.txt #pid Adb shell ps-findst fly adb shell pAT p 7209 pidi Tad shell pa AT F
+#&#x52A8;&#x6001;&#x6807;&#x8BB0;(&#x8054;&#x5408;&#x64CD;&#x4F5C;&#x8BC6;&#x522B;),&#x7EBF;&#x7A0B;&#x7EF4;&#x5EA6;:
+#adb shell top-top: Shift+&lt; El Shift+s Fl
+#adb shell top-p 7209 &#x9650;&#x5B9A;pid
+#&#x53CC;&#x8FC7;&#x6EE4;: | grep 7209 | grep Render
+#action my keyword
+#echo &quot;
+#echo &quot;fatal. boot error&quot;
+#echo fam
 }
 
 function my_start
 {
     ./myStart.bat
-    echo <span class="hljs-string">&quot;&quot;</span>
+    echo &quot;&quot;
 }
 
 function my_sleep_pc
 {
-    rundll32.exe powrprof.dll,SetSuspendState <span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>
-    echo <span class="hljs-string">&quot;&quot;</span>
+    rundll32.exe powrprof.dll,SetSuspendState 0,1,0
+    echo &quot;&quot;
 }
 
 function my_restart_pc
 {
     {
       docker pause my_container &amp;&amp; \
-      docker stop $(docker ps -a -q) &amp;&amp; \   <span class="hljs-meta">#&#x5168;&#x5173;</span>
-      echo <span class="hljs-string">&quot;docker &#x5173;&#x95ED;&#x6210;&#x529F;&quot;</span>
+      docker stop $(docker ps -a -q) &amp;&amp; \   #&#x5168;&#x5173;
+      echo &quot;docker &#x5173;&#x95ED;&#x6210;&#x529F;&quot;
     } ||  {
-      echo <span class="hljs-string">&quot;docker &#x5173;&#x95ED;&#x5931;&#x8D25;&quot;</span>
+      echo &quot;docker &#x5173;&#x95ED;&#x5931;&#x8D25;&quot;
     }
-    sleep <span class="hljs-number">4</span>
+    sleep 4
 
-    shutdown -r now   <span class="hljs-meta">#&#x7ACB;&#x523B;&#x91CD;&#x542F;</span>
-    echo <span class="hljs-string">&quot;&quot;</span>
+    shutdown -r now   #&#x7ACB;&#x523B;&#x91CD;&#x542F;
+    echo &quot;&quot;
 }
 
 function my_pause
@@ -1718,46 +1793,46 @@ function my_adb_linux
 
 function my_win2linuxPath
 {
-    <span class="hljs-meta"># usage: my_win2linux_path <span class="hljs-string">&quot;C:\Users\asus\Anaconda3&quot;</span></span>
+    # usage: my_win2linux_path &quot;C:\Users\asus\Anaconda3&quot;
 
-    win_path=$<span class="hljs-number">1</span> <span class="hljs-meta"># &#x811A;&#x672C;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x5C31;&#x662F;windows&#x8DEF;&#x5F84;</span>
-    <span class="hljs-meta">#win_path=<span class="hljs-string">&quot;C:\Users\asus\Anaconda3&quot;</span> # &#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#x8DEF;&#x5F84;</span>
+    win_path=$1 # &#x811A;&#x672C;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x5C31;&#x662F;windows&#x8DEF;&#x5F84;
+    #win_path=&quot;C:\Users\asus\Anaconda3&quot; # &#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#x8DEF;&#x5F84;
 
-    tmp_path=${win_path/:/} <span class="hljs-meta"># &#x5C06;&#x5192;&#x53F7;&#x5220;&#x6389;</span>
-    tmp_path=${tmp_path<span class="hljs-comment">//\\/\/} # &#x5C06;\\&#x66FF;&#x6362;&#x4E3A;/</span>
+    tmp_path=${win_path/:/} # &#x5C06;&#x5192;&#x53F7;&#x5220;&#x6389;
+    tmp_path=${tmp_path//\\/\/} # &#x5C06;\\&#x66FF;&#x6362;&#x4E3A;/
 
-    disk_id=${tmp_path:<span class="hljs-number">0</span>:<span class="hljs-number">1</span>} <span class="hljs-meta"># &#x53D6;&#x51FA;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x6BCD;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;C&#x76D8;&#x7684;C&#xFF0C;&#x5192;&#x53F7;&#x540E;&#x9762;&#x7B2C;&#x4E00;&#x4E2A;0&#x6307;&#x7684;&#x662F;&#x4ECE;&#x4E0B;&#x6807;&#x4E3A;0&#x7684;&#x5730;&#x65B9;&#x5F00;&#x59CB;&#x63D0;&#x53D6;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x5192;&#x53F7;&#x540E;&#x9762;&#x7684;1&#x8868;&#x793A;&#x63D0;&#x53D6;&#x4E00;&#x4E2A;&#x5B57;&#x6BCD;</span>
-    disk_id=$(echo $disk_id | tr [:upper:] [:lower:]) <span class="hljs-meta"># &#x5927;&#x5199;&#x8F6C;&#x5C0F;&#x5199;</span>
-    <span class="hljs-meta">#echo $disk_id</span>
+    disk_id=${tmp_path:0:1} # &#x53D6;&#x51FA;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x6BCD;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;C&#x76D8;&#x7684;C&#xFF0C;&#x5192;&#x53F7;&#x540E;&#x9762;&#x7B2C;&#x4E00;&#x4E2A;0&#x6307;&#x7684;&#x662F;&#x4ECE;&#x4E0B;&#x6807;&#x4E3A;0&#x7684;&#x5730;&#x65B9;&#x5F00;&#x59CB;&#x63D0;&#x53D6;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x5192;&#x53F7;&#x540E;&#x9762;&#x7684;1&#x8868;&#x793A;&#x63D0;&#x53D6;&#x4E00;&#x4E2A;&#x5B57;&#x6BCD;
+    disk_id=$(echo $disk_id | tr [:upper:] [:lower:]) # &#x5927;&#x5199;&#x8F6C;&#x5C0F;&#x5199;
+    #echo $disk_id
 
-    other_path=${tmp_path:<span class="hljs-number">1</span>} <span class="hljs-meta"># &#x8DEF;&#x5F84;&#x4E2D;&#x9664;&#x4E86;&#x78C1;&#x76D8;&#x4EE5;&#x5916;&#x7684;&#x90E8;&#x5206;</span>
+    other_path=${tmp_path:1} # &#x8DEF;&#x5F84;&#x4E2D;&#x9664;&#x4E86;&#x78C1;&#x76D8;&#x4EE5;&#x5916;&#x7684;&#x90E8;&#x5206;
 
-    linux_path=<span class="hljs-string">&quot;/drives/&quot;</span>${disk_id}${other_path} <span class="hljs-meta"># &#x9700;&#x8981;&#x5C06;/mnt/&#x63A5;&#x5728;&#x8DEF;&#x5F84;&#x6700;&#x524D;&#x65B9;</span>
-    echo <span class="hljs-string">&quot;windows path is &quot;</span>${win_path}
-    echo <span class="hljs-string">&quot;linux path is &quot;</span>${linux_path}
+    linux_path=&quot;/drives/&quot;${disk_id}${other_path} # &#x9700;&#x8981;&#x5C06;/mnt/&#x63A5;&#x5728;&#x8DEF;&#x5F84;&#x6700;&#x524D;&#x65B9;
+    echo &quot;windows path is &quot;${win_path}
+    echo &quot;linux path is &quot;${linux_path}
 }
 
 function my_linux2winPath 
 {
-    <span class="hljs-meta">#&#x5F53;&#x524D;linux&#x8DEF;&#x5F84;&#x8F6C;win  #&#x6BD4;&#x5982;&#xFF1A;<span class="hljs-string">&quot;./my_Command&quot;</span></span>
+    #&#x5F53;&#x524D;linux&#x8DEF;&#x5F84;&#x8F6C;win  #&#x6BD4;&#x5982;&#xFF1A;&quot;./my_Command&quot;
     curr_path=$(pwd)
-    Input_path=$<span class="hljs-number">1</span>  <span class="hljs-meta">#</span>
+    Input_path=$1  #
     echo $Input_path
     cd $Input_path
 
-    explorer.exe .  <span class="hljs-meta">#&#x6838;&#x5FC3;&#xFF1A;&#x901A;&#x8FC7;explorer.exe &#x8F6C;&#x6362;linux&#x8DEF;&#x5F84;&#x5230;win</span>
+    explorer.exe .  #&#x6838;&#x5FC3;&#xFF1A;&#x901A;&#x8FC7;explorer.exe &#x8F6C;&#x6362;linux&#x8DEF;&#x5F84;&#x5230;win
     cd $curr_path
 }
 
 function my_sourceMappath
 {
-    <span class="hljs-meta"># usage: my_win2linux_path <span class="hljs-string">&quot;C:\Users\asus\Anaconda3&quot;</span></span>
+    # usage: my_win2linux_path &quot;C:\Users\asus\Anaconda3&quot;
 
-    win_path=$<span class="hljs-number">1</span> <span class="hljs-meta"># &#x811A;&#x672C;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x5C31;&#x662F;windows&#x8DEF;&#x5F84;</span>
-    <span class="hljs-meta">#win_path=<span class="hljs-string">&quot;C:\Users\asus\Anaconda3&quot;</span> # &#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#x8DEF;&#x5F84;</span>
+    win_path=$1 # &#x811A;&#x672C;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x5C31;&#x662F;windows&#x8DEF;&#x5F84;
+    #win_path=&quot;C:\Users\asus\Anaconda3&quot; # &#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#x8DEF;&#x5F84;
     echo $win_path
     python myOpenWinPath.py $win_path
-    <span class="hljs-meta">#python myOpenWinPath.py <span class="hljs-string">&quot;I:\working_pan\Demo\AOSPsourceCode2_win\sourceroot\packages\apps\Launcher3\iconloaderlib\src\com\android\launcher3\icons\BaseIconFactory.java&quot;</span></span>
+    #python myOpenWinPath.py &quot;I:\working_pan\Demo\AOSPsourceCode2_win\sourceroot\packages\apps\Launcher3\iconloaderlib\src\com\android\launcher3\icons\BaseIconFactory.java&quot;
 }
 </code></pre>
 <p>&#x88AB;&#x5F15;&#x7528;&#x7684; myStart.bat&#xFF1A;</p>
@@ -1968,7 +2043,7 @@ if __name__ == &apos;__main__&apos;:
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Command","level":"1.2.4.5","depth":3,"next":{"title":"Debug Skills","level":"1.2.4.6","depth":3,"path":"coding/Tool/debugSkills.md","ref":"coding/Tool/debugSkills.md","articles":[]},"previous":{"title":"Clion","level":"1.2.4.4","depth":3,"path":"coding/Tool/clion.md","ref":"coding/Tool/clion.md","articles":[]},"dir":"ltr"},"config":{"//":["这是多行注释：    anchor-navigation-ex 是","anchor-navigation-ex 是","click-reveal 本地使用ok，但是github在build pages时，不识别click-reveal","accordion 也是折叠代码段","anchor-navigation-ex 是"],"plugins":["anchor-navigation-ex","toggle-chapters","expandable-chapters-small","splitter","code","page-treeview","popup","-search","-lunr","sidebar-style","auto-scroll-table","click-reveal","accordion","pageview-count","search-pro"],"root":"./markdownsFiles","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"Kent","title":"《知行，行知》"},"tbfed-pagefooter":{"copyright":"Copyright &copy ershouche-FE 2019","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"disqus":{"shortName":"gitbookuse"},"splitter":{},"search-pro":{},"accordion":{},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":200000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"pageview-count":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bookname":"笔记","variables":{},"title":"Kent的博客","gitbook":"*"},"file":{"path":"coding/Tool/command.md","mtime":"2023-07-16T17:13:35.007Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-09-17T18:50:00.573Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Command","level":"1.2.4.5","depth":3,"next":{"title":"Debug Skills","level":"1.2.4.6","depth":3,"path":"coding/Tool/debugSkills.md","ref":"coding/Tool/debugSkills.md","articles":[]},"previous":{"title":"Clion","level":"1.2.4.4","depth":3,"path":"coding/Tool/clion.md","ref":"coding/Tool/clion.md","articles":[]},"dir":"ltr"},"config":{"//":["这是多行注释：    anchor-navigation-ex 是","anchor-navigation-ex 是","click-reveal 本地使用ok，但是github在build pages时，不识别click-reveal","accordion 也是折叠代码段","anchor-navigation-ex 是"],"plugins":["anchor-navigation-ex","toggle-chapters","expandable-chapters-small","splitter","code","page-treeview","popup","-search","-lunr","sidebar-style","auto-scroll-table","click-reveal","accordion","pageview-count","search-pro"],"root":"./markdownsFiles","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"Kent","title":"《知行，行知》"},"tbfed-pagefooter":{"copyright":"Copyright &copy ershouche-FE 2019","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"disqus":{"shortName":"gitbookuse"},"splitter":{},"search-pro":{},"accordion":{},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":200000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"pageview-count":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bookname":"笔记","variables":{},"title":"Kent的博客","gitbook":"*"},"file":{"path":"coding/Tool/command.md","mtime":"2023-09-19T00:23:40.454Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-09-19T00:24:31.461Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
