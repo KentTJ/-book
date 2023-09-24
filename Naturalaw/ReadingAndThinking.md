@@ -2470,9 +2470,11 @@ gongashi他告诉我，1、不要关注于代码，要有对象提炼。 2、弄
 
 # checklist
 
+![image-20230924102422173](ReadingAndThinking.assets/image-20230924102422173.png)
 
 
-![image-20230917211754169](ReadingAndThinking.assets/image-20230917211754169.png)
+
+
 
 在各种领域里用上述思想工具：
 
