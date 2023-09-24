@@ -2472,7 +2472,7 @@ gongashi他告诉我，1、不要关注于代码，要有对象提炼。 2、弄
 
 
 
-![image-20230925012820918](ReadingAndThinking.assets/image-20230925012820918.png)
+![image-20230925013015975](ReadingAndThinking.assets/image-20230925013015975.png)
 
 
 
