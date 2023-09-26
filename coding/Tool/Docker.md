@@ -671,8 +671,6 @@ C:\Users\xixi>docker load -i  F:\VirtualMachine\Docker\ubuntu.tar
 
 https://www.cnblogs.com/wswang/p/10736726.html
 
-![img](Docker.assets/%E6%88%AA%E5%9B%BE-1605374444290.png)
-
 （3)删？？？？‪
 
 ![img](Docker.assets/clipboard-1605374444293.png)
@@ -771,6 +769,30 @@ https://www.jianshu.com/p/9174914ec07d
 > ![image-20230916012925941](Docker.assets/image-20230916012925941.png)
 
 
+
+### img优化 &  DockerDesktop.vhdx优化 --------><font color='red'> docker的最大难题</font>
+
+img大小（即保存的jar大小） ------ >  可以由squash优化压缩
+
+-**DockerDesktop.vhdx 大小  一般会大于 最大img大小（即使只有一个img）** <font color='red'> 根本原因：</font> .vhdx 大小  是<font color='red'>历史上最大</font>的文件系统（即使后面删除很多文件，也不会减小）
+
+
+
+-------------------------> 针对于docker这些特性：  
+
+（1）在linux侧，不保存差异
+
+（2）差异保存在win侧：**每次启动**的  img都一样，DockerDesktop.vhdx 大小 也都一样（即**<font color='red'>保证永远不会恶化</font>**）
+
+​      即： <font color='red'>重启一致性</font>
+
+（3）**观察df  -h，avail的存储指标**。小，则会报错no space
+
+![image-20230927034334031](Docker.assets/image-20230927034334031.png)
+
+（4）**优化df  -h**：  长时间没有关闭linux，这个很容易被用完。`利用重启一致性，来恢复avail 区域大小`
+
+​     ---------------> <font color='red'> 这反而成为docker的优点</font>
 
 ### 优化之 复制 DockerDesktop.vhdx----->save jar的保底
 
