@@ -676,6 +676,46 @@ https://blog.csdn.net/li6151770/article/details/52782141   Android调用打电�
 
 
 
+
+
+# su权限
+
+
+
+## su命令[源码](https://so.csdn.net/so/search?q=源码&spm=1001.2101.3001.7020)中添加了uid检验，只允许shell/root用户进行调用　
+
+即屏蔽：
+
+
+
+## Zygote.DropCapabilitiesBoundingSet
+
+作用：限制了setuid
+
+![image-20231006215150636](permissions.assets/image-20231006215150636.png)
+
+
+
+## SELinux安全模块
+
+1,2条都满足情况下也会被中断su 
+
+临时：adb shell setenforce 0
+
+永久： 
+
+![image-20231006221516397](permissions.assets/image-20231006221516397.png)
+
+
+
+## 参考：
+
+https://zhuanlan.zhihu.com/p/612380272        RK3588s Android 12 Framework修改记录（三）开放ROOT权限给上层应用 执行su命令
+
+
+
+
+
 # 格式
 
 %accordion%点击展示%accordion%
