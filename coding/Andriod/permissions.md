@@ -680,15 +680,15 @@ https://blog.csdn.net/li6151770/article/details/52782141   Android调用打电�
 
 # su权限
 
+## 方法一：修改代码（还没验证ok）
 
-
-## su命令[源码](https://so.csdn.net/so/search?q=源码&spm=1001.2101.3001.7020)中添加了uid检验，只允许shell/root用户进行调用　
+### su命令[源码](https://so.csdn.net/so/search?q=源码&spm=1001.2101.3001.7020)中添加了uid检验，只允许shell/root用户进行调用　
 
 即屏蔽：
 
 
 
-## Zygote.DropCapabilitiesBoundingSet
+### Zygote.DropCapabilitiesBoundingSet
 
 作用：限制了setuid
 
@@ -696,7 +696,7 @@ https://blog.csdn.net/li6151770/article/details/52782141   Android调用打电�
 
 
 
-## SELinux安全模块
+### SELinux安全模块
 
 1,2条都满足情况下也会被中断su 
 
@@ -706,13 +706,51 @@ https://blog.csdn.net/li6151770/article/details/52782141   Android调用打电�
 
 ![image-20231006221516397](permissions.assets/image-20231006221516397.png)
 
-
-
-## 参考：
+### 参考：
 
 https://zhuanlan.zhihu.com/p/612380272        RK3588s Android 12 Framework修改记录（三）开放ROOT权限给上层应用 执行su命令
 
+https://blog.csdn.net/chlbd/article/details/107065810?spm=1001.2101.3001.6650.7&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-7-107065810-blog-122415926.235%5Ev38%5Epc_relevant_sort_base1&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-7-107065810-blog-122415926.235%5Ev38%5Epc_relevant_sort_base1&utm_relevant_index=6    将Android10编译成真正的具有root权限的系统
 
+## 方法二：有源码----刷入Magisk获取root权限
+
+### 参考： 
+
+https://zhuanlan.zhihu.com/p/651446082
+
+
+
+## 没有源码---刷入Magisk获取root权限
+
+
+
+https://zhuanlan.zhihu.com/p/90965580    如何用magisk root 跑着android 13的pixel
+
+https://magiskcn.com/     小米手机安装面具教程（Xiaomi手机获取root权限）
+
+## AS 模拟器的su权限
+
+模拟器不存在boot.img，也不存在fastboot模式
+
+----------- > 所以，比较特殊
+
+
+
+核心：
+
+> ![image-20231007233051926](permissions.assets/image-20231007233051926.png)
+>
+> > ![image-20231007232510552](permissions.assets/image-20231007232510552.png)
+
+
+
+
+
+### 参考
+
+https://blog.csdn.net/m0_38036918/article/details/130346508   如何给Android Studio模拟器安装Magisk
+
+https://github.com/newbit1/rootAVD
 
 
 
