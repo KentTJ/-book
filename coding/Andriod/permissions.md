@@ -678,7 +678,7 @@ https://blog.csdn.net/li6151770/article/details/52782141   Android调用打电�
 
 
 
-# su权限
+# 应用获取su权限
 
 ## 方法一：修改代码（还没验证ok）
 
@@ -716,7 +716,7 @@ https://blog.csdn.net/chlbd/article/details/107065810?spm=1001.2101.3001.6650.7&
 
 ### 参考： 
 
-https://zhuanlan.zhihu.com/p/651446082
+https://zhuanlan.zhihu.com/p/651446082  aosp-刷入Magisk面具获取root权限   **注：例子是安卓10**
 
 
 
@@ -744,6 +744,52 @@ https://magiskcn.com/     小米手机安装面具教程（Xiaomi手机获取roo
 
 
 
+## su权限的验证
+
+
+
+```java
+  private void myTEST() {
+        ProcessBuilder pb=new ProcessBuilder("/system/bin/sh");
+        //java.lang.ProcessBuilder:Createsoperatingsystemprocesses.
+        pb.directory(new java.io.File("/"));//设置shell的当前目录。
+        try{
+            Process proc = Runtime.getRuntime().exec("su");
+            //Process proc= pb.start();
+            //获取输入流，可以通过它获取SHELL的输出。
+            java.io.BufferedReader in=new java.io.BufferedReader(new java.io.InputStreamReader(proc.getInputStream()));
+            java.io.BufferedReader err=new java.io.BufferedReader(new java.io.InputStreamReader(proc.getErrorStream()));
+            //获取输出流，可以通过它向SHELL发送命令。
+            java.io.PrintWriter out=new java.io.PrintWriter(new java.io.BufferedWriter(new java.io.OutputStreamWriter(proc
+                    .getOutputStream())),true);
+            out.println("pwd");
+//            out.println("ls -la");
+
+            out.println("su root");//执行这一句时会弹出对话框（以下程序要求授予最高权限...），要求用户确认。切换root用户
+            out.println("cd /data/data");//这个目录在系统中要求有root权限才可以访问的。
+            out.println("ls -la");//这个命令如果能列出当前安装的APK的数据文件存放目录，就说明我们有了ROOT权限。
+            out.println("exit");
+            //proc.waitFor();
+            String line;
+            while((line=in.readLine())!=null){
+
+                System.out.println(line);//打印输出结果
+                Log.d(TAG, "chengang out: " + line);
+            }
+            while((line=err.readLine())!=null){
+
+                System.out.println(line);//打印错误输出结果
+                Log.d(TAG, "chengang error: " + line);
+            }
+            in.close();
+            out.close();
+            proc.destroy();
+        }catch(Exception e){
+            System.out.println("exception:"+e);
+        }
+    }
+```
+
 
 
 ### 参考
@@ -760,7 +806,7 @@ https://github.com/newbit1/rootAVD
 
 隐藏
 
-
+/
 
 %/accordion%
 
