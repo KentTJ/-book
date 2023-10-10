@@ -1,3 +1,7 @@
+[TOC]
+
+
+
 # 技巧，工具层面：
 
 
@@ -1816,7 +1820,27 @@ art/tools/generate_cmake_lists.py  ------》 自动生成cmakelist的脚本  TOD
 
 Google、baidu、new Bing、bibili
 
+-<font color='red'>技巧：</font>
 
+> 搜索关键词1----->  结果，在结果1中找关键词2
+>
+> 以关键词2为base，搜索
+>
+> ..............
+
+--------------> 1、可以扩大搜索范围。 2、应对智障的推荐
+
+**例子：**
+
+> 关键词1 ROOT应用  的搜索结果：
+>
+> ![image-20231011011338951](debugSkills.assets/image-20231011011338951.png)
+>
+> 找到关键词2：
+>
+> ![image-20231011011426400](debugSkills.assets/image-20231011011426400.png)
+>
+> 搜索commocap.c，得到 https://blog.csdn.net/SHH_1064994894/article/details/131966009   Android13 Root实现和原理分析
 
 
 
