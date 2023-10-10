@@ -680,23 +680,53 @@ https://blog.csdn.net/li6151770/article/details/52782141   Android调用打电�
 
 # 应用获取su权限
 
-## 方法一：修改代码（还没验证ok）
+## 方法一：修改代码
+
+验证ok的平台： 
+
+> RK3588s+Andriod11
+>
+> MT8675+Andriod12
+
+### 编译userdebug版本
+
+TODO：难道user版本不行？
 
 ### su命令[源码](https://so.csdn.net/so/search?q=源码&spm=1001.2101.3001.7020)中添加了uid检验，只允许shell/root用户进行调用　
 
-即屏蔽：
+注释掉uid校验：
+
+![image-20231011003528215](permissions.assets/image-20231011003528215.png)
+
+### 修改su文件读写权限
+
+![image-20231011005252272](permissions.assets/image-20231011005252272.png)
+
+![image-20231011005202001](permissions.assets/image-20231011005202001.png)
+
+
 
 
 
 ### Zygote.DropCapabilitiesBoundingSet
 
-作用：限制了setuid
+作用：限制了 APP  setuid功能
 
-![image-20231006215150636](permissions.assets/image-20231006215150636.png)
+注释掉`frameworks/base/core/jni/com_android_internal_os_Zygote.cpp`
+
+![image-20231011004744953](permissions.assets/image-20231011004744953.png)
+
+### 修改内核代码
+
+`/security/commoncap.c`
+
+注释掉`cap_prctl_drop`函数中的代码，以防止它检查adbd进程是否有CAP_SETPCAP能力，以及是否传递了一个有效的能力参数。
+
+![image-20231011010247836](permissions.assets/image-20231011010247836.png)
 
 
 
-### SELinux安全模块
+### SELinux安全模块  ----->  这里似乎不是必须的
 
 1,2条都满足情况下也会被中断su 
 
@@ -706,17 +736,75 @@ https://blog.csdn.net/li6151770/article/details/52782141   Android调用打电�
 
 ![image-20231006221516397](permissions.assets/image-20231006221516397.png)
 
+### packages/modules/adb/Android.bp  andriod12及以后
+
+这个文件定义了adbd模块的编译选项和依赖项。需要添加-DALLOW_ADBD_ROOT=1到cflags中，以启用adbd进程的root模式，并添加remount到required中，以允许adbd进程重新挂载系统分区。这个文件好像是Android12以上出来的, adb换到这个目录了
+
+原文链接：https://blog.csdn.net/SHH_1064994894/article/details/131966009
+
+```java
+@@ -50,6 +50,7 @@ cc_defaults {
+         "-Wvla",
+         "-DADB_HOST=1",         // overridden by adbd_defaults
+         "-DANDROID_BASE_UNIQUE_FD_DISABLE_IMPLICIT_CONVERSION=1",
++	"-DALLOW_ADBD_ROOT=1",
+     ],
+     cpp_std: "experimental",
+ 
+@@ -111,8 +112,15 @@ cc_defaults {
+ cc_defaults {
+     name: "adbd_defaults",
+     defaults: ["adb_defaults"],
++    cflags: [
++    "-UADB_HOST",
++    "-DADB_HOST=0",
++    "-UALLOW_ADBD_ROOT",
++    "-DALLOW_ADBD_ROOT=1",
++    "-DALLOW_ADBD_DISABLE_VERITY",
++    "-DALLOW_ADBD_NO_AUTH",
++],
+ 
+-    cflags: ["-UADB_HOST", "-DADB_HOST=0"],
+ }
+ 
+ cc_defaults {
+@@ -605,7 +613,7 @@ cc_library {
+         "libcrypto",
+         "liblog",
+     ],
+-
++    required: [ "remount",],
+     target: {
+         android: {
+             srcs: [
+
+```
+
+
+
 ### 参考：
 
 https://zhuanlan.zhihu.com/p/612380272        RK3588s Android 12 Framework修改记录（三）开放ROOT权限给上层应用 执行su命令
 
+-------------------->   <font color='red'>完全ok，特别注意commoncap.c需要修改</font>
+
 https://blog.csdn.net/chlbd/article/details/107065810?spm=1001.2101.3001.6650.7&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-7-107065810-blog-122415926.235%5Ev38%5Epc_relevant_sort_base1&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-7-107065810-blog-122415926.235%5Ev38%5Epc_relevant_sort_base1&utm_relevant_index=6    将Android10编译成真正的具有root权限的系统
+
+
+
+https://blog.csdn.net/SHH_1064994894/article/details/131966009   Android13 Root实现和原理分析
+
+
 
 ## 方法二：有源码----刷入Magisk获取root权限
 
-### 参考： 
+https://zhuanlan.zhihu.com/p/651446082    aosp-刷入Magisk面具获取root权限   **注：例子是安卓10**
 
-https://zhuanlan.zhihu.com/p/651446082  aosp-刷入Magisk面具获取root权限   **注：例子是安卓10**
+> ------------->  **已经验证ok**
+
+最大缺点：
+
+>  刷了Magisk，<font color='red'>无法remount系统分区</font>，remount失败
 
 
 
@@ -758,6 +846,7 @@ https://magiskcn.com/     小米手机安装面具教程（Xiaomi手机获取roo
             //Process proc= pb.start();
             //获取输入流，可以通过它获取SHELL的输出。
             java.io.BufferedReader in=new java.io.BufferedReader(new java.io.InputStreamReader(proc.getInputStream()));
+            // 返回error信息
             java.io.BufferedReader err=new java.io.BufferedReader(new java.io.InputStreamReader(proc.getErrorStream()));
             //获取输出流，可以通过它向SHELL发送命令。
             java.io.PrintWriter out=new java.io.PrintWriter(new java.io.BufferedWriter(new java.io.OutputStreamWriter(proc
