@@ -324,11 +324,12 @@ docker run   -p   10000:22   -t -i  -v    G:\dockerSharedFiles:/home/chen/workin
 
 关于ssh链接：
 
-https://blog.csdn.net/Leo_csdn_/article/details/96150534?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.channel_param&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.channel_param
-
-https://blog.csdn.net/qq_37955980/article/details/83044482   docker学习之ssh连接
-
-https://blog.csdn.net/vincent2610/article/details/52490397?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param   ssh远程连接docker中的container
+> https://blog.csdn.net/Leo_csdn_/article/details/96150534?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.channel_param&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.channel_param
+>
+> https://blog.csdn.net/qq_37955980/article/details/83044482   docker学习之ssh连接
+>
+> https://blog.csdn.net/vincent2610/article/details/52490397?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param   ssh远程连接docker中的container
+>
 
 主机端口：10000    <-----上面命令导致的
 
@@ -369,8 +370,6 @@ root账号密码：151937Cgkent.
 
 ### docker commit（禁止使用）
 
-docker退出
-
 docker ps -l
 
 ![img](Docker.assets/1605374123405.png)
@@ -389,13 +388,14 @@ Ubuntu镜像
 
 
 **禁止原因：**
-`docker commit` 制作镜像，以及后期修改的话，每一次修改都会让镜像更加臃肿一次，所删除的上一层的东西并不会丢失，会一直如影随形的跟着这个镜像，即使根本无法访问到。这会让镜像更加臃肿。
+
+> `docker commit` 制作镜像，以及后期修改的话，每一次修改都会让镜像更加臃肿一次，所删除的上一层的东西并不会丢失，会一直如影随形的跟着这个镜像，即使根本无法访问到。这会让镜像更加臃肿
 
 ### Dockerfile 定制镜像 
 
 docker build使用 Dockerfile 定制镜像
 
---->防止image臃肿
+---> 防止image臃肿
 
 
 
@@ -633,6 +633,128 @@ C:\Users\xixi>docker load -i  F:\VirtualMachine\Docker\ubuntu.tar
 
 
 
+
+
+## 优化
+
+### 配置修改优化
+
+原则：
+
+1、从**配置文件修改（优）**，而不是界面操作  < --------- 界面化操作需要先进入，然后重启
+
+​                                                                                    没启动docker时，从配置文件修改，只需要启动一次
+
+比如：
+
+```java
+"dataFolder": "D:\\programFiles\\dockerDesktop\\DockerDesktop",
+
+```
+
+![image-20230915003554954](Docker.assets/image-20230915003554954.png)
+
+对应设置：
+
+> ![image-20230915004242984](Docker.assets/image-20230915004242984.png)
+>
+
+
+
+对应设置界面：
+
+
+
+## 文件系统过大优化
+
+
+
+### 优化之  只保存系统文件到 jar
+
+**规定：**
+
+1、导出jar时，<font color='red'>只保存系统，不保存代码</font>       ------->  背后思想，提取重复
+
+方法：squash过程中删除代码
+
+![image-20230916003538219](Docker.assets/image-20230916003538219.png)
+
+
+
+2、<font color='red'>代码+系统的演进，仍然用squash之前的</font>  ------>  **因为包含代码**
+
+​     squash后的img导出jar后，就删除！
+
+
+
+关系如图：
+
+> 演进的始终是一个东西
+>
+> 版本只是一个时间点的快照
+
+![image-20230916003820830](Docker.assets/image-20230916003820830.png)
+
+大大减小了系统版本快照大小。且不影响 演进
+
+![image-20231014030319612](Docker.assets/image-20231014030319612.png)
+
+### 时间优化之 两份aosp同时解压
+
+基于《优化之  只保存系统文件到 jar》 ---------> aosp用压缩包解压策略：
+
+> 可以两份同时解压，但cpu也只用到了10%
+>
+> ![image-20231014025859380](Docker.assets/image-20231014025859380.png)
+
+### 时间优化之 build squash 时，容器可用
+
+实际上，只有commit时，容器不能用，其他都可以
+
+------>  所以，基于容器角度，<font color='red'>结论：</font>
+
+**build squash以及保存jar等，不影响我们的正常工作（在容器内）**
+
+### 优化之  任何差异保存到window路径下----减少commit
+
+-<font color='red'>极优</font>
+
+目的：减少commit  
+
+
+
+步骤：
+
+> 1、 <font color='red'>把变化保存在windows里，不进行commit</font>
+>
+> 比如 .myfunction.sh  .my_start.sh
+>
+> 2、在启动时候，从win复制过去
+>
+> ![image-20230916012925941](Docker.assets/image-20230916012925941.png)
+
+
+
+---------------------->  **此方法问题：**
+
+如果改动在越来越多文件里扩散，就比较麻烦
+
+**总结：**
+
+> 在常用的文件里可以如此改动
+>
+> **减少commit，可以用squash方法替代**
+
+### 镜像优化之合并镜像层 squash
+
+方法见上
+
+**<font color='red'>优点：</font>**
+
+> 1、**压缩到一层**：减小
+>
+> 2、**独立性：** 压缩后的镜像不依赖其他镜像，其他可删
+
 ### docker rmi  删除镜像
 
 方法一：通过imageID： docker rmi       ee7cbd482336
@@ -665,11 +787,28 @@ C:\Users\xixi>docker load -i  F:\VirtualMachine\Docker\ubuntu.tar
  docker rmi ubuntu16.04_aosp1000_r17:latest   #删除image
 ```
 
-### **磁盘overlay满了**     
 
-(1)docker system prune  ----> 清除不用的镜像和缓存，慎用！！！
+
+### **磁盘overlay满了**  docker system prune  
+
+docker system prune 
+ ----> <font color='red'>已经验证，十分有用</font>： 清除不用的镜像和<font color='red'>缓存</font>
 
 https://www.cnblogs.com/wswang/p/10736726.html
+
+
+
+例子：
+
+> 
+>
+> ![image-20231014022142307](Docker.assets/image-20231014022142307.png)
+>
+> docker system prune  之后：
+>
+> ![image-20231014023947830](Docker.assets/image-20231014023947830.png)
+>
+> ![image-20231014024658623](Docker.assets/image-20231014024658623.png)
 
 （3)删？？？？‪
 
@@ -680,93 +819,6 @@ https://www.cnblogs.com/wswang/p/10736726.html
 https://segmentfault.com/q/1010000020545464
 
 https://www.jianshu.com/p/9174914ec07d
-
-
-
-## 优化
-
-### 配置修改优化
-
-原则：
-
-1、从**配置文件修改（优）**，而不是界面操作  < --------- 界面化操作需要先进入，然后重启
-
-​                                                                                    没启动docker时，从配置文件修改，只需要启动一次
-
-比如：
-
-```java
-"dataFolder": "D:\\programFiles\\dockerDesktop\\DockerDesktop",
-
-```
-
-![image-20230915003554954](Docker.assets/image-20230915003554954.png)
-
-对应设置：
-
-
-
-
-
-
-
-![image-20230915004242984](Docker.assets/image-20230915004242984.png)
-
-
-
-对应设置界面：
-
-
-
-
-
-### 优化之  只保存系统jar
-
-**规定：**
-
-1、导出jar时，<font color='red'>只保存系统，不保存代码</font>       ------->  背后思想，提取重复
-
-方法：squash过程中删除代码
-
-![image-20230916003538219](Docker.assets/image-20230916003538219.png)
-
-
-
-2、<font color='red'>代码+系统的演进，仍然用squash之前的</font>  ------>  **因为包含代码**
-
-​     squash后的img导出jar后，就删除！
-
-
-
-关系如图：
-
-> 演进的始终是一个东西
->
-> 版本只是一个时间点的快照
-
-![image-20230916003820830](Docker.assets/image-20230916003820830.png)
-
-大大减小了版本快照大小。且不影响 演进
-
-![image-20230916005014534](Docker.assets/image-20230916005014534.png)
-
-### 优化之  任何差异保存到window路径下----减少commit
-
--<font color='red'>极优</font>
-
-目的：减少commit  
-
-
-
-步骤：
-
-> 1、 <font color='red'>把变化保存在windows里，不进行commit</font>
->
-> 比如 .myfunction.sh  .my_start.sh
->
-> 2、在启动时候，从win复制过去
->
-> ![image-20230916012925941](Docker.assets/image-20230916012925941.png)
 
 
 
@@ -808,7 +860,8 @@ img大小（即保存的jar大小） ------ >  可以由squash优化压缩
 
 -<font color='red'>移动文件需要everyone权限</font>
 
-![image-20220722223854271](Docker.assets/image-20220722223854271.png)
+> ![image-20220722223854271](Docker.assets/image-20220722223854271.png)
+>
 
 ### 优化之  保存jar 与 进入容器使用 并行
 
@@ -816,17 +869,60 @@ img大小（即保存的jar大小） ------ >  可以由squash优化压缩
 
 -----> 节省时间
 
+
+
+### 总结所有优化
+
+docker容器内文件系统过大表现：
+
+> （1）容器内部看：overlay used很大
+>
+> ![image-20231014022839601](Docker.assets/image-20231014022839601.png)
+>
+> （2）从win来看：
+>
+> ![image-20231014022928865](Docker.assets/image-20231014022928865.png)
+
+-------------------->   overlay used<font color='red'>很大根因：</font>
+
+> （1）文件系统包括了 aosp代码   -------->  没必要保存，squash时+ 保存jar 时，删掉
+>
+> （2）即使没有aosp代码，有时候也很大  ------>  因为<font color='red'>历史镜像最大值</font> + <font color='red'>缓存</font>造成的
+>
+> ​                                     a. squash压缩得到一个新的独立镜像 ------>  <font color='red'>因为独立，可以删除其他所有镜像</font>
+>
+> ​                                     b. docker system prune 清除缓存
+
+
+
+
+
+时间优化， 总结： 
+
+> 1、
+>
+> 2、
+>
+> 
+
+
+
+
+
+
+
 ## error
 
 ### ~~**docker报错:**图标变红  方法1：~~
 
 cmd报错：open //./pipe/docker_engine: The system cannot find the file specified.
 
-解决方法：
+解决方法：  
 
-重置配置，，，，再重启电脑！
-
-![img](Docker.assets/clipboard-1605374501667.png)
+> 重置配置，，，，再重启电脑
+>
+> ![img](Docker.assets/clipboard-1605374501667.png)
+>
 
 ~~reset to factory defaults~~   ---->  `规定：后面不准用这种方法，会造成setting改变`
 

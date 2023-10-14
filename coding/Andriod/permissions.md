@@ -82,7 +82,7 @@ App A中声明了权限PermissionA，App B中使用了权限PermissionA-------->
 
 
 
-# 环境中查看状态
+# 环境中查看状态权限
 
 注意，
 
@@ -696,9 +696,13 @@ TODO：难道user版本不行？
 
 注释掉uid校验：
 
+![image-20231012001125761](permissions.assets/image-20231012001125761.png)
+
 ![image-20231011003528215](permissions.assets/image-20231011003528215.png)
 
 ### 修改su文件读写权限
+
+![image-20231012001615405](permissions.assets/image-20231012001615405.png)
 
 ![image-20231011005252272](permissions.assets/image-20231011005252272.png)
 
@@ -814,7 +818,11 @@ https://zhuanlan.zhihu.com/p/651446082    aosp-刷入Magisk面具获取root权�
 
 https://zhuanlan.zhihu.com/p/90965580    如何用magisk root 跑着android 13的pixel
 
+https://juejin.cn/post/7074400963750002718    Android 刷机与ROOT流程整理
+
 https://magiskcn.com/     小米手机安装面具教程（Xiaomi手机获取root权限）
+
+
 
 ## AS 模拟器的su权限
 
@@ -875,9 +883,12 @@ https://magiskcn.com/     小米手机安装面具教程（Xiaomi手机获取roo
             proc.destroy();
         }catch(Exception e){
             System.out.println("exception:"+e);
+            Log.d(TAG, "chengang error: " + e);
         }
     }
 ```
+
+
 
 
 
@@ -886,6 +897,16 @@ https://magiskcn.com/     小米手机安装面具教程（Xiaomi手机获取roo
 https://blog.csdn.net/m0_38036918/article/details/130346508   如何给Android Studio模拟器安装Magisk
 
 https://github.com/newbit1/rootAVD
+
+
+
+# linux文件权限以及  chmod
+
+严重参考，<font color='red'>非常好的文章</font>：~~https://blog.csdn.net/enderman19980125/article/details/110439456       Linux 的文件权限和 chmod 命令详解~~
+
+
+
+
 
 
 

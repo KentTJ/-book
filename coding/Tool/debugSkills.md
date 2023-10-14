@@ -96,7 +96,8 @@ adb shell am start -D  -n com.example.BarrierFree_demo/.MainActivity
 
 方法三：
 
-以debug模式启动应用，AS中Debug图标启动，是可以暂停的
+> 以debug模式启动应用，AS中Debug图标启动，是可以暂停的
+>
 
 ### 多线程
 

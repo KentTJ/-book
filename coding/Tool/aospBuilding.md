@@ -137,9 +137,9 @@ https://blog.csdn.net/cl769796350/article/details/102676674?utm_medium=distribut
 切换到目录 /aosp/out/target/product/自己手机的代号
 
 1.  设置临时变量
-2.  set ANDROID_PRODUCT_OUT = H:\dockerSharedFiles\aosp_android1000_r17\out_\product\sailfish
+2.  set  ANDROID_PRODUCT_OUT = H:\dockerSharedFiles\aosp_android1000_r17\out_\product\sailfish
 3.  
-4.  *#进入bootloader模式*
+4.  *#进入fastboot模式*
 5.  adb reboot bootloader
 6.  
 7.  *#*  <font color='red'>**自动刷入 -w双清 **</font>: 
@@ -166,6 +166,18 @@ https://blog.csdn.net/cl769796350/article/details/102676674?utm_medium=distribut
 注意：adb要用1.0.41的，安卓studio自带即可：
 
 C:\Users\Administrator\AppData\Local\Android\Sdk\platform-tools
+
+
+
+**进入fastboot模式方式：**
+
+> 方式一：软件方式  adb reboot bootloader    -------> <font color='red'>不一定能成功</font>
+>
+> 方式二： 硬件方式：
+>
+> ​     https://blog.csdn.net/sinat_29315697/article/details/80607534     Google设备启动进入fastboot模式
+>
+> ![image-20231012005335869](aospBuilding.assets/image-20231012005335869.png)
 
 ### 进入开发者模式
 
