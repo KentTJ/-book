@@ -742,7 +742,7 @@ TODO：难道user版本不行？
 
 ### packages/modules/adb/Android.bp  andriod12及以后
 
-这个文件定义了adbd模块的编译选项和依赖项。需要添加-DALLOW_ADBD_ROOT=1到cflags中，以启用adbd进程的root模式，并添加remount到required中，以允许adbd进程重新挂载系统分区。这个文件好像是Android12以上出来的, adb换到这个目录了
+​       这个文件定义了adbd模块的编译选项和依赖项。需要添加-DALLOW_ADBD_ROOT=1到cflags中，以启用adbd进程的root模式，并添加remount到required中，以允许adbd进程重新挂载系统分区。这个文件好像是Android12以上出来的, adb换到这个目录了
 
 原文链接：https://blog.csdn.net/SHH_1064994894/article/details/131966009
 
