@@ -902,7 +902,9 @@ https://github.com/newbit1/rootAVD
 
 # linux文件权限以及  chmod
 
-严重参考，<font color='red'>非常好的文章</font>：~~https://blog.csdn.net/enderman19980125/article/details/110439456       Linux 的文件权限和 chmod 命令详解~~
+严重参考：
+
+> <font color='red'>非常好的文章</font>：~~https://blog.csdn.net/enderman19980125/article/details/110439456       Linux 的文件权限和 chmod 命令详解~~
 
 
 
