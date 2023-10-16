@@ -1378,11 +1378,13 @@ pollOnce与~~wake~~~----最核心代码，线程间通信
 
 
 
-这里就是Android系统的Handler消息机制的消息循环的核心实现，使用了Linux的epoll事件处理机制。当消息队列为空时，常规的循环实现是调用sleep/usleep释放cpu，当时间到了之后，会获得CPU资源进行一次消息检查；Handler的消息循环采用Linux kernel的epoll机制，当消息队列为空时，会挂起释放CPU资源，只有当消息队列有新消息到来时，才会重新获得CPU资源，进行消息处理。
+这里就是Android系统的Handler消息机制的消息循环的核心实现，使用了Linux的epoll事件处理机制。当消息队列为空时，常规的循环实现是调用sleep/usleep释放cpu，当时间到了之后，会获得CPU资源进行一次消息检查；
+
+~~Handler的消息循环采用Linux kernel的epoll机制： 当消息队列为空时，会挂起释放CPU资源，只有当消息队列有新消息到来时，才会重新获得CPU资源，进行消息处理。~~---------->  **自然，利用epoll机制解决空耗CPU问题**
 
 相比常规实现，Android系统的Handler消息机制更加节省系统资源(CPU资源)。
 
-相比常规实现，Android系统的Handler消息机制的生产者，把消息放入消息队列的同时，可以通知(唤醒)消息处理者。
+相比常规实现，Android系统的Handler消息机制的生产者，把消息放入消息队列的同时，可以通知**(唤醒)消息处理者。**
 
 链接：https://juejin.cn/post/6856366890936827911
 
@@ -2246,7 +2248,47 @@ public final boolean sendMessageDelayed(Message msg, long delayMillis)
 
 
 
- 
+#  线程间通信--------本质
+
+-<font color='red'>本质上没有线程间通信概念：</font>
+
+> 因为进程内、线程间，本身就是共内存的 
+
+
+
+线程间通信，<font color='red'>唯一方式！！！：</font>
+
+> <font color='red'>本质</font>：一个线程设置一个变量，另一个线程去轮询
+>
+> 例子：
+>
+> ```java
+> // thread1
+> msg = "thread1";
+> 
+> //thread2
+> while(!msg.qual("")) {  // 循环读另一个线程的变量
+>    dosomething(msg)
+>    msg = "";
+>   sleep(100);
+> }
+> ```
+
+
+
+-<font color='red'>也是Handler的化简本质</font>，一句话handler本质
+
+
+
+基于本质，handler有哪些额外的设计呢？
+
+> 1、为了解决性能问题，**防止while空耗CPU**  --------------->  ~~消息队列空时，阻塞，释放cpu；有消息时，唤醒 （epoll机制）~~
+>
+> ​     本质：**解决空耗CPU问题，自然**
+>
+> 2、      同步屏障
+
+
 
 
 
