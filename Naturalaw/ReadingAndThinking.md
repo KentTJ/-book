@@ -3167,7 +3167,13 @@ ppt： https://drive.google.com/file/d/1GVwHZAgUYMkjJ-kEGRAc1P_GPGbTAQ2j/view
 
 
 
+# 关于辩论
 
+## 辩论的前提
+
+大多时候，我们为了驳倒对方，为了驳倒而驳倒
+
+辩论的结果没有带来任何的利益与价值
 
 
 
