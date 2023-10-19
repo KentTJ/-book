@@ -36,6 +36,26 @@ https://blog.csdn.net/m0_65541699/article/details/127944130  Linux 系统启动�
 
 
 
+# linuxdeploy 
+
+linuxdeploy 的原材料可以是iso，img等
+
+比如：
+
+```java
+linuxdeploy -arch arm -v ubuntu -f ext4 -p /sdcard/ubuntu.img
+```
+
+
+
+参考：  https://www.python100.com/html/89007.html
+
+
+
+# 源码：
+
+https://github.com/meefik/linuxdeploy-cli
+
 # 背后的背后 
 
 
