@@ -52,9 +52,25 @@ linuxdeploy -arch arm -v ubuntu -f ext4 -p /sdcard/ubuntu.img
 
 
 
-参考：  https://www.python100.com/html/89007.html
+参考： 
+
+ https://www.python100.com/html/89007.html
 
 
+
+https://hunter1024.blog.csdn.net/article/details/128718170?spm=1001.2101.3001.6650.16&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-16-128718170-blog-112281860.235%5Ev38%5Epc_relevant_sort_base1&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-16-128718170-blog-112281860.235%5Ev38%5Epc_relevant_sort_base1&utm_relevant_index=22&ydreferer=aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NzA0NjQwL2FydGljbGUvZGV0YWlscy8xMTIyODE4NjA%3D    
+
+------》 验证ok
+
+https://blog.csdn.net/qq_41709234/article/details/128570505    Debian系统--从零开始自制linux掌上电脑
+
+https://www.cnblogs.com/twzy/p/15160824.html    [小白自制Linux开发板 五. Debian文件系统制作,以及WIFI配置、交换分区配置 ](https://www.cnblogs.com/twzy/p/15160824.html)
+
+-------》 验证ok
+
+
+
+https://github.com/meefik/linuxdeploy-cli    
 
 # 源码：
 
