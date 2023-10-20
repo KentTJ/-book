@@ -30,7 +30,7 @@
 
 其他：
 
-
+https://blog.csdn.net/IT8343/article/details/130570144           使用chroot定制系统
 
 
 

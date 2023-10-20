@@ -1345,14 +1345,6 @@ https://blog.csdn.net/hzwailll/article/details/85339714      ActivityThread的�
 
 参考： https://blog.csdn.net/weixin_43976122/article/details/128961694
 
-TODO：
-
-如何手动把init进程拉起来？（源码角度、系统运行时文件角度）
-
-> --------->  1、研究deploy  2、问张、jueyu
->
-> https://serverfault.com/questions/462821/how-do-i-run-a-debian-init-d-script-manually-not-at-boot       [How do I run a Debian init.d script manually, not at boot?](https://serverfault.com/questions/462821/how-do-i-run-a-debian-init-d-script-manually-not-at-boot)
-
 
 
  
@@ -1362,4 +1354,28 @@ TODO：
 参考：
 
 https://blog.csdn.net/whatday/article/details/100759678
+
+
+
+
+
+
+
+## TODO：如何手动把init进程拉起来？（源码角度、系统运行时文件角度）
+
+> --------->  1、研究deploy  2、问张、jueyu
+>
+> https://serverfault.com/questions/462821/how-do-i-run-a-debian-init-d-script-manually-not-at-boot       [How do I run a Debian init.d script manually, not at boot?](https://serverfault.com/questions/462821/how-do-i-run-a-debian-init-d-script-manually-not-at-boot)
+
+
+
+
+
+https://blog.csdn.net/mostone/article/details/99659822
+
+![image-20231021055244587](InitSystem.assets/image-20231021055244587.png)
+
+
+
+![image-20231021055348456](InitSystem.assets/image-20231021055348456.png)
 
