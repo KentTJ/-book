@@ -1338,3 +1338,28 @@ https://blog.csdn.net/yangwen123/article/details/17258023
 ## 参考
 
 https://blog.csdn.net/hzwailll/article/details/85339714      ActivityThread的理解和APP的启动过程
+
+
+
+# linux启动过程-----详解
+
+参考： https://blog.csdn.net/weixin_43976122/article/details/128961694
+
+TODO：
+
+如何手动把init进程拉起来？（源码角度、系统运行时文件角度）
+
+> --------->  1、研究deploy  2、问张、jueyu
+>
+> https://serverfault.com/questions/462821/how-do-i-run-a-debian-init-d-script-manually-not-at-boot       [How do I run a Debian init.d script manually, not at boot?](https://serverfault.com/questions/462821/how-do-i-run-a-debian-init-d-script-manually-not-at-boot)
+
+
+
+ 
+
+![img](InitSystem.assets/20180813200804839)
+
+参考：
+
+https://blog.csdn.net/whatday/article/details/100759678
+
