@@ -32,7 +32,7 @@
 
 
 
-<font color='red'>生活，是理解抽象的  唯一手段</font>   代码亦如是
+-<font color='red'>生活，是理解抽象的  唯一手段</font>   代码亦如是
 
 
 
@@ -221,7 +221,7 @@ A是B的妈妈（家庭结构），所以A抚养B。李yang是杨qichao圈子人
 
 一个普通结构，人
 
-<a id='chouxiang'><font color='red'>**只有具体才能理解，只有抽象才能记忆**</font></a>
+-<a id='chouxiang'><font color='red'>**只有具体才能理解，只有抽象才能记忆**</font></a>
 -<font color='red'>规定</font>：任何抽象（抽象结论），下面要有例子；  任何一个典型例子，要总结其抽象  ---> 使用于理解、记忆、记笔记
 
 
