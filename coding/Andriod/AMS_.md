@@ -25,7 +25,7 @@ https://ericchows.github.io/Android-Window-Mechanism/
 ### AMS与APP
 
 其中桥梁：
-~~IWindowManager和IAcitivityManger 是一个自然的桥梁，~~客户端对wms和AMS的引用~~  ----》系统服务 开机初始化 注册的缘故
+~~IWindowManager和IAcitivityManger 是一个自然的桥梁，~~客户端对wms和AMS的引用~~  ---->系统服务 开机初始化 注册的缘故
 
 ###  WMS与APP
 
@@ -55,7 +55,7 @@ WMS->APP 桥梁：
 
 2、为什么IWindowSession不能弄成像IWindow   真正是窗口级的？
 
-一个IWindowSession对应一个线程，多个就会有很多线程了 -----》 浪费资源
+一个IWindowSession对应一个线程，多个就会有很多线程了 -----> 浪费资源
 
 TODO: <font color='red'>从设计角度：</font> 一个低级别的类（资源）一般来说会有多份，如果这个类是一个比较消耗资源的（内存、线程资源）。
                                  设计思路：变成一个单例，**以参数区分**不同低级别 
@@ -102,7 +102,7 @@ TODO:
 
 所处的位置：SystemServer进程，AMS运行在一个Binder线程里
 
-----》 TODO: 这个Binder线程什么时候创建的？ Binder线程池？
+---->  TODO: 这个Binder线程什么时候创建的？ Binder线程池？
 
 疑问：如果每个服务有一个Binder线程，那么线程肯定不够，90个服务
 TODO: 个人理解：应该是  Binder线程池，谁要用谁用
@@ -145,7 +145,7 @@ AMS:
 
 组件管理(虽然叫AMS) :  Activity    service   provider     broadcast
 
-android10增加了 : ATMS(ActivityTaskManagerService)，~~目的AMS管理太多了，把Activity 的管理抽出来给ATMS~~~。自然
+android10增加了 : ATMS(ActivityTaskManagerService)，~~目的AMS管理太多了，把Activity 的管理抽出来给ATMS~~。自然
 
 
 
@@ -172,7 +172,7 @@ SystemServiceManager忽略掉，~~只是SystemServer  startService功能的抽�
 
 
 
-都是在SystemServer中，通过SytemServiceManager启动的   -----》 见系统启动流程
+都是在SystemServer中，通过SytemServiceManager启动的   -----> 见系统启动流程
 
 
 
@@ -214,7 +214,7 @@ startService    //                     stopService\ bindService
 
 TODO:  从属性总结，可以得到精华
 
-参考：**《AMS预习资料.pdf》**   ----> 非常好的资料
+参考：**《AMS预习资料.pdf》  ----> 非常好的资料
 
 ![image-20230207004633275](AMS_.assets/image-20230207004633275.png)
 
@@ -357,6 +357,7 @@ final ArrayList<ProcessRecord> mRemovedProcesses = new ArrayList<ProcessRecord>(
 1、自下而上越来越严格
 
 2、栈顶复用模式singleTop：即该Activity处于任务栈栈顶，即下图：
+
 ![image-20230211222422392](AMS_.assets/image-20230211222422392.png)
 
 3、singleInstance单实例：<font color='red'>所有栈只有一个实例</font>  ----> 自然，次再使用的时候，直接使用这个栈。比如打电话应用就是一个singleStance模式启动的activity
@@ -516,7 +517,7 @@ task恢复的方式:
 
 
 
-通常情况下：  <font color='red'>一个APP----》最多一个ActivityStack（可能其他APP启动的，则没有自己的ActivityStack）--------对应一个 TaskRecord（例外：存在多个）</font>
+通常情况下：  <font color='red'>一个APP---->最多一个ActivityStack（可能其他APP启动的，则没有自己的ActivityStack）--------对应一个 TaskRecord（例外：存在多个）</font>
 
 一个 ActivityStack 对应多个 TaskRecord的情况：
 
@@ -534,7 +535,7 @@ task恢复的方式:
 
 如果这时候用户按下Home键,则这个Task 会从前台切换到后台
 
----》即1层结构中  HomeStack与FocusedStack交 换?   
+--->即1层结构中  HomeStack与FocusedStack交 换?   
 
 
 
@@ -542,7 +543,7 @@ task恢复的方式:
 
 ### 总之：
 
-1、Launcher与普通的startActivity差异在于: 是否会创建任务栈? -------》 只有这样才自然,  想表达的点:  **任务是从laucher点击开
+1、Launcher与普通的startActivity差异在于: 是否会创建任务栈? -------> 只有这样才自然,  想表达的点:  **任务是从laucher点击开
 始的** 跳跳跳
 
 ![image-20230209223902335](AMS_.assets/image-20230209223902335.png)
@@ -569,8 +570,8 @@ TODO:  如何证明？
 1、Task新建:  launcher启动 
 
 launcher启动 打开另外一个新的应用,   默认情况下,这个新的<font color='red'>应用期望加</font>入到 Task name为自己包名的Task 中, （自然）
-~~如果该Task 不存在,则创建一个新的Task,并且该Task 的默认 name 和该应用的包名相同,~~   --》 自然，推论
-~~如果期望的 Task 存在,则直接复用原有的 Task,  如果该 Task 处于后台,  则需要把整个Task 转移到前台~~    --》 自然，推论
+~~如果该Task 不存在,则创建一个新的Task,并且该Task 的默认 name 和该应用的包名相同,~~   --> 自然，推论
+~~如果期望的 Task 存在,则直接复用原有的 Task,  如果该 Task 处于后台,  则需要把整个Task 转移到前台~~    --> 自然，推论
 
 2、 Task的切换 ：
 
@@ -659,7 +660,7 @@ Display #0 (activities from top to bottom):
 
 > 杀掉进程场景，见下
 >
-> onPause 阶段返回，极端场景 -----》因为onPause 下台，是个暂时态，很短时间
+> onPause 阶段返回，极端场景 ----->因为onPause 下台，是个暂时态，很短时间
 
 
 
@@ -688,7 +689,7 @@ Display #0 (activities from top to bottom):
 
 3.onPause方法和onStop方法有什么区别？
 （1）是否可见。onPause时Activity可见，onStop时Activity不可见，但Activity对象还在内存中。
-（2）在系统内存不足的时候可能不会执行onStop方法，因此程序状态的保存、独占设备和动画的关闭、以及一些数据的保存最好在onPause中进行，<font color='red'>但要注意不能太耗时</font>     ---》  <font color='red'>自然，瞬态</font>
+（2）在系统内存不足的时候可能不会执行onStop方法，因此程序状态的保存、独占设备和动画的关闭、以及一些数据的保存最好在onPause中进行，<font color='red'>但要注意不能太耗时</font>     --->  <font color='red'>自然，瞬态</font>
 
 4.onStop方法和onDestroy方法有什么区别？
 onStop阶段Activity还没有被销毁，对象还在内存中，此时可以通过切换Activity再次回到该Activity，而onDestroy阶段Acivity被销毁
@@ -744,7 +745,7 @@ Todo：场景有哪些
 > 导演：  所有Activity生命周期 幕后的操作者Ams：
 >
 > --->生命周期的方法都由其触发调用（通过Binder）
-> Activity的状态在AMS侧是ActivitySatck维护的 -----》同步到 APP，即生命周期函数
+> Activity的状态在AMS侧是ActivitySatck维护的 ----->同步到 APP，即生命周期函数
 
 
 
@@ -753,7 +754,7 @@ Todo：场景有哪些
 1、~~onCreate   招人  与 onDestroy 撵人滚蛋 是一组~~
 
 ```
-创建过程，比如整个view树，绑定  ---》自然
+创建过程，比如整个view树，绑定  --->自然
 ```
 
 2、~~onStart  开始化妆  与  onStop 卸妆 ，是一组~~
@@ -765,8 +766,8 @@ Todo：场景有哪些
 3、~~onResume 到前台 与 onPause 到后台，是一组~~
 
 ```
-  这两组标志着是否到<font color='red'>前台</font>   ---》自然
-  这两组是一个暂时态，一般时间很短   ---》自然
+  这两组标志着是否到<font color='red'>前台</font>   --->自然
+  这两组是一个暂时态，一般时间很短   --->自然
 ```
 
 
@@ -798,7 +799,7 @@ A下台之后，为啥不安排A 卸妆onStop呢？
 
 
 
-注：~~如果ActivityB之前已经启动(已经在栈里了)：  **ActivityB走onRestart，其他不变**~~ ---》自然
+注：~~如果ActivityB之前已经启动(已经在栈里了)：  **ActivityB走onRestart，其他不变**~~ --->自然
 
 #### 后退：同进程 back键 ，ActivityB返回ActivityA
 
@@ -827,7 +828,7 @@ ActivityA 先onPause，之后ActivityB走......
 
 
 
-注：~~如果ActivityB之前已经启动(已经在栈里了)：  **ActivityB走onRestart，其他不变**~~ ---》**结论： 与同进程的生命周期一样**
+注：~~如果ActivityB之前已经启动(已经在栈里了)：  **ActivityB走onRestart，其他不变**~~ --->**结论： 与同进程的生命周期一样**
 
 #### 点击Home键
 
@@ -850,7 +851,7 @@ ActivityA 先onPause，之后ActivityB走......
 > ~~onPause() -> onStop() -> onDestroy()~~
 > ~~onCreate() -> onStart() -> onResume()~~
 
-------》结论： 自然，相当于先关闭再重启
+------>结论： 自然，相当于先关闭再重启
 
 
 
@@ -871,7 +872,7 @@ ActivityA 先onPause，之后ActivityB走......
 ### 其他一些疑问
 
 https://zhuanlan.zhihu.com/p/190151810
-给 `onPause` 一个精准的描述的话，应该是 **非前台，不可交互，但不一定不可见** 。  ---》 符合模型
+给 `onPause` 一个精准的描述的话，应该是 **非前台，不可交互，但不一定不可见** 。  ---> 符合模型
 
 
 

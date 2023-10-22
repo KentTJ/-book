@@ -68,6 +68,8 @@ https://www.cnblogs.com/twzy/p/15160824.html    [小白自制Linux开发板 五.
 
 -------》 验证ok
 
+https://zhuanlan.zhihu.com/p/623363577   使用debootstrap手动安装debian系统
+
 
 
 https://github.com/meefik/linuxdeploy-cli    
