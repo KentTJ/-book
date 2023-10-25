@@ -1812,6 +1812,14 @@ Volume Booster
 
 
 
+## 技巧：手机与电脑连局域网---尽量用电脑分享
+
+~~避免拿手机，造成频繁断链~~
+
+教程：https://jingyan.baidu.com/article/f71d6037a838145bb741d14a.html
+
+
+
 # 格式
 
 %accordion%折叠%accordion%
