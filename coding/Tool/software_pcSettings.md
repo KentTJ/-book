@@ -1581,6 +1581,40 @@ MOD是ALT键。详见： https://www.ngui.cc/zz/2053439.html?action=onClick
 
 https://blog.csdn.net/lspqq10086/article/details/127447126?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-127447126-blog-123850238.235%5Ev38%5Epc_relevant_anti_t3&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-127447126-blog-123850238.235%5Ev38%5Epc_relevant_anti_t3&utm_relevant_index=2
 
+
+
+##  VirtualBox 
+
+教程： 
+
+> 在 VirtualBox 中构建 Debian11 虚拟电脑    
+>
+> ```http
+> https://blog.csdn.net/ForestK/article/details/125198556?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-2-125198556-blog-127320725.235^v38^pc_relevant_sort_base1&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-2-125198556-blog-127320725.235^v38^pc_relevant_sort_base1&utm_relevant_index=5
+> ```
+
+----------------->  验证ok。注意：系统镜像可以是ubuntu的iso
+
+
+
+VirtualBox Ubuntu无法复制粘贴以及无法安装增强功能：
+
+> 方法一：
+>
+> > https://blog.csdn.net/subtitle_/article/details/132032433?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2~default~YuanLiJiHua~Position-2-132032433-blog-131377973.235^v38^pc_relevant_sort_base1&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~YuanLiJiHua~Position-2-132032433-blog-131377973.235^v38^pc_relevant_sort_base1&utm_relevant_index=5
+>
+> -----------------> 验证有效
+>
+> 方法二：
+>
+> > 安装nvc，通过MobaXterm查看图形界面。自然，可以复制粘贴
+
+
+
+
+
+
+
 # 计算机其他问题及设置
 
 ## 软件最优的使用方式----免安装
