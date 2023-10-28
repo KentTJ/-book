@@ -666,6 +666,14 @@ Any content here
 >
 > ![image-20231029005128297](software_pcSettings.assets/image-20231029005128297.png)
 
+
+
+### 调试技巧：
+
+
+
+
+
 ### md、html 生成ok标准：
 
 md、html、md-->  html  验证标准
