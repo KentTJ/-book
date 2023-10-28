@@ -35,6 +35,15 @@
 	position: relative;
 	margin-bottom: 80px;
 	padding-bottom: 20px;
+
+	/* add by cg */
+	text-align: left;
+	z-index: 999;
+	left: 1500px;
+    top: 30px;
+    overflow-y: auto;
+	height:70vh;  /* 1vh = 1% viewport height  https://blog.csdn.net/ghvjhfjf/article/details/122369878 */
+    overflow-x: auto;
 }
 
 .treeview__container-title {
