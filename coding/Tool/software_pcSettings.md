@@ -670,7 +670,11 @@ Any content here
 
 ### 调试技巧：
 
+直接查看本地的编译结果（而不是github远端的：~~远端合入，进行再一次编译，需要时间比较久~~）
 
+> 比如： 
+>
+> https://kenttj.github.io/-book/coding/Andriod/AMS_.html
 
 
 

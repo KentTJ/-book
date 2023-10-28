@@ -109,7 +109,7 @@ private static final Parcel[] sOwnedPool = new Parcel[POOL_SIZE];//1  6个对象
 
 ```
 
-###   //3构造的过程是怎样的？
+###   构造的过程是怎样的？
 
 
 
@@ -234,7 +234,7 @@ native 与 kernel进程之间（<font color='red'>TODO: 跨了进程？</font>�
 
 
 
-注：由图知道，进程地址空间，全部地址----------》 只是映射到 <font color='red'>物理内存</font>
+注：由图知道，进程地址空间，全部地址----------> 只是映射到 <font color='red'>物理内存</font>
 
 ​       所以，`从本质物理上看`，共享内存，就是共享的物理内存（地址空间相同）
 
@@ -261,7 +261,7 @@ TODO,  注意：管道的方向是一定的？单向的
 
 
 **缺点：**
-1、两次复制    A ---》 管道 ----》 B （模型:  一推一拉）
+1、两次复制    A --->  管道 ----> B （模型:  一推一拉）
 2、管道会阻塞（管道有多大）
 
 
@@ -272,7 +272,7 @@ TODO,  注意：管道的方向是一定的？单向的
 
 ![image-20230305114509786](AndriodIPC.assets/image-20230305114509786.png)
 
-消息队列（<font color='red'>存在于内核中</font>）-------》 也是利用内核空间内存
+消息队列（<font color='red'>存在于内核中</font>）-------> 也是利用内核空间内存
 消息的发送方和接受方，要约定好消息体的类型（和大小）
 
 
@@ -301,7 +301,7 @@ TODO,  注意：管道的方向是一定的？单向的
 
 
 
-这个图和 管道  很相似 -------》  感觉没啥区别？
+这个图和 管道  很相似 ------->  感觉没啥区别？
 
 
 
@@ -454,11 +454,11 @@ IPC.eddx
 
 目标：床柜挪房间
 
----------- 》  不得不：
+---------- >  不得不：
 
   1、这边房间需要拆床 ，拆完的 基本部件才能通过门，到另一个房间
 
-  2、到另一个房间后，怎么知道这次拆的是床的 ------》AIDL协议
+  2、到另一个房间后，怎么知道这次拆的是床的 ------>AIDL协议
 
 
 
@@ -478,7 +478,7 @@ IPC.eddx
 
 ![image-20230305212239286](AndriodIPC.assets/image-20230305212239286.png)
 
-AMS的Binder 何时注册到 ServiceManager呢？见《系统启动流程》中的publishBinderService流程
+AMS的Binder 何时注册到 ServiceManager呢？见《系统启动流程>中的publishBinderService流程
 
 
 
@@ -650,7 +650,7 @@ aidl 目的：
 
 所以，AIDL是封装
 
-​           AIDL也是没能纳入framework层的妥协，利用编译抽取公共功能--------》  TODO: 背后的背后： 收集这个技巧！！
+​           AIDL也是没能纳入framework层的妥协，利用编译抽取公共功能-------->  TODO: 背后的背后： 收集这个技巧！！
 
 ![image-20230306235332788](AndriodIPC.assets/image-20230306235332788.png)
 
@@ -1013,7 +1013,7 @@ http://gityuan.com/2016/09/04/binder-start-service/    <-----彻底理解Android
 
 
 
-《Binder预习资料.pdf》
+《Binder预习资料.pdf>
 
 
 
@@ -1197,7 +1197,7 @@ public class MainActivity extends AppCompatActivity {
 
 人物：
 
-> 人（调用线程）：人，可以有多个人 ----》 一般来说是 **非主线程**
+> 人（调用线程）：人，可以有多个人 ----> 一般来说是 **非主线程**
 >
 > 驴（Looper线程）：干活线程(有些活，必须这个线程干，**就像磨一般都是驴来拉**)
 >
@@ -1463,7 +1463,7 @@ public static void loop() { //#4 loop()是在主线程main方法里被调起来�
 
 [跳转A](#for1)
 
-  **（3）对于#4，如果for是一直循环，那么 main函数之后的流程理应走不到！！！！！！**----》确实是，Looper.loop()是最后一行代码
+  **（3）对于#4，如果for是一直循环，那么 main函数之后的流程理应走不到！！！！！！**---->确实是，Looper.loop()是最后一行代码
 
 **（4）App如何退出呢？**
 
@@ -1473,15 +1473,15 @@ public static void loop() { //#4 loop()是在主线程main方法里被调起来�
 
 ### <span id="for1">for 确定一直在循环嘛</span> 
 
-----》即使queue没有东西？？？
+---->即使queue没有东西？？？
 
 A:
 
 总结：
 
-list为空，是block状态------》#1、线程如何block？？？？
+list为空，是block状态------>#1、线程如何block？？？？
 
-list不为0 ，被唤醒，读取-------》#2、如何被第二个线程唤醒？？？？
+list不为0 ，被唤醒，读取------->#2、如何被第二个线程唤醒？？？？
 
 
 
@@ -1588,17 +1588,17 @@ Looper.prepareMainLooper(); //#1流程
 
 TODO：
 
-ThreadLocal，表示这是一个线程局部变量------》如何做到的????
+ThreadLocal，表示这是一个线程局部变量------>如何做到的????
 
 
 
-注意：变量、类是没有线程概念的！！！！----》本质是内存，内存是进程级的！！！！
+注意：变量、类是没有线程概念的！！！！---->本质是内存，内存是进程级的！！！！
 
 
 
 ## 从架构师 角度看Handler
 
-从设计模式角度： 属于生产者、消费者模式。见: 《设计模式》
+从设计模式角度： 属于生产者、消费者模式。见: 《设计模式>
 
 从系统角度看：有进无出。1、所有的一切都是主线程的。 2、调用线程，只是用Handler做了调用，即输入
 
@@ -1618,7 +1618,7 @@ ThreadLocal原理
 
 持有mMessages,  mMessages 有 next属性指向下一个msg 
 
------》 msg本身就是链表了        所以,    MessageQueue只是对链表的封装,   提供一个管理功能 add, remove操作
+-----> msg本身就是链表了        所以,    MessageQueue只是对链表的封装,   提供一个管理功能 add, remove操作
 
 
 
@@ -1665,7 +1665,7 @@ static sThreadLocal -> Looper-> MessageQueue ->  Message -> handler -> MainActiv
 ```
 
 (1) 这里  handler -> Main2Activity.this 
-原因：内部类（非静态）持有外部类引用 , <font color='red'>见【表达2】</font> -----》 **自然的**，~~如果没有外部，怎么找到内部类？~~ TODO: 根本原因，要到JVM里找
+原因：内部类（非静态）持有外部类引用 , <font color='red'>见【表达2】</font> -----> **自然的**，~~如果没有外部，怎么找到内部类？~~ TODO: 根本原因，要到JVM里找
 
 (2)  Message -> handler:
 
@@ -1673,7 +1673,7 @@ static sThreadLocal -> Looper-> MessageQueue ->  Message -> handler -> MainActiv
 
 (2~)  记忆：持有链： 瓢handler 《----玉米Message  《----磨MessageQueue 《-----旋转杆Looper 《 ------绑绳： ThreadLocal
 
--------------》 最终结果，造成  MainActivity.this 与APP同周期**？<font color='red'>错误！！！！</font>**
+-------------> 最终结果，造成  MainActivity.this 与APP同周期**？<font color='red'>错误！！！！</font>**
 
 **A:   玉米Message  《----磨MessageQueue 这一环链接时间最短，决定了 内存泄漏时间。** 
        例子1是造成的内存泄漏时间可能很短。
@@ -1700,7 +1700,7 @@ static sThreadLocal -> Looper-> MessageQueue ->  Message -> handler -> MainActiv
 
 解决办法：
 
-Handler 声明为<font color='red'>静态</font>内部类     -----》   自然，static的  与外部类没有关系了，不会再持有外部类。同时，【表达2】MainActivity.this 编译也报错，引不到外部类了
+Handler 声明为<font color='red'>静态</font>内部类     ----->   自然，static的  与外部类没有关系了，不会再持有外部类。同时，【表达2】MainActivity.this 编译也报错，引不到外部类了
 
 改动导致的<font color='cornflowerblue'>不得不</font>：静态内部类要使用 外部类，只能 弱引用了。。。其实自然的，因为此时**内部类是静态的，外部类不一定实例化了，所以编译上一定过不去**
 
@@ -1760,7 +1760,7 @@ Handler 声明为<font color='red'>静态</font>内部类     -----》   自然�
 
 要是我来设计，我肯定这样设计：一个**进程级别Map**，以ThreadId为key
 
------》问题在哪里呢？
+----->问题在哪里呢？
 1、**进程级别Map** 做不到 只对一个线程开放，对其他线程封闭
 
 2、用是可以用的------>  多线程同时操作 Map,  存在并发问题，需要枷锁
@@ -1775,7 +1775,7 @@ Handler 声明为<font color='red'>静态</font>内部类     -----》   自然�
 
 本质：1、  <font color='red'>map线程级</font>，  2、Map本身是Thread的<font color='red'>私有属性 </font> 3、key是 ThreadLocal<类型>,  ~~value是存储值~~
 
-从物理内存角度来看：~~map对象肯定是在堆里（进程都可以访问），但是因为是<font color='red'>线程 私有 属性 </font>----》  达到对其他线程的封闭~~
+从物理内存角度来看：~~map对象肯定是在堆里（进程都可以访问），但是因为是<font color='red'>线程 私有 属性 </font>---->  达到对其他线程的封闭~~
 
 ​                                    即`一句话：`物理上，可以访问，但是没有索引
 
@@ -1819,7 +1819,7 @@ static final ThreadLocal<Looper> sThreadLocal = new ThreadLocal<Looper>();
 
 
 补充：
-~~任何用 ThreadLocal保存的变量，都是线程单例。比如  可以说 Looper 是线程单例~~ ----》 自然的，新的说法而已
+~~任何用 ThreadLocal保存的变量，都是线程单例。比如  可以说 Looper 是线程单例~~ ----> 自然的，新的说法而已
 
 ### 相关问题
 
@@ -1960,9 +1960,9 @@ A：要的。主线程，在main流程中，系统侧已经做了
 
 ### 子线程发一个消息 
 
-（1）何时主线程处理？？？----》按道理在主线程的messgeQueue排队
-（2）如果主线程在执行其他流程呢 ---》按道理要等着现在流程走完（即：一个msg引发的操作执行完）
-（3）一直走不完呢？ -----》在。。。。。会引发ANR？？？（TODO）
+（1）何时主线程处理？？？---->按道理在主线程的messgeQueue排队
+（2）如果主线程在执行其他流程呢 --->按道理要等着现在流程走完（即：一个msg引发的操作执行完）
+（3）一直走不完呢？ ----->在。。。。。会引发ANR？？？（TODO）
 
 （4）ANR的机制是啥？
 
@@ -2007,16 +2007,16 @@ case2：多个子线程使用 多个Handler       如何保证多线程安全？
 总结，从代码的角度看：
 
 > 一个线程能不能改变一个 对象，主要看 **整个线程 有没有拿到这个对象的引用**
-> ------》自然，推论：1、两个线程都持有Handler 引用，站在handler角度看，两个线程若改变handler，会有冲突  -----》  好在sendmsg没有修改handler
+> ------>自然，推论：1、两个线程都持有Handler 引用，站在handler角度看，两个线程若改变handler，会有冲突  ----->  好在sendmsg没有修改handler
 >
-> ​                                  2、整个过程两个msg是被各自 线程引用的，所以不会有线程间冲突     -----》  **如果msg 被保存成 Handler 的属性，就会有冲突**
+> ​                                  2、整个过程两个msg是被各自 线程引用的，所以不会有线程间冲突     ----->  **如果msg 被保存成 Handler 的属性，就会有冲突**
 >
 
 
 
 结论：
        多线程问题，该在代码何处枷锁呢？
---------》规定原则：1、 <font color='red'>从代码内存改动的角度</font>，临界区最小化原则，比如修改了mMessages
+-------->规定原则：1、 <font color='red'>从代码内存改动的角度</font>，临界区最小化原则，比如修改了mMessages
 
 
 
@@ -2030,7 +2030,7 @@ TODO:  为啥mQuitting也要 锁进去？？？
 
 2、从模型角度，大致判断：
 多个人同时用 一个瓢（极其副本），没有事情（只要不改造）。但是到磨时，就改了磨了，磨被改动了
--------》 技巧：死定着改动发生点！！！
+-------> 技巧：死定着改动发生点！！！
 
 
 
@@ -2088,7 +2088,7 @@ TODO:  为啥mQuitting也要 锁进去？？？
 
 先技术语言翻译：
 
-> 阻塞指的是 取一个消息，next() 函数中 sleep了-----》线程阻塞
+> 阻塞指的是 取一个消息，next() 函数中 sleep了----->线程阻塞
 >
 > 卡死： ANR (todo： 一定是嘛)
 
@@ -2152,9 +2152,9 @@ myTimer.schedule(new TimerTask() { // 【】schedule方法！
     public void run() {
         ...........
     }
-}, 3000, 4000);  // 延时3000毫秒开始计时，每隔4000毫秒计时一次  ---》可循环
+}, 3000, 4000);  // 延时3000毫秒开始计时，每隔4000毫秒计时一次  --->可循环
 
-// }, 3000);  // 延时3000毫秒开始  ---》不可循环
+// }, 3000);  // 延时3000毫秒开始  --->不可循环
 ```
 
 
