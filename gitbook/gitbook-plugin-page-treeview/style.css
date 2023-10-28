@@ -32,11 +32,12 @@
  */
 
 .treeview__container {
-	position: relative;
+	/* position: relative;   changed by cg */
 	margin-bottom: 80px;
 	padding-bottom: 20px;
 
 	/* add by cg */
+	position: fixed;
 	text-align: left;
 	z-index: 999;
 	left: 1500px;
