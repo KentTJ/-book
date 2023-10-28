@@ -76,5 +76,18 @@ Web 开发范式中定义一个页面需要**三个文件**，html，css 和 js 
 
 RemoteInputAbilitySlice.java   --------->  远程输入法
 
+分布式剪切板
+
+## HarmonyOS官方文档
+
+https://developer.harmonyos.com/cn/docs/documentation/doc-references-V3/syscap-list-0000001407929604-V3
+
+## OpenHarmony官方文档
+
+华为鸿蒙操作系统(OpenHarmony) v1.0 开发者文档：
+
+https://www.bookstack.cn/read/openharmony-1.0-zh-cn/readme-%E5%9B%BE%E5%BD%A2%E5%AD%90%E7%B3%BB%E7%BB%9FREADME.md
 
 
+
+https://zhuanlan.zhihu.com/p/423765456  内核
