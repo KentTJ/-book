@@ -604,7 +604,67 @@ Any content here
 
 
 
+### 魔改插件
 
+#### 改gitbook-plugin-page-treeview
+
+目标：
+
+> 让当前页面的目录显示在最右侧：
+>
+> ![image-20231029004551045](software_pcSettings.assets/image-20231029004551045.png)
+
+~~修改：~~
+
+> E:\working\laji\markdownsFile\node_modules\gitbook-plugin-page-treeview\assets\style.css
+>
+> ```java
+> .treeview__container {
+> 	/* position: relative;   changed by cg */
+> 	margin-bottom: 80px;
+> 	padding-bottom: 20px;
+> 
+> 	/* add by cg start*/
+> 	position: fixed;
+> 	text-align: left;
+> 	z-index: 0;  /* add by cg： 999是最高Z轴配置*/
+> 	left: 1400px;  /* cg注释： 1vh = 1% 这里没有用 vh作为单位，因为手机上屏幕太小，希望手机上不显示*/
+>     top: 30px;
+>     overflow-y: auto;
+> 	height:70vh;  /* 1vh = 1% viewport height  https://blog.csdn.net/ghvjhfjf/article/details/122369878 */
+> 	width:200vh;  /* 这里保证滚动条位置超出页面：为了不遮挡 主页面滚动条 */
+>     overflow-x: auto;
+> 	font-size: 14px;
+> 	/* add by cg end*/
+> }
+> ```
+
+
+
+目标：
+
+> 删掉copyright图标
+>
+> ![image-20231029004822519](software_pcSettings.assets/image-20231029004822519.png)
+
+~~修改：~~
+
+> E:\working\laji\markdownsFile\node_modules\gitbook-plugin-page-treeview\lib\index.js
+>
+> ```js
+>    /**changed by cg */
+>    /**return renderContent ? `<div class="treeview__container">${copyRight + renderContent}</div>` : ''; */
+> 	return renderContent ? `<div class="treeview__container">${renderContent}</div>` : '';
+> };
+> ```
+
+
+
+注意：
+
+> 修改前，先备份：
+>
+> ![image-20231029005128297](software_pcSettings.assets/image-20231029005128297.png)
 
 ### md、html 生成ok标准：
 
