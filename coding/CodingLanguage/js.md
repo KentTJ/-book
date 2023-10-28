@@ -56,6 +56,25 @@ Web 开发范式中定义一个页面需要**三个文件**，html，css 和 js 
 
 ![image-20231029013821036](js.assets/image-20231029013821036.png)
 
-鸿蒙：
+鸿蒙ACE（UI框架）：
 
 > https://www.elecfans.com/d/1975305.html
+>
+> https://blog.csdn.net/weixin_41559503/article/details/128851385   ------> 好文
+
+
+
+# 鸿蒙其他
+
+
+
+## 应用流转迁移
+
+## 分布式数据库
+
+## 分布式任务调度
+
+RemoteInputAbilitySlice.java   --------->  远程输入法
+
+
+
