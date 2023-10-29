@@ -77,7 +77,7 @@
 /* 返回顶部 */
 #anchorNavigationExGoTop {
     position: fixed;
-    right: 50px;
+    right: 25px;
     bottom: 68px;
     background-color: #fafafa;
     border: 1px solid rgba(0, 0, 0, .07);
