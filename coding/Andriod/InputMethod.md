@@ -285,28 +285,27 @@ https://source.android.google.cn/docs/core/display/multi_display/displays?authus
 ## 引用分析
 
 难点：IMMS的对外依赖
-IMMS的依赖： ActivityManager              ----> 忽略
-             ActivityManagerInternal      ----> 忽略
-			 mIPackageManager  ----> 唯一，可以忽略
-			 PackageManager  ----> 唯一，可以忽略
-			 PackageManagerInternal  ----> 唯一，可以忽略
-			 ResolveInfo   ----> 忽略
-			 ServiceInfo   ----> 忽略
-			 AudioManagerInternal mAudioManagerInternal  ----> 忽略
-			 KeyguardManager mKeyguardManager   ----> 忽略
-			 StatusBarManagerService mStatusBa  ----> 忽略 
-			 
-			 
-			 
+IMMS的依赖：
 
-			 InputManagerInternal  ------>忽略
-			 InputMethodService ------>忽略，都是引用常量
-	
-			 InputMethodSettings mSettings;  -----> 这个依赖比较深，设置方面的 +  userId
-			 userId = ActivityManager.getService().getCurrentUser().id; -----》有疑问：如果是双开，那么IMMS获取的是啥？
-			 updateCurrentProfileIds
-			 UserManager mUserManager;   -----> 使用了UserId，需注意
-			 UserManagerInternal mUserManagerInternal  ---->  使用了UserId，需注意
+	ActivityManager              ----> 忽略
+	ActivityManagerInternal      ----> 忽略
+	mIPackageManager  ----> 唯一，可以忽略
+	PackageManager  ----> 唯一，可以忽略
+	PackageManagerInternal  ----> 唯一，可以忽略
+	ResolveInfo   ----> 忽略
+	ServiceInfo   ----> 忽略
+	AudioManagerInternal mAudioManagerInternal  ----> 忽略
+	KeyguardManager mKeyguardManager   ----> 忽略
+	StatusBarManagerService mStatusBa  ----> 忽略 
+	InputManagerInternal  ------>忽略
+	InputMethodService ------>忽略，都是引用常量
+	InputMethodSettings mSettings;  -----> 这个依赖比较深，设置方面的 +  userId
+	userId = ActivityManager.getService().getCurrentUser().id; ----->有疑问：如果是双开，那么IMMS获取的是啥？
+	updateCurrentProfileIds
+	UserManager mUserManager;   -----> 使用了UserId，需注意
+	UserManagerInternal mUserManagerInternal  ---->  使用了UserId，需注意
+
+
 
 WindowManagerInternal mWindowManagerInternal;  ----> WMS真正的内部类，很多调用点！！！！！！
 
@@ -318,7 +317,7 @@ WindowManagerInternal mWindowManagerInternal;  ----> WMS真正的内部类，很
 
 ​				mWindowManagerInternal.getTopFocusedDisplayId()   -----> **这个接口很有问题**
 
--------------------》 IMMS.setImeWindowStatus需要修改： 1、该接口标注废弃了   2、topFocusedDisplayId 没有阻碍关键路径
+-------------------> IMMS.setImeWindowStatus需要修改： 1、该接口标注废弃了   2、topFocusedDisplayId 没有阻碍关键路径
 
 
 
@@ -332,7 +331,7 @@ IWindowManager mIWindowManager;  -----> 这个是wms，只有两处调用，似�
 			 
 			 
 			 
-transferTouchFocusToImeWindow   ---》 特殊场景，忽略
+transferTouchFocusToImeWindow   ---> 特殊场景，忽略
 这个方法仅在需要手动控制焦点转移时使用，一般情况下Android系统会自动处理焦点的转移。此方法通常在特殊的UI交互场景或自定义的文本输入组件中使用。
 
 
@@ -704,7 +703,7 @@ getImePolicyLocked时：
 
 物理态信息                 执行态信息
 
-----------》TODO:  如何搜索，以下每一个阶段，都可以搜索？如何搜索？   
+---------->TODO:  如何搜索，以下每一个阶段，都可以搜索？如何搜索？   
 
 代码态、编译态、手机中jar、运行态
 
@@ -726,3 +725,6 @@ getImePolicyLocked时：
 
 2、触摸下为什么安卓没有焦点？**因为绑定太明确了**，坐标在view范围内
 
+
+
+# 维测
