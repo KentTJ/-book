@@ -604,6 +604,16 @@ Any content here
 
 
 
+#### 快速转化为pdf
+
+![image-20231029103034036](software_pcSettings.assets/image-20231029103034036.png)
+
+得到的PDF，格式非常好：
+
+> ![image-20231029103112441](software_pcSettings.assets/image-20231029103112441.png)
+
+但是要求：每个目录，必须是一个md文件  ------>  Typora 要求
+
 ### 魔改插件
 
 #### 改gitbook-plugin-page-treeview
@@ -758,6 +768,8 @@ https://www.jianshu.com/p/4471c20fbafe  Gitbook使用教程
 ```cpp
 - Summary插件：`npm install -g gitbook-summary`
 ```
+
+
 
 
 
