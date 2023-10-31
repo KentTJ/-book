@@ -1004,7 +1004,7 @@
 <h1 id="&#x76EE;&#x5F55;"><a name="&#x76EE;&#x5F55;" class="anchor-navigation-ex-anchor" href="#&#x76EE;&#x5F55;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x76EE;&#x5F55;</h1>
 <p>[TOC]</p>
 <h1 id="android-&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;"><a name="android-&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;" class="anchor-navigation-ex-anchor" href="#android-&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>2. Android &#x8FDB;&#x7A0B;&#x7BA1;&#x7406;</h1>
-<p>ams&#xFF1A; &#x8D23;Android&#x56DB;&#x5927;&#x7EC4;&#x5EFA;&#x7684;&#x542F;&#x52A8;&#x548C;&#x7BA1;&#x7406;&#xFF0C;&#x8FDB;&#x7A0B;&#x7684;&#x521B;&#x5EFA;&#x548C;&#x8C03;&#x5EA6;&#x3002;</p>
+<p>AMS&#xFF1A; &#x8D1F;&#x8D23;Android&#x56DB;&#x5927;&#x7EC4;&#x5EFA;&#x7684;&#x542F;&#x52A8;&#x548C;&#x7BA1;&#x7406;&#xFF0C;&#x8FDB;&#x7A0B;&#x7684;&#x521B;&#x5EFA;&#x548C;&#x8C03;&#x5EA6;&#x3002;</p>
 <p>(&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x7CFB;&#x7EDF;) &#x8FDB;&#x7A0B;&#x7BA1;&#x7406;,  &#x89D2;&#x5EA6;:</p>
 <blockquote>
 <p>&#x8C03;&#x5EA6;&#x7B56;&#x7565;&#x3001;&#x4F18;&#x5148;&#x7EA7;&#x4EE5;&#x53CA; &#x53EF;&#x8C03;&#x5EA6;CPU&#x8303;&#x56F4;</p>
@@ -1143,24 +1143,22 @@
 <h3 id="&#x5C55;&#x5F00;updateoomadjlocked"><a name="&#x5C55;&#x5F00;updateoomadjlocked" class="anchor-navigation-ex-anchor" href="#&#x5C55;&#x5F00;updateoomadjlocked"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.7. &#x5C55;&#x5F00;updateOomAdjLocked</h3>
 <h3 id="&#x6740;&#x5E94;&#x7528;"><a name="&#x6740;&#x5E94;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x6740;&#x5E94;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.8. &#x6740;&#x5E94;&#x7528;</h3>
 <h3 id="&#x7EF4;&#x6D4B;-----&#x8FDB;&#x7A0B;adj&#x503C;&#x67E5;&#x770B;"><a name="&#x7EF4;&#x6D4B;-----&#x8FDB;&#x7A0B;adj&#x503C;&#x67E5;&#x770B;" class="anchor-navigation-ex-anchor" href="#&#x7EF4;&#x6D4B;-----&#x8FDB;&#x7A0B;adj&#x503C;&#x67E5;&#x770B;"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.9. &#x7EF4;&#x6D4B;-----&#x8FDB;&#x7A0B;ADJ&#x503C;&#x67E5;&#x770B;</h3>
-<ul>
-<li>dumpsys meminfo&#xFF0C;</li>
-<li>dumpsys activity o</li>
-<li>dumpsys activity p</li>
-</ul>
-<p>&#x5982;&#x4F55;&#x67E5;&#x770B;&#x8FDB;&#x7A0B;&#x4F18;&#x5148;&#x7EA7;&#xFF1A;</p>
-<ol>
-<li>cat proc/[pid]/oom_score_adj -------&gt; &#x4E3A;&#x5565;&#x4F1A;&#x5199;&#x8FDB;&#x6587;&#x4EF6;&#x91CC;&#xFF1F;&#x4E0D;&#x5E94;&#x8BE5;&#x662F;&#x5B9E;&#x65F6;&#x7684;&#x561B;&#xFF1F;&#x8FD9;&#x91CC;&#x662F;&#x6574;&#x6570;&#xFF0C;&#x6BD4;&#x5982;-900</li>
-<li>adb shell dumpsys activity o/p</li>
-</ol>
-<p>&#x4F8B;&#x5B50;&#xFF1A;</p>
+<p>&#x67E5;&#x770B;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x7684;adj &#x503C;&#xFF1A;</p>
 <blockquote>
-<p>myapplication&#x5206;&#x522B;&#x5728;&#x524D;&#x53F0;&#x548C;&#x540E;&#x53F0;&#x65F6;ADJ&#x503C;</p>
+<p>cat proc/[pid]/oom_score_adj -------&gt; TODO: &#x4E3A;&#x5565;&#x4F1A;&#x5199;&#x8FDB;&#x6587;&#x4EF6;&#x91CC;&#xFF1F;&#x4E0D;&#x5E94;&#x8BE5;&#x662F;&#x5B9E;&#x65F6;&#x7684;&#x561B;&#xFF1F;&#x8FD9;&#x91CC;&#x662F;&#x6574;&#x6570;&#xFF0C;&#x6BD4;&#x5982;-900</p>
+<p>&#x4F8B;1&#xFF1A;surfaceFlinger&#x8FDB;&#x7A0B;&#xFF08; ps -ef | grep  surface&#xFF09;</p>
+<p><img src="&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;.assets/image-20231031215121578.png" alt="image-20231031215121578"></p>
+<p>&#x4F8B;2&#xFF1A;&#x6296;&#x97F3;&#x5206;&#x522B;&#x5728;&#x524D;&#x53F0;&#x548C;&#x540E;&#x53F0;&#x65F6;ADJ&#x503C;(&#x53D8;&#x52A8;&#x503C;):</p>
+<blockquote>
+<p>&#x524D;&#x53F0;&#xFF1A;0</p>
+<p>&#x540E;&#x53F0;&#xFF1A;700</p>
+<p><img src="&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;.assets/image-20231031222218746.png" alt="image-20231031222218746"></p>
 </blockquote>
-<p>dumpsys activity o&#xFF1A;</p>
+</blockquote>
+<p>&#x67E5;&#x770B;&#x9608;&#x503C;&#xFF1A;</p>
 <blockquote>
-<p>&#x8981;&#x6740;&#x7684;&#x8FDB;&#x7A0B;&#x7EA7;&#x522B;  &lt;-------- &#x5269;&#x4F59;&#x7684;&#x5185;&#x5B58;</p>
-<pre><code> OOM levels:
+<p>dumpsys activity o&#xFF1A;&#x8981;&#x6740;&#x7684;&#x8FDB;&#x7A0B;&#x7EA7;&#x522B; &lt;-------- &#x5269;&#x4F59;&#x7684;&#x5185;&#x5B58;</p>
+<pre><code class="lang-shell"> OOM levels:
   -900: SYSTEM_ADJ (   73,728K)
   -800: PERSISTENT_PROC_ADJ (   73,728K)
   -700: PERSISTENT_SERVICE_ADJ (   73,728K)
@@ -1176,7 +1174,13 @@
    800: SERVICE_B_ADJ (  221,184K)
    900: CACHED_APP_MIN_ADJ (  221,184K)
    999: CACHED_APP_MAX_ADJ (  322,560K)
-</code></pre></blockquote>
+</code></pre>
+</blockquote>
+<p>&#x5176;&#x4ED6;&#x7EF4;&#x6D4B;&#xFF1A;</p>
+<blockquote>
+<p>dumpsys meminfo</p>
+<p>dumpsys activity p</p>
+</blockquote>
 <h2 id="android-&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;----&#x53EF;&#x8C03;&#x5EA6;cpu&#x8303;&#x56F4;cpuset"><a name="android-&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;----&#x53EF;&#x8C03;&#x5EA6;cpu&#x8303;&#x56F4;cpuset" class="anchor-navigation-ex-anchor" href="#android-&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;----&#x53EF;&#x8C03;&#x5EA6;cpu&#x8303;&#x56F4;cpuset"><i class="fa fa-link" aria-hidden="true"></i></a>2.5. Android &#x8FDB;&#x7A0B;&#x7BA1;&#x7406;----&#x53EF;&#x8C03;&#x5EA6;CPU&#x8303;&#x56F4;cpuset</h2>
 <h3 id="&#x80CC;&#x666F;&#xFF1A;"><a name="&#x80CC;&#x666F;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x80CC;&#x666F;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>2.5.1. &#x80CC;&#x666F;&#xFF1A;</h3>
 <p>&#x5B8C;&#x5168;&#x53C2;&#x8003;&#xFF1A;</p>
@@ -1229,10 +1233,11 @@
 <p>taskset -pc 3  pid    &#x8868;&#x793A;&#x5C06;&#x8FDB;&#x7A0B;pid&#x7ED1;&#x5B9A;&#x5230;&#x7B2C;3&#x4E2A;&#x6838;&#x4E0A;</p>
 </blockquote>
 <h2 id="&#x53C2;&#x8003;&#xFF1A;"><a name="&#x53C2;&#x8003;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x8003;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>2.6. &#x53C2;&#x8003;&#xFF1A;</h2>
+<p><a href="https://juejin.cn/post/7174713775944138809" target="_blank">https://juejin.cn/post/7174713775944138809</a>    AMS&#x662F;&#x5982;&#x4F55;&#x52A8;&#x6001;&#x7BA1;&#x7406;&#x8FDB;&#x7A0B;&#x7684;&#xFF1F;</p>
 <p><a href="https://www.cnblogs.com/andy-songwei/p/9845771.html" target="_blank">https://www.cnblogs.com/andy-songwei/p/9845771.html</a>   <a href="https://www.cnblogs.com/andy-songwei/p/9845771.html" target="_blank">&#x3010;&#x671D;&#x82B1;&#x5915;&#x62FE;&#x3011;Android&#x6027;&#x80FD;&#x7BC7;&#x4E4B;&#xFF08;&#x516D;&#xFF09;Android&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;&#x673A;&#x5236;</a>   ----&gt; &#x4F18;&#x79C0;&#x6587;&#x7AE0;</p>
 <p><a href="https://gityuan.com/2018/05/19/android-process-adj/" target="_blank">https://gityuan.com/2018/05/19/android-process-adj/</a>      &#x89E3;&#x8BFB;Android&#x8FDB;&#x7A0B;&#x4F18;&#x5148;&#x7EA7;ADJ&#x7B97;&#x6CD5;</p>
 <p><a href="https://blog.51cto.com/u_16213654/7243574" target="_blank">https://blog.51cto.com/u_16213654/7243574</a>   android cpu&#x8C03;&#x5EA6;&#x7B56;&#x7565; &#x4FEE;&#x6539; &#x5B89;&#x5353;cpu&#x8C03;&#x5EA6;&#x6A21;&#x5F0F;</p>
-<p><a href="https://blog.51cto.com/u_12218/7412595" target="_blank">https://blog.51cto.com/u_12218/7412595</a>    android &#x8C03;&#x8BD5;&#x770B;&#x5B9E;&#x65F6;cpu android cpu&#x8C03;&#x5EA6;*</p>
+<p><a href="https://blog.51cto.com/u_12218/7412595" target="_blank">https://blog.51cto.com/u_12218/7412595</a>    android &#x8C03;&#x8BD5;&#x770B;&#x5B9E;&#x65F6;cpu android cpu&#x8C03;&#x5EA6;</p>
 <blockquote>
 <p><a href="https://sq.sf.163.com/blog/article/187631163406041088" target="_blank">https://sq.sf.163.com/blog/article/187631163406041088</a>   &#x5229;&#x7528;cgroup&#x6765;&#x9650;&#x5236;&#x8FDB;&#x7A0B;&#x7684;&#x8D44;&#x6E90;&#x4F7F;&#x7528;&#x91CF;</p>
 <p>&#x9632;&#x6B62;&#x51FA;&#x73B0;&#x8D44;&#x6E90;&#x6CC4;&#x6F0F;&#x5F71;&#x54CD;&#x5176;&#x4ED6;&#x5E94;&#x7528;</p>
@@ -1333,7 +1338,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"进程管理","level":"1.2.1.24","depth":3,"next":{"title":"Coding Language","level":"1.2.2","depth":2,"path":"coding/CodingLanguage/README.md","ref":"coding/CodingLanguage/README.md","articles":[{"title":"C Cpp Java","level":"1.2.2.1","depth":3,"path":"coding/CodingLanguage/c_cpp_java.md","ref":"coding/CodingLanguage/c_cpp_java.md","articles":[]},{"title":"Js","level":"1.2.2.2","depth":3,"path":"coding/CodingLanguage/js.md","ref":"coding/CodingLanguage/js.md","articles":[]},{"title":"R","level":"1.2.2.3","depth":3,"path":"coding/CodingLanguage/R.md","ref":"coding/CodingLanguage/R.md","articles":[]}]},"previous":{"title":"解耦","level":"1.2.1.23","depth":3,"path":"coding/Andriod/解耦.md","ref":"coding/Andriod/解耦.md","articles":[]},"dir":"ltr"},"config":{"//":["这是多行注释：    anchor-navigation-ex 是","anchor-navigation-ex 是","click-reveal 本地使用ok，但是github在build pages时，不识别click-reveal","accordion 也是折叠代码段","anchor-navigation-ex 是"],"plugins":["anchor-navigation-ex","toggle-chapters","expandable-chapters-small","splitter","code","page-treeview","popup","-search","-lunr","sidebar-style","auto-scroll-table","click-reveal","accordion","pageview-count","search-pro"],"root":"./markdownsFiles","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"Kent","title":"《知行，行知》"},"tbfed-pagefooter":{"copyright":"Copyright &copy ershouche-FE 2019","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"disqus":{"shortName":"gitbookuse"},"splitter":{},"search-pro":{},"accordion":{},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":200000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"pageview-count":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bookname":"笔记","variables":{},"title":"Kent的博客","gitbook":"*"},"file":{"path":"coding/Andriod/进程管理.md","mtime":"2023-10-30T17:55:22.196Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-10-30T18:10:26.111Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"进程管理","level":"1.2.1.24","depth":3,"next":{"title":"Coding Language","level":"1.2.2","depth":2,"path":"coding/CodingLanguage/README.md","ref":"coding/CodingLanguage/README.md","articles":[{"title":"C Cpp Java","level":"1.2.2.1","depth":3,"path":"coding/CodingLanguage/c_cpp_java.md","ref":"coding/CodingLanguage/c_cpp_java.md","articles":[]},{"title":"Js","level":"1.2.2.2","depth":3,"path":"coding/CodingLanguage/js.md","ref":"coding/CodingLanguage/js.md","articles":[]},{"title":"R","level":"1.2.2.3","depth":3,"path":"coding/CodingLanguage/R.md","ref":"coding/CodingLanguage/R.md","articles":[]}]},"previous":{"title":"解耦","level":"1.2.1.23","depth":3,"path":"coding/Andriod/解耦.md","ref":"coding/Andriod/解耦.md","articles":[]},"dir":"ltr"},"config":{"//":["这是多行注释：    anchor-navigation-ex 是","anchor-navigation-ex 是","click-reveal 本地使用ok，但是github在build pages时，不识别click-reveal","accordion 也是折叠代码段","anchor-navigation-ex 是"],"plugins":["anchor-navigation-ex","toggle-chapters","expandable-chapters-small","splitter","code","page-treeview","popup","-search","-lunr","sidebar-style","auto-scroll-table","click-reveal","accordion","pageview-count","search-pro"],"root":"./markdownsFiles","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"Kent","title":"《知行，行知》"},"tbfed-pagefooter":{"copyright":"Copyright &copy ershouche-FE 2019","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"disqus":{"shortName":"gitbookuse"},"splitter":{},"search-pro":{},"accordion":{},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":200000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"pageview-count":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bookname":"笔记","variables":{},"title":"Kent的博客","gitbook":"*"},"file":{"path":"coding/Andriod/进程管理.md","mtime":"2023-10-31T14:34:24.059Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-10-31T14:48:20.907Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

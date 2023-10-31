@@ -338,7 +338,11 @@ final ArrayList<ProcessRecord> mRemovedProcesses = new ArrayList<ProcessRecord>(
 
 
 
-参考文章：https://mp.weixin.qq.com/s/H8RPu77Y7IDRxEcVYJGPfg
+
+
+AMS如何管理进程的  -------->   见  《进程管理.md》
+
+
 
 
 
