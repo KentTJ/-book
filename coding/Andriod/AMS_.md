@@ -168,13 +168,27 @@ SystemServiceManager忽略掉，~~只是SystemServer  startService功能的抽�
 
 
 
-# 初始化---AMS启动流程
+# 启动流程---AMS
 
-都是在SystemServer中，通过SytemServiceManager启动的   -----> 见系统启动流程
+## 概述
+
+AMS startService之前： 
+
+> 都是在SystemServer中，通过SytemServiceManager启动的   -----> 见系统启动流程
+
+AMS startService之后：见下
+
+## AMS startService之后
+
+参考：
+
+> 具体函数级别分析，见： https://gityuan.com/2016/02/21/activity-manager-service/   -------> TODO：暂时允许，各种函数分析，来自链接？
 
 
 
-具体函数级别分析，见： https://gityuan.com/2016/02/21/activity-manager-service/   -------> TODO：暂时允许，各种函数分析，来自链接？
+
+
+### AMS 让  zygote 创建 launcher进程      
 
 # AMS 启动APP startActivity
 

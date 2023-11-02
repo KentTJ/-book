@@ -1192,7 +1192,7 @@ ServiceManager的本质：
 
 疑问：
 与       registerService(Context.ACTIVITY_TASK_SERVICE, ActivityTaskManager.class,  差别？
-----》 后者是应用侧的，前者系统侧
+---->   后者是应用侧的，前者系统侧
 
 
 
@@ -1239,8 +1239,6 @@ AMS<font color='red'>管理各个应用</font>进程，所以由其注册的相�
 
 
 
-
-### AMS 让  zygote 创建 launcher进程      
 
 
 
