@@ -1,3 +1,9 @@
+
+
+
+
+# 目录
+
 [TOC]
 
 
@@ -51,7 +57,19 @@ Q:   如何保护？系统服务退出，init进程会重启SystemServer的？�
 
 0层架构图
 
-加图：
+![在这里插入图片描述](WatchDog.assets/2dd8c0c4df444490a00eb8c286a6ef4d.png)
+
+来源： https://blog.csdn.net/qq_43369592/article/details/123521848
+
+fg 线程
+
+
+
+
+
+从线程角度：TODO
+
+
 
 ### Monitor Checker
 
@@ -67,12 +85,12 @@ Q:   如何保护？系统服务退出，init进程会重启SystemServer的？�
 
 > 回调时，监控 system_server 中几个关键的锁（在 android_fg 线程中尝试加锁），比如AMS的this、wms的mGlobalLock
 >
-> - ------------> 如果有死锁，尝试加锁会阻塞Blocked在这里
+> ------------> 如果有死锁，尝试加锁会阻塞Blocked在这里
 
 2、检测到死锁，kill进程--------Watchdog线程：
 
-```
-
+```java
+TODO
 ```
 
 ### Looper Checker
