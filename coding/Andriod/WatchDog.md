@@ -44,7 +44,7 @@ Q:   如何保护？系统服务退出，init进程会重启SystemServer的？�
 
 1、向Watchdog注册
 
-```
+```java
  // 死锁监控：
  Watchdog.getInstance().addMonitor(this);
  // 消息队列监控：
@@ -75,7 +75,7 @@ fg 线程
 
 用于检查 AMS，IMS，WMS PMS 等核心的系统服务 可能发生的死锁
 
-```
+```java
  public void monitor() {
         synchronized (this) { }  //获取AMS的this、wms的mGlobalLock等锁
  }
@@ -148,7 +148,7 @@ TODO
 
 2、判断
 
-```
+```java
  mHandler.getLooper().getQueue().isPolling()  // --------》 返回当前Looper是否没有在处理任务  <https://blog.csdn.net/oHeHui1/article/details/129058587>
 ```
 

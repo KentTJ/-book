@@ -1032,11 +1032,12 @@
 <blockquote>
 </blockquote>
 <p>1&#x3001;&#x5411;Watchdog&#x6CE8;&#x518C;</p>
-<pre><code> // &#x6B7B;&#x9501;&#x76D1;&#x63A7;&#xFF1A;
- Watchdog.getInstance().addMonitor(this);
- // &#x6D88;&#x606F;&#x961F;&#x5217;&#x76D1;&#x63A7;&#xFF1A;
+<pre><code class="lang-java"> <span class="hljs-comment">// &#x6B7B;&#x9501;&#x76D1;&#x63A7;&#xFF1A;</span>
+ Watchdog.getInstance().addMonitor(<span class="hljs-keyword">this</span>);
+ <span class="hljs-comment">// &#x6D88;&#x606F;&#x961F;&#x5217;&#x76D1;&#x63A7;&#xFF1A;</span>
  Watchdog.getInstance().addThread(mHandler);
-</code></pre><p>2&#x3001;heartbeat &#x5FC3;&#x8DF3; &#x56DE;&#x8C03;</p>
+</code></pre>
+<p>2&#x3001;heartbeat &#x5FC3;&#x8DF3; &#x56DE;&#x8C03;</p>
 <h2 id="&#x539F;&#x7406;"><a name="&#x539F;&#x7406;" class="anchor-navigation-ex-anchor" href="#&#x539F;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>2.3. &#x539F;&#x7406;</h2>
 <p>0&#x5C42;&#x67B6;&#x6784;&#x56FE;</p>
 <p><img src="WatchDog.assets/2dd8c0c4df444490a00eb8c286a6ef4d.png" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></p>
@@ -1045,10 +1046,11 @@
 <p>&#x4ECE;&#x7EBF;&#x7A0B;&#x89D2;&#x5EA6;&#xFF1A;TODO</p>
 <h3 id="monitor-checker"><a name="monitor-checker" class="anchor-navigation-ex-anchor" href="#monitor-checker"><i class="fa fa-link" aria-hidden="true"></i></a>2.3.1. Monitor Checker</h3>
 <p>&#x7528;&#x4E8E;&#x68C0;&#x67E5; AMS&#xFF0C;IMS&#xFF0C;WMS PMS &#x7B49;&#x6838;&#x5FC3;&#x7684;&#x7CFB;&#x7EDF;&#x670D;&#x52A1; &#x53EF;&#x80FD;&#x53D1;&#x751F;&#x7684;&#x6B7B;&#x9501;</p>
-<pre><code> public void monitor() {
-        synchronized (this) { }  //&#x83B7;&#x53D6;AMS&#x7684;this&#x3001;wms&#x7684;mGlobalLock&#x7B49;&#x9501;
+<pre><code class="lang-java"> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">monitor</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">synchronized</span> (<span class="hljs-keyword">this</span>) { }  <span class="hljs-comment">//&#x83B7;&#x53D6;AMS&#x7684;this&#x3001;wms&#x7684;mGlobalLock&#x7B49;&#x9501;</span>
  }
-</code></pre><p>1&#x3001;&#x68C0;&#x6D4B;&#x662F;&#x5426;&#x6709;&#x6B7B;&#x9501;----------&#x4E3B;&#x7EBF;&#x7A0B;&#xFF1F;&#xFF1F;&#xFF1F; &#xFF08;android_fg &#x7EBF;&#x7A0B;&#xFF09;&#xFF1A;</p>
+</code></pre>
+<p>1&#x3001;&#x68C0;&#x6D4B;&#x662F;&#x5426;&#x6709;&#x6B7B;&#x9501;----------&#x4E3B;&#x7EBF;&#x7A0B;&#xFF1F;&#xFF1F;&#xFF1F; &#xFF08;android_fg &#x7EBF;&#x7A0B;&#xFF09;&#xFF1A;</p>
 <blockquote>
 <p>&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x76D1;&#x63A7; system_server &#x4E2D;&#x51E0;&#x4E2A;&#x5173;&#x952E;&#x7684;&#x9501;&#xFF08;&#x5728; android_fg &#x7EBF;&#x7A0B;&#x4E2D;&#x5C1D;&#x8BD5;&#x52A0;&#x9501;&#xFF09;&#xFF0C;&#x6BD4;&#x5982;AMS&#x7684;this&#x3001;wms&#x7684;mGlobalLock</p>
 <p>------------&gt; &#x5982;&#x679C;&#x6709;&#x6B7B;&#x9501;&#xFF0C;&#x5C1D;&#x8BD5;&#x52A0;&#x9501;&#x4F1A;&#x963B;&#x585E;Blocked&#x5728;&#x8FD9;&#x91CC;</p>
@@ -1104,8 +1106,9 @@
  }
 </code></pre>
 <p>2&#x3001;&#x5224;&#x65AD;</p>
-<pre><code> mHandler.getLooper().getQueue().isPolling()  // --------&#x300B; &#x8FD4;&#x56DE;&#x5F53;&#x524D;Looper&#x662F;&#x5426;&#x6CA1;&#x6709;&#x5728;&#x5904;&#x7406;&#x4EFB;&#x52A1;  &lt;https://blog.csdn.net/oHeHui1/article/details/129058587&gt;
-</code></pre><p><strong>Watchdog&#x4F1A;&#x4E0D;&#x65AD;&#x5224;&#x65AD;&#x8FD9;&#x4E9B;&#x7EBF;&#x7A0B;&#x7684;Lopper&#x662F;&#x5426;&#x7A7A;&#x95F2;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x76F4;&#x975E;&#x7A7A;&#x95F2;&#xFF0C;&#x90A3;&#x4E48;&#x5FC5;&#x7136;&#x5C31;&#x88AB;&#x963B;&#x585E;&#x4E86;&#x3002;</strong></p>
+<pre><code class="lang-java"> mHandler.getLooper().getQueue().isPolling()  <span class="hljs-comment">// --------&#x300B; &#x8FD4;&#x56DE;&#x5F53;&#x524D;Looper&#x662F;&#x5426;&#x6CA1;&#x6709;&#x5728;&#x5904;&#x7406;&#x4EFB;&#x52A1;  &lt;https://blog.csdn.net/oHeHui1/article/details/129058587&gt;</span>
+</code></pre>
+<p><strong>Watchdog&#x4F1A;&#x4E0D;&#x65AD;&#x5224;&#x65AD;&#x8FD9;&#x4E9B;&#x7EBF;&#x7A0B;&#x7684;Lopper&#x662F;&#x5426;&#x7A7A;&#x95F2;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x76F4;&#x975E;&#x7A7A;&#x95F2;&#xFF0C;&#x90A3;&#x4E48;&#x5FC5;&#x7136;&#x5C31;&#x88AB;&#x963B;&#x585E;&#x4E86;&#x3002;</strong></p>
 <p>&#x5176;&#x4ED6;&#xFF1A;</p>
 <blockquote>
 <p>&#x4FDD;&#x5B58;&#x6848;&#x53D1;&#x73B0;&#x573A;</p>
@@ -1164,7 +1167,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Watch Dog","level":"1.2.1.18","depth":3,"next":{"title":"Wms Animination","level":"1.2.1.19","depth":3,"path":"coding/Andriod/wms_animination.md","ref":"coding/Andriod/wms_animination.md","articles":[]},"previous":{"title":"Systrace","level":"1.2.1.17","depth":3,"path":"coding/Andriod/Systrace.md","ref":"coding/Andriod/Systrace.md","articles":[]},"dir":"ltr"},"config":{"//":["这是多行注释：    anchor-navigation-ex 是","anchor-navigation-ex 是","click-reveal 本地使用ok，但是github在build pages时，不识别click-reveal","accordion 也是折叠代码段","anchor-navigation-ex 是"],"plugins":["anchor-navigation-ex","toggle-chapters","expandable-chapters-small","splitter","code","page-treeview","popup","-search","-lunr","sidebar-style","auto-scroll-table","click-reveal","accordion","pageview-count","search-pro"],"root":"./markdownsFiles","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"Kent","title":"《知行，行知》"},"tbfed-pagefooter":{"copyright":"Copyright &copy ershouche-FE 2019","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"disqus":{"shortName":"gitbookuse"},"splitter":{},"search-pro":{},"accordion":{},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":200000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"pageview-count":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bookname":"笔记","variables":{},"title":"Kent的博客","gitbook":"*"},"file":{"path":"coding/Andriod/WatchDog.md","mtime":"2023-11-02T17:14:11.449Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-11-02T17:14:27.293Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Watch Dog","level":"1.2.1.18","depth":3,"next":{"title":"Wms Animination","level":"1.2.1.19","depth":3,"path":"coding/Andriod/wms_animination.md","ref":"coding/Andriod/wms_animination.md","articles":[]},"previous":{"title":"Systrace","level":"1.2.1.17","depth":3,"path":"coding/Andriod/Systrace.md","ref":"coding/Andriod/Systrace.md","articles":[]},"dir":"ltr"},"config":{"//":["这是多行注释：    anchor-navigation-ex 是","anchor-navigation-ex 是","click-reveal 本地使用ok，但是github在build pages时，不识别click-reveal","accordion 也是折叠代码段","anchor-navigation-ex 是"],"plugins":["anchor-navigation-ex","toggle-chapters","expandable-chapters-small","splitter","code","page-treeview","popup","-search","-lunr","sidebar-style","auto-scroll-table","click-reveal","accordion","pageview-count","search-pro"],"root":"./markdownsFiles","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"Kent","title":"《知行，行知》"},"tbfed-pagefooter":{"copyright":"Copyright &copy ershouche-FE 2019","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"disqus":{"shortName":"gitbookuse"},"splitter":{},"search-pro":{},"accordion":{},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":200000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"pageview-count":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bookname":"笔记","variables":{},"title":"Kent的博客","gitbook":"*"},"file":{"path":"coding/Andriod/WatchDog.md","mtime":"2023-11-02T17:15:58.851Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-11-02T17:16:10.731Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
