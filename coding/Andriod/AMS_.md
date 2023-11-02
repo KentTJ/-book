@@ -168,23 +168,17 @@ SystemServiceManager忽略掉，~~只是SystemServer  startService功能的抽�
 
 
 
-# AMS启动流程
-
-
+# 初始化---AMS启动流程
 
 都是在SystemServer中，通过SytemServiceManager启动的   -----> 见系统启动流程
 
 
 
-
-
-
+具体函数级别分析，见： https://gityuan.com/2016/02/21/activity-manager-service/   -------> TODO：暂时允许，各种函数分析，来自链接？
 
 # AMS 启动APP startActivity
 
-
-
-见应用启动流程
+见，应用启动流程
 
 # AMS<font color='red'>模块</font>做了哪些事情
 
@@ -194,11 +188,8 @@ SystemServiceManager忽略掉，~~只是SystemServer  startService功能的抽�
 
 1、IActivityManager接口：  引用 AMS的Binder
 
-```
-       具体做了：比如：
-```
-
 ```java
+具体做了：比如：
 attachApplication  //塞App的binder给AMS    
 startActivity   // 启动一个Actvity      finishActivity
 startService    //                     stopService\ bindService

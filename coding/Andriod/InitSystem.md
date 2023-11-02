@@ -1139,12 +1139,18 @@ mServices.add(service);
 
 
 为啥一定要用反射呢？   TODO
-可能原因：1、有90个服务，依赖太多，可能编译有问题，所以统一用反射？
+
+可能原因：
+
+> 1、有90个服务，依赖太多，<font color='red'>规避依赖那么多服务类，所以统一用反射</font>？
+>
+> 2、<font color='red'>代码结构上更简洁 </font>  --------------   统一，类似于各种控件的反射创建：  否则得各种new A1()； new A2()
 
 
 
 疑问：
-AMS、ATMS启动了，但是启动线程是在哪里可以看出来的？
+
+> AMS、ATMS启动了，但是启动线程是在哪里可以看出来的？-----------> 见《binder线程池》
 
 
 
@@ -1229,6 +1235,8 @@ AMS<font color='red'>管理各个应用</font>进程，所以由其注册的相�
                 updateOomAdjLocked(OomAdjuster.OOM_ADJ_REASON_NONE);
             }
 ```
+
+
 
 
 
