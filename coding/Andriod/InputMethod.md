@@ -727,4 +727,10 @@ getImePolicyLocked时：
 
 
 
+# 疑问 TODO
+
+输入法窗口，应该是永远没法 获取   窗口焦点的（<font color='red'>只能触摸，不能被输入</font>）  ------>  代码的证明
+
+
+
 # 维测
