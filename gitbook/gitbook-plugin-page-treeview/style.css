@@ -39,7 +39,7 @@
     /* add by cg start*/
     position: fixed;
     text-align: left;
-    z-index: -1;  /* add by cg： 999是最高Z轴配置*/
+    z-index: 2;  /* add by cg： 999是最高Z轴配置*/
     left: 1400px;  /* cg注释： 1vh = 1% 这里没有用 vh作为单位，因为手机上屏幕太小，希望手机上不显示*/
     top: 30px;
     height:70vh;  /* 1vh = 1% viewport height  https://blog.csdn.net/ghvjhfjf/article/details/122369878 */
