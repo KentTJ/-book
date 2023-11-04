@@ -12,10 +12,10 @@
 
 推荐使用：
 
-| 录屏软件               | EV录屏           |      |      |
+| 功能：                 | 软件：           |      |      |
 | ---------------------- | ---------------- | ---- | ---- |
 | 事件分发/事件驱动 软件 | 时光序，桌面日历 |      |      |
-|                        |                  |      |      |
+| 录屏                   | EV录屏           |      |      |
 |                        |                  |      |      |
 
 
@@ -630,22 +630,22 @@ Any content here
 >
 > ```java
 > .treeview__container {
-> 	/* position: relative;   changed by cg */
-> 	margin-bottom: 80px;
-> 	padding-bottom: 20px;
+>     /* position: relative;   changed by cg */
+>     margin-bottom: 80px;
+>     padding-bottom: 20px;
 > 
-> 	/* add by cg start*/
-> 	position: fixed;
-> 	text-align: left;
-> 	z-index: 0;  /* add by cg： 999是最高Z轴配置*/
-> 	left: 1400px;  /* cg注释： 1vh = 1% 这里没有用 vh作为单位，因为手机上屏幕太小，希望手机上不显示*/
->     top: 30px;
->     overflow-y: auto;
-> 	height:70vh;  /* 1vh = 1% viewport height  https://blog.csdn.net/ghvjhfjf/article/details/122369878 */
-> 	width:200vh;  /* 这里保证滚动条位置超出页面：为了不遮挡 主页面滚动条 */
+>     /* add by cg start*/
+>     position: fixed;
+>     text-align: left;
+>     z-index: 0;  /* add by cg： 999是最高Z轴配置*/
+>     left: 1400px;  /* cg注释： 1vh = 1% 这里没有用 vh作为单位，因为手机上屏幕太小，希望手机上不显示*/
+>        top: 30px;
+>        height:70vh;  /* 1vh = 1% viewport height  https://blog.csdn.net/ghvjhfjf/article/details/122369878 */
+>     width:55vh;  /*  */
 >     overflow-x: auto;
-> 	font-size: 14px;
-> 	/* add by cg end*/
+>        overflow-y: auto;
+>     font-size: 13px;
+>     /* add by cg end*/
 > }
 > ```
 
