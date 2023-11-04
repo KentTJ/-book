@@ -287,23 +287,25 @@ https://source.android.google.cn/docs/core/display/multi_display/displays?authus
 难点：IMMS的对外依赖
 IMMS的依赖：
 
-	ActivityManager              ----> 忽略
-	ActivityManagerInternal      ----> 忽略
-	mIPackageManager  ----> 唯一，可以忽略
-	PackageManager  ----> 唯一，可以忽略
-	PackageManagerInternal  ----> 唯一，可以忽略
-	ResolveInfo   ----> 忽略
-	ServiceInfo   ----> 忽略
-	AudioManagerInternal mAudioManagerInternal  ----> 忽略
-	KeyguardManager mKeyguardManager   ----> 忽略
-	StatusBarManagerService mStatusBa  ----> 忽略 
-	InputManagerInternal  ------>忽略
-	InputMethodService ------>忽略，都是引用常量
-	InputMethodSettings mSettings;  -----> 这个依赖比较深，设置方面的 +  userId
-	userId = ActivityManager.getService().getCurrentUser().id; ----->有疑问：如果是双开，那么IMMS获取的是啥？
-	updateCurrentProfileIds
-	UserManager mUserManager;   -----> 使用了UserId，需注意
-	UserManagerInternal mUserManagerInternal  ---->  使用了UserId，需注意
+```java
+ActivityManager              ----> 忽略
+ActivityManagerInternal      ----> 忽略
+mIPackageManager  ----> 唯一，可以忽略
+PackageManager  ----> 唯一，可以忽略
+PackageManagerInternal  ----> 唯一，可以忽略
+ResolveInfo   ----> 忽略
+ServiceInfo   ----> 忽略
+AudioManagerInternal mAudioManagerInternal  ----> 忽略
+KeyguardManager mKeyguardManager   ----> 忽略
+StatusBarManagerService mStatusBa  ----> 忽略 
+InputManagerInternal  ------>忽略
+InputMethodService ------>忽略，都是引用常量
+InputMethodSettings mSettings;  -----> 这个依赖比较深，设置方面的 +  userId
+userId = ActivityManager.getService().getCurrentUser().id; ----->有疑问：如果是双开，那么IMMS获取的是啥？
+updateCurrentProfileIds
+UserManager mUserManager;   -----> 使用了UserId，需注意
+UserManagerInternal mUserManagerInternal  ---->  使用了UserId，需注意
+```
 
 
 
