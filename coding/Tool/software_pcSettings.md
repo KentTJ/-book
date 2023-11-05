@@ -771,6 +771,26 @@ https://www.jianshu.com/p/4471c20fbafe  Gitbook使用教程
 
 
 
+### 优化之  文件的总目录
+
+md文件总目录：   ------->  <font color='red'>实现文件间的跳转</font>
+
+> 自动生成的Summary.md文件  
+>
+> ![image-20231105234938142](software_pcSettings.assets/image-20231105234938142.png)
+
+网页文件总目录： ------->  <font color='red'>网页文件间的跳转</font>
+
+> ![image-20231105235107276](software_pcSettings.assets/image-20231105235107276.png)
+>
+> 方法：
+>
+> >  网页的根，是根目录的README.md文件
+> >
+> > ​          ----------->  所以，SUMMARY.md再复制一份，变为   README.md
+
+
+
 
 
 
