@@ -1482,6 +1482,18 @@ Drawable  ----》 可以画的对象
 
 
 
+## import  函数
+
+```java
+//OomAdjuster.java： 
+import static android.os.Process.setThreadPriority;   
+
+//直接使用
+setThreadPriority(app.getPid(), THREAD_PRIORITY_TOP_APP_BOOST);
+```
+
+java可以import类的方法名------->  **感觉必须是静态方法**（否则没有意义）
+
 
 
 # JNI

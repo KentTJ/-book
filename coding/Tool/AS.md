@@ -122,7 +122,7 @@ https://birkhoffg.github.io/blog/posts/how-to-committing-code-using-intellij-ide
 
 此文件非常重要，必须关注。作用：
 
-1、跳转优先级配置。有时候优先跳转到jar或者class里，优先配置到source folder
+1、<font color='red'>跳转优先级配置。</font>有时候优先跳转到jar或者class里，优先配置到source folder
 
 2、在这里增加源码？？？？其他盘里的
 
@@ -130,7 +130,11 @@ https://birkhoffg.github.io/blog/posts/how-to-committing-code-using-intellij-ide
 
 **iml文件来源：**
 
-由gradle编译而来，gradle才是根
+> 1、设置中勾选
+>
+> ![image-20231105231219165](AS.assets/image-20231105231219165.png)
+>
+> 2、由gradle编译而来，gradle才是根
 
 
 

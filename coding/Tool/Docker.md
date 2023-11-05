@@ -505,15 +505,7 @@ RUN set -x; buildDeps='gcc libc6-dev make wget' \
 
 
 
-### docker puase
 
-```
-docker pause/unpause <container-id>
-```
-
-不用时，docker puase  ---> sleep所有进程
-
------->极大的降低CPU使用率
 
 ### Docker 容器连接的优化：
 
@@ -662,6 +654,18 @@ C:\Users\xixi>docker load -i  F:\VirtualMachine\Docker\ubuntu.tar
 
 
 对应设置界面：
+
+
+
+## CPU使用率优化 **docker pause**
+
+```
+docker pause/unpause <container-id>
+```
+
+不用时，docker puase  ---> sleep 容器内所有进程
+
+------> 极大的降低CPU使用率
 
 
 
@@ -916,6 +920,10 @@ docker容器内文件系统过大表现：
 > ​                                     a. squash压缩得到一个新的独立镜像 ------>  <font color='red'>因为独立，可以删除其他所有镜像</font>
 >
 > ​                                     b. docker system prune 清除缓存
+>
+> ​      -<font color='red'>技巧：</font>
+>
+> > ​     先删除大文件，比如aosp，然后docker system prune 清除缓存
 
 
 
