@@ -104,7 +104,7 @@ https://www.eet-china.com/mp/a178945.html          [**![img](Graphic.assets/avat
 
 
 
-
+# ===安卓源码分析=====
 
 
 
@@ -902,7 +902,11 @@ https://www.cnblogs.com/CreateLight/archive/2012/07/04/2575401.html
 
 
 
-### 硬件加速（GPU） 与 ~~软件加速(CPU)~~
+### 渲染------硬件加速（GPU） 与 ~~软件加速(CPU)~~
+
+详细参考： https://zhuanlan.zhihu.com/p/464492155     Android GPU硬件加速渲染流程（上）  TODO：  好文
+
+
 
 1、本身没有软件加速这一概念。
 
@@ -914,22 +918,33 @@ https://www.cnblogs.com/CreateLight/archive/2012/07/04/2575401.html
 
 
 
-代码中的分歧点：
+**代码中的分歧点：**
 
-```java
-//ViewRootImpl.java
-performTraversals
-    relayoutWindow
-    performMeasure
-    performLayout
-    performDraw
-```
+> ```java
+> //ViewRootImpl.java
+> performTraversals
+>     relayoutWindow
+>     performMeasure
+>     performLayout
+>     performDraw
+>          ----> draw  //draw流程
+> ```
+>
+> 
+>
+> ![img](Graphic.assets/v2-2d0c795406f2c6512c5c89283f5ae5d7_r.jpg)
+>
+> ![img](Graphic.assets/v2-d79e3770ca812f74fa7a6a16339fa1e9_720w.webp)
+>
+> 注意：这里是**NativeWindow, 当年Z 也是**。  但没见Z有软件绘制
 
 
 
+其中，软件绘制流程：
 
-
-TODO: 对应代码的开关在哪里？
+> ![img](Graphic.assets/v2-d2c6ef5f6584cf0708ab4f59e7bcbca7_r.jpg)
+>
+> ![img](Graphic.assets/v2-0f4ffdf53bc8772520bb350b2dd26c2c_720w.webp)
 
 
 
@@ -941,9 +956,11 @@ https://baijiahao.baidu.com/s?id=1709178794607037191&wfr=spider&for=pc  深度�
 
 
 
+https://zhuanlan.zhihu.com/p/464492155   
 
 
-### 硬件合成(HWC)  与  软件合成
+
+### 合成-------硬件合成(HWC)  与  软件合成
 
 
 
