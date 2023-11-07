@@ -1,0 +1,1837 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>内存 · Kent的博客</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-treeview/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-sidebar-style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-click-reveal/click_reveal.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="后台杀进程.html" />
+    
+    
+    <link rel="prev" href="WMS.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Coding
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Andriod
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="AMS_.html">
+            
+                <a href="AMS_.html">
+            
+                    
+                    AMS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="AndriodIPC.html">
+            
+                <a href="AndriodIPC.html">
+            
+                    
+                    Andriod IPC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="AndriodSystem.html">
+            
+                <a href="AndriodSystem.html">
+            
+                    
+                    Andriod System
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="ANR_crash.html">
+            
+                <a href="ANR_crash.html">
+            
+                    
+                    ANR Crash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="Graphic.html">
+            
+                <a href="Graphic.html">
+            
+                    
+                    Graphic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="InitSystem.html">
+            
+                <a href="InitSystem.html">
+            
+                    
+                    Init System
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="Input.html">
+            
+                <a href="Input.html">
+            
+                    
+                    Input
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8" data-path="InputMethod.html">
+            
+                <a href="InputMethod.html">
+            
+                    
+                    Input Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.9" data-path="multi-client-ime.html">
+            
+                <a href="multi-client-ime.html">
+            
+                    
+                    Multi Client Ime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.10" data-path="permissions.html">
+            
+                <a href="permissions.html">
+            
+                    
+                    Permissions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.11" data-path="startAPP.html">
+            
+                <a href="startAPP.html">
+            
+                    
+                    Start APP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.12" data-path="Systrace.html">
+            
+                <a href="Systrace.html">
+            
+                    
+                    Systrace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.13" data-path="WatchDog.html">
+            
+                <a href="WatchDog.html">
+            
+                    
+                    Watch Dog
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.14" data-path="wms_animination.html">
+            
+                <a href="wms_animination.html">
+            
+                    
+                    Wms Animination
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.15" data-path="WMS.html">
+            
+                <a href="WMS.html">
+            
+                    
+                    WMS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.1.16" data-path="内存.html">
+            
+                <a href="内存.html">
+            
+                    
+                    内存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.17" data-path="后台杀进程.html">
+            
+                <a href="后台杀进程.html">
+            
+                    
+                    后台杀进程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.18" data-path="无障碍_.html">
+            
+                <a href="无障碍_.html">
+            
+                    
+                    无障碍_
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.19" data-path="杀进程原理.html">
+            
+                <a href="杀进程原理.html">
+            
+                    
+                    杀进程原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.20" data-path="稳定性_性能问题.html">
+            
+                <a href="稳定性_性能问题.html">
+            
+                    
+                    稳定性_性能问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.21" data-path="线程间通信.html">
+            
+                <a href="线程间通信.html">
+            
+                    
+                    线程间通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.22" data-path="进程管理.html">
+            
+                <a href="进程管理.html">
+            
+                    
+                    进程管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../AndriodCar/">
+            
+                <a href="../AndriodCar/">
+            
+                    
+                    Andriod Car
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../AndriodCar/CarService.html">
+            
+                <a href="../AndriodCar/CarService.html">
+            
+                    
+                    Car Service
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../App/">
+            
+                <a href="../App/">
+            
+                    
+                    App
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../App/APK_64bit_32bit.html">
+            
+                <a href="../App/APK_64bit_32bit.html">
+            
+                    
+                    APK 64 Bit 32 Bit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../App/launcher3.html">
+            
+                <a href="../App/launcher3.html">
+            
+                    
+                    Launcher 3
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../CodingLanguage/">
+            
+                <a href="../CodingLanguage/">
+            
+                    
+                    Coding Language
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../CodingLanguage/c_cpp_java.html">
+            
+                <a href="../CodingLanguage/c_cpp_java.html">
+            
+                    
+                    C Cpp Java
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../CodingLanguage/js.html">
+            
+                <a href="../CodingLanguage/js.html">
+            
+                    
+                    Js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../CodingLanguage/R.html">
+            
+                <a href="../CodingLanguage/R.html">
+            
+                    
+                    R
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../computorBase/">
+            
+                <a href="../computorBase/">
+            
+                    
+                    Computor Base
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../computorBase/DesignPattern.html">
+            
+                <a href="../computorBase/DesignPattern.html">
+            
+                    
+                    Design Pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="../computorBase/HowToReadCode.html">
+            
+                <a href="../computorBase/HowToReadCode.html">
+            
+                    
+                    How To Read Code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="../computorBase/HowWritecode.html">
+            
+                <a href="../computorBase/HowWritecode.html">
+            
+                    
+                    How Writecode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.4" data-path="../computorBase/linux.html">
+            
+                <a href="../computorBase/linux.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.5" data-path="../computorBase/OperateSysTem.html">
+            
+                <a href="../computorBase/OperateSysTem.html">
+            
+                    
+                    Operate Sys Tem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.6" data-path="../computorBase/refactor.html">
+            
+                <a href="../computorBase/refactor.html">
+            
+                    
+                    Refactor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.7" data-path="../computorBase/解耦.html">
+            
+                <a href="../computorBase/解耦.html">
+            
+                    
+                    解耦
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../Tool/">
+            
+                <a href="../Tool/">
+            
+                    
+                    Tool
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="../Tool/aospBuilding.html">
+            
+                <a href="../Tool/aospBuilding.html">
+            
+                    
+                    Aosp Building
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" data-path="../Tool/AS.html">
+            
+                <a href="../Tool/AS.html">
+            
+                    
+                    AS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.3" data-path="../Tool/building.html">
+            
+                <a href="../Tool/building.html">
+            
+                    
+                    Building
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.4" data-path="../Tool/chroot.html">
+            
+                <a href="../Tool/chroot.html">
+            
+                    
+                    Chroot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.5" data-path="../Tool/clion.html">
+            
+                <a href="../Tool/clion.html">
+            
+                    
+                    Clion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.6" data-path="../Tool/command.html">
+            
+                <a href="../Tool/command.html">
+            
+                    
+                    Command
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.7" data-path="../Tool/debugSkills.html">
+            
+                <a href="../Tool/debugSkills.html">
+            
+                    
+                    Debug Skills
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.8" data-path="../Tool/Docker.html">
+            
+                <a href="../Tool/Docker.html">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.9" data-path="../Tool/git.html">
+            
+                <a href="../Tool/git.html">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.10" data-path="../Tool/phoneCommand.html">
+            
+                <a href="../Tool/phoneCommand.html">
+            
+                    
+                    Phone Command
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.11" data-path="../Tool/software_pcSettings.html">
+            
+                <a href="../Tool/software_pcSettings.html">
+            
+                    
+                    Software Pc Settings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.12" data-path="../Tool/sourceInsight.html">
+            
+                <a href="../Tool/sourceInsight.html">
+            
+                    
+                    Source Insight
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.13" data-path="../Tool/tmux_linux.html">
+            
+                <a href="../Tool/tmux_linux.html">
+            
+                    
+                    Tmux Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.14" data-path="../Tool/virtualStudioCode.html">
+            
+                <a href="../Tool/virtualStudioCode.html">
+            
+                    
+                    Virtual Studio Code
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../English/English.html">
+            
+                <a href="../../English/English.html">
+            
+                    
+                    English
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../Investment/Investment.html">
+            
+                <a href="../../Investment/Investment.html">
+            
+                    
+                    Investment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../Naturalaw/">
+            
+                <a href="../../Naturalaw/">
+            
+                    
+                    Naturalaw
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../Naturalaw/ReadingAndThinking.html">
+            
+                <a href="../../Naturalaw/ReadingAndThinking.html">
+            
+                    
+                    Reading And Thinking
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../Naturalaw/修.html">
+            
+                <a href="../../Naturalaw/修.html">
+            
+                    
+                    修
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../Scriptures/">
+            
+                <a href="../../Scriptures/">
+            
+                    
+                    Scriptures
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../Scriptures/金刚经.html">
+            
+                <a href="../../Scriptures/金刚经.html">
+            
+                    
+                    金刚经
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../CheckList.html">
+            
+                <a href="../../CheckList.html">
+            
+                    
+                    Check List
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >内存</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x5E94;&#x7528;&#x89D2;&#x5EA6;&#xFF1A;&#x5E94;&#x7528;&#x7684;&#x5185;&#x5B58;&#x5206;&#x914D;&#x539F;&#x7406;&#x4E0E;&#x4F18;&#x5316;"><b>1. </b>&#x5E94;&#x7528;&#x89D2;&#x5EA6;&#xFF1A;&#x5E94;&#x7528;&#x7684;&#x5185;&#x5B58;&#x5206;&#x914D;&#x539F;&#x7406;&#x4E0E;&#x4F18;&#x5316;</a></li><ul><li><span class="title-icon "></span><a href="#&#x7EF4;&#x6D4B;&#xFF1A;dumpsys-meminfo-pid&#x8FDB;&#x7A0B;&#x540D;"><b>1.1. </b>&#x7EF4;&#x6D4B;&#xFF1A;dumpsys meminfo [PID]/&#x8FDB;&#x7A0B;&#x540D;</a></li><li><span class="title-icon "></span><a href="#&#x57FA;&#x7840;&#x77E5;&#x8BC6;&#xFF1A;"><b>1.2. </b>&#x57FA;&#x7840;&#x77E5;&#x8BC6;&#xFF1A;</a></li><ul><li><span class="title-icon "></span><a href="#&#x8FDB;&#x7A0B;&#x7684;&#x5185;&#x5B58;&#x5360;&#x7528;&#x5206;&#x4E3A;&#x4E24;&#x7C7B;&#xFF1A;"><b>1.2.1. </b>&#x8FDB;&#x7A0B;&#x7684;&#x5185;&#x5B58;&#x5360;&#x7528;&#x5206;&#x4E3A;&#x4E24;&#x7C7B;&#xFF1A;</a></li><li><span class="title-icon "></span><a href="#overcommit&#x673A;&#x5236;&#xFF1A;"><b>1.2.2. </b>Overcommit&#x673A;&#x5236;&#xFF1A;</a></li><li><span class="title-icon "></span><a href="#&#x4F4E;&#x5185;&#x5B58;&#x4E0B;&#x7684;&#x7CFB;&#x7EDF;&#x56DE;&#x6536;&#x673A;&#x5236;&#xFF08;&#x5B89;&#x5353;&#x673A;&#x5236;&#xFF09;"><b>1.2.3. </b>&#x4F4E;&#x5185;&#x5B58;&#x4E0B;&#x7684;&#x7CFB;&#x7EDF;&#x56DE;&#x6536;&#x673A;&#x5236;&#xFF08;&#x5B89;&#x5353;&#x673A;&#x5236;&#xFF09;</a></li></ul></ul><li><span class="title-icon "></span><a href="#&#x7CFB;&#x7EDF;&#x89D2;&#x5EA6;&#xFF1A;&#x5E38;&#x9A7B;&#x5E94;&#x7528;&#x4E0E;&#x540E;&#x53F0;&#x670D;&#x52A1;"><b>2. </b>&#x7CFB;&#x7EDF;&#x89D2;&#x5EA6;&#xFF1A;&#x5E38;&#x9A7B;&#x5E94;&#x7528;&#x4E0E;&#x540E;&#x53F0;&#x670D;&#x52A1;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5B89;&#x5353;&#x7CFB;&#x7EDF;&#x5185;&#x5B58;&#x5206;&#x5E03;"><b>2.1. </b>&#x5B89;&#x5353;&#x7CFB;&#x7EDF;&#x5185;&#x5B58;&#x5206;&#x5E03;</a></li><li><span class="title-icon "></span><a href="#&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#xFF1A;&#x4E00;&#x79CD;&#x6781;&#x81F4;&#x7684;&#x7CFB;&#x7EDF;&#x8BBE;&#x8BA1;"><b>2.2. </b>&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#xFF1A;&#x4E00;&#x79CD;&#x6781;&#x81F4;&#x7684;&#x7CFB;&#x7EDF;&#x8BBE;&#x8BA1;</a></li><li><span class="title-icon "></span><a href="#&#x5E38;&#x9A7B;&#x5E94;&#x7528;-&#x4E0E;-free-memory&#x7684;&#x535A;&#x5F08;---lmk"><b>2.3. </b>&#x5E38;&#x9A7B;&#x5E94;&#x7528; &#x4E0E; free Memory&#x7684;&#x535A;&#x5F08;---LMK</a></li><ul><li><span class="title-icon "></span><a href="#&#x4E34;&#x65F6;&#x6269;&#x5C55;&#xFF1A;&#x5893;&#x7891;&#xFF08;tombstone&#xFF09;&#x673A;&#x5236;"><b>2.3.1. </b>&#x4E34;&#x65F6;&#x6269;&#x5C55;&#xFF1A;&#x5893;&#x7891;&#xFF08;Tombstone&#xFF09;&#x673A;&#x5236;</a></li><li><span class="title-icon "></span><a href="#&#x4E34;&#x65F6;&#x6269;&#x5C55;&#xFF1A;q-&#x5185;&#x5B58;&#x6E05;&#x7406;-&#x4E00;&#x952E;&#x52A0;&#x901F;-&#x80FD;&#x63D0;&#x5347;&#x6027;&#x80FD;&#x561B;"><b>2.3.2. </b>&#x4E34;&#x65F6;&#x6269;&#x5C55;&#xFF1A;Q: &#x5185;&#x5B58;&#x6E05;&#x7406; (&#x4E00;&#x952E;&#x52A0;&#x901F;) &#x80FD;&#x63D0;&#x5347;&#x6027;&#x80FD;&#x561B;</a></li><li><span class="title-icon "></span><a href="#oom-score-adj&#xFF1A;lmk-&#x53C2;&#x8003;&#x7684;&#x8FDB;&#x7A0B;&#x91CD;&#x8981;&#x6027;"><b>2.3.3. </b>OOM SCORE ADJ&#xFF1A;LMK &#x53C2;&#x8003;&#x7684;&#x8FDB;&#x7A0B;&#x91CD;&#x8981;&#x6027;</a></li><li><span class="title-icon "></span><a href="#&#x6B21;&#x8981;&#xFF1A;-activity-manager-&#x6307;&#x6D3E;-oomscoreadj-&#x7684;&#x7279;&#x6B8A;&#x89C4;&#x5219;"><b>2.3.4. </b>&#x6B21;&#x8981;&#xFF1A; Activity Manager &#x6307;&#x6D3E; OOM_SCORE_ADJ &#x7684;&#x7279;&#x6B8A;&#x89C4;&#x5219;</a></li><li><span class="title-icon "></span><a href="#q-&#x7CFB;&#x7EDF;&#x4F55;&#x65F6;&#x56E0;&#x4E3A;&#x5185;&#x5B58;&#x538B;&#x529B;&#x9AD8;&#x800C;&#x5361;&#x987F;"><b>2.3.5. </b>Q: &#x7CFB;&#x7EDF;&#x4F55;&#x65F6;&#x56E0;&#x4E3A;&#x5185;&#x5B58;&#x538B;&#x529B;&#x9AD8;&#x800C;&#x5361;&#x987F;</a></li><li><span class="title-icon "></span><a href="#&#x7EF4;&#x6D4B;"><b>2.3.6. </b>&#x7EF4;&#x6D4B;</a></li></ul></ul></ul></div><a href="#&#x5E94;&#x7528;&#x89D2;&#x5EA6;&#xFF1A;&#x5E94;&#x7528;&#x7684;&#x5185;&#x5B58;&#x5206;&#x914D;&#x539F;&#x7406;&#x4E0E;&#x4F18;&#x5316;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><div class="treeview__container"><ul>
+<li> 
+<ul>
+<li><div><a href="#&#x7EF4;&#x6D4B;&#xFF1A;dumpsys-meminfo-pid&#x8FDB;&#x7A0B;&#x540D;">&#x7EF4;&#x6D4B;&#xFF1A;dumpsys meminfo [PID]/&#x8FDB;&#x7A0B;&#x540D;</a><i></i></div></li>
+<li><div><a href="#&#x57FA;&#x7840;&#x77E5;&#x8BC6;&#xFF1A;">&#x57FA;&#x7840;&#x77E5;&#x8BC6;&#xFF1A;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#&#x8FDB;&#x7A0B;&#x7684;&#x5185;&#x5B58;&#x5360;&#x7528;&#x5206;&#x4E3A;&#x4E24;&#x7C7B;&#xFF1A;">&#x8FDB;&#x7A0B;&#x7684;&#x5185;&#x5B58;&#x5360;&#x7528;&#x5206;&#x4E3A;&#x4E24;&#x7C7B;&#xFF1A;</a><i></i></div></li>
+<li><div><a href="#overcommit&#x673A;&#x5236;&#xFF1A;">Overcommit&#x673A;&#x5236;&#xFF1A;</a><i></i></div></li>
+<li><div><a href="#&#x4F4E;&#x5185;&#x5B58;&#x4E0B;&#x7684;&#x7CFB;&#x7EDF;&#x56DE;&#x6536;&#x673A;&#x5236;&#xFF08;&#x5B89;&#x5353;&#x673A;&#x5236;&#xFF09;">&#x4F4E;&#x5185;&#x5B58;&#x4E0B;&#x7684;&#x7CFB;&#x7EDF;&#x56DE;&#x6536;&#x673A;&#x5236;&#xFF08;&#x5B89;&#x5353;&#x673A;&#x5236;&#xFF09;</a><i></i></div></li>
+</ul></li>
+</ul></li>
+<li><div><a href="#&#x7CFB;&#x7EDF;&#x89D2;&#x5EA6;&#xFF1A;&#x5E38;&#x9A7B;&#x5E94;&#x7528;&#x4E0E;&#x540E;&#x53F0;&#x670D;&#x52A1;">&#x7CFB;&#x7EDF;&#x89D2;&#x5EA6;&#xFF1A;&#x5E38;&#x9A7B;&#x5E94;&#x7528;&#x4E0E;&#x540E;&#x53F0;&#x670D;&#x52A1;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#&#x5B89;&#x5353;&#x7CFB;&#x7EDF;&#x5185;&#x5B58;&#x5206;&#x5E03;">&#x5B89;&#x5353;&#x7CFB;&#x7EDF;&#x5185;&#x5B58;&#x5206;&#x5E03;</a><i></i></div></li>
+<li><div><a href="#&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#xFF1A;&#x4E00;&#x79CD;&#x6781;&#x81F4;&#x7684;&#x7CFB;&#x7EDF;&#x8BBE;&#x8BA1;">&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#xFF1A;&#x4E00;&#x79CD;&#x6781;&#x81F4;&#x7684;&#x7CFB;&#x7EDF;&#x8BBE;&#x8BA1;</a><i></i></div></li>
+<li><div><a href="#&#x5E38;&#x9A7B;&#x5E94;&#x7528;-&#x4E0E;-free-memory&#x7684;&#x535A;&#x5F08;---lmk">&#x5E38;&#x9A7B;&#x5E94;&#x7528; &#x4E0E; free Memory&#x7684;&#x535A;&#x5F08;---LMK</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#&#x4E34;&#x65F6;&#x6269;&#x5C55;&#xFF1A;&#x5893;&#x7891;&#xFF08;tombstone&#xFF09;&#x673A;&#x5236;">&#x4E34;&#x65F6;&#x6269;&#x5C55;&#xFF1A;&#x5893;&#x7891;&#xFF08;Tombstone&#xFF09;&#x673A;&#x5236;</a><i></i></div></li>
+<li><div><a href="#&#x4E34;&#x65F6;&#x6269;&#x5C55;&#xFF1A;q-&#x5185;&#x5B58;&#x6E05;&#x7406;-&#x4E00;&#x952E;&#x52A0;&#x901F;-&#x80FD;&#x63D0;&#x5347;&#x6027;&#x80FD;&#x561B;">&#x4E34;&#x65F6;&#x6269;&#x5C55;&#xFF1A;Q: &#x5185;&#x5B58;&#x6E05;&#x7406; (&#x4E00;&#x952E;&#x52A0;&#x901F;) &#x80FD;&#x63D0;&#x5347;&#x6027;&#x80FD;&#x561B;</a><i></i></div></li>
+<li><div><a href="#oom-score-adj&#xFF1A;lmk-&#x53C2;&#x8003;&#x7684;&#x8FDB;&#x7A0B;&#x91CD;&#x8981;&#x6027;">OOM SCORE ADJ&#xFF1A;LMK &#x53C2;&#x8003;&#x7684;&#x8FDB;&#x7A0B;&#x91CD;&#x8981;&#x6027;</a><i></i></div></li>
+<li><div><a href="#&#x6B21;&#x8981;&#xFF1A;-activity-manager-&#x6307;&#x6D3E;-oomscoreadj-&#x7684;&#x7279;&#x6B8A;&#x89C4;&#x5219;">&#x6B21;&#x8981;&#xFF1A; Activity Manager &#x6307;&#x6D3E; OOM_SCORE_ADJ &#x7684;&#x7279;&#x6B8A;&#x89C4;&#x5219;</a><i></i></div></li>
+<li><div><a href="#q-&#x7CFB;&#x7EDF;&#x4F55;&#x65F6;&#x56E0;&#x4E3A;&#x5185;&#x5B58;&#x538B;&#x529B;&#x9AD8;&#x800C;&#x5361;&#x987F;">Q: &#x7CFB;&#x7EDF;&#x4F55;&#x65F6;&#x56E0;&#x4E3A;&#x5185;&#x5B58;&#x538B;&#x529B;&#x9AD8;&#x800C;&#x5361;&#x987F;</a><i></i></div></li>
+<li><div><a href="#&#x7EF4;&#x6D4B;">&#x7EF4;&#x6D4B;</a><i></i></div></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+
+<h1 id="&#x5E94;&#x7528;&#x89D2;&#x5EA6;&#xFF1A;&#x5E94;&#x7528;&#x7684;&#x5185;&#x5B58;&#x5206;&#x914D;&#x539F;&#x7406;&#x4E0E;&#x4F18;&#x5316;"><a name="&#x5E94;&#x7528;&#x89D2;&#x5EA6;&#xFF1A;&#x5E94;&#x7528;&#x7684;&#x5185;&#x5B58;&#x5206;&#x914D;&#x539F;&#x7406;&#x4E0E;&#x4F18;&#x5316;" class="anchor-navigation-ex-anchor" href="#&#x5E94;&#x7528;&#x89D2;&#x5EA6;&#xFF1A;&#x5E94;&#x7528;&#x7684;&#x5185;&#x5B58;&#x5206;&#x914D;&#x539F;&#x7406;&#x4E0E;&#x4F18;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x5E94;&#x7528;&#x89D2;&#x5EA6;&#xFF1A;&#x5E94;&#x7528;&#x7684;&#x5185;&#x5B58;&#x5206;&#x914D;&#x539F;&#x7406;&#x4E0E;&#x4F18;&#x5316;</h1>
+<h2 id="&#x7EF4;&#x6D4B;&#xFF1A;dumpsys-meminfo-pid&#x8FDB;&#x7A0B;&#x540D;"><a name="&#x7EF4;&#x6D4B;&#xFF1A;dumpsys-meminfo-pid&#x8FDB;&#x7A0B;&#x540D;" class="anchor-navigation-ex-anchor" href="#&#x7EF4;&#x6D4B;&#xFF1A;dumpsys-meminfo-pid&#x8FDB;&#x7A0B;&#x540D;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x7EF4;&#x6D4B;&#xFF1A;dumpsys meminfo [PID]/&#x8FDB;&#x7A0B;&#x540D;</h2>
+<pre><code class="lang-java"> P13_5G:/ # dumpsys meminfo com.android.settings
+ Applications Memory Usage (in Kilobytes):
+ Uptime: 1051158931 Realtime: 1051158931
+
+ ** MEMINFO in pid 23721 [com.android.settings] **
+                    Pss  Private  Private  SwapPss      Rss     Heap     Heap     Heap
+                  Total    Dirty    Clean    Dirty    Total     Size    Alloc     Free
+                 ------   ------   ------   ------   ------   ------   ------   ------
+   Native Heap     9349     9328        0     8470     9648    33840    17957     6181
+   Dalvik Heap     5896     5864        0      276     6144     9741     4871     4870
+  Dalvik Other     2091     1428        0       50     3056
+         Stack      548      548        0      320      552
+        Ashmem        8        0        0        0       28
+     Other dev       32        0       20        0     1016
+      .so mmap     6612      248       52        0    51320
+     .jar mmap     1524        0        0        0    31236
+     .apk mmap     8612        0     5872        0    30792
+     .ttf mmap       70        0        4        0      428
+     .dex mmap      206       12      188        0      356
+     .oat mmap     1388        0       80        0    13284
+     .art mmap     2065     1324        4      572     9552
+    Other mmap     1323       28       48        0     8080
+    EGL mtrack     3780     3780        0        0     3780
+     GL mtrack     5560     5560        0        0     5560
+       Unknown      299      296        0      337      360
+         TOTAL    59388    28416     6268    10025    59388    43581    22828    11051
+
+  App Summary
+                        Pss(KB)                        Rss(KB)
+                         ------                         ------
+            Java Heap:     7192                          15696
+          Native Heap:     9328                           9648
+                 Code:     6460                         128744
+                Stack:      548                            552
+             Graphics:     9340                           9340
+        Private Other:     1816
+               System:    24704
+              Unknown:                                   11212
+
+            TOTAL PSS:    59388            TOTAL RSS:   175192       TOTAL SWAP PSS:    10025
+
+  Objects
+                Views:      288         ViewRootImpl:        1
+          AppContexts:       12           Activities:        4
+               Assets:        7        AssetManagers:        0
+        Local Binders:       63        Proxy Binders:       68
+        Parcel memory:      345         Parcel count:       76
+     Death Recipients:       10      OpenSSL Sockets:        0
+             WebViews:        0
+
+  SQL
+          MEMORY_USED:        0
+   PAGECACHE_OVERFLOW:        0          MALLOC_SIZE:        0
+</code></pre>
+<p>&#x5173;&#x6CE8;Pss &#x4E0E; Swap</p>
+<p>&#x5728;ART/Dalvik &#x865A;&#x62DF;&#x673A;&#x63A5;&#x53E3;&#xFF1A;</p>
+<blockquote>
+<pre><code class="lang-java"> / Returns the maximum amount of memory that the Java virtual machine will attempt to use
+ <span class="hljs-keyword">long</span> maxMemory = Runtime.qetRuntime ().maxMemory();
+ <span class="hljs-comment">// Returns the total amount of memory in the Java virtual machine</span>
+ <span class="hljs-keyword">long</span> totalMemory = Runtime.getRuntime().totalMemory();
+  Returns the amount of free memory in the Java virtual machine
+ <span class="hljs-keyword">long</span> freeMemory = Runtime.getRuntime().freeMemory();
+</code></pre>
+</blockquote>
+<p>----------------&gt; &#x53EA;&#x662F;Dalvik Heap&#xFF0C;&#x6CA1;&#x6709;&#x592A;&#x591A;&#x610F;&#x4E49;&#x3002;</p>
+<p>&#x4E0D;&#x80FD;&#x53CD;&#x6620;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x7528;&#x7684;&#x771F;&#x6B63;&#x5185;&#x5B58;</p>
+<h2 id="&#x57FA;&#x7840;&#x77E5;&#x8BC6;&#xFF1A;"><a name="&#x57FA;&#x7840;&#x77E5;&#x8BC6;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x57FA;&#x7840;&#x77E5;&#x8BC6;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x57FA;&#x7840;&#x77E5;&#x8BC6;&#xFF1A;</h2>
+<p>&#x7269;&#x7406;&#x5185;&#x5B58;&#x6700;&#x5C0F;&#x5206;&#x914D;&#x5355;&#x4F4D;&#xFF1A;1 &#x4E2A;&#x9875; (page)&#xFF0C;&#x5927;&#x5C0F;&#x901A;&#x5E38;&#x662F; 4KB</p>
+<h3 id="&#x8FDB;&#x7A0B;&#x7684;&#x5185;&#x5B58;&#x5360;&#x7528;&#x5206;&#x4E3A;&#x4E24;&#x7C7B;&#xFF1A;"><a name="&#x8FDB;&#x7A0B;&#x7684;&#x5185;&#x5B58;&#x5360;&#x7528;&#x5206;&#x4E3A;&#x4E24;&#x7C7B;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x8FDB;&#x7A0B;&#x7684;&#x5185;&#x5B58;&#x5360;&#x7528;&#x5206;&#x4E3A;&#x4E24;&#x7C7B;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.1. &#x8FDB;&#x7A0B;&#x7684;&#x5185;&#x5B58;&#x5360;&#x7528;&#x5206;&#x4E3A;&#x4E24;&#x7C7B;&#xFF1A;</h3>
+<blockquote>
+<p>Anonymous Memory&#xFF1A;&#x4F8B;&#x5982; Java heap, native heap&#xFF0C;&#x4ECE;&#x7CFB;&#x7EDF;&#x5206;&#x914D;&#x5185;&#x5B58;&#x6765;&#x586B;&#x5145;&#x6570;&#x636E;</p>
+<p>File-backed memory&#xFF1A;&#x5728;&#x78C1;&#x76D8;&#x4E0A;&#x6709;&#x5BF9;&#x5E94;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x4EE5; mmap() &#x6620;&#x5C04;&#xFF0C; &#x5360;&#x7528;&#x7684;&#x5185;&#x5B58;&#x4E3A;&#x5BF9;&#x6587;&#x4EF6;&#x6700;&#x8FD1;&#x5B58;&#x53D6;&#x7684;&#x7F13;&#x5B58;</p>
+</blockquote>
+<p>&#x8865;&#x5145;&#xFF1A;</p>
+<blockquote>
+<p>&#x5728;&#x78C1;&#x76D8;&#x4E0A;&#x6709;&#x5BF9;&#x5E94;&#x7684;&#x6587;&#x4EF6;&#xFF1A; &#xFF08;1&#xFF09;C&#x8BED;&#x8A00;&#x7684;fopen&#x3001;java&#x7684;IO   (2) &#x4EE5; mmap() &#x6620;&#x5C04;: &#x5B89;&#x5353;&#x5927;&#x91CF;&#x4F7F;&#x7528;&#xFF0C;&#x6BD4;&#x5982;jar&#x3001;dex&#x7B49;</p>
+<p>mmap&#x65B9;&#x5F0F;&#xFF0C;&#x4F18;&#x70B9;&#xFF1A;&#x89C1;&#x4E0B;</p>
+</blockquote>
+<h3 id="overcommit&#x673A;&#x5236;&#xFF1A;"><a name="overcommit&#x673A;&#x5236;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#overcommit&#x673A;&#x5236;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.2. Overcommit&#x673A;&#x5236;&#xFF1A;</h3>
+<blockquote>
+<p>&#x5F53;&#x7533;&#x8BF7;&#x5185;&#x5B58;&#x65F6;&#xFF0C; Linux &#x5E76;&#x975E;&#x9A6C;&#x4E0A;&#x5C31;&#x5206;&#x914D;&#x5185;&#x5B58;&#xFF0C; &#x800C;&#x662F;&#x5EF6;&#x8FDF;&#x5230;&#x5B9E;&#x9645;&#x5B58;&#x53D6;&#x65F6;&#xFF0C;&#x624D;&#x771F;&#x6B63;&#x5206;&#x914D;&#x5185;&#x5B58;</p>
+<p>----&gt; &#x4F8B;&#x5B50;&#xFF1A;&#x7533;&#x8BF7;400k&#x65F6;&#xFF1A;</p>
+<p>&#xFF08;1&#xFF09;&#x5230;&#x5B9E;&#x9645;&#x7528;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x624D;&#x771F;&#x6B63;&#x5206;&#x914D;</p>
+<p>&#xFF08;2&#xFF09;&#x4E5F;&#x4E0D;&#x662F;&#x4E00;&#x6B21;&#x6027;&#x5206;&#x914D;400&#x770B;&#xFF0C;&#x800C;&#x662F;4kB&#x5206;&#x914D;</p>
+<p>&#x4F18;&#x70B9;&#xFF1A;</p>
+<blockquote>
+<p>&#x4EE3;&#x7801;&#x5206;&#x914D;&#x5185;&#x5B58;&#x540E;&#xFF0C;&#x6709;&#x4E9B;&#x53EF;&#x80FD;&#x5206;&#x652F;&#x6CA1;&#x8D70;&#x5230;&#xFF0C;&#x6CA1;&#x5229;&#x7528;&#x5230; --------&gt; Overcommit&#x5C31;&#x4F1A;&#x66F4;&#x7ECF;&#x6D4E;</p>
+</blockquote>
+<p>&#x7F3A;&#x70B9;&#xFF1A;</p>
+<blockquote>
+<p>&#x4EE3;&#x7801;&#x91CC;&#x4F7F;&#x7528;&#x5185;&#x5B58;  &#x4E0E;  &#x5B9E;&#x9645;&#x5185;&#x5B58;&#x5206;&#x914D;&#x53EF;&#x80FD;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x9020;&#x6210;&#x5206;&#x6790;&#x56F0;&#x96BE;</p>
+</blockquote>
+<p>Q&amp;A&#xFF1A;</p>
+<blockquote>
+<p>&#x6765;&#x5F97;&#x53CA;&#x4E0D;&#xFF1F;&#x5E94;&#x8BE5;&#x6765;&#x7684;&#x6025;&#xFF0C;&#x5206;&#x914D;&#x7684;&#x6548;&#x7387;&#x662F;o&#xFF08;1&#xFF09;</p>
+</blockquote>
+</blockquote>
+<h3 id="&#x4F4E;&#x5185;&#x5B58;&#x4E0B;&#x7684;&#x7CFB;&#x7EDF;&#x56DE;&#x6536;&#x673A;&#x5236;&#xFF08;&#x5B89;&#x5353;&#x673A;&#x5236;&#xFF09;"><a name="&#x4F4E;&#x5185;&#x5B58;&#x4E0B;&#x7684;&#x7CFB;&#x7EDF;&#x56DE;&#x6536;&#x673A;&#x5236;&#xFF08;&#x5B89;&#x5353;&#x673A;&#x5236;&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x4F4E;&#x5185;&#x5B58;&#x4E0B;&#x7684;&#x7CFB;&#x7EDF;&#x56DE;&#x6536;&#x673A;&#x5236;&#xFF08;&#x5B89;&#x5353;&#x673A;&#x5236;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.3. &#x4F4E;&#x5185;&#x5B58;&#x4E0B;&#x7684;&#x7CFB;&#x7EDF;&#x56DE;&#x6536;&#x673A;&#x5236;&#xFF08;&#x5B89;&#x5353;&#x673A;&#x5236;&#xFF09;</h3>
+<p>&#x673A;&#x5236;&#xFF1A;</p>
+<blockquote>
+<p>1&#x3001;&#x780D;&#x8FDB;&#x7A0B;&#xFF1A;&#x9000;&#x51FA;&#x540E;&#x53F0;&#x7684;&#x5148;&#x540E;&#x65F6;&#x95F4;</p>
+<p>2&#x3001;&#x5BF9; File-backed memory &#x8FDB;&#x884C;&#x91CA;&#x653E;&#xFF0C;&#x56E0;&#x4E3A;&#x78C1;&#x76D8;&#x4E2D;&#x6709;&#x5907;&#x4EFD; ------&gt;  &#x5148;&#x91CA;&#x653E;&#xFF0C;&#x5230;&#x65F6;&#x5019;&#x6309;&#x9700;&#x52A0;&#x8F7D;</p>
+<p>3&#x3001;&#x5C06; Anonymous memory swap &#x51FA;&#x53BB;  &#xFF1A; swap&#x5230;&#x78C1;&#x76D8;&#x4E0A;&#xFF08;&#x4F46;&#x662F;&#x78C1;&#x76D8;&#x7684;&#x901F;&#x5EA6;&#x8FDC;&#x4F4E;&#x4E8E;ddr-----&gt;&#x5B89;&#x5353;&#x6CA1;&#x6709;&#x4F7F;&#x7528; &#xFF09;</p>
+<p>&#x5B89;&#x5353;&#x5BF9;&#x8FD9;&#x4E9B;&#x5185;&#x5B58;&#x538B;&#x7F29;&#x3002;&#x7528;&#x5230;&#x65F6;&#x5019;&#x518D;&#x89E3;&#x538B;</p>
+</blockquote>
+<p>&#x5E38;&#x89C1;&#x7684; file-backed memory</p>
+<blockquote>
+<p>APK &#x6587;&#x4EF6;&#xFF1A;&#x6620;&#x5C04;&#x76EE;&#x5F55;&#x7ED3;&#x679C;&#x4E0E; resources.arsc</p>
+<p>&#x6CE8;&#xFF1A; apk&#x5927;&#x90E8;&#x5206;&#x6587;&#x4EF6;&#x538B;&#x7F29;&#x4E86;&#xFF0C;resources.arsc&#x6587;&#x4EF6;&#x6CA1;&#x6709;&#x538B;&#x7F29;   ----&gt; &#x8865;&#x5145;&#x622A;&#x56FE;</p>
+<p>DEX &#x6587;&#x4EF6;&#xFF1A;DEX &#x4F18;&#x5316;&#x540E;&#x3001;&#x53EF;&#x7531;&#x865A;&#x62DF;&#x673A;&#x6267;&#x884C;&#x7684;&#x4EE3;&#x7801;</p>
+<p>so &#x6587;&#x4EF6;&#xFF1A;&#x52A8;&#x6001;&#x94FE;&#x63A5;</p>
+<p>ttf &#x6587;&#x4EF6;&#xFF1A;&#x5B57;&#x4F53;</p>
+</blockquote>
+<p>&#x95EE;&#x9898;&#xFF1A;&#x56FE;&#x7247;&#x4E00;&#x822C;&#x4F7F;&#x7528; file-backed memory &#x65B9;&#x5F0F;&#x5206;&#x914D;&#x5185;&#x5B58;&#x5417;&#xFF1F;</p>
+<p>mmap &#x6620;&#x5C04;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<blockquote>
+<p>&#x5148;&#x5F00;&#x542F;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5F97;&#x5230; fd&#xFF0C;&#x518D;&#x5229;&#x7528; mmap() &#x5C06;&#x5176;&#x6620;&#x5C04;&#x5230;&#x5185;&#x5B58;&#xFF0C;&#x4EE3;&#x7801;&#x4E2D;&#x501F;&#x7531;&#x64CD;&#x4F5C;&#x6307;&#x9488;&#x7684;&#x65B9;&#x5F0F;&#x5B58;&#x53D6;&#x7F13;&#x5B58;&#x5728;&#x5185;&#x5B58;&#x7684;&#x6587;&#x4EF6;&#x5185;&#x5BB9;</p>
+<p>&#x4F18;&#x70B9;&#xFF1A;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6307;&#x9488;&#x4EFB;&#x610F;&#x79FB;&#x52A8;&#x8BFB;&#x53D6;&#x4F4D;&#x7F6E;&#xFF0C;&#x4EE3;&#x7801;&#x597D;&#x5199;&#x3002;&#x7531;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5904;&#x7406;&#x6587;&#x4EF6;&#x7684;&#x8BFB;&#x53D6;&#x3001;&#x7F13;&#x5B58;&#xFF0C;&#x4EE5;&#x53CA;&#x5728;&#x4F4E;&#x5185;&#x5B58;&#x3001;&#x6216;&#x5C11;&#x7528;&#x65F6;&#x653E;&#x6389;&#x3002;&#x8FD8;&#x80FD;&#x8F7B;&#x6613;&#x5B9E;&#x73B0;&#x8DE8;&#x8FDB;&#x7A0B;</p>
+<p>&#x5BF9;&#x53EA;&#x8BFB;&#x6587;&#x4EF6;&#x7684;&#x52A0;&#x8F7D;&#x5171;&#x4EAB;</p>
+</blockquote>
+<h1 id="&#x7CFB;&#x7EDF;&#x89D2;&#x5EA6;&#xFF1A;&#x5E38;&#x9A7B;&#x5E94;&#x7528;&#x4E0E;&#x540E;&#x53F0;&#x670D;&#x52A1;"><a name="&#x7CFB;&#x7EDF;&#x89D2;&#x5EA6;&#xFF1A;&#x5E38;&#x9A7B;&#x5E94;&#x7528;&#x4E0E;&#x540E;&#x53F0;&#x670D;&#x52A1;" class="anchor-navigation-ex-anchor" href="#&#x7CFB;&#x7EDF;&#x89D2;&#x5EA6;&#xFF1A;&#x5E38;&#x9A7B;&#x5E94;&#x7528;&#x4E0E;&#x540E;&#x53F0;&#x670D;&#x52A1;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x7CFB;&#x7EDF;&#x89D2;&#x5EA6;&#xFF1A;&#x5E38;&#x9A7B;&#x5E94;&#x7528;&#x4E0E;&#x540E;&#x53F0;&#x670D;&#x52A1;</h1>
+<p>&#x4F55;&#x8C13;&#x5E38;&#x9A7B;&#x5E94;&#x7528;</p>
+<blockquote>
+<p>&#x56E0;&#x4E3A;&#x529F;&#x80FD;&#x5B9E;&#x73B0;&#x9700;&#x8981;&#xFF0C;&#x5FC5;&#x987B;&#x957F;&#x671F;&#x3001;&#x6216;&#x662F;&#x6C38;&#x4E45;&#x9A7B;&#x7559;&#x5728;&#x540E;&#x53F0;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x53EF;&#x80FD;&#x5904;&#x4E8E;&#x4E0D;&#x65AD;&#x8FD0;&#x884C;&#x3001;&#x4E5F;&#x53EF;&#x80FD;&#x5904;&#x4E8E;&#x6309;&#x9700;&#x8FD0;&#x884C;</p>
+</blockquote>
+<p>&#x5B89;&#x5353;&#x5B9E;&#x73B0;&#x67D0;&#x4E2A;&#x529F;&#x80FD;&#x540E;&#x53F0;&#x6301;&#x7EED;&#x8FD0;&#x884C;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<ol>
+<li>&#x5728; AndroidManifest.xml &#x8BBE; persistent=true -----&gt; <strong>&#x9ED8;&#x8BA4;&#x505A;&#x6CD5;</strong></li>
+<li>&#x4EE5; native &#x8FDB;&#x7A0B;&#x8FD0;&#x884C; -----&gt; &#x5B89;&#x5353;&#x5BF9;native&#x8FDB;&#x7A0B;&#x9ED8;&#x8BA4;&#x4E0D;&#x6740;&#x3002; TODO: &#x673A;&#x5236;&#x662F;&#x5565;&#xFF1F;JVM&#x68C0;&#x6D4B;&#x4E0D;&#x5230;&#xFF1F;</li>
+<li>&#x4EE5; start service &#x8FD0;&#x884C;&#xFF0C;&#x4E0D;&#x505C;&#x6B62;</li>
+<li>&#x4EE5; start service + startForeground &#x8FD0;&#x884C;&#xFF0C;&#x4E0D;&#x505C;&#x6B62; -----&gt; startForeground &#x524D;&#x53F0;service</li>
+<li>&#x95F4;&#x63A5;&#x56E0;&#x7D20;&#xFF1A;&#x4EE5; bind service&#x3001;provider &#x7ED1;&#x5B9A;&#x5176;&#x4ED6;&#x8FDB;&#x7A0B;&#x4E0D;&#x653E;</li>
+</ol>
+<p>&#x81EA;&#x7136;&#xFF0C;&#x5E38;&#x9A7B;&#x8FDB;&#x7A0B;&#x8D8A;&#x591A;&#xFF0C;&#x53EF;&#x7528;&#x5185;&#x5B58;&#x8D8A;&#x5C11;</p>
+<h2 id="&#x5B89;&#x5353;&#x7CFB;&#x7EDF;&#x5185;&#x5B58;&#x5206;&#x5E03;"><a name="&#x5B89;&#x5353;&#x7CFB;&#x7EDF;&#x5185;&#x5B58;&#x5206;&#x5E03;" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x5353;&#x7CFB;&#x7EDF;&#x5185;&#x5B58;&#x5206;&#x5E03;"><i class="fa fa-link" aria-hidden="true"></i></a>2.1. &#x5B89;&#x5353;&#x7CFB;&#x7EDF;&#x5185;&#x5B58;&#x5206;&#x5E03;</h2>
+<p>Free Memory&#xFF1A;&#x6CA1;&#x6709;&#x88AB;&#x4F7F;&#x7528;&#x7684;</p>
+<p>&#x7CFB;&#x7EDF;&#x7F13;&#x5B58;&#xFF1A; &#x52A0;&#x8F7D;&#x7684;&#x4E00;&#x4E9B;&#x7CFB;&#x7EDF;&#x7684;so&#x5E93;</p>
+<p><strong>&#x89C4;&#x5219;&#xFF0C;&#x7B97;&#x6CD5;&#xFF1A;</strong></p>
+<p>1&#x3001;&#x5206;&#x914D;&#x5185;&#x5B58;&#x65F6;&#xFF0C;<strong>&#x4F18;&#x5148;</strong>&#x4ECE;Free Memory&#x5185;&#x62FF;</p>
+<p>2&#x3001;Free Memory&#x4E0D;&#x591F;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x6269;&#x5145;Free Memory&#xFF1A;</p>
+<p>&#xFF08;1&#xFF09; &#x975E;&#x5E38;&#x9A7B;&#x5E94;&#x7528; ----&gt; &#x88AB;&#x6740;&#x5E94;&#x7528;&#xFF0C;&#x8FD9;&#x4E2A;&#x6548;&#x679C;&#x6700;&#x597D;</p>
+<p>&#xFF08;2&#xFF09;  &#x91CA;&#x653E;&#x7CFB;&#x7EDF;&#x7F13;&#x5B58;</p>
+<p>&#x95EE;&#x9898;&#xFF1A; &#x5982;&#x679C;&#x5728;&#x5206;&#x914D;&#x5185;&#x5B58;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x624D;&#x53D1;&#x73B0; Free Memory&#x4E0D;&#x591F;&#xFF0C;&#x624D;&#x53BB; &#x6740;&#x5E94;&#x7528;&#x91CA;&#x653E;&#x5185;&#x5B58;&#xFF0C;&#x6765;&#x4E0D;&#x53CA;  ------&gt;  &#x6027;&#x80FD;&#x4E0D;&#x597D;</p>
+<p>&#x529E;&#x6CD5;&#xFF1A;&#x4FDD;&#x8BC1;&#x4E00;&#x5B9A;&#x7684;Free Memory&#xFF0C; lmk&#x673A;&#x5236;</p>
+<p>Free Mem &#x4E0E; &#x975E;&#x5E38;&#x9A7B;&#x5E94;&#x7528; &#x4E4B;&#x95F4;&#x6709;&#x4E2A;<strong>&#x5E73;&#x8861;</strong>&#xFF1A;</p>
+<blockquote>
+<p>Q: Free Memory&#x8D8A;&#x591A;&#x8D8A;&#x597D;&#x561B;&#xFF1F;</p>
+<p>A: &#x4F1A;&#x9020;&#x6210;&#x7CFB;&#x7EDF;&#x7F13;&#x5B58;&#x5C0F; ------&gt; &#x6027;&#x80FD;&#x4E0B;&#x964D;</p>
+<p>&#x975E;&#x5E38;&#x9A7B;&#x5E94;&#x7528; &#x521A;&#x521A;&#x9000;&#x5230;&#x540E;&#x53F0;&#xFF0C;&#x5C31;&#x88AB;&#x6740;  -----&gt;</p>
+<p>Q: &#x7CFB;&#x7EDF;&#x7F13;&#x5B58;&#x8D8A;&#x591A;&#x8D8A;&#x597D;&#x561B;&#xFF08;&#x6BD4;&#x5982;&#x628A;/system&#x5206;&#x533A;&#x6240;&#x6709;so&#x5E93;&#xFF0C;&#x9501;&#x5728;&#x7CFB;&#x7EDF;&#x7F13;&#x5B58;&#x4E2D;&#xFF09;&#xFF1F;</p>
+<p>A:  &#x5F88;&#x591A;so&#xFF0C;&#x5E73;&#x65F6;&#x4E0D;&#x4F1A;&#x88AB;&#x7528;&#x5230; -----&gt; &#x5BF9;mem&#x7684;&#x6D6A;&#x8D39;</p>
+</blockquote>
+<ul>
+<li>---------------&gt; &#x4F8B;&#x5B50;&#xFF1A;&#x5728;Free mem&#x5145;&#x8DB3;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E5F;&#x80FD;&#x4FDD;&#x8BC1; &#x975E;&#x5E38;&#x9A7B;&#x5E94;&#x7528;&#x6709;&#x56DB;&#x4E94;&#x4E2A;</li>
+</ul>
+<h2 id="&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#xFF1A;&#x4E00;&#x79CD;&#x6781;&#x81F4;&#x7684;&#x7CFB;&#x7EDF;&#x8BBE;&#x8BA1;"><a name="&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#xFF1A;&#x4E00;&#x79CD;&#x6781;&#x81F4;&#x7684;&#x7CFB;&#x7EDF;&#x8BBE;&#x8BA1;" class="anchor-navigation-ex-anchor" href="#&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#xFF1A;&#x4E00;&#x79CD;&#x6781;&#x81F4;&#x7684;&#x7CFB;&#x7EDF;&#x8BBE;&#x8BA1;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2. &#x7279;&#x6B8A;&#x60C5;&#x51B5;&#xFF1A;&#x4E00;&#x79CD;&#x6781;&#x81F4;&#x7684;&#x7CFB;&#x7EDF;&#x8BBE;&#x8BA1;</h2>
+<p>&#x628A;&#x7CFB;&#x7EDF;&#x6240;&#x6709;&#x5E94;&#x7528;&#x90FD;&#x8BBE;&#x8BA1;&#x6210;&#x5E38;&#x9A7B;&#x3002;&#x91C7;&#x7528;&#x7684;<strong>&#x524D;&#x63D0;</strong>&#x662F;&#xFF1A;</p>
+<blockquote>
+<p>&#x5C01;&#x95ED;&#x751F;&#x6001;&#xFF0C;&#x65E0;&#x6CD5;&#x5B89;&#x88C5;&#x5176;&#x4ED6;&#x5E94;&#x7528;  ----&gt;  &#xFF08;&#x8F6F;&#x4EF6;&#x89D2;&#x5EA6;&#xFF1A;&#x540E;&#x671F;&#x4E0D;&#x4F1A;&#x589E;&#x52A0;&#x5185;&#x5B58;&#xFF09;</p>
+<ol>
+<li>&#x7CFB;&#x7EDF;&#x5E94;&#x7528;&#x5360;&#x7528;&#x7684;&#x5185;&#x5B58;&#x53EF;&#x63A7; ------&gt; &#xFF08; &#x786C;&#x4EF6;&#x89D2;&#x5EA6;&#xFF1A; &#x786C;&#x4EF6;&#x6709;&#x4F59;&#x91CF;&#xFF09;</li>
+</ol>
+</blockquote>
+<p>&#x4F8B;&#x5B50;&#xFF1A;<strong>&#x6276;&#x624B;&#x5C4F;&#x9879;&#x76EE;</strong></p>
+<h2 id="&#x5E38;&#x9A7B;&#x5E94;&#x7528;-&#x4E0E;-free-memory&#x7684;&#x535A;&#x5F08;---lmk"><a name="&#x5E38;&#x9A7B;&#x5E94;&#x7528;-&#x4E0E;-free-memory&#x7684;&#x535A;&#x5F08;---lmk" class="anchor-navigation-ex-anchor" href="#&#x5E38;&#x9A7B;&#x5E94;&#x7528;-&#x4E0E;-free-memory&#x7684;&#x535A;&#x5F08;---lmk"><i class="fa fa-link" aria-hidden="true"></i></a>2.3. &#x5E38;&#x9A7B;&#x5E94;&#x7528; &#x4E0E; free Memory&#x7684;&#x535A;&#x5F08;---LMK</h2>
+<p>&#x51B7;&#x542F;&#x52A8;&#x5E94;&#x7528;&#x7684;&#x8017;&#x65F6;&#xFF1A;&#x52A0;&#x8F7D;&#x8D44;&#x6E90;&#x7B49;</p>
+<p>&#x5B89;&#x5353;&#x7684;<strong>&#x8BBE;&#x8BA1;&#x7406;&#x5FF5;</strong>&#x662F;&#xFF1A;</p>
+<blockquote>
+<p>&#x5B89;&#x5353;&#x523B;&#x610F;&#x4FDD;&#x7559;&#x6700;&#x8FD1;&#x542F;&#x52A8;&#x8FC7;&#x7684;&#x8FDB;&#x7A0B;&#x5728;&#x540E;&#x53F0;&#xFF0C;&#x907F;&#x514D;&#x51B7;&#x542F;&#x52A8;&#xFF0C;&#x4F7F;&#x5F97;&#x4E0B;&#x6B21;&#x542F;&#x52A8;&#x65F6;&#x66F4;&#x5FEB; &#xFF08;&#x5728;Free Memory&#x8DB3;&#x591F;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF09;</p>
+<p>TODO:  &#x4E3A;&#x5565;&#x5B89;&#x5353;&#x7684;&#x51B7;&#x542F;&#x52A8;&#xFF0C;&#x4E0D;&#x548B;&#x6EF4;&#xFF1F;</p>
+</blockquote>
+<p>LMK (Low Memory Killer) ----------&#x6EE1;&#x8DB3;&#x4E0A;&#x9762;&#x8BBE;&#x8BA1;&#x7406;&#x5FF5;</p>
+<blockquote>
+<p>&#x524D;&#x63D0;&#xFF1A; &#x4FDD;&#x969C;&#x7CFB;&#x7EDF;&#x59CB;&#x7EC8;&#x6709;&#x8DB3;&#x591F;&#x591A;&#x7684; free memory</p>
+<p>&#x7B97;&#x6CD5;&#xFF1A;&#x4EE5;&#x8FDB;&#x7A0B;&#x91CD;&#x8981;&#x6027; (&#x79F0;&#x4E3A; OOM ADJ, Out of Memory Adjustment ) &#x4E0E;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#xFF0C;&#x51B3;&#x5B9A;&#x780D;&#x7684;&#x987A;</p>
+</blockquote>
+<p>&#x5B89;&#x5353;&#x7CFB;&#x7EDF;&#x6CA1;&#x6709;<strong>&#x5893;&#x7891;&#x673A;&#x5236;</strong>&#xFF0C;&#x5FC5;&#x987B;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x540E;&#x53F0;&#x5E94;&#x7528;&#x8FDB;&#x7A0B;&#x751F;&#x547D;&#x5468;&#x671F;&#x7684;&#x7BA1;&#x7406;------&gt;  <strong>lmk&#x673A;&#x5236;</strong></p>
+<p>&#x591A;&#x4EFB;&#x52A1;&#x80FD;&#x529B; (Multi-Tasking Capability) -----------&#x5373;&#x4FDD;&#x6301;&#x540E;&#x53F0;&#x5E94;&#x7528;&#x4E2A;&#x6570;&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x5373;&#x70ED;&#x542F;&#x52A8;&#x7684;&#x80FD;&#x529B;</p>
+<blockquote>
+<p>&#x8BC4;&#x6D4B;&#x5F00;&#x653E;&#x751F;&#x6001;&#x7CFB;&#x7EDF;&#x7684;&#x591A;&#x4EFB;&#x52A1;&#x80FD;&#x529B;&#xFF1A;&#x80FD;&#x9A7B;&#x7559;&#x591A;&#x5C11;&#x540E;&#x88C5;&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x5E94;&#x7528;&#x5728;&#x540E;&#x53F0;&#xFF0C;&#x5FEB;&#x901F;&#x5207;&#x6362;</p>
+<p>&#x591A;&#x4EFB;&#x52A1;&#x80FD;&#x529B;&#x7684;&#x4FDD;&#x6301;&#xFF0C;&#x662F;&#x5B89;&#x5353;&#x7CFB;&#x7EDF;&#x6027;&#x80FD;&#x4F53;&#x9A8C;&#x91CD;&#x8981;&#x7684;&#x4E00;&#x73AF;&#xFF0C;&#x56E0;&#x6B64; LMK &#x7684;&#x8BBE;&#x8BA1;&#xFF0C;&#x65E2;&#x8981;&#x4FDD;&#x969C;&#x6709;&#x8DB3;&#x591F;&#x591A;&#x7684; free memory&#xFF0C;&#x53C8;&#x5FC5;&#x987B;&#x4FDD;&#x969C;<strong>&#x6700;&#x8FD1;&#x4F7F;&#x7528;&#x8FC7;</strong>&#x7684;&#x51E0;&#x4E2A;&#x5E94;&#x7528;&#x80FD;&#x4FDD;&#x6301;&#x5728;&#x540E;&#x53F0;</p>
+</blockquote>
+<h3 id="&#x4E34;&#x65F6;&#x6269;&#x5C55;&#xFF1A;&#x5893;&#x7891;&#xFF08;tombstone&#xFF09;&#x673A;&#x5236;"><a name="&#x4E34;&#x65F6;&#x6269;&#x5C55;&#xFF1A;&#x5893;&#x7891;&#xFF08;tombstone&#xFF09;&#x673A;&#x5236;" class="anchor-navigation-ex-anchor" href="#&#x4E34;&#x65F6;&#x6269;&#x5C55;&#xFF1A;&#x5893;&#x7891;&#xFF08;tombstone&#xFF09;&#x673A;&#x5236;"><i class="fa fa-link" aria-hidden="true"></i></a>2.3.1. &#x4E34;&#x65F6;&#x6269;&#x5C55;&#xFF1A;&#x5893;&#x7891;&#xFF08;Tombstone&#xFF09;&#x673A;&#x5236;</h3>
+<p>&#x4F7F;&#x7528;&#x7684;&#x7CFB;&#x7EDF;&#x8303;&#x56F4;&#xFF1A;</p>
+<blockquote>
+<p>&#x5FAE;&#x8F6F;WP7&#x3001;ios&#xFF1B;</p>
+</blockquote>
+<p>-<font color="red">&#x8BBE;&#x8BA1;&#x7406;&#x5FF5;&#xFF1A;</font></p>
+<blockquote>
+<p><del>&#x5FAE;&#x8F6F;&#x4E0D;&#x5141;&#x8BB8;&#x4EFB;&#x4F55; &#x7B2C;&#x4E09;&#x65B9;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;]&#x5728;WP7&#x7684;&#x540E;&#x53F0;&#x8FD0;&#x884C;&#xFF0C;&#x7279;&#x5B9A;&#x65F6;&#x95F4;&#x5185;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x5728;&#x524D;&#x53F0;&#x8FD0;&#x884C;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6CA1;&#x6709;&#x5728;&#x524D;&#x53F0;&#x663E;&#x793A;&#xFF0C;&#x5C31;&#x8868;&#x793A;&#x8FD9;&#x4E9B;&#x7A0B;&#x5E8F;&#x5E76;&#x6CA1;&#x6709;&#x8FD0;&#x884C;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4E0D;&#x8017;&#x8D39;&#x8FD0;&#x884C;&#x5185;&#x5B58;&#x548C;&#x5904;&#x7406;&#x5668;&#x8D44;&#x6E90;</del>   ----------&gt;  <strong>&#x7B80;&#x8A00;&#x4E4B;&#xFF1A;</strong> &#x6740;&#x6B7B;&#x6240;&#x6709;&#x540E;&#x53F0;&#x5E94;&#x7528;</p>
+</blockquote>
+<p>&#x5893;&#x7891;&#x542B;&#x4E49;&#xFF1A;</p>
+<blockquote>
+<p>&#x5893;&#x7891;&#xFF1A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5DF2;&#x7ECF;<strong>&#x6B7B;&#x4E86;</strong>&#xFF0C;&#x4F46;&#x662F;&#x5893;&#x7891;&#x4E0A;&#x8BB0;&#x5F55;&#x6709;<strong>&#x4E34;&#x7EC8;&#x524D;&#x7684;&#x6240;&#x6709;&#x72B6;&#x6001;</strong>&#xFF08;&#x540E;&#x9762;&#xFF0C;<strong>&#x65B0;&#x542F;&#x52A8;&#x65B0;&#x8FDB;&#x7A0B;</strong>&#xFF0C;&#x6839;&#x636E;&#x8BB0;&#x5F55;&#xFF0C;&#x6062;&#x590D;&#x72B6;&#x6001;&#xFF09;</p>
+</blockquote>
+<p>&#x4F8B;&#x5B50;&#xFF1A;</p>
+<blockquote>
+<p>WP7&#x624B;&#x673A;&#xFF1A; &#x5F53;&#x7528;&#x6237;&#x6B63;&#x5728;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x6BD4;&#x5982;&#x6E38;&#x620F;&#x6216;&#x8005;&#x65B0;&#x95FB;&#x9605;&#x8BFB;&#xFF0C;&#x8FD9;&#x65F6;&#x6709;&#x7535;&#x8BDD;&#x6253;&#x8FDB;&#x6765;&#xFF0C;&#x6765;&#x7535;&#x63D0;&#x793A;&#x548C;&#x901A;&#x8BDD;&#x9875;&#x9762;&#x5C06;&#x4F1A;&#x5728;&#x524D;&#x53F0;&#x663E;&#x793A;&#xFF0C;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x6E38;&#x620F;&#x5C31;&#x4F1A;&#x6D88;&#x5931;&#xFF0C;WP7&#x4E0D;&#x5141;&#x8BB8;&#x540E;&#x53F0;&#x8FD0;&#x884C;&#x5E94;&#x7528;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x5893;&#x7891;&#x673A;&#x5236;&#x5C31;&#x4F1A;&#x89E6;&#x53D1;&#xFF0C;&#x6E38;&#x620F;&#x7684;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#x5305;&#x62EC;&#x753B;&#x9762;&#x3001;&#x8FDB;&#x5EA6;&#x7B49;&#x7B49;&#x6570;&#x636E;&#x4F1A;&#x51BB;&#x7ED3;&#x4FDD;&#x5B58;   -----&gt;  &#x6740;&#x6B7B;&#x540E;&#x53F0;&#x6E38;&#x620F;  -----&gt;  &#x7B49;&#x7535;&#x8BDD;&#x7ED3;&#x675F;&#xFF0C;&#x542F;&#x52A8;&#x6E38;&#x620F;   --------&gt;  &#x6062;&#x590D;&#x72B6;&#x6001;</p>
+</blockquote>
+<p>&#x4ECE;&#x4EFB;&#x52A1;&#x7BA1;&#x7406;&#x89D2;&#x5EA6;&#xFF1A;</p>
+<blockquote>
+<p>&#x5893;&#x7891;&#x673A;&#x5236;&#x7406;&#x5FF5;&#xFF1A;&#x5355;&#x4EFB;&#x52A1;&#xFF08;&#x7B2C;&#x4E09;&#x65B9;&#x7A0B;&#x5E8F;&#x5355;&#x4EFB;&#x52A1;&#xFF09;</p>
+<p>------&gt; &#x81EA;&#x7136;&#xFF0C;<del>&#x591A;&#x4EFB;&#x52A1;&#x7684;&#x90FD;&#x6CA1;&#x6709;&#x5893;&#x7891;&#x673A;&#x5236;&#xFF1A;mac&#x3001;win&#x3001;linux&#x3001;Android</del></p>
+</blockquote>
+<p>&#x4ECE;&#x5185;&#x5B58;&#x89D2;&#x5EA6;&#x770B;&#xFF1A;</p>
+<blockquote>
+<p>ios&#x5893;&#x7891;&#x673A;&#x5236; &#x4E0E; &#x5B89;&#x5353; lmk&#x673A;&#x5236;&#xFF0C;&#x662F;&#x5BF9;&#x7B49;&#x7684;&#x3002;&#x90FD;&#x662F; &#x91CA;&#x653E; &#x540E;&#x53F0;&#x5E94;&#x7528;&#x5185;&#x5B58;&#x7684;&#x673A;&#x5236;</p>
+</blockquote>
+<p>&#x6BD4;&#x8F83;&#xFF1A;</p>
+<blockquote>
+<p>&#x5893;&#x7891;&#x673A;&#x5236;&#xFF0C;&#x4E0E; Android &#x72B6;&#x6001;&#x4FDD;&#x5B58;&#x673A;&#x5236;&#xFF0C;&#x4F3C;&#x4E4E;&#x5F02;&#x66F2;&#x540C;&#x5DE5;    ------&gt;  &#x5907;&#x5FD8;&#x5F55;&#x6A21;&#x5F0F;</p>
+</blockquote>
+<p>&#x4ECE;&#x540E;&#x53F0;&#x5E94;&#x7528;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x6765;&#x770B;&#xFF1A;</p>
+<blockquote>
+<p>&#x662F;&#x4E00;&#x79CD;&#x540E;&#x53F0;&#x5E94;&#x7528;&#x751F;&#x547D;&#x5468;&#x671F;&#x7BA1;&#x7406;&#x673A;&#x5236;</p>
+</blockquote>
+<p>&#x7591;&#x95EE;&#xFF1A;</p>
+<blockquote>
+<p>&#x5893;&#x7891;&#x673A;&#x5236;&#xFF0C;&#x8981;&#x542F;&#x52A8;&#x8FDB;&#x7A0B;&#xFF08;&#x8FD9;&#x4E2A;&#x4F1A;&#x6162;&#x561B;&#xFF1F;&#xFF09;&#xFF0C;&#x9700;&#x8981;&#x52A0;&#x8F7D;&#x8D44;&#x6E90;&#x561B;&#xFF08;&#x4FDD;&#x5B58;&#x4E86;&#x6570;&#x636E;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x4E86;&#x561B;&#xFF1F;&#xFF09;</p>
+<p>------------&gt; ios&#x4E3A;&#x5565;&#x51B7;&#x542F;&#x52A8;&#x8FD9;&#x4E48;&#x5FEB;&#xFF1F;</p>
+</blockquote>
+<p>&#x53C2;&#x8003;&#xFF1A;</p>
+<blockquote>
+<p><a href="https://baike.baidu.com/item/&#x5893;&#x7891;&#x673A;&#x5236;/7558924?fr=ge_ala" target="_blank">https://baike.baidu.com/item/&#x5893;&#x7891;&#x673A;&#x5236;/7558924?fr=ge_ala</a>         &#x5893;&#x7891;&#x673A;&#x5236;</p>
+</blockquote>
+<h3 id="&#x4E34;&#x65F6;&#x6269;&#x5C55;&#xFF1A;q-&#x5185;&#x5B58;&#x6E05;&#x7406;-&#x4E00;&#x952E;&#x52A0;&#x901F;-&#x80FD;&#x63D0;&#x5347;&#x6027;&#x80FD;&#x561B;"><a name="&#x4E34;&#x65F6;&#x6269;&#x5C55;&#xFF1A;q-&#x5185;&#x5B58;&#x6E05;&#x7406;-&#x4E00;&#x952E;&#x52A0;&#x901F;-&#x80FD;&#x63D0;&#x5347;&#x6027;&#x80FD;&#x561B;" class="anchor-navigation-ex-anchor" href="#&#x4E34;&#x65F6;&#x6269;&#x5C55;&#xFF1A;q-&#x5185;&#x5B58;&#x6E05;&#x7406;-&#x4E00;&#x952E;&#x52A0;&#x901F;-&#x80FD;&#x63D0;&#x5347;&#x6027;&#x80FD;&#x561B;"><i class="fa fa-link" aria-hidden="true"></i></a>2.3.2. &#x4E34;&#x65F6;&#x6269;&#x5C55;&#xFF1A;Q: &#x5185;&#x5B58;&#x6E05;&#x7406; (&#x4E00;&#x952E;&#x52A0;&#x901F;) &#x80FD;&#x63D0;&#x5347;&#x6027;&#x80FD;&#x561B;</h3>
+<p>A:   &#x597D;&#x7684;&#x7CFB;&#x7EDF;&#x8BBE;&#x8BA1;&#x4E0B;&#xFF0C;&#x4E0D;&#x80FD; (&#x53CD;&#x800C;&#x51B7;&#x542F;&#x52A8;&#xFF0C;&#x964D;&#x4F4E;&#x542F;&#x52A8;&#x65F6;&#x95F4;)</p>
+<p><strong>&#x4F8B;&#x5916;&#xFF1A;</strong>&#x4E00;&#x4E9B;&#x5DEE;&#x7CFB;&#x7EDF;&#xFF0C;&#x662F;&#x53EF;&#x4EE5;&#x7684;</p>
+<p>&#x5DEE;&#x7CFB;&#x7EDF;&#xFF1A;</p>
+<blockquote>
+<p>LMK &#x4FDD;&#x7559;&#x7684; free memory &#x8FC7;&#x5C11;&#xFF0C;&#x5BFC;&#x81F4;&#x9700;&#x8981;&#x9891;&#x7E41;&#x641C;&#x5BFB;&#x53EF;&#x7528;&#x5185;&#x5B58;   ------&gt; &#x7CFB;&#x7EDF;&#x8BBE;&#x8BA1;&#x95EE;&#x9898;</p>
+<p>&#x540E;&#x53F0;&#x7684;&#x975E;&#x5E38;&#x9A7B;&#x5E94;&#x7528;&#x6301;&#x7EED;&#x8FD0;&#x884C;&#xFF0C;&#x62A2;&#x5360; CPU &#x7B49;&#x7CFB;&#x7EDF;&#x8D44;&#x6E90;   -------&gt;  &#x5E94;&#x7528;+&#x7CFB;&#x7EDF;&#x95EE;&#x9898;&#xFF08;&#x7CFB;&#x7EDF;&#x5E94;&#x8BE5;&#x505A;&#x9650;&#x5236;&#xFF09;</p>
+</blockquote>
+<p>-------------------&gt;  &#x4E00;&#x952E;&#x52A0;&#x901F;&#xFF0C;&#x4F18;&#x5316;&#x7684;&#x662F;&#x8FD9;&#x4E24;&#x70B9;&#xFF08;<strong>&#x800C;&#x8FD9;&#x4E24;&#x70B9;&#xFF0C;&#x7CFB;&#x7EDF;&#x8BBE;&#x8BA1;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x6389;</strong>&#xFF09;</p>
+<p>&#x4E3A;&#x5565; &#x6027;&#x80FD;&#x63D0;&#x5347;<strong>&#x6709;&#x9650;</strong>&#xFF1F;</p>
+<blockquote>
+<p>&#x7B2C;&#x4E09;&#x65B9;&#x5E94;&#x7528;&#x505A;&#x4E00;&#x952E;&#x52A0;&#x901F;&#xFF0C;&#x53EA;&#x80FD; kill&#xFF0C;&#x65E0;&#x6CD5; force stop&#x3002; &#x4EE5; service &#x8FD0;&#x884C;&#x7684;&#x5E94;&#x7528;&#xFF0C;kill &#x540E;&#x4ECD;&#x4F1A;&#x91CD;&#x542F;   -----&gt;TODO:  kill &#x4E0E; force stop&#x533A;&#x522B;</p>
+</blockquote>
+<p>&#x4E00;&#x952E;&#x52A0;&#x901F;  &#x7F3A;&#x70B9;&#xFF1A;</p>
+<blockquote>
+<p>&#x51B7;&#x542F;&#x52A8;</p>
+</blockquote>
+<h3 id="oom-score-adj&#xFF1A;lmk-&#x53C2;&#x8003;&#x7684;&#x8FDB;&#x7A0B;&#x91CD;&#x8981;&#x6027;"><a name="oom-score-adj&#xFF1A;lmk-&#x53C2;&#x8003;&#x7684;&#x8FDB;&#x7A0B;&#x91CD;&#x8981;&#x6027;" class="anchor-navigation-ex-anchor" href="#oom-score-adj&#xFF1A;lmk-&#x53C2;&#x8003;&#x7684;&#x8FDB;&#x7A0B;&#x91CD;&#x8981;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>2.3.3. OOM SCORE ADJ&#xFF1A;LMK &#x53C2;&#x8003;&#x7684;&#x8FDB;&#x7A0B;&#x91CD;&#x8981;&#x6027;</h3>
+<table>
+<thead>
+<tr>
+<th>OOM_SCORE_ADJ</th>
+<th>&#x5206;&#x7C7B;&#x610F;&#x4E49;</th>
+<th>&#x901A;&#x8FC7;&#x4F55;&#x79CD;&#x65B9;&#x5F0F;&#x8FBE;&#x5230;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-1000</td>
+<td>Native</td>
+<td></td>
+</tr>
+<tr>
+<td>-700 ~ -800</td>
+<td>Persistent</td>
+<td>&#x5728; AndroidManifest.xml &#x8BBE; persistent=true</td>
+</tr>
+<tr>
+<td>0</td>
+<td>Foreground</td>
+<td>&#x76EE;&#x524D;&#x5728;&#x524D;&#x53F0;&#x8FD0;&#x884C;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x6216;&#x8005;&#x6B63;&#x5728;&#x8FD0;&#x884C; onReceive()&#x3001;Service.onCreate()&#x3001;onStartCommand()</td>
+</tr>
+<tr>
+<td>100</td>
+<td>Visible</td>
+<td>&#x88AB;&#x5E38;&#x9A7B;&#x5E94;&#x7528; bind &#x4F4F;&#x7684; service/provider&#xFF08;&#x81EA;&#x7136;&#xFF0C;&#x63D0;&#x5347;&#x4F18;&#x5148;&#x7EA7;&#xFF09;&#xFF0C;&#x6216;&#x8005;&#x867D;&#x975E;&#x524D;&#x53F0;&#x3001;&#x4F46;&#x80FD;&#x770B;&#x5230;&#x754C;&#x9762;&#x7684;&#x5E94;&#x7528;</td>
+</tr>
+<tr>
+<td>200</td>
+<td>Perceptible</td>
+<td>startService() &#x4E14;&#x8C03;&#x7528; startForeground()</td>
+</tr>
+<tr>
+<td>500</td>
+<td>A Service</td>
+<td>startService()</td>
+</tr>
+<tr>
+<td>600</td>
+<td>Home</td>
+<td>&#x684C;&#x9762;&#x5728;&#x540E;&#x53F0;&#x65F6;</td>
+</tr>
+<tr>
+<td>700</td>
+<td>Previous</td>
+<td>&#x524D;&#x4E00;&#x4E2A;&#x9000;&#x5230;&#x540E;&#x53F0;&#x7684;&#x5E94;&#x7528;</td>
+</tr>
+<tr>
+<td>800</td>
+<td>B Services</td>
+<td>startService() &#x4E14;&#x8FD0;&#x884C;&#x65F6;&#x95F4;&#x8F83;&#x957F;</td>
+</tr>
+<tr>
+<td>&gt;900</td>
+<td>Cached</td>
+<td>&#x5355;&#x7EAF;&#x53EA;&#x6709; activity &#x3001;&#x5DF2;&#x7ECF;&#x6267;&#x884C;&#x5B8C; receiver&#x3001;service&#x3001;provider</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><p>ADJ &lt; 0 &#x7684;&#xFF0C; LMK &#x4E0D;&#x780D; &lt;-----------&gt; &#x7B49;&#x4EF7;&#x4E8E;&#xFF1A;Native&#x8FDB;&#x7A0B;&#x4E0D;&#x7BA1;</p>
+<p>&#x6CE8;&#xFF1A; &#x6781;&#x7AEF;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;ADJ= 0&#xFF0C;&#x4E5F;&#x4F1A;&#x88AB;&#x780D;</p>
+</li>
+<li><p>ADJ &#x6839;&#x636E;&#x8FDB;&#x7A0B;&#x7684;&#x72B6;&#x6001;&#x51B3;&#x5B9A;&#xFF0C; &#x4E0D;&#x53C2;&#x8003;&#x7EBF;&#x7A0B;&#x7684;&#x72B6;&#x6001;</p>
+</li>
+</ol>
+<p>OOM_SCORE_ADJ &#x503C;&#x5F71;&#x54CD;&#x56E0;&#x7D20;&#xFF1A;</p>
+<blockquote>
+<p>&#x4E0A;&#x9762;&#x6240;&#x6709;&#x3001;&#x6709;&#x6CA1;&#x6709;activity&#x3001;&#x6709;&#x6CA1;&#x6709;service</p>
+</blockquote>
+<p>visible&#x7406;&#x89E3;&#xFF1A;</p>
+<blockquote>
+<p>1&#x3001;&#x524D;&#x53F0;&#x5E94;&#x7528;</p>
+<p>2&#x3001;&#x867D;&#x975E;&#x524D;&#x53F0;&#x3001;&#x4F46;&#x80FD;&#x770B;&#x5230;&#x754C;&#x9762;&#x7684;&#x5E94;&#x7528;   ----&gt; &#x81EA;&#x7136;&#x4E5F;&#x662F;&#x53EF;&#x89C1;&#x7684;</p>
+</blockquote>
+<p>Perceptible &#x53EF;&#x611F;&#x77E5;&#xFF1A;</p>
+<blockquote>
+<p>&#x867D;&#x7136;&#x4E0D;&#x53EF;&#x89C1;&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x611F;&#x77E5;&#x5230;&#xFF1A; &#x6BD4;&#x5982;&#x64AD;&#x653E;&#x97F3;&#x4E50;&#x3001;&#x5F55;&#x97F3;</p>
+</blockquote>
+<p>&#x4E0B;&#x8F7D;&#x5C5E;&#x4E8E;Perceptible&#x561B;&#xFF1F; -------&gt;  TODO:</p>
+<p>B services  &#x5B89;&#x5353;&#x53D1;&#x5C55;&#xFF0C;&#x8BBE;&#x8BA1;&#x7684;&#x8865;&#x5751;&#xFF1A; --------&gt; TODO: &#x5982;&#x4F55;&#x77E5;&#x9053;&#x5386;&#x53F2;&#x539F;&#x56E0;&#x5462;&#xFF1F;</p>
+<blockquote>
+<p>&#x968F;&#x7740;&#x7248;&#x672C;&#x6F14;&#x8FDB;&#xFF0C;&#x53D1;&#x73B0;&#x5F00;&#x53D1;&#x8005;&#x542F;&#x52A8;&#x7684;service&#x8D8A;&#x6765;&#x8D8A;&#x591A; ------&gt; &#x9488;&#x5BF9;&#x4E8E;&#x65F6;&#x95F4;&#x8F83;&#x957F;&#x7684;&#xFF0C;&#x505A;&#x8FDB;&#x6B65;&#x533A;&#x5206;</p>
+</blockquote>
+<p><strong>&#x5B89;&#x5353;&#x628A;&#x914D;&#x7F6E;&#x7559;&#x7ED9;&#x4E86;&#x5F00;&#x53D1;&#x8005;&#xFF0C;&#x8BA9;&#x5F00;&#x53D1;&#x8005;&#x7ED9;&#x5E94;&#x7528;&#x5206;&#x7C7B;&#x5230;&#x4E0A;&#x9762;&#x90A3;&#x4E2A;&#x7C7B;&#x522B;&#x91CC;</strong></p>
+<h3 id="&#x6B21;&#x8981;&#xFF1A;-activity-manager-&#x6307;&#x6D3E;-oomscoreadj-&#x7684;&#x7279;&#x6B8A;&#x89C4;&#x5219;"><a name="&#x6B21;&#x8981;&#xFF1A;-activity-manager-&#x6307;&#x6D3E;-oomscoreadj-&#x7684;&#x7279;&#x6B8A;&#x89C4;&#x5219;" class="anchor-navigation-ex-anchor" href="#&#x6B21;&#x8981;&#xFF1A;-activity-manager-&#x6307;&#x6D3E;-oomscoreadj-&#x7684;&#x7279;&#x6B8A;&#x89C4;&#x5219;"><i class="fa fa-link" aria-hidden="true"></i></a>2.3.4. &#x6B21;&#x8981;&#xFF1A; Activity Manager &#x6307;&#x6D3E; OOM_SCORE_ADJ &#x7684;&#x7279;&#x6B8A;&#x89C4;&#x5219;</h3>
+<p>&#x89C4;&#x5219;&#xFF1A;</p>
+<p>1&#x3001;&#x82E5;&#x5E94;&#x7528;&#x5206;&#x6210;&#x4E0D;&#x540C;&#x8FDB;&#x7A0B;&#x8FD0;&#x884C;&#xFF0C;&#x5219;&#x6BCF;&#x4E2A;&#x8FDB;&#x7A0B;&#x6839;&#x636E;&#x8FD0;&#x884C;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x6307;&#x6D3E;&#x5BF9;&#x5E94;&#x7684; ADJ</p>
+<p>2&#x3001;&#x63D0;&#x5347;&#x89C4;&#x5219;&#xFF1A;</p>
+<blockquote>
+<p>A &#x5E94;&#x7528;&#x900F;&#x8FC7; bind service, provider &#x65B9;&#x5F0F;&#x7ED1;&#x5B9A; B &#x5E94;&#x7528;&#x7684;&#x671F;&#x95F4;&#xFF0C; B &#x7684; ADJ &#x63D0;&#x5347;&#x5230;&#x4E0E; A &#x76F8;&#x540C;</p>
+</blockquote>
+<p>3&#x3001;&#x5904;&#x7F5A;&#x89C4;&#x5219;&#xFF1A;</p>
+<blockquote>
+<p>&#x975E; foreground service &#x8FD0;&#x884C;&#x8FC7;&#x4E45;&#xFF0C;ADJ &#x6539;&#x4E3A; cached   ---------&gt; &#x7B80;&#x8A00;&#x4E4B;&#xFF1A;A service&#x8FC7;&#x4E45;&#xFF0C;&#x6539;&#x4E3A;B service&#xFF1B;B service&#x8FC7;&#x4E45;&#xFF0C;&#x6539;&#x4E3A; cached</p>
+<p>&#x5177;&#x6709; service/provider &#x7684;&#x5E94;&#x7528;&#x8FD0;&#x884C; activity&#xFF0C;ADJ &#x6539;&#x4E3A;cached</p>
+</blockquote>
+<h3 id="q-&#x7CFB;&#x7EDF;&#x4F55;&#x65F6;&#x56E0;&#x4E3A;&#x5185;&#x5B58;&#x538B;&#x529B;&#x9AD8;&#x800C;&#x5361;&#x987F;"><a name="q-&#x7CFB;&#x7EDF;&#x4F55;&#x65F6;&#x56E0;&#x4E3A;&#x5185;&#x5B58;&#x538B;&#x529B;&#x9AD8;&#x800C;&#x5361;&#x987F;" class="anchor-navigation-ex-anchor" href="#q-&#x7CFB;&#x7EDF;&#x4F55;&#x65F6;&#x56E0;&#x4E3A;&#x5185;&#x5B58;&#x538B;&#x529B;&#x9AD8;&#x800C;&#x5361;&#x987F;"><i class="fa fa-link" aria-hidden="true"></i></a>2.3.5. Q: &#x7CFB;&#x7EDF;&#x4F55;&#x65F6;&#x56E0;&#x4E3A;&#x5185;&#x5B58;&#x538B;&#x529B;&#x9AD8;&#x800C;&#x5361;&#x987F;</h3>
+<table>
+<thead>
+<tr>
+<th>OOM_SCORE_ADJ</th>
+<th>&#x5206;&#x7C7B;&#x610F;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-1000</td>
+<td>Native</td>
+</tr>
+<tr>
+<td>-700 ~ -800</td>
+<td>Persistent</td>
+</tr>
+<tr>
+<td>0</td>
+<td>Foreground</td>
+</tr>
+<tr>
+<td>100</td>
+<td>Visible</td>
+</tr>
+<tr>
+<td>200</td>
+<td>Perceptible</td>
+</tr>
+<tr>
+<td>500</td>
+<td>A Service</td>
+</tr>
+<tr>
+<td>600</td>
+<td>Home</td>
+</tr>
+<tr>
+<td>700</td>
+<td>Previous</td>
+</tr>
+<tr>
+<td>800</td>
+<td>B Services</td>
+</tr>
+<tr>
+<td>&gt;900</td>
+<td>Cached</td>
+</tr>
+</tbody>
+</table>
+<p>1&#x3001;<strong>&#x7CFB;&#x7EDF;&#x7ECF;&#x9A8C;&#xFF1A;</strong>Cached &#x5E94;&#x7528;&#x5C06;&#x88AB;&#x6E05;&#x5B8C;&#x65F6;&#xFF0C;&#x7CFB;&#x7EDF;&#x5373;&#x51FA;&#x73B0;&#x660E;&#x663E;&#x7684;&#x6027;&#x80FD;&#x4E0B;&#x964D;</p>
+<ul>
+<li>-----&gt; &#x539F;&#x56E0;&#xFF1A;</li>
+</ul>
+<blockquote>
+<p>Cached &#x5E94;&#x7528;&#x5C06;&#x88AB;&#x6E05;&#x5B8C;&#x65F6;&#xFF0C;&#x6E05;Services&#x3002;&#x56E0;&#x4E3A;service &#x88AB;kill&#x540E;&#xFF0C;&#x53C8;&#x4F1A;&#x91CD;&#x542F;&#xFF0C;&#x91CD;&#x542F;&#x4F1A;&#x62A2;&#x5360;CPU&#x8D44;&#x6E90;&#xFF08;&#x5361;&#x987F;----CPU&#x8D44;&#x6E90;&#xFF09;</p>
+</blockquote>
+<p>2&#x3001;</p>
+<h3 id="&#x7EF4;&#x6D4B;"><a name="&#x7EF4;&#x6D4B;" class="anchor-navigation-ex-anchor" href="#&#x7EF4;&#x6D4B;"><i class="fa fa-link" aria-hidden="true"></i></a>2.3.6. &#x7EF4;&#x6D4B;</h3>
+<p>dumpsys meminfo</p>
+<pre><code> Total RSS by OOM adjustment:
+   1,861,186K: Native
+         164,280K: zygote64 (pid 558)
+         144,104K: zygote (pid 565)
+         127,234K: surfaceflinger (pid 637)
+         113,436K: app_process (pid 19438)
+         109,624K: camerahalserver (pid 817)
+         101,520K: media.codec (pid 813)
+          95,348K: app_process (pid 19459)
+          88,416K: logd (pid 323)
+          73,848K: mtkfastavm (pid 301)
+          40,486K: android.hardware.graphics.composer@2.1-service (pid 598)
+          37,896K: webview_zygote (pid 1384)
+          27,388K: em_svr (pid 720)
+          25,548K: media.extractor (pid 777)
+          23,008K: pcmanfm (pid 23480)
+          22,792K: vtservice (pid 771)
+          22,616K: mediaserver (pid 787)
+          21,252K: lxpanel (pid 23477)
+          21,012K: android.hardware.automotive.evs@1.0-service (pid 812)
+          20,996K: audioserver (pid 630)
+          19,448K: cameraserver (pid 751)
+          18,380K: smartplatformserver (pid 800)
+          15,326K: init (pid 1)
+          15,296K: wpa_supplicant (pid 25964)
+          12,948K: media.swcodec (pid 834)
+          12,688K: openbox (pid 23474)
+          12,560K: vpud (pid 833)
+          11,204K: vendor.mediatek.hardware.pq@2.2-service (pid 829)
+           9,736K: android.hardware.audio.service.mediatek (pid 567)
+           9,520K: netd (pid 483)
+           8,956K: lxsession (pid 23461)
+           8,828K: android.hardware.neuralnetworks@1.3-service-mtk-neuron (pid 742)
+           8,776K: android.hardware.graphics.allocator@4.0-service-mediatek (pid 591)
+           8,720K: vendor.mediatek.hardware.mtkpower@1.0-service (pid 615)
+           8,432K: vendor.mediatek.hardware.gpu@1.0-service (pid 612)
+           8,392K: vendor.mediatek.hardware.sfs@1.0-service (pid 341)
+           8,308K: adbd (pid 3336)
+           8,100K: android.hardware.wifi@1.0-service-lazy (pid 1159)
+           8,040K: android.hardware.gnss@2.1-service-mediatek (pid 575)
+           7,864K: Xtightvnc (pid 23446)
+           7,644K: keystore (pid 776)
+           7,364K: wificond (pid 810)
+           7,304K: update_engine (pid 849)
+           7,212K: ueventd (pid 306)
+           7,136K: carwatchdogd (pid 319)
+           7,112K: networkmanager (pid 15624)
+           7,020K: media.metrics (pid 779)
+           6,868K: vold (pid 353)
+           6,712K: gpuservice (pid 634)
+           6,488K: credstore (pid 633)
+           6,484K: gatekeeperd (pid 845)
+           6,460K: init (pid 304)
+           6,424K: gbe (pid 709)
+           6,420K: android.hardware.automotive.vehicle@2.0-service (pid 569)
+           6,328K: drmserver (pid 753)
+           6,228K: mtkfastcalib (pid 827)
+           6,144K: android.hardware.drm@1.3-service.clearkey (pid 572)
+           5,904K: hwservicemanager (pid 334)
+           5,900K: storaged (pid 805)
+           5,896K: android.hardware.vibrator-service.mediatek (pid 622)
+           5,628K: android.hardware.sensors@2.0-service-mediatek (pid 814)
+           5,548K: android.hardware.lights-service.mediatek (pid 609)
+           5,428K: getgameserver (pid 822)
+           5,364K: installd (pid 775)
+           5,212K: android.hardware.keymaster@4.0-service (pid 408)
+           5,068K: android.hardware.gatekeeper@1.0-service (pid 574)
+           4,992K: lbs_hidl_service (pid 608)
+           4,984K: vendor.mediatek.hardware.nvram@1.1-service (pid 616)
+           4,956K: vendor.mediatek.hardware.vpu@1.0-service (pid 618)
+           4,952K: android.hardware.bluetooth@1.0-service-mediatek (pid 570)
+           4,732K: servicemanager (pid 332)
+           4,668K: incidentd (pid 755)
+           4,648K: android.hardware.thermal@2.0-service.mtk (pid 603)
+           4,640K: android.system.suspend@1.0-service (pid 407)
+           4,608K: android.hardware.health@2.1-service (pid 599)
+           4,572K: android.hardware.memtrack@1.0-service (pid 600)
+           4,544K: statsd (pid 479)
+           4,464K: android.hardware.drm@1.3-service.widevine (pid 573)
+           4,456K: netdagent (pid 857)
+           4,448K: aee_aed64 (pid 399)
+           4,424K: dumpsys (pid 8743)
+           4,400K: android.hardware.usb@1.1-service-mediatek (pid 606)
+           4,344K: android.hardware.boot@1.1-service (pid 359)
+           4,252K: com.android.car.procfsinspector (pid 1704)
+           4,220K: android.hardware.automotive.audiocontrol@1.0-service (pid 568)
+           4,212K: lbs_dbg (pid 743)
+           4,172K: vndservicemanager (pid 335)
+           4,120K: mlclient_test (pid 348)
+           4,108K: batterywarning (pid 1985)
+           4,096K: aee_aedv64 (pid 451)
+           4,064K: android.hardware.cas@1.2-service (pid 571)
+           3,940K: sh (pid 19436)
+           3,900K: logcat (pid 27704)
+           3,768K: android.hidl.allocator@1.0-service (pid 566)
+           3,732K: sh (pid 13765)
+           3,708K: timesync (pid 828)
+           3,600K: aee_aed (pid 398)
+           3,596K: netdiag (pid 792)
+           3,556K: aee_aedv (pid 450)
+           3,452K: thermal (pid 824)
+           3,372K: wlan_assistant (pid 466)
+           3,348K: traced (pid 732)
+           3,288K: ip6tables-restore (pid 485)
+           3,256K: thermald (pid 756)
+           3,192K: iptables-restore (pid 484)
+           3,180K: menu-cached (pid 23510)
+           3,112K: sshd -p 22 [listener] 0 of 10-100 startups (pid 23426)
+           3,084K: mobile_log_d (pid 791)
+           3,064K: lmkd (pid 326)
+           2,988K: traced_probes (pid 723)
+           2,772K: thermalloadalgod (pid 826)
+           2,744K: tombstoned (pid 460)
+           2,684K: fuelgauged (pid 641)
+           2,636K: sh (pid 336)
+           2,244K: connsyslogger (pid 752)
+           2,068K: dbus-daemon (pid 23388)
+           1,204K: ssh-agent (pid 23487)
+     667,164K: System
+         667,164K: system (pid 726)
+   1,376,891K: Persistent
+         268,079K: com.android.systemui (pid 1189)
+         148,336K: com.txznet.txz (pid 2151)
+         124,156K: com.android.phone (pid 1493)
+         115,260K: com.android.networkstack.process (pid 1323)
+         110,260K: com.android.car (pid 1273)
+         109,284K: com.android.car.systemupdater (pid 2095)
+         101,992K: com.mediatek.entitlement.o2 (pid 1448)
+          85,896K: com.mediatek.tbox.dataconnection (pid 3459)
+          84,892K: com.mediatek.smartratswitch (pid 1352)
+          84,772K: com.pvetec.ctrlcenter (pid 2179)
+          74,136K: com.pvetec.carcorder (pid 2082)
+          69,828K: com.android.se (pid 1417)
+     310,160K: Persistent Service
+         110,992K: com.txznet.txz:svr1 (pid 2539)
+         110,712K: com.android.bluetooth (pid 1168)
+          88,456K: com.txznet.adapter (pid 2435)
+     176,876K: Foreground
+         176,876K: com.android.settings (pid 23721 / activities)  // ------&gt; &#x53EA;&#x6709;settings&#x5728;&#x524D;&#x53F0;
+     873,773K: Visible
+         214,865K: com.pvetec.launcher1 (pid 2254 / activities)
+         170,272K: cn.kuwo.kwmusiccar (pid 31863 / activities)
+         140,816K: android.ext.services (pid 1942)
+         102,868K: cn.kuwo.kwmusiccar:remote (pid 31927)
+         100,156K: com.pvetec.carcorderservice (pid 2384)
+          75,884K: com.android.settings.intelligence (pid 23756)
+          68,912K: com.android.experimentalcar (pid 1705)
+     972,156K: Perceptible
+         308,052K: com.autonavi.amapauto (pid 3569)
+         184,876K: com.iflytek.inputmethod (pid 2045)
+         146,792K: com.iflytek.inputmethod.assist (pid 2356)
+         121,860K: com.autonavi.amapauto:locationservice (pid 3852)
+         109,276K: com.autonavi.amapauto:push (pid 4016)
+         101,300K: com.autonavi.amapauto:socol (pid 7468)
+     153,692K: Home
+         153,692K: com.pvetec.launcher (pid 2290 / activities)
+     242,564K: B Services
+          98,272K: cn.kuwo.kwmusiccar:pushService (pid 11569)
+          73,820K: com.pvetec.carcorder:gdremote (pid 2330)
+          70,472K: com.pvetec.presentation (pid 3143)
+   1,066,632K: Cached
+         145,812K: com.sonelli.juicessh (pid 32018)
+         138,064K: com.mediatek.camera (pid 5029)
+         134,564K: ru.meefik.linuxdeploy (pid 23046 / activities)
+         127,660K: com.example.myapplication (pid 23379)
+         119,132K: android.process.media (pid 2217)
+          93,724K: com.android.permissioncontroller (pid 29140)
+          83,244K: com.android.providers.calendar (pid 3496)
+          77,820K: com.google.android.car.defaultstoragemonitoringcompanionapp (pid 11251)
+          76,160K: com.android.webview:webview_service (pid 17588)
+          70,452K: com.android.dialer (pid 32036)
+</code></pre><p>&#x672C;&#x95E8;&#x8BFE;&#x80FD;&#x5B66;&#x5230;&#x4EC0;&#x4E48;</p>
+<ol>
+<li>&#x7CFB;&#x7EDF;&#x5185;&#x5B58;&#x5206;&#x5E03;</li>
+<li>&#x4F55;&#x8C13;&#x5E38;&#x9A7B;&#x5E94;&#x7528;</li>
+<li>&#x5B89;&#x5353;&#x7CFB;&#x7EDF;&#x5982;&#x4F55;&#x5206;&#x914D; OOM ADJ</li>
+<li>LMK</li>
+<li>Persistent/Visible/Perceptible/A service/B service &#x7279;&#x6027;</li>
+<li>Service binding &#x4E0E; OOM ADJ &#x5F71;&#x54CD;&#x4F55;&#x8C13;&#x5E38;&#x9A7B;&#x5E94;&#x7528; &#x2022; &#x56E0;&#x4E3A;&#x529F;&#x80FD;&#x5B9E;&#x73B0;&#x9700;&#x8981;&#xFF0C;&#x5FC5;&#x987B;&#x957F;&#x671F;&#x3001;&#x6216;&#x662F;&#x6C38;&#x4E45;&#x9A7B;&#x7559;&#x5728;&#x540E;&#x53F0;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x53EF;&#x80FD;&#x5904;&#x4E8E;&#x4E0D;&#x65AD;&#x8FD0;&#x884C;&#x3001;&#x4E5F;&#x53EF;&#x80FD;&#x5904;&#x4E8E;&#x6309;&#x9700; &#x8FD0;&#x884C; &#x2022; &#x5B89;&#x5353;&#x5B9E;&#x73B0;&#x67D0;&#x4E2A;&#x529F;&#x80FD;&#x540E;&#x53F0;&#x6301;&#x7EED;&#x8FD0;&#x884C;&#x7684;&#x65B9;&#x6CD5;&#xFF1A; &#xD8; &#x5728; AndroidManifest.xml &#x8BBE; persistent=true &#xD8; &#x4EE5; native &#x8FDB;&#x7A0B;&#x8FD0;&#x884C; &#xD8; &#x4EE5; start service &#x8FD0;&#x884C;&#xFF0C;&#x4E0D;&#x505C;&#x6B62; &#xD8; &#x4EE5; start service + startForeground &#x8FD0;&#x884C;&#xFF0C;&#x4E0D;&#x505C;&#x6B62; &#xD8; &#x95F4;&#x63A5;&#x56E0;&#x7D20;&#xFF1A;&#x4EE5; bind service&#x3001;provider &#x7ED1;&#x5B9A;&#x5176;&#x4ED6;&#x8FDB;&#x7A0B;&#x4E0D;&#x653E; &#x2022; &#x5E38;&#x9A7B;&#x8FDB;&#x7A0B;&#x8D8A;&#x591A;&#xFF0C;&#x53EF;&#x7528;&#x5185;&#x5B58;&#x8D8A;&#x5C11;&#x5B89;&#x5353;&#x7CFB;&#x7EDF;&#x5185;&#x5B58;&#x5206;&#x5E03; &#x5E38;&#x9A7B;&#x5E94;&#x7528; &#x975E;&#x5E38;&#x9A7B;&#x5E94;&#x7528; Free Memory &#x5185;&#x6838;&#x4F7F;&#x7528; &#x7CFB;&#x7EDF;&#x7F13;&#x5B58; 4GB, 8GB, 12GB, 16GB</li>
+<li>&#x5E73;&#x65F6;&#x9700;&#x8981; free memory &#x65F6;&#xFF0C; &#x4F1A;&#x4ECE;&#x7CFB;&#x7EDF;&#x7F13;&#x5B58;&#x91CA;&#x653E;</li>
+<li>&#x7CFB;&#x7EDF;&#x5185;&#x5B58;&#x5403;&#x7D27;&#x65F6;&#xFF0C; &#x4F1A;&#x5927;&#x91CF;&#x91CA;&#x653E;</li>
+<li>&#x5927;&#x91CF;&#x91CA;&#x653E;&#x4F1A;&#x9020;&#x6210;&#x6027;&#x80FD;&#x4E0B;&#x964D;</li>
+<li>&#x5E73;&#x65F6;&#x9700;&#x8981; free memory &#x65F6;&#xFF0C; &#x4F1A;&#x4F9D;&#x7167;&#x67D0;&#x4E2A;&#x89C4;&#x5219;&#x4F9D; &#x5E8F;&#x6740;&#x5E94;&#x7528;</li>
+<li>&#x9700;&#x81F3;&#x5C11;&#x4FDD;&#x7559;&#x521A;&#x9000;&#x5230;&#x540E;&#x53F0;&#x7684;&#x5E94;&#x7528; &#x524D;&#x53F0;&#x5E94;&#x7528;&#x4E3E;&#x4F8B;&#xFF1A;&#x4E00;&#x79CD;&#x6781;&#x81F4;&#x7684;&#x7CFB;&#x7EDF;&#x8BBE;&#x8BA1; &#x5E38;&#x9A7B;&#x5E94;&#x7528; Free Memory &#x5185;&#x6838;&#x4F7F;&#x7528; &#x7CFB;&#x7EDF;&#x7F13;&#x5B58; 4GB, 8GB, 12GB, 16GB &#x628A;&#x7CFB;&#x7EDF;&#x6240;&#x6709;&#x5E94;&#x7528;&#x90FD;&#x8BBE;&#x8BA1;&#x6210;&#x5E38;&#x9A7B;&#x3002;&#x91C7;&#x7528;&#x7684;&#x524D;&#x63D0;&#x662F;&#xFF1A;</li>
+<li>&#x5C01;&#x95ED;&#x751F;&#x6001;&#xFF0C;&#x65E0;&#x6CD5;&#x5B89;&#x88C5;&#x5176;&#x4ED6;&#x5E94;&#x7528;</li>
+<li>&#x7CFB;&#x7EDF;&#x5E94;&#x7528;&#x5360;&#x7528;&#x7684;&#x5185;&#x5B58;&#x53EF;&#x63A7;&#x5F00;&#x653E;&#x751F;&#x6001;&#x3001;&#x6216;&#x7CFB;&#x7EDF;&#x5E94;&#x7528;&#x5FEB;&#x901F;&#x8FED;&#x4EE3;&#x7684;&#x7CFB;&#x7EDF; &#x5E38;&#x9A7B;&#x5E94;&#x7528; &#x975E;&#x5E38;&#x9A7B;&#x5E94;&#x7528; Free Memory &#x5185;&#x6838;&#x4F7F;&#x7528; &#x7CFB;&#x7EDF;&#x7F13;&#x5B58; 4GB, 8GB, 12GB, 16GB &#x524D;&#x53F0;&#x5E94;&#x7528; &#x82E5;&#x975E;&#x5E38;&#x9A7B;&#x5E94;&#x7528;&#x4FDD;&#x7559;&#x7684;&#x5C11;&#xFF0C; &#x6700;&#x8FD1;&#x4F7F;&#x7528;&#x7684;&#x5E94;&#x7528;&#x5C31;&#x5BB9;&#x6613; &#x9047;&#x5230;&#x51B7;&#x542F;&#x52A8;</li>
+<li>&#x4FDD;&#x7559;&#x8FC7;&#x591A;&#xFF0C;&#x975E;&#x5E38;&#x9A7B;&#x5E94;&#x7528;&#x5C31;&#x4FDD;&#x7559;&#x5C11;</li>
+<li>&#x4FDD;&#x7559;&#x8FC7;&#x5C11;&#xFF0C;&#x5E94;&#x7528;&#x6BCF;&#x6B21;&#x7533;&#x8BF7;&#x65B0;&#x5185;&#x5B58;&#xFF0C;&#x5C31; &#x9700;&#x8981;&#x89E6;&#x53D1;&#x7CFB;&#x7EDF;&#x673A;&#x5236;&#x817E;&#x51FA; free memory&#xFF0C; &#x901F;&#x5EA6;&#x6162; &#x5B89;&#x5353;&#x7CFB;&#x7EDF;&#x4EE5; LMK (Low Memory Killer&#xFF09;&#x7BA1;&#x7406;Low Memory Killer &#x2022; &#x5B89;&#x5353;&#x523B;&#x610F;&#x4FDD;&#x7559;&#x6700;&#x8FD1;&#x542F;&#x52A8;&#x8FC7;&#x7684;&#x8FDB;&#x7A0B;&#x5728;&#x540E;&#x53F0;&#xFF0C;&#x4F7F;&#x5F97;&#x4E0B;&#x6B21;&#x542F;&#x52A8;&#x65F6;&#x66F4;&#x5FEB; &#x2022; LMK (Low Memory Killer) &#xD8; &#x4FDD;&#x969C;&#x7CFB;&#x7EDF;&#x59CB;&#x7EC8;&#x6709;&#x8DB3;&#x591F;&#x591A;&#x7684; free memory &#xD8; &#x4EE5;&#x8FDB;&#x7A0B;&#x91CD;&#x8981;&#x6027; (&#x79F0;&#x4E3A; OOM ADJ, Out of Memory Adjustment ) &#x4E0E;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#xFF0C;&#x51B3;&#x5B9A;&#x780D;&#x7684;&#x987A; &#x5E8F; &#x2022; &#x591A;&#x4EFB;&#x52A1;&#x80FD;&#x529B; (Multi-Tasking Capability) &#xD8; &#x8BC4;&#x6D4B;&#x5F00;&#x653E;&#x751F;&#x6001;&#x7CFB;&#x7EDF;&#x7684;&#x591A;&#x4EFB;&#x52A1;&#x80FD;&#x529B;&#xFF1A;&#x80FD;&#x9A7B;&#x7559;&#x591A;&#x5C11;&#x540E;&#x88C5;&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x5E94;&#x7528;&#x5728;&#x540E;&#x53F0;&#xFF0C;&#x5FEB;&#x901F;&#x5207;&#x6362; &#xD8; &#x591A;&#x4EFB;&#x52A1;&#x80FD;&#x529B;&#x7684;&#x4FDD;&#x6301;&#xFF0C;&#x662F;&#x5B89;&#x5353;&#x7CFB;&#x7EDF;&#x6027;&#x80FD;&#x4F53;&#x9A8C;&#x91CD;&#x8981;&#x7684;&#x4E00;&#x73AF;&#xFF0C;&#x56E0;&#x6B64; LMK &#x7684;&#x8BBE;&#x8BA1;&#xFF0C;&#x65E2;&#x8981;&#x4FDD;&#x969C;&#x6709;&#x8DB3; &#x591F;&#x591A;&#x7684; free memory&#xFF0C;&#x53C8;&#x5FC5;&#x987B;&#x4FDD;&#x969C;&#x6700;&#x8FD1;&#x4F7F;&#x7528;&#x8FC7;&#x7684;&#x51E0;&#x4E2A;&#x5E94;&#x7528;&#x80FD;&#x4FDD;&#x6301;&#x5728;&#x540E;&#x53F0;&#x95EE;&#x9898;&#xFF1A;&#x4E3A;&#x4F55;&#x5185;&#x5B58;&#x6E05;&#x7406; (&#x4E00;&#x952E;&#x52A0;&#x901F;) &#x80FD;&#x63D0;&#x5347;&#x6027;&#x80FD; &#x2022; &#x4E3A;&#x4F55;&#x5185;&#x5B58;&#x6E05;&#x7406; (&#x4E00;&#x952E;&#x52A0;&#x901F;) &#x529F;&#x80FD;&#xFF0C;&#x80FD;&#x63D0;&#x5347;&#x6027;&#x80FD;&#xFF1F; &#xD8; LMK &#x4FDD;&#x7559;&#x7684; free memory &#x8FC7;&#x5C11;&#xFF0C;&#x5BFC;&#x81F4;&#x9700;&#x8981;&#x9891;&#x7E41;&#x641C;&#x5BFB;&#x53EF;&#x7528;&#x5185;&#x5B58; &#xD8; &#x540E;&#x53F0;&#x7684;&#x975E;&#x5E38;&#x9A7B;&#x5E94;&#x7528;&#x6301;&#x7EED;&#x8FD0;&#x884C;&#xFF0C;&#x62A2;&#x5360; CPU &#x7B49;&#x7CFB;&#x7EDF;&#x8D44;&#x6E90; &#xD8; &#x8FD0;&#x884C;&#x539F;&#x7406;&#xFF1A;&#x6740;&#x6389;&#x540E;&#x53F0;&#x7684;&#x975E;&#x5E38;&#x9A7B;&#x5E94;&#x7528; &#x2022; &#x4E00;&#x952E;&#x52A0;&#x901F;&#x5E76;&#x975E;&#x4E07;&#x7075;&#x4E39; &#xD8; &#x82E5;&#x5E38;&#x9A7B;&#x5E94;&#x7528;&#x5360;&#x7528;&#x8FC7;&#x591A;&#xFF0C;&#x5373;&#x4F7F;&#x518D;&#x600E;&#x4E48;&#x6E05;&#x7406;&#x975E;&#x5E38;&#x9A7B;&#x5E94;&#x7528;&#xFF0C;free memory &#x4ECD;&#x662F;&#x6349;&#x895F;&#x89C1;&#x8098; &#xD8; &#x7B2C;&#x4E09;&#x65B9;&#x5E94;&#x7528;&#x505A;&#x4E00;&#x952E;&#x52A0;&#x901F;&#xFF0C;&#x53EA;&#x80FD; kill&#xFF0C;&#x65E0;&#x6CD5; force stop&#x3002; &#x4EE5; service &#x8FD0;&#x884C;&#x7684;&#x5E94;&#x7528;&#xFF0C;kill &#x540E;&#x4ECD;&#x4F1A;&#x91CD; &#x542F;OOM SCORE ADJ&#xFF1A;LMK &#x53C2;&#x8003;&#x7684;&#x8FDB;&#x7A0B;&#x91CD;&#x8981;&#x6027; OOM_SCORE_ADJ &#x5206;&#x7C7B;&#x610F;&#x4E49; &#x900F;&#x8FC7;&#x4F55;&#x79CD;&#x65B9;&#x5F0F;&#x8FBE;&#x5230; -1000 Native -700 ~ -800 Persistent &#x5728; AndroidManifest.xml &#x8BBE; persistent=true 0 Foreground &#x76EE;&#x524D;&#x5728;&#x524D;&#x53F0;&#x8FD0;&#x884C;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x6216;&#x8005;&#x6B63;&#x5728;&#x8FD0;&#x884C; onReceive()&#x3001;Service.onCreate()&#x3001; onStartCommand() 100 Visible &#x88AB;&#x5E38;&#x9A7B;&#x5E94;&#x7528; bind &#x4F4F; service/provider&#xFF0C;&#x6216;&#x8005;&#x867D;&#x975E;&#x524D;&#x53F0;&#x3001;&#x4F46;&#x80FD;&#x770B;&#x5230;&#x754C;&#x9762;&#x7684;&#x5E94;&#x7528; 200 Perceptible startService() &#x4E14;&#x8C03;&#x7528; startForeground() 500 A Service startService() 600 Home &#x684C;&#x9762;&#x5728;&#x540E;&#x53F0;&#x65F6; 700 Previous &#x524D;&#x4E00;&#x4E2A;&#x9000;&#x5230;&#x540E;&#x53F0;&#x7684;&#x5E94;&#x7528; 800 B Services startService() &#x4E14;&#x8FD0;&#x884C;&#x65F6;&#x95F4;&#x8F83;&#x957F;</li>
+</ol>
+<blockquote>
+<p>900 Cached &#x5355;&#x7EAF;&#x53EA;&#x6709; activity &#x3001;&#x5DF2;&#x7ECF;&#x6267;&#x884C;&#x5B8C; receiver&#x3001;service&#x3001;provider</p>
+</blockquote>
+<ol>
+<li>ADJ &lt; 0 &#x7684;&#xFF0C; LMK &#x4E0D;&#x780D;</li>
+<li>ADJ &#x6839;&#x636E;&#x8FDB;&#x7A0B;&#x7684;&#x72B6;&#x6001;&#x51B3;&#x5B9A;&#xFF0C; &#x4E0D;&#x53C2;&#x8003;&#x7EBF;&#x7A0B;&#x7684;&#x72B6;&#x6001;&#x67E5;&#x8BE2;&#x5E94;&#x7528; OOM_SCORE_ADJ &#x7684;&#x65B9;&#x6CD5;&#xFF1A;dumpsys meminfo Total PSS by OOM adjustment: 700,180K: Native 60,272K: android.hardware.camera.provider@2.4-service_64 (pid 237) 37,434K: zygote (pid 119) 31,064K: surfaceflinger (pid 352) .... 193,699K: System 193,699K: system (pid 772) 1,166,162K: Persistent 341,145K: com.byd.autovoice (pid 3527) 133,854K: com.android.systemui (pid 1633) 71,200K: com.byd.xcall (pid 3085) ... 49,503K: Persistent Service 27,025K: com.android.providers.media.module (pid 2802) 22,478K: com.android.bluetooth (pid 1632) 158,248K: Foreground 63,930K: com.byd.wallpaperhome (pid 1731) 44,356K: com.android.launcher3 (pid 2851 / activities) ... 349,210K: Visible 184,359K: com.byd.diLinkAccount (pid 4057) 80,854K: com.byd.launchermap (pid 4165) ... 437,692K: Perceptible 159,790K: com.alipay.arome.app (pid 4879) 98,502K: com.byd.videoplay (pid 5262) ... 27,123K: A Services 14,677K: com.byd.rsemonitor.ivi (pid 6524) 12,446K: com.byd.ditrainer.ditrainer_service (pid 6390) 18,752K: Previous 10,689K: android.process.acore (pid 4174) 8,063K: android.process.media (pid 3922) 6,298K: B Services 6,298K: com.byd.mediatesttool (pid 6424) 256,410K: Cached 23,149K: cmgyunting.vehicleplayer.cnr (pid 5573) 19,609K: com.icoolme.android.weather.bydauto (pid 4140) ...Activity Manager &#x6307;&#x6D3E; OOM_SCORE_ADJ &#x7684;&#x7279;&#x6B8A;&#x89C4;&#x5219; OOM_SCORE_ADJ &#x5206;&#x7C7B;&#x610F;&#x4E49; -1000 Native -700 ~ -800 Persistent 0 Foreground 100 Visible 200 Perceptible 500 A Service 600 Home 700 Previous 800 B Services</li>
+</ol>
+<blockquote>
+<p>900 Cached &#x2022; &#x82E5;&#x5E94;&#x7528;&#x5206;&#x6210;&#x4E0D;&#x540C;&#x8FDB;&#x7A0B;&#x8FD0;&#x884C;&#xFF0C;&#x5219;&#x6BCF;&#x4E2A;&#x8FDB;&#x7A0B;&#x6839;&#x636E;&#x8FD0;&#x884C;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x6307;&#x6D3E; &#x5BF9;&#x5E94;&#x7684; ADJ &#x2022; &#x63D0;&#x5347;&#x89C4;&#x5219; &#xD8; A &#x5E94;&#x7528;&#x900F;&#x8FC7; bind service, provider &#x65B9;&#x5F0F;&#x7ED1;&#x5B9A; B &#x5E94;&#x7528;&#x7684;&#x671F; &#x95F4;&#xFF0C; B &#x7684; ADJ &#x63D0;&#x5347;&#x5230;&#x4E0E; A &#x76F8;&#x540C; &#x2022; &#x5904;&#x7F5A;&#x89C4;&#x5219; &#xD8; &#x975E; foreground service &#x8FD0;&#x884C;&#x8FC7;&#x4E45;&#xFF0C;ADJ &#x6539;&#x4E3A; cached &#xD8; &#x5177;&#x6709; service/provider &#x7684;&#x5E94;&#x7528;&#x8FD0;&#x884C; activity&#xFF0C;ADJ &#x6539;&#x4E3A; cached&#x95EE;&#x9898;&#xFF1A;&#x7CFB;&#x7EDF;&#x4F55;&#x65F6;&#x56E0;&#x4E3A;&#x5185;&#x5B58;&#x538B;&#x529B;&#x9AD8;&#x800C;&#x5361;&#x987F; &#x2022; &#x7CFB;&#x7EDF;&#x7ECF;&#x9A8C;&#xFF1A;Cached &#x5E94;&#x7528;&#x5C06;&#x88AB;&#x6E05;&#x5B8C;&#x65F6;&#xFF0C; &#x7CFB;&#x7EDF;&#x5373;&#x51FA;&#x73B0;&#x660E;&#x663E;&#x7684;&#x6027;&#x80FD;&#x4E0B;&#x964D; &#x2022; &#x5361;&#x987F;&#x6765;&#x6E90;&#xFF1A;&#x7CFB;&#x7EDF;&#x5206;&#x914D;&#x5185;&#x5B58;&#x65F6;&#xFF0C;&#x5E38;&#x9047;&#x5230; &#x53EF;&#x7528;&#x5185;&#x5B58;&#x4E0D;&#x8DB3;&#xFF0C;&#x5BFC;&#x81F4; kswapd &#x5FD9;&#x788C;&#x8FD0; &#x884C;&#xFF0C;&#x56DE;&#x6536;&#x7CFB;&#x7EDF;&#x7F13;&#x5B58;&#x3002;&#x4F46;&#x7CFB;&#x7EDF;&#x4E00;&#x8FD0;&#x884C;&#x53C8; &#x5EFA;&#x7ACB;&#x7F13;&#x5B58; &#x2022; &#x91CD;&#x5EA6;&#x5361;&#x987F;&#x573A;&#x666F;&#xFF1A;&#x780D;&#x5230; ADJ &lt;= 800 &#xD8; kswapd &#x5FD9;&#x788C;&#x8FD0;&#x884C;&#xFF0C;&#x56DE;&#x6536;&#x7CFB;&#x7EDF;&#x7F13;&#x5B58;&#x3002; &#x4F46;&#x7CFB;&#x7EDF;&#x4E00;&#x8FD0;&#x884C;&#x53C8;&#x5EFA;&#x7ACB;&#x7F13;&#x5B58; &#xD8; LMK &#x5FD9;&#x788C;&#x641C;&#x7D22;&#x54EA;&#x4E9B;&#x8FDB;&#x7A0B;&#x80FD;&#x780D; &#xD8; &#x88AB;&#x780D;&#x7684;&#x8FDB;&#x7A0B;&#x53C8;&#x7ACB;&#x5373;&#x91CD;&#x542F; OOM<em>SCORE</em> ADJ &#x5206;&#x7C7B;&#x610F;&#x4E49; -1000 Native -700 ~ -800 Persistent 0 Foreground 100 Visible 200 Perceptible 500 A Service 600 Home 700 Previous 800 B Services 900 Cached &#x5E38;&#x9A7B;&#x5E94;&#x7528; &#x975E;&#x5E38;&#x9A7B;&#x5E94;&#x7528; Free Memory &#x5185;&#x6838;&#x4F7F;&#x7528; &#x7CFB;&#x7EDF;&#x7F13;&#x5B58; &#x524D;&#x53F0;&#x5E94;&#x7528;&#x89E3;&#x51B3;/&#x907F;&#x514D;&#x7CFB;&#x7EDF;&#x8D70;&#x5165;&#x4F4E;&#x5185;&#x5B58;&#x7684;&#x5361;&#x987F;&#x60C5;&#x51B5; &#x2022; &#x662F;&#x5426;&#x6709;&#x5355;&#x4E00;&#x524D;&#x53F0;&#x5E94;&#x7528;&#x5360;&#x7528;&#x8FC7;&#x5927;&#xFF0C;&#x5BFC;&#x81F4;&#x4F7F;&#x7528;&#x8FC7;&#x7A0B;&#x5185;&#x5B58;&#x4E0D;&#x8DB3; &#x2022; &#x964D;&#x4F4E;&#x5E38;&#x9A7B;&#x5E94;&#x7528;&#x7684;&#x5185;&#x5B58;&#x5360;&#x7528; &#x2022; &#x95EE;&#x9898;&#xFF1A;ADJ 0~800 &#x7684;&#x5E94;&#x7528;&#xFF0C;&#x662F;&#x5426;&#x4F4E;&#x5185;&#x5B58;&#x65F6;&#x780D;&#x4E0D;&#x5230;&#xFF1F;</p>
+</blockquote>
+<ol>
+<li>&#x82E5;&#x5185;&#x5B58;&#x6301;&#x7EED;&#x4F4E;&#xFF0C;&#x4F1A;&#x780D;&#x5230;&#x3002;&#x4F46;&#x780D;&#x5230;&#x524D;&#xFF0C;&#x7CFB;&#x7EDF;&#x5DF2;&#x7ECF;&#x5361;&#x987F;&#x4E86;</li>
+<li>&#x780D;&#x4E86;&#x4F1A;&#x91CD;&#x542F;&#xFF0C;&#x91CD;&#x542F;&#x8FC7;&#x7A0B;&#x89C6;&#x540C;&#x524D;&#x53F0;&#x5E94;&#x7528;&#x62A2;&#x5360;CPU&#x8D44;&#x6E90;&#xFF0C; &#x5BFC;&#x81F4;&#x66F4;&#x5361; OOM<em>SCORE</em> ADJ &#x5206;&#x7C7B;&#x610F;&#x4E49; -1000 Native -700 ~ -800 Persistent 0 Foreground 100 Visible 200 Perceptible 500 A Service 600 Home 700 Previous 800 B Services</li>
+</ol>
+<blockquote>
+<p>900 CachedPersistent &#x5E94;&#x7528; &#x2022; &#x5F00;&#x673A;&#x540E;&#x81EA;&#x542F;&#x52A8; &#x2022; Crash &#x540E;&#x4F1A;&#x81EA;&#x52A8;&#x91CD;&#x542F; &#x2022; &#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x7684;&#x95EE;&#x9898; &#xD8; &#x6C38;&#x8FDC;&#x5360;&#x7528;&#x5185;&#x5B58;&#xFF0C;&#x4E0D;&#x7BA1;&#x529F;&#x80FD;&#x662F;&#x5426;&#x6709;&#x5728;&#x4F7F;&#x7528; &#xD8; &#x5373;&#x4F7F;&#x6709;&#x5185;&#x5B58;&#x6CC4;&#x9732;&#xFF0C;&#x7CFB;&#x7EDF;&#x4E5F;&#x6CA1;&#x6709;&#x673A;&#x4F1A;&#x56DE;&#x6536; &#xD8; &#x53EA;&#x8981;&#x542B;&#x6709; activity&#xFF0C;&#x5185;&#x5B58;&#x8D85;&#x8FC7; 100 MB &#x7A00;&#x677E;&#x5E73;&#x5E38; &#xD8; &#x53EA;&#x8981;&#x8FD0;&#x884C;&#xFF0C;&#x4E0E;&#x524D;&#x53F0;&#x5E94;&#x7528;&#x540C;&#x6837;&#x4F18;&#x5148;&#x7EA7;&#x62A2;&#x5360; CPU &#xD8; &#x8FC7;&#x591A; persistent &#x5E94;&#x7528;&#xFF0C;&#x5F00;&#x673A;&#x65F6;&#x7CFB;&#x7EDF;&#x4F1A;&#x5FD9;&#x4E8E;&#x542F;&#x52A8;&#x8FD9;&#x4E9B;&#x5E94;&#x7528; &#xD8; Persistent &#x8FDB;&#x7A0B;&#x5360;&#x7528;&#x5185;&#x5B58;&#x8D8A;&#x591A;&#xFF0C; &#x7CFB;&#x7EDF;&#x53EF;&#x7528;&#x4F59;&#x91CF;&#x8D8A;&#x5C0F; <application android:allowbackup="false" android:label="@string/app_name" android:resizeableactivity="false" android:persistent="true" android:theme="@style/AppTheme" android:supportsrtl="false" android:configchanges="uiMode" android:name="...">Perceptible/A Service/B Service &#x5E94;&#x7528; (1/2) &#x2022; Start service &#x540E;&#xFF0C;&#x6210;&#x4E3A; A service&#x3002;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x957F;&#xFF0C;&#x6216; A service &#x8FC7;&#x591A;&#xFF0C;&#x6210;&#x4E3A; B service&#x3002;A service, B service &#x53EF;&#x5360;&#x7528;&#x7684; CPU &#x8D44;&#x6E90;&#x8F83;&#x524D;&#x53F0;&#x5C0F;&#xFF0C;&#x5FC5;&#x8981;&#x65F6;&#x53EF;&#x9002;&#x5EA6;&#x8BA9;&#x7ED9;&#x5176;&#x4ED6;&#x5E94;&#x7528;&#xFF0C;&#x9002;&#x5408;&#x7528;&#x6237;&#x4E0D;&#x611F;&#x77E5;&#x7684;&#x4EFB;&#x52A1; &#xD8; &#x8FD4;&#x56DE; START_STICKY&#xFF1A;&#x5F53;&#x8FDB;&#x7A0B;&#x672A; stop &#x524D;&#x88AB;&#x780D;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x91CD;&#x542F;&#x8FDB;&#x7A0B;&#x4E0E;&#x670D;&#x52A1;&#xFF0C;&#x5E76;&#x91CD;&#x8D70; onStartCommand()&#xFF0C;&#x6B64;&#x65F6; intent &#x4E3A; null&#x3002;&#x56E0;&#x6B64;&#x53EF;&#x6839;&#x636E; intent &#x662F;&#x5426;&#x4E3A; null&#xFF0C;&#x5224;&#x65AD;&#x662F;&#x5426;&#x91CD;&#x542F; &#xD8; &#x8FD4;&#x56DE; START_NOT_STICKY&#xFF1A;&#x5F53;&#x8FDB;&#x7A0B;&#x672A; stop &#x524D;&#x88AB;&#x780D;&#xFF0C;&#x7CFB;&#x7EDF;&#x4E0D;&#x4F1A;&#x91CD;&#x542F;&#x8FDB;&#x7A0B;&#x3002; &#x9002;&#x5408;&#x4E0D;&#x7D27;&#x6025;&#x3001;&#x53EF;&#x76F4; &#x63A5;&#x7ED3;&#x675F;&#x7684;&#x540E;&#x53F0;&#x4EFB;&#x52A1;&#x3002; &#xD8; &#x8FD4;&#x56DE; START_REDELIVER_INTENT&#xFF1A;&#x5F53;&#x8FDB;&#x7A0B;&#x672A; stop &#x524D;&#x88AB;&#x780D;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x91CD;&#x542F;&#x8FDB;&#x7A0B;&#x4E0E;&#x670D;&#x52A1;&#xFF0C;&#x5E76;&#x91CD;&#x8D70; onStartCommand()&#xFF0C;&#x4E14;&#x5E26;&#x5165;&#x4E0A;&#x6B21;&#x7684; intent &#x2022; Service &#x6267;&#x884C; startForeground() &#x540E;&#xFF0C;&#x6210;&#x4E3A; foreground service&#xFF0C;ADJ &#x6210;&#x4E3A; perceptible&#x3002;&#x8BBE;&#x8BA1;&#x7684; &#x672C;&#x610F;&#xFF0C;&#x662F;&#x6267;&#x884C;&#x7528;&#x6237;&#x53EF;&#x611F;&#x77E5;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x4E14;&#x9700;&#x8981;&#x8DDF;&#x524D;&#x53F0;&#x7ED9;&#x4E88;&#x76F8;&#x540C; CPU &#x8D44;&#x6E90;&#xFF0C;&#x4F8B;&#x5982;&#x64AD;&#x653E;&#x97F3;&#x4E50;&#x3002;&#x4F46;&#x6B64;&#x8BBE;&#x8BA1;&#x5B58; &#x5728;&#x88AB;&#x8BEF;&#x7528;&#x7684;&#x6F0F;&#x6D1E;&#xFF0C;&#x88AB;&#x5404;&#x79CD;&#x5E94;&#x7528;&#x8BEF;&#x7528;&#x3002; public int onStartCommand(Intent intent, int flags, int startId);Perceptible/A Service/B Service &#x5E94;&#x7528; (2/2) &#x2022; &#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x7684;&#x95EE;&#x9898; &#xD8; &#x53EA;&#x8981;&#x4E0D;&#x662F;&#x8BBE;&#x8BA1;&#x6210; START_NOT_STICKY&#xFF0C;&#x6C38;&#x8FDC;&#x5360;&#x7528;&#x5185;&#x5B58;&#xFF0C;&#x4E0D;&#x7BA1;&#x529F;&#x80FD;&#x662F;&#x5426;&#x6709;&#x5728;&#x4F7F;&#x7528; &#xD8; &#x5373;&#x4F7F;&#x6709;&#x5185;&#x5B58;&#x6CC4;&#x9732;&#xFF0C;&#x7CFB;&#x7EDF;&#x5728;&#x6740;&#x8FDB;&#x7A0B;&#x56DE;&#x6536;&#x524D;&#xFF0C;&#x5DF2;&#x7ECF;&#x8FDB;&#x5165;&#x5361;&#x987F;&#x72B6;&#x6001; &#xD8; &#x53EA;&#x8981;&#x542B;&#x6709; activity&#xFF0C;&#x5185;&#x5B58;&#x8D85;&#x8FC7; 100 MB &#x7A00;&#x677E;&#x5E73;&#x5E38; &#xD8; Perceptible&#xFF1A;&#x53EA;&#x8981;&#x8FD0;&#x884C;&#xFF0C;&#x4E0E;&#x524D;&#x53F0;&#x5E94;&#x7528;&#x540C;&#x6837;&#x4F18;&#x5148;&#x7EA7;&#x62A2;&#x5360; CPU &#xD8; &#x5360;&#x7528;&#x8FDB;&#x7A0B;&#x8D8A;&#x591A;&#xFF0C; &#x7CFB;&#x7EDF;&#x53EF;&#x7528;&#x4F59;&#x91CF;&#x8D8A;&#x5C0F;Visible &#x5E94;&#x7528; &#x2022; &#x867D;&#x662F;&#x540E;&#x53F0;&#x5E94;&#x7528;&#xFF0C;&#x4F46;&#x6709;&#x7528;&#x6237;&#x53EF;&#x89C1;&#x7684; activity &#x2022; &#x88AB; Persistent &#x8FDB;&#x7A0B;&#x4EE5; bindService()&#x3001;&#x6216; provider &#x7ED1;&#x5B9A;&#x7684;&#x8FDB;&#x7A0B;&#x3002;&#x5BF9;&#x7CFB;&#x7EDF;&#x53EF;&#x7528;&#x5185;&#x5B58;&#x5F71;&#x54CD;&#x5927;&#x7684;&#x662F;&#x8FD9;&#x79CD;&#x3002; &#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x7684;&#x95EE;&#x9898;&#xFF1A; &#xD8; &#x6C38;&#x8FDC;&#x5360;&#x7528;&#x5185;&#x5B58;&#xFF0C;&#x4E0D;&#x7BA1;&#x529F;&#x80FD;&#x662F;&#x5426;&#x6709;&#x5728;&#x4F7F;&#x7528; &#xD8; &#x5373;&#x4F7F;&#x6709;&#x5185;&#x5B58;&#x6CC4;&#x9732;&#xFF0C;&#x7CFB;&#x7EDF;&#x5728;&#x6740;&#x8FDB;&#x7A0B;&#x56DE;&#x6536;&#x524D;&#xFF0C;&#x5DF2;&#x7ECF;&#x8FDB;&#x5165;&#x5361;&#x987F;&#x72B6;&#x6001; &#xD8; &#x53EA;&#x8981;&#x542B;&#x6709; activity&#xFF0C;&#x5185;&#x5B58;&#x8D85;&#x8FC7; 100 MB &#x7A00;&#x677E;&#x5E73;&#x5E38; &#xD8; Perceptible&#xFF1A;&#x53EA;&#x8981;&#x8FD0;&#x884C;&#xFF0C;&#x4E0E;&#x524D;&#x53F0;&#x5E94;&#x7528;&#x540C;&#x6837;&#x4F18;&#x5148;&#x7EA7;&#x62A2;&#x5360; CPU &#xD8; &#x5360;&#x7528;&#x8FDB;&#x7A0B;&#x8D8A;&#x591A;&#xFF0C; &#x7CFB;&#x7EDF;&#x53EF;&#x7528;&#x4F59;&#x91CF;&#x8D8A;&#x5C0F;dumpsys activity&#xFF1A;&#x67E5;&#x8BE2; Service&#x3001;Provider &#x7684;&#x7ED1;&#x5B9A;&#x3001;&#x8FD0;&#x884C;</application></p>
+</blockquote>
+<ul>
+<li>ServiceRecord{1e06d27 u0 com.byd.diLinkAccount/com.byd.accountcenter.aidl.DiLinkAccountSDKService} app=ProcessRecord{db98b2 5131:com.byd.diLinkAccount/u0a44} created=-1h46m19s766ms started=false connections=7 Connections: act=diLink_Account_sdk pkg=com.byd.diLinkAccount -&gt; 6329:com.byd.multipletheme/u0a59 act=diLink_Account_sdk pkg=com.byd.diLinkAccount -&gt; 3431:com.android.systemui/u0a85 act=diLink_Account_sdk pkg=com.byd.diLinkAccount -&gt; 4210:com.byd.accountservice/1000 act=diLink_Account_sdk pkg=com.byd.diLinkAccount -&gt; 3321:com.byd.carsettings/1000 act=diLink_Account_sdk pkg=com.byd.diLinkAccount -&gt; 5416:com.byd.mycar/1000 act=diLink_Account_sdk pkg=com.byd.diLinkAccount -&gt; 5416:com.byd.mycar/1000 act=diLink_Account_sdk pkg=com.byd.diLinkAccount -&gt; 7532:com.byd.ditrainer.ditrainer_service/1000 act=diLink_Account_sdk pkg=com.byd.diLinkAccount -&gt; 4530:com.byd.autovoice/1000 act=diLink_Account_sdk pkg=com.byd.diLinkAccount -&gt; 4530:com.byd.autovoice/1000</li>
+<li>ServiceRecord{7730d7a u0 com.byd.videoplay/.widget.WidgetService} app=ProcessRecord{5c0ab4d 7014:com.byd.videoplay/u0a56} created=-1h46m15s659ms started=true connections=0</li>
+<li>ServiceRecord{5aea228 u0 com.byd.videoplay/.widget.MediaService} app=ProcessRecord{5c0ab4d 7014:com.byd.videoplay/u0a56} created=-1h46m15s622ms started=false connections=1 Connections: act=android.media.browse.MediaBrowserService -&gt; 7014:com.byd.videoplay/u0a56</li>
+<li><p>ContentProviderRecord{8f601f7 u0 com.android.launcher3/.cardwindow.cardstatus.CardProvider} proc=ProcessRecord{eefb905 3855:com.android.launcher3:overlay.window/1000} authority=com.byd.card 1 connections, 0 external handles -&gt; 5416:com.byd.mycar/1000 s0/0 u1/1 +1h42m20s301msReceiver &#x4E0E; Service &#x7684; ADJ &#x2022; Broadcast Receiver &#x2012; &#x5E94;&#x7528;&#x8C03;&#x7528; onReceive() &#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x8FDB;&#x7A0B;&#x7684; ADJ &#x4E3A; 0 &#x2012; &#x79BB;&#x5F00; onReceive() &#x540E;&#xFF0C;&#x6839;&#x636E;&#x5E94;&#x7528;&#x7684;&#x5176;&#x4ED6;&#x72B6;&#x6001;&#x6765;&#x51B3;&#x5B9A; ADJ &#x2022; Started Service &#x2012; &#x6267;&#x884C; onCreate()&#x3001;onStartCommand() &#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x8FDB;&#x7A0B;&#x7684; ADJ &#x4E3A; 0&#xFF0C;stopService() &#x6216; stopSelf() &#x540E;&#xFF0C;&#x6839;&#x636E;&#x5E94;&#x7528;&#x7684;&#x5176;&#x4ED6;&#x72B6;&#x6001;&#x6765;&#x51B3;&#x5B9A; ADJ&#x3002; &#x5728; stop &#x4E4B;&#x524D;&#xFF0C;ADJ &#x53EF;&#x80FD;&#x7ECF;&#x5386;&#x51E0;&#x79CD;&#x53D8;&#x5316;&#xFF1A; &#xD8; A Service&#xFF1A;Service &#x521A;&#x8FD0;&#x884C;&#x65F6; &#xD8; B Service&#xFF1A;&#x82E5;&#x7CFB;&#x7EDF;&#x540C;&#x65F6;&#x8FD0;&#x884C;&#x7684; Service &#x8FC7;&#x591A;&#xFF0C;&#x8F83;&#x65E9;&#x542F;&#x52A8;&#x7684;&#x4F1A;&#x653E;&#x5230; B Service &#xD8; Cached&#xFF1A;&#x8FD0;&#x884C;&#x8D85;&#x8FC7; 30 &#x5206;&#x949F;&#x3001;&#x6216;&#x66FE;&#x7ECF;&#x542F;&#x52A8;&#x8FC7; activityReceiver &#x5E38;&#x89C1;&#x7684;&#x8BEF;&#x533A; AndroidManifest.xml <receiver android:name="&#x201D;.MyReceiver&#x201D;"> <action android:name="&#x201D;android.intent.action.BOOT_COMPLETED&#x201D;"> </action></receiver> MyReceiver.java public class MyReceiver extends BroadcastReceiver { public void onReceive(Context context, Intent intent) { new Thread() { public void run() { // &#x505A;&#x8D85;&#x8FC7; 10 &#x79D2;&#x7684;&#x4E8B;&#xFF0C; &#x907F;&#x514D;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E0A;&#x8FD0;&#x884C;&#x65F6;&#x95F4;&#x4E45;&#xFF0C; &#x5BFC;&#x81F4; ANR } }.start(); } } 1 . &#x5F53;&#x5E94;&#x7528;&#x79BB;&#x5F00; onReceive(), ADJ &#x5C31;&#x4E0D;&#x518D;&#x4E3A; 0&#xFF0C; &#x7CFB;&#x7EDF;&#x6839;&#x636E;&#x5E94;&#x7528;&#x5176;&#x4ED6;&#x7684;&#x72B6;&#x6001;&#x51B3;&#x5B9A; ADJ&#xFF0C; &#x6700;&#x5DEE;&#x60C5;&#x51B5;&#x53EF;&#x80FD;&#x53D8;&#x4E3A; cached&#x3002; &#x56E0;&#x6B64;&#x5F53;&#x7CFB;&#x7EDF;&#x8FDB;&#x884C;&#x5927;&#x91CF;&#x5E7F;&#x64AD;&#x3001; &#x6216;&#x8005;&#x5185;&#x5B58;&#x8F83;&#x7D27;&#x65F6;&#xFF0C; &#x8FDB;&#x7A0B;&#x53EF;&#x80FD;&#x5F88;&#x5FEB;&#x88AB;&#x6740;&#x6389;&#x3002;</p>
+</li>
+<li><p>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A; &#x5728; Receiver() &#x4E2D;&#xFF0C; &#x9700;&#x8981;&#x957F;&#x65F6;&#x95F4;&#x8FD0;&#x884C;&#x7684;&#xFF0C; &#x542F;&#x52A8; IntentService &#x6765;&#x8FD0;&#x884C;Bind Service &#x2022; &#x82E5;&#x8C03;&#x7528;&#x7AEF;&#x4E0E;&#x88AB;&#x8C03;&#x7528;&#x7AEF;&#x5206;&#x5C5E;&#x4E0D;&#x540C;&#x8FDB;&#x7A0B;&#xFF0C;&#x5219; bind service &#x53EF;&#x80FD;&#x4F1A;&#x5F71;&#x54CD;&#x88AB;&#x8C03;&#x7528;&#x7AEF;&#x7684;&#xFF1A; &#xD8; OOM Score ADJ&#xFF1A;&#x88AB;&#x8C03;&#x7528;&#x7AEF;&#x7684; ADJ &#x8C03;&#x6574;&#x5230;&#x4E0E;&#x8C03;&#x7528;&#x7AEF;&#x540C;&#x6837;&#x91CD;&#x8981; &#xD8; CPU scheduling&#xFF1A;&#x5F53;&#x8C03;&#x7528;&#x7AEF;&#x4E3A; foreground scheduling &#x65F6; &#xFF08;&#x4F8B;&#x5982;&#x524D;&#x53F0;&#x5E94;&#x7528;&#xFF0C;persistent, visible, perceptible)&#xFF0C;&#x88AB;&#x8C03;&#x7528;&#x7AEF;&#x4E5F;&#x4F1A;&#x88AB;&#x63D0;&#x5347;&#x81F3; foreground scheduling &#x2022; &#x82E5;&#x8C03;&#x7528;&#x7AEF;&#x4E0E;&#x88AB;&#x8C03;&#x7528;&#x7AEF;&#x540C;&#x5C5E;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#xFF0C;&#x5219; bind service &#x4E0D;&#x5F71;&#x54CD; OOM Score ADJ &#x4E0E; CPU scheduling Service &#x8C03;&#x7528;&#x7AEF; &#x88AB;&#x8C03;&#x7528;&#x7AEF; bindService()Bind Service &#x2022; Bind service &#x53EF;&#x5E26;&#x4EE5;&#x4E0B;&#x53C2;&#x6570;&#x63A7;&#x5236;&#x884C;&#x4E3A;&#xFF1A; &#x53C2;&#x6570; Service &#x6240;&#x5728;&#x8FDB;&#x7A0B;&#x7684; OOM Score ADJ Service &#x8FDB;&#x7A0B;&#x7684; CPU &#x5206;&#x914D; &#x4F7F;&#x7528;&#x573A;&#x5408; &#x9ED8;&#x8BA4;&#x884C;&#x4E3A; &#x4E0E;&#x8C03;&#x7528;&#x7AEF;&#x4E00;&#x81F4;&#x3002;&#x82E5;&#x8C03;&#x7528;&#x7AEF;&#x662F; top&#xFF0C; &#x5219; service &#x4E3A; visible &#x4E0E;&#x8C03;&#x7528;&#x7AEF;&#x4E00;&#x81F4; BIND_NOT_FOREGROUND &#x4E0E;&#x8C03;&#x7528;&#x7AEF;&#x8FDB;&#x7A0B;&#x4E00;&#x81F4;&#x3002;&#x82E5;&#x8C03;&#x7528;&#x7AEF;&#x662F; top&#xFF0C;&#x5219; service &#x4E3A; visible &#x4E0D;&#x6839;&#x636E;&#x6B64;&#x6B21; binding &#x5F71;&#x54CD; service &#x8FDB;&#x7A0B;&#x7684; scheduling &#x5F53;&#x8C03;&#x7528;&#x7AEF;&#x4E3A; system_server&#x3001; persistent &#x8FDB;&#x7A0B;&#xFF0C;&#x4E14;&#x4E0D;&#x8981;&#x6C42;&#x6267;&#x884C;&#x901F; &#x5EA6;&#x65F6; BIND_ALLOW_OOM_MANAGEM ENT &#x4E0D;&#x5F3A;&#x5236;&#x4E0E;&#x8C03;&#x7528;&#x7AEF;&#x8FDB;&#x7A0B;&#x4E00;&#x81F4;&#x3002;service &#x8FDB;&#x7A0B;&#x53EF;&#x80FD;&#x5728;&#x5185;&#x5B58;&#x4E0D;&#x591F;&#x65F6;&#x4F1A;&#x88AB;&#x780D; &#x4E0E;&#x8C03;&#x7528;&#x7AEF;&#x8FDB;&#x7A0B;&#x4E00;&#x81F4; &#x5F53;&#x8C03;&#x7528;&#x7AEF;&#x4E3A; system_server&#x3001; persistent &#x8FDB;&#x7A0B;&#xFF0C;&#x9884;&#x671F;&#x53EF;&#x80FD; service &#x6267;&#x884C;&#x65F6;&#x95F4;&#x5E38;&#x3001;&#x5185;&#x5B58;&#x5927;&#xFF0C;&#x4E14;&#x5DF2;&#x7ECF;&#x505A;&#x597D; service &#x8FDB;&#x7A0B;&#x88AB;&#x780D;&#x7684;&#x5BB9;&#x9519;&#x5904;&#x7406; BIND_WAIVE_PRIORITY &#x4E0D;&#x6839;&#x636E;&#x6B64;&#x6B21; binding &#x5F71;&#x54CD; service &#x8FDB;&#x7A0B;&#x7684; ADJ &#x4E0D;&#x6839;&#x636E;&#x6B64;&#x6B21; binding &#x5F71;&#x54CD; service &#x8FDB;&#x7A0B;&#x7684; scheduling &#x5BF9;&#x6267;&#x884C;&#x901F;&#x5EA6;&#x4E0D;&#x8981;&#x6C42;&#xFF0C;&#x4E14;&#x5DF2;&#x7ECF;&#x505A;&#x597D; service &#x8FDB;&#x7A0B;&#x88AB;&#x780D;&#x7684;&#x5BB9;&#x9519;&#x5904;&#x7406; BIND_ADJUST_WITH_ACTIVITY &#x5F53;&#x8C03;&#x7528;&#x7AEF;&#x663E;&#x793A;&#x53EF;&#x89C1;&#x7684; activity &#x65F6;&#xFF0C; ADJ &#x4E0E;&#x8C03;&#x7528;&#x7AEF;&#x4E00;&#x81F4; &#x5F53;&#x8C03;&#x7528;&#x7AEF;&#x663E;&#x793A;&#x53EF;&#x89C1;&#x7684; activity &#x65F6;&#xFF0C; service &#x8FDB;&#x7A0B;&#x4E3A; foreground scheduling &#x5F53;&#x8C03;&#x7528;&#x7AEF;&#x5728;&#x540E;&#x53F0;&#x65F6;&#xFF0C;&#x4E0D;&#x8981;&#x6C42; service &#x8FDB;&#x7A0B;&#x7684;&#x6267;&#x884C;&#x901F;&#x5EA6;&#xFF0C;&#x4E14;&#x5DF2;&#x7ECF;&#x505A;&#x597D; service &#x8FDB;&#x7A0B;&#x88AB;&#x780D;&#x7684;&#x5BB9;&#x9519;&#x5904;&#x7406;&#x5B9A;&#x4E49;&#x201C;&#x5E38;&#x9A7B;&#x201D;&#x5E94;&#x7528; &#x2022; &#x72ED;&#x4E49; &#x2012; &#x5728; AndroidManifest.xml &#x8BBE;&#x7F6E; persistent = true &#x7684;&#x5E94;&#x7528; &#x2022; &#x5E7F;&#x4E49; &#x2012; &#x5E94;&#x7528;&#x900F;&#x8FC7;&#x67D0;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x76F4;&#x63A5;&#x3001;&#x95F4;&#x63A5;&#x957F;&#x65F6;&#x95F4;&#x9A7B;&#x7559;&#x5728;&#x540E;&#x53F0;&#xFF0C;&#x5373;&#x4F7F;&#x780D;&#x4E86;&#x4E5F;&#x4F1A;&#x91CD;&#x542F;&#x7684;&#x90FD;&#x7B97;&#x3002;&#x9664;&#x4E86;&#x72ED;&#x9698;&#x5B9A;&#x4E49; &#x5916;&#xFF0C;&#x4E5F;&#x5305;&#x542B;&#xFF1A; &#xD8; &#x4E0D;&#x505C;&#x6B62;&#x7684; started service &#xD8; &#x5E38;&#x9A7B;&#x5E94;&#x7528;&#x5728;&#x540E;&#x53F0;&#x900F;&#x8FC7; bindService &#x7ED1;&#x4F4F;&#x53E6;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x4E0D;&#x653E;&#xFF0C;&#x4F7F;&#x5176;&#x8DDF;&#x7740;&#x5E38;&#x9A7B; &#xD8; &#x5E38;&#x9A7B;&#x5E94;&#x7528;&#x5728;&#x540E;&#x53F0;&#x900F;&#x8FC7; provider &#x7ED1;&#x4F4F;&#x53E6;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x4E0D;&#x653E;&#xFF0C;&#x4F7F;&#x5176;&#x8DDF;&#x7740;&#x5E38;&#x9A7B; &#xD8; &#x5E94;&#x7528;&#x900F;&#x8FC7; alarm manager &#x6216;&#x5176;&#x4ED6;&#x4FDD;&#x6D3B;&#x624B;&#x6BB5;&#xFF0C;&#x5373;&#x4F7F;&#x88AB;&#x780D;&#x4E86;&#x4F1A;&#x91CD;&#x542F; &#xD8; native daemon &#x2012; &#x63CF;&#x8FF0;&#x3001;&#x8BA8;&#x8BBA;&#x662F;&#x5426;&#x5E38;&#x9A7B;&#x95EE;&#x9898;&#x65F6;&#xFF0C;&#x91C7;&#x7528;&#x5E7F;&#x4E49;&#x5B9A;&#x4E49;&#x5E38;&#x9A7B;&#x5E94;&#x7528;&#x5BF9;&#x7CFB;&#x7EDF;&#x7684;&#x5F71;&#x54CD; &#x2022; &#x5185;&#x5B58;&#x5360;&#x7528; &#x2012; &#x5E38;&#x9A7B;&#x5E94;&#x7528;&#x6301;&#x7EED;&#x5360;&#x7528;&#x5185;&#x5B58;&#xFF0C;&#x51CF;&#x5C11;&#x7CFB;&#x7EDF;&#x6574;&#x4F53;&#x53EF;&#x7528;&#x5185;&#x5B58;&#x3002; &#x4E00;&#x822C;&#x5E38;&#x89C1;&#x7684;&#x8BBE;&#x8BA1;/&#x5B9E;&#x73B0;&#x95EE;&#x9898;&#x6709;&#xFF1A; &#xD8; &#x672C;&#x8D28;&#x4E0A;&#x4E0D;&#x9700;&#x8981;&#x5E38;&#x9A7B;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x4E5F;&#x8DDF;&#x7740;&#x5E38;&#x9A7B;&#x4E86;&#xFF0C;&#x4F8B;&#x5982; activity &#xD8; &#x529F;&#x80FD;&#x4E0D;&#x9700;&#x8981;&#x6301;&#x7EED;&#x5728;&#x540E;&#x53F0;&#x8FD0;&#x884C;&#xFF0C;&#x53EA;&#x6709;&#x5728;&#x7279;&#x522B;&#x65F6;&#x6BB5;&#x3001;&#x6761;&#x4EF6;&#x6EE1;&#x8DB3;&#x65F6;&#xFF0C;&#x624D;&#x9700;&#x8981;&#x5728;&#x540E;&#x53F0;&#x9A7B;&#x7559;&#xFF0C;&#x4F46;&#x4E5F;&#x8BBE;&#x8BA1;&#x6210;&#x6C38;&#x8FDC; &#x5E38;&#x9A7B;&#x4E86; &#xD8; &#x4EE5;&#x72EC;&#x7ACB;&#x6A21;&#x5757;&#x601D;&#x8003;&#x5E94;&#x7528;&#x5B9E;&#x73B0;&#xFF0C;&#x672A;&#x8003;&#x8651;&#x4E0E;&#x5176;&#x4ED6;&#x4E1A;&#x52A1;&#x5E38;&#x9A7B;&#x76D1;&#x542C;&#x7684;&#x5171;&#x7528;&#x3001;&#x6216;&#x8005;&#x5BFB;&#x6C42;&#x7CFB;&#x7EDF;&#x6846;&#x67B6;&#x7684;&#x4FEE;&#x6539;&#x652F;&#x6301; &#xD8; &#x672A;&#x8003;&#x8651;&#x5982;&#x4F55;&#x5E38;&#x9A7B;&#x65F6;&#xFF0C;&#x5C3D;&#x91CF;&#x6700;&#x5C0F;&#x5316;&#x5185;&#x5B58; &#xD8; &#x672C;&#x8EAB;&#x5DF2;&#x662F;&#x5E38;&#x9A7B;&#x5E94;&#x7528;&#xFF0C;&#x53C8;&#x957F;&#x65F6;&#x95F4;&#x900F;&#x8FC7; bind service&#x3001;provider &#x7ED1;&#x4F4F;&#x5176;&#x4ED6;&#x5E94;&#x7528;&#xFF0C;&#x5BFC;&#x81F4;&#x5176;&#x4ED6;&#x5E94;&#x7528;&#x4E5F;&#x5E38;&#x9A7B; &#x4E86; &#x2022; CPU &#x5360;&#x7528; &#x2012; Persistent, Foreground, Visible, Perceptible&#xFF0C;&#x5BF9;&#x7CFB;&#x7EDF;&#x800C;&#x8A00;&#xFF0C;&#x4EE5;&#x524D;&#x53F0;&#x5E94;&#x7528;&#x5BF9;&#x5F85;&#x3002; &#x5F53;&#x5E38;&#x9A7B;&#x5E94;&#x7528;&#x5728;&#x540E;&#x53F0;&#x8FD0;&#x884C; &#x65F6;&#xFF0C;&#x5C31;&#x4F1A;&#x8DDF;&#x524D;&#x53F0;&#x5E94;&#x7528;&#x4E89;&#x593A; CPU &#x8D44;&#x6E90;&#xFF0C;&#x9020;&#x6210;&#x524D;&#x53F0;&#x5361;&#x987F;&#x5BA1;&#x89C6;&#x5E38;&#x9A7B;&#x3001;&#x540E;&#x53F0;&#x8FD0;&#x884C;&#x7684;&#x5FC5;&#x8981;&#x6027; &#x2022; &#x6700;&#x5C0F;&#x6743;&#x9650;&#x539F;&#x5219;&#xFF1A;&#x80FD; service &#x641E;&#x5B9A;&#x3001;&#x5C31;&#x4E0D;&#x8981;&#x8BBE; foreground service&#xFF1B; &#x80FD; foreground service &#x641E;&#x5B9A;&#xFF0C; &#x5C31;&#x4E0D;&#x8981;&#x8BBE; persistent&#x3002;&#x80FD;&#x53EA;&#x5728;&#x67D0;&#x6BB5;&#x65F6;&#x95F4;&#x5E38;&#x9A7B;&#xFF0C;&#x5C31;&#x4E0D;&#x8981;&#x8BBE;&#x8BA1;&#x6210;&#x6C38;&#x8FDC;&#x5E38;&#x9A7B; &#x2022; &#x975E;&#x7528;&#x6237;&#x53EF;&#x611F;&#x77E5;&#x3001;&#x6216;&#x4E0D;&#x9700;&#x53CA;&#x65F6;&#x54CD;&#x5E94;&#x7684;&#x540E;&#x53F0;&#x4EFB;&#x52A1;&#xFF0C; &#x7686;&#x4E0D;&#x8981;&#x8BBE;&#x7F6E;&#x4E3A; foreground service &#xD8; &#x9700;&#x8981;&#x7528;&#x6237;&#x53EF;&#x611F;&#x77E5;&#x3001;&#x9700;&#x8981;&#x62A2;&#x5360;&#x8F83;&#x591A; CPU &#x7684;&#x4EFB;&#x52A1;&#xFF1A;&#x97F3;&#x4E50;&#x64AD;&#x653E;&#x3001;&#x540E;&#x53F0;&#x5BFC;&#x822A; &#xD8; &#x4E0D;&#x9700;&#x8981;&#x7528;&#x6237;&#x611F;&#x77E5;&#x7684;&#x4EFB;&#x52A1;&#xFF1A;&#x540E;&#x53F0;&#x4E0B;&#x8F7D;&#x3001;&#x540E;&#x53F0;&#x590D;&#x5236;&#x3001;&#x957F;&#x94FE;&#x63A5;&#x76D1;&#x542C;&#x3001;&#x7CFB;&#x7EDF;&#x72B6;&#x6001;&#x76D1;&#x542C; &#x2022; &#x4E3A;&#x4E86; activity &#x542F;&#x52A8;&#x901F;&#x5EA6;&#x800C;&#x5E38;&#x9A7B;&#xFF0C;&#x662F;&#x4E0D;&#x88AB;&#x5141;&#x8BB8;&#x7684;&#x7406;&#x7531;&#x3002;&#x5E94;&#x7528;&#x5FC5;&#x987B;&#x4F18;&#x5316;&#x51B7;&#x542F;&#x52A8;&#x6D41;&#x7A0B;&#x6700;&#x5C0F;&#x5316;&#x5E38;&#x9A7B;&#x5185;&#x5B58;&#x91CF; &#x2022; &#x9664;&#x4E86; Launcher&#x3001;SystemUI&#x3001;&#x8F93;&#x5165;&#x6CD5;&#xFF0C;&#x5408;&#x7406;&#x7684;&#x540E;&#x53F0;&#x5185;&#x5B58;&#x5E38;&#x9A7B;&#x5360;&#x7528;&#xFF1A;30 MB &#x2022; &#x5E38;&#x9A7B;&#x5E94;&#x7528;&#x7981;&#x6B62;&#x957F;&#x65F6;&#x95F4;&#x4EE5; bind service, provider &#x7ED1;&#x5B9A;&#x5176;&#x4ED6;&#x8FDB;&#x7A0B;&#xFF0C;&#x5FC5;&#x987B;&#x5C3D;&#x5FEB;&#x4F7F;&#x7528;&#x5B8C;&#x4E14;&#x7ACB;&#x5373;&#x91CA;&#x653E; &#x2022; &#x64AD;&#x653E;&#x7C7B;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x4E0D;&#x5E94;&#x8BBE;&#x4E3A; persistent&#x3002;&#x4E14;&#x5E94;&#x91C7;&#x7528;&#x4EE5;&#x4E0B;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#x4E4B;&#x4E00;&#x8FDB;&#x884C;&#x5185;&#x5B58;&#x4F18;&#x5316;&#xFF1A; &#xD8; &#x5206;&#x79BB; service &#x4E0E; activity &#x5230;&#x4E0D;&#x540C;&#x8FDB;&#x7A0B;&#x3002; Service &#x8FD0;&#x884C;&#x64AD;&#x653E;&#x6216;&#x4E0B;&#x8F7D;&#x7B49;&#x9700;&#x8981;&#x957F;&#x65F6;&#x95F4;&#x8FD0;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#xFF0C; activity &#x8FDB;&#x7A0B;&#x5728;&#x540E;&#x53F0;&#x65F6;&#x6210;&#x4E3A; cached&#xFF0C;&#x53EF;&#x4EE5;&#x88AB;&#x7CFB;&#x7EDF;&#x6309;&#x9700;&#x56DE;&#x6536; &#xD8; &#x5F53;&#x64AD;&#x653E;&#x4EFB;&#x52A1;&#x505C;&#x6B62;&#x3001;&#x6216;&#x5C1A;&#x672A;&#x5F00;&#x59CB;&#x65F6;&#xFF0C; &#x5E94;&#x7528;&#x8FDB;&#x7A0B;&#x5185;&#x6240;&#x6709;&#x7684; service &#x5FC5;&#x987B;&#x505C;&#x6B62;&#xFF0C;&#x8BA9;&#x5E94;&#x7528;&#x5728;&#x540E;&#x53F0;&#x65F6;&#x6210;&#x4E3A; cached &#x2022; &#x4E0B;&#x8F7D;&#x7C7B;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x539F;&#x5219;&#x4E0A;&#x4E0D;&#x9700;&#x5E38;&#x9A7B;&#xFF0C;&#x5E94;&#x7528;&#x9000;&#x5230;&#x540E;&#x53F0;&#x65F6;&#xFF0C;&#x8FD0;&#x884C; service &#x8FDB;&#x884C;&#x4E0B;&#x8F7D;&#x5373;&#x53EF;&#xFF0C;&#x4E0B;&#x8F7D;&#x5B8C;&#x5C31;&#x505C;&#x6B62; service&#x3002; &#x82E5;&#x5305;&#x542B;&#x4E86;&#x9700;&#x8981;&#x5E38;&#x9A7B;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x5219;&#x5E94;&#x5206;&#x79BB; service &#x4E0E; activity &#x5230;&#x4E0D;&#x540C;&#x8FDB;&#x7A0B;&#x3002; &#x2022; &#x5177;&#x5907;&#x63A5;&#x6536; Push &#x6D88;&#x606F;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x4E0D;&#x5E94;&#x8BBE;&#x4E3A; persistent&#xFF0C;&#x4E14;&#x9700;&#x8981;&#x5206;&#x79BB; service &#x4E0E; activity &#x5230;&#x4E0D;&#x540C;&#x8FDB;&#x7A0B;&#x5206;&#x79BB; Service &#x4E0E; Activity &#x7684;&#x65B9;&#x6CD5; &#x2022; &#x5728; AndroidManifest.xml &#x4E2D;&#xFF0C;&#x4EE5; android:process &#x5C5E;&#x6027;&#x6307;&#x5B9A; service &#x8FD0;&#x884C;&#x5728;&#x53E6;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x3002;UI &#x4E0E; service &#x4E4B;&#x95F4;&#xFF0C;&#x501F;&#x7531; AIDL &#x901A;&#x4FE1; &#x2022; Provider &#x5982;&#x679C;&#x662F; service &#x5E38;&#x5B58;&#x53D6;&#x7684;&#xFF0C; &#x5C31;&#x8FD0;&#x884C;&#x5728;&#x4E0E; service &#x540C;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B; &#x2022; &#x5982;&#x679C; Reciever &#x9700;&#x8981;&#x76D1;&#x542C;&#x67D0;&#x4E9B;&#x9AD8;&#x9891;&#x5E7F;&#x64AD;&#x3001;&#x6216;&#x662F;&#x53EA;&#x6709; service &#x5728;&#x624D;&#x80FD;&#x8FD0;&#x884C;&#x7684;&#x52A8;&#x6001;&#x5E7F;&#x64AD;&#xFF0C; &#x5C31;&#x8DDF; service &#x8FD0;&#x884C;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B; &#x2022; &#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x4E0D;&#x8981;&#x4EA7;&#x751F;&#x8D85;&#x8FC7; 2 &#x4E2A;&#x8FDB;&#x7A0B;</p>
+</li>
+</ul>
+
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="WMS.html" class="navigation navigation-prev " aria-label="Previous page: WMS">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="后台杀进程.html" class="navigation navigation-next " aria-label="Next page: 后台杀进程">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"内存","level":"1.2.1.16","depth":3,"next":{"title":"后台杀进程","level":"1.2.1.17","depth":3,"path":"coding/Andriod/后台杀进程.md","ref":"coding/Andriod/后台杀进程.md","articles":[]},"previous":{"title":"WMS","level":"1.2.1.15","depth":3,"path":"coding/Andriod/WMS.md","ref":"coding/Andriod/WMS.md","articles":[]},"dir":"ltr"},"config":{"//":["这是多行注释：    anchor-navigation-ex 是","anchor-navigation-ex 是","click-reveal 本地使用ok，但是github在build pages时，不识别click-reveal","accordion 也是折叠代码段","anchor-navigation-ex 是"],"plugins":["anchor-navigation-ex","toggle-chapters","expandable-chapters-small","splitter","code","page-treeview","popup","-search","-lunr","sidebar-style","auto-scroll-table","click-reveal","accordion","pageview-count","search-pro"],"root":"./markdownsFiles","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"Kent","title":"《知行，行知》"},"tbfed-pagefooter":{"copyright":"Copyright &copy ershouche-FE 2019","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"disqus":{"shortName":"gitbookuse"},"splitter":{},"search-pro":{},"accordion":{},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":200000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"pageview-count":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bookname":"笔记","variables":{},"title":"Kent的博客","gitbook":"*"},"file":{"path":"coding/Andriod/内存.md","mtime":"2023-11-07T15:46:22.827Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-11-07T15:48:43.423Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sidebar-style/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-click-reveal/click_reveal.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
