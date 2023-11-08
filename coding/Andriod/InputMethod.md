@@ -493,6 +493,10 @@ com.sohu.inputmethod.sogou/.SogouIME  --------> 不受限
 
 
 
+
+
+
+
 # 一些琐碎的补充
 
 
@@ -605,6 +609,27 @@ switchToInputMethod
 > mCurMethodId是IMMS帧的输入法
 >
 > ims是最后呈现的输入法
+
+
+
+## 输入法的启动时机---------窗口切换(的touch)
+
+-<font color='red'>易错点</font>：**输入法的启动与输入框没有任何关系！！！！**
+
+**验证：**
+
+> ```java
+> 
+> C:\Users\Administrator>adb shell am force-stop com.sohu.inputmethod.sogou      // 1、杀掉输入法
+>     
+> C:\Users\Administrator>adb shell dumpsys activity  services | findstr  ServiceRecord | findstr sogo     // 2、查看没有了
+>     
+> C:\Users\Administrator>adb shell dumpsys activity  services | findstr  ServiceRecord | findstr sogo     // 3、touch旧窗口，仍然没有
+> 
+> C:\Users\Administrator>adb shell dumpsys activity  services | findstr  ServiceRecord | findstr sogo    // 4、切换窗口，比如回到桌面
+>   * ServiceRecord{531b869 u0 com.sohu.inputmethod.sogou/.SogouIME}
+> 
+> ```
 
 
 
@@ -741,4 +766,15 @@ TODO：一个悬浮的输入法窗口位置呢？ ------->  谁决定的？
 
 
 
-# 维测
+# 快速维测
+
+```java
+
+//查看所有服务
+adb shell dumpsys activity  services           | findstr  ServiceRecord
+
+// 查看有没有sogou输入法
+adb shell dumpsys activity  services          | findstr  ServiceRecord | findstr sogo
+    
+```
+
