@@ -778,3 +778,7 @@ adb shell dumpsys activity  services          | findstr  ServiceRecord | findstr
     
 ```
 
+
+
+
+
