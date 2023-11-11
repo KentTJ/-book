@@ -55,7 +55,7 @@ Q:   如何保护？系统服务退出，init进程会重启SystemServer的？�
 
 ## 原理
 
-0层架构图
+### 0层架构图  ---->TODO： 不准确
 
 ![在这里插入图片描述](WatchDog.assets/2dd8c0c4df444490a00eb8c286a6ef4d.png)
 
@@ -68,6 +68,20 @@ fg 线程
 
 
 从线程角度：TODO
+
+### 一行核心代码：
+
+
+
+### ~~del:纵向流程图----字典~~
+
+![android watchdog 重启 安卓 watchdog_Max](WatchDog.assets/26131415_64991ea73d4d733575.webp)
+
+参考：[android watchdog 重启 安卓 watchdog_小星星的技术博客_51CTO博客](https://blog.51cto.com/u_87634/6566226)             https://blog.51cto.com/u_87634/6566226
+
+
+
+
 
 
 
@@ -164,7 +178,17 @@ TODO
 
 TODO:
 
-为啥会和mSFHang，扯上关系？
+> 为啥会和mSFHang，扯上关系？
+
+
+
+### ~~del:每一行代码注释------字典~~
+
+https://blog.51cto.com/u_87634/6566226  
+
+
+
+
 
 ## WatchDog本身
 

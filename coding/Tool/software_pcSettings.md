@@ -1685,19 +1685,61 @@ MOD是ALT键。详见： https://www.ngui.cc/zz/2053439.html?action=onClick
 
 https://blog.csdn.net/lspqq10086/article/details/127447126?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-127447126-blog-123850238.235%5Ev38%5Epc_relevant_anti_t3&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-127447126-blog-123850238.235%5Ev38%5Epc_relevant_anti_t3&utm_relevant_index=2
 
+### **虚拟机和主机共享文件夹步骤**：
+
+1.1右键虚拟机--设置---选项--共享文件夹--选择总是启用---添加一个盘
+
+1.2ubuntu中进入/mnt/hgfs/目录查看是否有共享文件夹（也可以放在home目录下自己创建一个文件夹如/home/feng/work）
+
+1.3 若没有hgfs存在则按以下步骤操作：
+
+**sudo apt-get install open-vm-tools**
+
+**cd /mnt/**
+
+**sudo passwd root**
+
+**su root**
+
+**mkdir hgfs**
+
+**sudo vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other**
+
+或**sudo vmhgfs-fuse .host:/ /home/feng/work -o allow_other**
+
+其中/mnt/hgfs/文件夹目录可以自行修改
+
+再到/mnt/下看就会有 hgfs文件夹了，里面有共享文件夹目录存在
+
+这里是有个空格的
+
+
+
+### 扩容
+
+https://blog.csdn.net/qq_37140721/article/details/125619393
+
 
 
 ##  VirtualBox 
 
-教程： 
+在 VirtualBox 中构建 Debian11 虚拟电脑 :
 
-> 在 VirtualBox 中构建 Debian11 虚拟电脑    
->
 > ```http
 > https://blog.csdn.net/ForestK/article/details/125198556?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-2-125198556-blog-127320725.235^v38^pc_relevant_sort_base1&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-2-125198556-blog-127320725.235^v38^pc_relevant_sort_base1&utm_relevant_index=5
 > ```
+>
+> ----------------->  验证ok。注意：系统镜像可以是ubuntu的iso
 
------------------>  验证ok。注意：系统镜像可以是ubuntu的iso
+
+
+使用VirtualBox安装Ubuntu系统:
+
+> https://blog.csdn.net/abc6368765/article/details/125819966  
+
+
+
+
 
 
 
