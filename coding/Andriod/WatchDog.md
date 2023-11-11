@@ -73,11 +73,12 @@ fg 线程
 
 
 
+```java
+ // 往handler前面插入任务（插队）
+mHandler.postAtFrontOfQueue(this);
+```
 
-
-
-
-
+检测到 抛过去的任务30s内，有没有执行完（任务被插到最前面）
 
 
 

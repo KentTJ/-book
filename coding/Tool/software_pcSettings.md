@@ -81,7 +81,39 @@ https://blog.csdn.net/xiaojin21cen/article/details/90292315#2___12
 
 
 
+5、开机自启动
 
+![image-20231112001348312](software_pcSettings.assets/image-20231112001348312.png)
+
+2、单独一次截屏，自动复制（F4）：
+
+> ​       （1） 设置： 控制 ----->  快捷键 ----->截屏并自动复制  -----> F4
+>
+> ​       （2）操作：F4 , 然后鼠标<font color='red'>右键</font>
+>
+> ​            ![image-20231112001533955](software_pcSettings.assets/image-20231112001533955.png)
+>
+> **F3 比较繁琐，后面还有多步操作**
+
+3、实现  **快速连续多次**   截屏，并自动保存一系列png（极优：中间没有粘贴等其他操作）：F4 + 左键
+
+> (1)设置： 控制 ----->  快捷键 ----->截屏并自动复制  -----> F4
+>
+> （2）输出 ------> 自动保存  -----> D:/Snipaste_png
+>
+> ![image-20231112001932753](software_pcSettings.assets/image-20231112001932753.png)
+>
+> (3)  操作：F4 , 然后鼠标<font color='red'>左键</font>
+
+------------> 一直如此，目录下，出现一堆png
+
+4、技巧：
+
+shift + F3,  显示/隐藏（一个组的所有贴图） -----------> 不会挡住
+
+注： 只有F3截图能进入组；F4截图是进入文件夹
+
+5、ctrl + F3，切换组（相当于文件夹了）
 
 
 
@@ -1723,6 +1755,8 @@ https://blog.csdn.net/qq_37140721/article/details/125619393
 
 ##  VirtualBox 
 
+## VirtualBox安装Debian11/Ubuntu
+
 在 VirtualBox 中构建 Debian11 虚拟电脑 :
 
 > ```http
@@ -1743,7 +1777,7 @@ https://blog.csdn.net/qq_37140721/article/details/125619393
 
 
 
-VirtualBox Ubuntu无法复制粘贴以及无法安装增强功能：
+### VirtualBox Ubuntu无法复制粘贴以及无法安装增强功能：
 
 > 方法一：
 >
@@ -1758,6 +1792,12 @@ VirtualBox Ubuntu无法复制粘贴以及无法安装增强功能：
 
 
 
+
+### VitrualBox中备份Ubuntu
+
+https://blog.csdn.net/mo_sss/article/details/132856647
+
+- ------> 验证ok
 
 
 
