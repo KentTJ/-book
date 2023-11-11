@@ -73,11 +73,7 @@ fg 线程
 
 
 
-### ~~del:纵向流程图----字典~~
 
-![android watchdog 重启 安卓 watchdog_Max](WatchDog.assets/26131415_64991ea73d4d733575.webp)
-
-参考：[android watchdog 重启 安卓 watchdog_小星星的技术博客_51CTO博客](https://blog.51cto.com/u_87634/6566226)             https://blog.51cto.com/u_87634/6566226
 
 
 
@@ -181,6 +177,50 @@ TODO:
 > 为啥会和mSFHang，扯上关系？
 
 
+
+### 具体如何重启的？
+
+```java
+// 结束进程 watchdog存在于system_server进程之下2
+// 因为watchdog就是在system_server初始化的3
+Process.killProcess(Process.myPid());
+```
+
+---------> 结论： 杀死system_server进程 ----------> TODO: 后续呢？ https://blog.csdn.net/weixin_43228946/article/details/129898004
+
+
+
+~~扩展：mtk加强的重启：~~
+
+```java
+pms.reboot(false, reason, false); // 掉电, 更加彻底
+```
+
+
+
+**安卓watchdog设计理念：**
+
+> 检测到 抛过去的任务30s内，有没有执行完
+
+跨线程的看门狗：c++
+
+> https://www.coder.work/article/3240296      c++ - 在 C++11 中实现看门狗定时器     ------>   同进程的！！！！！！！！
+
+跨进程的看门狗：TODO:  !!!!!!!!!
+
+> 设计Aidl接口： 正向set的接口，反向通知接口 ------> 正向通知接口里 约束 必须反向通知
+
+跟林的聊天记录：补充
+
+> 为啥不以  进程状态显示为 "D"  表征进程正在阻塞？（因为我们还需要考虑busy running）
+
+
+
+### ~~del:纵向流程图----字典~~
+
+![android watchdog 重启 安卓 watchdog_Max](WatchDog.assets/26131415_64991ea73d4d733575.webp)
+
+参考：[android watchdog 重启 安卓 watchdog_小星星的技术博客_51CTO博客](https://blog.51cto.com/u_87634/6566226)             https://blog.51cto.com/u_87634/6566226
 
 ### ~~del:每一行代码注释------字典~~
 
