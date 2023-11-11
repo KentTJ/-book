@@ -198,7 +198,9 @@ pms.reboot(false, reason, false); // 掉电, 更加彻底
 
 
 
-**安卓watchdog设计理念：**
+### **安卓watchdog设计理念：**
+
+安卓watchdog设计理念：
 
 > 检测到 抛过去的任务30s内，有没有执行完
 
