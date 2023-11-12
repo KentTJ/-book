@@ -239,4 +239,11 @@ https://blog.51cto.com/u_87634/6566226
 
 > SystemServer.startBootstrapServices 中
 
-本身是一个线程：**无限循环的**       -------->  可以理解为一个服务，但是不是binder
+**本身**是一个线程：**无限循环的**       -------->  可以理解为一个服务，但是不是binder
+
+
+
+
+
+# TODO：
+
