@@ -2048,8 +2048,257 @@ sailfish:/ #
 <p>dumpsys meminfo &#x7136;&#x540E;&#x6839;&#x636E; Total PSS by OOM adjustment &#x91CC;&#x7684; &#x7C7B;&#x578B;:</p>
 <blockquote>
 <p>&#x975E;&#x5E38;&#x9A7B; = Cached + Previous</p>
-<p>&#x5176;&#x4ED6;&#x7684;&#x7B97;&#x5728;&#x5E38;&#x9A7B;&#x8FDB;&#x7A0B;&#x91CC;</p>
+<p>&#x5176;&#x4ED6;---------&gt; &#x5E38;&#x9A7B;&#x8FDB;&#x7A0B;</p>
 </blockquote>
+<p>&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-java">Total PSS by OOM adjustment:
+  <span class="hljs-number">1</span>,<span class="hljs-number">018</span>,<span class="hljs-number">230</span>K: Native
+        <span class="hljs-number">324</span>,<span class="hljs-number">198</span>K: android.hardware.graphics.allocator@<span class="hljs-number">2.0</span>-service (pid <span class="hljs-number">718</span>)
+         <span class="hljs-number">69</span>,<span class="hljs-number">909</span>K: CameraDaemon (pid <span class="hljs-number">1055</span>)
+         <span class="hljs-number">49</span>,<span class="hljs-number">889</span>K: sh (pid <span class="hljs-number">21517</span>)
+         <span class="hljs-number">40</span>,<span class="hljs-number">188</span>K: surfaceflinger (pid <span class="hljs-number">754</span>)
+         <span class="hljs-number">39</span>,<span class="hljs-number">004</span>K: android.hardware.graphics.composer@<span class="hljs-number">2.2</span>-service (pid <span class="hljs-number">719</span>)
+         <span class="hljs-number">37</span>,<span class="hljs-number">921</span>K: installd (pid <span class="hljs-number">1036</span>)
+         <span class="hljs-number">34</span>,<span class="hljs-number">765</span>K: media.codec (pid <span class="hljs-number">1059</span>)
+         <span class="hljs-number">25</span>,<span class="hljs-number">700</span>K: zygote64 (pid <span class="hljs-number">1018</span>)
+         <span class="hljs-number">21</span>,<span class="hljs-number">919</span>K: app_process (pid <span class="hljs-number">21785</span>)
+         <span class="hljs-number">20</span>,<span class="hljs-number">587</span>K: hiaiserver (pid <span class="hljs-number">1070</span>)
+         <span class="hljs-number">17</span>,<span class="hljs-number">640</span>K: webview_zygote (pid <span class="hljs-number">2677</span>)
+         <span class="hljs-number">17</span>,<span class="hljs-number">329</span>K: hiview (pid <span class="hljs-number">1073</span>)
+         <span class="hljs-number">16</span>,<span class="hljs-number">171</span>K: zygote (pid <span class="hljs-number">21951</span>)
+         <span class="hljs-number">12</span>,<span class="hljs-number">606</span>K: audioserver (pid <span class="hljs-number">750</span>)
+         <span class="hljs-number">12</span>,<span class="hljs-number">299</span>K: cameraserver (pid <span class="hljs-number">1029</span>)
+         <span class="hljs-number">11</span>,<span class="hljs-number">687</span>K: zygote (pid <span class="hljs-number">670</span>)
+         <span class="hljs-number">11</span>,<span class="hljs-number">528</span>K: dubaid (pid <span class="hljs-number">1032</span>)
+         <span class="hljs-number">11</span>,<span class="hljs-number">220</span>K: media.extractor (pid <span class="hljs-number">1039</span>)
+          <span class="hljs-number">8</span>,<span class="hljs-number">079</span>K: media.swcodec (pid <span class="hljs-number">1065</span>)
+          <span class="hljs-number">8</span>,<span class="hljs-number">012</span>K: hignss_1103 (pid <span class="hljs-number">1888</span>)
+          <span class="hljs-number">7</span>,<span class="hljs-number">165</span>K: zygote64 (pid <span class="hljs-number">669</span>)
+          <span class="hljs-number">6</span>,<span class="hljs-number">941</span>K: mediaserver (pid <span class="hljs-number">1046</span>)
+          <span class="hljs-number">6</span>,<span class="hljs-number">841</span>K: vendor.huawei.hardware.audio@<span class="hljs-number">5.0</span>-service (pid <span class="hljs-number">728</span>)
+          <span class="hljs-number">6</span>,<span class="hljs-number">295</span>K: netd (pid <span class="hljs-number">668</span>)
+          <span class="hljs-number">5</span>,<span class="hljs-number">998</span>K: rild (pid <span class="hljs-number">1062</span>)
+          <span class="hljs-number">5</span>,<span class="hljs-number">980</span>K: distributedsche (pid <span class="hljs-number">842</span>)
+          <span class="hljs-number">5</span>,<span class="hljs-number">762</span>K: init (pid <span class="hljs-number">1</span>)
+          <span class="hljs-number">4</span>,<span class="hljs-number">856</span>K: distributedfileservice (pid <span class="hljs-number">23475</span>)
+          <span class="hljs-number">4</span>,<span class="hljs-number">111</span>K: logd (pid <span class="hljs-number">496</span>)
+          <span class="hljs-number">3</span>,<span class="hljs-number">773</span>K: AGPService (pid <span class="hljs-number">1027</span>)
+          <span class="hljs-number">3</span>,<span class="hljs-number">747</span>K: samgr (pid <span class="hljs-number">662</span>)
+          <span class="hljs-number">3</span>,<span class="hljs-number">700</span>K: aptouch_daemon (pid <span class="hljs-number">882</span>)
+          <span class="hljs-number">3</span>,<span class="hljs-number">347</span>K: vendor.huawei.hardware.biometrics.hwfacerecognize@<span class="hljs-number">1.1</span>-service (pid <span class="hljs-number">1024</span>)
+          <span class="hljs-number">3</span>,<span class="hljs-number">151</span>K: storaged (pid <span class="hljs-number">1052</span>)
+          <span class="hljs-number">3</span>,<span class="hljs-number">125</span>K: vold (pid <span class="hljs-number">515</span>)
+          <span class="hljs-number">3</span>,<span class="hljs-number">019</span>K: displayengineserver (pid <span class="hljs-number">1030</span>)
+          <span class="hljs-number">2</span>,<span class="hljs-number">645</span>K: hsensors (pid <span class="hljs-number">832</span>)
+          <span class="hljs-number">2</span>,<span class="hljs-number">532</span>K: wpa_supplicant_hisi (pid <span class="hljs-number">11930</span>)
+          <span class="hljs-number">2</span>,<span class="hljs-number">451</span>K: vendor.huawei.hardware.hwdisplay.displayengine@<span class="hljs-number">1.2</span>-service (pid <span class="hljs-number">732</span>)
+          <span class="hljs-number">2</span>,<span class="hljs-number">429</span>K: vendor.huawei.hardware.perfgenius@<span class="hljs-number">2.0</span>-service (pid <span class="hljs-number">745</span>)
+          <span class="hljs-number">2</span>,<span class="hljs-number">412</span>K: adbd (pid <span class="hljs-number">4647</span>)
+          <span class="hljs-number">2</span>,<span class="hljs-number">408</span>K: locationhub (pid <span class="hljs-number">845</span>)
+          <span class="hljs-number">2</span>,<span class="hljs-number">394</span>K: init (pid <span class="hljs-number">477</span>)
+          <span class="hljs-number">2</span>,<span class="hljs-number">291</span>K: hilogd (pid <span class="hljs-number">3254</span>)
+          <span class="hljs-number">2</span>,<span class="hljs-number">264</span>K: ueventd (pid <span class="hljs-number">478</span>)
+          <span class="hljs-number">2</span>,<span class="hljs-number">225</span>K: media.metrics (pid <span class="hljs-number">1045</span>)
+          <span class="hljs-number">2</span>,<span class="hljs-number">155</span>K: keystore (pid <span class="hljs-number">1037</span>)
+          <span class="hljs-number">2</span>,<span class="hljs-number">152</span>K: audio_sa (pid <span class="hljs-number">840</span>)
+          <span class="hljs-number">2</span>,<span class="hljs-number">071</span>K: statsd (pid <span class="hljs-number">1051</span>)
+          <span class="hljs-number">2</span>,<span class="hljs-number">047</span>K: wifiservice (pid <span class="hljs-number">853</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">991</span>K: fusion_daemon (pid <span class="hljs-number">1081</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">988</span>K: accountmgr (pid <span class="hljs-number">839</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">974</span>K: vendor.huawei.hardware.gnss@<span class="hljs-number">2.0</span>-service (pid <span class="hljs-number">729</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">916</span>K: hwservicemanager (pid <span class="hljs-number">498</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">913</span>K: tee_auth_daemon (pid <span class="hljs-number">584</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">912</span>K: chargelogcat-c (pid <span class="hljs-number">24695</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">872</span>K: bluetoothservic (pid <span class="hljs-number">841</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">839</span>K: nfcservice (pid <span class="hljs-number">846</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">813</span>K: vendor.huawei.hardware.wifi@<span class="hljs-number">1.2</span>-service (pid <span class="hljs-number">1084</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">725</span>K: android.hardware.drm@<span class="hljs-number">1.2</span>-service.widevine (pid <span class="hljs-number">22555</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">720</span>K: activity_recognition_service (pid <span class="hljs-number">714</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">683</span>K: distributedfiledaemon (pid <span class="hljs-number">4590</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">652</span>K: hwpged (pid <span class="hljs-number">1061</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">638</span>K: netmanager (pid <span class="hljs-number">837</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">599</span>K: vendor.huawei.hardware.libteec@<span class="hljs-number">3.0</span>-service (pid <span class="hljs-number">586</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">598</span>K: telephony (pid <span class="hljs-number">849</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">586</span>K: vendor.huawei.hardware.hivrar@<span class="hljs-number">2.1</span>-service (pid <span class="hljs-number">731</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">564</span>K: emcomd (pid <span class="hljs-number">1021</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">560</span>K: powerlogd (pid <span class="hljs-number">755</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">556</span>K: vendor.huawei.hardware.sensors@<span class="hljs-number">1.2</span>-service (pid <span class="hljs-number">1064</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">540</span>K: vendor.huawei.hardware.hwsecurity-service (pid <span class="hljs-number">737</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">530</span>K: vendor.huawei.hardware.biometrics.fingerprint@<span class="hljs-number">2.2</span>-service (pid <span class="hljs-number">1083</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">527</span>K: bms_auth (pid <span class="hljs-number">24696</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">519</span>K: resschedd (pid <span class="hljs-number">848</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">488</span>K: vendor.huawei.hardware.iawareperf@<span class="hljs-number">1.0</span>-service (pid <span class="hljs-number">739</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">478</span>K: vendor.huawei.hardware.tp@<span class="hljs-number">1.0</span>-service (pid <span class="hljs-number">748</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">454</span>K: thermal-daemon (pid <span class="hljs-number">1053</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">443</span>K: hisecd (pid <span class="hljs-number">973</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">437</span>K: mediadrmserver (pid <span class="hljs-number">1038</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">436</span>K: android.hardware.keymaster@<span class="hljs-number">3.0</span>-service (pid <span class="hljs-number">583</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">408</span>K: bastetd (pid <span class="hljs-number">1023</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">401</span>K: gpuservice (pid <span class="hljs-number">752</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">396</span>K: apexd (pid <span class="hljs-number">630</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">353</span>K: vendor.huawei.hardware.hwhiview@<span class="hljs-number">1.1</span>-service (pid <span class="hljs-number">735</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">333</span>K: android.hardware.secure_element@<span class="hljs-number">1.0</span>-service (pid <span class="hljs-number">725</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">324</span>K: displayservice (pid <span class="hljs-number">751</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">301</span>K: hivrarserver (pid <span class="hljs-number">961</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">290</span>K: wificond (pid <span class="hljs-number">2341</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">221</span>K: vendor.huawei.hardware.nfc@<span class="hljs-number">1.0</span>-service (pid <span class="hljs-number">744</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">210</span>K: android.system.suspend@<span class="hljs-number">1.0</span>-service (pid <span class="hljs-number">711</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">189</span>K: android.hardware.configstore@<span class="hljs-number">1.1</span>-service (pid <span class="hljs-number">716</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">188</span>K: vendor.huawei.hardware.hwfactoryinterface@<span class="hljs-number">1.1</span>-service (pid <span class="hljs-number">734</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">149</span>K: incidentd (pid <span class="hljs-number">1035</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">141</span>K: lmkd (pid <span class="hljs-number">753</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">141</span>K: drmserver (pid <span class="hljs-number">1031</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">139</span>K: vendor.huawei.hardware.power@<span class="hljs-number">1.0</span>-service (pid <span class="hljs-number">746</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">138</span>K: modemchr (pid <span class="hljs-number">5824</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">128</span>K: teecd (pid <span class="hljs-number">585</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">127</span>K: bsoh (pid <span class="hljs-number">972</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">112</span>K: iGraphicsservice (pid <span class="hljs-number">1033</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">104</span>K: mdnsd (pid <span class="hljs-number">11530</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">094</span>K: gatekeeperd (pid <span class="hljs-number">1071</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">075</span>K: abb (pid <span class="hljs-number">7587</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">072</span>K: bms_heating (pid <span class="hljs-number">24688</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">069</span>K: vendor.huawei.hardware.hwvibrator@<span class="hljs-number">1.1</span>-service (pid <span class="hljs-number">738</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">069</span>K: vendor.huawei.hardware.motion@<span class="hljs-number">1.0</span>-service (pid <span class="hljs-number">742</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">069</span>K: hinetmanager (pid <span class="hljs-number">1077</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">065</span>K: ip6tables-restore (pid <span class="hljs-number">23307</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">060</span>K: vendor.huawei.hardware.hwdisplay@<span class="hljs-number">1.1</span>-service (pid <span class="hljs-number">733</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">059</span>K: bms_protocol (pid <span class="hljs-number">24698</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">058</span>K: iptables-restore (pid <span class="hljs-number">23306</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">036</span>K: vendor.huawei.hardware.vdecoder@<span class="hljs-number">1.0</span>-service (pid <span class="hljs-number">2615</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">016</span>K: vendor.huawei.hardware.fm@<span class="hljs-number">1.0</span>-service (pid <span class="hljs-number">1025</span>)
+          <span class="hljs-number">1</span>,<span class="hljs-number">000</span>K: bms_soc (pid <span class="hljs-number">24693</span>)
+            <span class="hljs-number">981</span>K: oam_hisi (pid <span class="hljs-number">1882</span>)
+            <span class="hljs-number">976</span>K: powerct (pid <span class="hljs-number">590</span>)
+            <span class="hljs-number">976</span>K: dumpsys (pid <span class="hljs-number">25381</span>)
+            <span class="hljs-number">971</span>K: bms_behavior (pid <span class="hljs-number">23421</span>)
+            <span class="hljs-number">968</span>K: android.hardware.usb@<span class="hljs-number">1.0</span>-service (pid <span class="hljs-number">2371</span>)
+            <span class="hljs-number">956</span>K: android.hardware.gatekeeper@<span class="hljs-number">1.0</span>-service (pid <span class="hljs-number">717</span>)
+            <span class="hljs-number">937</span>K: vendor.huawei.hardware.jpegdec@<span class="hljs-number">1.0</span>-service (pid <span class="hljs-number">740</span>)
+            <span class="hljs-number">926</span>K: pmom_cat (pid <span class="hljs-number">976</span>)
+            <span class="hljs-number">922</span>K: android.hardware.health@<span class="hljs-number">2.0</span>-service (pid <span class="hljs-number">720</span>)
+            <span class="hljs-number">908</span>K: vendor.huawei.hardware.hwsched@<span class="hljs-number">1.0</span>-service (pid <span class="hljs-number">736</span>)
+            <span class="hljs-number">901</span>K: android.hardware.ir@<span class="hljs-number">1.0</span>-service (pid <span class="hljs-number">713</span>)
+            <span class="hljs-number">901</span>K: android.hardware.cas@<span class="hljs-number">1.1</span>-service (pid <span class="hljs-number">715</span>)
+            <span class="hljs-number">893</span>K: servicemanager (pid <span class="hljs-number">497</span>)
+            <span class="hljs-number">874</span>K: sh (pid <span class="hljs-number">25347</span>)
+            <span class="hljs-number">865</span>K: vendor.huawei.hardware.hwfs@<span class="hljs-number">1.0</span>-service (pid <span class="hljs-number">30864</span>)
+            <span class="hljs-number">863</span>K: vendor.huawei.hardware.light@<span class="hljs-number">2.0</span>-service (pid <span class="hljs-number">741</span>)
+            <span class="hljs-number">857</span>K: android.hardware.memtrack@<span class="hljs-number">1.0</span>-service (pid <span class="hljs-number">721</span>)
+            <span class="hljs-number">856</span>K: vendor.huawei.hardware.graphics.hwcinterface@<span class="hljs-number">1.1</span>-service (pid <span class="hljs-number">727</span>)
+            <span class="hljs-number">848</span>K: vendor.huawei.hardware.graphics.mediacomm@<span class="hljs-number">2.1</span>-service (pid <span class="hljs-number">730</span>)
+            <span class="hljs-number">842</span>K: android.hidl.allocator@<span class="hljs-number">1.0</span>-service (pid <span class="hljs-number">710</span>)
+            <span class="hljs-number">832</span>K: android.hardware.thermal@<span class="hljs-number">2.0</span>-service-hisi (pid <span class="hljs-number">726</span>)
+            <span class="hljs-number">820</span>K: android.hardware.power.stats@<span class="hljs-number">1.0</span>-service.mock (pid <span class="hljs-number">723</span>)
+            <span class="hljs-number">788</span>K: android.hardware.atrace@<span class="hljs-number">1.0</span>-service (pid <span class="hljs-number">582</span>)
+            <span class="hljs-number">784</span>K: oeminfo_nvm_server (pid <span class="hljs-number">516</span>)
+            <span class="hljs-number">773</span>K: healthd (pid <span class="hljs-number">712</span>)
+            <span class="hljs-number">772</span>K: vndservicemanager (pid <span class="hljs-number">499</span>)
+            <span class="hljs-number">743</span>K: ashmemd (pid <span class="hljs-number">749</span>)
+            <span class="hljs-number">673</span>K: usb_port (pid <span class="hljs-number">24679</span>)
+            <span class="hljs-number">603</span>K: bms_event (pid <span class="hljs-number">588</span>)
+            <span class="hljs-number">596</span>K: tombstoned (pid <span class="hljs-number">1074</span>)
+            <span class="hljs-number">567</span>K: octty (pid <span class="hljs-number">1881</span>)
+            <span class="hljs-number">548</span>K: sh (pid <span class="hljs-number">21518</span>)
+            <span class="hljs-number">543</span>K: unrmd (pid <span class="hljs-number">1068</span>)
+            <span class="hljs-number">543</span>K: sh (pid <span class="hljs-number">21295</span>)
+    <span class="hljs-number">439</span>,<span class="hljs-number">507</span>K: System
+        <span class="hljs-number">439</span>,<span class="hljs-number">507</span>K: system (pid <span class="hljs-number">1554</span>)
+    <span class="hljs-number">628</span>,<span class="hljs-number">842</span>K: Persistent
+        <span class="hljs-number">285</span>,<span class="hljs-number">401</span>K: com.android.systemui (pid <span class="hljs-number">2532</span>)
+         <span class="hljs-number">46</span>,<span class="hljs-number">017</span>K: com.huawei.nearby (pid <span class="hljs-number">2870</span>)
+         <span class="hljs-number">39</span>,<span class="hljs-number">448</span>K: com.huawei.harmonyos.foundation (pid <span class="hljs-number">2793</span>)
+         <span class="hljs-number">39</span>,<span class="hljs-number">184</span>K: com.android.phone (pid <span class="hljs-number">2948</span>)
+         <span class="hljs-number">38</span>,<span class="hljs-number">901</span>K: com.huawei.systemserver (pid <span class="hljs-number">2885</span>)
+         <span class="hljs-number">35</span>,<span class="hljs-number">260</span>K: com.huawei.iaware (pid <span class="hljs-number">2930</span>)
+         <span class="hljs-number">30</span>,<span class="hljs-number">543</span>K: com.huawei.HwOPServer (pid <span class="hljs-number">2814</span>)
+         <span class="hljs-number">28</span>,<span class="hljs-number">550</span>K: com.huawei.hiview (pid <span class="hljs-number">2842</span>)
+         <span class="hljs-number">21</span>,<span class="hljs-number">056</span>K: com.android.nfc (pid <span class="hljs-number">7775</span>)
+         <span class="hljs-number">20</span>,<span class="hljs-number">788</span>K: com.huawei.securityserver (pid <span class="hljs-number">2905</span>)
+         <span class="hljs-number">19</span>,<span class="hljs-number">094</span>K: com.huawei.hiaction (pid <span class="hljs-number">7833</span>)
+         <span class="hljs-number">14</span>,<span class="hljs-number">312</span>K: com.huawei.android.pushagent.PushService (pid <span class="hljs-number">4502</span>)
+         <span class="hljs-number">10</span>,<span class="hljs-number">288</span>K: com.huawei.android.extdisplay (pid <span class="hljs-number">2625</span>)
+  <span class="hljs-number">1</span>,<span class="hljs-number">263</span>,<span class="hljs-number">189</span>K: Foreground
+      <span class="hljs-number">1</span>,<span class="hljs-number">173</span>,<span class="hljs-number">964</span>K: com.ss.android.ugc.aweme (pid <span class="hljs-number">20395</span> / activities)
+         <span class="hljs-number">48</span>,<span class="hljs-number">692</span>K: com.ss.android.ugc.aweme:sandboxed_process1 (pid <span class="hljs-number">22879</span>)
+         <span class="hljs-number">40</span>,<span class="hljs-number">533</span>K: com.huawei.systemmanager:service (pid <span class="hljs-number">2715</span>)
+    <span class="hljs-number">516</span>,<span class="hljs-number">435</span>K: Visible
+        <span class="hljs-number">235</span>,<span class="hljs-number">438</span>K: com.huawei.android.launcher (pid <span class="hljs-number">15880</span> / activities)
+        <span class="hljs-number">103</span>,<span class="hljs-number">570</span>K: com.huawei.hwid.core (pid <span class="hljs-number">28866</span>)
+         <span class="hljs-number">38</span>,<span class="hljs-number">852</span>K: com.huawei.lbs (pid <span class="hljs-number">6826</span>)
+         <span class="hljs-number">38</span>,<span class="hljs-number">327</span>K: com.huawei.hiai.engineservice (pid <span class="hljs-number">8308</span>)
+         <span class="hljs-number">34</span>,<span class="hljs-number">877</span>K: com.huawei.android.totemweather (pid <span class="hljs-number">32766</span>)
+         <span class="hljs-number">25</span>,<span class="hljs-number">166</span>K: com.huawei.recsys (pid <span class="hljs-number">3970</span>)
+         <span class="hljs-number">16</span>,<span class="hljs-number">943</span>K: com.huawei.ohos.photos (pid <span class="hljs-number">15301</span>)
+         <span class="hljs-number">11</span>,<span class="hljs-number">968</span>K: com.huawei.vassistant:interactor (pid <span class="hljs-number">7751</span>)
+         <span class="hljs-number">11</span>,<span class="hljs-number">294</span>K: com.android.se (pid <span class="hljs-number">16286</span>)
+    <span class="hljs-number">165</span>,<span class="hljs-number">223</span>K: Perceptible
+        <span class="hljs-number">141</span>,<span class="hljs-number">366</span>K: com.sohu.inputmethod.sogou (pid <span class="hljs-number">27072</span>)
+         <span class="hljs-number">23</span>,<span class="hljs-number">857</span>K: com.huawei.hwid.persistent (pid <span class="hljs-number">16738</span>)
+     <span class="hljs-number">46</span>,<span class="hljs-number">218</span>K: A Services
+         <span class="hljs-number">46</span>,<span class="hljs-number">218</span>K: com.android.settings (pid <span class="hljs-number">24673</span>)
+    <span class="hljs-number">330</span>,<span class="hljs-number">651</span>K: Previous  <span class="hljs-comment">// &#x975E;&#x5E38;&#x9A7B;&#x3010;1&#x3011;</span>
+        <span class="hljs-number">330</span>,<span class="hljs-number">651</span>K: com.tencent.mm (pid <span class="hljs-number">8370</span> / activities)
+    <span class="hljs-number">481</span>,<span class="hljs-number">183</span>K: B Services
+        <span class="hljs-number">263</span>,<span class="hljs-number">578</span>K: com.tencent.wework (pid <span class="hljs-number">17292</span>)
+         <span class="hljs-number">71</span>,<span class="hljs-number">241</span>K: com.tencent.mm:push (pid <span class="hljs-number">8218</span>)
+         <span class="hljs-number">46</span>,<span class="hljs-number">303</span>K: com.tencent.wework:wemeet (pid <span class="hljs-number">17335</span>)
+         <span class="hljs-number">45</span>,<span class="hljs-number">173</span>K: com.tencent.wework:push (pid <span class="hljs-number">17433</span>)
+         <span class="hljs-number">33</span>,<span class="hljs-number">167</span>K: com.huawei.health:DaemonService (pid <span class="hljs-number">13511</span>)
+         <span class="hljs-number">21</span>,<span class="hljs-number">721</span>K: android.process.media (pid <span class="hljs-number">24718</span>)
+  <span class="hljs-number">3</span>,<span class="hljs-number">370</span>,<span class="hljs-number">049</span>K: Cached  <span class="hljs-comment">// &#x975E;&#x5E38;&#x9A7B;&#x3010;2&#x3011;</span>
+        <span class="hljs-number">753</span>,<span class="hljs-number">926</span>K: com.xingin.xhs (pid <span class="hljs-number">21134</span> / activities)
+        <span class="hljs-number">724</span>,<span class="hljs-number">920</span>K: me.ele (pid <span class="hljs-number">32299</span> / activities)
+        <span class="hljs-number">362</span>,<span class="hljs-number">519</span>K: com.zhihu.android (pid <span class="hljs-number">11390</span> / activities)
+        <span class="hljs-number">292</span>,<span class="hljs-number">510</span>K: com.tencent.wework:sandboxed_process0:com.tencent.smtt.services.ChildProcessService$Sandboxed0 (pid <span class="hljs-number">17563</span>)
+        <span class="hljs-number">225</span>,<span class="hljs-number">933</span>K: com.xingin.xhs:pushservice (pid <span class="hljs-number">22605</span>)
+        <span class="hljs-number">219</span>,<span class="hljs-number">601</span>K: com.xingin.xhs:longlink (pid <span class="hljs-number">21417</span>)
+        <span class="hljs-number">130</span>,<span class="hljs-number">959</span>K: com.zhihu.android:channel (pid <span class="hljs-number">12627</span>)
+         <span class="hljs-number">99</span>,<span class="hljs-number">871</span>K: com.huawei.intelligent (pid <span class="hljs-number">3249</span>)
+         <span class="hljs-number">77</span>,<span class="hljs-number">907</span>K: com.huawei.appmarket (pid <span class="hljs-number">24743</span>)
+         <span class="hljs-number">59</span>,<span class="hljs-number">598</span>K: com.huawei.intelligent:web (pid <span class="hljs-number">19665</span>)
+         <span class="hljs-number">55</span>,<span class="hljs-number">858</span>K: me.ele:channel (pid <span class="hljs-number">2161</span>)
+         <span class="hljs-number">53</span>,<span class="hljs-number">735</span>K: com.huawei.hiai (pid <span class="hljs-number">14227</span>)
+         <span class="hljs-number">48</span>,<span class="hljs-number">953</span>K: me.ele:sandboxed_privilege_process0 (pid <span class="hljs-number">1779</span>)
+         <span class="hljs-number">45</span>,<span class="hljs-number">003</span>K: com.huawei.meetime (pid <span class="hljs-number">21489</span>)
+         <span class="hljs-number">37</span>,<span class="hljs-number">625</span>K: me.ele:gpu_process (pid <span class="hljs-number">1758</span>)
+         <span class="hljs-number">32</span>,<span class="hljs-number">592</span>K: com.huawei.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:<span class="hljs-number">1</span> (pid <span class="hljs-number">12254</span>)
+         <span class="hljs-number">31</span>,<span class="hljs-number">715</span>K: com.huawei.intelligent:player (pid <span class="hljs-number">20586</span>)
+         <span class="hljs-number">27</span>,<span class="hljs-number">030</span>K: com.huawei.hwid.container2 (pid <span class="hljs-number">23061</span>)
+         <span class="hljs-number">25</span>,<span class="hljs-number">007</span>K: com.huawei.hwid.container1 (pid <span class="hljs-number">16974</span>)
+         <span class="hljs-number">21</span>,<span class="hljs-number">308</span>K: com.huawei.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:<span class="hljs-number">0</span> (pid <span class="hljs-number">1585</span>)
+         <span class="hljs-number">16</span>,<span class="hljs-number">594</span>K: com.huawei.localBackup (pid <span class="hljs-number">23755</span>)
+         <span class="hljs-number">16</span>,<span class="hljs-number">574</span>K: com.huawei.hwid (pid <span class="hljs-number">19228</span>)
+         <span class="hljs-number">10</span>,<span class="hljs-number">311</span>K: com.huawei.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:<span class="hljs-number">0</span> (pid <span class="hljs-number">22022</span>)
+
+Total PSS by category:
+  <span class="hljs-number">1</span>,<span class="hljs-number">056</span>,<span class="hljs-number">414</span>K: Native
+    <span class="hljs-number">833</span>,<span class="hljs-number">516</span>K: Dalvik
+    <span class="hljs-number">403</span>,<span class="hljs-number">112</span>K: EGL mtrack
+    <span class="hljs-number">354</span>,<span class="hljs-number">496</span>K: GL mtrack
+    <span class="hljs-number">342</span>,<span class="hljs-number">395</span>K: .dex mmap
+    <span class="hljs-number">246</span>,<span class="hljs-number">891</span>K: .art mmap
+    <span class="hljs-number">246</span>,<span class="hljs-number">546</span>K: .so mmap
+    <span class="hljs-number">220</span>,<span class="hljs-number">783</span>K: Dalvik Other
+    <span class="hljs-number">170</span>,<span class="hljs-number">168</span>K: Unknown
+     <span class="hljs-number">86</span>,<span class="hljs-number">497</span>K: .apk mmap
+     <span class="hljs-number">66</span>,<span class="hljs-number">319</span>K: Other mmap
+     <span class="hljs-number">49</span>,<span class="hljs-number">954</span>K: .jar mmap
+     <span class="hljs-number">36</span>,<span class="hljs-number">597</span>K: .oat mmap
+      <span class="hljs-number">3</span>,<span class="hljs-number">620</span>K: Stack
+      <span class="hljs-number">2</span>,<span class="hljs-number">807</span>K: Other dev
+        <span class="hljs-number">576</span>K: Ashmem
+        <span class="hljs-number">393</span>K: .ttf mmap
+          <span class="hljs-number">4</span>K: Cursor
+          <span class="hljs-number">0</span>K: Gfx dev
+          <span class="hljs-number">0</span>K: Other mtrack
+
+Total RAM: <span class="hljs-number">7</span>,<span class="hljs-number">696</span>,<span class="hljs-number">216</span>K (status normal)
+ Free RAM: <span class="hljs-number">3</span>,<span class="hljs-number">848</span>,<span class="hljs-number">001</span>K (<span class="hljs-number">3</span>,<span class="hljs-number">370</span>,<span class="hljs-number">049</span>K cached pss +   <span class="hljs-number">384</span>,<span class="hljs-number">152</span>K cached kernel +    <span class="hljs-number">93</span>,<span class="hljs-number">800</span>K free)
+ Used RAM: <span class="hljs-number">5</span>,<span class="hljs-number">636</span>,<span class="hljs-number">502</span>K (<span class="hljs-number">4</span>,<span class="hljs-number">889</span>,<span class="hljs-number">478</span>K used pss +   <span class="hljs-number">747</span>,<span class="hljs-number">024</span>K kernel)
+ Lost RAM:   <span class="hljs-number">740</span>,<span class="hljs-number">732</span>K
+     ZRAM: <span class="hljs-number">1</span>,<span class="hljs-number">609</span>,<span class="hljs-number">420</span>K physical used <span class="hljs-keyword">for</span> <span class="hljs-number">4</span>,<span class="hljs-number">193</span>,<span class="hljs-number">272</span><span class="hljs-function">K in <span class="hljs-title">swap</span> <span class="hljs-params">(<span class="hljs-number">4</span>,<span class="hljs-number">194</span>,<span class="hljs-number">300</span>K total swap)</span>
+   Tuning: 384 <span class="hljs-params">(large <span class="hljs-number">512</span>)</span>, oom   322,560K, restore limit   107,520<span class="hljs-title">K</span> <span class="hljs-params">(high-end-gfx)</span>
+</span></code></pre>
 
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -2094,7 +2343,7 @@ sailfish:/ #
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"内存","level":"1.2.1.17","depth":3,"next":{"title":"后台杀进程","level":"1.2.1.18","depth":3,"path":"coding/Andriod/后台杀进程.md","ref":"coding/Andriod/后台杀进程.md","articles":[]},"previous":{"title":"WMS","level":"1.2.1.16","depth":3,"path":"coding/Andriod/WMS.md","ref":"coding/Andriod/WMS.md","articles":[]},"dir":"ltr"},"config":{"//":["这是多行注释：    anchor-navigation-ex 是","anchor-navigation-ex 是","click-reveal 本地使用ok，但是github在build pages时，不识别click-reveal","accordion 也是折叠代码段","anchor-navigation-ex 是"],"plugins":["anchor-navigation-ex","toggle-chapters","expandable-chapters-small","splitter","code","page-treeview","popup","-search","-lunr","sidebar-style","auto-scroll-table","click-reveal","accordion","pageview-count","search-pro"],"root":"./markdownsFiles","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"Kent","title":"《知行，行知》"},"tbfed-pagefooter":{"copyright":"Copyright &copy ershouche-FE 2019","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"disqus":{"shortName":"gitbookuse"},"splitter":{},"search-pro":{},"accordion":{},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":200000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"pageview-count":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bookname":"笔记","variables":{},"title":"Kent的博客","gitbook":"*"},"file":{"path":"coding/Andriod/内存.md","mtime":"2023-11-13T16:31:53.326Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-11-13T16:32:04.557Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"内存","level":"1.2.1.17","depth":3,"next":{"title":"后台杀进程","level":"1.2.1.18","depth":3,"path":"coding/Andriod/后台杀进程.md","ref":"coding/Andriod/后台杀进程.md","articles":[]},"previous":{"title":"WMS","level":"1.2.1.16","depth":3,"path":"coding/Andriod/WMS.md","ref":"coding/Andriod/WMS.md","articles":[]},"dir":"ltr"},"config":{"//":["这是多行注释：    anchor-navigation-ex 是","anchor-navigation-ex 是","click-reveal 本地使用ok，但是github在build pages时，不识别click-reveal","accordion 也是折叠代码段","anchor-navigation-ex 是"],"plugins":["anchor-navigation-ex","toggle-chapters","expandable-chapters-small","splitter","code","page-treeview","popup","-search","-lunr","sidebar-style","auto-scroll-table","click-reveal","accordion","pageview-count","search-pro"],"root":"./markdownsFiles","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"Kent","title":"《知行，行知》"},"tbfed-pagefooter":{"copyright":"Copyright &copy ershouche-FE 2019","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"disqus":{"shortName":"gitbookuse"},"splitter":{},"search-pro":{},"accordion":{},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":200000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"pageview-count":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bookname":"笔记","variables":{},"title":"Kent的博客","gitbook":"*"},"file":{"path":"coding/Andriod/内存.md","mtime":"2023-11-13T16:44:28.231Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-11-13T16:44:35.768Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
