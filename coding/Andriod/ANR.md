@@ -163,7 +163,11 @@ ANR对话框：
 
 
 
+# Input ANR的本质模型
 
+图：TODO：   com
+
+与watchDog的本质模型，并没有本质上的差异 ---------> 见watchDog
 
 # 面试题 Q&A
 
