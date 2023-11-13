@@ -1616,6 +1616,40 @@ C语言的阅读：
 
 
 
+### 化简之  <font color='red'>不断提取公因式</font>
+
+使用场景：
+
+>  <font color='red'> 记笔记、记忆</font>
+
+
+
+你的关注点，决定了你hold能力：
+
+```java
+ 开机自启设置：systemctl enable service_name
+ 禁止开机自启设置：systemctl disable service_name
+```
+
+
+
+--------------> 关注点： systemctl enable
+
+超级化简（<font color='red'>提取公因子------只关注差异点</font>）
+
+```java
+ 设置：
+     开机自启：systemctl enable service_name      禁止disable
+```
+
+
+
+### 化简之 删减之特殊情况
+
+**删减**之特殊情况(**只要是概率不大的，都认为是特殊情况，即使重要**)
+
+
+
 ## 秒解技巧
 
 
