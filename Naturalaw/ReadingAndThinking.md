@@ -2526,11 +2526,11 @@ gongashi他告诉我，1、不要关注于代码，要有对象提炼。 2、弄
 
 # checklist
 
+![image-20231116005602024](ReadingAndThinking.assets/image-20231116005602024.png)
 
 
-![image-20231023001358523](ReadingAndThinking.assets/image-20231023001358523.png)
 
-
+《思想模型》
 
 
 
