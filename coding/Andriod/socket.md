@@ -44,7 +44,7 @@ https://blog.csdn.net/youaremyalllove/article/details/128508470      从socket�
 
 
 
-
+补充：？   https://blog.csdn.net/CHNIM/article/details/130891045           linux上的epoll如何使用，并用C++实现多客户端服务器
 
 
 
@@ -59,3 +59,25 @@ https://zhuanlan.zhihu.com/p/366365883   linux网络编程之带你了解epoll�
 --------------------> TODO： <font color='red'>好文！！！！解释了为啥epoll如此高效：</font>
 
 ![img](socket.assets/v2-10c5936545f0adabfc9f45510b8328cc_720w.webp)
+
+# 面试题：
+
+https://blog.csdn.net/weixin_44844089/article/details/115655642           操作系统面试题：进程如何阻塞？进程阻塞为什么不占用CPU？
+
+https://blog.csdn.net/Shangxingya/article/details/112427967    操作系统~复习线程状态转换的过程, 对比租阻塞和挂起的区别, 以及上下文切换消耗什么资源
+
+-------------------->  
+
+阻塞与挂起的**区别:**
+
+> 一个被动，一个主动
+
+**相同点：**
+
+> 线程都放弃CPU的使用
+
+
+
+https://blog.csdn.net/wang_Bo_JustOne/article/details/51597671       关于线程阻塞的问题，留着看了
+
+---------------->  结论： 非阻塞模式的使用并不普遍，因为**非阻塞模式会浪费大量的CPU资源**。 
