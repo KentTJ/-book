@@ -48,6 +48,14 @@ https://blog.csdn.net/youaremyalllove/article/details/128508470      从socket�
 
 
 
+
+
+https://zhuanlan.zhihu.com/p/658504209   TCP Socket性能优化秘籍：掌握read、recv、readv、write、send、sendv的最佳实践
+
+------------------------------>  性能调优
+
+
+
 # TODO: 更底层----socket阻塞的唤醒
 
 
@@ -80,4 +88,8 @@ https://blog.csdn.net/Shangxingya/article/details/112427967    操作系统~复�
 
 https://blog.csdn.net/wang_Bo_JustOne/article/details/51597671       关于线程阻塞的问题，留着看了
 
----------------->  结论： 非阻塞模式的使用并不普遍，因为**非阻塞模式会浪费大量的CPU资源**。 
+---------------->  结论：
+
+1、 非阻塞模式的使用并不普遍，因为**非阻塞模式会浪费大量的CPU资源**。 
+
+2、I/O多路复用 非常好。时间复杂度O（1）
