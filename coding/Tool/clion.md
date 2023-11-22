@@ -6,13 +6,23 @@
 
 
 
-## ~~clion第一次打开工程~~
+## ~~clion第一次打开工程, 生成cmakeList.txt~~
 
 ~~对于没有cmakeList.txt的工程，选择自动生成cmakeList.txt~~
 
 
 
 ![image-20220921010933940](clion.assets/image-20220921010933940.png)
+
+
+
+特别注意：**有些clion版本，没有New CMake Project from Sources**
+
+> https://qa.1r1g.com/sf/ask/4758331231/           从现有源创建项目时如何在 Clion 中生成 CMakeLists.txt？
+>
+> --------> 验证ok
+
+
 
 
 
