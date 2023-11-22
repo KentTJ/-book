@@ -1317,8 +1317,8 @@ https://blog.csdn.net/weixin_34419326/article/details/90306477
 执行linux下   gdbclient.py  ---> GOOGLE封装好的断点脚本
 
 ```shell
-chengang@89d22fcdad99:~/workingSpace/aosp_android1000_r17$ which gdbclient.py
-/home/chengang/workingSpace/aosp_android1000_r17/development/scripts/gdbclient.py    
+cg, @89d22fcdad99:~/workingSpace/aosp_android1000_r17$ which gdbclient.py
+/home/cg, /workingSpace/aosp_android1000_r17/development/scripts/gdbclient.py    
 
 //todo: 看一下源码
 ```

@@ -1109,7 +1109,7 @@ Step2. 输出日志
 
 ```
 LOGD("user info-----------------------name:%s, age:%d, sex:%s.", "xxx", 18, "男");`
-LOGE("chengang1, class name:%s", env->GetStringUTFChars(name, 0));
+LOGE("cg, 1, class name:%s", env->GetStringUTFChars(name, 0));
 ```
 
 

@@ -212,7 +212,7 @@ pause
 ```powershell
 del "H:\docker_install\Dockerfile\Dockerfile"
 echo FROM %Image%>> H:\docker_install\Dockerfile\Dockerfile
-echo ^RUN^ ^echo^ ^'hi, cg. this is a ubuntu16.04_aosp1000_r17 image, clion is ok'^ ^>^ /home/chengang/readme.txt>> H:\docker_install\Dockerfile\Dockerfile
+echo ^RUN^ ^echo^ ^'hi, cg. this is a ubuntu16.04_aosp1000_r17 image, clion is ok'^ ^>^ /home/cg, /readme.txt>> H:\docker_install\Dockerfile\Dockerfile
 ```
 
 结果
@@ -1225,12 +1225,12 @@ function my_he
         docker rmi ee7cbd482336
         docker ps -l
         docker pause 2619ca372120
-        docker commit  7a0d4b22ae06 chengang/ubuntu16.04_aosp1200_r28:vnc_ok
+        docker commit  7a0d4b22ae06 cg, /ubuntu16.04_aosp1200_r28:vnc_ok
         docker load -i  F:\VirtualMachine\Docker\ubuntu.tar
         
         docker_build_save_load.bat 替代:
-            docker save  chengang/ubuntu16.04_aosp1000_r17:vnc_ok  -o  H:\docker_jarFiles\ubuntu16.04_aosp1000_r17_vnc_20221026.jar
-            docker build --squash -t  chengang/ubuntu16.04_aosp1200_r28:as_ok2 ."
+            docker save  cg, /ubuntu16.04_aosp1000_r17:vnc_ok  -o  H:\docker_jarFiles\ubuntu16.04_aosp1000_r17_vnc_20221026.jar
+            docker build --squash -t  cg, /ubuntu16.04_aosp1200_r28:as_ok2 ."
 
 
     echo "=========================虚拟屏=============================

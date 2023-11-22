@@ -1801,6 +1801,58 @@ https://blog.csdn.net/mo_sss/article/details/132856647
 
 
 
+### ubuntu启动失败/virtualbox
+
+参考：
+
+> https://blog.csdn.net/beihuanlihe130/article/details/122728594   How To Fix Busybox Initramfs Error On Ubuntu
+
+启动后，问题：
+
+```java
+1
+BusyBox v1.30.1 (Ubuntu 1:1.30.1-4ubuntu6.1) built-in shell (ash)2
+Enter 'help' for a list of built-in commands.3
+4
+(initramfs)
+```
+
+问题原因：
+
+```java
+1
+(initramfs) exit2
+/dev/sda1 contains a file system with errors, check forced. // ----------> /dev/sda1文件系统出了问题3
+Inode 4326476 extent tree (at level 1) could be narrower, IGNORED.4
+/dev/sda1: Inode 4326843 extent tree (at level 1) could be narrower, IGNORED.5
+/dev/sda1: Inode 4327012 extent tree (at level 1) could be narrower, IGNORED.6
+/dev/sda1: Inode 4329004 extent tree (at level 1) could be narrower, IGNORED.7
+/dev/sda1: Inodes that were part of a corrupted orphan linked list found.8
+9
+/dev/sda1: UNEXPECTED INCONSISTENCY; RUN fsck MANUALLY.10
+        (i.e., without -a or -p options)11
+fsck exited with status code 4.12
+The root filesystem on /dev/sda1 requires a manual fsck.13
+14
+BusyBox v1.30.1 (Ubuntu 1:1.30.1-4ubuntu6.1) built-in shell (ash)15
+Enter 'help' for a list of built-in commands.16
+17
+(initramfs)
+```
+
+修复repair the filesystem：
+
+```java
+1
+(initramfs) fsck /dev/sda1 -y2
+3
+(initramfs) reboot4
+```
+
+------> 不限于 virtualbox
+
+
+
 # 计算机其他问题及设置
 
 ## 软件最优的使用方式----免安装

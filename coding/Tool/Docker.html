@@ -1365,8 +1365,8 @@
 -p  127.0.0.1:10000:22  ^
 -p 127.0.0.1:15901:5901  ^
 --cap-add SYS_ADMIN --device /dev/fuse ^
--t -i  -v   I:\dockerSharedFiles:/home/chengang/workingSpace/local ^
--v   H:\dockerSharedFiles_Gpan\dockerSharedFiles_Gpan:/home/chengang/workingSpace/local2    %imagesId%  /bin/bash
+-t -i  -v   I:\dockerSharedFiles:/home/cg, /workingSpace/local ^
+-v   H:\dockerSharedFiles_Gpan\dockerSharedFiles_Gpan:/home/cg/workingSpace/local2    %imagesId%  /bin/bash
 
 
 
@@ -1552,8 +1552,8 @@ RUN set -x; buildDeps=&apos;gcc libc6-dev make wget&apos; \
 <pre><code class="lang-shell">docker run  ^
 -p  10000:22  ^
 -p 15901:5901  ^
--t -i  -v   G:\dockerSharedFiles:/home/chengang/workingSpace/local ^
--v   H:\dockerSharedFiles_Gpan\dockerSharedFiles_Gpan:/home/chengang/workingSpace/local2    4753178ab18f  /bin/bash
+-t -i  -v   G:\dockerSharedFiles:/home/cg, /workingSpace/local ^
+-v   H:\dockerSharedFiles_Gpan\dockerSharedFiles_Gpan:/home/cg, /workingSpace/local2    4753178ab18f  /bin/bash
 </code></pre>
 <p>MobaXterm&#x94FE;&#x63A5;&#x65F6;&#x7684;ip&#x4F7F;&#x7528;&#x4E3B;&#x673A;&#x7684;&#xFF1A;
 <img src="Docker.assets/image-20221101185509314.png" alt="image-20221101185509314"></p>
@@ -1563,8 +1563,8 @@ RUN set -x; buildDeps=&apos;gcc libc6-dev make wget&apos; \
 <pre><code class="lang-shell">docker run  ^
 -p  127.0.0.1:10000:22  ^
 -p 127.0.0.1:15901:5901  ^
--t -i  -v   G:\dockerSharedFiles:/home/chengang/workingSpace/local ^
--v   H:\dockerSharedFiles_Gpan\dockerSharedFiles_Gpan:/home/chengang/workingSpace/local2    4753178ab18f  /bin/bash
+-t -i  -v   G:\dockerSharedFiles:/home/cg, /workingSpace/local ^
+-v   H:\dockerSharedFiles_Gpan\dockerSharedFiles_Gpan:/home/cg, /workingSpace/local2    4753178ab18f  /bin/bash
 </code></pre>
 <p>MobaXterm&#x94FE;&#x63A5;&#x65F6;&#x7684;ip&#x4F7F;&#x7528;&#x4E3B;&#x673A;&#x7684;127.0.0.1&#xFF0C;<font color="red">&#x56FA;&#x5B9A;&#xFF01;&#xFF01;&#xFF01;&#xFF01;</font></p>
 <p><code>&#x76F8;&#x5F53;&#x4E8E;&#x6709;&#x4E00;&#x5C42;&#x4EE3;&#x7406;&#xFF0C;&#x5177;&#x4F53;&#x4F7F;&#x7528;&#x65F6;&#xFF0C;&#x4E0D;&#x7528;&#x7BA1;&#x5177;&#x4F53;ip&#x662F;&#x591A;&#x5C11;</code></p>
@@ -1581,7 +1581,7 @@ RUN set -x; buildDeps=&apos;gcc libc6-dev make wget&apos; \
 <p>&#x4FEE;&#x6539;&#x955C;&#x50CF;tag&#xFF1A;</p>
 <pre><code class="lang-java">docker tag $IMAGE_ID &lt;NEW_IMAGE_NAME&gt;:&lt;NEW_TAG&gt;
 
-docker tag <span class="hljs-number">194</span>d8716 chengang/ubuntu16.04_aosp1200_r28:last
+docker tag <span class="hljs-number">194</span>d8716 cg, /ubuntu16.04_aosp1200_r28:last
 </code></pre>
 <h3 id="docker&#x7F51;&#x7AD9;&#xFF0C;"><a name="docker&#x7F51;&#x7AD9;&#xFF0C;" class="anchor-navigation-ex-anchor" href="#docker&#x7F51;&#x7AD9;&#xFF0C;"><i class="fa fa-link" aria-hidden="true"></i></a>2.6.11. docker&#x7F51;&#x7AD9;&#xFF0C;</h3>
 <p>&#x7C7B;&#x4F3C;gitHub</p>
@@ -1593,7 +1593,7 @@ docker tag <span class="hljs-number">194</span>d8716 chengang/ubuntu16.04_aosp12
 <p><a href="https://blog.csdn.net/qq_37797234/article/details/103660748" target="_blank">https://blog.csdn.net/qq_37797234/article/details/103660748</a></p>
 <p>&#x4FDD;&#x5B58;&#x955C;&#x50CF;&#x5230;&#x672C;&#x5730;&#xFF01;&#xFF01;&#xFF01;&#xFF01;</p>
 <pre><code class="lang-shell">docker save  ubuntu16.04_0902  -o  E:\docker\ubuntu16.04_0902.jar
-docker save  chengang/ubuntu16.04_aosp1000_r17:vnc_ok  -o  H:\docker_jarFiles\ubuntu16.04_aosp1000_r17_vnc_20221026.jar
+docker save  cg, /ubuntu16.04_aosp1000_r17:vnc_ok  -o  H:\docker_jarFiles\ubuntu16.04_aosp1000_r17_vnc_20221026.jar
 </code></pre>
 <p> &#x52A0;&#x8F7D;&#x672C;&#x5730;&#x955C;&#x50CF;</p>
 <pre><code class="lang-shell">C:\Users\xixi&gt;docker load -i  F:\VirtualMachine\Docker\ubuntu.tar
@@ -1980,7 +1980,7 @@ moba&#x8FDE;&#x63A5;&#x65F6;&#xFF0C;&#x7528;&#x7684;127.0.0.1&#xFF0C;&#x4E3A;&#x
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Docker","level":"1.2.7.8","depth":3,"next":{"title":"Git","level":"1.2.7.9","depth":3,"path":"coding/Tool/git.md","ref":"coding/Tool/git.md","articles":[]},"previous":{"title":"Debug Skills","level":"1.2.7.7","depth":3,"path":"coding/Tool/debugSkills.md","ref":"coding/Tool/debugSkills.md","articles":[]},"dir":"ltr"},"config":{"//":["这是多行注释：    anchor-navigation-ex 是","anchor-navigation-ex 是","click-reveal 本地使用ok，但是github在build pages时，不识别click-reveal","accordion 也是折叠代码段","anchor-navigation-ex 是"],"plugins":["anchor-navigation-ex","toggle-chapters","expandable-chapters-small","splitter","code","page-treeview","popup","-search","-lunr","sidebar-style","auto-scroll-table","click-reveal","accordion","pageview-count","search-pro"],"root":"./markdownsFiles","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"Kent","title":"《知行，行知》"},"tbfed-pagefooter":{"copyright":"Copyright &copy ershouche-FE 2019","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"disqus":{"shortName":"gitbookuse"},"splitter":{},"search-pro":{},"accordion":{},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":200000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"pageview-count":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bookname":"笔记","variables":{},"title":"Kent的博客","gitbook":"*"},"file":{"path":"coding/Tool/Docker.md","mtime":"2023-11-05T15:20:53.943Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-11-22T16:06:47.946Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Docker","level":"1.2.7.8","depth":3,"next":{"title":"Git","level":"1.2.7.9","depth":3,"path":"coding/Tool/git.md","ref":"coding/Tool/git.md","articles":[]},"previous":{"title":"Debug Skills","level":"1.2.7.7","depth":3,"path":"coding/Tool/debugSkills.md","ref":"coding/Tool/debugSkills.md","articles":[]},"dir":"ltr"},"config":{"//":["这是多行注释：    anchor-navigation-ex 是","anchor-navigation-ex 是","click-reveal 本地使用ok，但是github在build pages时，不识别click-reveal","accordion 也是折叠代码段","anchor-navigation-ex 是"],"plugins":["anchor-navigation-ex","toggle-chapters","expandable-chapters-small","splitter","code","page-treeview","popup","-search","-lunr","sidebar-style","auto-scroll-table","click-reveal","accordion","pageview-count","search-pro"],"root":"./markdownsFiles","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"Kent","title":"《知行，行知》"},"tbfed-pagefooter":{"copyright":"Copyright &copy ershouche-FE 2019","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"disqus":{"shortName":"gitbookuse"},"splitter":{},"search-pro":{},"accordion":{},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":200000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"pageview-count":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bookname":"笔记","variables":{},"title":"Kent的博客","gitbook":"*"},"file":{"path":"coding/Tool/Docker.md","mtime":"2023-11-22T16:19:37.671Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-11-22T16:19:56.419Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

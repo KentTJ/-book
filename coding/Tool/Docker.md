@@ -145,8 +145,8 @@ docker run  ^
 -p  127.0.0.1:10000:22  ^
 -p 127.0.0.1:15901:5901  ^
 --cap-add SYS_ADMIN --device /dev/fuse ^
--t -i  -v   I:\dockerSharedFiles:/home/chengang/workingSpace/local ^
--v   H:\dockerSharedFiles_Gpan\dockerSharedFiles_Gpan:/home/chengang/workingSpace/local2    %imagesId%  /bin/bash
+-t -i  -v   I:\dockerSharedFiles:/home/cg, /workingSpace/local ^
+-v   H:\dockerSharedFiles_Gpan\dockerSharedFiles_Gpan:/home/cg/workingSpace/local2    %imagesId%  /bin/bash
  
  
  
@@ -515,8 +515,8 @@ RUN set -x; buildDeps='gcc libc6-dev make wget' \
 docker run  ^
 -p  10000:22  ^
 -p 15901:5901  ^
--t -i  -v   G:\dockerSharedFiles:/home/chengang/workingSpace/local ^
--v   H:\dockerSharedFiles_Gpan\dockerSharedFiles_Gpan:/home/chengang/workingSpace/local2    4753178ab18f  /bin/bash
+-t -i  -v   G:\dockerSharedFiles:/home/cg, /workingSpace/local ^
+-v   H:\dockerSharedFiles_Gpan\dockerSharedFiles_Gpan:/home/cg, /workingSpace/local2    4753178ab18f  /bin/bash
 ```
 
 MobaXterm链接时的ip使用主机的：
@@ -534,8 +534,8 @@ MobaXterm链接时的ip使用主机的：
 docker run  ^
 -p  127.0.0.1:10000:22  ^
 -p 127.0.0.1:15901:5901  ^
--t -i  -v   G:\dockerSharedFiles:/home/chengang/workingSpace/local ^
--v   H:\dockerSharedFiles_Gpan\dockerSharedFiles_Gpan:/home/chengang/workingSpace/local2    4753178ab18f  /bin/bash
+-t -i  -v   G:\dockerSharedFiles:/home/cg, /workingSpace/local ^
+-v   H:\dockerSharedFiles_Gpan\dockerSharedFiles_Gpan:/home/cg, /workingSpace/local2    4753178ab18f  /bin/bash
 ```
 
 MobaXterm链接时的ip使用主机的127.0.0.1，<font color='red'>固定！！！！</font>
@@ -575,7 +575,7 @@ docker push tag 1be049d70e93  chen85/ubuntu16.04_aosp1000_r17:v1
 ```java
 docker tag $IMAGE_ID <NEW_IMAGE_NAME>:<NEW_TAG>
     
-docker tag 194d8716 chengang/ubuntu16.04_aosp1200_r28:last
+docker tag 194d8716 cg, /ubuntu16.04_aosp1200_r28:last
 ```
 
 
@@ -602,7 +602,7 @@ https://blog.csdn.net/qq_37797234/article/details/103660748
 
 ```shell
 docker save  ubuntu16.04_0902  -o  E:\docker\ubuntu16.04_0902.jar
-docker save  chengang/ubuntu16.04_aosp1000_r17:vnc_ok  -o  H:\docker_jarFiles\ubuntu16.04_aosp1000_r17_vnc_20221026.jar
+docker save  cg, /ubuntu16.04_aosp1000_r17:vnc_ok  -o  H:\docker_jarFiles\ubuntu16.04_aosp1000_r17_vnc_20221026.jar
 ```
 
  加载本地镜像

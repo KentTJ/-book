@@ -915,19 +915,19 @@ https://magiskcn.com/     小米手机安装面具教程（Xiaomi手机获取roo
             while((line=in.readLine())!=null){
 
                 System.out.println(line);//打印输出结果
-                Log.d(TAG, "chengang out: " + line);
+                Log.d(TAG, "cg, out: " + line);
             }
             while((line=err.readLine())!=null){
 
                 System.out.println(line);//打印错误输出结果
-                Log.d(TAG, "chengang error: " + line);
+                Log.d(TAG, "cg, error: " + line);
             }
             in.close();
             out.close();
             proc.destroy();
         }catch(Exception e){
             System.out.println("exception:"+e);
-            Log.d(TAG, "chengang error: " + e);
+            Log.d(TAG, "cg, error: " + e);
         }
     }
 ```
