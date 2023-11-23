@@ -218,6 +218,22 @@ https://jingyan.baidu.com/article/90808022d313a2fd91c80f93.html
 
 
 
+## ~~安装~~
+
+### Source Insight 试用过期，激活
+
+参考：https://www.jianshu.com/p/0dd919d660a3
+
+方法：
+
+> 修改激活日期，修改为当天，然后就可以再用90天了
+>
+> 修改C:\ProgramData\Source Insight\4.0的si4.lic
+>
+> ![image-20231124005419710](sourceInsight.assets/image-20231124005419710.png)
+
+
+
 ## 参考：
 
 https://www.dandelioncloud.cn/article/details/1578906401210855426
