@@ -89,6 +89,10 @@
 
 ![image-20231124231352171](sourceInsight.assets/image-20231124231352171.png)
 
+
+
+
+
 ### symbols搜索
 
 方法一：优：  1、**非常快**     2、还可以限制文件
@@ -109,7 +113,19 @@ TODO：
 
 
 
+### 结果的快速跳转
 
+当前file的跳转：
+
+> ![image-20231125003546193](sourceInsight.assets/image-20231125003546193.png)
+
+
+
+技巧：
+
+> **搜索结果的快速跳转**
+>
+> ![image-20231125003643251](sourceInsight.assets/image-20231125003643251.png)
 
 ## 搜继承关系：
 
