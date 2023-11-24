@@ -1,4 +1,4 @@
-
+# 目录
 
 [TOC]
 
@@ -8,35 +8,100 @@
 
 优点：
 
-1、**极优：**可以source 两个完全不同路径下的代码  （自然，可以取整个aosp多个小部分代码）。AS的source code 必须在工程目录下！！！
-
-2、内存使用是AS的二十分之一    **极优**
-
-![image-20230719235915032](sourceInsight.assets/image-20230719235915032.png)
-
-3、可以同时java和cpp同时跳转！     **极优**
-
-4、不需要像AS与clion，需要事先搭建一个可以编译环境，然后copy代码
-
-5、对于远程服务器代码，不需要copy！！！！（由第一点决定！！！）   **极优**
-
-6、看代码大杀器-----java、cpp、c同时OK
+> 1、**极优：**可以source 两个完全不同路径下的代码  （自然，可以取整个aosp多个小部分代码）。AS的source code 必须在工程目录下！！！
+>
+> 2、内存使用是AS的二十分之一    **<font color='red'>极优</font>**
+>
+> ![image-20230719235915032](sourceInsight.assets/image-20230719235915032.png)
+>
+> ~~导入整个framework代码，才占100M~~    ---------->  **太优秀了**
+>
+> > ![image-20231124214540922](sourceInsight.assets/image-20231124214540922.png)
+>
+> 
+>
+> 3、可以同时java和cpp同时跳转！     **极优**
+>
+> 4、不需要像AS与clion，需要事先搭建一个可以编译环境，然后copy代码
+>
+> 5、对于远程服务器代码，不需要copy！！！！（由第一点决定！！！）   **极优**
+>
+> 6、看代码大杀器-----java、cpp、c同时OK
 
 ​      
 
 缺点：
 
-断点调试不行？？？？------>  办法：与AS结合使用！
+> 断点调试不行？------>  办法：与AS结合使用！
+>
 
 
 
-## TODO:com   导入工程
+## 新建项目
+
+参考：https://blog.csdn.net/zyhse/article/details/122966714
+
+![linux.assets/image-20230719100336188.png](C:/WINDOWS/system32/linux.assets/image-20230719100336188.png)
+
+注意：这里是服务器目录
+
+![linux.assets/image-20230719101149215.png](C:/WINDOWS/system32/linux.assets/image-20230719101149215.png)
+
+### 按需添加
+
+![linux.assets/image-20230719100047534.png](C:/WINDOWS/system32/linux.assets/image-20230719100047534.png)
+
+### add文件之后一定要sync，才能跳转
 
 重点：需要sync(否则，两个文件之间无法跳转)
 
+![linux.assets/image-20230719150856231.png](C:/WINDOWS/system32/linux.assets/image-20230719150856231.png)
 
+## 全局搜索
 
+![linux.assets/image-20230719135041395.png](C:/WINDOWS/system32/linux.assets/image-20230719135041395.png)
 
+## 快捷键
+
+https://blog.csdn.net/u010835747/article/details/122859809
+
+https://www.amobbs.com/thread-5718242-1-1.html
+
+https://zhuanlan.zhihu.com/p/33000424
+
+Navigation: Go Back          : Alt+,, Thumb 1 Click Navigation: Go Forward             : Alt+., Thumb 2 Click
+
+快捷键设置：
+
+![linux.assets/image-20230719151813203.png](C:/WINDOWS/system32/linux.assets/image-20230719151813203.png)
+
+## 搜继承关系：
+
+（1）向上： 搜TouchInputRedirection父类
+
+法一：左键点击TouchInputRedirection  --------> 在relation window会显示父类   （优选）
+
+法二：看TouchInputRedirection的.h文件
+
+法三： TouchInputRedirection : public  ------> 后: public
+
+（2）向下： 搜InputDeviceHandler子类
+
+法一：优选， 在relation window配置**显示  Derived Classes**  (**不能同时看到向上和向下**)
+
+![linux.assets/image-20231123112230859.png](C:/WINDOWS/system32/linux.assets/image-20231123112230859.png)
+
+法二：   : public InputDeviceHandler   ------> 前: public
+
+## source insight字体颜色
+
+黑色-----------不可跳转（相当于AS的红色）
+
+## 新版功能：
+
+http://www.sourceinsight.com.cn/feather.html
+
+HierarchyView的实现原理和Android设备无法使用HierarchyView的解决方法
 
 ## 一些设置
 
