@@ -26,11 +26,11 @@ https://www.bilibili.com/video/BV1wv4y1S7xm?p=2&vd_source=3eebd10b94a8a76eaf4b78
 
 自然：
 
-![image-20230218184011755](OperateSysTem.assets/image-20230218184011755.png)
+![image-20230218184011755](OperateSystem.assets/image-20230218184011755.png)
 
 
 
-![image-20230406224059150](OperateSysTem.assets/image-20230406224059150.png)
+![image-20230406224059150](OperateSystem.assets/image-20230406224059150.png)
 
 ----------->  硬件资源角度
 
@@ -50,7 +50,7 @@ https://www.bilibili.com/video/BV1wv4y1S7xm?p=2&vd_source=3eebd10b94a8a76eaf4b78
 
 > 操作系统将 三大硬件资源，分别抽象成软件概念：
 >
-> ![image-20230407000414923](OperateSysTem.assets/image-20230407000414923.png)
+> ![image-20230407000414923](OperateSystem.assets/image-20230407000414923.png)
 >
 > cpu ----- 进程
 >
@@ -66,7 +66,7 @@ https://www.bilibili.com/video/BV1wv4y1S7xm?p=2&vd_source=3eebd10b94a8a76eaf4b78
 
 > Shell   +  kernel
 >
-> ![image-20230407002116313](OperateSysTem.assets/image-20230407002116313.png)
+> ![image-20230407002116313](OperateSystem.assets/image-20230407002116313.png)
 >
 > 
 >
@@ -82,7 +82,7 @@ kernel：
 
 > 
 >
-> ![image-20230407003807948](OperateSysTem.assets/image-20230407003807948.png)
+> ![image-20230407003807948](OperateSystem.assets/image-20230407003807948.png)
 
 
 
