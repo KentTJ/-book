@@ -397,7 +397,9 @@ https://zhuanlan.zhihu.com/p/33000424
 >
 > ![image-20231124005419710](sourceInsight.assets/image-20231124005419710.png)
 
+## 新版功能：
 
+http://www.sourceinsight.com.cn/feather.html
 
 ## 参考：
 
