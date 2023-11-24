@@ -147,15 +147,15 @@ http://www.sourceinsight.com.cn/feather.html
 
 HierarchyView的实现原理和Android设备无法使用HierarchyView的解决方法
 
-## 一些设置
 
-### search Bar保留
+
+## search Bar保留
 
 ![image-20230720000809647](sourceInsight.assets/image-20230720000809647.png)
 
 
 
-### 选中高亮：
+## 选中高亮：
 
 ![image-20230720001029925](sourceInsight.assets/image-20230720001029925.png)
 
@@ -197,9 +197,10 @@ HierarchyView的实现原理和Android设备无法使用HierarchyView的解决�
 
 法二：利用宏macro
 
-快捷键：  ctrl  + /
-
-![image-20230723125051280](sourceInsight.assets/image-20230723125051280.png)
+> 快捷键：  ctrl  + /
+>
+> ![image-20230723125051280](sourceInsight.assets/image-20230723125051280.png)
+>
 
 
 
@@ -287,11 +288,13 @@ https://jingyan.baidu.com/article/90808022d313a2fd91c80f93.html
 
 ### 查看调用点
 
-![image-20230720002556223](sourceInsight.assets/image-20230720002556223.png)
+> ![image-20230720002556223](sourceInsight.assets/image-20230720002556223.png)
+>
 
 或：
 
-![image-20230720002623320](sourceInsight.assets/image-20230720002623320.png)
+> ![image-20230720002623320](sourceInsight.assets/image-20230720002623320.png)
+>
 
 
 
@@ -340,7 +343,15 @@ https://zhuanlan.zhihu.com/p/33000424
 
 
 
+## 大纲  <------->  代码 相互快速跳转
 
+快速跳转下一个函数：<------------大纲
+
+快速跳转到类 ： <------------大纲
+
+-<font color='red'>**比AS优的地方：**</font>  点击代码，<font color='red'>大纲跟随!!!!!!!!!!</font>   **TODO： 好的设计，可逆**
+
+![image-20231124235613985](sourceInsight.assets/image-20231124235613985.png)
 
 ## 查看当前文件所处的位置
 
