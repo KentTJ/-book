@@ -75,27 +75,41 @@
 
 > ![image-20231124230613283](sourceInsight.assets/image-20231124230613283.png)
 
-## 全局搜索
+## 搜索
+
+### 文本搜索(全局) 
+
+快捷键：Ctrl + F
+
+缺点： **很慢**
+
+优点：      但是各类文件会被搜索得到
+
+![image-20231124231434220](sourceInsight.assets/image-20231124231434220.png)
+
+![image-20231124231352171](sourceInsight.assets/image-20231124231352171.png)
+
+### symbols搜索
+
+方法一：优：  1、**非常快**     2、还可以限制文件
+
+> ![image-20231124231823459](sourceInsight.assets/image-20231124231823459.png)
+
+
+
+方法二：
+
+> ![image-20231124231904181](sourceInsight.assets/image-20231124231904181.png)
+
+
+
+TODO：
+
+> 两种方法是什么区别呢？
 
 
 
 
-
-
-
-## 快捷键
-
-https://blog.csdn.net/u010835747/article/details/122859809
-
-https://www.amobbs.com/thread-5718242-1-1.html
-
-https://zhuanlan.zhihu.com/p/33000424
-
-Navigation: Go Back          : Alt+,, Thumb 1 Click Navigation: Go Forward             : Alt+., Thumb 2 Click
-
-快捷键设置：
-
-![linux.assets/image-20230719151813203.png](C:/WINDOWS/system32/linux.assets/image-20230719151813203.png)
 
 ## 搜继承关系：
 
@@ -103,17 +117,25 @@ Navigation: Go Back          : Alt+,, Thumb 1 Click Navigation: Go Forward      
 
 法一：左键点击TouchInputRedirection  --------> 在relation window会显示父类   （优选）
 
-法二：看TouchInputRedirection的.h文件
+~~法二：看TouchInputRedirection的.h文件~~
 
-法三： TouchInputRedirection : public  ------> 后: public
+~~法三： TouchInputRedirection : public  ------> 后: public~~
 
 （2）向下： 搜InputDeviceHandler子类
 
 法一：优选， 在relation window配置**显示  Derived Classes**  (**不能同时看到向上和向下**)
 
-![linux.assets/image-20231123112230859.png](C:/WINDOWS/system32/linux.assets/image-20231123112230859.png)
+![image-20231124232453074](sourceInsight.assets/image-20231124232453074.png)
 
-法二：   : public InputDeviceHandler   ------> 前: public
+![image-20231124232522327](sourceInsight.assets/image-20231124232522327.png)
+
+法二：   ~~public InputDeviceHandler   ------> 前: public~~
+
+
+
+
+
+
 
 ## source insight字体颜色
 
@@ -270,6 +292,35 @@ https://jingyan.baidu.com/article/90808022d313a2fd91c80f93.html
 或：
 
 ![image-20230720002623320](sourceInsight.assets/image-20230720002623320.png)
+
+
+
+### Go Back &  Go Forward  
+
+```java
+Navigation: Go Back               : Alt+,, Thumb 1 Click
+Navigation: Go Forward             : Alt+., Thumb 2 Click
+```
+
+
+
+
+
+### 快捷键设置：
+
+![image-20231124232213862](sourceInsight.assets/image-20231124232213862.png)
+
+
+
+
+
+### 参考：
+
+https://blog.csdn.net/u010835747/article/details/122859809
+
+https://www.amobbs.com/thread-5718242-1-1.html
+
+https://zhuanlan.zhihu.com/p/33000424
 
 
 
