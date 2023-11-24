@@ -14,7 +14,9 @@
 >
 > ![image-20230719235915032](sourceInsight.assets/image-20230719235915032.png)
 >
-> ~~导入整个framework代码，才占100M~~    ---------->  **太优秀了**
+> 3、~~导入整个framework代码，才占100M~~    ---------->  **太优秀了**
+>
+> 所以，一下子，可以导入整个framework（**只是可能搜索的范围大了一些**）
 >
 > > ![image-20231124214540922](sourceInsight.assets/image-20231124214540922.png)
 >
@@ -27,6 +29,8 @@
 > 5、对于远程服务器代码，不需要copy！！！！（由第一点决定！！！）   **极优**
 >
 > 6、看代码大杀器-----java、cpp、c同时OK
+>
+> 7、在看代码的过程中，可以随时添加source 文件，以及remove 部分文件（比如test目录）-----> 优秀
 
 ​      
 
@@ -41,25 +45,43 @@
 
 参考：https://blog.csdn.net/zyhse/article/details/122966714
 
-![linux.assets/image-20230719100336188.png](C:/WINDOWS/system32/linux.assets/image-20230719100336188.png)
+![image-20231124223414798](sourceInsight.assets/image-20231124223414798.png)
 
-注意：这里是服务器目录
+注意：
 
-![linux.assets/image-20230719101149215.png](C:/WINDOWS/system32/linux.assets/image-20230719101149215.png)
+> 这里是服务器目录（代码目录），**可以与工程目录，不是同一个**，非常优
 
-### 按需添加
 
-![linux.assets/image-20230719100047534.png](C:/WINDOWS/system32/linux.assets/image-20230719100047534.png)
+
+### 随时按需添加/移除
+
+--------------> 过程中，**随时添加**：
+
+> ![image-20231124223934209](sourceInsight.assets/image-20231124223934209.png)
+
+移除：
+
+> ![image-20231124230322404](sourceInsight.assets/image-20231124230322404.png)
 
 ### add文件之后一定要sync，才能跳转
 
-重点：需要sync(否则，两个文件之间无法跳转)
+重点：
 
-![linux.assets/image-20230719150856231.png](C:/WINDOWS/system32/linux.assets/image-20230719150856231.png)
+1、需要sync(否则，两个文件之间无法跳转)
+
+> ![image-20231124224152238](sourceInsight.assets/image-20231124224152238.png)
+
+2、第一次解析所有文件，否则有些不能跳转：
+
+> ![image-20231124230613283](sourceInsight.assets/image-20231124230613283.png)
 
 ## 全局搜索
 
-![linux.assets/image-20230719135041395.png](C:/WINDOWS/system32/linux.assets/image-20230719135041395.png)
+
+
+
+
+
 
 ## 快捷键
 
