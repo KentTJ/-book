@@ -16,7 +16,7 @@
 
 **重要的事只有一件，同样重要的文档只有一个-------官方文档**
 
-![image-20230711001418905](AndriodSystem.assets/image-20230711001418905.png)
+![image-20230711001418905](0_AndriodSystem.assets/image-20230711001418905.png)
 
 从哪些角度理解安卓？以上
 
@@ -32,7 +32,7 @@ https://developer.android.com/guide?hl=zh-cn
 
 https://android.googlesource.com/platform/frameworks
 
-![image-20230711004823845](AndriodSystem.assets/image-20230711004823845.png)
+![image-20230711004823845](0_AndriodSystem.assets/image-20230711004823845.png)
 
 # 对系统的理解与疑问
 
@@ -94,7 +94,7 @@ https://mp.weixin.qq.com/s/saps9pV-HEAon4majH1-aQ
 
 
 
-<img src="AndriodSystem.assets/20201229012034.jpg" alt="_20201229012034" style="zoom: 50%;" />
+<img src="0_AndriodSystem.assets/20201229012034.jpg" alt="_20201229012034" style="zoom: 50%;" />
 
 Android底层内核空间以Linux Kernel作为基石，上层用户空间由Native系统库、虚拟机运行环境、框架层组成，通过`系统调用(Syscall)`连通系统的内核空间与用户空间。对于用户空间主要采用C++和Java代码编写，通过JNI技术打通用户空间的Java层和Native层(C++/C)，从而连通整个系统。
 
@@ -116,7 +116,7 @@ Android底层内核空间以Linux Kernel作为基石，上层用户空间由Nati
 
 
 
-![image-20201223005920265](AndriodSystem.assets/image-20201223005920265.png)
+![image-20201223005920265](0_AndriodSystem.assets/image-20201223005920265.png)
 
 注意点： RunTime 和  异常原理
 
@@ -660,13 +660,13 @@ Android底层内核空间以Linux Kernel作为基石，上层用户空间由Nati
 
 ## 0层
 
-![img](AndriodSystem.assets/clipboard.png)
+![img](0_AndriodSystem.assets/clipboard.png)
 
 注意：这里并没有statusBar的window
 
 
 
-![image-20210114004308113](AndriodSystem.assets/image-20210114004308113.png)
+![image-20210114004308113](0_AndriodSystem.assets/image-20210114004308113.png)
 
 （G:\working_pan\doc_my\Draw\Activity_window_dialog.eddx）
 
@@ -686,7 +686,7 @@ Android底层内核空间以Linux Kernel作为基石，上层用户空间由Nati
 
 todo：status bar 属于哪个widow，哪个进程
 
-![img](AndriodSystem.assets/clipboard-1606927948264.png)
+![img](0_AndriodSystem.assets/clipboard-1606927948264.png)
 
 SurfaceView有自己的窗口 。所以，如果一个Activity有一个SurfaceView，它将有多个窗口。
 
@@ -722,13 +722,13 @@ dialog -》被塞到了Window(PhoneWindow)里，mWindowAttributes记录，-》Ph
 
 
 
-![image-20210114010614079](AndriodSystem.assets/image-20210114010614079.png)
+![image-20210114010614079](0_AndriodSystem.assets/image-20210114010614079.png)
 
 
 
 
 
-![image-20210114010625643](AndriodSystem.assets/image-20210114010625643.png)
+![image-20210114010625643](0_AndriodSystem.assets/image-20210114010625643.png)
 
 注意：linearLayout，`没有包statusBar`  ----> (1) linearLayout包含的是statusBar和navigationBar的`背景`, 因为 statusBar本身透明，需要下一层的window显示颜色？？？（TODO: 为什么要这样设计？？）   （2）statusBar和navigationBar在另一个window上（TODO: 一个还是两个？？？）
 ----》对于dialog类型的呢？？？
@@ -737,11 +737,11 @@ dialog -》被塞到了Window(PhoneWindow)里，mWindowAttributes记录，-》Ph
 
 Dialog：
 
-![image-20210114011621397](AndriodSystem.assets/image-20210114011621397.png)
+![image-20210114011621397](0_AndriodSystem.assets/image-20210114011621397.png)
 
 
 
-!["Window的界面解析"](AndriodSystem.assets/window-01.png)
+!["Window的界面解析"](0_AndriodSystem.assets/window-01.png)
 
 （https://ericchows.github.io/Android-Window-Mechanism/）
 
@@ -751,7 +751,7 @@ Dialog：
 
 带你彻底理解 Window 和 WindowManager
 
-![img](AndriodSystem.assets/clipboard-1606927990050.png)
+![img](0_AndriodSystem.assets/clipboard-1606927990050.png)
 
 Surface是一个对象，用于保存与屏幕合成的像素。 
 
@@ -777,7 +777,7 @@ Surface Flinger会以正确的Z顺序将这些窗口渲染到最终显示
 
 下面有四个window，对应四个surface ----》有几个canvas？？？？
 
-![img](AndriodSystem.assets/19529015-2c3116a89cd17416.png)
+![img](0_AndriodSystem.assets/19529015-2c3116a89cd17416.png)
 
 
 
@@ -832,7 +832,7 @@ https://ericchows.github.io/Android-Window-Mechanism/   --->优
 程序启动过程中（（TODO:）），要启动的应用程序称为Activity，它的默认Activity是MainActivity:
 
 Launcher来负责启动的，而Launcher又是通过ActivityManagerService来启动的，当ActivityManagerService为这个即将要启的应用程序准备好新的进程后，便通过一个Binder进程间通信过程来通知这个新的进程来加载MainActivity，如下图所示：
-![image-20210216070840479](AndriodSystem.assets/image-20210216070840479.png)
+![image-20210216070840479](0_AndriodSystem.assets/image-20210216070840479.png)
 
 
 
@@ -907,7 +907,7 @@ Launcher来负责启动的，而Launcher又是通过ActivityManagerService来启
 
 
 
-![image-20210609215753820](AndriodSystem.assets/image-20210609215753820.png)
+![image-20210609215753820](0_AndriodSystem.assets/image-20210609215753820.png)
 
 
 
@@ -945,7 +945,7 @@ AOSP添加资源的方法：
 比如：view类，有属性id、padding..........
             Theme类 
 
-![image-20210609224830841](AndriodSystem.assets/image-20210609224830841.png)
+![image-20210609224830841](0_AndriodSystem.assets/image-20210609224830841.png)
 
 再比如：include类以及ViewGroup类：
 
@@ -961,11 +961,11 @@ java中引用：android.R.attr.absListViewStyle
 
 <------sdk中：android.jar
 
-![image-20210609205108492](AndriodSystem.assets/image-20210609205108492.png)
+![image-20210609205108492](0_AndriodSystem.assets/image-20210609205108492.png)
 
 <-------xml中                  （1） <font color='red'>**结论：attrs.xml **</font>：<attr ----定义资源的地方
 
-![image-20210609205649881](AndriodSystem.assets/image-20210609205649881.png)
+![image-20210609205649881](0_AndriodSystem.assets/image-20210609205649881.png)
 
 ​        （2）<attr ----值来源哪里？？     java中id：16842858
 
@@ -992,7 +992,7 @@ format="reference"是指这个类型是引用类型：引用某一资源id！！
 引用了id值为16842858  的资源：
 《-------值来源public.xml中值：<public type="attr" name="absListViewStyle" id="0x0101006a" />
 
-![image-20210609214933353](AndriodSystem.assets/image-20210609214933353.png)
+![image-20210609214933353](0_AndriodSystem.assets/image-20210609214933353.png)
 
 
 
@@ -1009,7 +1009,7 @@ todo:
 4行是继承
 12行是修改
 
-![image-20210610005155059](AndriodSystem.assets/image-20210610005155059.png)
+![image-20210610005155059](0_AndriodSystem.assets/image-20210610005155059.png)
 
 
 
@@ -1755,7 +1755,7 @@ ActivityTaskManager.getService().activityStopped(
 （2）不同于Book的跨进程序列化传输，这里系统进程拿到了二进制，没有再反序列化出对象（实际上，系统进程也不可能反序列化出对象，因为类是在App进程里。。。而之前Book demo，是两边都有要传输的类！！！！！，可以做到反序列化！！！！）
 
 证明：ActivityRecord的Bundle持有的是native侧的指针
-![image-20210725223216901](AndriodSystem.assets/image-20210725223216901.png)
+![image-20210725223216901](0_AndriodSystem.assets/image-20210725223216901.png)
 
  
 
@@ -1865,7 +1865,7 @@ ANR是为安卓的四大组件设置的？？？？
 
 >  https://juejin.cn/post/7168086915445424136
 >
-> ![image-20230716085421300](AndriodSystem.assets/image-20230716085421300.png)
+> ![image-20230716085421300](0_AndriodSystem.assets/image-20230716085421300.png)
 >
 > 范围：
 >
@@ -1901,7 +1901,7 @@ https://mp.weixin.qq.com/s/OCtpPLoBUyVBw2wUlEj1Kw
 
 
 
-![Image](AndriodSystem.assets/640)
+![Image](0_AndriodSystem.assets/640)
 
 只有三种状态：
 
@@ -1924,7 +1924,7 @@ https://www.androidperformance.com/
 
 https://androidperformance.com/2018/05/07/Android-performance-optimization-skills-and-tools/   极好的文章
 
-![image-20230306234033324](AndriodSystem.assets/image-20230306234033324.png)
+![image-20230306234033324](0_AndriodSystem.assets/image-20230306234033324.png)
 
 # 面试
 
@@ -2035,7 +2035,7 @@ kernel相关：
 
 2、
 
-![image-20230104184632508](AndriodSystem.assets/image-20230104184632508.png)
+![image-20230104184632508](0_AndriodSystem.assets/image-20230104184632508.png)
 
 
 
