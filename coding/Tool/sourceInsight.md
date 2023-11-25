@@ -369,6 +369,12 @@ https://zhuanlan.zhihu.com/p/33000424
 
 ![image-20231124235613985](sourceInsight.assets/image-20231124235613985.png)
 
+## 大纲------代码------被引用点   三者同步显示
+
+![image-20231125122829680](sourceInsight.assets/image-20231125122829680.png)
+
+
+
 ## 查看当前文件所处的位置
 
 打开同级其他文件，也很方便
