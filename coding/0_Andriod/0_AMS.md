@@ -10,11 +10,11 @@
 
 
 
-!["窗口管理子系统"](AMS_.assets/window-011.png)
+!["窗口管理子系统"](0_AMS.assets/window-011.png)
 
 https://ericchows.github.io/Android-Window-Mechanism/
 
-![image-20230222010221508](AMS_.assets/image-20230222010221508.png)
+![image-20230222010221508](0_AMS.assets/image-20230222010221508.png)
 
 
 
@@ -158,7 +158,7 @@ setSystemProcess()函数知道： 添加各种管理app状态信息的服务还�
 
 
 
-![image-20230123181231584](AMS_.assets/image-20230123181231584.png)
+![image-20230123181231584](0_AMS.assets/image-20230123181231584.png)
 
 SystemServiceManager忽略掉，~~只是SystemServer  startService功能的抽取~~，自然
 
@@ -221,7 +221,7 @@ TODO:  从属性总结，可以得到精华
 
 参考：**《AMS预习资料.pdf》  ----> 非常好的资料
 
-![image-20230207004633275](AMS_.assets/image-20230207004633275.png)
+![image-20230207004633275](0_AMS.assets/image-20230207004633275.png)
 
 
 
@@ -337,7 +337,7 @@ final ArrayList<ProcessRecord> mRemovedProcesses = new ArrayList<ProcessRecord>(
 
 
 
-![image-20230208000244586](AMS_.assets/image-20230208000244586.png)
+![image-20230208000244586](0_AMS.assets/image-20230208000244586.png)
 
 图： AMS管理和启动Application流程.pdf
 
@@ -357,7 +357,7 @@ AMS如何管理进程的  -------->   见  《进程管理.md》
 
 
 
-![image-20230211220023429](AMS_.assets/image-20230211220023429.png)
+![image-20230211220023429](0_AMS.assets/image-20230211220023429.png)
 
 
 
@@ -367,7 +367,7 @@ AMS如何管理进程的  -------->   见  《进程管理.md》
 
 2、栈顶复用模式singleTop：即该Activity处于任务栈栈顶，即下图：
 
-![image-20230211222422392](AMS_.assets/image-20230211222422392.png)
+![image-20230211222422392](0_AMS.assets/image-20230211222422392.png)
 
 3、singleInstance单实例：<font color='red'>所有栈只有一个实例</font>  ----> 自然，次再使用的时候，直接使用这个栈。比如打电话应用就是一个singleStance模式启动的activity
 
@@ -393,7 +393,7 @@ AMS如何管理进程的  -------->   见  《进程管理.md》
       https://www.jianshu.com/p/eb2ff0bc64a0     AMS重要的数据结构解析（三）：ActivityStack
 ```
 
-![image-20230208201250140](AMS_.assets/image-20230208201250140.png)
+![image-20230208201250140](0_AMS.assets/image-20230208201250140.png)
 
 图：
 
@@ -514,9 +514,9 @@ task恢复的方式:
 
 ## 1层结构
 
-![image-20230211204238609](AMS_.assets/image-20230211204238609.png)
+![image-20230211204238609](0_AMS.assets/image-20230211204238609.png)
 
-![ActivityStack、TaskRecord、ActivityRecord、ActivityStackSupervisor关系图.png](AMS_.assets/f53fdc560fbaa6beb451291647f0f5b7.png)
+![ActivityStack、TaskRecord、ActivityRecord、ActivityStackSupervisor关系图.png](0_AMS.assets/f53fdc560fbaa6beb451291647f0f5b7.png)
 
 参见：https://blog.csdn.net/Jason_Lee155/article/details/116571487   好文
 
@@ -555,7 +555,7 @@ task恢复的方式:
 1、Launcher与普通的startActivity差异在于: 是否会创建任务栈? -------> 只有这样才自然,  想表达的点:  **任务是从laucher点击开
 始的** 跳跳跳
 
-![image-20230209223902335](AMS_.assets/image-20230209223902335.png)
+![image-20230209223902335](0_AMS.assets/image-20230209223902335.png)
 
 TODO:  如何证明？
 
@@ -568,7 +568,7 @@ TODO:  如何证明？
 
 
 
- ![img](AMS_.assets/5fe0466b3ca54d11abb6fad6e0944899.png)
+ ![img](0_AMS.assets/5fe0466b3ca54d11abb6fad6e0944899.png)
 
 （3）注意back时，栈顶的 activty会destroyed
 
@@ -651,7 +651,7 @@ Display #0 (activities from top to bottom):
 
 新增了一个任务栈，即  ActivityStackSupervisor中的 mFocusedStack
 
-![启动A.png](AMS_.assets/e33078ce5361a8240225853e70895734.png)
+![启动A.png](0_AMS.assets/e33078ce5361a8240225853e70895734.png)
 
 
 
@@ -661,7 +661,7 @@ Display #0 (activities from top to bottom):
 
 实际上，永远不存在一个孤立的activty的
 
-![image-20230127171343830](AMS_.assets/image-20230127171343830.png)
+![image-20230127171343830](0_AMS.assets/image-20230127171343830.png)
 
 
 
@@ -681,7 +681,7 @@ Display #0 (activities from top to bottom):
 
 **按组记忆：**
 
-![image-20230208202006740](AMS_.assets/image-20230208202006740.png)
+![image-20230208202006740](0_AMS.assets/image-20230208202006740.png)
 
 ~~图：从4个视角理解安卓activity的启动模式pptx~~
 
@@ -804,7 +804,7 @@ A下台之后，为啥不安排A 卸妆onStop呢？
 
 
 
-![在这里插入图片描述](AMS_.assets/202011141546385.png)
+![在这里插入图片描述](0_AMS.assets/202011141546385.png)
 
 
 
@@ -911,7 +911,7 @@ https://zhuanlan.zhihu.com/p/190151810
 
 what，作用：
 
-![image-20230501014547967](AMS_.assets/image-20230501014547967.png)
+![image-20230501014547967](0_AMS.assets/image-20230501014547967.png)
 
 token--------本质：activity包名？
 
@@ -923,7 +923,7 @@ token--------本质：activity包名？
 
 when，生于：
 
-![image-20230501014906889](AMS_.assets/image-20230501014906889.png)
+![image-20230501014906889](0_AMS.assets/image-20230501014906889.png)
 
 参考： https://www.bilibili.com/video/BV1pb4y1B7TW/?spm_id_from=333.337.search-card.all.click&vd_source=3eebd10b94a8a76eaf4b78bee8f23884
 
