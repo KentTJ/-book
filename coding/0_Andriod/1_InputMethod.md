@@ -94,11 +94,11 @@ Android 9 及以前：
 
 Android 10~12：MultiClientInputMethodManagerService
 
-> ![image-20230711003134061](InputMethod.assets/image-20230711003134061.png)（见：https://source.android.google.cn/devices/tech/display/multi_display/ime-support?authuser=0&hl=zh-cn）
+> ![image-20230711003134061](1_InputMethod.assets/image-20230711003134061.png)（见：https://source.android.google.cn/devices/tech/display/multi_display/ime-support?authuser=0&hl=zh-cn）
 
 google解释了为什么无法通过现有的IMS，做到多会话：
 
-> ![image-20230711003308661](InputMethod.assets/image-20230711003308661.png)
+> ![image-20230711003308661](1_InputMethod.assets/image-20230711003308661.png)
 
 
 
@@ -467,19 +467,19 @@ public void onStart() {
 
 **设置入口1：**
 
-![image-20230809004142023](InputMethod.assets/image-20230809004142023.png)
+![image-20230809004142023](1_InputMethod.assets/image-20230809004142023.png)
 
 
 
-![image-20230809004207839](InputMethod.assets/image-20230809004207839.png)
+![image-20230809004207839](1_InputMethod.assets/image-20230809004207839.png)
 
 
 
-![image-20230809004730493](InputMethod.assets/image-20230809004730493.png)
+![image-20230809004730493](1_InputMethod.assets/image-20230809004730493.png)
 
 **设置入口2：**
 
-![image-20230809004816230](InputMethod.assets/image-20230809004816230.png)
+![image-20230809004816230](1_InputMethod.assets/image-20230809004816230.png)
 
 注意：
 
@@ -657,11 +657,11 @@ https://blog.csdn.net/xiaowang_lj/article/details/125077473?utm_medium=distribut
 
 重启
 
-![image-20230807234159754](InputMethod.assets/image-20230807234159754.png)
+![image-20230807234159754](1_InputMethod.assets/image-20230807234159754.png)
 
 设置后：
 
-![image-20230807234217612](InputMethod.assets/image-20230807234217612.png)
+![image-20230807234217612](1_InputMethod.assets/image-20230807234217612.png)
 
 
 
