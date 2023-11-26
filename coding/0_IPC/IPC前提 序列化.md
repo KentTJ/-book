@@ -4,7 +4,7 @@
 
 
 
-# IPC前提 序列化
+# IPC前提------序列化
 
 ## **序列化的本质是啥？**
 
@@ -136,4 +136,22 @@ private static final Parcel[] sOwnedPool = new Parcel[POOL_SIZE];//1  6个对象
 
 
 ### parcel与Ibinder的关系？？？
+
+
+
+
+
+
+
+# TODO：序列化最终的承载的容器是什么？buffer？
+
+
+
+```java
+parce如何序列化的？----->  //化简之val信息流
+     Parcel::writeChar(val) 
+	      writeAligned(val) 
+		      *reinterpret_cast<T*>(mData+mDataPos) = val;   // 一行关键代码
+
+```
 

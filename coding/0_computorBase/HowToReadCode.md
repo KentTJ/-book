@@ -301,7 +301,7 @@ TODO:  反过来呢？是不是应该让实际依附0层架构呢？
 
 
 
-## 0层之运行时0层
+## 0层之纵向运行时0层
 
 对于多线程的流程，运行时0层，`从进程、线程的角度去分析，更本质` 
 ------>  <font color='red'>线程结构 + 数据流转 才是 真正意义上的 0层架构，表达了运行时的0层</font>
@@ -1147,6 +1147,50 @@ java只能单继承，如何在功能上实现多继承呢？
 
 ### `函数化简之 信息流`
 
+![image-20231126230852185](HowToReadCode.assets/image-20231126230852185.png)
+
+图：
+
+1、目标应该是非常明确的  
+
+2、起始点应该也是非常明确的
+
+
+
+------------->3、（<font color='green'>绿色</font>）连接 起始点 和 目标点  就是  0层纵向主干  （<font color='red'>化简1</font>）
+
+4、如何阅读 纵向主干？   
+
+   找到起始点 和 目标点<font color='red'>确定要跟踪的主要信息，比如Inputconnection</font>，   **<font color='red'>只阅读 含有 Inputconnection 的代码！！！！！！</font>**    ------> （<font color='red'>化简2: 函数的主要阅读方法</font>）
+
+```cpp
+status_t Parcel::writeAligned(T val) { // val信息流
+    COMPILE_TIME_ASSERT_FUNCTION_SCOPE(PAD_SIZE_UNSAFE(sizeof(T)) == sizeof(T));
+
+    if ((mDataPos+sizeof(val)) <= mDataCapacity) {
+restart_write:
+        *reinterpret_cast<T*>(mData+mDataPos) = val; // val这里必然是核心主干
+        return finishWrite(sizeof(val));
+    }
+
+    status_t err = growData(sizeof(val));
+    if (err == NO_ERROR) goto restart_write;
+    return err;
+}
+```
+
+5、两个节点间，是一个层，一个功能。可以只读一部分层（<font color='red'>化简3</font>）
+
+
+
+其他：
+
+> 所有的**节点if都是一个分支**
+>
+> 
+
+
+
 如何找函数中<font color='red'>核心代码</font>？
 思想：`高亮重要入参，重要入参流淌的代码就是重要代码`。
 **因为核心代码就两三行，这样看代码就省事多了**
@@ -1200,6 +1244,10 @@ private int startActivity(final ActivityRecord r, ActivityRecord sourceRecord,
 从return点的result，跟踪result，找到赋值点，就是主干
 
 
+
+补充：
+
+>  **return err 分支可以必然次要，可以不读**
 
 
 
