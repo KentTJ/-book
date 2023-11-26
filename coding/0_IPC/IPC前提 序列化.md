@@ -155,3 +155,18 @@ parce如何序列化的？----->  //化简之val信息流
 
 ```
 
+
+
+所有的write，最终都走到writeAligned：
+
+![image-20231127005612509](IPC前提 序列化.assets/image-20231127005612509.png)
+
+writeAligned（**写入对齐**）
+
+
+
+
+
+参考：
+
+> https://blog.csdn.net/qq_32019367/article/details/122616157
