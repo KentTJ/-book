@@ -2528,9 +2528,11 @@ gongashi他告诉我，1、不要关注于代码，要有对象提炼。 2、弄
 
 ## 思想模型
 
-![image-20231116005602024](ReadingAndThinking.assets/image-20231116005602024.png)
+![image-20231127005206750](ReadingAndThinking.assets/image-20231127005206750.png)
 
 
+
+![image-20231127005231243](ReadingAndThinking.assets/image-20231127005231243.png)
 
 《思想模型》
 
