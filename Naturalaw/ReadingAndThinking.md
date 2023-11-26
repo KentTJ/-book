@@ -3238,10 +3238,6 @@ ppt： https://drive.google.com/file/d/1GVwHZAgUYMkjJ-kEGRAc1P_GPGbTAQ2j/view
 
 
 
-# 表达
-
-表达是抽象------->  具体应该是思维能力 ------->  再具体：说话思维能力
-
 
 
 ## 普通聊天如何缓解尴尬？
