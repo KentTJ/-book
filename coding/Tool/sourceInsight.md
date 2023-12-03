@@ -161,6 +161,24 @@ TODO：
 
 
 
+## 搜继承关系（从函数角度）：
+
+站在函数角度，如何看有没有子类去复写？
+
+选中函数：看关联了哪些.h
+
+-------------> 结构上： SectionParser::ParseLineSection 函数 父类、子类的.h 会关联到一起
+
+图：
+
+
+
+```java
+ //   \\system\\core\\init\\parser.cpp
+```
+
+
+
 
 
 ## source insight字体颜色

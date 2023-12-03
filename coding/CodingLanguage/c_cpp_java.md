@@ -1294,7 +1294,50 @@ java lamba 与cpp lamba差异在哪里?那么java是否可以这样取优化代�
 
 
 
+再举例子：抽成单独的函数end_section
 
+```cpp
+ // \\system\\core\\init\\parser.cpp
+ 
+ void Parser::ParseData() {
+     ............
+ 
+     auto end_section = [&] {  // 定义处（没有执行）
+         if (auto result = section_parser->EndSection(); !result.ok()) {
+             parse_error_count_++;
+             LOG(ERROR) << filename << ": " << section_start_line << ": " << result.error();
+         }
+     };
+ 
+     for (;;) {
+         switch (next_token(&state)) {
+             case T_EOF:
+                 end_section();  // 执行处
+ 
+                 return;
+             case T_NEWLINE: {
+                 ............
+             }
+
+       }
+ }
+```
+
+
+
+
+
+## c++ invoke ----> 从形式上统一函数调用
+
+参考：
+
+> https://blog.csdn.net/jiemashizhen/article/details/134349951
+
+invoke(函数f指针，函数f参数1，函数f参数2)
+
+
+
+具体例子，见《refactor.md ---------代码写法：差异性封装》
 
 # Java：
 
