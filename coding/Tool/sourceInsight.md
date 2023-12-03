@@ -163,21 +163,26 @@ TODO：
 
 ## 搜继承关系（从函数角度）：
 
-站在函数角度，如何看有没有子类去复写？
+方法一： **有时候，索引不全？？？？？**
 
-选中函数：看关联了哪些.h
+> 站在函数角度，如何看有没有子类去复写？
+>
+> 选中函数：看关联了哪些.h
+>
+> -------------> 结构上： SectionParser::ParseLineSection 函数 父类、子类的.h 会关联到一起
+>
+> ```java
+>  //   \\system\\core\\init\\parser.cpp
+> ```
+>
+> 
+>
 
--------------> 结构上： SectionParser::ParseLineSection 函数 父类、子类的.h 会关联到一起
+方法二：
 
-图：
-
-
-
-```java
- //   \\system\\core\\init\\parser.cpp
-```
-
-
+> 点击父类，查看子类：
+>
+> ![image-20231203233426119](sourceInsight.assets/image-20231203233426119.png)
 
 
 
