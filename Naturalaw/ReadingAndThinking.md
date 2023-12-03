@@ -4,8 +4,6 @@
 
 
 
-[TOC]
-
 # 开篇宗义
 
 写文字是为了修剪脑袋（释放脑袋）， 同时也是为了修剪笔记本身（提取主次）
@@ -2837,7 +2835,9 @@ docker的各种问题，因为docker可以通过jar，每次commit  ------>  可
 >
 > 
 
+## 得到课程·
 
+https://www.youtube.com/watch?v=Dot4oW61Q0w&list=PLF9eBHC33xs9jlPDEvj81v5BM3RgSw_Uu&index=2&pp=iAQB
 
 # 时间管理
 
