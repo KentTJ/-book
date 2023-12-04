@@ -315,8 +315,6 @@ Init 的可执行文件: x 可执行 ---》 对于cpp/java编译出来的，且�
 
 ## 各个进程简介
 
-
-
 ## -------流程start，基于0层-------
 
 
@@ -339,9 +337,21 @@ linux内核启动（再具体：），包括驱动加载，例如Binder驱动
 
 孵化出init进程  ----》~~<font color='red'>用户空间的始祖进程</font>~~（非内核进程，自然）
 
-##  init进程解析init.rc文件
 
 
+## 安卓init进程 所做三件事
+
+**init 进程启动，主要做了以下三件事：**
+
+> 1’、目录相关:  创建（mkdir）和挂载（mount）启动所需的文件目录；
+>
+> 2、服务属性？？？？：初始化和启动属性服务（property service）
+>
+> 3、解析.rc文件，**并按条件启动**： 解析 init.rc 配置文件并启动 Zygote 进程
+>
+> 参考： https://blog.csdn.net/xingyu19911016/article/details/127451545
+
+##  init进程之 ------解析init.rc文件
 
 ### init进程解析init.rc文件，拉起各种进程
 
