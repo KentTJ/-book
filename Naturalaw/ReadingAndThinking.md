@@ -1,9 +1,5 @@
 # 目录
 
-
-
-
-
 # 开篇宗义
 
 写文字是为了修剪脑袋（释放脑袋）， 同时也是为了修剪笔记本身（提取主次）
@@ -2612,6 +2608,10 @@ gongashi他告诉我，1、不要关注于代码，要有对象提炼。 2、弄
 
 <font color='red'>美好的东西，本身就值钱</font>  ---------->  所以要记录
 
+
+
+
+
 # 精力管理
 
 不悲不喜，永恒大喜悦；隔离你的感受
@@ -2849,9 +2849,13 @@ docker的各种问题，因为docker可以通过jar，每次commit  ------>  可
 >
 > 
 
-## 得到课程·
+## 得到课程
 
 https://www.youtube.com/watch?v=Dot4oW61Q0w&list=PLF9eBHC33xs9jlPDEvj81v5BM3RgSw_Uu&index=2&pp=iAQB
+
+
+
+
 
 # 时间管理
 

@@ -2,10 +2,6 @@
 
 # 目录
 
-[TOC]
-
-
-
 # Android系统性能调优工具介绍
 
 TraceView、Systrace、Oprofile
