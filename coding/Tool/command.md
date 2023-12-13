@@ -404,6 +404,24 @@ sed -i "s/https:\/\/libs.baidu.com/https:\/\/cdn.static.runoob.com\/libs/g" `gre
 
 
 
+### 文件系统相关
+
+df  -a          disk free   文件系统的free情况（空间使用情况）（虚拟文件系统，如`proc`和`sysfs`）
+
+df -T    /dev/cpu      T是Type      显示文件 所处的文件系统类型
+
+mount         挂载文件系统 ------->  指定  目录
+
+mount  显示已挂载的文件系统
+
+mount /dev/sdb1 /mnt/data    挂设备 -----> 目录
+
+-**<font color='red'>记忆</font>：**mount骑上  -----> 一个文件系统 “骑” 在另一个上面，即挂载
+
+
+
+
+
 ### 自动换源
 
 https://cloud.tencent.com/developer/article/1880981

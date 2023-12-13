@@ -230,7 +230,38 @@ CD ------光盘
 
 
 
+# 补充： 常见的系统调用sys_call
 
+常见的系统调用 ：
+
+> open、mmap、ioctl、dose
+
+mmap()：   磁盘文件（驱动文件？）    映射到     物理内存
+
+例子：进程建立binder线程池时
+
+```
+ // 为/dev/binder文件 映射固定大小的物理内存
+ mmap(nullptr, BINDER_VM_SIZE, PROT_READ, MAP_PRIVATE | MAP_NORESERVE, mDriverFD, 0);  // 即打开的 /dev/binder文件
+```
+
+维测之-------查看进程中，各个二进制文件mmap的地址段：
+
+```cpp
+ P13_5G:/ # ps -ef | grep servicemanager
+ system          328      1 0 14:19:52 ?     00:01:37 servicemanager
+ 2|P13_5G:/ # cat /proc/328/maps
+ 6197007000-619700d000 r--p 00000000 fc:02 1640                           /system/bin/servicemanager
+ 619700d000-6197014000 r-xp 00006000 fc:02 1640                           /system/bin/servicemanager
+ 6197014000-6197016000 r--p 0000d000 fc:02 1640                           /system/bin/servicemanager
+ 6197016000-6197017000 rw-p 0000e000 fc:02 1640                           /system/bin/servicemanager
+ 744f1b2000-744f2b0000 r--p 00000000 00:23 4                              /dev/binderfs/binder
+ 744f2b0000-744f2b3000 r--p 00000000 fc:02 3825                           /system/lib64/libnetd_client.so
+```
+
+参考：
+
+> https://blog.csdn.net/hcgeng/article/details/134563659
 
 # 参考：
 
