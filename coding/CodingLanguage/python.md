@@ -147,7 +147,12 @@ def hasWantGroupOrNot(groupe_df_serise, column_name):
 baoliu_df = unstranded_Results_df[['gene_id', 'gene_name']]
 ```
 
+## 删除某一列
 
+```python
+    # 删除 gene_name 列
+    clin_test_grouped_df.drop('gene_name', axis=1, inplace=True)
+```
 
 ## 筛选行
 
@@ -173,3 +178,36 @@ test_grouped_df = df[group_condition]
 
 
 
+
+
+# 生物信息分析---Python版的DESeq2
+
+
+
+
+
+
+
+## R语言版DESeq2：
+
+> https://naiv.fun/Misc/TCGA.html
+>
+> 图：最终结果
+>
+> ![image-20210405011824882.png](python.assets/381906719.png)
+
+----------------> 用python版，可以做出同样结果
+
+## Python版的DESeq2
+
+参考：https://cloud.tencent.com/developer/article/2228284  Python版的DESeq2尝鲜
+
+
+
+
+
+
+
+## 画图
+
+https://www.jianshu.com/p/a19e099de544        Python版RNA-seq分析教程：DEseq2差异表达基因分析
