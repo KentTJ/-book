@@ -1024,6 +1024,28 @@ Idler事件 什么时候执行呢？当 Looper里没有可执行的消息了 ---
 
 
 
+## 补充：render线程的创建
+
+时机：handleLaunchActivity
+
+```java
+ 
+ // ActivityThread.java
+ public Activity handleLaunchActivity(ActivityClientRecord r,
+		.............
+
+        if (!ThreadedRenderer.sRendererDisabled
+                && (r.activityInfo.flags & ActivityInfo.FLAG_HARDWARE_ACCELERATED) != 0) { // 硬件加速
+            HardwareRenderer.preload();  // 【1】启动render线程  Start render thread and initialize EGL or Vulkan.
+        }
+        WindowManagerGlobal.initialize();
+       .............
+}
+
+```
+
+
+
 ## TODO:
 
 ApplicationThread是binder线程池一个线程

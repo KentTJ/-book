@@ -177,20 +177,9 @@ https://blog.csdn.net/tyearlin/article/details/123426616
 
 
 
-adb shell atrace sched freq idle am wm gfx view sync ss power rs res binder driver binder _lock input hal camera aidl disk -b 96000 -t 5
+见《atrace章节》
 
-atrace优点：<font color='red'>安卓新老版本都能 使用</font>
 
-详解：
-
-```shell
-adb shell atrace  \
-sched freq idle \  CPU的排程和频率
-am wm gfx view sync ss power rs res \framework层
-binder driver binder _lock \binder调用关系
-input hal camera aidl disk \驱动：输入、相机
--b 96000 -t 5    \ buffer大小10M左右，时间5s
-```
 
 ### perfetto
 
@@ -925,6 +914,53 @@ https://huaweicloud.csdn.net/63563dbad3efff3090b5be9c.html?spm=1001.2101.3001.66
 4、多看几次视频，学会精髓
 
 5、普通trace与perfetto的转换
+
+
+
+# atrace 
+
+adb shell atrace sched freq idle am wm gfx view sync ss power rs res binder driver binder _lock input hal camera aidl disk -b 96000 -t 5
+
+atrace优点：<font color='red'>一定能用：</font>
+
+> 安卓新老版本都能 使用
+
+
+
+详解：
+
+```shell
+adb shell atrace  \
+sched freq idle \  CPU的排程和频率
+am wm gfx view sync ss power rs res \framework层
+binder driver binder _lock \binder调用关系
+input hal camera aidl disk \驱动：输入、相机
+-b 96000 -t 5    \ buffer大小10M左右，时间5s
+```
+
+## 转html（perfetto网站查看）
+
+TODO
+
+atrace.out  转   perfetto显示
+
+```java
+ python systrace.py --from-file atrace.out -o atraceout2.html
+```
+
+--------> atraceout2.html可以加载到 perfetto界面
+
+## 技巧之  没有process名如何查看
+
+关于 各种  Process 878 等没有进程名：
+
+法一：  需要脚本配置
+
+法二： 点击所有进程展开      然后Chrome搜索
+
+ ![image-20231224010448939](Systrace.assets/image-20231224010448939.png)
+
+法三：systrace
 
 
 

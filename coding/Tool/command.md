@@ -289,8 +289,6 @@ xcopy  %sourcePathRoot%\%subPath%    %subPath%  /s/y/h
 
 ## linux
 
-
-
 ### ~~文件夹操作~~
 
 ~~删除文件夹~~
@@ -650,6 +648,12 @@ function my_win2linux_path
 
 
 
+scp------------secure copy  安全拷贝
+
+​                     使用的是SSH协议
+
+
+
 例子：
 
 ```java
@@ -674,7 +678,64 @@ scp -r alps2.tar  non.jinxi@10.82.254.194:/home/non.jinxi/code/chenjinke
  tar -xvf test.tar  解
 ```
 
+### linux目录挂载到 win-------Samba
 
+Samba环境搭建：
+
+> https://blog.csdn.net/weixin_44147894/article/details/130225195      笔记-Samba服务器的安装与配置
+>
+> -------> 验证ok
+
+### linux1 目录挂载到 linux2-------sshfs
+
+注意：<font color='red'> linux2可以是 win下的虚拟机</font>
+
+win里有个linux虚拟机，
+
+（1）在本地虚拟机敲入：
+
+```java
+                                                                       远程  本地
+ sudo sshfs -p 2002 -o cache=yes,allow_other non.jinxi@10.81.19.141:/data/non.jinxi /home/jx_nong/141server
+ sudo sshfs -p 22 -o cache=yes,allow_other non.jinxi@10.85.251.194:/home/non.jinxi/code  /home/chenjinke/workingSpace/nongRemote
+
+ sudo sshfs -p 2002 -o cache=yes,allow_other chen.gang42@10.81.19.141:/data/chen.gang42/workingspace   /home/chenjinke/workingSpace/chenjinke141
+
+
+
+
+ 注意：原理是通过ssh链接的，所以
+ 1、远端要有ssh服务
+ 2、ssh的端口要对
+```
+
+（2）然后输入远程Linux密码 （如果sshfs找不到，换阿里源再sudo apt install sshfs）
+
+（3）刷新：cd上一级
+
+
+
+
+
+ ------------------> **本地PC任何写入加码， 如何绕过？**
+
+>  方法一：思想：通过141绕过win对写的限制： （1）win对其他所有机器写有限制  （2）对linux141没有 ---->绕过点
+>                                       （3）通过中间linux来同步linux141和linux_target
+>
+>  最终结果：
+>  写入linux141代码，在linux_target上编译（通过中间linux同步） -------> 可见，各取所长
+>
+> 方法二：两个linux之间直接同步  -------> 前提：？？？？？？
+>
+> 
+
+### linux挂载到win-------sshfs
+
+> 1、sshfs
+>
+> 2、Samba
+
+TODO
 
 ## shell 或 MobaXterm
 
