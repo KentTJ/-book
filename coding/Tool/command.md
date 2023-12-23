@@ -1,4 +1,4 @@
-[TOC]
+# 目录
 
 
 
@@ -623,6 +623,56 @@ function my_win2linux_path
 ```
 
 
+
+### Linux设备间-----远程拷贝文件
+
+
+
+```java
+ - 从本地主机复制文件至远程节点 // 验证ok
+     scp local_file remote_username@remote_ip:remote_folder
+     scp local_file remote_username@remote_ip:remote_file
+     scp local_file remote_ip:remote_folder
+     scp local_file remote_ip:remote_file
+ - 从远程节点复制文件至本地主机
+     scp remote_username@remote_ip:remote_file local_folder
+     scp remote_username@remote_ip:remote_file local_file
+     scp remote_ip:remote_file local_folder
+     scp remote_ip:remote_file local_file
+ - 从本地主机复制目录至远程节点  // 验证ok ----> 优选
+     scp -r local_folder remote_username@remote_ip:remote_folder
+     scp -r local_folder remote_ip:remote_folder
+ - 从远程节点复制目录至本地主机
+     scp -r remote_username@remote_ip:remote_folder local_folder
+     scp -r remote_ip:remote_folder local_folder
+ 
+```
+
+
+
+例子：
+
+```java
+scp -r alps2.tar  non.jinxi@10.82.254.194:/home/non.jinxi/code/chenjinke
+```
+
+
+
+参考：https://blog.csdn.net/xuwenpeng/article/details/133338342     Linux学习之远程拷贝数据命令
+
+
+
+### 压缩 & 解压缩
+
+
+
+压缩：
+
+```java
+ tar -cvf test.tar test/* 　#归档test目录下所有文件   压缩
+ 
+ tar -xvf test.tar  解
+```
 
 
 

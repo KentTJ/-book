@@ -1,8 +1,10 @@
-[TOC]
 
 
 
 
+# 目录
+
+ 
 
 
 
@@ -217,6 +219,20 @@ bash.exe环境 是 linux下shell环境:----------->  命令友好
 
 
 ![image-20230624183030105](software_pcSettings.assets/image-20230624183030105.png)
+
+
+
+### 技巧之 ssh不用重复输入密码
+
+1、 不用输入账号 & 密码--------设置：
+
+> session ---->  SSH  ---->  Specify username
+
+2、保活：
+
+> settings ----> SSH  ---->  SSH keepalive
+
+
 
 ## 远程桌面：
 
@@ -1797,11 +1813,87 @@ https://blog.csdn.net/qq_37140721/article/details/125619393
 
 https://blog.csdn.net/mo_sss/article/details/132856647
 
-- ------> 验证ok
+------> 验证ok
 
 
 
-### ubuntu启动失败/virtualbox
+
+
+### VirtualBox 扩容
+
+1、添加磁盘
+
+https://blog.csdn.net/xiaoxiangzi520/article/details/111291634?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1-111291634-blog-120908556.235^v39^pc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1-111291634-blog-120908556.235^v39^pc_relevant_anti_vip&utm_relevant_index=2
+
+```
+ :://查看虚拟磁盘空间信息，确认确实是需要扩容的虚拟硬盘。
+ "D:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe" showhdinfo "D:\\Program Files\\ubuntu\\ubuntu\\ubuntu.vdi"
+ :://计算要扩容的空间大小，我这里是要扩展到100G(1024*1024*1024*100)。
+ set/a 1024*1024*1024
+ 
+ 
+ :://扩展虚拟硬盘空间，最后的数字替换成上面计算出的硬盘空间大小。
+ 
+ "D:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe" modifymedium "D:\\Program Files\\ubuntu\\ubuntu\\ubuntu.vdi" --resizebyte 386547056640
+ 
+ pause
+```
+
+进入虚拟机：
+
+```
+ sudo fdisk -l
+```
+
+-------------> 查看有磁盘
+
+2、分区扩容（纳入新磁盘）可视化工具
+
+[Linux系统sda1分区扩容_linux扩容sda1-CSDN博客](https://blog.csdn.net/hgchshs/article/details/131900472)    https://blog.csdn.net/hgchshs/article/details/131900472
+
+ ----------> 验证ok： **可视化工具，合并分区**
+
+```
+ gparted
+```
+
+### VirtualBox共享目录
+
+1、设置共享文件夹
+
+- 1 选择路径
+- 2 填写自定义的共享名称（在后面需要与挂载路径相对应）
+- 3 设置自动挂载/固定分配
+
+```
+ D:\\Program Files\\ubuntu\\ubuntuShare
+ ubuntuShare
+ /home/chengang/workingSpace/AOSP
+```
+
+**注意：无需重启VirtualBox （或ubuntu）**
+
+2、挂载共享文件夹：参考： [详解VirtualBox中与主机共享文件夹的方法（图文）-云搜网 (27ka.cn)](https://www.27ka.cn/120058.html)        https://www.27ka.cn/120058.html
+
+```
+ sudo mount -t vboxsf  ubuntuShare  /home/chengang/workingSpace/AOSP
+```
+
+### virtualbox中ubuntu 磁盘满了，无法开机
+
+-----> 只是图形界面进不去
+
+https://www.jianshu.com/p/9e0214059487    下数据硬盘满，无法启动（Ubuntu）处理
+
+
+
+总结一句话：
+
+> ctrl + F2 进入命令行界面
+>
+> 清理磁盘
+
+### virtualbox中ubuntu启动失败
 
 参考：
 

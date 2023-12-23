@@ -1,4 +1,6 @@
-[TOC]
+
+
+# 目录
 
 
 
@@ -175,7 +177,7 @@ watchs改变值：**优点：更加图形化，不用写代码**
 
 TODO:   能用反射，必然可以发挥的空间很大!!
 
-#### 应用一：修改debug开关  ---》修改后，脱离断点调试
+#### 应用一：修改debug开关  -------->  修改后，脱离断点调试
 
 ![image-20230212225107241](debugSkills.assets/image-20230212225107241.png)
 
@@ -203,6 +205,31 @@ field.set(new ActivityTaskManagerDebugConfig(),true);
 效果：
 
 ![image-20230212230759225](debugSkills.assets/image-20230212230759225.png)
+
+
+
+
+
+实际上：<font color='red'>DEBUG_STATES以及log都被编译器优化掉了</font>（在编译后的jar）
+
+> ```java
+> static final Boolean  DEBUG_STATES = false;
+> 
+>  if (DEBUG_STATES) {  // 【1】因为永远是false，所以被编译器优化掉了
+>      .............
+>  }
+> 
+> ```
+>
+> 结论：
+>
+> 1、加DEBUG日志，相当于没加
+>
+> 2、即使final 动态修改也没用，被编译器优化掉了
+
+
+
+
 
 #### 调用方法
 
