@@ -51,6 +51,10 @@ https://blog.csdn.net/qq_21402983/article/details/124554283
 
 
 
+https://naiv.fun/Misc/TCGA.html  
+
+
+
 ## TCGA临床数据xml
 
 ```python

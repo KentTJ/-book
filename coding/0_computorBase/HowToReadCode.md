@@ -1660,13 +1660,32 @@ C语言的阅读：
 
 ### 跳转化简之AIDL
 
-全局搜II...........
+方法一：
 
-> IInputMethodPrivilegedOperations ops = mOps.getAndWarnIfNull()
-> 要找下游跨进程的调用（即定义处）:
+> 全局搜II...........
 >
-> **搜IInputMethodPrivilegedOperations**：
->  extends IInputMethodPrivilegedOperations.Stub
+> > IInputMethodPrivilegedOperations ops = mOps.getAndWarnIfNull()
+> > 要找下游跨进程的调用（即定义处）:
+> >
+> > **搜IInputMethodPrivilegedOperations**：
+> >  extends IInputMethodPrivilegedOperations.Stub
+>
+> 
+
+方法二：
+
+> 搜：II接口.Stub
+>
+> 比如： IAccessibilityServiceClient.Stub
+>
+> ---------> <font color='red'>Stub是连接点</font>
+>
+> ```java
+>  上游：IAccessibilityServiceClientWrapper extends IAccessibilityServiceClient.Stub
+>  下游：mServiceInterface = IAccessibilityServiceClient.Stub.asInterface(service);
+> ```
+
+
 
 
 

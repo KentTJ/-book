@@ -1,4 +1,4 @@
-[TOC]
+# 目录
 
 
 
@@ -425,6 +425,16 @@ adb connect host.docker.internal:7788
 
 
 ![image-20221211210350117](AS.assets/image-20221211210350117.png)
+
+
+
+
+
+### 编译时报错： Failed to calculate the value of task ‘:unityLibrary:compileDebugJavaWithJavac‘
+
+https://blog.csdn.net/EverNess010/article/details/129924721
+
+
 
 # Device Monitor启动
 
