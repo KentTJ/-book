@@ -1,8 +1,23 @@
 
 
-# 源码
+# 源码下载
 
-https://blog.51cto.com/harmonyos/6687138     **【OpenHarmony下载和编译源码】详解下载和编译OpenHarmony源码以及烧录工具，MobaXTerm的基本使用**
+```
+repo init -u https://gitee.com/openharmony/manifest -b OpenHarmony-3.2-Release --no-repo-verify
+repo init -u https://gitee.com/openharmony/manifest -b OpenHarmony-4.0-Release --no-repo-verify
+repo sync -c
+repo forall -c 'git lfs pull'
+```
+
+
+
+
+
+参考：
+
+> https://blog.51cto.com/harmonyos/6687138     **【OpenHarmony下载和编译源码】详解下载和编译OpenHarmony源码以及烧录工具，MobaXTerm的基本使用**
+>
+> https://ost.51cto.com/posts/24526    从OpenHarmony原码下载开始学习repo及manifest原码
 
 # OpenHarmony源码解析之多模输入子系统(一)
 
