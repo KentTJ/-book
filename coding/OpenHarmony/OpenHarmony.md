@@ -1,3 +1,9 @@
+
+
+# 源码
+
+https://blog.51cto.com/harmonyos/6687138     **【OpenHarmony下载和编译源码】详解下载和编译OpenHarmony源码以及烧录工具，MobaXTerm的基本使用**
+
 # OpenHarmony源码解析之多模输入子系统(一)
 
 https://ost.51cto.com/posts/22632     OpenHarmony源码解析之多模输入子系统(一)
