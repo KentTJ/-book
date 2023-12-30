@@ -211,3 +211,28 @@ test_grouped_df = df[group_condition]
 ## 画图
 
 https://www.jianshu.com/p/a19e099de544        Python版RNA-seq分析教程：DEseq2差异表达基因分析
+
+
+
+
+
+
+
+# python爬虫
+
+参考：
+
+https://blog.csdn.net/lemonbit/article/details/114957452?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-9-114957452-blog-128834558.235^v40^pc_relevant_anti_vip&spm=1001.2101.3001.4242.6&utm_relevant_index=12      40行Python代码一键把html网页保存为pdf，太方便了！
+
+https://blog.csdn.net/Galoa/article/details/79873163  Python爬虫: 单网页 所有静态网页 动态网页爬取
+
+
+
+https://pythonjishu.com/yophpzdhyczaznu/  Python实现爬取需要登录的网站完整示例
+
+https://ylmx5201314.blog.csdn.net/article/details/130794156?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7EPaidSort-1-130794156-blog-124296992.235%5Ev40%5Epc_relevant_rights_sort&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7EPaidSort-1-130794156-blog-124296992.235%5Ev40%5Epc_relevant_rights_sort&utm_relevant_index=1  
+
+
+
+
+
