@@ -259,6 +259,34 @@ git push origin HEAD:refs/for/branch_master
 
 
 
+## 技巧：git管理之 建立本地git
+
+**技巧：  当本地文件夹   没有git时，可以自己创建git 仓库管理**
+
+> https://blog.csdn.net/qq_33254766/article/details/114095922    本地创建一个 Git 仓库
+
+
+
+--------------------->  技巧：  <font color='red'>想要保存两个git仓的改动diff </font>，可以在公共根路径上创建自己的git仓库
+
+
+
+## 技巧：用git  diff作为代码的持久化存储
+
+如何保留自己的需求修改？
+
+> 法一：保留需求设计 & ppt
+>
+> 法二：保留 diff文件（<font color='red'>极优</font>） --------->  （1）很容易复原  （2）diff文件很小
+
+
+
+
+
+
+
+# 报错
+
 ## 关于git push   443链接 报错：
 
 ```
