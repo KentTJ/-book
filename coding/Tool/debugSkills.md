@@ -2014,6 +2014,130 @@ ctrl+alt+shift+i
 
 
 
+
+
+
+
+## view log维测技巧：
+
+TODO：
+
+特点：多而杂乱
+
+
+
+方法一：
+
+> 抓住所有有文字的      ----->  抓住一点，不及其余
+
+
+
+
+
+方法二：
+
+> 直观画图：-----> 也是有文字的才画
+>
+> ![image-20240105015123807](debugSkills.assets/image-20240105015123807.png)
+
+%accordion%直观画图%accordion%
+
+
+
+
+
+```java
+        // 将矩形的数组合并到大数组中
+        private char[][]  mergeArrays(char[][] screen, char[][] rectangle) {
+            int row =  rectangle.length;
+            int col = rectangle[0].length;
+            for (int i = 0; i < row; i++) {
+                for (int j = 0; j < col; j++) {
+                        if (rectangle[i][j] != ' ') {
+                            screen[i][j] = rectangle[i][j];
+                        }
+                }
+            }
+            return screen;
+        }
+
+        // 打印屏幕数组
+        private String  printScreen(char[][] screen) {
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < screen.length; i++) {
+                for (int j = 0; j < screen[0].length; j++) {
+//                    System.out.print(screen[i][j]);
+                    sb.append(screen[i][j]);
+                }
+//                System.out.println();
+                sb.append("\n");
+            }
+            Log.d(TAG, sb.toString());
+            return sb.toString();
+        }
+
+        // 生成一个矩形数组
+        public char[][] generateRectangle(int x1, int y1, int x2, int y2, String  text) {
+            // 计算矩形的宽度和高度
+            int width = x2 + 1;  // 宽度为 x2
+            int height = y2 + 1;  // 高度为 y2
+
+            // 创建二维数组表示矩形，初始为全空格
+            char[][] rectangle = new char[height][width];
+
+            // 初始化数组
+            for (int i = 0; i < height; i++) {
+                for (int j = 0; j < width; j++) {
+                    rectangle[i][j] = ' ';
+                }
+            }
+
+            // 用*表示矩形的边界
+            for (int i = y1; i < height; i++) {
+                for (int j = x1; j < width; j++) {
+                    if (i == y1 || i == height - 1 || j == x1 || j == width - 1) {
+                        rectangle[i][j] = '*';  // 边界
+                    } else {
+                        rectangle[i][j] = ' ';  // 内部空格
+                    }
+                }
+            }
+
+            // 在矩形中央显示文本，如果文本长度超过矩形宽度，只显示前几个字符
+            int textStart = Math.max(0, (width - text.length()) / 2);
+            int textEnd = Math.min(width, textStart + text.length());
+            for (int j = textStart; j < textEnd; j++) {
+                rectangle[height / 2][j] = text.charAt(j - textStart);
+            }
+
+            // 返回生成的矩形数组
+            return rectangle;
+        }
+
+    public void test3() {
+        // 合并矩形的数组并返回
+        char[][] screen = generateRectangle(0,0,50,80, "");
+
+        // 给定矩形的左上角和右下角坐标
+        char[][] rectangle = generateRectangle(3,3, 10, 10, "布局1");
+        // 合并矩形的数组到大数组
+        mergeArrays(screen, rectangle);
+
+        // 给定矩形的左上角和右下角坐标
+        char[][] rectangle2 = generateRectangle(3,3, 20, 10, "布局2");
+        // 合并矩形的数组到大数组
+        mergeArrays(screen, rectangle2);
+
+        // 打印大数组
+        printScreen(screen);
+    }
+```
+
+%/accordion%
+
+
+
 # 在源码中adb（dump、截图、ui、操作、、、）
 
 打通了源码中执行adb  ----->  <font color='red'>极其优，可以做的事情非常非常多</font>
