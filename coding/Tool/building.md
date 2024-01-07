@@ -48,6 +48,25 @@ https://ci.android.com/builds/submitted/10761852/linux/latest/view/soong_build.h
 
 
 
+# 编译 性能瓶颈的分析
+
+变量：  cpu 、 mem、磁盘、编译参数-j24
+
+make  -j24:
+
+> 可见,  （1） cpu大部分时间在高水位 
+>
+> ​           （2）mem有剩余
+>
+> ​              （3）磁盘长时间运行，但是都是低水位 --------------->  **结论：磁盘可以用差一些，不是瓶颈**
+>
+> ------------------->  所以优化方向：**调节-j24 到 32，尽量让mem和CPU都充分使用**
+>
+> ![image-20240107215517776](building.assets/image-20240107215517776.png)
+>
+
+
+
 # 参考：
 
 https://www.jianshu.com/p/91c8b60568e5
