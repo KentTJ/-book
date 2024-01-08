@@ -1945,7 +1945,9 @@ Enter 'help' for a list of built-in commands.16
 
 
 
+### 如何配置virtualbox 处理器核心数？
 
+virtualbox 在设置里给虚拟机开的处理器核心数，不要大，1个就好 ------> 多了反而不流畅。。1个很流畅
 
 ## vs code
 

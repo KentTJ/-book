@@ -1,4 +1,6 @@
-[TOC]
+
+
+# 目录
 
 
 
@@ -434,7 +436,7 @@ https://blog.csdn.net/Qidi_Huang/article/details/53690139
 
 
 
-%accordion%~~同步时间方法：：~~%accordion%
+%accordion%~~同步时间脚本1：：~~%accordion%
 
 > 
 >
@@ -452,6 +454,24 @@ https://blog.csdn.net/Qidi_Huang/article/details/53690139
 
 
 %/accordion%
+
+
+
+同步时间脚本2：adb 命令
+
+```java
+//先设置年月日
+adb shell date  %date:~0,4%-%date:~5,2%-%date:~8,2% set
+ 
+// 在设置时分秒
+adb shell date %time:~0,2%:%time:~3,2%:%time:~6,2% set
+    
+//验证
+D:\>adb shell date
+Sat Nov 27 12:41:25 GMT 2021
+```
+
+
 
 
 

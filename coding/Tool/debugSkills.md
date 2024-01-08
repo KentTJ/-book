@@ -2014,7 +2014,34 @@ ctrl+alt+shift+i
 
 
 
+3、**避免一行超长，notePad看不方便：**
 
+```java
+// 换行
+Log.d(TAG, "child.mAttachInfo.mTmpInvalRect "  + child.mAttachInfo.mTmpInvalRect + "\\n" +
+        "child.getId(): "+ child.getId() + "\\n" +
+        "child.getAccessibilityViewId(): "+ child.getAccessibilityViewId() + "\\n" +
+        "child.getWindowId(): "+ child.getWindowId());
+
+```
+
+
+
+4、技巧之： **针对（关键指标，要非常显眼）、差异化**对待：
+
+（1）比如关注某个接口的时间差 ----------> 如果打印频繁，不好一直做差
+
+​                                                            即用Error 打印出来**差值**（**<font color='red'>Error自带红色</font>**）
+
+（2）**我们只对时间差高的关心**，~~更进一步 差异化~~：
+
+```java
+ if （差值 > 70ms ）{
+    log.e()
+} else {
+	log.d()
+}
+```
 
 
 
@@ -2026,9 +2053,9 @@ TODO：
 
 
 
-方法一：
+方法一：**<font color='red'>以偏概全</font>** ---------------打印含有文字的控件，然后基本知道所有控件的布局（对应关系）
 
-> 抓住所有有文字的      ----->  抓住一点，不及其余
+​                             ------------->  **抓住一点，不及其余**                           
 
 
 
@@ -2036,7 +2063,7 @@ TODO：
 
 方法二：
 
-> 直观画图：-----> 也是有文字的才画
+> **直观画图**：-----> 也是有文字的才画
 >
 > ![image-20240105015123807](debugSkills.assets/image-20240105015123807.png)
 
@@ -2135,6 +2162,73 @@ TODO：
 ```
 
 %/accordion%
+
+
+
+
+
+
+
+## AS 日志 过滤
+
+https://blog.csdn.net/qq_38909786/article/details/134416770  日志 过滤
+
+过滤包名加两个字段 package:org.sipdroid.sipua message:=alarm message:600
+
+
+
+## 日志问题----------丢日志
+
+AS 或者 logcat发现有丢日志，**根因：** 
+
+> 日志缓冲区过小
+
+方法一：
+
+> 缓冲区，直接在配置中，改大：------------------>  防止日志丢失
+>
+> P13_5G:/system # cat build.prop  | grep logd persist.logd.size=8M
+>
+> adb pull /system/build.prop  ---> 修改
+
+**特别注意**： 不能修改 build.prop  的权限（方法：pull & push，不要直接vi修改）
+
+方法二： 参考： https://blog.csdn.net/zhangxu1024/article/details/121374807       
+
+> 报错：
+>
+> ```java
+> logcat: Unexpected EOF!
+> 
+> This means that either the device shut down, logd crashed, or this instance of logcat was unable to read log
+> messages as quickly as they were being produced.
+> 
+> If you have enabled significant logging, look into using the -G option to increase log buffer sizes.
+> ```
+>
+> 最终生效：
+>
+> ```java
+> D:\\\\work\\\\test\\\\log>adb shell logcat -g
+> main: ring buffer is 256 KiB (3 MiB consumed), max entry is 5120 B, max payload is 4068 B
+> system: ring buffer is 256 KiB (251 KiB consumed), max entry is 5120 B, max payload is 4068 B
+> crash: ring buffer is 256 KiB (15 KiB consumed), max entry is 5120 B, max payload is 4068 B
+> kernel: ring buffer is 256 KiB (245 KiB consumed), max entry is 5120 B, max payload is 4068 B
+> ```
+>
+> 修改：
+>
+> ```
+> adb shell logcat -G 5M
+> ```
+
+
+
+--------------------> **很多时候，方法一不生效！！！！！！！！！！！！**
+
+
+
+--------------------->  TODO: 找到持久化的文件，写成脚本。每次导入jar时执行
 
 
 
