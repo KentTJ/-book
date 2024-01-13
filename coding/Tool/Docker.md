@@ -1278,4 +1278,159 @@ moba连接时，用的127.0.0.1，为啥？ ----->   因为原先用的宿主的
 
 
 
+# wsl
 
+## wsl 安装到e盘
+
+http://www.huazhaox.com/article/7981    把WSL安装到指定目录下的简易完美方法
+
+## 使用wsl安装ubuntu
+
+安装指定版本ubuntu
+
+```java
+wsl --list --online    //查看线上有哪些版本
+
+wsl --install -d  Ubuntu-22.04 // 安装指定版本
+```
+
+
+
+启动 & 关闭：
+
+```java
+wsl -l -v   // 查看已经安装
+
+wsl -d Ubuntu-22.04  // 启动
+    
+wsl -t Ubuntu-22.04   //关闭
+```
+
+参考：https://www.cnblogs.com/AJun816/p/16214924.html#%E8%BF%81%E7%A7%BB%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9B%AE%E5%BD%95   
+
+
+
+## wsl挂载  硬盘（硬件接在win上）
+
+参考： https://zhuanlan.zhihu.com/p/557082235    在Windows11上利用WSL挂载 linux硬盘
+
+​        https://learn.microsoft.com/en-us/windows/wsl/wsl2-mount-disk      [Get started mounting a Linux disk in WSL 2 | Microsoft Learn](https://learn.microsoft.com/en-us/windows/wsl/wsl2-mount-disk)        
+
+
+
+**1、powershell中查看硬盘信息**
+
+```java
+GET-CimInstance -query "SELECT * from Win32_DiskDrive"
+```
+
+输出：
+
+```java
+PS C:\Users\scelt> GET-CimInstance -query "SELECT * from Win32_DiskDrive"
+
+DeviceID           Caption              Partitions Size          Model
+--------           -------              ---------- ----          -----
+\\.\PHYSICALDRIVE1 Force MP600          4          1000202273280 Force MP600
+\\.\PHYSICALDRIVE0 WDC WD80EFZX-68UW8N0 1          8001560609280 WDC WD80EFZX
+```
+
+**2、裸挂载（可以显示该盘但还不能访问）**
+
+```java
+wsl --mount \\.\PHYSICALDRIVE0 --bare
+```
+
+转到WLS终端：
+
+```console
+lsblk
+```
+
+My output:
+
+```java
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda      8:0    0  256G  0 disk
+sdb      8:16   0  256G  0 disk /
+sdc      8:32   0  7.3T  0 disk
+└─sdc1   8:33   0  7.3T  0 part
+```
+
+其中的sdc1就是我们需要挂载的设备了
+
+**3、 识别文件系统**
+
+WLS终端：
+
+```text
+blkid /dev/sdc1
+/dev/sdc1: UUID="ce35a569-9e17-4a83-b468-9d14fea9983e" TYPE="ext4" PARTLABEL="part1" PARTUUID="bb1a9b80-27d9-4b32-8cd1-51f71cb48252"
+```
+
+其中的 TYPE=“ext4”就告诉了我们这是一块ext4格式的硬盘。
+
+> 如果用blkid回车后没有任何输出，可以尝试加上sudo后重试。我当时就疑惑了久为什么它没有任何输出……
+
+**4. 真·挂载（可以访问内容了）**
+
+**方法一：已验证ok**
+
+在ubuntu内部mount：
+
+```java
+mount   /dev/sdc1   /root/workingspace/dong/
+    
+---------->  验证ok：
+lsblk
+```
+
+
+
+
+
+方法二：
+
+> 注意，此时又要回到Powershell中进行操作：
+>
+> ```ps1con
+> wsl --mount \\.\PHYSICALDRIVE0 --partition 1 --type ext4
+> ```
+>
+> 此时该硬盘会自动挂载到WSL系统中的`/mnt/wsl`目录中。
+>
+> 如果想从资源管理器访问，可以在地址栏输入`\\wsl$\Ubuntu-20.04\mnt\wsl\`。
+>
+> > 记得替换`Ubunto-20.04` 为实际使用的版本。如果不确定也可以先输入`wsl$`打开WSL目录逐级进入。
+
+**5、卸载**
+
+在powershell中操作：
+
+```text
+wsl --unmount \\.\PHYSICALDRIVE0
+```
+
+## 在win资源管理器访问wsl中Ubuntu------类似于samba
+
+```java
+\\wsl$\Ubuntu-22.04\mnt\wsl\
+
+\\wsl$\Ubuntu-22.04
+```
+
+
+
+## 其他认知
+
+windows是无法识别ext4格式的硬盘的(ext4是linux文件系统格式)
+
+# WSL2 使用相关  参考
+
+https://blog.csdn.net/justforacm/article/details/130614760     WSL2 使用相关    ------->  好文
+
+图形化：
+
+> https://mp.weixin.qq.com/s/42R7vn8mA0nX3Ipg8Zt5Iw     
+>
+> https://blog.csdn.net/Jasonkun_3/article/details/119135374
