@@ -1,7 +1,5 @@
 # 目录
 
-[TOC]
-
 
 
 # **docker**
@@ -602,12 +600,29 @@ https://blog.csdn.net/qq_37797234/article/details/103660748
 
 ```shell
 docker save  ubuntu16.04_0902  -o  E:\docker\ubuntu16.04_0902.jar
-docker save  cg, /ubuntu16.04_aosp1000_r17:vnc_ok  -o  H:\docker_jarFiles\ubuntu16.04_aosp1000_r17_vnc_20221026.jar
+docker save  cheng/ubuntu16.04_aosp1000_r17:vnc_ok  -o  H:\docker_jarFiles\ubuntu16.04_aosp1000_r17_vnc_20221026.jar
 ```
 
  加载本地镜像
 
 ```shell
+C:\Users\xixi>docker load -i  F:\VirtualMachine\Docker\ubuntu.jar
+```
+
+
+
+### **镜像保存成tar到本地**
+
+
+
+```java
+docker save  ubuntu16.04_0902  -o  E:\docker\ubuntu16.04_0902.tar
+docker save  cheng/ubuntu16.04_aosp1000_r17:vnc_ok  -o  H:\docker_jarFiles\ubuntu16.04_aosp1000_r17_vnc_20221026.tar
+```
+
+ 加载本地镜像
+
+```java
 C:\Users\xixi>docker load -i  F:\VirtualMachine\Docker\ubuntu.tar
 ```
 
@@ -702,6 +717,14 @@ docker pause/unpause <container-id>
 大大减小了系统版本快照大小。且不影响 演进
 
 ![image-20231014030319612](Docker.assets/image-20231014030319612.png)
+
+
+
+### 保存到tar文件
+
+---------> 可以给wsl使用
+
+
 
 ### 时间优化之 两份aosp同时解压
 
@@ -1288,15 +1311,168 @@ docker与win只能共享文件夹（传输效率极低）
 
 问题：
 
-> 造成docker安装在D盘，文件系统不能放在其他大的硬盘里 ----->  难以扩容
+> 造成docker安装在D盘，文件系统不能放在其他大的硬盘里 ----->  难以实现：  **<font color='red'>系统 与  文件系统  分离到两个盘上</font>**
 
-2、暂时不能用samba
+2、docket安装到**移动硬盘**上，会**经常发生start failed**     ------->  **很奇怪，需要一个固定的盘**
 
-3、难以直接连手机？？？
+![image-20210714075640590](Docker.assets/image-20210714075640590.png)
 
-4、
+------------> 
+
+**与1,矛盾：**
+
+>  2 需要将docker安装到 固定的d盘
+>
+>  但是因为文件系统过大，需要1，分离 docker安装与文件系统盘
 
 
+
+
+
+3、暂时不能用samba
+
+4、难以直接连手机？？？
+
+5、每次新增文件，都要**commit 系统**-------> 浪费时间
+
+6、docker挂载 ------> 文件IO速度慢： 
+
+
+
+## docker挂载解决IO速度慢的问题
+
+TODO：待验证
+
+https://www.kancloud.cn/luke8327/phpwolf/3121911    【Windows Docker】docker挂载解决IO速度慢的问题
+
+https://blog.just4test.net/performance-loss-of-docker-desktop-bind-mounts     Docker Desktop的挂载性能损失
+
+
+
+## 共享之  docker 内配置samba ----> TODO: 未成功
+
+**可能：**
+
+方法1？：一个适配器绑定多个IP
+
+> 参考“：
+>
+> https://blog.csdn.net/m0_37902494/article/details/128322049?spm=1001.2101.3001.6650.4&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-4-128322049-blog-132381489.235%5Ev40%5Epc_relevant_rights_sort&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-4-128322049-blog-132381489.235%5Ev40%5Epc_relevant_rights_sort&utm_relevant_index=9    windows10环境下宿主机无法打通到容器ip
+>
+> https://blog.csdn.net/qq_42362605/article/details/124898062   
+>
+> https://qinfeng.blog.csdn.net/article/details/132609787?spm=1001.2101.3001.6650.4&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-4-132609787-blog-108300589.235%5Ev40%5Epc_relevant_rights_sort&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-4-132609787-blog-108300589.235%5Ev40%5Epc_relevant_rights_sort&utm_relevant_index=9   win10 ping不通 Docker ip(解决截图)
+>
+> https://zhuanlan.zhihu.com/p/656521191?utm_id=0&wd=&eqid=d2260df60001fa10000000036575d6fa     Win11系统同一网卡设置使用多个IP地址的方法教程
+>
+> 
+>
+> ```java
+> # 添加一个网卡
+> netsh interface ip add address "vEthernet (WSL)" 192.168.50.93 255.255.255.0
+> ```
+>
+> 
+>
+> ```java
+> netsh interface ip show config  ---》 OK，查看当前所有適配器配置
+> 
+> 
+> netsh interface ip add address "vEthernet (WSL (Hyper-V firewall))" 172.17.0.2  255.255.240.0   ----》 ok
+> netsh interface ip delete address "vEthernet (WSL (Hyper-V firewall))" address=172.17.0.2    ----》 ok 
+>     
+>     
+> // smbd启动
+> service smbd  status
+> sudo service smbd  start
+> 
+> ```
+
+
+
+方法2？：增加路由
+
+> 
+>
+> ```
+>  route add 172.17.0.2 mask 255.255.0.0 192.168.137.1
+>  
+>  route add 172.17.0.2 mask 255.255.0.0  192.168.137.1
+>  
+>  
+>  route print  路由表
+> ```
+>
+> 参考： https://blog.csdn.net/m0_60861848/article/details/132381489?spm=1001.2101.3001.6650.3&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-3-132381489-blog-132609787.235%5Ev40%5Epc_relevant_rights_sort&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-3-132381489-blog-132609787.235%5Ev40%5Epc_relevant_rights_sort&utm_relevant_index=6
+>
+> https://blog.csdn.net/zhongliang415/article/details/108300589?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-108300589-blog-124612501.235%5Ev40%5Epc_relevant_rights_sort&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-108300589-blog-124612501.235%5Ev40%5Epc_relevant_rights_sort&utm_relevant_index=5        windows宿主机访问docker容器ip无法ping通
+
+
+
+好像就是不OK：
+
+> https://docs.docker.com/desktop/networking/          xplore networking features on Docker Desktop
+>
+> https://blog.csdn.net/qq_45380083/article/details/124612501?spm=1001.2101.3001.6650.3&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-3-124612501-blog-108582185.235%5Ev40%5Epc_relevant_rights_sort&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-3-124612501-blog-108582185.235%5Ev40%5Epc_relevant_rights_sort&utm_relevant_index=6
+>
+> 
+>
+> https://forums.docker.com/t/unable-to-access-my-first-container-on-172-17-0-2/54106         [Unable to access my first container (on 172.17.0.2) - General Discussions - Docker Community Forums](https://forums.docker.com/t/unable-to-access-my-first-container-on-172-17-0-2/54106)
+
+
+
+补充知识：
+
+https://blog.csdn.net/2302_77582029/article/details/132106721          Docker网络模式详解
+
+
+
+
+
+
+
+### 进展：
+
+docker对应的是   "vEthernet (WSL (Hyper-V firewall))"  适配器：！！！！！！！！
+
+![image-20240114234916011](Docker.assets/image-20240114234916011.png)
+
+此时容器内部：
+
+![image-20240114235137077](Docker.assets/image-20240114235137077.png)
+
+下面切到了window Containers
+
+![image-20240115000628113](Docker.assets/image-20240115000628113.png)
+
+
+
+## 共享之  利用  sshfs挂载远程文件夹
+
+**<font color='red'>实在搞不定的问题，就想办法绕过去</font>！！！！！！！！**（既然samba 一直以来无法配置成功）
+
+1、 安装WinFsp 和  SSHFS-Win
+
+2、添加映射：
+
+**验证OK：**
+
+```java
+\\sshfs.r\chenjinke@127.0.0.1!20000\home\chenjinke
+    
+//特别注意： 端口号  前为！
+    
+```
+
+
+
+
+
+
+
+参考： https://blog.csdn.net/guyuealian/article/details/128790112   Windows sshfs挂载远程文件夹
+
+https://blog.csdn.net/Jlcczhangxu/article/details/130642005?spm=1001.2101.3001.6650.8&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-8-130642005-blog-130420133.235%5Ev40%5Epc_relevant_rights_sort&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-8-130642005-blog-130420133.235%5Ev40%5Epc_relevant_rights_sort&utm_relevant_index=16    window映射带端口号的linux服务器到本地
 
 # wsl
 
@@ -1399,7 +1575,9 @@ blkid /dev/sdc1
 在ubuntu内部mount：
 
 ```java
-mount   /dev/sdc1   /root/workingspace/dong/
+sudo  mount   /dev/sdc2   /home/chenjinke/workingspace/yingpan
+    
+    151937Cgkent.
     
 ---------->  验证ok：
 lsblk
@@ -1441,11 +1619,58 @@ wsl --unmount \\.\PHYSICALDRIVE0
 
 
 
+## wsl从tar安装ubuntu
+
+tar来源：
+
+1、可以是docker保存的  
+
+2、也可以是wsl之前保存的：
+
+```java
+wsl --export debian e:\debian.tar
+```
+
+
+
+导入tar：
+
+```java
+wsl --import ubuntu18.04_fromDocker E:\programFiles\wsl_ubuntu\ubuntu_18_fromDocker  E:\docker_install\docker_jarFiles_backup\ubuntu18.04_aosp1200_r28_0923_2023_10_14.tar
+```
+
+
+
+```java
+
+   --import <Distro> <InstallLocation> <FileName> [选项]
+       将指定的 tar 文件作为新分发版导入。
+       文件名可以是 - for stdin。
+
+       选项:
+           --version <版本>
+               指定要用于新分发的版本。
+
+           --vhd
+               指定所提供的文件是 .vhdx 文件，而不是 tar 文件。
+               此操作在指定的安装位置创建 .vhdx 文件的副本。
+
+   --import-in-place <Distro> <FileName>
+       将指定的 .vhdx 文件作为新分发版导入。
+       必须使用 ext4 文件系统类型设置此虚拟硬盘的格式。
+```
+
+
+
+参考：   http://www.huazhaox.com/article/7981     把WSL安装到指定目录下的简易完美方法
+
 ## 其他认知
 
-windows是无法识别ext4格式的硬盘的(ext4是linux文件系统格式)
+windows是无法识别ext4
 
-# WSL2 使用相关  参考
+格式的硬盘的(ext4是linux文件系统格式)
+
+## WSL2 使用相关  参考
 
 https://blog.csdn.net/justforacm/article/details/130614760     WSL2 使用相关    ------->  好文
 
@@ -1454,3 +1679,11 @@ https://blog.csdn.net/justforacm/article/details/130614760     WSL2 使用相关
 > https://mp.weixin.qq.com/s/42R7vn8mA0nX3Ipg8Zt5Iw     
 >
 > https://blog.csdn.net/Jasonkun_3/article/details/119135374
+
+
+
+## 当前wsl账号:
+
+> cheng....
+>
+> 151..........

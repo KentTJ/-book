@@ -289,6 +289,19 @@ xcopy  %sourcePathRoot%\%subPath%    %subPath%  /s/y/h
 
 ## linux
 
+
+
+### 查看linux版本
+
+cheng@67dddeb926ac:~$ lsb_release -a
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 18.04.5 LTS
+Release:        18.04
+Codename:       bionic
+
+
+
 ### ~~文件夹操作~~
 
 ~~删除文件夹~~
@@ -673,9 +686,12 @@ scp -r alps2.tar  non.jinxi@10.82.254.194:/home/non.jinxi/code/chenjinke
 压缩：
 
 ```java
- tar -cvf test.tar test/* 　#归档test目录下所有文件   压缩
+ tar -cvf test.tar test/* 　 //归档test目录下所有文件   压缩
  
- tar -xvf test.tar  解
+ tar -xvf test.tar  //解
+ 
+  tar -xvf test.tar -C  ./laji   //到特定目录
+ 
 ```
 
 ### linux目录挂载到 win-------Samba
