@@ -1455,24 +1455,28 @@ docker对应的是   "vEthernet (WSL (Hyper-V firewall))"  适配器：！！！
 
 2、添加映射：
 
-**验证OK：**
-
-```java
-\\sshfs.r\chenjinke@127.0.0.1!20000\home\chenjinke
-    
-//特别注意： 端口号  前为！
-    
-```
-
-
+> **验证OK：**
+>
+> ```java
+> \\sshfs.r\chenjinke@127.0.0.1!20000\home\chenjinke
+>     
+> //特别注意： 端口号  前为！
+>     
+> ```
 
 
 
+注意：linux不需要做任何事情，原因：基于ssh的，本来就OK
 
 
-参考： https://blog.csdn.net/guyuealian/article/details/128790112   Windows sshfs挂载远程文件夹
 
-https://blog.csdn.net/Jlcczhangxu/article/details/130642005?spm=1001.2101.3001.6650.8&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-8-130642005-blog-130420133.235%5Ev40%5Epc_relevant_rights_sort&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-8-130642005-blog-130420133.235%5Ev40%5Epc_relevant_rights_sort&utm_relevant_index=16    window映射带端口号的linux服务器到本地
+
+
+参考：
+
+>  https://blog.csdn.net/guyuealian/article/details/128790112   Windows sshfs挂载远程文件夹
+>
+> https://blog.csdn.net/Jlcczhangxu/article/details/130642005?spm=1001.2101.3001.6650.8&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-8-130642005-blog-130420133.235%5Ev40%5Epc_relevant_rights_sort&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-8-130642005-blog-130420133.235%5Ev40%5Epc_relevant_rights_sort&utm_relevant_index=16    window映射带端口号的linux服务器到本地
 
 # wsl
 
