@@ -430,9 +430,43 @@ adb connect host.docker.internal:7788
 
 
 
-### 编译时报错： Failed to calculate the value of task ‘:unityLibrary:compileDebugJavaWithJavac‘
+## 编译时报错： Failed to calculate the value of task ‘:unityLibrary:compileDebugJavaWithJavac‘
 
 https://blog.csdn.net/EverNess010/article/details/129924721
+
+
+
+## Android Studio 很卡 ---->  如何理解？
+
+卡的原因：
+
+> 任务管理器可以看到AS一直cpu很高  ---------> 既然很高，为啥很卡？
+>
+> 原来这个很高是因为频繁触发GC！！！！！！！GC会打断系统运行
+
+---------> 解决办法： 避免频繁GC（增大内存）
+
+[Android Studio 使用起来很卡，你们是如何解决的？ - 知乎 (zhihu.com)](https://www.zhihu.com/question/32282404)     https://www.zhihu.com/question/32282404
+
+> 一旦你的工程变大，IDE 运行时间稍长，<font color='red'>内存就开始吃紧，频繁触发 GC</font>，自然会卡。
+>
+> 修改：
+>
+> ```
+>  修改android-studio/bin/studio.vmoptions   studio64.vmoptions  两个文件的以下属性就可以了
+>  -Xms2048m
+>  
+>  -Xmx2048m
+>  
+>  -XX:MaxPermSize=2048m
+>  
+>  -XX:ReservedCodeCacheSize=1024m
+>  
+> ```
+
+所以：
+
+> cpu高水位（pc风扇转得快） ---------  很多时候，根因不是在cpu上，反而是mem上
 
 
 

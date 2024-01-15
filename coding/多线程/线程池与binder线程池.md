@@ -128,6 +128,18 @@ https://zhuanlan.zhihu.com/p/644170642?utm_id=0     携程ANR 优化实践 - Bin
 
 https://blog.csdn.net/weixin_45144862/article/details/126914327     C++线程池
 
+
+
+
+
+## 语言级-----Java并发编程中四种线程池
+
+https://blog.csdn.net/riemann_/article/details/97617432
+
+
+
+
+
 # binder线程池
 
 一对多问题（多执行）情况：
@@ -203,3 +215,10 @@ https://blog.csdn.net/software_test010/article/details/125608505     APP性能�
 3、从驱动来看： /dev/binder 本质上是与驱动的 接口 ：  程序 -----> open("/dev/binder") -----> 驱动 ？？？？？？
 
 4、从内核角度：/dev/binder  是一个设备
+
+
+
+
+
+
+
