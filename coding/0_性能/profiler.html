@@ -1260,7 +1260,20 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.14.1" data-path="../多线程/线程池与binder线程池.html">
+        <li class="chapter " data-level="1.2.14.1" data-path="../多线程/多线程的模型.html">
+            
+                <a href="../多线程/多线程的模型.html">
+            
+                    
+                    多线程的模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14.2" data-path="../多线程/线程池与binder线程池.html">
             
                 <a href="../多线程/线程池与binder线程池.html">
             
@@ -1501,6 +1514,27 @@
 <h2 id="&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x6709;&#x706B;&#x7130;&#x56FE;&#xFF1F;"><a name="&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x6709;&#x706B;&#x7130;&#x56FE;&#xFF1F;" class="anchor-navigation-ex-anchor" href="#&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x6709;&#x706B;&#x7130;&#x56FE;&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x6709;&#x706B;&#x7130;&#x56FE;&#xFF1F;</h2>
 <p>systrace&#x4E0D;&#x80FD;&#x7528;&#x561B;&#xFF1F; -----------&gt;  systrace&#x6CA1;&#x6709;&#x6BCF;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#x65F6;&#x95F4;&#xFF08;&#x53EA;&#x662F;&#x6253;&#x6807;&#x7B7E;&#x7684;&#x4E00;&#x6BB5;&#xFF09;</p>
 <h2 id="&#x83B7;&#x53D6;"><a name="&#x83B7;&#x53D6;" class="anchor-navigation-ex-anchor" href="#&#x83B7;&#x53D6;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x83B7;&#x53D6;</h2>
+<p>&#x706B;&#x7130;&#x56FE;&#xFF1A;    <a href="https://blog.csdn.net/chuyouyinghe/article/details/131719609" target="_blank">&#x6027;&#x80FD;&#x4F18;&#x5316;---&#x542F;&#x52A8;&#x4F18;&#x5316; Debug.startMethodTracing_debug.startmethodtracing()-CSDN&#x535A;&#x5BA2;</a>    <a href="https://blog.csdn.net/chuyouyinghe/article/details/131719609" target="_blank">https://blog.csdn.net/chuyouyinghe/article/details/131719609</a></p>
+<p>&#x5B98;&#x7F51;&#xFF1A;</p>
+<blockquote>
+<p><a href="https://developer.android.google.cn/studio/profile/generate-trace-logs?hl=zh-cn" target="_blank">https://developer.android.google.cn/studio/profile/generate-trace-logs?hl=zh-cn</a></p>
+</blockquote>
+<pre><code class="lang-java">Debug.startMethodTracing(<span class="hljs-string">&quot;sample&quot;</span>)
+
+Debug.stopMethodTracing();
+
+&#x591A;&#x6B21;&#x5FAA;&#x73AF;&#x65F6;&#xFF1A;
+SimpleDateFormat dateFormat =
+        <span class="hljs-keyword">new</span> SimpleDateFormat(<span class="hljs-string">&quot;dd_MM_yyyy_hh_mm_ss&quot;</span>, Locale.getDefault());
+String logDate = dateFormat.format(<span class="hljs-keyword">new</span> Date());
+<span class="hljs-comment">// Applies the date and time to the name of the trace log.</span>
+Debug.startMethodTracing(
+        <span class="hljs-string">&quot;sample-&quot;</span> + logDate);
+</code></pre>
+<ul>
+<li>------------------&gt; &#x6280;&#x5DE7;&#xFF1A; &#x4E0D;&#x77E5;&#x9053;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x7ED3;&#x675F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7528;&#x8BA1;&#x65F6;&#x5668;10s&#x540E;&#xFF0C;&#x629B;&#x5230;&#x4E3B;&#x7EBF;&#x7A0B;</li>
+</ul>
+<p>TODO: ZHAOPIAN</p>
 <p>&#x53C2;&#x8003;&#xFF1A; </p>
 <p> <a href="https://developer.android.google.cn/studio/profile/generate-trace-logs#java" target="_blank">https://developer.android.google.cn/studio/profile/generate-trace-logs#java</a>           Generate Trace Logs by Instrumenting Your App</p>
 <p><a href="https://developer.android.google.cn/studio/profile/record-traces" target="_blank">https://developer.android.google.cn/studio/profile/record-traces</a>   Record traces</p>
@@ -1560,7 +1594,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Profiler","level":"1.2.4.1","depth":3,"next":{"title":"Systrace","level":"1.2.4.2","depth":3,"path":"coding/0_性能/Systrace.md","ref":"coding/0_性能/Systrace.md","articles":[]},"previous":{"title":"0_性能","level":"1.2.4","depth":2,"path":"coding/0_性能/README.md","ref":"coding/0_性能/README.md","articles":[{"title":"Profiler","level":"1.2.4.1","depth":3,"path":"coding/0_性能/profiler.md","ref":"coding/0_性能/profiler.md","articles":[]},{"title":"Systrace","level":"1.2.4.2","depth":3,"path":"coding/0_性能/Systrace.md","ref":"coding/0_性能/Systrace.md","articles":[]},{"title":"内存","level":"1.2.4.3","depth":3,"path":"coding/0_性能/内存.md","ref":"coding/0_性能/内存.md","articles":[]},{"title":"稳定性_性能问题","level":"1.2.4.4","depth":3,"path":"coding/0_性能/稳定性_性能问题.md","ref":"coding/0_性能/稳定性_性能问题.md","articles":[]}]},"dir":"ltr"},"config":{"//":["这是多行注释：    anchor-navigation-ex 是","anchor-navigation-ex 是","click-reveal 本地使用ok，但是github在build pages时，不识别click-reveal","accordion 也是折叠代码段","anchor-navigation-ex 是"],"plugins":["anchor-navigation-ex","toggle-chapters","expandable-chapters-small","splitter","code","page-treeview","popup","-search","-lunr","sidebar-style","auto-scroll-table","click-reveal","accordion","pageview-count","search-pro"],"root":"./markdownsFiles","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"Kent","title":"《知行，行知》"},"tbfed-pagefooter":{"copyright":"Copyright &copy ershouche-FE 2019","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"disqus":{"shortName":"gitbookuse"},"splitter":{},"search-pro":{},"accordion":{},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":200000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"pageview-count":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bookname":"笔记","variables":{},"title":"Kent的博客","gitbook":"*"},"file":{"path":"coding/0_性能/profiler.md","mtime":"2024-01-15T16:01:01.619Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-01-15T16:14:29.942Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Profiler","level":"1.2.4.1","depth":3,"next":{"title":"Systrace","level":"1.2.4.2","depth":3,"path":"coding/0_性能/Systrace.md","ref":"coding/0_性能/Systrace.md","articles":[]},"previous":{"title":"0_性能","level":"1.2.4","depth":2,"path":"coding/0_性能/README.md","ref":"coding/0_性能/README.md","articles":[{"title":"Profiler","level":"1.2.4.1","depth":3,"path":"coding/0_性能/profiler.md","ref":"coding/0_性能/profiler.md","articles":[]},{"title":"Systrace","level":"1.2.4.2","depth":3,"path":"coding/0_性能/Systrace.md","ref":"coding/0_性能/Systrace.md","articles":[]},{"title":"内存","level":"1.2.4.3","depth":3,"path":"coding/0_性能/内存.md","ref":"coding/0_性能/内存.md","articles":[]},{"title":"稳定性_性能问题","level":"1.2.4.4","depth":3,"path":"coding/0_性能/稳定性_性能问题.md","ref":"coding/0_性能/稳定性_性能问题.md","articles":[]}]},"dir":"ltr"},"config":{"//":["这是多行注释：    anchor-navigation-ex 是","anchor-navigation-ex 是","click-reveal 本地使用ok，但是github在build pages时，不识别click-reveal","accordion 也是折叠代码段","anchor-navigation-ex 是"],"plugins":["anchor-navigation-ex","toggle-chapters","expandable-chapters-small","splitter","code","page-treeview","popup","-search","-lunr","sidebar-style","auto-scroll-table","click-reveal","accordion","pageview-count","search-pro"],"root":"./markdownsFiles","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"Kent","title":"《知行，行知》"},"tbfed-pagefooter":{"copyright":"Copyright &copy ershouche-FE 2019","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"disqus":{"shortName":"gitbookuse"},"splitter":{},"search-pro":{},"accordion":{},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":200000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"pageview-count":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bookname":"笔记","variables":{},"title":"Kent的博客","gitbook":"*"},"file":{"path":"coding/0_性能/profiler.md","mtime":"2024-01-15T16:21:38.340Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-01-15T16:28:49.918Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

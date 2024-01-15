@@ -10,6 +10,32 @@ systrace不能用嘛？ ----------->  systrace没有每一个函数的调用时�
 
 ## 获取
 
+火焰图：    [性能优化---启动优化 Debug.startMethodTracing_debug.startmethodtracing()-CSDN博客](https://blog.csdn.net/chuyouyinghe/article/details/131719609)    https://blog.csdn.net/chuyouyinghe/article/details/131719609
+
+官网：
+
+> https://developer.android.google.cn/studio/profile/generate-trace-logs?hl=zh-cn
+
+```java
+Debug.startMethodTracing("sample")
+
+Debug.stopMethodTracing();
+
+多次循环时：
+SimpleDateFormat dateFormat =
+        new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss", Locale.getDefault());
+String logDate = dateFormat.format(new Date());
+// Applies the date and time to the name of the trace log.
+Debug.startMethodTracing(
+        "sample-" + logDate);
+```
+
+- ------------------> 技巧： 不知道什么时候结束的时候，用计时器10s后，抛到主线程
+
+TODO: ZHAOPIAN
+
+
+
 参考： 
 
  https://developer.android.google.cn/studio/profile/generate-trace-logs#java           Generate Trace Logs by Instrumenting Your App

@@ -171,7 +171,7 @@ git lfs uninstall
 
 
 
-## 两个节点之间差异
+## 两个节点之间差异 git  diff
 
 ```cpp
 git diff 8064cff987043e2272746a46e3240e4ea7336e5b 3e62c71ee5dd6c714fc0bdeaa7faf0a2aa226e91  >  /1111.txt
@@ -184,6 +184,14 @@ git diff 8064cff987043e2272746a46e3240e4ea7336e5b 3e62c71ee5dd6c714fc0bdeaa7faf0
 ```cpp
 git diff 8064cff987043e2272746a46e3240e4ea7336e5b 3e62c71ee5dd6c714fc0bdeaa7faf0a2aa226e91 --name-only >./1111.txt
 ```
+
+## 技巧：用git  diff  或者 git path作为代码的持久化存储
+
+如何保留自己的需求修改？
+
+> 法一：保留需求设计 & ppt
+>
+> 法二：保留 diff文件（<font color='red'>极优</font>） --------->  （1）很容易复原  （2）diff文件很小
 
 
 
@@ -271,17 +279,11 @@ git push origin HEAD:refs/for/branch_master
 
 
 
-## 技巧：用git  diff作为代码的持久化存储
-
-如何保留自己的需求修改？
-
-> 法一：保留需求设计 & ppt
->
-> 法二：保留 diff文件（<font color='red'>极优</font>） --------->  （1）很容易复原  （2）diff文件很小
 
 
+## 修改commit --amend时，用vim
 
-
+> git config --global core.editor vim
 
 
 
