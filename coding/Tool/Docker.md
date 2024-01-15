@@ -1449,34 +1449,15 @@ docker对应的是   "vEthernet (WSL (Hyper-V firewall))"  适配器：！！！
 
 ## 共享之  利用  sshfs挂载远程文件夹
 
-**<font color='red'>实在搞不定的问题，就想办法绕过去</font>！！！！！！！！**（既然samba 一直以来无法配置成功）
-
-1、 安装WinFsp 和  SSHFS-Win
-
-2、添加映射：
-
-> **验证OK：**
->
-> ```java
-> \\sshfs.r\chenjinke@127.0.0.1!20000\home\chenjinke
->     
-> //特别注意： 端口号  前为！
->     
-> ```
+**<font color='red'>实在搞不定的问题，就想办法绕过去</font>！！！！！！！！**（既然samba 一直以来在window dcoker里无法配置成功）
 
 
 
-注意：linux不需要做任何事情，原因：基于ssh的，本来就OK
+见《linux挂载到win-------sshfs（**效果类似于samba**）》章节
 
 
 
 
-
-参考：
-
->  https://blog.csdn.net/guyuealian/article/details/128790112   Windows sshfs挂载远程文件夹
->
-> https://blog.csdn.net/Jlcczhangxu/article/details/130642005?spm=1001.2101.3001.6650.8&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-8-130642005-blog-130420133.235%5Ev40%5Epc_relevant_rights_sort&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-8-130642005-blog-130420133.235%5Ev40%5Epc_relevant_rights_sort&utm_relevant_index=16    window映射带端口号的linux服务器到本地
 
 # wsl
 
@@ -1511,6 +1492,8 @@ wsl -t Ubuntu-22.04   //关闭
 
 
 ## wsl挂载  硬盘（硬件接在win上）
+
+### 步骤
 
 参考： https://zhuanlan.zhihu.com/p/557082235    在Windows11上利用WSL挂载 linux硬盘
 
@@ -1613,6 +1596,12 @@ lsblk
 wsl --unmount \\.\PHYSICALDRIVE0
 ```
 
+
+
+### win下如何看linux磁盘(ext4)文件？
+
+上面方法
+
 ## 在win资源管理器访问wsl中Ubuntu------类似于samba
 
 ```java
@@ -1691,3 +1680,245 @@ https://blog.csdn.net/justforacm/article/details/130614760     WSL2 使用相关
 > cheng....
 >
 > 151..........
+
+
+
+
+
+
+
+# VirtualBox 
+
+## VirtualBox安装Debian11/Ubuntu
+
+在 VirtualBox 中构建 Debian11 虚拟电脑 :
+
+> ```http
+> https://blog.csdn.net/ForestK/article/details/125198556?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-2-125198556-blog-127320725.235^v38^pc_relevant_sort_base1&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-2-125198556-blog-127320725.235^v38^pc_relevant_sort_base1&utm_relevant_index=5
+> ```
+>
+> ----------------->  验证ok。注意：系统镜像可以是ubuntu的iso
+
+
+
+使用VirtualBox安装Ubuntu系统:
+
+> https://blog.csdn.net/abc6368765/article/details/125819966  
+
+
+
+
+
+
+
+## VirtualBox Ubuntu无法复制粘贴以及无法安装增强功能：
+
+> 方法一：
+>
+> > https://blog.csdn.net/subtitle_/article/details/132032433?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2~default~YuanLiJiHua~Position-2-132032433-blog-131377973.235^v38^pc_relevant_sort_base1&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~YuanLiJiHua~Position-2-132032433-blog-131377973.235^v38^pc_relevant_sort_base1&utm_relevant_index=5
+>
+> -----------------> 验证有效
+>
+> 方法二：
+>
+> > 安装nvc，通过MobaXterm查看图形界面。自然，可以复制粘贴
+
+
+
+
+
+## VitrualBox中备份Ubuntu
+
+https://blog.csdn.net/mo_sss/article/details/132856647
+
+------> 验证ok
+
+
+
+
+
+## VirtualBox 扩容
+
+1、添加磁盘
+
+https://blog.csdn.net/xiaoxiangzi520/article/details/111291634?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1-111291634-blog-120908556.235^v39^pc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1-111291634-blog-120908556.235^v39^pc_relevant_anti_vip&utm_relevant_index=2
+
+```
+ :://查看虚拟磁盘空间信息，确认确实是需要扩容的虚拟硬盘。
+ "D:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe" showhdinfo "D:\\Program Files\\ubuntu\\ubuntu\\ubuntu.vdi"
+ :://计算要扩容的空间大小，我这里是要扩展到100G(1024*1024*1024*100)。
+ set/a 1024*1024*1024
+ 
+ 
+ :://扩展虚拟硬盘空间，最后的数字替换成上面计算出的硬盘空间大小。
+ 
+ "D:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe" modifymedium "D:\\Program Files\\ubuntu\\ubuntu\\ubuntu.vdi" --resizebyte 386547056640
+ 
+ pause
+```
+
+进入虚拟机：
+
+```
+ sudo fdisk -l
+```
+
+-------------> 查看有磁盘
+
+2、分区扩容（纳入新磁盘）可视化工具
+
+[Linux系统sda1分区扩容_linux扩容sda1-CSDN博客](https://blog.csdn.net/hgchshs/article/details/131900472)    https://blog.csdn.net/hgchshs/article/details/131900472
+
+ ----------> 验证ok： **可视化工具，合并分区**
+
+```
+ gparted
+```
+
+## VirtualBox共享目录
+
+1、设置共享文件夹
+
+- 1 选择路径
+- 2 填写自定义的共享名称（在后面需要与挂载路径相对应）
+- 3 设置自动挂载/固定分配
+
+```
+ D:\\Program Files\\ubuntu\\ubuntuShare
+ ubuntuShare
+ /home/chengang/workingSpace/AOSP
+```
+
+**注意：无需重启VirtualBox （或ubuntu）**
+
+2、挂载共享文件夹：参考： [详解VirtualBox中与主机共享文件夹的方法（图文）-云搜网 (27ka.cn)](https://www.27ka.cn/120058.html)        https://www.27ka.cn/120058.html
+
+```
+ sudo mount -t vboxsf  ubuntuShare  /home/chengang/workingSpace/AOSP
+```
+
+## virtualbox中ubuntu 磁盘满了，无法开机
+
+-----> 只是图形界面进不去
+
+https://www.jianshu.com/p/9e0214059487    下数据硬盘满，无法启动（Ubuntu）处理
+
+
+
+总结一句话：
+
+> ctrl + F2 进入命令行界面
+>
+> 清理磁盘
+
+## virtualbox中ubuntu启动失败
+
+参考：
+
+> https://blog.csdn.net/beihuanlihe130/article/details/122728594   How To Fix Busybox Initramfs Error On Ubuntu
+
+启动后，问题：
+
+```java
+1
+BusyBox v1.30.1 (Ubuntu 1:1.30.1-4ubuntu6.1) built-in shell (ash)2
+Enter 'help' for a list of built-in commands.3
+4
+(initramfs)
+```
+
+问题原因：
+
+```java
+1
+(initramfs) exit2
+/dev/sda1 contains a file system with errors, check forced. // ----------> /dev/sda1文件系统出了问题3
+Inode 4326476 extent tree (at level 1) could be narrower, IGNORED.4
+/dev/sda1: Inode 4326843 extent tree (at level 1) could be narrower, IGNORED.5
+/dev/sda1: Inode 4327012 extent tree (at level 1) could be narrower, IGNORED.6
+/dev/sda1: Inode 4329004 extent tree (at level 1) could be narrower, IGNORED.7
+/dev/sda1: Inodes that were part of a corrupted orphan linked list found.8
+9
+/dev/sda1: UNEXPECTED INCONSISTENCY; RUN fsck MANUALLY.10
+        (i.e., without -a or -p options)11
+fsck exited with status code 4.12
+The root filesystem on /dev/sda1 requires a manual fsck.13
+14
+BusyBox v1.30.1 (Ubuntu 1:1.30.1-4ubuntu6.1) built-in shell (ash)15
+Enter 'help' for a list of built-in commands.16
+17
+(initramfs)
+```
+
+修复repair the filesystem：
+
+```java
+1
+(initramfs) fsck /dev/sda1 -y2
+3
+(initramfs) reboot4
+```
+
+------> 不限于 virtualbox
+
+
+
+## 如何配置virtualbox 处理器核心数？
+
+virtualbox 在设置里给虚拟机开的处理器核心数，不要大，1个就好 ------> 多了反而不流畅。。1个很流畅
+
+
+
+## virutualBox快捷键
+
+1、退出全屏：  右ctrl  + F
+
+注意：需要在桌面内使用（不能在AS内使用，被AS识别消费了）   https://blog.csdn.net/qq_15138049/article/details/125666050
+
+## virutualBox 连手机
+
+https://www.cnblogs.com/manmande/p/17329504.html   虚拟机Virtualbox 识别不到USB设备 的解决办法
+
+
+
+# wmWare
+
+## adb连手机
+
+https://blog.csdn.net/lspqq10086/article/details/127447126?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-127447126-blog-123850238.235%5Ev38%5Epc_relevant_anti_t3&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-127447126-blog-123850238.235%5Ev38%5Epc_relevant_anti_t3&utm_relevant_index=2
+
+## **虚拟机和主机共享文件夹步骤**：
+
+1.1右键虚拟机--设置---选项--共享文件夹--选择总是启用---添加一个盘
+
+1.2ubuntu中进入/mnt/hgfs/目录查看是否有共享文件夹（也可以放在home目录下自己创建一个文件夹如/home/feng/work）
+
+1.3 若没有hgfs存在则按以下步骤操作：
+
+**sudo apt-get install open-vm-tools**
+
+**cd /mnt/**
+
+**sudo passwd root**
+
+**su root**
+
+**mkdir hgfs**
+
+**sudo vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other**
+
+或**sudo vmhgfs-fuse .host:/ /home/feng/work -o allow_other**
+
+其中/mnt/hgfs/文件夹目录可以自行修改
+
+再到/mnt/下看就会有 hgfs文件夹了，里面有共享文件夹目录存在
+
+这里是有个空格的
+
+
+
+## 扩容
+
+https://blog.csdn.net/qq_37140721/article/details/125619393
+
+
