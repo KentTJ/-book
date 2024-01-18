@@ -142,7 +142,7 @@ https://blog.csdn.net/cl769796350/article/details/102676674?utm_medium=distribut
 2.  set  ANDROID_PRODUCT_OUT = H:\dockerSharedFiles\aosp_android1000_r17\out_\product\sailfish
 3.  
 4.  *#进入fastboot模式*
-5.  adb reboot bootloader
+5.  adb reboot bootloader    （验证有没有进入：fastboot  devices）
 6.  
 7.  *#*  <font color='red'>**自动刷入 -w双清 **</font>: 
 8.  fastboot flashall -w

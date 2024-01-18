@@ -808,13 +808,17 @@ inux不需要做任何事情------> 原因：**原理基于ssh的，**本来就O
 
 > 经操作系统调度，程序实际可使用的内存空间将远超过系统的物理内存
 
-参考：https://zhuanlan.zhihu.com/p/535552414       实验：Linux的swap分区创建使用
+参考：
+
+> https://zhuanlan.zhihu.com/p/535552414       实验：Linux的swap分区创建使用
+>
+> https://cloud.tencent.com/developer/article/1622477   
 
 ```
  // 已经验证ok
  
  
- dd if=/dev/zero of=/opt/swapfile bs=1M count=40000
+ dd if=/dev/zero of=/opt/swapfile bs=1M count=40000    ------>  40000M, 大约40G
  mkswap /opt/swapfile
  swapon /opt/swapfile
  vim /etc/fstab
@@ -822,7 +826,7 @@ inux不需要做任何事情------> 原因：**原理基于ssh的，**本来就O
  mount -a   //挂载
 
  
- free  //查看swap是否生效
+ free  -h //查看swap是否生效
 ```
 
 ---------------> 效果：利用这种方法 win10 笔记本 + cpu i7 12700 + virtualBox, 编译安卓代码还可以！！！！
@@ -884,6 +888,22 @@ wmic diskdrive  查看磁盘信息： wmic diskdrive where index=0
 wmic baseboard
 
 wmic memphysical                 wmic memphysical get maxcapacity
+
+
+
+### 内存信息
+
+```java
+free -h
+
+chenjinke@1e19b2dfec4b:~/workingSpace/local_D/xfce4-docklike-plugin-0.4.0$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:            27G        1.0G        6.4G        2.2M         20G         25G
+Swap:          3.5G        9.1M        3.5G
+
+```
+
+
 
 
 
