@@ -48,7 +48,17 @@ https://zhuanlan.zhihu.com/p/511224713    android studio profiler 性能分析  
 
 https://www.jianshu.com/p/596b2ef68342       性能优化工具（十一）-Android Profiler    ---->  **结构**
 
-## 分析 之 性能问题点：
+
+
+## 读火焰图-----TODO
+
+好文：
+
+[如何读懂火焰图？ 实例讲解程序性能优化 | HeapDump性能社区](https://heapdump.cn/article/3486818)           https://heapdump.cn/article/3486818
+
+
+
+### 分析 之 性能问题点：
 
 > 平顶山：  火焰图就是看顶层的哪个函数占据的宽度最大。只要有"平顶山"，就表示该函数可能存在性能问题。
 >
@@ -60,7 +70,37 @@ https://www.qinglite.cn/doc/468764776cec22698
 
 
 
+## linux火焰图 
 
+
+
+https://www.qinglite.cn/doc/468764776cec22698     调优利器-火焰图使用图鉴
+
+
+
+## 常见耗时（火焰图上很直观）
+
+1、打印调用栈（支付宝代码里就有）  ------> 该死, 非常耗时
+
+2、Log耗时非常小------>  Log耗时，可以忽略
+
+> 在5us作用，也就是说打印200个log，才1ms
+
+
+
+**规定，性能验证：**
+
+> 开发完任何需求，主要流程，抓一下火焰图！！！！！
+
+
+
+**TODO:** 开发验证
+
+> 功能性验证：异常场景
+>
+> 性能验证 ：火焰图
+>
+> 开发稳定性验证：Top28应用验证
 
 
 
@@ -69,10 +109,4 @@ https://www.qinglite.cn/doc/468764776cec22698
 
 
 
-
-## linux火焰图 
-
-
-
-https://www.qinglite.cn/doc/468764776cec22698     调优利器-火焰图使用图鉴
 
