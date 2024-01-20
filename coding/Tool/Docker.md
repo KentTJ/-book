@@ -1491,6 +1491,14 @@ wsl -t Ubuntu-22.04   //关闭
 
 
 
+删除已经安装的ubuntu：
+
+> wsl -l -v   // 查看已经安装
+>
+> wsl --unregister Ubuntu-18.04  
+
+
+
 ## wsl挂载  硬盘（硬件接在win上）
 
 ### 步骤
