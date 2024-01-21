@@ -28,3 +28,13 @@ https://ost.51cto.com/posts/8392    OpenHarmony 源码解析之多模输入子�
 https://ost.51cto.com/posts/14326    多模输入事件分发机制详解
 
 https://www.seaxiang.com/blog/53cce2a751e04ca790fdca7dfb26f84b   harmony 鸿蒙多模输入子系统
+
+# 分布式
+
+https://blog.csdn.net/weixin_41559503/article/details/128849514?spm=1001.2014.3001.5502   分布式
+
+```java
+ private static final int SHOW_KEYBOARD_DELAY = 800;
+```
+
+https://blog.csdn.net/weixin_41559503/article/details/128851385?spm=1001.2014.3001.5502    js渲染框架

@@ -287,6 +287,18 @@ git push origin HEAD:refs/for/branch_master
 
 
 
+## 生成SSH key
+
+linux 与 GitHub 或者 gerrite通信 协议
+
+
+
+参考：  [如何生成SSH key？_ssh key生成-CSDN博客](https://blog.csdn.net/fish_skyyyy/article/details/119213714?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-1-119213714-blog-134603067.235^v40^pc_relevant_anti_vip&spm=1001.2101.3001.4242.2&utm_relevant_index=4)
+
+-----> 注意：在其他人的服务器和账号下，也可以添加自己的ssh key。然后下载代码
+
+
+
 # 报错
 
 ## 关于git push   443链接 报错：

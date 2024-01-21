@@ -873,7 +873,7 @@ linux磁盘挂载常用命令
 
 
 
-## 查看硬件信息
+## 查看硬件固有信息
 
 ### win cpu
 
@@ -889,7 +889,7 @@ wmic baseboard
 
 wmic memphysical                 wmic memphysical get maxcapacity
 
-
+## 查看 硬件当前使用量 
 
 ### 内存信息
 
