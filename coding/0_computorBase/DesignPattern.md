@@ -1969,7 +1969,24 @@ linsterner比较固定，大部分时候实现接口，固定不变。。。。�
 
 
 
+## 内外接口分开思想：
 
+
+
+例子：
+
+**安卓系统服务的设计**
+
+```java
+ // wms
+ mIWindowManager = IWindowManager.Stub.asInterface(  // 外部接口
+         ServiceManager.getService(Context.WINDOW_SERVICE));
+ mWindowManagerInternal = LocalServices.getService(WindowManagerInternal.class); //内部接口 ---> 形式化统一
+```
+
+TODO ！！！！！！！！：
+
+> 这样确实很好。但是具体、精确的好，在哪里
 
 
 
