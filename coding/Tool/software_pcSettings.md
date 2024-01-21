@@ -843,6 +843,8 @@ md文件总目录：   ------->  <font color='red'>实现文件间的跳转</fon
 
 
 
+
+
 ## pdf电子书制作
 
 ### 教程：
@@ -1079,27 +1081,39 @@ https://cs.android.com/
 
 参考：https://www.jianshu.com/p/ca2d0420c9ea    Typora 快捷键 shortcut keys   
 
+跳转，<font color='red'> md内部跳转</font>： ----> 不优
 
+> 1、`Ctrl+K, 创建超链接：`          
+>
+> ```shell
+> // 自动生成：
+> [创建超链接](#id22)
+> ```
+>
+> 1、超链接`被链接CTR + L` (与Ctrl+K搭配使用)       
+>
+> ```shell
+> // 自动生成：
+> <a id=''>被链接</a>
+> ```
+>
+>  原理：
+>
+> ![image-20221103013503393](software_pcSettings.assets/image-20221103013503393.png)
+>
+> 
+>
+> 
 
-1、`Ctrl+K, 创建超链接：`           
+**md内部跳转  + md之间跳转，**<font color='red'>的 统一做法（极优）</font>：
 
-```shell
-// 自动生成：
-[创建超链接](#id22)
-```
-
-1、超链接`被链接CTR + L` (与Ctrl+K搭配使用)
-
-```shell
-// 自动生成：
-<a id=''>被链接</a>
-```
-
- 原理：
-
-![image-20221103013503393](software_pcSettings.assets/image-20221103013503393.png)
-
-
+> **直接填写对应的https 章节链接：**
+>
+> ![image-20240121204658851](software_pcSettings.assets/image-20240121204658851.png)
+>
+> 
+>
+> ![image-20240121204550178](software_pcSettings.assets/image-20240121204550178.png)
 
 2、Ctrl+T, 创建表格
 

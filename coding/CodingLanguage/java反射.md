@@ -53,6 +53,18 @@
 >
 >  (4)  从**代码 扩展性、弹性角度：**   反射有着非常好的弹性。比如，新增一个MyView，xml解析器创建view的代码，<font color='red'>不需要改动一行</font>
 
+## 反射的使用
+
+参考：
+
+>  https://blog.csdn.net/weixin_56442629/article/details/115430249  .java反射
+>
+> [[《Debug Skills的反射章节》](https://kenttj.github.io/-book/coding/Tool/debugSkills.html#%E6%94%B9%E5%86%99%E5%80%BC%E4%B9%8B-%E5%8F%8D%E5%B0%84)
+
+
+
+
+
 ## 反射性能
 
 https://blog.csdn.net/googdev/article/details/100039092#:~:text=%E4%B8%8B%E9%9D%A2%E6%98%AF%E6%88%91%E4%BB%AC%E7%9A%84%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%EF%BC%88%E6%97%B6%E9%97%B4%E5%8D%95%E4%BD%8D%E5%9D%87%E4%B8%BA%E6%AF%AB%E7%A7%92%EF%BC%89%EF%BC%9A,%E6%98%BE%E7%84%B6%EF%BC%8C%E5%9C%A8Android%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%8F%8D%E5%B0%84%E9%9D%9E%E5%B8%B8%E6%85%A2%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%8F%8D%E5%B0%84%E7%9A%84%E6%B5%8B%E8%AF%95%E6%89%A7%E8%A1%8C%E5%88%86%E5%88%AB%E9%9C%80%E8%A6%811332%E6%AF%AB%E7%A7%92%E3%80%816384%E6%AF%AB%E7%A7%92%E3%80%812891%E6%AF%AB%E7%A7%92%EF%BC%8C%E8%80%8C%E4%B8%8D%E4%BD%BF%E7%94%A8%E5%8F%8D%E5%B0%84%E5%88%99%E5%8F%AA%E9%9C%80%E8%A6%81312%E6%AF%AB%E7%A7%92%E3%80%81358%E6%AF%AB%E7%A7%92%E3%80%81774%E6%AF%AB%E7%A7%92%E3%80%82
