@@ -100,3 +100,333 @@ TODO:  安卓的Parcelable  mCreators，似乎就用了缓存策略
 >
 
 4、高性能反射工具包ReflectASM
+
+
+
+
+
+# 反射性能数据
+
+测试代码：
+
+%accordion%hideContent%accordion%
+
+```java
+package com.example.myapplication;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.ComponentName;
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.MethodHandles;
+import java.lang.invoke.MethodType;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
+public class MainActivity extends AppCompatActivity {
+    private static String TAG = "chenjinke2";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Button button = findViewById(R.id.button1);
+
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Intent intent = new Intent();
+//                //跳转其他APP的固定页面，需要APP的包名，activity的全路径
+//                //在要跳转的APP的activity的配置添加 android:exported="true"，将activity暴露出来
+//                ComponentName name = new ComponentName("com.wj.app2","com.wj.app2.activity.ReceiveActivity");
+//                intent.setComponent(name);
+////                startActivity(intent);
+//                startActivityAsUser();
+
+                int b = sum();
+//                myTEST();
+//                myTest2();
+//                MethodHandle
+
+
+
+                String javaVersion = System.getProperty("java.version");
+                System.out.println("当前 Java 版本是：" + javaVersion);
+                Log.d(TAG, "mytest:  当前 Java 版本是：" + javaVersion);
+
+                // 创建测试数据
+                ComponentName componentName = new ComponentName("com.example", "com.example.MainActivity");
+                Intent intent = new Intent();
+//                intent.setComponent();
+
+
+
+                // 测试直接调用性能
+                testDirectInvocationPerformance(intent, componentName);
+
+                // 测试普通反射接口 method.invoke性能
+                testReflectionPerformance(intent, componentName);
+
+                try {
+                    // 不定参数形式
+                    testReflectionPerformanceWithArgs(intent, componentName);
+                } catch (NoSuchMethodException e) {
+                    throw new RuntimeException(e);
+                } catch (InvocationTargetException e) {
+                    throw new RuntimeException(e);
+                } catch (IllegalAccessException e) {
+                    throw new RuntimeException(e);
+                }
+
+                // 测试 MethodHandle 性能
+                testMethodHandlePerformance(intent, componentName);
+
+                // 测试 static MethodHandle 性能
+                testStaticMethodHandlePerformance(intent, componentName);
+
+                // 测试 MethodHandle.invoke 性能
+                testMethodHandleInvokePerformance(intent, componentName);
+
+                // 测试 static MethodHandle.invoke 性能
+                testMethodHandleStaticInvokePerformance(intent, componentName);
+
+
+
+
+
+//                test3();
+            }
+        });
+    }
+
+
+        private  void testMethodHandlePerformance(Intent intent, ComponentName componentName) {
+            try {
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                    long startFindTime = System.nanoTime();
+                    MethodHandles.Lookup lookup = MethodHandles.publicLookup();
+                    MethodType methodType = MethodType.methodType(Intent.class, ComponentName.class);
+                    MethodHandle setComponentMethod = lookup.findVirtual(Intent.class, "setComponent", methodType);
+                    Log.d(TAG, "mytest:  MethodHandle Find Method Time：" + (System.nanoTime() - startFindTime) + " 纳秒" );
+
+
+                    long totalDuration = 0;
+
+                    long startTime = System.nanoTime();
+                    for (int i = 0; i < 1000000; i++) {
+                        setComponentMethod.invokeWithArguments(intent, componentName);
+                    }
+                    long endTime = System.nanoTime();
+                    totalDuration += (endTime - startTime);
+
+                    long averageDuration = totalDuration / 1000000;
+                    System.out.println("MethodHandle 调用平均耗时：" + averageDuration + " 纳秒");
+                    Log.d(TAG, "mytest:  MethodHandle.invokeWithArguments 调用平均耗时：" + averageDuration + " 纳秒" );
+                }
+            } catch (Throwable throwable) {
+                throwable.printStackTrace();
+            }
+        }
+
+        private  void testDirectInvocationPerformance(Intent intent, ComponentName componentName) {
+            long totalDuration = 0;
+
+//            long n = 0;
+            long startTime = System.nanoTime();
+            for (int i = 0; i < 1000000; i++) {
+                intent.setComponent(componentName);
+//                n = System.nanoTime();
+            }
+            long endTime = System.nanoTime();
+            totalDuration += (endTime - startTime);
+
+            long averageDuration = totalDuration / 1000000;
+            System.out.println("直接调用方式平均耗时：" + averageDuration + " 纳秒");
+            Log.d(TAG, "mytest: 直接调用方式平均耗时：" + averageDuration + " 纳秒");
+        }
+
+    private static void testReflectionPerformance(Intent intent, ComponentName componentName) {
+        try {
+            long startFindTime = System.nanoTime();
+            Class<?> intentClass = Intent.class;
+            Class<?>[] parameterTypes = {ComponentName.class};
+            Method method = intentClass.getMethod("setComponent", parameterTypes);
+            Log.d(TAG, "mytest:  普通反射接口 method.invoke Find Method Time：" + (System.nanoTime() - startFindTime) + " 纳秒" );
+
+            long totalDuration = 0;
+            long startTime = System.nanoTime();
+            for (int i = 0; i < 1000000; i++) {
+
+                method.invoke(intent, componentName);
+            }
+            long endTime = System.nanoTime();
+            totalDuration += (endTime - startTime);
+
+            long averageDuration = totalDuration / 1000000;
+            System.out.println("普通反射接口 method.invoke调用平均耗时：" + averageDuration + " 纳秒");
+            Log.d(TAG, "mytest: 普通反射接口 method.invoke调用平均耗时：" + averageDuration + " 纳秒");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // 获取参数类型列表
+    private static Class<?>[] getParameterTypes(Object[] parameters) {
+        Class<?>[] parameterTypes = new Class<?>[parameters.length];
+        for (int i = 0; i < parameters.length; i++) {
+            parameterTypes[i] = parameters[i].getClass();
+        }
+        return parameterTypes;
+    }
+
+    private void testReflectionPerformanceWithArgs(Intent intent, ComponentName componentName) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        long startFindTime = System.nanoTime();
+        // 获取 MyClass 类
+        Class<?> myClass = intent.getClass();
+        // 获取 myMethod 方法，注意这里的参数类型是不确定的，所以可以传递一个可变参数
+        Object[] parametersArrays = {componentName}; // 前一个返回值
+        Method myMethod = myClass.getMethod("setComponent", getParameterTypes(parametersArrays));
+        Log.d(TAG, "mytest:  普通反射不定参数接口： Find Method Time：" + (System.nanoTime() - startFindTime) + " 纳秒" );
+
+
+        long totalDuration = 0;
+        long startTime = System.nanoTime();
+        for (int i = 0; i < 1000000; i++) {
+
+            // 调用 myMethod 方法，并传递参数
+            myMethod.invoke(intent, parametersArrays);
+        }
+        long endTime = System.nanoTime();
+        totalDuration += (endTime - startTime);
+
+        long averageDuration = totalDuration / 1000000;
+        System.out.println("普通反射接口 method.invoke调用平均耗时：" + averageDuration + " 纳秒");
+        Log.d(TAG, "mytest:  普通反射不定参数接口， 调用平均耗时：" + averageDuration + " 纳秒");
+    }
+
+
+        public static final MethodHandle staticsetComponentMethod;
+
+    static {
+        try {
+            staticsetComponentMethod = initStaticsetComponentMethod();
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        } catch (NoSuchMethodException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static MethodHandle initStaticsetComponentMethod() throws IllegalAccessException, NoSuchMethodException {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                return MethodHandles.lookup().findVirtual(Intent.class, "setComponent", MethodType.methodType(Intent.class, ComponentName.class));
+            }
+            return null;
+        }
+        private void testStaticMethodHandlePerformance(Intent intent, ComponentName componentName) {
+            try {
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+//                    MethodHandles.Lookup lookup = MethodHandles.lookup();
+//                    MethodType methodType = MethodType.methodType(Intent.class, ComponentName.class);
+//                    MethodHandle setComponentMethod = lookup.findVirtual(Intent.class, "setComponent", methodType);
+
+                    long totalDuration = 0;
+
+                    long startTime = System.nanoTime();
+                    for (int i = 0; i < 1000000; i++) {
+                        staticsetComponentMethod.invokeWithArguments(intent, componentName);
+                    }
+                    long endTime = System.nanoTime();
+                    totalDuration += (endTime - startTime);
+
+                    long averageDuration = totalDuration / 1000000;
+                    System.out.println("MethodHandle 调用平均耗时：" + averageDuration + " 纳秒");
+                    Log.d(TAG, "mytest:  static MethodHandle.invokeWithArguments 调用平均耗时：" + averageDuration + " 纳秒" );
+                }
+            } catch (Throwable throwable) {
+                throwable.printStackTrace();
+            }
+        }
+
+    private static void testMethodHandleInvokePerformance(Intent intent, ComponentName componentName) {
+        try {
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                MethodHandles.Lookup lookup = MethodHandles.lookup();
+                MethodType methodType = MethodType.methodType( Intent.class, ComponentName.class);
+                MethodHandle setComponentMethod = lookup.findVirtual(Intent.class, "setComponent", methodType);
+
+                long totalDuration = 0;
+                long startTime = System.nanoTime();
+
+                for (int i = 0; i < 1000000; i++) {
+                    setComponentMethod.invoke(intent, componentName);
+                }
+                long endTime = System.nanoTime();
+                totalDuration += (endTime - startTime);
+
+                long averageDuration = totalDuration / 1000000;
+                System.out.println("MethodHandle.invoke 调用平均耗时：" + averageDuration + " 纳秒");
+                Log.d(TAG, "mytest:  MethodHandle.invoke 调用平均耗时：" + averageDuration + " 纳秒" );
+            }
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+        }
+    }
+
+    private static void testMethodHandleStaticInvokePerformance(Intent intent, ComponentName componentName) {
+        try {
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+//                MethodHandles.Lookup lookup = MethodHandles.lookup();
+//                MethodType methodType = MethodType.methodType( Intent.class, ComponentName.class);
+//                MethodHandle setComponentMethod = lookup.findVirtual(Intent.class, "setComponent", methodType);
+
+                long totalDuration = 0;
+                long startTime = System.nanoTime();
+                for (int i = 0; i < 1000000; i++) {
+                    staticsetComponentMethod.invoke(intent, componentName);
+                }
+                long endTime = System.nanoTime();
+                totalDuration += (endTime - startTime);
+
+                long averageDuration = totalDuration / 1000000;
+                System.out.println("MethodHandle.invoke 调用平均耗时：" + averageDuration + " 纳秒");
+                Log.d(TAG, "mytest:  static MethodHandle.invoke 调用平均耗时：" + averageDuration + " 纳秒" );
+            }
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+        }
+    }
+
+
+```
+
+%/accordion%
+
+
+
+結果：
+
+```
+mytest:  当前 Java 版本是：0
+mytest: 直接调用方式平均耗时：10 纳秒
+mytest:  普通反射接口 method.invoke Find Method Time：139063 纳秒
+mytest: 普通反射接口 method.invoke调用平均耗时：160 纳秒
+mytest:  普通反射不定参数接口： Find Method Time：73437 纳秒
+mytest:  普通反射不定参数接口， 调用平均耗时：132 纳秒
+mytest:  MethodHandle Find Method Time：251563 纳秒
+mytest:  MethodHandle.invokeWithArguments 调用平均耗时：3241 纳秒
+mytest:  static MethodHandle.invokeWithArguments 调用平均耗时：3321 纳秒
+mytest:  MethodHandle.invoke 调用平均耗时：1058 纳秒
+mytest:  static MethodHandle.invoke 调用平均耗时：1063 纳秒
+```
+
