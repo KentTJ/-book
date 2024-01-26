@@ -1861,10 +1861,8 @@ Enter 'help' for a list of built-in commands.16
 修复repair the filesystem：
 
 ```java
-1
-(initramfs) fsck /dev/sda1 -y2
-3
-(initramfs) reboot4
+(initramfs) fsck /dev/sda1 -y
+(initramfs) reboot
 ```
 
 ------> 不限于 virtualbox
