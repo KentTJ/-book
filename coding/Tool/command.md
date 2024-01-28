@@ -1007,6 +1007,46 @@ Swap:          3.5G        9.1M        3.5G
 
 
 
+
+
+## 进程status 为DN状态
+
+查看：
+
+```
+ $ ps
+ 
+ USER        PID  %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+ root          1   0.0  0.2 168804  4256 ?        Ss   Apr08   0:13 /sbin/init
+ root          2   0.0  0.0      0     0 ?        S    Apr08   0:00 [kthreadd]
+ root          3   0.0  0.0      0     0 ?        D    Apr08   0:00 [ksoftirqd/0]
+
+ -----------> S（status）为D
+```
+
+进程的D状态通常指进程处于**不可中断的睡眠状态(uninterruptible sleep)**，也称为“D（Disk）状态”
+
+参考： [Linux D 状态_linux进程中的d状态是什么-CSDN博客](https://blog.csdn.net/u013932687/article/details/69788366)             https://blog.csdn.net/u013932687/article/details/69788366
+
+结论：
+
+> 无法打断。kill -9 也不行
+
+场景：
+
+> 磁盘损坏，等IO
+
+补充：Linux进程有两种睡眠状态：
+
+```
+ 1、interruptible sleep，处在这种睡眠状态的进程是可以通过给它发信号来唤醒的。
+ 2、uninterruptible sleep，状态的进程通常是在等待IO。
+```
+
+
+
+
+
 # shell 或 MobaXterm
 
 ## ~~shell中交互输入自动化~~
