@@ -71,6 +71,38 @@ https://blog.csdn.net/googdev/article/details/100039092#:~:text=%E4%B8%8B%E9%9D%
 
 https://www.skoumal.com/en/is-android-reflection-really-slow/
 
+
+
+https://www.itzhimei.com/archives/2852.html            Java反射 反射性能和优化
+
+方法调用有三种：直接调用、反射调用、MethodHandle调用
+
+
+
+## 反射性能消耗的根因：
+
+1、**方法**   查找和动态绑定： ------>  **解决方法： 方法句柄（MethodHandle）**，类似于指针，不需要动态绑定
+
+> 每次调用方法都需要进行一次方法查找和动态绑定
+
+2、**反射对象**的创建：  ---->  **办法： 缓存反射信息**
+
+> 反射对象的创建和操作的性能较低，因为需要进行一些安全检查和复杂的对象初始化过程。
+
+TODO: METHODY
+
+反射能力：
+
+> 一法破万法
+
+同理 所有数据 序列化成 byte[]
+
+同理，参数可以任意多个
+
+```
+ MethodType methodType(Class<?> rtype, List<Class<?>> ptypes)
+```
+
 ## 反射性能优化
 
 1、主要很耗时的函数，有些函数不耗时：
@@ -102,6 +134,36 @@ TODO:  安卓的Parcelable  mCreators，似乎就用了缓存策略
 4、高性能反射工具包ReflectASM
 
 
+
+## MethodHandle调用---------函数指针
+
+参考： [JVM角度看方法调用-MethodHandle篇 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/524591401?utm_id=0)
+
+https://blog.csdn.net/seanxwq/article/details/122179781  --------------》 好文，详细使用
+
+性能上：
+
+> MethodHandle =  直接调用  >>  反射
+
+本质上，性能好的原因：
+
+结论：非静态化使用MethodHandle是不会比直接反射更快的
+
+[方法调用9——MethodHandle方法调用checkCustomized优化 - 简书 (jianshu.com)](https://www.jianshu.com/p/58642c6bd672)      --------->  **好文**
+
+https://www.jianshu.com/p/a9cecf8ba5d9
+
+若要访问**私有**的成员,得先申请一下
+
+con.setAccessible(**true**); ---------------->  **忽略访问权限，似乎对提升性能没有帮助**
+
+
+
+## 理念！
+
+在讨论性能的时候，一定要知道背景--------------------------是否是在高频调用的背景下
+
+1、有些调用**不是高频**的，允许一定反射
 
 
 
@@ -430,3 +492,16 @@ mytest:  MethodHandle.invoke 调用平均耗时：1058 纳秒
 mytest:  static MethodHandle.invoke 调用平均耗时：1063 纳秒
 ```
 
+
+
+
+
+# 补充 反射
+
+> https://zhuanlan.zhihu.com/p/519992996     JVM角度看方法调用-反射篇
+>
+> https://zhuanlan.zhihu.com/p/524591401?utm_id=0    JVM角度看方法调用-MethodHandle篇
+>
+> https://www.jianshu.com/p/58642c6bd672   方法调用9——MethodHandle方法调用checkCustomized优化
+
+​     ---------------》 好文，系列文章

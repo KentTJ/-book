@@ -388,6 +388,88 @@ find  ./   -name  "View*"
 
 
 
+## 搜索 MethodHandle 类对应的jar( 运行时处于哪个jar)
+
+**脚本一：验证OK**
+
+```java
+find . -iname "*.jar" | while read jarfile; do 
+   jar -tf $jarfile | grep "MethodHandle.class"
+   if [ $? -eq 0 ]
+   then  
+       echo "=====find class in jar: "$jarfile
+   fi
+done
+```
+
+结果：
+
+```java
+
+java/lang/invoke/MethodHandle.class
+=====find class in jar: ./soong/.intermediates/libcore/mmodules/core_platform_api/core.platform.api.stubs/android_common/turbine/core.platform.api.stubs.jar
+java/lang/invoke/MethodHandle.class
+=====find class in jar: ./soong/.intermediates/libcore/mmodules/core_platform_api/core.platform.api.stubs/android_common/javac/core.platform.api.stubs.jar
+java/lang/invoke/MethodHandle.class
+=====find class in jar: ./soong/.intermediates/libcore/core-all-system-modules/android_common/modules/module.jar
+java/lang/invoke/MethodHandle.class
+=====find class in jar: ./soong/.intermediates/libcore/core-oj/android_common/turbine-combined/core-oj.jar
+java/lang/invoke/MethodHandle.class
+META-INF/TRANSITIVE/java/lang/invoke/MethodHandle.class
+=====find class in jar: ./soong/.intermediates/libcore/core-oj/android_common/turbine/core-oj.jar // -----> 正确的结果
+java/lang/invoke/MethodHandle.class
+=====find class in jar: ./soong/.intermediates/libcore/core-oj/android_common/withres/core-oj.jar
+java/lang/invoke/MethodHandle.class
+=====find class in jar: ./soong/.intermediates/libcore/core-oj/android_common/javac/core-oj.jar
+```
+
+
+
+一法通万法：
+
+> 1、手机文件系统中直接搜 ------> 一般情况下，搜不出来
+>
+> -<font color='red'>技巧： </font>2、1如果不行，把 system/framework  、system/apex  拉出来放到 linux下
+
+
+
+~~脚本二：TODO:  脚本有问题！！！！~~
+
+> ```java
+>  #!/bin/sh
+>  
+>  find_dir=$1
+>  find_key=$2
+>  
+>  jars=`find $find_dir -name '*.jar'`
+>  for jar in $jars
+>  do
+>      ret=`jar tvf $jar | grep $find_key`
+>      if [ "$?" = "0" ]; then
+>          echo -e "\\e[1;34m${jar}\\e[0m: \\n\\e[2;34m${ret}\\e[0m"
+>      fi
+>  done
+>  
+>  wars=`find $find_dir -name '*.war'`
+>  for war in $wars
+>  do
+>      ret=`jar tvf $war | grep $find_key`
+>      if [ "$?" = "0" ]; then
+>          echo -e "\\e[1;34m${war}\\e[0m: \\n\\e[2;34m${ret}\\e[0m"
+>      fi
+>  done
+> ```
+>
+> ----------------- 》 执行：
+>
+> ```java
+>   ./find_class.sh  ./com.android.art.debug    MethodHandle
+> ```
+
+
+
+
+
 
 
 ##  sed 批量替换多个文件中的字符串

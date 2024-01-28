@@ -2232,6 +2232,28 @@ AS 或者 logcat发现有丢日志，**根因：**
 
 
 
+方法三：**万能方法**（**验证ok**）：
+
+> 在**logd处**限制  -----------> 只允许打印E 及以上的日志（**其他日志不打印，自然不会过频**）
+>
+> ```
+>   setprop persist.log.tag E
+> ```
+
+参考：
+
+> [Android logcat log输出控制_persist.log.tag-CSDN博客](https://blog.csdn.net/Tecinno4/article/details/107955881)
+
+
+
+TODO： log框架：
+
+> APP  通过UDP---------> logd服务  通过TCP-----------> logcat终端
+>
+> 打印，指的是logd打印；logcat只是取日志
+
+
+
 # 在源码中adb（dump、截图、ui、操作、、、）
 
 打通了源码中执行adb  ----->  <font color='red'>极其优，可以做的事情非常非常多</font>
