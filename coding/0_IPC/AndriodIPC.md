@@ -926,7 +926,21 @@ https://blog.csdn.net/xuyin1204/article/details/118546330?ops_request_misc=%257B
 
 # 自然法则
 
+# 技巧之  aidl的调试
 
+[[Android AIDL系列 1\] 手动编译aidl文件，生成Java、C++[android]、C++[ndk]、Rust接口_aidl ndk-CSDN博客](https://blog.csdn.net/yinminsumeng/article/details/129324917)
+
+编译结果里搜索
+
+编译命令是啥？
+
+[Android R系统aidl文件怎么对应的java文件找不到了?_aidl生成的java文件-CSDN博客](https://blog.csdn.net/tkwxty/article/details/127809246)
+
+- -------------------> 验证ok
+- 重要的事情说三遍-I ,-p等后不接空格 直接跟参数，不要空格，不要空格！
+- `./prebuilts/sdk/tools/linux/bin/aidl \\ -I./frameworks/base/core/java \\ -oaidl-out \\ -p./prebuilts/sdk/current/public/framework.aidl ./frameworks/base/core/java/android/view/IWindowSession.aidl  ./prebuilts/sdk/tools/linux/bin/aidl \\ -I./frameworks/base/core/java \\ -I./frameworks/base/core/java/ \\ -I./frameworks/base/location/java/ \\ -I./frameworks/base/graphics/java/ \\ -I./frameworks/base/graphics/java/ \\ -oaidl-out \\ -p ./prebuilts/sdk/current/public/framework.aidl frameworks/base/core/java/android/view/IWindowSession.aidl`
+
+注意:  要加 ./prebuilts/sdk/current/public/framework.aidl   ，否则编译不过！！！！！预编译好的，**因为有些aidl依赖于其他aidl**
 
 
 

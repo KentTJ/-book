@@ -170,3 +170,203 @@ writeAligned（**写入对齐**）
 参考：
 
 > https://blog.csdn.net/qq_32019367/article/details/122616157
+
+
+
+
+
+# cpp Parcel的使用
+
+[Android native进程间通信实例-binder篇之——用parcel传输数组 - 啊源股 - 博客园 (cnblogs.com)](https://www.cnblogs.com/songsongman/p/11097216.html)
+
+https://blog.csdn.net/lxgwm2008/article/details/8767146       Android源码之Parcel
+
+真正的序列化与反序列化接口  ------------>  byte[]
+
+public final native byte[] marshall(); public final native void unmarshall(byte[] data, int offest, int length);
+
+作用类似于序列化和反序列化。即将当前Parcel的数据序列化为byte数组，或者将byte数组反序列化到当前Parcel中。
+
+注：unmarshall后，如果要读取数据，首先需要将文件指针移动到初始化位置，即setDataPosition(0)。
+
+[Android native进程间通信实例-binder篇之——简单的单工通信 - 啊源股 - 博客园 (cnblogs.com)](https://www.cnblogs.com/songsongman/p/11097196.html)
+
+- --------------> 化简native Binder
+
+## parcel
+
+最后一定要加上setDataPosition(0)，将偏移指回最开始
+
+https://developer.aliyun.com/article/919839
+
+[Android 原生 Parcel 使用 - IT工具网 (coder.work)](https://www.coder.work/article/3235747)
+
+## parcel的梳理
+
+## 多参数函数，多参数如何序列化与反序列化的？-----分层分析
+
+### 序列化流程：
+
+```
+ readParcelableCreator:3328, Parcel (android.os)
+ readParcelable:3273, Parcel (android.os)
+ readFromParcel:240, WindowConfiguration (android.app)
+ <init>:224, WindowConfiguration (android.app)
+ <init>:49, WindowConfiguration (android.app)
+ createFromParcel:257, WindowConfiguration$1 (android.app)
+ createFromParcel:254, WindowConfiguration$1 (android.app)
+ readParcelable:3282, Parcel (android.os)
+ readValue:3175, Parcel (android.os)
+ readFromParcel:1956, Configuration (android.content.res)
+ <init>:1976, Configuration (android.content.res)
+ <init>:89, Configuration (android.content.res)
+ createFromParcel:1964, Configuration$1 (android.content.res)
+ createFromParcel:1962, Configuration$1 (android.content.res)
+ readParcelable:3282, Parcel (android.os)
+ readFromParcel:69, MergedConfiguration (android.util)
+ relayout:1735, IWindowSession$Stub$Proxy (android.view)  // ----------->  这里
+ relayoutWindow:7621, ViewRootImpl (android.view)
+ performTraversals:2719, ViewRootImpl (android.view)
+ doTraversal:2020, ViewRootImpl (android.view)
+ run:8410, ViewRootImpl$TraversalRunnable (android.view)
+ run:973, Choreographer$CallbackRecord (android.view)
+ doCallbacks:797, Choreographer (android.view)
+ doFrame:732, Choreographer (android.view)
+ run:958, Choreographer$FrameDisplayEventReceiver (android.view)
+ handleCallback:938, Handler (android.os)
+ dispatchMessage:99, Handler (android.os)
+ loop:223, Looper (android.os)
+ main:7720, ActivityThread (android.app)
+ invoke:-1, Method (java.lang.reflect)
+ run:612, RuntimeInit$MethodAndArgsCaller (com.android.internal.os)
+ main:997, ZygoteInit (com.android.internal.os)
+```
+
+client侧--------------------stub层代码
+
+```
+ //序列化流程：
+ @Override public int relayout(android.view.IWindow window, int seq, android.view.WindowManager.LayoutParams attrs, int requestedWidth, int requestedHeight, int viewVisibility, int flags, long frameNumber, android.graphics.Rect outFrame, android.graphics.Rect outContentInsets, android.graphics.Rect outVisibleInsets, android.graphics.Rect outStableInsets, android.graphics.Rect outBackdropFrame, android.view.DisplayCutout.ParcelableWrapper displayCutout, android.util.MergedConfiguration outMergedConfiguration, android.view.SurfaceControl outSurfaceControl, android.view.InsetsState insetsState, android.view.InsetsSourceControl[] activeControls, android.graphics.Point outSurfaceSize, android.view.SurfaceControl outBlastSurfaceControl) throws android.os.RemoteException
+ {
+ android.os.Parcel _data = android.os.Parcel.obtain();
+ android.os.Parcel _reply = android.os.Parcel.obtain();
+ int _result;
+ try {
+   _data.writeInterfaceToken(DESCRIPTOR);  // 当前aidl类名：android.view.IWindowSession
+   _data.writeStrongBinder((((window!=null))?(window.asBinder()):(null))); // writeStrongBinder直接write  Binder数据？  这一步跨进程了嘛？
+   _data.writeInt(seq);
+   if ((attrs!=null)) {
+     _data.writeInt(1);
+     attrs.writeToParcel(_data, 0);  //  LayoutParams数据写入parcel
+   }
+   else {
+     _data.writeInt(0);
+   }
+   _data.writeInt(requestedWidth);
+   _data.writeInt(requestedHeight);
+   _data.writeInt(viewVisibility);
+   _data.writeInt(flags);
+   _data.writeLong(frameNumber);
+   if ((activeControls==null)) {
+     _data.writeInt(-1);
+   }
+   else {
+     _data.writeInt(activeControls.length);
+   }
+   boolean _status = mRemote.transact(Stub.TRANSACTION_relayout, _data, _reply, 0); // 所有的数据进入了parcel，给了android.os.IBinder mRemote; // 【】 通过code指定函数
+   if (!_status && getDefaultImpl() != null) {
+     return getDefaultImpl().relayout(window, seq, attrs, requestedWidth, requestedHeight, viewVisibility, flags, frameNumber, outFrame, outContentInsets, outVisibleInsets, outStableInsets, outBackdropFrame, displayCutout, outMergedConfiguration, outSurfaceControl, insetsState, activeControls, outSurfaceSize, outBlastSurfaceControl);
+   }
+   _reply.readException();
+   _result = _reply.readInt();
+   if ((0!=_reply.readInt())) {
+     outFrame.readFromParcel(_reply);
+   }
+   if ((0!=_reply.readInt())) {
+     outContentInsets.readFromParcel(_reply);
+   }
+   if ((0!=_reply.readInt())) {
+     outVisibleInsets.readFromParcel(_reply);
+   }
+   if ((0!=_reply.readInt())) {
+     outStableInsets.readFromParcel(_reply);
+   }
+   if ((0!=_reply.readInt())) {
+     outBackdropFrame.readFromParcel(_reply);
+   }
+   if ((0!=_reply.readInt())) {
+     displayCutout.readFromParcel(_reply);
+   }
+   if ((0!=_reply.readInt())) {
+     outMergedConfiguration.readFromParcel(_reply);
+   }
+   if ((0!=_reply.readInt())) {
+     outSurfaceControl.readFromParcel(_reply);
+   }
+   if ((0!=_reply.readInt())) {
+     insetsState.readFromParcel(_reply);
+   }
+   _reply.readTypedArray(activeControls, android.view.InsetsSourceControl.CREATOR);
+   if ((0!=_reply.readInt())) {
+     outSurfaceSize.readFromParcel(_reply);
+   }
+   if ((0!=_reply.readInt())) {
+     outBlastSurfaceControl.readFromParcel(_reply);
+   }
+ }
+ finally {
+   _reply.recycle();
+   _data.recycle();
+ }
+ return _result;
+ }
+```
+
+总结：序列化过程可以看到：
+
+（1）把当前Iwindow接口名、各个函数参数  ---------->  统一进入parcel
+
+（2） 如何确定是哪个函数？ 通过code
+
+- ---------------------> **合理性证明：以上都是约束、协议**
+
+（3） 每一层做每一层的事情：
+
+> AIDL级别： 序列化  多个参数（parcelable）<------------------>  与Aidl的反序列化一致
+>
+> 类级别：序列化类的内部属性 <------------------>  与类的反序列化一致
+
+- ---------------------> 从这个角度来看：
+
+> 为啥：L调用A，可以省去    AIDL级别 的序列化？？？？？？
+>
+> （1）因为反射的作用？？？？？？？
+>
+> （2）是不是也可以自己做一个 AIDL 链接 cpp-----java呢？
+
+### 反序列化流程：
+
+Stub.onTransact  ——-->  函数code 4 找到对应relayout
+
+给定 Parcel
+
+
+
+## TODO： 从模型角度，利用了什么语言特性实现的Aidl接口？
+
+
+
+
+
+# TODO：如何寻找到对端对象的？
+
+AIDL编译出的stub  java文件
+
+
+
+# 技巧之序列化调试
+
+## 以偏概全 之parcel数据
+
+（1）大小  dataSize() （2）前三位
+

@@ -436,6 +436,24 @@ https://blog.csdn.net/EverNess010/article/details/129924721
 
 
 
+## 编译报错PKIX path building failed
+
+Exception in thread "main" javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+
+-----------------> 网上很多证书问题
+
+**本质还是网络问题**，check 是否能连 google。 不能的话，**需要配置代理：**
+
+> AS ---->  settings ----> Proxy -----> HTTP:
+>
+> Host name:  10.9.26.12   port:8080
+
+然后check 是否能连 google
+
+https://www.cnblogs.com/xsj1989/p/16822735.html    [settings.gradle配置，解决Plugin [id: 'com.android.application', version: '7.3.0', apply: false\] was not found in any of the following sources](https://www.cnblogs.com/xsj1989/p/16822735.html)
+
+
+
 ## Android Studio 很卡 ---->  如何理解？
 
 卡的原因：
