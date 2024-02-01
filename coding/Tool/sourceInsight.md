@@ -1,6 +1,6 @@
 # 目录
 
-[TOC]
+
 
 # source insight
 
@@ -74,6 +74,16 @@
 2、第一次解析所有文件，否则有些不能跳转：
 
 > ![image-20231124230613283](sourceInsight.assets/image-20231124230613283.png)
+
+
+
+## 优点之 增量添加文件--------增量解析
+
+缩短解析时间：
+
+> 增量添加文件后，只需要对adding fies进行解析即可，快！！！
+>
+> ![image-20240202002357263](sourceInsight.assets/image-20240202002357263.png)
 
 ## 搜索
 
@@ -412,6 +422,44 @@ https://zhuanlan.zhihu.com/p/33000424
 
 ![image-20231125122829680](sourceInsight.assets/image-20231125122829680.png)
 
+## code大纲-------只看有哪些方法
+
+目的： **更好地看类里有哪些方法**
+
+方法：
+
+> symbol window  --------> 折叠类 --------> 再打开类，方法都被折叠了
+>
+> 双击：
+>
+> ![image-20240202001921368](sourceInsight.assets/image-20240202001921368.png)
+
+
+
+## 代码折叠：
+
+![image-20240202002158490](sourceInsight.assets/image-20240202002158490.png)
+
+操作：
+
+> Options  --->  preferences  ---> windows ----> Outlining and Nesting --->  show outlining
+
+![image-20240202002134915](sourceInsight.assets/image-20240202002134915.png)
+
+
+
+## 调用栈深度
+
+显示2层
+
+参考：https://blog.csdn.net/qq_36035382/article/details/126357313
+
+
+
+## 关闭overview
+
+![image-20240201232833094](sourceInsight.assets/image-20240201232833094.png)
+
 
 
 ## 查看当前文件所处的位置
@@ -419,6 +467,14 @@ https://zhuanlan.zhihu.com/p/33000424
 打开同级其他文件，也很方便
 
 ![image-20230720002825603](sourceInsight.assets/image-20230720002825603.png)
+
+
+
+
+
+
+
+
 
 ## 背景色设置
 
