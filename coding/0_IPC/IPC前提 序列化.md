@@ -191,7 +191,7 @@ public final native byte[] marshall(); public final native void unmarshall(byte[
 
 [Android native进程间通信实例-binder篇之——简单的单工通信 - 啊源股 - 博客园 (cnblogs.com)](https://www.cnblogs.com/songsongman/p/11097196.html)
 
-- --------------> 化简native Binder
+--------------> 化简native Binder
 
 ## parcel
 

@@ -289,6 +289,10 @@ git push origin HEAD:refs/for/branch_master
 
 ## 生成SSH key
 
+解决报错：error [SSL: CERTIFICATE_VERIFY_FAILED]
+
+
+
 linux 与 GitHub 或者 gerrite通信 协议
 
 

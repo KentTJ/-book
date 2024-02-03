@@ -479,18 +479,127 @@ public class MainActivity extends AppCompatActivity {
 結果：
 
 ```
-mytest:  当前 Java 版本是：0
-mytest: 直接调用方式平均耗时：10 纳秒
-mytest:  普通反射接口 method.invoke Find Method Time：139063 纳秒
-mytest: 普通反射接口 method.invoke调用平均耗时：160 纳秒
-mytest:  普通反射不定参数接口： Find Method Time：73437 纳秒
-mytest:  普通反射不定参数接口， 调用平均耗时：132 纳秒
-mytest:  MethodHandle Find Method Time：251563 纳秒
-mytest:  MethodHandle.invokeWithArguments 调用平均耗时：3241 纳秒
-mytest:  static MethodHandle.invokeWithArguments 调用平均耗时：3321 纳秒
-mytest:  MethodHandle.invoke 调用平均耗时：1058 纳秒
-mytest:  static MethodHandle.invoke 调用平均耗时：1063 纳秒
+1、反射性能测试结果，基于调用100w次求平均：
+D  mytest:  直接调用方式平均耗时：4 纳秒
+D  mytest:  method.invoke接口 Find Method Time：431154 纳秒  ------> 【1】 查找method 用时0.4ms
+D  mytest:  method.invoke接口：429 纳秒
+
+D  mytest:  method.invoke不定参数接口： Find Method Time：96000 纳秒
+D  mytest:  method.invoke不定参数接口：322 纳秒
+D  mytest:  method.invoke不定参数接口 + 关闭校验： Find Method Time：69462 纳秒
+D  mytest:  method.invoke不定参数接口 + 关闭校验：323 纳秒  ------> 【2】
+
+D  mytest:  MethodHandle Find Method Time：280847 纳秒
+D  mytest:  MethodHandle.invokeWithArguments 调用平均耗时：3612 纳秒
+D  mytest:  MethodHandle.invoke 调用平均耗时：1024 纳秒
 ```
+
+**<font color='red'>结论：</font>**
+
+```java
+2、反射主要耗时：
+（1）查找类，未测     ----------> 耗时，缓存
+（2）创建类，未测     ----------> 耗时，缓存
+（3）查找方法：0.4ms 见【1】  ----------> 耗时，缓存
+（4）反射调用method.invoke：0.3us 见【2】 ----------> 不耗时
+```
+
+
+
+安卓代码实测：
+
+```java
+mytest testOrigin:     831805 580 048
+mytest testOrigin in:  831805 614 279  ----> 进入 testOrigin 耗时30us
+
+mytest startActivity:           831805 725 587
+mytest:  method.invoke endTime: 831805 764 971nm  ----> 直接调用，进入startActivity 40us
+
+mytest:  method.invoke: Find Method Time: 24616 nm
+
+mytest:  method.invoke startTime: 831813 459 510 nm
+mytest:  method.invoke endTime:   831813 489 048   nm   ----> 反射调用，进入startActivity 30us
+
+mytest:  method.invoke startActivity Time: 12650384 nm
+```
+
+
+
+# 测性能的注意事项
+
+环境：
+
+> cpu当前负载（其他进程的影响）
+>
+> debug版本
+>
+> log打印量
+>
+> 函数复杂程度
+>
+> 是否跨进程
+>
+> 其他进程的影响
+
+ -------> **所以，理念：测试性能，<font color='red'>绝对值没有意义。</font>只有相对值！！！！**
+
+ 正常耗时、反射耗时 ----------> 百分比
+
+性能测试（包括反射性能），环境影响很大，**规定：**
+
+(1) **串行测试**：  **对照组**一定要在**同一调用流程里**  ----------->   **保证环境相对不变**
+
+（2） 流程中不能有跨进程  --------> 对面进程不可控
+
+（3）针对于反射：  函数**进入前  + 进入后** 记时
+
+# 类名不定、函数名不定、参数个数不定------反射
+
+**一法通万法：**
+
+```java
+// 目标类
+String targetClassName = parcel.readString();
+Object target = prepareTargetInstance(targetClassName); // TODO: 目标类，是不是不用缓存？
+if (target == null) {
+	return;
+}
+
+// 目标函数名
+String targetMethodName = parcel.readString();
+
+// 构建参数1, 参数2......
+ArrayList<Object> paras = new ArrayList<>();
+prepareParas(lparcel, paras, sb);
+
+// TODO:假设参数2
+paras.add(new Bundle());
+
+Class<?> targetClass = target.getClass();
+// 获取 myMethod 方法，注意这里的参数类型是不确定的，所以可以传递一个可变参数
+Object[] parametersArrays = paras.toArray(new Object[paras.size()]);
+
+// 缓存策略
+Method targetMethod;
+if (targetClassMethod.containsKey(key)) {
+	targetMethod =  targetClassMethod.get(key);
+} else {
+	targetMethod = targetClass.getMethod(targetMethodName, getParameterTypes(parametersArrays));// 【1】 时间，1ms 目标类可以是子类，但是参数不能是子类！！！！
+	targetClassMethod.put(key, targetMethod);
+}
+
+targetMethod.setAccessible(true);
+
+targetMethod.invoke(target, parametersArrays);  //【2】
+```
+
+**注意：**
+
+> 【1】 如果**参数**parameterTypes**传子类实例**（获取到子类名），反射 getMethod 方法**找不到方法**
+>
+>   根因：---------->  因为函数签名是包括参数的，根据函数签名找的
+>
+> ​                 自然，~~但是  targetClass 可以是子类！！！！！！！~~
 
 
 

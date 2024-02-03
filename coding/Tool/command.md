@@ -388,7 +388,9 @@ find  ./   -name  "View*"
 
 
 
-## 搜索 MethodHandle 类对应的jar( 运行时处于哪个jar)
+## 搜索 MethodHandle 类对应的jar( 运行时处于哪个jar)-----极优
+
+万能:查找目录下所有含 MethodHandle.class的jar文件
 
 **脚本一：验证OK**
 

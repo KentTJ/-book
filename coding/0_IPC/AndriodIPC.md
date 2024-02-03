@@ -2,12 +2,6 @@
 
 
 
-[TOC]
-
-
-
-
-
 # 进程设计的意义/初衷
 
 我们谈到IPC，那么其实就有疑问了，不要有那么多进程不就行了？不就不存在进程隔离了吗？
@@ -936,27 +930,21 @@ https://blog.csdn.net/xuyin1204/article/details/118546330?ops_request_misc=%257B
 
 [Android R系统aidl文件怎么对应的java文件找不到了?_aidl生成的java文件-CSDN博客](https://blog.csdn.net/tkwxty/article/details/127809246)
 
-- -------------------> 验证ok
+-------------------> 验证ok
 
-- 重要的事情说三遍-I ,-p等后不接空格 直接跟参数，不要空格，不要空格！
+重要的事情说三遍-I ,-p等后不接空格 直接跟参数，不要空格，不要空格
 
-  ```java
-  
-  
-  
-  
-  
-  
-  ./prebuilts/sdk/tools/linux/bin/aidl \
-  -I./frameworks/base/core/java/ \
-  -I./frameworks/base/location/java/ \
-  -I./frameworks/base/graphics/java/ \
-  -p ./prebuilts/sdk/current/public/framework.aidl \
-  -oaidl-out \
-  ./frameworks/base/core/java/android/view/IWindowSession.aid
-  ```
+```java
+./prebuilts/sdk/tools/linux/bin/aidl \
+-I./frameworks/base/core/java/ \
+-I./frameworks/base/location/java/ \
+-I./frameworks/base/graphics/java/ \
+-p ./prebuilts/sdk/current/public/framework.aidl \
+-oaidl-out \
+./frameworks/base/core/java/android/view/IWindowSession.aid
+```
 
-  
+
 
 注意:  要加 ./prebuilts/sdk/current/public/framework.aidl   ，否则编译不过！！！！！预编译好的，**因为有些aidl依赖于其他aidl**
 

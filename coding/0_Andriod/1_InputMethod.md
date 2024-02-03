@@ -762,6 +762,24 @@ TODO: 理解焦点的机制（获焦、走焦）：<font color='red'>焦点的�
 
 
 
+# 次要
+
+
+
+## android 强制打开和关闭输入法 TODO:
+
+--------------> 这里似乎可以强制打开 **TODO: 但是没有尝试成功**
+
+https://blog.csdn.net/u012720262/article/details/50118095
+
+```java
+InputMethodManager inputMethodManager = (InputMethodManager)context.getSystemService(Context.INPUT_METHOD_SERVICE);
+		// 接受软键盘输入的编辑文本或其它视图
+		inputMethodManager.showSoftInput(etContent,InputMethodManager.SHOW_FORCED);
+```
+
+
+
 
 
 # 疑问 TODO
