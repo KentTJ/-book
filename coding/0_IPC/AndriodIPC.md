@@ -934,6 +934,8 @@ https://blog.csdn.net/xuyin1204/article/details/118546330?ops_request_misc=%257B
 
 重要的事情说三遍-I ,-p等后不接空格 直接跟参数，不要空格，不要空格
 
+例1：
+
 ```java
 ./prebuilts/sdk/tools/linux/bin/aidl \
 -I./frameworks/base/core/java/ \
@@ -944,7 +946,15 @@ https://blog.csdn.net/xuyin1204/article/details/118546330?ops_request_misc=%257B
 ./frameworks/base/core/java/android/view/IWindowSession.aid
 ```
 
+例2：
 
+```java
+./prebuilts/sdk/tools/linux/bin/aidl  \
+-I./frameworks/base/core/java   \
+-p./prebuilts/sdk/current/public/framework.aidl   \
+-oaidl-out \
+./frameworks/base/core/java/android/view/IWindowSession.aidl
+```
 
 注意:  要加 ./prebuilts/sdk/current/public/framework.aidl   ，否则编译不过！！！！！预编译好的，**因为有些aidl依赖于其他aidl**
 

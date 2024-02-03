@@ -173,6 +173,36 @@ writeAligned（**写入对齐**）
 
 
 
+# 从数据结构看Parcel
+
+1、源码角度：
+
+2、模型角度：
+
+## Parcel.dataSize() 计算：
+
+parcel**<font color='red'>数据量Parcel.dataSize()值为</font>：**
+
+> 求和Σ （4（ 记录byte长度的int） + byte 数据本身）
+
+**4是额外的开销，记录所用的byte长度**
+
+以writeByteArray为例子：
+
+```java
+android_os_Parcel_writeByteArray{
+   parcel->writeInt32(length); // 记录后面保存的byte长度
+   memcpy(dest, ar + offset, length);
+}
+```
+
+以Parcel::writeString16为例子：
+
+```java
+writeInt32(len); // 记录长度
+memcpy(data, str, len);
+```
+
 
 
 # cpp Parcel的使用
