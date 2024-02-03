@@ -242,7 +242,43 @@ public abstract class InputMethodManagerInternal {
 
 
 
-### 利用chatgpt写代码
+## 如何下上升代码？
+
+原则：
+
+> 开发时上升代码。。。。设计时下沉代码。。。。
+
+目的：
+
+> 上升代码到APP，**在APP里编译** -------> <font color='red'>优点： 高效、无风险</font>（framwork写错代码，起不了机器）
+
+具体操作:
+
+> 1、继承 方式：      LIntent extends Intent
+>
+> ​         ~~override 来把流程拦截到APP里，然后在APP内部写代码~~
+>
+> 2、组合（持有父类）----代码稍微麻烦一些
+>
+>  ~~override 来把流程拦截到APP里，然后在APP内部写代码~~
+>
+> 3、通过编译SDK，把要写的类传递给APP   TODO：具体怎么做？
+
+------------------->  从这一点来看，APP与框架，并没有任何区别
+
+
+
+```java
+    public Lparcel() {
+        mParcel = Parcel.obtain();
+    }
+```
+
+3、TODO: 强制继承，万能：修改sdk？？？
+
+
+
+## 利用chatgpt写代码
 
 让它写，它知道哪些接口可以使用，你不知道
 
@@ -255,6 +291,8 @@ public abstract class InputMethodManagerInternal {
 > 1、初步写代码**必须每个函数加log**  ----> 以识别频繁路径
 >
 > 2、<font color='red'>频繁路径+关键路径，不允许加代码：</font>
+>
+> 3、频繁路径加代码，需要进行性能验证
 
 方法一：缓存机制  
 
