@@ -12,7 +12,7 @@ https://docs.docker.com/docker-for-windows/#file-sharing
 
 ## ~~**docker**账号：~~
 
-ID chen85
+ID chen85   账号
 1519........
 
 ## 目前使用的版本
@@ -1697,6 +1697,14 @@ https://blog.csdn.net/justforacm/article/details/130614760     WSL2 使用相关
 
 # VirtualBox 
 
+先安装 VirtualBox
+
+参考：
+
+> [使用VirtualBox安装Ubuntu系统-CSDN博客](https://blog.csdn.net/abc6368765/article/details/125819966)    
+
+
+
 ## VirtualBox安装Debian11/Ubuntu
 
 在 VirtualBox 中构建 Debian11 虚拟电脑 :
@@ -1886,6 +1894,150 @@ virtualbox 在设置里给虚拟机开的处理器核心数，不要大，1个�
 https://www.cnblogs.com/manmande/p/17329504.html   虚拟机Virtualbox 识别不到USB设备 的解决办法
 
 
+
+# virtualbox安装 macOS
+
+视频参考：
+
+> VirtualBox7中安装macOS Big Sur，在windows10&11上【保姆级教程】哔哩哔哩bilibili    https://www.bilibili.com/video/BV1nY411d7Di/?spm_id_from=333.337.search-card.all.click&vd_source=3eebd10b94a8a76eaf4b78bee8f23884
+
+文字教程：
+
+> https://www.bilibili.com/read/cv20248224/      VirtualBox7中安装macOS big sur，在windows10&11上【保姆级教
+
+## 步骤：
+
+1、安装virtualBox
+
+2、镜像下载：https://www.freedidi.com/6584.html
+
+3、安装教程：https://www.bilibili.com/read/cv20248224/      **VirtualBox7中安装macOS big sur，在windows10&11上【保姆级教**
+
+**关键步骤0（已经确认）：**
+
+> 安装virtualBox Extension扩展包 ：
+>
+> 工具------> 安装
+
+**关键步骤1（已经确认）：**
+
+```java
+ D:\\Program Files\\Oracle\\VirtualBox>VBoxManage modifyvm "macOS" --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff
+ D:\\Program Files\\Oracle\\VirtualBox>VBoxManage setextradata "macOS" "VBoxInternal/Devices/efi/0/Config/DmiSystemProduct" "iMac11,3"
+ D:\\Program Files\\Oracle\\VirtualBox>VBoxManage setextradata "macOS" "VBoxInternal/Devices/efi/0/Config/DmiSystemVersion" "1.0"
+ D:\\Program Files\\Oracle\\VirtualBox>VBoxManage setextradata "macOS" "VBoxInternal/Devices/efi/0/Config/DmiBoardProduct" "Iloveapple"
+ D:\\Program Files\\Oracle\\VirtualBox>VBoxManage setextradata "macOS" "VBoxInternal/Devices/smc/0/Config/DeviceKey" "ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc"
+ D:\\Program Files\\Oracle\\VirtualBox>VBoxManage setextradata "macOS" "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC" 0
+```
+
+**关键步骤2（已经确认）：**
+
+> cpu核数和内存配置不能过高 ---------->**<font color='red'>已经验证，cpu最多4个是根本原因</font>：**         
+
+中间有看到log里有VirtualBox VT-x is not available，尝试过 关闭Hyper-V （已经验证，跟这个无关）
+
+> （1）启用或关闭windows功能里关闭
+>
+> （2）bcdedit /set hypervisorlaunchtype off
+>
+> 参考：https://blog.csdn.net/weixin_42140580/article/details/103235619/
+
+TODO:  bcdedit 是一个启动选项编辑工具，用来管理启动设置。
+
+TODO:  win10下[docker](https://so.csdn.net/so/search?q=docker&spm=1001.2101.3001.7020)和虚拟机无法同时启动时问题：
+
+> 启动虚拟机时，需要把hypervisorlaunchtype改为off          bcdedit /set hypervisorlaunchtype off
+>
+> 启动docker时，需要把hypervisorlaunchtype改为on         bcdedit /set hypervisorlaunchtype on
+>
+> bcdedit /set hypervisorlaunchtype auto
+>
+> 参考： https://blog.csdn.net/qiling_70/article/details/115341957?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-115341957-blog-123500614.235^v43^pc_blog_bottom_relevance_base7&spm=1001.2101.3001.4242.1&utm_relevant_index=3
+
+先抹除磁盘，之后才在磁盘上安装系统
+
+
+
+调整分辨率：
+
+```java
+cd "C:\Program Files\Oracle\VirtualBox\"
+
+VBoxManage setextradata "macOS big sur" CustomVideoMode1 1900x1200x32
+VBoxManage setextradata "macOS big sur" VBoxInternal2/EfiGraphicsResolution 1900x1200 
+    
+VBoxManage setextradata "macOS" CustomVideoMode1 1920x1080x32
+VBoxManage setextradata "macOS" VBoxInternal2/EfiGraphicsResolution 1920x1080
+// 参考：https://www.bilibili.com/read/cv20248224/ 出处：bilibili
+```
+
+
+
+## 关键问题：
+
+启动时：
+
+（1）刷屏日志卡住了
+
+（2）屏幕报错
+
+```
+ bootstrap path:path = Library/Apple/Syste/Library/LaunchDa
+ Failed to bootstrap path: path =/System/Library/LaunchDaemons/com.apple
+ 
+```
+
+（3）日志
+
+```
+ // macOS\\macOS\\Logs\\VBox.log.1
+ 00:00:03.822918 ERROR [COM]: aRC=VBOX_E_IPRT_ERROR (0x80bb0005) aIID={6ac83d89-6ee7-4e33-8ae6-b257b2e81be8} aComponent={ConsoleWrap} aText={The VBoxGuestPropSvc service call failed with the error VERR_HGCM_SERVICE_NOT_FOUND}, preserve=false aResultDetail=-2900  //【】 ERROR [COM]: aRC=VBOX_E_IPRT_ERROR
+ 00:00:03.958945 TM: GIP - u32Mode=3 (Invariant) u32UpdateHz=93 u32UpdateIntervalNS=10741500 enmUseTscDelta=2 (Practically Zero) fGetGipCpu=0x1b cCpus=20
+ 00:00:03.958967 TM: GIP - u64CpuHz=2 688 011 164 (0xa037cb9c)  SUPGetCpuHzFromGip => 2 688 011 164
+ 00:00:03.958971 TM: GIP - CPU: iCpuSet=0x0 idCpu=0x0 idApic=0x0 iGipCpu=0x1 i64TSCDelta=0 enmState=3 u64CpuHz=2688016583(*) cErrors=0
+ 00:00:03.958974 TM: GIP - CPU: iCpuSet=0x1 idCpu=0x1 idApic=0x1 iGipCpu=0x2 i64TSCDelta=0 enmState=3 u64CpuHz=2688001900(*) cErrors=0
+ 00:00:03.958976 TM: GIP - CPU: iCpuSet=0x2 idCpu=0x2 idApic=0x8 iGipCpu=0xc i64TSCDelta=0 enmState=3 u64CpuHz=2688011157(*) cErrors=0
+ 00:00:03.958978 TM: GIP - CPU: iCpuSet=0x3 idCpu=0x3 idApic=0x9 iGipCpu=0x10 i64TSCDelta=0 enmState=3 u64CpuHz=2688016583(*) cErrors=0
+ 00:00:03.958980 TM: GIP - CPU: iCpuSet=0x4 idCpu=0x4 idApic=0x10 iGipCpu=0xa i64TSCDelta=0 enmState=3 u64CpuHz=2688011096(*) cErrors=0
+ 00:00:03.958982 TM: GIP - CPU: iCpuSet=0x5 idCpu=0x5 idApic=0x11 iGipCpu=0x13 i64TSCDelta=0 enmState=3 u64CpuHz=2688016583(*) cErrors=0
+ 00:00:03.958984 TM: GIP - CPU: iCpuSet=0x6 idCpu=0x6 idApic=0x18 iGipCpu=0xd i64TSCDelta=0 enmState=3 u64CpuHz=2688011146(*) cErrors=0
+ 00:00:03.958986 TM: GIP - CPU: iCpuSet=0x7 idCpu=0x7 idApic=0x19 iGipCpu=0x7 i64TSCDelta=0 enmState=3 u64CpuHz=2688011112(*) cErrors=0
+ 00:00:03.958988 TM: GIP - CPU: iCpuSet=0x8 idCpu=0x8 idApic=0x20 iGipCpu=0xb i64TSCDelta=0 enmState=3 u64CpuHz=2688011168(*) cErrors=0
+ 00:00:03.958990 TM: GIP - CPU: iCpuSet=0x9 idCpu=0x9 idApic=0x21 iGipCpu=0xf i64TSCDelta=0 enmState=3 u64CpuHz=2688016583(*) cErrors=0
+ 00:00:03.958992 TM: GIP - CPU: iCpuSet=0xa idCpu=0xa idApic=0x28 iGipCpu=0x4 i64TSCDelta=0 enmState=3 u64CpuHz=2688010864(*) cErrors=0
+ 00:00:03.958994 TM: GIP - CPU: iCpuSet=0xb idCpu=0xb idApic=0x29 iGipCpu=0x8 i64TSCDelta=0 enmState=3 u64CpuHz=2688011138(*) cErrors=0
+ 00:00:03.958996 TM: GIP - CPU: iCpuSet=0xc idCpu=0xc idApic=0x30 iGipCpu=0x5 i64TSCDelta=0 enmState=3 u64CpuHz=2688010939(*) cErrors=0
+ 00:00:03.958998 TM: GIP - CPU: iCpuSet=0xd idCpu=0xd idApic=0x32 iGipCpu=0x11 i64TSCDelta=0 enmState=3 u64CpuHz=2688016583(*) cErrors=0
+ 00:00:03.959000 TM: GIP - CPU: iCpuSet=0xe idCpu=0xe idApic=0x34 iGipCpu=0x12 i64TSCDelta=0 enmState=3 u64CpuHz=2688016583(*) cErrors=0
+ 00:00:03.959002 TM: GIP - CPU: iCpuSet=0xf idCpu=0xf idApic=0x36 iGipCpu=0xe i64TSCDelta=0 enmState=3 u64CpuHz=2688011164(*) cErrors=0
+ 00:00:03.959004 TM: GIP - CPU: iCpuSet=0x10 idCpu=0x10 idApic=0x38 iGipCpu=0x6 i64TSCDelta=0 enmState=3 u64CpuHz=2688011075(*) cErrors=0
+ 00:00:03.959006 TM: GIP - CPU: iCpuSet=0x11 idCpu=0x11 idApic=0x3a iGipCpu=0x3 i64TSCDelta=0 enmState=3 u64CpuHz=2688010559(*) cErrors=0
+ 00:00:03.959009 TM: GIP - CPU: iCpuSet=0x12 idCpu=0x12 idApic=0x3c iGipCpu=0x0 i64TSCDelta=0 enmState=3 u64CpuHz=2688011164(*) cErrors=0
+ 00:00:03.959014 TM: GIP - CPU: iCpuSet=0x13 idCpu=0x13 idApic=0x3e iGipCpu=0x9 i64TSCDelta=0 enmState=3 u64CpuHz=2688011187(*) cErrors=0
+
+ .................
+ 00:00:01.720624 CPUM: No hardware-virtualization capability detected //【】
+```
+
+**解决办法：**
+
+```java
+ On a Windows host I would recommend reducing VM RAM to 6GB (6144MB). On a MacOS host... I'm not entirely sure how much free RAM it likes, but you can certainly start with 6GB.
+ Reduce CPU cores to 2 as well.
+ // 减少cpu和mem
+
+ // 参考： https://forums.virtualbox.org/viewtopic.php?t=107319&start=45
+```
+
+TODO:
+
+> **为啥配置cpu核数多，不行呢？**      （1）英语英语英语 （2）安装软件的log！！！！！！(3) difficult Problem只能英语解决！！！！
+
+
+
+## 系统快照----备份
+
+控制---生成备份
 
 # wmWare
 
