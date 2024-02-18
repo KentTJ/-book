@@ -2039,6 +2039,32 @@ TODO:
 
 控制---生成备份
 
+
+
+## 共享目录/共享剪切板
+
+------------------->  **以上两者都没搞定**
+
+-<font color='red'>万能方法：</font>
+
+> ssh登录（共享）
+
+~~具体步骤：~~
+
+> 
+>
+> （1）保证window宿主能ping容器
+>
+> ​     桥接网络
+>
+> ![image-20240219004033454](Docker.assets/image-20240219004033454.png)
+>
+> （2）参考：https://support.apple.com/zh-cn/guide/mac-help/mchlp1066/13.0/mac/13.0   ssh登录mac
+>
+> ![image-20240219003752476](Docker.assets/image-20240219003752476.png)
+
+
+
 # wmWare
 
 ## adb连手机
