@@ -1802,7 +1802,7 @@ https://blog.csdn.net/xiaoxiangzi520/article/details/111291634?spm=1001.2101.300
 ```
  D:\\Program Files\\ubuntu\\ubuntuShare
  ubuntuShare
- /home/chengang/workingSpace/AOSP
+ /home/chenjinke/workingSpace/AOSP
 ```
 
 **注意：无需重启VirtualBox （或ubuntu）**
@@ -1810,7 +1810,7 @@ https://blog.csdn.net/xiaoxiangzi520/article/details/111291634?spm=1001.2101.300
 2、挂载共享文件夹：参考： [详解VirtualBox中与主机共享文件夹的方法（图文）-云搜网 (27ka.cn)](https://www.27ka.cn/120058.html)        https://www.27ka.cn/120058.html
 
 ```
- sudo mount -t vboxsf  ubuntuShare  /home/chengang/workingSpace/AOSP
+ sudo mount -t vboxsf  ubuntuShare  /home/chenjinke/workingSpace/AOSP
 ```
 
 ## virtualbox中ubuntu 磁盘满了，无法开机
@@ -2064,6 +2064,16 @@ TODO:
 > ![image-20240219003752476](Docker.assets/image-20240219003752476.png)
 
 
+
+
+
+## 其他参考
+
+https://leon1741.blog.csdn.net/article/details/80910244?spm=1001.2101.3001.6650.4&utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-4-80910244-blog-129246509.235^v43^pc_blog_bottom_relevance_base7&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-4-80910244-blog-129246509.235^v43^pc_blog_bottom_relevance_base7&utm_relevant_index=9&ydreferer=aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5NzMxNTIxL2FydGljbGUvZGV0YWlscy8xMjkyNDY1MDk%3D
+
+https://blog.csdn.net/jimmyleeee/article/details/114627727  
+
+https://blog.csdn.net/lb245557472/article/details/103565752
 
 # wmWare
 

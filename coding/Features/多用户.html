@@ -1634,16 +1634,16 @@
 <p>------------&gt; &#x7528;&#x6237;&#x7EC4;&#xFF1A;&#xFF08;1&#xFF09;&#x6587;&#x4EF6; &#xFF08;2&#xFF09; &#x8FDB;&#x7A0B;&#xFF1F;</p>
 <p>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x6709;&#x7528;&#x6237;&#x7EC4;&#xFF1F;</p>
 <p>&#x4E0E;&#x8FDB;&#x7A0B;&#x7EC4;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#xFF1F;</p>
-<pre><code class="lang-java">  UID ------  &#x7528;&#x6237;id&#xFF0C; <span class="hljs-number">1000</span>(chengang)
-  GID ------  &#x7528;&#x6237;&#x7EC4;id&#xFF0C; <span class="hljs-number">1000</span>(chengang)
+<pre><code class="lang-java">  UID ------  &#x7528;&#x6237;id&#xFF0C; <span class="hljs-number">1000</span>(chenjinke)
+  GID ------  &#x7528;&#x6237;&#x7EC4;id&#xFF0C; <span class="hljs-number">1000</span>(chenjinke)
 </code></pre>
 <p>1&#x3001;&#x5F53;&#x524D;&#x7528;&#x6237; ----------------   id</p>
 <pre><code class="lang-java">  $ id
-  uid=<span class="hljs-number">1000</span>(chengang) gid=<span class="hljs-number">1000</span>(chengang) &#x7EC4;=<span class="hljs-number">1000</span>(chengang),<span class="hljs-number">4</span>(adm),<span class="hljs-number">24</span>(cdrom),<span class="hljs-number">27</span>(sudo),<span class="hljs-number">30</span>(dip),<span class="hljs-number">46</span>(plugdev),<span class="hljs-number">116</span>(lpadmin),<span class="hljs-number">126</span>(sambashare)
+  uid=<span class="hljs-number">1000</span>(chenjinke) gid=<span class="hljs-number">1000</span>(chenjinke) &#x7EC4;=<span class="hljs-number">1000</span>(chenjinke),<span class="hljs-number">4</span>(adm),<span class="hljs-number">24</span>(cdrom),<span class="hljs-number">27</span>(sudo),<span class="hljs-number">30</span>(dip),<span class="hljs-number">46</span>(plugdev),<span class="hljs-number">116</span>(lpadmin),<span class="hljs-number">126</span>(sambashare)
 </code></pre>
 <p>2&#x3001;&#x67E5;&#x770B;&#x6240;&#x6709;&#x7528;&#x6237;&#x7684;UID&#x548C;GID&#x4FE1;&#x606F;----------- cat /etc/passwd</p>
 <p><strong>&#x6CE8;&#xFF1A; &#x5B89;&#x5353;&#x9609;&#x5272;&#xFF0C;&#x6CA1;&#x6709; /etc/passwd</strong></p>
-<pre><code class="lang-java">  chengang<span class="hljs-meta">@chengang</span>-VirtualBox:/proc/<span class="hljs-number">2160</span>/task/<span class="hljs-number">2750</span>$ cat /etc/passwd
+<pre><code class="lang-java">  chenjinke<span class="hljs-meta">@chenjinke</span>-VirtualBox:/proc/<span class="hljs-number">2160</span>/task/<span class="hljs-number">2750</span>$ cat /etc/passwd
   root:x:<span class="hljs-number">0</span>:<span class="hljs-number">0</span>:root:/root:/bin/bash  <span class="hljs-comment">// --------&gt; root&#x7528;&#x6237;&#xFF0C; 0:root&#x7528;&#x6237;&#x7EC4;</span>
   daemon:x:<span class="hljs-number">1</span>:<span class="hljs-number">1</span>:daemon:/usr/sbin:/usr/sbin/nologin
   bin:x:<span class="hljs-number">2</span>:<span class="hljs-number">2</span>:bin:/bin:/usr/sbin/nologin
@@ -1684,19 +1684,19 @@
   pulse:x:119:123:PulseAudio daemon,,,:/var/run/pulse:/usr/sbin/nologin
   gnome-initial-setup:x:120:65534::/run/gnome-initial-setup/:/bin/<span class="hljs-keyword">false</span>  <span class="hljs-comment">// ---------&gt; gnome&#x7528;&#x6237;&#x7EC4;</span>
   gdm:x:121:125:Gnome Display Manager:/var/lib/gdm3:/bin/<span class="hljs-keyword">false</span>
-  chengang:x:1000:1000:chengang,,,:/home/chengang:/bin/bash  <span class="hljs-comment">// ---------&gt; chengang&#x7528;&#x6237;&#xFF0C;&#x7528;&#x6237;&#x7EC4;&#x4E5F;&#x662F;1000:chengang</span>
+  chenjinke:x:1000:1000:chenjinke,,,:/home/chenjinke:/bin/bash  <span class="hljs-comment">// ---------&gt; chenjinke&#x7528;&#x6237;&#xFF0C;&#x7528;&#x6237;&#x7EC4;&#x4E5F;&#x662F;1000:chenjinke</span>
   vboxadd:x:999:1::/var/run/vboxadd:/bin/<span class="hljs-keyword">false</span>
   sddm:x:122:127:Simple Desktop Display Manager:/var/lib/sddm:/bin/<span class="hljs-keyword">false</span>
   mpd:x:123:29::/var/lib/mpd:/usr/sbin/nologin
 </span></code></pre>
 <p>3&#x3001;cat /etc/group&#xFF1A; &#x6240;&#x6709;&#x7528;&#x6237;&#x7EC4;&#x7684;GID&#x4FE1;&#x606F;</p>
 <p><strong>&#x6CE8;&#xFF1A; &#x5B89;&#x5353;&#x9609;&#x5272;&#xFF0C;&#x6CA1;&#x6709; /etc/group</strong></p>
-<pre><code class="lang-java">  chengang<span class="hljs-meta">@chengang</span>-VirtualBox:/proc/<span class="hljs-number">2160</span>/task/<span class="hljs-number">2750</span>$ cat /etc/group
+<pre><code class="lang-java">  chenjinke<span class="hljs-meta">@chenjinke</span>-VirtualBox:/proc/<span class="hljs-number">2160</span>/task/<span class="hljs-number">2750</span>$ cat /etc/group
   root:x:<span class="hljs-number">0</span>:
   daemon:x:<span class="hljs-number">1</span>:
   bin:x:<span class="hljs-number">2</span>:
   sys:x:<span class="hljs-number">3</span>:
-  adm:x:<span class="hljs-number">4</span>:syslog,chengang
+  adm:x:<span class="hljs-number">4</span>:syslog,chenjinke
   tty:x:<span class="hljs-number">5</span>:
   disk:x:<span class="hljs-number">6</span>:
   lp:x:<span class="hljs-number">7</span>:
@@ -1709,12 +1709,12 @@
   dialout:x:<span class="hljs-number">20</span>:
   fax:x:<span class="hljs-number">21</span>:
   voice:x:<span class="hljs-number">22</span>:
-  cdrom:x:<span class="hljs-number">24</span>:chengang
+  cdrom:x:<span class="hljs-number">24</span>:chenjinke
   floppy:x:<span class="hljs-number">25</span>:
   tape:x:<span class="hljs-number">26</span>:
-  sudo:x:<span class="hljs-number">27</span>:chengang
+  sudo:x:<span class="hljs-number">27</span>:chenjinke
   audio:x:<span class="hljs-number">29</span>:pulse
-  dip:x:<span class="hljs-number">30</span>:chengang
+  dip:x:<span class="hljs-number">30</span>:chenjinke
   www-data:x:<span class="hljs-number">33</span>:
   backup:x:<span class="hljs-number">34</span>:
   operator:x:<span class="hljs-number">37</span>:
@@ -1726,7 +1726,7 @@
   utmp:x:<span class="hljs-number">43</span>:
   video:x:<span class="hljs-number">44</span>:
   sasl:x:<span class="hljs-number">45</span>:
-  plugdev:x:<span class="hljs-number">46</span>:chengang
+  plugdev:x:<span class="hljs-number">46</span>:chenjinke
   staff:x:<span class="hljs-number">50</span>:
   games:x:<span class="hljs-number">60</span>:
   users:x:<span class="hljs-number">100</span>:
@@ -1746,7 +1746,7 @@
   bluetooth:x:<span class="hljs-number">113</span>:
   rtkit:x:<span class="hljs-number">114</span>:
   ssh:x:<span class="hljs-number">115</span>:
-  lpadmin:x:<span class="hljs-number">116</span>:chengang
+  lpadmin:x:<span class="hljs-number">116</span>:chenjinke
   whoopsie:x:<span class="hljs-number">117</span>:
   scanner:x:<span class="hljs-number">118</span>:saned
   saned:x:<span class="hljs-number">119</span>:
@@ -1756,8 +1756,8 @@
   pulse:x:<span class="hljs-number">123</span>:
   pulse-access:x:<span class="hljs-number">124</span>:
   gdm:x:<span class="hljs-number">125</span>:
-  chengang:x:<span class="hljs-number">1000</span>:
-  sambashare:x:<span class="hljs-number">126</span>:chengang
+  chenjinke:x:<span class="hljs-number">1000</span>:
+  sambashare:x:<span class="hljs-number">126</span>:chenjinke
   vboxsf:x:<span class="hljs-number">999</span>:
   vboxdrmipc:x:<span class="hljs-number">998</span>:
   sddm:x:<span class="hljs-number">127</span>:
@@ -1999,7 +1999,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"多用户","level":"1.2.11.2","depth":3,"next":{"title":"Other OS","level":"1.2.12","depth":2,"path":"coding/other%20OS/README.md","ref":"coding/other%20OS/README.md","articles":[{"title":"Open Harmony","level":"1.2.12.1","depth":3,"path":"coding/other%20OS/OpenHarmony.md","ref":"coding/other%20OS/OpenHarmony.md","articles":[]},{"title":"Other OS","level":"1.2.12.2","depth":3,"path":"coding/other%20OS/otherOS.md","ref":"coding/other%20OS/otherOS.md","articles":[]}]},"previous":{"title":"其他特性","level":"1.2.11.1","depth":3,"path":"coding/Features/其他特性.md","ref":"coding/Features/其他特性.md","articles":[]},"dir":"ltr"},"config":{"//":["这是多行注释：    anchor-navigation-ex 是","anchor-navigation-ex 是","click-reveal 本地使用ok，但是github在build pages时，不识别click-reveal","accordion 也是折叠代码段","anchor-navigation-ex 是"],"plugins":["anchor-navigation-ex","toggle-chapters","expandable-chapters-small","splitter","code","page-treeview","popup","-search","-lunr","sidebar-style","auto-scroll-table","click-reveal","accordion","pageview-count","search-pro"],"root":"./markdownsFiles","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"Kent","title":"《知行，行知》"},"tbfed-pagefooter":{"copyright":"Copyright &copy ershouche-FE 2019","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"disqus":{"shortName":"gitbookuse"},"splitter":{},"search-pro":{},"accordion":{},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":200000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"pageview-count":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bookname":"笔记","variables":{},"title":"Kent的博客","gitbook":"*"},"file":{"path":"coding/Features/多用户.md","mtime":"2024-02-20T16:45:42.562Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-02-20T17:24:19.482Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"多用户","level":"1.2.11.2","depth":3,"next":{"title":"Other OS","level":"1.2.12","depth":2,"path":"coding/other%20OS/README.md","ref":"coding/other%20OS/README.md","articles":[{"title":"Open Harmony","level":"1.2.12.1","depth":3,"path":"coding/other%20OS/OpenHarmony.md","ref":"coding/other%20OS/OpenHarmony.md","articles":[]},{"title":"Other OS","level":"1.2.12.2","depth":3,"path":"coding/other%20OS/otherOS.md","ref":"coding/other%20OS/otherOS.md","articles":[]}]},"previous":{"title":"其他特性","level":"1.2.11.1","depth":3,"path":"coding/Features/其他特性.md","ref":"coding/Features/其他特性.md","articles":[]},"dir":"ltr"},"config":{"//":["这是多行注释：    anchor-navigation-ex 是","anchor-navigation-ex 是","click-reveal 本地使用ok，但是github在build pages时，不识别click-reveal","accordion 也是折叠代码段","anchor-navigation-ex 是"],"plugins":["anchor-navigation-ex","toggle-chapters","expandable-chapters-small","splitter","code","page-treeview","popup","-search","-lunr","sidebar-style","auto-scroll-table","click-reveal","accordion","pageview-count","search-pro"],"root":"./markdownsFiles","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"Kent","title":"《知行，行知》"},"tbfed-pagefooter":{"copyright":"Copyright &copy ershouche-FE 2019","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"disqus":{"shortName":"gitbookuse"},"splitter":{},"search-pro":{},"accordion":{},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":200000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"pageview-count":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bookname":"笔记","variables":{},"title":"Kent的博客","gitbook":"*"},"file":{"path":"coding/Features/多用户.md","mtime":"2024-02-20T17:27:54.628Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-02-20T17:28:37.174Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -799,7 +799,7 @@ win里有个linux虚拟机，
  sudo sshfs -p 2002 -o cache=yes,allow_other non.jinxi@10.81.19.141:/data/non.jinxi /home/jx_nong/141server
  sudo sshfs -p 22 -o cache=yes,allow_other non.jinxi@10.85.251.194:/home/non.jinxi/code  /home/chenjinke/workingSpace/nongRemote
 
- sudo sshfs -p 2002 -o cache=yes,allow_other chen.gang42@10.81.19.141:/data/chen.gang42/workingspace   /home/chenjinke/workingSpace/chenjinke141
+ sudo sshfs -p 2002 -o cache=yes,allow_other chen.jinke42@10.81.19.141:/data/chen.jinke42/workingspace   /home/chenjinke/workingSpace/chenjinke141
 
 
 
