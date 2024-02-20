@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>文件系统结构 · Kent的博客</title>
+        <title>其他特性 · Kent的博客</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -101,10 +101,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../虚拟化/虚拟化.html" />
+    <link rel="next" href="多用户.html" />
     
     
-    <link rel="prev" href="../多线程/线程池与binder线程池.html" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -1065,9 +1065,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.11" data-path="../Features/">
+        <li class="chapter " data-level="1.2.11" data-path="./">
             
-                <a href="../Features/">
+                <a href="./">
             
                     
                     Features
@@ -1079,9 +1079,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.11.1" data-path="../Features/其他特性.html">
+        <li class="chapter active" data-level="1.2.11.1" data-path="其他特性.html">
             
-                <a href="../Features/其他特性.html">
+                <a href="其他特性.html">
             
                     
                     其他特性
@@ -1092,9 +1092,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.11.2" data-path="../Features/多用户.html">
+        <li class="chapter " data-level="1.2.11.2" data-path="多用户.html">
             
-                <a href="../Features/多用户.html">
+                <a href="多用户.html">
             
                     
                     多用户
@@ -1369,9 +1369,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.15" data-path="文件系统结构.html">
+        <li class="chapter " data-level="1.2.15" data-path="../文件系统结构/文件系统结构.html">
             
-                <a href="文件系统结构.html">
+                <a href="../文件系统结构/文件系统结构.html">
             
                     
                     文件系统结构
@@ -1559,7 +1559,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >文件系统结构</a>
+        <a href="../.." >其他特性</a>
     </h1>
 </div>
 
@@ -1574,77 +1574,52 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x76EE;&#x5F55;"><b>1. </b>&#x76EE;&#x5F55;</a></li><li><span class="title-icon "></span><a href="#sd&#x5361;&#x6302;&#x8F7D;&#x7684;&#x70B9;&#xFF08;&#x5B89;&#x5353;&#xFF09;"><b>2. </b>sd&#x5361;&#x6302;&#x8F7D;&#x7684;&#x70B9;&#xFF08;&#x5B89;&#x5353;&#xFF09;</a></li><li><span class="title-icon "></span><a href="#&#x5206;&#x533A;linux"><b>3. </b>&#x5206;&#x533A;Linux</a></li></ul></div><a href="#&#x76EE;&#x5F55;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><div class="treeview__container"><ul>
-<li><div><a href="#&#x76EE;&#x5F55;">&#x76EE;&#x5F55;</a><i></i></div></li>
-<li><div><a href="#sd&#x5361;&#x6302;&#x8F7D;&#x7684;&#x70B9;&#xFF08;&#x5B89;&#x5353;&#xFF09;">sd&#x5361;&#x6302;&#x8F7D;&#x7684;&#x70B9;&#xFF08;&#x5B89;&#x5353;&#xFF09;</a><i></i></div></li>
-<li><div><a href="#&#x5206;&#x533A;linux">&#x5206;&#x533A;Linux</a><i></i></div></li>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x4EFB;&#x610F;&#x95E8;"><b>1. </b>&#x4EFB;&#x610F;&#x95E8;</a></li><ul><li><span class="title-icon "></span><a href="#&#x7528;&#x6237;&#x89D2;&#x5EA6;----&#x6548;&#x679C;"><b>1.1. </b>&#x7528;&#x6237;&#x89D2;&#x5EA6;----&#x6548;&#x679C;</a></li><li><span class="title-icon "></span><a href="#&#x5B9E;&#x73B0;&#x673A;&#x5236;&#xFF08;&#x731C;&#x6D4B;&#xFF09;"><b>1.2. </b>&#x5B9E;&#x73B0;&#x673A;&#x5236;&#xFF08;&#x731C;&#x6D4B;&#xFF09;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5FC5;&#x7136;&#xFF1A;"><b>1.2.1. </b>&#x5FC5;&#x7136;&#xFF1A;</a></li><li><span class="title-icon "></span><a href="#&#x3010;2&#x3011;&#x7684;&#x5B9E;&#x73B0;&#xFF1A;"><b>1.2.2. </b>&#x3010;2&#x3011;&#x7684;&#x5B9E;&#x73B0;&#xFF1A;</a></li><li><span class="title-icon "></span><a href="#&#x3010;3&#x3011;&#x7684;&#x5B9E;&#x73B0;&#xFF1A;"><b>1.2.3. </b>&#x3010;3&#x3011;&#x7684;&#x5B9E;&#x73B0;&#xFF1A;</a></li><li><span class="title-icon "></span><a href="#&#x5173;&#x4E8E;&#x5927;&#x6570;&#x636E;"><b>1.2.4. </b>&#x5173;&#x4E8E;&#x5927;&#x6570;&#x636E;</a></li></ul></ul></ul></div><a href="#&#x4EFB;&#x610F;&#x95E8;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><div class="treeview__container"><ul>
+<li><div><a href="#&#x7528;&#x6237;&#x89D2;&#x5EA6;----&#x6548;&#x679C;">&#x7528;&#x6237;&#x89D2;&#x5EA6;----&#x6548;&#x679C;</a><i></i></div></li>
+<li><div><a href="#&#x5B9E;&#x73B0;&#x673A;&#x5236;&#xFF08;&#x731C;&#x6D4B;&#xFF09;">&#x5B9E;&#x73B0;&#x673A;&#x5236;&#xFF08;&#x731C;&#x6D4B;&#xFF09;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#&#x5FC5;&#x7136;&#xFF1A;">&#x5FC5;&#x7136;&#xFF1A;</a><i></i></div></li>
+<li><div><a href="#&#x3010;2&#x3011;&#x7684;&#x5B9E;&#x73B0;&#xFF1A;">&#x3010;2&#x3011;&#x7684;&#x5B9E;&#x73B0;&#xFF1A;</a><i></i></div></li>
+<li><div><a href="#&#x3010;3&#x3011;&#x7684;&#x5B9E;&#x73B0;&#xFF1A;">&#x3010;3&#x3011;&#x7684;&#x5B9E;&#x73B0;&#xFF1A;</a><i></i></div></li>
+<li><div><a href="#&#x5173;&#x4E8E;&#x5927;&#x6570;&#x636E;">&#x5173;&#x4E8E;&#x5927;&#x6570;&#x636E;</a><i></i></div></li>
+</ul></li>
 </ul>
 </div>
 
-<h1 id="&#x76EE;&#x5F55;"><a name="&#x76EE;&#x5F55;" class="anchor-navigation-ex-anchor" href="#&#x76EE;&#x5F55;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x76EE;&#x5F55;</h1>
-<h1 id="sd&#x5361;&#x6302;&#x8F7D;&#x7684;&#x70B9;&#xFF08;&#x5B89;&#x5353;&#xFF09;"><a name="sd&#x5361;&#x6302;&#x8F7D;&#x7684;&#x70B9;&#xFF08;&#x5B89;&#x5353;&#xFF09;" class="anchor-navigation-ex-anchor" href="#sd&#x5361;&#x6302;&#x8F7D;&#x7684;&#x70B9;&#xFF08;&#x5B89;&#x5353;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>2. sd&#x5361;&#x6302;&#x8F7D;&#x7684;&#x70B9;&#xFF08;&#x5B89;&#x5353;&#xFF09;</h1>
-<p>&#x53C2;&#x8003;&#xFF1A;</p>
+<h1 id="&#x4EFB;&#x610F;&#x95E8;"><a name="&#x4EFB;&#x610F;&#x95E8;" class="anchor-navigation-ex-anchor" href="#&#x4EFB;&#x610F;&#x95E8;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x4EFB;&#x610F;&#x95E8;</h1>
+<p>TODO&#xFF1A;com</p>
+<h2 id="&#x7528;&#x6237;&#x89D2;&#x5EA6;----&#x6548;&#x679C;"><a name="&#x7528;&#x6237;&#x89D2;&#x5EA6;----&#x6548;&#x679C;" class="anchor-navigation-ex-anchor" href="#&#x7528;&#x6237;&#x89D2;&#x5EA6;----&#x6548;&#x679C;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x7528;&#x6237;&#x89D2;&#x5EA6;----&#x6548;&#x679C;</h2>
+<p>&#x56FE;&#x7247;&#xFF1A;&#x957F;&#x6309; + &#x5DE6;&#x53F3;&#x79FB;&#x52A8; --------&gt; &#x8BC6;&#x522B;&#x4E3A;&#x4EFB;&#x610F;&#x95E8;</p>
+<p><a href="https://www.bilibili.com/video/BV18e411H72q/?spm_id_from=333.337.search-card.all.click&amp;vd_source=3eebd10b94a8a76eaf4b78bee8f23884" target="_blank">https://www.bilibili.com/video/BV18e411H72q/?spm_id_from=333.337.search-card.all.click&amp;vd_source=3eebd10b94a8a76eaf4b78bee8f23884</a></p>
+<p>&#x6587;&#x5B57;&#xFF1A;&#x957F;&#x6309;&#xFF1F;OR &#x957F;&#x6309;+&#x62D6;&#x52A8;&#xFF1F;</p>
+<p>TODO&#xFF1A;&#x5982;&#x679C;&#x6587;&#x5B57;&#x4EC5;&#x957F;&#x6309;&#xFF0C;&#x5FAE;&#x4FE1;&#x81EA;&#x5DF1;&#x5F39;&#x51FA;&#x6765;&#x7684;&#x590D;&#x5236;&#x5206;&#x4EAB;&#x600E;&#x4E48;&#x529E;&#xFF1F;</p>
+<p><a href="https://www.bilibili.com/video/BV1zW4y1w7iD/?spm_id_from=333.337.search-card.all.click&amp;vd_source=3eebd10b94a8a76eaf4b78bee8f23884" target="_blank">https://www.bilibili.com/video/BV1zW4y1w7iD/?spm_id_from=333.337.search-card.all.click&amp;vd_source=3eebd10b94a8a76eaf4b78bee8f23884</a></p>
+<h2 id="&#x5B9E;&#x73B0;&#x673A;&#x5236;&#xFF08;&#x731C;&#x6D4B;&#xFF09;"><a name="&#x5B9E;&#x73B0;&#x673A;&#x5236;&#xFF08;&#x731C;&#x6D4B;&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x5B9E;&#x73B0;&#x673A;&#x5236;&#xFF08;&#x731C;&#x6D4B;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x5B9E;&#x73B0;&#x673A;&#x5236;&#xFF08;&#x731C;&#x6D4B;&#xFF09;</h2>
+<h3 id="&#x5FC5;&#x7136;&#xFF1A;"><a name="&#x5FC5;&#x7136;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x5FC5;&#x7136;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.1. &#x5FC5;&#x7136;&#xFF1A;</h3>
 <blockquote>
-<p><a href="https://blog.csdn.net/Ian22l/article/details/105974356" target="_blank">https://blog.csdn.net/Ian22l/article/details/105974356</a></p>
-<p><a href="https://www.jianshu.com/p/4fd23c4a1173" target="_blank">https://www.jianshu.com/p/4fd23c4a1173</a>       Android SdCard&#x8DEF;&#x5F84;&#x8BF4;&#x660E;</p>
+<p>&#x3010;1&#x3011;&#x539F;APP&#x8FDB;&#x7A0B; ----&gt;&#x3010;2&#x3011; &#x6846;&#x67B6;&#x4FA7;&#x63D2;&#x6869;&#xFF0C;&#x6846;&#x67B6;&#x4FA7;&#x62FF;&#x5230;&#x6570;&#x636E;(&#x539F;APP&#x8FDB;&#x7A0B;) ----&gt;  &#x3010;3&#x3011; &#x7ED9;&#x5230;renyimen&#x7684;&#x670D;&#x52A1;  -----&gt;  &#x3010;3&#x3011;&#x670D;&#x52A1;&#x8C03;&#x7528; APP2&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x7ED9;&#x5230;&#x6570;&#x636E;</p>
 </blockquote>
-<pre><code> /sdcard   -----&gt;   /storage/self/primary          //&#x6CE8;&#xFF1A;&#x5176;&#x4E2D;&#xFF0C;sdcard&#x662F;&#x8F6F;&#x8FDE;&#x63A5;
-
- /storage/self/primary -----&gt;  /mnt/user/0/primary
-
- /mnt/user/0/primary  -----&gt;   /storage/emulated/0/
-</code></pre><p>&#x7ED3;&#x8BBA;&#xFF1A;</p>
+<p>&#x4ECE;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x89D2;&#x5EA6;&#xFF08;&#x7F16;&#x8BD1;&#x89D2;&#x5EA6;&#xFF09;&#xFF1A;</p>
 <blockquote>
-<p>1&#x3001;&#x6700;&#x7EC8;&#x8FDE;&#x63A5;&#x5230;  /storage/emulated/0</p>
-<p>2&#x3001;&#x8FD9;&#x662F;&#x771F;&#x5B9E;&#x7684;sd&#x5361;&#xFF0C;&#x6302;&#x8F7D;&#x7684;linux&#x76EE;&#x5F55;</p>
+<p>&#x6846;&#x67B6;&#x4FA7;&#x5BF9; APP&#x4FA7;&#x63D2;&#x88C5;</p>
 </blockquote>
-<p><strong>&#x76EE;&#x7684;&#xFF1A;</strong></p>
+<h3 id="&#x3010;2&#x3011;&#x7684;&#x5B9E;&#x73B0;&#xFF1A;"><a name="&#x3010;2&#x3011;&#x7684;&#x5B9E;&#x73B0;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x3010;2&#x3011;&#x7684;&#x5B9E;&#x73B0;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.2. &#x3010;2&#x3011;&#x7684;&#x5B9E;&#x73B0;&#xFF1A;</h3>
+<p>&#x65B9;&#x5F0F;&#x4E00;&#xFF1A;</p>
 <blockquote>
-<p>&#x8BBE;&#x8BA1;&#x89D2;&#x5EA6;&#xFF0C;&#x4E3A;&#x5565;&#x8981;&#x6709; /sdcard &#x6307;&#x5411; &#x5B9E;&#x9645;&#x6302;&#x8F7D;&#x70B9;&#x5462;&#xFF1F;</p>
-<pre><code class="lang-java"> <span class="hljs-number">1</span>. **&#x7EDF;&#x4E00;&#x8DEF;&#x5F84;&#xFF1A;** &#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x7EDF;&#x4E00;&#x7684;&#x8DEF;&#x5F84;&#x53EF;&#x4EE5;&#x7B80;&#x5316;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x548C;&#x7528;&#x6237;&#x5BF9;&#x5B58;&#x50A8;&#x7684;&#x8BBF;&#x95EE;&#x3002;&#x65E0;&#x8BBA;&#x8BBE;&#x5907;&#x662F;&#x5426;&#x6709;&#x5185;&#x7F6E;&#x5B58;&#x50A8;&#x6216;&#x5916;&#x90E8;SD&#x5361;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x548C;&#x7528;&#x6237;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684;&#x8DEF;&#x5F84;&#x6765;&#x5F15;&#x7528;&#x4E3B;&#x8981;&#x7684;&#x7528;&#x6237;&#x5B58;&#x50A8;&#x3002;
-
- <span class="hljs-number">2</span>. **&#x900F;&#x660E;&#x6027;&#xFF1A;** Android&#x7CFB;&#x7EDF;&#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x5730;&#x5207;&#x6362;&#x5B58;&#x50A8;&#x4F4D;&#x7F6E;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x80FD;&#x66F4;&#x6362;&#x4E86;SD&#x5361;&#xFF0C;&#x6216;&#x8005;&#x8BBE;&#x5907;&#x53EF;&#x80FD;&#x5177;&#x6709;&#x591A;&#x4E2A;&#x5B58;&#x50A8;&#x8BBE;&#x5907;&#x3002;&#x901A;&#x8FC7;&#x4F7F;&#x7528; `/sdcard` &#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x6307;&#x5411;&#x5B9E;&#x9645;&#x6302;&#x8F7D;&#x70B9;&#x7684;&#x7B26;&#x53F7;&#x94FE;&#x63A5;&#xFF0C;&#x7CFB;&#x7EDF;&#x80FD;&#x591F;&#x5728;&#x4E0D;&#x540C;&#x8BBE;&#x5907;&#x4E0A;&#x63D0;&#x4F9B;&#x900F;&#x660E;&#x7684;&#x8BBF;&#x95EE;&#xFF0C;&#x800C;&#x65E0;&#x9700;&#x4FEE;&#x6539;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x4EE3;&#x7801;&#x6216;&#x7528;&#x6237;&#x7684;&#x671F;&#x671B;&#x3002;
-
- <span class="hljs-number">3</span>. **&#x7B80;&#x5316;&#x5F00;&#x53D1;&#xFF1A;** &#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x53EF;&#x4EE5;&#x66F4;&#x8F7B;&#x677E;&#x5730;&#x7F16;&#x5199;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x56E0;&#x4E3A;&#x4ED6;&#x4EEC;&#x53EF;&#x4EE5;&#x5047;&#x8BBE; `/sdcard` &#x662F;&#x4E3B;&#x8981;&#x7684;&#x7528;&#x6237;&#x5B58;&#x50A8;&#xFF0C;&#x800C;&#x65E0;&#x9700;&#x5173;&#x5FC3;&#x5B9E;&#x9645;&#x7684;&#x7269;&#x7406;&#x8DEF;&#x5F84;&#x3002;&#x8FD9;&#x7B80;&#x5316;&#x4E86;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x8BBE;&#x8BA1;&#x548C;&#x7EF4;&#x62A4;&#x3002;-----------&gt; <span class="hljs-comment">// &#x6B64;&#x65F6; &#x8F6F;&#x94FE;&#x63A5;&#x5C31;&#x662F;&#x4E00;&#x4E2A;Adapter&#x5C42;&#xFF0C;&#x89E3;&#x51B3;&#x5B9E;&#x9645;&#x6307;&#x5411;&#x7684;&#x5C42;</span>
-
- &#x603B;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;&#x4F7F;&#x7528; `/sdcard` &#x4F5C;&#x4E3A;&#x4E3B;&#x8981;&#x7528;&#x6237;&#x5B58;&#x50A8;&#x7684;&#x7B26;&#x53F7;&#x94FE;&#x63A5;&#x662F;&#x4E3A;&#x4E86;&#x63D0;&#x4F9B;&#x4E00;&#x79CD;&#x7B80;&#x5316;&#x3001;&#x4E00;&#x81F4;&#x548C;&#x900F;&#x660E;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4EE5;&#x9002;&#x5E94;&#x4E0D;&#x540C;&#x8BBE;&#x5907;&#x548C;&#x5B58;&#x50A8;&#x914D;&#x7F6E;&#x7684;&#x53D8;&#x5316;&#x3002;
-</code></pre>
+<p>view&#x6709;clipdata&#x76F8;&#x5173;&#x63A5;&#x53E3;&#xFF1A;<del>&#x80FD;&#x62FF;&#x5230;string&#x6570;&#x636E;&#x3001;viewImage&#x7684;url&#x6570;&#x636E;</del></p>
+<p>&#x53C2;&#x8003;&#xFF1A;<a href="https://stackoverflow.com/questions/21751429/android-how-can-i-get-image-from-clipdata" target="_blank">https://stackoverflow.com/questions/21751429/android-how-can-i-get-image-from-clipdata</a></p>
 </blockquote>
-<p>/sdcard &#x4E0E;&#x5206;&#x533A;&#x7684;&#x5173;&#x7CFB;&#xFF1A;</p>
+<p>&#x65B9;&#x5F0F;&#x4E8C;&#xFF1A;</p>
 <blockquote>
-<p>/sdcard &#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x5206;&#x533A;&#xFF0C;&#x800C;&#x662F;&#x4E00;&#x4E2A;&#x6307;&#x5411;&#x8BBE;&#x5907;&#x5B58;&#x50A8;&#x7684;&#x6302;&#x8F7D;&#x70B9;</p>
+<p>&#x7C7B;&#x4F3C;&#x4E8E;<strong>&#x76F8;&#x518C;&#x91CC;&#x7684;&#x5206;&#x4EAB;/&#x5907;&#x5FD8;&#x5F55;&#x91CC;&#x6587;&#x5B57;</strong>&#x7684;&#x5206;&#x4EAB;&#x3002;&#x3002;&#x3002;&#x3002;&#x3002;&#x5206;&#x4EAB;&#x662F;&#x5B89;&#x5353;&#x539F;&#x751F;&#x7684;&#x529F;&#x80FD; ----&gt; &#x5FC5;&#x7136;&#xB7;&#x5F88;&#x591A;APP2&#x90FD;&#x9002;&#x914D;&#x8FC7;&#xFF01;&#xFF01;&#xFF01;&#xFF01;&#xFF01;</p>
 </blockquote>
-<h1 id="&#x5206;&#x533A;linux"><a name="&#x5206;&#x533A;linux" class="anchor-navigation-ex-anchor" href="#&#x5206;&#x533A;linux"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x5206;&#x533A;Linux</h1>
-<pre><code class="lang-java"> &#x5728;Linux&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x5E38;&#x89C1;&#x7684;&#x5206;&#x533A;&#x7C7B;&#x578B;&#x5305;&#x62EC;&#xFF1A;
-
- <span class="hljs-number">1</span>. **&#x6839;&#x5206;&#x533A;&#xFF08;/&#xFF09;&#xFF1A;** &#x5305;&#x542B;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x6838;&#x5FC3;&#x6587;&#x4EF6;&#xFF0C;Linux&#x7CFB;&#x7EDF;&#x7684;&#x5B89;&#x88C5;&#x901A;&#x5E38;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x6839;&#x5206;&#x533A;&#x3002;
-
- <span class="hljs-number">2</span>. **&#x4EA4;&#x6362;&#x5206;&#x533A;&#xFF08;swap&#xFF09;&#xFF1A;** &#x7528;&#x4E8E;&#x865A;&#x62DF;&#x5185;&#x5B58;&#xFF0C;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x7CFB;&#x7EDF;&#x5728;&#x7269;&#x7406;&#x5185;&#x5B58;&#x4E0D;&#x8DB3;&#x65F6;&#x8FDB;&#x884C;&#x4EA4;&#x6362;&#xFF0C;&#x63D0;&#x9AD8;&#x7CFB;&#x7EDF;&#x6027;&#x80FD;&#x3002;
-
- <span class="hljs-number">3</span>. **/home&#xFF1A;** &#x5B58;&#x653E;&#x7528;&#x6237;&#x7684;&#x4E3B;&#x76EE;&#x5F55;&#xFF0C;&#x5305;&#x62EC;&#x4E2A;&#x4EBA;&#x6587;&#x4EF6;&#x3001;&#x6587;&#x6863;&#x548C;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3002;
-
- <span class="hljs-number">4</span>. **/boot&#xFF1A;** &#x5B58;&#x653E;&#x5F15;&#x5BFC;&#x52A0;&#x8F7D;&#x7A0B;&#x5E8F;&#x548C;&#x5185;&#x6838;&#x955C;&#x50CF;&#x6587;&#x4EF6;&#xFF0C;&#x901A;&#x5E38;&#x662F;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x5206;&#x533A;&#x3002;
-
- <span class="hljs-number">5</span>. **/var&#xFF1A;** &#x5305;&#x542B;&#x7ECF;&#x5E38;&#x53D8;&#x5316;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4F8B;&#x5982;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x3001;&#x7F13;&#x5B58;&#x6587;&#x4EF6;&#x548C;&#x6570;&#x636E;&#x5E93;&#x6587;&#x4EF6;&#x3002;
-
- <span class="hljs-number">6</span>. **/tmp&#xFF1A;** &#x7528;&#x4E8E;&#x5B58;&#x653E;&#x4E34;&#x65F6;&#x6587;&#x4EF6;&#x3002;
-
- <span class="hljs-number">7</span>. **/usr&#xFF1A;** &#x5305;&#x542B;&#x7528;&#x6237;&#x5B89;&#x88C5;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x548C;&#x6587;&#x4EF6;&#x3002;
-
- <span class="hljs-number">8</span>. **/opt&#xFF1A;** &#x7528;&#x4E8E;&#x5B58;&#x653E;&#x989D;&#x5916;&#x5B89;&#x88C5;&#x7684;&#x8F6F;&#x4EF6;&#x5305;&#x3002;
-
- <span class="hljs-number">9</span>. **/mnt&#x548C;/media&#xFF1A;** &#x901A;&#x5E38;&#x7528;&#x4E8E;&#x6302;&#x8F7D;&#x5176;&#x4ED6;&#x5B58;&#x50A8;&#x8BBE;&#x5907;&#xFF0C;&#x5982;&#x79FB;&#x52A8;&#x786C;&#x76D8;&#x6216;&#x5149;&#x76D8;&#x3002;
-
- <span class="hljs-number">10</span>. **/srv&#xFF1A;** &#x5B58;&#x653E;&#x670D;&#x52A1;&#x76F8;&#x5173;&#x7684;&#x6570;&#x636E;&#x3002;
-
- &#x8FD9;&#x53EA;&#x662F;&#x4E00;&#x4E9B;&#x5E38;&#x89C1;&#x7684;&#x5206;&#x533A;&#x7C7B;&#x578B;&#xFF0C;&#x5177;&#x4F53;&#x7684;&#x5206;&#x533A;&#x8BBE;&#x7F6E;&#x53EF;&#x80FD;&#x56E0;&#x4E2A;&#x4EBA;&#x9700;&#x6C42;&#x548C;&#x7CFB;&#x7EDF;&#x7528;&#x9014;&#x800C;&#x6709;&#x6240;&#x4E0D;&#x540C;&#x3002;
-</code></pre>
-<p>&#x5206;&#x533A;&#x4E0E;&#x76EE;&#x5F55;&#x533A;&#x522B;&#xFF1A;</p>
+<h3 id="&#x3010;3&#x3011;&#x7684;&#x5B9E;&#x73B0;&#xFF1A;"><a name="&#x3010;3&#x3011;&#x7684;&#x5B9E;&#x73B0;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x3010;3&#x3011;&#x7684;&#x5B9E;&#x73B0;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.3. &#x3010;3&#x3011;&#x7684;&#x5B9E;&#x73B0;&#xFF1A;</h3>
 <blockquote>
-<p>&#x5206;&#x533A;&#x662F;&#x5927;&#x7684;&#x529F;&#x80FD;&#x7684;&#x5212;&#x5206;</p>
-<p>&#x76EE;&#x5F55;&#x662F;&#x57FA;&#x4E8E;&#x5206;&#x533A;&#x7684;</p>
+<p>&#x5927;&#x90E8;&#x5206;&#x9700;&#x8981;&#x4E09;&#x65B9;&#x5E94;&#x7528;&#x9002;&#x914D;</p>
+<p>&#x5B9E;&#x5728;&#x4E0D;&#x884C;&#xFF0C;&#x7528;&#x65B9;&#x5F0F;&#x4E8C;</p>
 </blockquote>
-<p>&#x4E3E;&#x4F8B;&#xFF1A; windows&#x7684;C&#x76D8;&#x662F;&#x5206;&#x533A;&#xFF0C;&#x5185;&#x90E8;&#x662F;&#x76EE;&#x5F55;</p>
+<h3 id="&#x5173;&#x4E8E;&#x5927;&#x6570;&#x636E;"><a name="&#x5173;&#x4E8E;&#x5927;&#x6570;&#x636E;" class="anchor-navigation-ex-anchor" href="#&#x5173;&#x4E8E;&#x5927;&#x6570;&#x636E;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.4. &#x5173;&#x4E8E;&#x5927;&#x6570;&#x636E;</h3>
+<p>&#x5728;&#x3010;2&#x3011;----&gt; &#x3010;3&#x3011;&#x7684;&#x4E2D;&#x95F4;&#xFF1A;&#x4F18;&#x5148;&#x63A8;&#x8350;&#x6700;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x76EE;&#x6807;&#x5E94;&#x7528;</p>
 
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -1673,12 +1648,12 @@
 
             
                 
-                <a href="../多线程/线程池与binder线程池.html" class="navigation navigation-prev " aria-label="Previous page: 线程池与binder线程池">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Features">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../虚拟化/虚拟化.html" class="navigation navigation-next " aria-label="Next page: 虚拟化">
+                <a href="多用户.html" class="navigation navigation-next " aria-label="Next page: 多用户">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1689,7 +1664,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"文件系统结构","level":"1.2.15","depth":2,"next":{"title":"虚拟化","level":"1.2.16","depth":2,"path":"coding/虚拟化/虚拟化.md","ref":"coding/虚拟化/虚拟化.md","articles":[]},"previous":{"title":"线程池与binder线程池","level":"1.2.14.2","depth":3,"path":"coding/多线程/线程池与binder线程池.md","ref":"coding/多线程/线程池与binder线程池.md","articles":[]},"dir":"ltr"},"config":{"//":["这是多行注释：    anchor-navigation-ex 是","anchor-navigation-ex 是","click-reveal 本地使用ok，但是github在build pages时，不识别click-reveal","accordion 也是折叠代码段","anchor-navigation-ex 是"],"plugins":["anchor-navigation-ex","toggle-chapters","expandable-chapters-small","splitter","code","page-treeview","popup","-search","-lunr","sidebar-style","auto-scroll-table","click-reveal","accordion","pageview-count","search-pro"],"root":"./markdownsFiles","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"Kent","title":"《知行，行知》"},"tbfed-pagefooter":{"copyright":"Copyright &copy ershouche-FE 2019","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"disqus":{"shortName":"gitbookuse"},"splitter":{},"search-pro":{},"accordion":{},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":200000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"pageview-count":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bookname":"笔记","variables":{},"title":"Kent的博客","gitbook":"*"},"file":{"path":"coding/文件系统结构/文件系统结构.md","mtime":"2023-12-03T15:01:04.639Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-02-20T16:32:10.752Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"其他特性","level":"1.2.11.1","depth":3,"next":{"title":"多用户","level":"1.2.11.2","depth":3,"path":"coding/Features/多用户.md","ref":"coding/Features/多用户.md","articles":[]},"previous":{"title":"Features","level":"1.2.11","depth":2,"path":"coding/Features/README.md","ref":"coding/Features/README.md","articles":[{"title":"其他特性","level":"1.2.11.1","depth":3,"path":"coding/Features/其他特性.md","ref":"coding/Features/其他特性.md","articles":[]},{"title":"多用户","level":"1.2.11.2","depth":3,"path":"coding/Features/多用户.md","ref":"coding/Features/多用户.md","articles":[]}]},"dir":"ltr"},"config":{"//":["这是多行注释：    anchor-navigation-ex 是","anchor-navigation-ex 是","click-reveal 本地使用ok，但是github在build pages时，不识别click-reveal","accordion 也是折叠代码段","anchor-navigation-ex 是"],"plugins":["anchor-navigation-ex","toggle-chapters","expandable-chapters-small","splitter","code","page-treeview","popup","-search","-lunr","sidebar-style","auto-scroll-table","click-reveal","accordion","pageview-count","search-pro"],"root":"./markdownsFiles","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"Kent","title":"《知行，行知》"},"tbfed-pagefooter":{"copyright":"Copyright &copy ershouche-FE 2019","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"disqus":{"shortName":"gitbookuse"},"splitter":{},"search-pro":{},"accordion":{},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":200000},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"pageview-count":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bookname":"笔记","variables":{},"title":"Kent的博客","gitbook":"*"},"file":{"path":"coding/Features/其他特性.md","mtime":"2024-02-20T16:31:51.788Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-02-20T16:32:10.752Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
