@@ -303,9 +303,9 @@ linux 与 GitHub 或者 gerrite通信 协议
 
 
 
-# 报错
+## 报错
 
-## 关于git push   443链接 报错：
+### 关于git push   443链接 报错：
 
 ```
 fatal: unable to access 'https://github.com/KentTJ/-book.git/': Recv failure: Connection was reset
@@ -337,4 +337,53 @@ git config --global https.proxy http://127.0.0.1:7890
 # 参考：
 
 https://blog.csdn.net/renfeideboke/article/details/130930418?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-130930418-blog-120540819.235%5Ev38%5Epc_relevant_anti_t3&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-130930418-blog-120540819.235%5Ev38%5Epc_relevant_anti_t3&utm_relevant_index=1      Git创建本地分支并关联远程分支
+
+
+
+# ~~repo的安装~~
+
+报错：
+
+```java
+$ repo init -u git@e.coding.byd.com:dlc/bos/repo.git
+ bash: repo: command not found
+```
+
+------------->
+
+安装：
+
+> https://stackoverflow.com/questions/3682083/repo-command-not-found
+>
+> ```
+>  mkdir ~/bin
+>  PATH=~/bin:$PATH
+>  curl <https://storage.googleapis.com/git-repo-downloads/repo> > ~/bin/repo
+>  chmod a+x ~/bin/repo
+> ```
+
+报错：
+
+```java
+$ repo init -u 
+dlc/bos/repo.git File "C:/Users/chen.jinke/bin/repo", line 51 def print(self, *args, **kwargs): ^ SyntaxError: invalid syntax
+```
+
+确认：
+
+```
+ $ which python /c/myProgramFiles/Python27/python
+```
+
+修改默认python：
+
+> (1) 对于linux：
+>
+> ```
+>  sudo ln -s /usr/bin/python3 /usr/bin/python
+> ```
+>
+> （2）对于windows：
+>
+> > 修改环境变量PATH
 
