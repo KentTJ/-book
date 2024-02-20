@@ -165,6 +165,26 @@ ANR对话框：
 
 与watchDog的本质模型，并没有本质上的差异 ---------> 见watchDog
 
+
+
+
+
+# 补充 ANR
+
+[深入理解 Android ANR 触发原理以及信息收集过程 - huansky - 博客园 (cnblogs.com)](https://www.cnblogs.com/huansky/p/14954020.html)      https://www.cnblogs.com/huansky/p/14954020.html
+
+[ANR 触发原理 | Agehua (conorlee.top)](https://conorlee.top/2022/08/08/anr-trigger-principle/)   https://conorlee.top/2022/08/08/anr-trigger-principle/
+
+https://juejin.cn/post/6864555867023343623#heading-3           好文
+
+https://github.com/qingmei2/blogs/blob/master/src/反思系列/反思|系列目录.md    好文  反思
+
+https://blog.csdn.net/to_perfect/article/details/128509630
+
+
+
+
+
 # 面试题 Q&A
 
 

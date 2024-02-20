@@ -332,11 +332,27 @@ git config --global https.proxy http://127.0.0.1:7890
 
 
 
+### git bash 不支持中文时
 
+```
+ $ git status
+         modified:   README.md
+         modified:   "344\\270\\252\\344\\272\\272\\344\\273\\213\\347\\273\\215/\\345\\220\\264\\346\\227\\245\\346\\225\\217.md"
+```
+
+办法：
+
+> git config --global core.quotepath false
+
+参考：https://blog.csdn.net/m0_46104251/article/details/127411854
 
 # 参考：
 
 https://blog.csdn.net/renfeideboke/article/details/130930418?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-130930418-blog-120540819.235%5Ev38%5Epc_relevant_anti_t3&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-130930418-blog-120540819.235%5Ev38%5Epc_relevant_anti_t3&utm_relevant_index=1      Git创建本地分支并关联远程分支
+
+
+
+
 
 
 
