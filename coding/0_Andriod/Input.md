@@ -12,11 +12,11 @@
 
 %accordion%参考的0层图%accordion%
 
-![image-20221209010804487](Input.assets/image-20221209010804487.png)
-
---------------------->  方向比较好，上下方向；但是没有关系连线
-
-%/accordion%
+> ![image-20221209010804487](Input.assets/image-20221209010804487.png)
+>
+> --------------------->  方向比较好，上下方向；但是没有关系连线
+>
+> %/accordion%
 
 
 
@@ -40,7 +40,7 @@
 
 
 
-%accordion%gityuan的input分发流程：%accordion%
+%accordion%参考的gityuan的input分发流程图：%accordion%
 
 
 
