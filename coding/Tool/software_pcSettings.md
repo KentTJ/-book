@@ -1141,6 +1141,18 @@ https://cs.android.com/
 
 
 
+### 搜索   全局搜索
+
+~~参考：https://blog.csdn.net/m0_49448331/article/details/124495229~~
+
+**所有md文件的 全局搜索**： ~~Ctrl + Shift + F 自然~~
+
+> ---------> bug无法一步到位：点开文件，再本文件里搜索
+>
+> ![image-20240224182048059](software_pcSettings.assets/image-20240224182048059.png)
+
+
+
 
 
 ### Typora 设置标题自动编号
