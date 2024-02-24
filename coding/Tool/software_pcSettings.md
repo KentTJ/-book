@@ -2072,7 +2072,7 @@ wifi的驱动，禁止关闭
 ## 网页视频音量太小
 
 Volume Booster
-![image-20230917021306873](software_pcSettings.assets/image-20230917021306873.png)
+![image-20240224233506303](software_pcSettings.assets/image-20240224233506303.png)
 
 ## 远程桌面
 

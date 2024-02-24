@@ -466,9 +466,21 @@ https://zhuanlan.zhihu.com/p/33000424
 
 ## 调用栈深度
 
-显示2层
+### 调用栈深度
+
+显示2层时，比较优
 
 参考：https://blog.csdn.net/qq_36035382/article/details/126357313
+
+### ~~del_化简之调用栈~~
+
+-<font color='red'> 忽略References中.h定义文件：</font>
+
+> relation window 调用树中：
+>
+> **根据图标不同**，忽略.h 中定义处的调用 （**自然，整个分支都化简掉**）
+>
+> ![image-20240224234356370](sourceInsight.assets/image-20240224234356370.png)
 
 
 
