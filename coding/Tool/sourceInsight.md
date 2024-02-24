@@ -159,7 +159,7 @@ TODO：
 
 
 
-## ~~del: 替换  Ctrl + R~~
+## ~~del_替换  Ctrl + R~~
 
 ![image-20231125161949943](sourceInsight.assets/image-20231125161949943.png)
 
@@ -500,7 +500,7 @@ https://zhuanlan.zhihu.com/p/33000424
 
 
 
-## ~~安装~~
+## ~~del_安装~~
 
 ### Source Insight 试用过期，激活
 

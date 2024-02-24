@@ -1463,6 +1463,12 @@ table tr td {
 
 
 
+## ~~del_默认打开根目录~~
+
+优：不用每次都找到路径，然后打开
+
+![image-20240224232213784](software_pcSettings.assets/image-20240224232213784.png)
+
 ### 官网 & 教程
 
 https://support.typora.io/   官网 & 教程
@@ -2007,7 +2013,7 @@ H盘
 
 
 
-## 磁盘空间不够
+## win磁盘空间不够
 
 ### 查找磁盘大文件
 
