@@ -1159,7 +1159,7 @@ https://cs.android.com/
 
 网页端搜索框，默认全局   --------->  找到对应的本地md
 
-
+### 搜索文件 Ctrl + P
 
 ### Typora 设置标题自动编号
 
@@ -1462,6 +1462,10 @@ table tr td {
 %/accordion%
 
 
+
+### 官网 & 教程
+
+https://support.typora.io/   官网 & 教程
 
 ## 所有软件自定义热键的方法--- AutoHotkey
 
@@ -1831,9 +1835,49 @@ AS 有同样的Hierarchy
 
 
 
+## ~~del: word软件~~
 
+### 目录
 
+1、基于标题：刷各个标题 -----> 形成大纲 
 
+![image-20240224185030964](software_pcSettings.assets/image-20240224185030964.png)
+
+2、大纲 ----> 目录：
+
+引用----自定义目录-----显示级别----选项、字体
+
+![image-20240224185333264](software_pcSettings.assets/image-20240224185333264.png)
+
+### 页眉
+
+ 连续两页的页眉不会关联的基础：
+
+（1）**分节**
+
+> 操作：
+>
+> ![image-20240224185705573](software_pcSettings.assets/image-20240224185705573.png)
+>
+> 效果：
+>
+> ![image-20240224185742969](software_pcSettings.assets/image-20240224185742969.png)
+
+（2）取消 链接到前一条页眉
+
+> ![image-20240224185859817](software_pcSettings.assets/image-20240224185859817.png)
+
+### 页脚
+
+ 连续两页的页脚 页码不会关联的基础：
+
+（1）~~**分节**，同页眉~~
+
+（2）~~取消 链接到前一条页眉~~
+
+（3）页码 续前节 还是 .........
+
+> ![image-20240224190111784](software_pcSettings.assets/image-20240224190111784.png)
 
 # 计算机其他问题及设置
 
