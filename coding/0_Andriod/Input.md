@@ -40,6 +40,10 @@
 
 
 
+%accordion%gityuan的input分发流程：%accordion%
+
+
+
 ![input_summary](Input.assets/input_summary.jpg)
 
 ~~图见： http://gityuan.com/2016/12/31/input-ipc/~~
@@ -47,6 +51,14 @@
 -----------------> TODO: 流程图画的不好: 
 
  (1) 没有基于结构图！！！！ (2) 方向不是事件的上下方向
+
+%/accordion%
+
+
+
+
+
+
 
 
 
