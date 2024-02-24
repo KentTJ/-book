@@ -1540,7 +1540,7 @@ java可以import类的方法名------->  **感觉必须是静态方法**（否�
 
 ## **匿名内部类**
 
-**匿名内部类的理解：<font color='red'>相当于子类</font>**
+**匿名内部类的理解：<font color='red'>（1）定义了子类 </font>**  （2）~~没有名字（自然，匿名）~~
 
 比如：
 
@@ -1552,23 +1552,23 @@ java可以import类的方法名------->  **感觉必须是静态方法**（否�
 
 例子：
 
-
-
-```java
-    public final /*static*/ Map<Integer, String> RESULT_MESSAGE = new HashMap<Integer, String>(){
-        {
-            put(RESULT_CODE_OK, "ok");
-            put(RESULT_CODE_BADREQUEST, "bad request");
-            put(RESULT_CODE_UNAUTHORIZED, "unauthorized");
-            put(RESULT_CODE_FORBIDDEN, "forbidden");
-            put(RESULT_CODE_TOOMANYREQUEST, "too many request");
-            put(RESULT_CODE_INTERNALSERVERERROR, "Internal Server Error");
-        }
-    };
-
-```
-
-~~参考：https://blog.csdn.net/u013786868/article/details/53261207  Map属性的初始化方式~~
+> 定义了一个Map的子类：（<font color='red'>子类在定义的时候，就定义了初始化过程put</font>）
+>
+> ```java
+>     public final /*static*/ Map<Integer, String> RESULT_MESSAGE = new HashMap<Integer, String>(){
+>         {
+>             put(RESULT_CODE_OK, "ok");
+>             put(RESULT_CODE_BADREQUEST, "bad request");
+>             put(RESULT_CODE_UNAUTHORIZED, "unauthorized");
+>             put(RESULT_CODE_FORBIDDEN, "forbidden");
+>             put(RESULT_CODE_TOOMANYREQUEST, "too many request");
+>             put(RESULT_CODE_INTERNALSERVERERROR, "Internal Server Error");
+>         }
+>     };
+> 
+> ```
+>
+> ~~参考：https://blog.csdn.net/u013786868/article/details/53261207  Map属性的初始化方式~~
 
 
 
