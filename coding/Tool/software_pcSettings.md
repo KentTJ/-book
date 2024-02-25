@@ -1907,7 +1907,9 @@ https://zhuanlan.zhihu.com/p/659297001   win11  22H2升级到23H2？
 
 
 
-参考：https://www.jb51.net/os/win11/913483_all.html  
+教程：https://www.jb51.net/os/win11/913483_all.html  
+
+-------------->注：其中修改注册表操作没有做，是OK的
 
 
 
