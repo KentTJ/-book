@@ -1903,6 +1903,8 @@ https://zhuanlan.zhihu.com/p/659297001   win11  22H2升级到23H2？
 
 （2）翻墙软件
 
+（3）（**不确定**）登录Microsoft 账号。local账号不行
+
 
 
 参考：https://www.jb51.net/os/win11/913483_all.html  
