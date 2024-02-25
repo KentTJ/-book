@@ -74,6 +74,22 @@
 
 ![image-20221210234704475](Input.assets/image-20221210234704475.png)
 
+
+
+# 参考
+
+
+
+gityuan系列文章：
+
+> https://gityuan.com/2016/12/10/input-manager/        Input系统—启动篇
+>
+> https://gityuan.com/2016/12/31/input-ipc/        
+
+
+
+
+
 # Android事件的分发------从viewRootImpl到Activity
 
 

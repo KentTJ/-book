@@ -1891,6 +1891,24 @@ AS 有同样的Hierarchy
 
 > ![image-20240224190111784](software_pcSettings.assets/image-20240224190111784.png)
 
+
+
+## Copilot
+
+几个关键点：
+
+（1）win11  23H2 ，~~win11  22H2不行~~
+
+https://zhuanlan.zhihu.com/p/659297001   win11  22H2升级到23H2？
+
+（2）翻墙软件
+
+
+
+参考：https://www.jb51.net/os/win11/913483_all.html  
+
+
+
 # 计算机其他问题及设置
 
 ## 软件最优的使用方式----免安装
