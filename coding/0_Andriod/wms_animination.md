@@ -337,6 +337,43 @@ https://www.cnblogs.com/dyufei/p/8081936.html    [Android 7.1 WindowManagerServi
 
 
 
+https://www.zhihu.com/question/334061990           Android 做到 iOS 如丝般柔滑的过渡动画真的很难吗？
+
+https://juejin.cn/post/6844903465211133959        Android 动画总结——View 动画、属性动画、帧动画  --------->    好文：
+
+https://juejin.cn/post/7023676770016559118          Android WMS动画系统初探(二)     ---------->   好文，系列文章！！！！！！
+
+https://juejin.cn/post/7026611124482670600/       Android WMS动画系统初探(三)   屏幕旋转动画  ---------> 拿display去旋转的！！！！
+
+https://www.cnblogs.com/Im-Victor/p/11445589.html    [Android 一共有多少种动画？准确告诉你！](https://www.cnblogs.com/Im-Victor/p/11445589.html)
+
+```
+ 动画种类
+ Android 动画可以归纳为以下几种：
+ 
+ 视图动画（View 动画）
+ 帧动画（Frame 动画、Drawable 动画）
+ 属性动画
+ 触摸反馈动画（Ripple Effect）
+ 揭露动画（Reveal Effect）
+ 转场动画 & 共享元素（Activity 切换动画）
+ 视图状态动画（Animate View State Changes）
+ 矢量图动画（Vector 动画）
+ 约束布局实现的关键帧动画（ConstraintSet 动画）
+ 
+ 
+ 补充：
+ 屏幕旋转动画 ------>  转场动画的一种？？？？
+```
+
+https://github.com/OCNYang/Android-Animation-Set?tab=readme-ov-file     《Android 动画详尽教程》系列   --------->    好文
+
+
+
+
+
+
+
 # 抛开动画代码
 
 
