@@ -49,7 +49,23 @@ https://blog.csdn.net/u013171226/article/details/108868425
 
 ​      TODO: Ubutu上安装vscode，并搭建Frame native断点调试环境    :
 https://www.jianshu.com/p/d84a2ec948be     使用VsCode调试Android Framework C/C++源代码
-https://blog.csdn.net/zhaojia92/article/details/99774704                                                                                                                                                                                                                                                                                                                                                                                                              
+https://blog.csdn.net/zhaojia92/article/details/99774704      
+
+
+
+### 补充 vscode
+
+vscode可以断点调试bin：（确定可以）
+
+> 指定bin路径
+
+参考： https://blog.csdn.net/weixin_39258979/article/details/111292273
+
+-------------------> TODO: 还未验证
+
+
+
+​                                                                                                                                                                                                                                                                                                                                                                                                        
 
 ## markdown
 
@@ -1910,6 +1926,26 @@ https://zhuanlan.zhihu.com/p/659297001   win11  22H2升级到23H2？
 教程：https://www.jb51.net/os/win11/913483_all.html  
 
 -------------->注：其中修改注册表操作没有做，是OK的
+
+
+
+## ~~del_ipad 快捷键~~
+
+总入口：
+
+> 辅助功能  ----->  全键盘控制 -----> 命令
+>
+> 可以自定义
+
+其他：
+
+> 截屏  ----->  Command-Shift-3
+>
+> 锁屏  -------->  cmd + L  (需自定义)
+>
+> 关闭chrome标签页  -------->  cmd + w
+>
+> 快捷指令
 
 
 

@@ -24,3 +24,13 @@ https://mengfou.blog.csdn.net/article/details/121220878?spm=1001.2101.3001.6650.
 
 
 
+
+
+
+
+见：https://blog.csdn.net/rzleilei/article/details/123252533        Android性能优化之页面优化
+
+https://blog.csdn.net/rzleilei/article/details/125258457         启动速度优化
+
+
+
