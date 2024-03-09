@@ -92,3 +92,17 @@ google > 微信搜一搜 > 公众号 >  细分论坛或APP  >  百度等
 https://z-lib.io/s
 
 https://www.jiumodiary.com/   中文
+
+
+
+# 在线工具
+
+canva.com;在线设计海报、ppt\视频
+remove.bg：在线抠图
+miro/canva；脑图
+腾讯智影/Azure/网易见闻: 文字转语音
+https://thispersondoesnotexist.com:生成AI合成头像
+Clipchamp/FlexClip:视频剪辑  --------> !!!!
+deepl:
+grammarly:
+chatgpt:让它回答问题并且生成文档画作等。

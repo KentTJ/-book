@@ -995,6 +995,12 @@ https://www.jianshu.com/p/6474297924b6     Android 图形系统（Graphics）
 
 
 
+https://zhuanlan.zhihu.com/p/676082509     Android 14 HWUI 源码研究 View Canvas RenderThread ViewRootImpl skia    ----------->  好文
+
+
+
+
+
 
 
 # view-Graphic 纵向0层
