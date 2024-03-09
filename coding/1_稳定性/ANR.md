@@ -187,7 +187,31 @@ https://blog.csdn.net/rzleilei/article/details/127118071   ----------->  超级�
 
 
 
+[失落夏天](https://blog.csdn.net/AA5279AA) 的ANR系列文章：
 
+> 总目录：https://blog.csdn.net/rzleilei/article/details/120720918
+>
+> 分为三块来讲：
+>
+> 第一块，讲解ANR发生后，是如何显示的，以及对应的日志文件如何生成的：
+>
+> > ANR系列之一：ANR显示和日志生成原理讲解_失落夏天的博客-CSDN博客       ------> 好文，尤其图
+>
+> 第二块，讲四种类型的ANR是如何产生的：
+>
+> > ANR系列之二：Input类型ANR产生原理讲解       ------> 好文，尤其图
+> >
+> > ANR系列之三：broadcast类型ANR产生原理讲解
+> >
+> > ANR系列之四：ContentProvider类型ANR产生原理讲解
+> >
+> > ANR系列之五：Service类型ANR原理讲解
+>
+> 第三块，讲如何ANR问题如何进行分析，以及如何建立有效的机制来检测上报ANR类型问题。（未完成）
+>
+> > ANR系列之六：ANR文件和日志如何分析
+> >
+> > ANR系列之七：如何建立有效的机制来监控分析ANR问题
 
 
 

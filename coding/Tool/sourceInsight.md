@@ -534,3 +534,38 @@ http://www.sourceinsight.com.cn/feather.html
 
 https://www.dandelioncloud.cn/article/details/1578906401210855426     Source Insight 使用教程(2)——常用功能
 
+
+
+
+
+# ~~del_linux下使用 Source Insight~~
+
+参考：https://juejin.cn/s/linux source insight
+
+----------> **验证ok**
+
+1、**安装wine**
+
+```
+ sudo apt-get install wine-stable=3.0-1ubuntu1
+```
+
+**2.使用wine安装Source Insight 4.0**
+
+```
+ //（1） copy linux的安装包 sourceinsight40107-setup.exe到linux
+ 
+ //（2）linux内
+ wine sourceinsight40107-setup.exe
+```
+
+3、打开：
+
+```
+ cd ~/.wine/drive_c/Program\\ Files\\ \\(x86\\)/Source\\ Insight\\ 4.0
+ wine sourceinsight4.exe
+```
+
+借助wine，运行win下的 软件
+
+> 参考：https://www.sysgeek.cn/ubuntu-wine/
