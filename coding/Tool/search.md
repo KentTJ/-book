@@ -16,8 +16,17 @@ gityuan
 
 # 搜索途径：
 
-
 google > 微信搜一搜 > 公众号 >  细分论坛或APP  >  百度等
+
+
+
+# 搜索的目的
+
+> know sth
+>
+> learn sth   -----> 要专业性
+>
+> create sth 
 
 
 
@@ -60,8 +69,26 @@ google > 微信搜一搜 > 公众号 >  细分论坛或APP  >  百度等
 >
 > ![image-20240309210545188](search.assets/image-20240309210545188.png)
 
-找pdf：（**大多pdf专业文档**）
+限定文件类型：
 
-> 大模型 filetype: pdf
+> 找pdf：（**大多pdf专业文档**）
 >
-> ![image-20240309211202312](search.assets/image-20240309211202312.png)
+> > 大模型 filetype: pdf
+> >
+> > ![image-20240309211202312](search.assets/image-20240309211202312.png)
+>
+> ~~找png：-~~-----> 同理
+>
+> ~~龙舟 filetype: png~~
+
+组合：
+
+> ~~以上可以组合~~  -----> 自然
+
+
+
+# 电子书网站
+
+https://z-lib.io/s
+
+https://www.jiumodiary.com/   中文
