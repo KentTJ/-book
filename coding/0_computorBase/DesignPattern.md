@@ -1943,13 +1943,11 @@ https://zhuanlan.zhihu.com/p/73442055   经典并发同步模式：生产者-消
 [单生产者和单消费者共同操作同一个消息队列需要加锁吗](https://www.cnblogs.com/codingmengmeng/p/14420573.html)          https://www.cnblogs.com/codingmengmeng/p/14420573.html
 答案：不需要
 
-
-
-# 其他设计思想：
+# =======其他设计思想==========
 
 
 
-## 设计思想的大道
+# 设计思想的大道
 
 设计之代码<font color='red'>尽量模糊</font>：因为模糊，所以扩展性强（新增接口，新增代码量小）
 
@@ -1963,6 +1961,8 @@ https://zhuanlan.zhihu.com/p/73442055   经典并发同步模式：生产者-消
 
 
 
+# 回调
+
 ## SetLinsterner与set(this)区别：
 
 都是用于回调类似的操作
@@ -1975,13 +1975,120 @@ linsterner比较固定，大部分时候实现接口，固定不变。。。。�
 
 
 
-## 分层设计思想
+## 代码层面的设计---------cpp的callback与java的比较
+
+### 相同点：
+
+> 理解：callback只是 调用方向（**与代码无关，不是类，只是表达方向**）
+
+### 不同点：
+
+> cpp有函数类型  ------>  用函数类型不同 来区分 （包装）参数类型的不同
+>
+> java没有 函数类型  ------>   用类的类型不同，来区分 （包装）参数类型的不同
+
+回调传回不同的参数类型：
+
+> 1、cpp实现：
+>
+> ```
+>  int getPriorityByName(const std::string& serviceName, std::function<void(int result, int nice, const std::string& name)> callback)  //【1】
+> 
+>  int getServiceName(const unit32_t& procId, std::function<void(int result, const unit32_t& procId,
+>  const& std::string& name)>  ca11back);   //【2】
+> ```
+>
+> 
+>
+> java实现上述效果:
+>
+> %accordion%java实现上述效果:%accordion%
+>
+> ```
+>  public interface StringCallback {
+>      void onStringCallback(String result); // 【】不同的类来约束，不同参数
+>  }
+>  
+>  public interface IntCallback {
+>      void onIntCallback(int result);
+>  }
+>  
+>  public class CallbackHandler {
+>      public void registerStringCallback(StringCallback callback) {
+>          // 处理回调
+>          callback.onStringCallback("String result");
+>      }
+>  
+>      public void registerIntCallback(IntCallback callback) {
+>          // 处理回调
+>          callback.onIntCallback(123);
+>      }
+>  }
+>  
+>  public class Main {
+>      public static void main(String[] args) {
+>          CallbackHandler handler = new CallbackHandler();
+>  
+>          // 使用StringCallback
+>          handler.registerStringCallback(new StringCallback() {
+>              @Override
+>              public void onStringCallback(String result) {
+>                  System.out.println("String callback result: " + result);
+>              }
+>          });
+>  
+>          // 使用IntCallback
+>          handler.registerIntCallback(new IntCallback() {
+>              @Override
+>              public void onIntCallback(int result) {
+>                  System.out.println("Int callback result: " + result);
+>              }
+>          });
+>      }
+>  }
+> ```
+>
+> %/accordion%
+>
+> cpp优点：**很显然，cpp简洁许多**
+
+**根本原因：**    cpp函数类型表达的强大：
+
+> （1）编译约束角度：
+>
+> 系统侧 约束 接口调用者填充
+>
+> （2）**函数即类，即类型** ------->  **不同的function类型，以区分不同的返回值类型**，比如int值返回，string值返回
+>
+> 注：所以，函数（类）可以返回多个，不同的参数
+
+-----------------> **总之，一句话:**
+
+> cpp有函数类型  ------>  用函数类型不同 来区分 （包装）参数类型的不同
+>
+> java没有 函数类型  ------>   用类的类型不同，来区分 （包装）参数类型的不同
+
+
+
+
+
+/【1】次要的补充：
+
+> int getPriorityByName  ---------->  直接返回的Int不是跨进程的
+>
+> callback返回的 int result  才是跨进程的
+
+
+
+
+
+# 分层设计思想
 
 见《0层结构---一次Binder通信》
 
 
 
-## 内外接口分开思想：
+# 内外接口分开思想：
 
 
 
@@ -2000,7 +2107,7 @@ TODO ！！！！！！！！：
 
 > 这样确实很好。但是具体、精确的好，在哪里
 
-## 第一性原理之---------扩展性（弹性）
+# 第一性原理之---------扩展性（弹性）
 
 扩展性的标准：
 
@@ -2008,7 +2115,7 @@ TODO ！！！！！！！！：
 
 
 
-## 扩展性之-----------反射
+# 扩展性之-----------反射
 
 -**<font color='red'>反射，可以实现的功能（或者  为啥要用反射）</font>：**
 
