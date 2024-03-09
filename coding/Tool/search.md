@@ -2,7 +2,7 @@
 
 
 
-# 补充搜索
+# 一些好的技术文章公众号
 
 博客很多情况下，挑选：点赞数、评论数、码年龄大的
 
@@ -11,6 +11,8 @@
 gityuan
 
 努比亚团队
+
+
 
 
 
@@ -106,3 +108,10 @@ Clipchamp/FlexClip:视频剪辑  --------> !!!!
 deepl:
 grammarly:
 chatgpt:让它回答问题并且生成文档画作等。
+
+
+
+https://savetube.app/en2  ---------->  download youtube videos
+
+
+
