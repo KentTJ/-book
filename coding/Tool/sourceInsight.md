@@ -482,6 +482,10 @@ https://zhuanlan.zhihu.com/p/33000424
 >
 > ![image-20240224234356370](sourceInsight.assets/image-20240224234356370.png)
 
+尽量用list --------> 显示得更多：
+
+> ![image-20240310214716685](sourceInsight.assets/image-20240310214716685.png)
+
 
 
 ## 关闭overview
