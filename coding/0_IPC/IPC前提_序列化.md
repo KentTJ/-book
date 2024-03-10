@@ -376,9 +376,75 @@ client侧--------------------stub层代码
 
 ### 反序列化流程：
 
+#### 如何寻找函数
+
 Stub.onTransact  ——-->  函数code 4 找到对应relayout
 
 给定 Parcel
+
+#### 如何创建 参数（对象）-----createFromParcel
+
+1、在AIDL编译出的java里(IWindowSession.java)
+
+```java
+//onTranction:
+
+if ((0!=data.readInt())) { // TODO: 这里为啥是0呢？ 安卓在优化
+    _arg1 = android.graphics.Region.CREATOR.createFromParcel(data);
+  }
+```
+
+特点：
+
+> （1）这里不存在反射
+>
+> （2）android.graphics.Region.CREATOR 类的寻找，是通过 脚本编译生成的java类完成的！！！！！！
+
+2、似乎也有反射方法（<font color='red'>优化：提前缓存</font>）:
+
+接口一：
+
+> HashMap<ClassLoader,HashMap<String,Parcelable.Creator<?>>> //  抄 Parcelable.Creator<?> readParcelableCreator(@Nullable ClassLoader loader) // --------> 接口作用：从 类名（比如Intent） 获取  对应类的CREATOR
+
+// 创建creator，这里也是java反射 Field f = parcelableClass.getField("CREATOR"); creator = (Parcelable.Creator<?>) f.get(null);
+
+<-------------在此之前 ClassLoader parcelableClassLoader = (loader == null ? getClass().getClassLoader() : loader); // Avoid initializing the Parcelable class until we know it implements // Parcelable and has the necessary CREATOR field. http://b/1171613. Class<?> parcelableClass = Class.forName(name, false /* initialize */, parcelableClassLoader);
+
+> 场景： 传输的类是抽象类（或者父类），**接收端不知道是哪个具体子类！！！！！不好写死**
+>
+> ```java
+> 反序列化ClientTransaction的过程中，parcel数据中带了一些 List<ClientTransactionItem> mActivityCallbacks---->  抽象类
+> 这些callback可能是某个具体的子类，比如 TopResumedActivityChangeItem---->  具体类
+> 接收端是没法在代码中写死的：比如TopResumedActivityChangeItem.CREATOR.createFromParcel
+> ```
+>
+> TODO: 类名什么时候被序列化进去的？？？？？？
+
+接口二：
+
+```java
+<T extends Parcelable> T readParcelable(@Nullable ClassLoader loader)
+// 直接读取，并创造下一个Parcelable类
+```
+
+调用栈：
+
+```java
+readParcelableCreator:3320, Parcel (android.os)
+readParcelable:3273, Parcel (android.os)
+readParcelableList:3053, Parcel (android.os)
+<init>:204, ClientTransaction (android.app.servertransaction)
+<init>:44, ClientTransaction (android.app.servertransaction)
+createFromParcel:211, ClientTransaction$1 (android.app.servertransaction)
+createFromParcel:209, ClientTransaction$1 (android.app.servertransaction)
+onTransact:1276, IApplicationThread$Stub (android.app)
+execTransactInternal:1159, Binder (android.os)
+execTransact:1123, Binder (android.os)
+```
+
+
+
+
 
 
 
@@ -391,6 +457,12 @@ Stub.onTransact  ——-->  函数code 4 找到对应relayout
 # TODO：如何寻找到对端对象的？
 
 AIDL编译出的stub  java文件
+
+从java层来看：是拿到对端的代理proxy
+
+从cpp层来看：
+
+
 
 
 
