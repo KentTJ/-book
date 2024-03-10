@@ -2,19 +2,32 @@
 
 # 动画的种类
 
+WMS的动画系统
+
+https://juejin.cn/post/7021082548985921567
+
+```
+ 动画
+       Drawable ------帧动画（Frame 动画、Drawable 动画）
+       view：view动画------原理view的变动
+             属性动画------<https://github.com/OCNYang/Android-Animation-Set/tree/master/property-animation>
+       窗口类：窗口动画 -------原理surface  Toast的弹出动画
+
+       整个屏幕：原理截图
+```
+
+对于View动画，动画的目标就是View，而对于窗口来说，动画的目标其实都是Surface，对**不同层级的SurfaceControl**进行操纵，会产生不同的动画效果。
+
+| 目标WindowContainer | 名称     | 举例                                                         |
+| ------------------- | -------- | ------------------------------------------------------------ |
+| WindowState         | 窗口动画 | Toast的弹出动画、PopupWindow的弹出动画   ------------>  要做 |
+| AppWindowToken      | 过渡动画 | App从桌面启动的动画    ------------>  要做                   |
+| Task                | Task动画 | Recents的动画，PIP动画                                       |
+| DisplayContent      | 全屏动画 | 转屏动画  ------------>  要做                                |
+
+参考： https://juejin.cn/post/7021082548985921567
 
 
-# WMS动画系统
-
-分类：
-
-> 窗口动画
->
-> 过渡动画
->
-> 屏幕旋转动画
-
-TODO: 区别
 
 # Android 动画原理
 
