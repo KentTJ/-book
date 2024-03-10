@@ -53,7 +53,7 @@ TODO:
 
 https://blog.csdn.net/tkwxty/article/details/107916160   内核
 
-![在这里插入图片描述](IPC前提 序列化.assets/2020081109300252.png)
+![在这里插入图片描述](IPC前提_序列化.assets/2020081109300252.png)
 
 
 
@@ -159,7 +159,7 @@ parce如何序列化的？----->  //化简之val信息流
 
 所有的write，最终都走到writeAligned：
 
-![image-20231127005612509](IPC前提 序列化.assets/image-20231127005612509.png)
+![image-20231127005612509](IPC前提_序列化.assets/image-20231127005612509.png)
 
 writeAligned（**写入对齐**）
 
