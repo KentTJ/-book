@@ -355,17 +355,29 @@ https://www.androidperformance.com/2020/02/14/Android-Systrace-SurfaceFlinger/#/
 
 ## 硬件框架
 
-![image-20230418234025656](Graphic.assets/image-20230418234025656.png)
+![image-20240310002828736](Graphic.assets/image-20240310002828736.png)
 
 出自：《1-1_11_显示系统框架_framebuffer原理及改进.wmv》
 
 
 
-TODO: DisplayControl的作用？ 操纵LCD去读取FrameBuffer？
+TODO: 
+
+> DisplayControl的作用：把FrameBuffer数据搬到LCD上 ----------> TODO: 待验证
+>
+>  操纵LCD去读取FrameBuffer？
+>
+> 显示驱动？到底指的是哪块功能？
 
 
 
-屏幕：内存的关系：
+只有一个FB的问题：FrameBuffer（FB）被应用写，同时被DisplayControl读取：
+
+> ![image-20240310003505457](Graphic.assets/image-20240310003505457.png)
+
+
+
+屏幕大小 <------------>  内存的关系：
 
 > 屏幕上一个像素16位 ，即 2字节   ----> 内存Buffer： 800\*600\* 2字节  
 
@@ -834,13 +846,21 @@ VSYNC具体指啥？在屏幕刷新中如何工作的？
 
 Flutter的渲染管道分为以下七个步骤：
 
-1.  用户输入（User Input）： 响应用户通过鼠标、键盘、触摸屏等设备产生的手势行为。
-2.  动画（Animation）： 基于定时器（Timer）更新当前帧的数据。
-3.  构建（Build）： 三棵树的创建，更新和销毁阶段，StatelessWidget和State的build方法将在改阶段执行。
-4.  布局（Layout）： Render Tree将在该阶段完成各个节点的大小和位置计算。
-5.  绘制（Paint）： Render Tree遍历每个节点，生成Layer Tree、RenderObject的paint方法在该阶段执行，生成一系列绘制指令。
-6.  合成（Composition）： 处理Layer Tree，生成一个Scene对象，作为栅格化的输入。-->TODO: 这个地方与英文图有差异, 一个是
-7.  栅格化（Rasterize）：将绘制指令处理成可供GPU上屏的原始数据（合成的视图数据其实还是一份矢量描述数据，光栅化帮助把这份数据真正地生成一个一个的像素填充数据，即 `矢量描述---> 像素填充`）
+1. 用户输入（User Input）： 响应用户通过鼠标、键盘、触摸屏等设备产生的手势行为。
+
+2. 动画（Animation）： 基于定时器（Timer）更新当前帧的数据。
+
+3. 构建（Build）： 三棵树的创建，更新和销毁阶段，StatelessWidget和State的build方法将在改阶段执行。
+
+4. 布局（Layout）： Render Tree将在该阶段完成各个节点的大小和位置计算。
+
+5. 绘制（Paint）： Render Tree遍历每个节点，生成Layer Tree、RenderObject的paint方法在该阶段执行，生成一系列绘制指令。
+
+6. 合成（Composition）： 处理Layer Tree，生成一个Scene对象，作为栅格化的输入。----->  TODO: 这个地方与英文图有差异, 一个是
+
+7. 栅格化（Rasterize）：将绘制指令处理成可供GPU上屏的原始数据（合成的视图数据其实还是一份矢量描述数据，光栅化帮助把这份数据真正地生成一个一个的像素填充数据，即 `矢量描述---> 像素填充`）
+
+   
 
 ### Flutter数据模型---四棵树0层
 

@@ -1889,6 +1889,24 @@ virtualbox 在设置里给虚拟机开的处理器核心数，不要大，1个�
 
 注意：需要在桌面内使用（不能在AS内使用，被AS识别消费了）   https://blog.csdn.net/qq_15138049/article/details/125666050
 
+
+
+## **ubuntu设置分辨率**
+
+参考： https://blog.51cto.com/u_15057807/4126233
+
+```
+ sudo xrandr --newmode "1920x1080" 173.00 1920 2048 2248 2576 1080 1083 1088 1120 -hsync +vsync
+ sudo xrandr --addmode Virtual1 "1920x1080"
+ xrandr -s 1920x1080  // 设置
+```
+
+-----> 验证ok
+
+
+
+
+
 ## virutualBox 连手机
 
 https://www.cnblogs.com/manmande/p/17329504.html   虚拟机Virtualbox 识别不到USB设备 的解决办法
