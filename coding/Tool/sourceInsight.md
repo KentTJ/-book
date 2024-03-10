@@ -530,6 +530,16 @@ https://zhuanlan.zhihu.com/p/33000424
 >
 > ![image-20231124005419710](sourceInsight.assets/image-20231124005419710.png)
 
+
+
+## 保存-----最优界面 和 设置
+
+layout保存xml
+
+设置保存：Options ----->  Loading configuration
+
+
+
 ## 新版功能：
 
 http://www.sourceinsight.com.cn/feather.html
