@@ -12,7 +12,13 @@ gityuan
 
 努比亚团队
 
+罗升阳  ------------>  **规定：** 安卓的任何帖子，都必须先参考他的     
 
+> ​      https://www.kancloud.cn/alex_wsc/androids/473785     ---------->  目录结构很好
+>
+> ​    https://blog.csdn.net/luoshengyang/article/details/8498908        ------>  原博客
+
+​       
 
 
 

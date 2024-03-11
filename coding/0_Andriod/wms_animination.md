@@ -1,4 +1,4 @@
-# 目录
+# 
 
 # 动画的种类
 
@@ -34,17 +34,18 @@ https://juejin.cn/post/7021082548985921567
 Android中动画的工作过程：
 在某一个时间点，调用getTransformation()，根据mStartTime和mDuration，**计算出当前的进度，**在根据mInterpolator计算出转换的进度，然后计算出属性的当前值，保存在matrix中。 再调用Matrix.getValues将属性值取出，运用在动画目标上。
 
-## Animation 和 Transform
+## 一对组合---------Animation 和 Transform
 
-![img](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1becffecc3f6446084da6de642f79b95~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp?)
+<img src="wms_animination.assets/image-20240312002702938.png" alt="image-20240312002702938" style="zoom:50%;" />
 
-Animation ：
+Animation ：--------->  本质：时间
 
-​           给定了初始状态、结束状态、启动时间与持续时间  ------>  **用于计算 Transformation**
+>  ~~给定了初始状态、结束状态、启动时间与持续时间  ------>  **用于计算 Transformation**~~
+>
 
-Transformation：
+Transformation：--------> 本质：空间
 
-​             Transformation 描述了一个变换，即：透明度和一个二维变换矩阵
+> ~~Transformation 描述了一个变换，即：透明度和一个二维变换矩阵~~
 
 
 
@@ -59,6 +60,10 @@ VSync信号驱动动画
 
 
 # 窗口动画
+
+https://blog.csdn.net/luoshengyang/article/details/8596449      Android窗口管理服务WindowManagerService切换Activity窗口（App Transition）的过程分析         
+
+
 
 
 
@@ -343,6 +348,8 @@ https://www.youtube.com/watch?v=S20kdGUOnAw
 
 
 # 参考
+
+首要参考： 
 
 https://blog.csdn.net/SSSxCCC/article/details/119324066    转屏动画 - 安卓R
 
