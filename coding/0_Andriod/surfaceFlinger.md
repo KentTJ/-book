@@ -61,3 +61,16 @@
 TODO:
 
 设计美好： 统一的配置，剥离成文件
+
+
+
+
+
+# 参考
+
+ https://www.cnblogs.com/blogs-of-lxl/p/11272756.html    Android 显示系统：SurfaceFlinger详解    ------------->  好文！！！！图很好
+
+TODO：图很好，模仿他的图，为什么能画这么清晰，能承载的东西也多
+
+
+

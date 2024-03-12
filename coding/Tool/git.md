@@ -403,3 +403,33 @@ dlc/bos/repo.git File "C:/Users/chen.jinke/bin/repo", line 51 def print(self, *a
 >
 > > 修改环境变量PATH
 
+
+
+
+
+# github
+
+## create a new repository on the command line、
+
+```java
+echo "# aosp10" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/KentTJ/aosp10.git
+git push -u origin main
+```
+
+
+
+
+
+## push an existing repository from the command line
+
+```java
+git remote add origin https://github.com/KentTJ/aosp10.git
+git branch -M main
+git push -u origin main
+```
+
