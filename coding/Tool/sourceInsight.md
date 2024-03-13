@@ -353,7 +353,7 @@ https://jingyan.baidu.com/article/90808022d313a2fd91c80f93.html
 
 退而求其次的方法：
 
-> 1、快捷键CTRL + E ------> File menu
+> 1、File menu是生效的 --------> 修改为CTRL + E 
 >
 > ![image-20230723143241672](sourceInsight.assets/image-20230723143241672.png)
 >
@@ -582,4 +582,5 @@ https://www.dandelioncloud.cn/article/details/1578906401210855426     Source Ins
 
 借助wine，运行win下的 软件
 
-> 参考：https://www.sysgeek.cn/ubuntu-wine/
+> 参考：https://www.sysgeek.cn/ubuntu-wine/        --------->  好文
+
