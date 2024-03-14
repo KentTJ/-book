@@ -358,7 +358,7 @@ client侧--------------------stub层代码
 
 （2） 如何确定是哪个函数？ 通过code
 
-- ---------------------> **合理性证明：以上都是约束、协议**
+---------------------> **合理性证明：以上都是约束、协议**
 
 （3） 每一层做每一层的事情：
 
@@ -366,7 +366,7 @@ client侧--------------------stub层代码
 >
 > 类级别：序列化类的内部属性 <------------------>  与类的反序列化一致
 
-- ---------------------> 从这个角度来看：
+---------------------> 从这个角度来看：
 
 > 为啥：L调用A，可以省去    AIDL级别 的序列化？？？？？？
 >
@@ -404,11 +404,24 @@ if ((0!=data.readInt())) { // TODO: 这里为啥是0呢？ 安卓在优化
 
 接口一：
 
-> HashMap<ClassLoader,HashMap<String,Parcelable.Creator<?>>> //  抄 Parcelable.Creator<?> readParcelableCreator(@Nullable ClassLoader loader) // --------> 接口作用：从 类名（比如Intent） 获取  对应类的CREATOR
+> ```java
+> HashMap<ClassLoader,HashMap<String,Parcelable.Creator<?>>> //  抄 
+> Parcelable.Creator<?> readParcelableCreator(@Nullable ClassLoader loader) // --------> 接口作用：从 类名（比如Intent） 获取对应类的CREATOR
+> // 创建creator，这里也是java反射 
+> Field f = parcelableClass.getField("CREATOR"); 
+> creator = (Parcelable.Creator<?>) f.get(null);
+> ```
+>
+> 
 
-// 创建creator，这里也是java反射 Field f = parcelableClass.getField("CREATOR"); creator = (Parcelable.Creator<?>) f.get(null);
+<-------------在此之前 
 
-<-------------在此之前 ClassLoader parcelableClassLoader = (loader == null ? getClass().getClassLoader() : loader); // Avoid initializing the Parcelable class until we know it implements // Parcelable and has the necessary CREATOR field. http://b/1171613. Class<?> parcelableClass = Class.forName(name, false /* initialize */, parcelableClassLoader);
+```java
+ClassLoader parcelableClassLoader = (loader == null ? getClass().getClassLoader() : loader); // Avoid initializing the Parcelable class until we know it implements // Parcelable and has the necessary CREATOR field. http://b/1171613. 
+Class<?> parcelableClass = Class.forName(name, false /* initialize */, parcelableClassLoader);
+```
+
+
 
 > 场景： 传输的类是抽象类（或者父类），**接收端不知道是哪个具体子类！！！！！不好写死**
 >
@@ -419,6 +432,16 @@ if ((0!=data.readInt())) { // TODO: 这里为啥是0呢？ 安卓在优化
 > ```
 >
 > TODO: 类名什么时候被序列化进去的？？？？？？
+
+
+
+-<font color='red'>上述精髓：</font>
+
+> 只缓存了类Intent的创建方式CREATOR  -------->  从Intent角度： 创建方式CREATOR只是其一个属性值（静态的），实际上是一个匿名类
+>
+> 创建方式是静态方法
+
+
 
 接口二：
 
