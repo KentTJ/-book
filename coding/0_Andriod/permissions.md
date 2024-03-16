@@ -818,13 +818,55 @@ https://zhuanlan.zhihu.com/p/651446082    aosp-刷入Magisk面具获取root权�
 
 > ------------->  **已经验证ok**
 
-最大缺点：
+**偶现**：
 
 >  刷了Magisk，<font color='red'>无法remount系统分区</font>，remount失败
 
 
 
 
+
+关键步骤：
+
+> 1、刷入面具制作的boot imgage
+>
+> ```java
+> adb reboot bootloader
+> fastboot flash magisk_patched-27000_p2DRn.img
+> ```
+>
+> 
+>
+> 2、重启后，查看 Magisk本身是否有su权限
+>
+> 3、安装 busybox和 linuxdeploy。用  Magisk给两者赋予 su权限
+>
+> 4、inux Deploy安装debian
+>
+> 参考：
+>
+> > （1） https://blog.csdn.net/qq_28817367/article/details/130394040     安卓安装Linux Deploy 基础安装&&自定义安装
+> >
+> > （2）TODO： com
+
+
+
+
+
+**全部恢复，取消su权限：**
+
+```java
+//还原boot：
+fastboot flash boot boot.img
+```
+
+
+
+**总之，所有文件打包：**
+
+```java
+E:\softWare\softWare\Linux_ON_Andriod\
+```
 
 
 
