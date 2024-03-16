@@ -870,6 +870,12 @@ E:\softWare\softWare\Linux_ON_Andriod\
 
 
 
+
+
+其他网站：
+
+> https://magiskcn.com/       magisk中文网
+
 ## 没有源码---刷入Magisk获取root权限
 
 
