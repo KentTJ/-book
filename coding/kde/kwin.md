@@ -245,3 +245,76 @@ https://blog.csdn.net/qqzhaojianbiao   好文：
 ```
 
 https://blog.csdn.net/qqzhaojianbiao/article/details/129734727?spm=1001.2014.3001.5502    Weston介绍
+
+
+
+
+
+
+
+# KDE 圆角
+
+## LightlyShaders
+
+git clone https://github.com/Luwx/LightlyShaders
+
+```java
+cd LightlyShaders; mkdir qt5build; cd qt5build; 
+cmake ../ -DCMAKE_INSTALL_PREFIX=/usr -DQT5BUILD=ON       
+ make    //--------->  这一步及前面是OK的
+sudo make install 
+(kwin_x11 --replace &)
+```
+
+
+
+疑问：
+
+> 必须kwin_x11？？？！！！
+
+
+
+%accordion%编译遇到的错误，缺少Qt5OpenGL：%accordion%
+
+报错：
+
+> 
+>
+> ```java
+> CMake Error at /usr/lib/arm-linux-gnueabihf/cmake/Qt5/Qt5Config.cmake:28 (find_package):
+>   Could not find a package configuration file provided by "Qt5OpenGL" with
+>   any of the following names:
+> 
+>     Qt5OpenGLConfig.cmake
+>     qt5opengl-config.cmake
+> 
+>   Add the installation prefix of "Qt5OpenGL" to CMAKE_PREFIX_PATH or set
+>   "Qt5OpenGL_DIR" to a directory containing one of the above files.  If
+>   "Qt5OpenGL" provides a separate development package or SDK, be sure it has
+>   been installed.
+> Call Stack (most recent call first):
+>   CMakeLists.txt:13 (find_package)
+> ```
+>
+> 
+>
+> 办法：
+>
+> >    sudo apt install  libqt5opengl5-dev
+> >
+> > 参考：https://github.com/sonic-pi-net/sonic-pi/issues/2032
+
+%/accordion%
+
+
+
+## KDE-Rounded-Corners
+
+ git clone https://github.com/alex47/KDE-Rounded-Corners
+
+## KDE-Rounded-Corners
+
+https://github.com/matinlotfali/KDE-Rounded-Corners
+
+[![Wayland](kwin.assets/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5761796c616e642d737570706f727465642d677265656e3f6c6f676f3d7761796c616e64)](https://camo.githubusercontent.com/4700b277d78e700294b0cf82088b7efc48be7a0f46092d2aa214c2d43b667920/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5761796c616e642d737570706f727465642d677265656e3f6c6f676f3d7761796c616e64) 
+
