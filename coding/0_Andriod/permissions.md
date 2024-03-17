@@ -872,7 +872,29 @@ E:\softWare\softWare\Linux_ON_Andriod\
 
 
 
-其他网站：
+### deploy linux 磁盘扩容
+
+https://blog.csdn.net/weixin_73464466/article/details/126654730        linux deploy安装kali和磁盘扩容
+
+-------------> 验证OK
+
+
+
+```
+dd if=/dev/zero bs=1048576 count=1000 >> //storage/emulated/0/kali.img 
+
+e2fsck -f /storage/emulated/0/kali.img
+
+resize2fs /storage/emulated/0/kali.img
+
+
+----------------->  新增 1000M
+上面的代码每输入一次磁盘空间就会增加1000M
+```
+
+
+
+### 其他网站：
 
 > https://magiskcn.com/       magisk中文网
 
