@@ -248,7 +248,31 @@ bash.exe环境 是 linux下shell环境:----------->  命令友好
 
 > settings ----> SSH  ---->  SSH keepalive
 
+### 问题：ssh登录linux时，不显示用户名和目录
 
+问题： ssh登录linux时：
+
+> 1、不显示用户名和目录
+>
+> 2、用不了TAB键填充
+>
+> 3、无法用 上键  查看历史信息
+
+~~办法：~~
+
+
+
+> **原因：用的sh，不是bash**
+>
+> vim /etc/passwd
+>
+> 找到对应用户，将最后的/bin/sh 改为/bin/bash
+>
+> <img src="software_pcSettings.assets/image-20240317122039061.png" alt="image-20240317122039061" style="zoom:150%;" />
+>
+> 参考：https://blog.csdn.net/qq_43358006/article/details/132586019
+>
+> 
 
 ## 远程桌面：
 
