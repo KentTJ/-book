@@ -3595,3 +3595,11 @@ perfetto 把图形trace 和 log结合到一起了，结合点时间
 > ~~锁屏:  cmd + L~~
 >
 > --------------------> 与苹果输入法的（button： touch + 下拉） 一样
+
+
+
+
+
+## 专利查询网站
+
+https://patents.google.com/?q=(高斯模糊)&oq=高斯模糊

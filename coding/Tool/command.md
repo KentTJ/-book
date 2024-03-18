@@ -878,6 +878,50 @@ inux不需要做任何事情------> 原因：**原理基于ssh的，**本来就O
 
 
 
+## ~~del_linux与win传输文件（不优）------FileZilla：~~
+
+**即：异步共享**
+
+
+
+作用：
+
+> 补充Samba、sshfs -------> 实时
+
+教程：-------------->  验证ok
+
+> 如果ssh功能ok，在新建站点时，协议选择 FTP-ssh   ---------》 原理：基于ssh，
+>
+> 好处：**不用在server端新配置FTP服务**
+>
+> 参考： https://juejin.cn/post/7186588997664112696
+
+**FileZilla非实时性**：手动上传与下载
+
+
+
+![image-20240319004645268](command.assets/image-20240319004645268.png)
+
+参考：https://blog.csdn.net/m0_73192864/article/details/135271902
+
+
+
+## win下看linux桌面--------xrdp
+
+xrdp 的安装步骤：
+
+```
+ sudo apt install
+ sudo adduser xrdp ssl-cert
+ sudo systemctl restart xrdp
+```
+
+用Xterm的RDP接入，win与linux可以相互copy
+
+## win下看linux桌面--------vnc
+
+见《docker容器安装图形桌面》
+
 ## linux突破物理内存的限制------swap分区
 
 设置32G

@@ -584,3 +584,25 @@ https://www.dandelioncloud.cn/article/details/1578906401210855426     Source Ins
 
 > 参考：https://www.sysgeek.cn/ubuntu-wine/        --------->  好文
 
+
+
+
+
+
+
+字体修改：
+
+> 1、source Insight字体的设置：
+>
+> 一定要是西文
+
+[在 Ubuntu 上安装和使用 Wine，轻松运行 Windows 应用程序 - 系统极客 (sysgeek.cn)](https://www.sysgeek.cn/ubuntu-wine/)    ---------->  非常优的文章
+
+
+
+-<font color='red'>规定：</font>
+
+> 路径里（安装路径、工程路径），无论win、linux！！！！！：
+>
+> <font color='red'>不允许有空格  & 中文 ！！！！ ---------> 害死人！！！！！</font>
+
