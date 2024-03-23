@@ -142,7 +142,7 @@ if (isSwitchOn) {
 
 ### <font color='red'>避免空指针</font>是写代码的第一要义
 
-<font color='red'>加log</font>(定位问题) 也是写代码，也要特别注意 空指针
+-<font color='red'>加log</font>(定位问题) 也是写代码，也要特别注意 空指针
 
 否则：
 
