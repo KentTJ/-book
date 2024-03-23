@@ -1791,6 +1791,39 @@ https://blog.csdn.net/xiaoxiangzi520/article/details/111291634?spm=1001.2101.300
  gparted
 ```
 
+
+
+## ~~del_VirtualBox 扩容  反操作：~~
+
+**VirtualBox 释放虚拟磁盘文件的大小:**
+
+问题：
+
+> ubuntu.vdi 会动态增大，但不会动态减小
+
+办法：
+
+> 参考：https://blog.csdn.net/ai2000ai/article/details/122988211
+>
+> -------------> 验证ok
+>
+> ```
+>  sudo   dd if=/dev/zero of=/EMPTY bs=1M  && rm -f /EMPTY
+>  
+>  C:\\Users\\lenovo>vboxmanage modifyhd E:\\install\\VM\\ubuntu20.04.vdi --compact
+>  0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+> ```
+
+是否生效：
+
+> ubuntu.vdi 的大小 是否变小
+
+其他参考：
+
+> https://blog.csdn.net/qq_35743870/article/details/122914298?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-122914298-blog-122988211.235^v43^pc_blog_bottom_relevance_base7&spm=1001.2101.3001.4242.1&utm_relevant_index=3
+
+
+
 ## VirtualBox共享目录
 
 1、设置共享文件夹

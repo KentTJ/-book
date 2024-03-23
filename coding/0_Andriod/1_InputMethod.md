@@ -114,6 +114,8 @@ Android 13：
 
 （1）多屏 焦点： ~~将 `config_perDisplayFocusEnabled` 设置为 `true`  （frameworks/base/core/res/res/values/config.xml）~~
 
+​                             ~~产物：framework-res.apk~~
+
 （2）非默认屏幕显示输入法：
 
 ```java

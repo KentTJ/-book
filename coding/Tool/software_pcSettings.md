@@ -1973,6 +1973,32 @@ https://zhuanlan.zhihu.com/p/659297001   win11  22H2升级到23H2？
 
 
 
+
+
+## 桌面环境KDE
+
+KDE安装
+
+> https://zhuanlan.zhihu.com/p/338666316?utm_id=0   Ubunu安装KDE桌面
+
+
+
+## KDE 防止长时间锁屏
+
+防止锁屏：
+
+> 方法一： 似乎不生效
+>
+> ```
+>  setterm blank 0
+>  setterm powerdown 0
+>  xset s 0 0
+> ```
+>
+> 方法二： 
+>
+> > Energy Saving  -------》 验证OK
+
 # 计算机其他问题及设置
 
 ## 软件最优的使用方式----免安装

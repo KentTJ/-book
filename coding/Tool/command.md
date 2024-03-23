@@ -326,6 +326,27 @@ Codename:       bionic
 
 
 
+
+
+大文件cp，显示进度：
+
+> 
+>
+> ```java
+>  rsync  -v -r -h --progress  KDE-Dev-Mobile-test.ova  /data/chenjinke
+>  
+>  sending incremental file list
+>  KDE-Dev-Mobile-test.ova
+>           10.56G   8%   59.09MB/s    0:29:37
+>  
+> ```
+>
+> 参考： https://www.dbs724.com/131021.html    [Linux下CP命令显示进度的全攻略（linuxcp显示进度）-数据运维技术 (dbs724.com)](https://www.dbs724.com/131021.html)
+
+
+
+
+
 查看文件夹大小（在当前文件夹下）
 
 > du -sh
@@ -377,6 +398,18 @@ grep -B 5 ........   显示前5行
 
 grep -A 5 ........   显示后5行
 ```
+
+
+
+**特别注意**：<font color='red'>grep可以搜二进制文件so的内容！！！！！！</font>
+
+$ grep "chenjinke" -nr ./ Binary file ./src/CMakeFiles/kwin.dir/effectloader.cpp.o matches Binary file ./src/CMakeFiles/kwin.dir/workspace.cpp.o matches Binary file ./bin/libkwin.so.5.27.4 matches
+
+---------------------------> 应用技巧：
+
+>  **可以确定机器中的so是否有自己的改动(同反编译jar文件)**
+
+
 
 
 
@@ -767,14 +800,15 @@ scp -r alps2.tar  non.jinxi@10.82.254.194:/home/non.jinxi/code/chenjinke
 
 
 
-压缩：
-
 ```java
- tar -cvf test.tar test/* 　 //归档test目录下所有文件   压缩
+ //压缩： 
+ tar -cvf test.tar test/* 　 //归档test目录下所有文件   
  
- tar -xvf test.tar  //解
- 
-  tar -xvf test.tar -C  ./laji   //到特定目录
+//解
+tar -xvf test.tar 
+
+
+tar -xvf test.tar -C  ./laji   //到特定目录
  
 ```
 
@@ -917,6 +951,22 @@ xrdp 的安装步骤：
 ```
 
 用Xterm的RDP接入，win与linux可以相互copy
+
+### 问题： 通过Xrdp 复制粘贴失效
+
+问题：
+
+> 本地电脑和服务器之间复制粘贴
+
+本地电脑问题：1、未打开剪贴板功能
+
+服务器问题：xrdp-chansrv 进程变成  进程STAT列会显示Z（僵尸进程）
+
+- --------------------> 重启服务器，验证ok
+
+参考： [Xrdp远程桌面链接登录ubuntu无法复制，解决方法_xrdp-chansrv-CSDN博客](https://blog.csdn.net/buzhidaoOWO/article/details/132197790)               https://blog.csdn.net/buzhidaoOWO/article/details/132197790
+
+
 
 ## win下看linux桌面--------vnc
 
@@ -1095,6 +1145,8 @@ Swap:          3.5G        9.1M        3.5G
 
 # shell 或 MobaXterm
 
+
+
 ## ~~shell中交互输入自动化~~
 
 ```shell
@@ -1104,6 +1156,21 @@ Swap:          3.5G        9.1M        3.5G
 read -p "enter number:" no
 read -p "enter name:" name
 echo you have entered $no, $name
+```
+
+
+
+
+
+## 单个函数的传参
+
+```java
+#!/bin/bash
+my_rsync() {
+    rsync -v -r -h --progress "$1" "$2"
+}
+
+------------> 变为 my_rsync  dir1  des2
 ```
 
 
@@ -1651,6 +1718,54 @@ exit (或 quit)            -- 退出调试器
 
 
 # 已经制作好的脚本 备份
+
+
+
+## 脚本制作的目标(**<font color='red'>重要</font>**！！):
+
+1、**复杂的命令，封装成简单的命令：**
+
+
+
+```java
+my_rsync() {
+    rsync -v -r -h --progress "$1" "$2"
+}
+
+------------> 变为 my_rsync  dir1  des2
+```
+
+
+
+2、如果不封装，要做到快速搜索：
+
+> （1）方式一： 归类：linux_he
+>
+>   （2）(<font color='red'>**优秀**</font>)方式二： cat  myfucn.sh | grep "dumpsystem"
+>
+> ​                     可以比较精确
+>
+> ​                    
+
+3、<font color='red'>极优：</font>   反向<font color='red'>搜索</font>历史记录 & 匹配
+
+>  `Ctrl + R`  ---->  反向搜索
+>
+> 连续 `Ctrl + R`   -------> 循环浏览匹配
+
+
+
+
+
+注：history只能查看
+
+
+
+4、利用ChatGPT**了解 命令的含义** ---------> 可以根治记忆命令的难题！！！！！！！！！
+
+
+
+
 
 
 

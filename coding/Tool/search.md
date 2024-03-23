@@ -115,6 +115,10 @@ deepl:
 grammarly:
 chatgpt:让它回答问题并且生成文档画作等。
 
+```java
+https://github.com/LiLittleCat/awesome-free-chatgpt?tab=readme-ov-file     // 国内镜像大汇总
+```
+
 
 
 https://savetube.app/en2  ---------->  download youtube videos
