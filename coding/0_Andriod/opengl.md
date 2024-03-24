@@ -6,6 +6,8 @@
 
 # 环境搭建
 
+## 运行opengl的环境
+
 clion：https://blog.csdn.net/weixin_62264287/article/details/134716198     【OpenGL】Clion配置  -------->没试过
 
 VsCode：https://www.bilibili.com/video/BV1BX4y1g7R6/?spm_id_from=333.337.search-card.all.click&vd_source=3eebd10b94a8a76eaf4b78bee8f23884           VsCode下配置OpenGL开发环境
@@ -13,6 +15,33 @@ VsCode：https://www.bilibili.com/video/BV1BX4y1g7R6/?spm_id_from=333.337.search
 AS： 直接使用AS，调用NDK接口
 
 
+
+## 实时预览shader(GLSL)的环境
+
+vscode安装插件：
+
+> GLSL：用来编译
+>
+> glsl-canvas：用来显示
+
+
+
+```
+// test.frag
+precision mediump float;
+
+void main()
+{
+    vec3 color = vec3(1,0,0);
+    gl_FragColor = vec4(color, 1);
+}
+```
+
+------------>  运行： ctrl + shift + P ，搜索 show  glslcanvas
+
+参考：
+
+https://www.bilibili.com/video/BV1LV411b7uE?p=1&spm_id_from=pageDriver&vd_source=3eebd10b94a8a76eaf4b78bee8f23884
 
 ## 机器环境确认
 
@@ -45,6 +74,12 @@ OpenGL ES 是 OpenGL 的子集（删除了一些**低效能的操作方式**）
 > 2、光栅化：2D坐标  ------>  像素(实际的有颜色的)
 
 注意：坐标是精准表达
+
+渲染管线流程：
+
+> ![img](opengl.assets/pipeline.png)
+>
+> ~~图片来源:https://learnopengl-cn.github.io/01%20Getting%20started/04%20Hello%20Triangle/~~
 
 # 一些接口/效果
 
@@ -119,3 +154,9 @@ https://www.bilibili.com/video/BV1yx41187GN/?spm_id_from=333.337.search-card.all
 
 
 https://blog.csdn.net/a360940265a/article/details/88600962          OpenGL.Shader：1-重新认识Android上OpenGL（纯Cpp）
+
+
+
+
+
+https://www.bilibili.com/video/BV1LV411b7uE?p=1&spm_id_from=pageDriver&vd_source=3eebd10b94a8a76eaf4b78bee8f23884   中文视频教程，shader的画法
