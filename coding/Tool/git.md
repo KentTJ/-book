@@ -228,8 +228,10 @@ git rebase origin/master (当前分支的base,同步到本地的 origin/master)
 提交代码：
 
 ```java
-git.exe push --progress "origin" 本地分支:远程分支
+git push -u --progress "origin" 本地分支:远程分支
 本地分支:远程分支 由 git branch -a  查得
+    
+    -f  强制push
 ```
 
 
@@ -416,7 +418,7 @@ echo "# aosp10" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
-git branch -M main
+git branch -M main  // 修改当前分支为main分支
 git remote add origin https://github.com/KentTJ/aosp10.git
 git push -u origin main
 ```
@@ -433,3 +435,21 @@ git branch -M main
 git push -u origin main
 ```
 
+## GitHub
+
+1、git push 到gitHub失败：
+
+方法：无需关闭代理
+git config --global http.proxy ""
+
+注意：上述方法，网页访问速度没有改善 ----》技巧：用手机看网页
+
+
+
+## 规定
+
+> 所有的笔记，在线化
+>
+> 所有的项目demo，在线化
+
+---------------------->  容易获取，才不会消耗心力！！！！！！！！（容易，但是高频的事情，也会消耗大量心力）

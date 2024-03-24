@@ -836,14 +836,7 @@ gitbook的 bug：不能以为行首
 
 
 
-### GitHub
 
-1、git push 到gitHub失败：
-
-方法：无需关闭代理
-git config --global http.proxy ""
-
-注意：上述方法，网页访问速度没有改善 ----》技巧：用手机看网页
 
 ### 优化之book sm
 

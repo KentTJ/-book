@@ -1757,7 +1757,7 @@ my_rsync() {
 
 
 
-注：history只能查看
+注：history只能查看。没有匹配（搜索）
 
 
 

@@ -454,6 +454,74 @@ https://www.cnblogs.com/xsj1989/p/16822735.html    [settings.gradle配置，解�
 
 
 
+## 编译报错 **Could not find com.android.tools.build:gradle:8.0.2. Searched in the followi**
+
+验证OK的办法：
+
+**参考已经OK的工程，**修改Maven仓库：
+
+```java
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    ......................
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    ......................
+}
+
+
+```
+
+## 编译报错constant expression required-case后参数报错
+
+验证OK的办法：
+
+> ```java
+> 在gradle.properties配置文件下添加如下代码即可解决
+> android.nonFinalResIds=false
+> ```
+>
+> 参考：https://blog.csdn.net/mjh1667002013/article/details/134763804
+
+
+
+## Could not resolve all files for configuration ':classpath'.
+
+```
+A problem occurred configuring root project 'openGL-Demo-master'.
+> Could not resolve all files for configuration ':classpath'.
+   > Could not resolve com.android.tools.build:gradle:8.0.2.
+     Required by:
+         project :
+      > No matching variant of com.android.tools.build:gradle:8.0.2 was found. The consumer was configured to find a library for use during runtime, compatible with Java 8, packaged as a jar, and its dependencies declared externally, as well as attribute 'org.gradle.plugin.api-version' with value '8.0' but:
+```
+
+----------------->
+
+办法：
+
+> ```
+> AS版本flamingo，新建项目后building就报了这么个错误，解决方法：Ended up changing Gradle JDK to 11.。就是把项目的jdk版本升级到11就可以了。
+> 
+> File -> Settings -> Build, Execution, Deployment -> Build Tools -> Gradle。
+> 
+> 
+> //  参考：https://blog.csdn.net/ximen250/article/details/8495845
+> ```
+
+
+
 ## Android Studio 很卡 ---->  如何理解？
 
 卡的原因：

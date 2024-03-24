@@ -6,6 +6,20 @@
 
 
 
+# 0层
+
+![img](WatchDog.assets/20150618210217230)
+
+图片来源：
+
+> [Android中的软件Watchdog_blocked in monitor com.android.server.am.activitym-CSDN博客](https://jinzhuojun.blog.csdn.net/article/details/46552397?spm=1001.2014.3001.5502)
+
+
+
+TODO： 这里的UI Thread只是系统服务的UI线程？？？？？？
+
+
+
 
 
 # WatchDog（死锁+Looper----阻塞恢复机制）

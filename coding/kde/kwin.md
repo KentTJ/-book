@@ -252,6 +252,8 @@ https://blog.csdn.net/qqzhaojianbiao/article/details/129734727?spm=1001.2014.300
 
 
 
+
+
 # KDE 圆角
 
 ## LightlyShaders
@@ -322,3 +324,30 @@ https://github.com/matinlotfali/KDE-Rounded-Corners
 
 > [![Wayland](https://camo.githubusercontent.com/4700b277d78e700294b0cf82088b7efc48be7a0f46092d2aa214c2d43b667920/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5761796c616e642d737570706f727465642d677265656e3f6c6f676f3d7761796c616e64)](https://camo.githubusercontent.com/4700b277d78e700294b0cf82088b7efc48be7a0f46092d2aa214c2d43b667920/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5761796c616e642d737570706f727465642d677265656e3f6c6f676f3d7761796c616e64) 
 
+
+
+
+
+# kwin的插件特效
+
+
+
+
+
+# 0层
+
+
+
+# Wayland
+
+
+
+
+
+参考：[Wayland与Weston简介_weston linux-CSDN博客](https://blog.csdn.net/jinzhuojun/article/details/47290707)   -------> 好文
+
+
+
+
+
+# weston

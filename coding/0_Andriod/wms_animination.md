@@ -93,6 +93,8 @@ https://blog.csdn.net/luoshengyang/article/details/8596449      Android窗口管
 
 图片来源： https://www.jianshu.com/p/217d0239ca19
 
+[Android中的转屏流程_user_rotation_free-CSDN博客](https://jinzhuojun.blog.csdn.net/article/details/50085491?spm=1001.2014.3001.5502)
+
 
 
 
