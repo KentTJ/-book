@@ -160,3 +160,9 @@ https://blog.csdn.net/a360940265a/article/details/88600962          OpenGL.Shade
 
 
 https://www.bilibili.com/video/BV1LV411b7uE?p=1&spm_id_from=pageDriver&vd_source=3eebd10b94a8a76eaf4b78bee8f23884   中文视频教程，shader的画法
+
+
+
+
+
+https://blog.csdn.net/qq_43331089/article/details/124200849         西川善司的3D图形技术概念和渲染管线的处理
