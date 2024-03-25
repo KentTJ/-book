@@ -81,6 +81,31 @@ OpenGL ES 是 OpenGL 的子集（删除了一些**低效能的操作方式**）
 >
 > ~~图片来源:https://learnopengl-cn.github.io/01%20Getting%20started/04%20Hello%20Triangle/~~
 
+数据流：
+
+![image-20240326011116467](opengl.assets/image-20240326011116467.png)
+
+（1）建模型（比如兔子）： 顶点数据  +   面数据  ~~三角形面数据（面1基于点：点1 点3  点5）~~  
+
+（2）序列化为数组[] int = {1,5，........}
+
+   必然有：~~(3) 序列化的东西跨越到GPU~~
+
+   （4）存到GPU的VBO（<font color='red'>一块buffer</font>）上
+
+（5）反序列化为结构数据，VAO： 顶点数据  + 面数据 
+
+  ----------------->  即兔子模型
+
+```java
+unsigned int VBO;
+glGenBuffers(1, &VBO);
+```
+
+（6）VAO中，顶点数据 -------------> 灌入，即vertext
+
+
+
 # 一些接口/效果
 
 ## window
@@ -166,3 +191,11 @@ https://www.bilibili.com/video/BV1LV411b7uE?p=1&spm_id_from=pageDriver&vd_source
 
 
 https://blog.csdn.net/qq_43331089/article/details/124200849         西川善司的3D图形技术概念和渲染管线的处理
+
+
+
+
+
+# TODO：
+
+opengl 与surface的关系，尤其是opengl  与 **GLSurfaceView** 的关系
