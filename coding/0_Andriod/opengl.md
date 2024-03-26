@@ -93,14 +93,16 @@ OpenGL ES 是 OpenGL 的子集（删除了一些**低效能的操作方式**）
 
    （4）存到GPU的VBO（<font color='red'>一块buffer</font>）上
 
-（5）反序列化为结构数据，VAO： 顶点数据  + 面数据 
-
-  ----------------->  即兔子模型
-
-```java
+```
 unsigned int VBO;
 glGenBuffers(1, &VBO);
 ```
+
+（5）VBO中的数据，反序列化为结构数据，VAO： 顶点数据  + 面数据 
+
+  ----------------->  即兔子模型
+
+
 
 （6）VAO中，顶点数据 -------------> 灌入，即vertext
 
