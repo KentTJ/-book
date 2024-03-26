@@ -126,7 +126,46 @@ glGenBuffers(1, &VBO);
 
 
 
-# 着色器
+# 着色器shader
+
+
+
+## 输入
+
+![image-20240327014627804](opengl.assets/image-20240327014627804.png)
+
+图：https://youtu.be/AL3W2JfVVgw?list=PL0luF_aDUOooIB56NOFVTS4ahMzBHS_6z&t=441
+
+
+
+输入来源：
+1、GPU可以从voa中挖数据（比如 从顶点数据中直接接收输入）
+layout (location = 0)  -------> 0顶点的位置
+layout (location = 0) in vec3 aPos;  ---->  赋值给aPos
+
+2、从CPU获取（比如时间），uniform 通道：
+
+（1） uniform 全局唯一
+（2） 是更新一个uniform之前你必须先使用程序（调用glUseProgram)： glUseProgram(shaderProgram);
+
+3、前面的shader的输出，可以作为后面shader的输入。比如：
+
+
+
+## 输出：
+
+片段着色器，必然有一个vec4颜色输出变量，作为最终颜色（RGBA）
+推论：自然，这个颜色赋值，很可能计算于顶点着色器，最后传给片段着色器
+
+
+
+
+
+
+
+
+
+
 
 https://blog.csdn.net/CodeWorld1999/article/details/134863461    一篇搞懂OpenGL中的着色器和如何使用
 
