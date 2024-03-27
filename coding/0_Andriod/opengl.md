@@ -274,6 +274,24 @@ glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
 
 
+
+
+TODO：
+
+(为什么`sampler2D`变量是个uniform，我们却不用glUniform给它赋值)[https://learnopengl-cn.github.io/01%20Getting%20started/06%20Textures/#_8:~:text=%E4%B8%BA%E4%BB%80%E4%B9%88sampler2D%E5%8F%98%E9%87%8F%E6%98%AF%E4%B8%AAuniform%EF%BC%8C%E6%88%91%E4%BB%AC%E5%8D%B4%E4%B8%8D%E7%94%A8glUniform%E7%BB%99%E5%AE%83%E8%B5%8B%E5%80%BC]
+
+### 混合色 TODO：
+
+
+
+```
+纹理颜色*顶点颜色
+```
+
+
+
+
+
 # 网站
 
 正规的学习网站
