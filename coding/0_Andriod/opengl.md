@@ -177,6 +177,103 @@ https://blog.csdn.net/u010281924/article/details/105309340   **OpenGL ES 3. 着�
 
 
 
+## 补充 纹理
+
+### cpp侧 构造纹理
+
+加载纹理：
+
+```
+// 使用 stb_image.h
+int width, height, nrChannels;
+unsigned char *data = stbi_load("container.jpg", &width, &height, &nrChannels, 0);
+```
+
+
+
+创建纹理：
+
+```
+unsigned int texture;
+glGenTextures(1, &texture);
+glBindTexture(GL_TEXTURE_2D, texture);
+
+glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+--------------> 当前绑定的纹理对象texture就会被附加上纹理图像data
+```
+
+应用纹理：
+
+> 新增纹理坐标------即截取：
+>
+> ```
+> float vertices[] = {
+> //     ---- 位置 ----       ---- 颜色 ----     - 纹理坐标 -
+>      0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // 右上
+>      0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f,   // 右下
+>     -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // 左下
+>     -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f    // 左上
+> };
+> ```
+>
+> 告诉OpenGL新的顶点格式（**顶点属性**）：
+>
+> ```
+> glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+> glEnableVertexAttribArray(2);
+> ```
+>
+> 
+
+### glsl侧 接收纹理
+
+顶点着色器新增：
+
+```
+#version 330 
+....................
+layout (location = 2) in vec2 aTexCoord;
+
+out vec2 TexCoord;
+
+
+void main()
+{
+   ....................
+    TexCoord = aTexCoord;
+}
+```
+
+把TexCoord输入给片段着色器：
+
+```java
+#version 330 core
+............
+
+................
+in vec2 TexCoord;
+
+uniform sampler2D ourTexture; // 【】cpp侧赋值 采样器
+
+void main()
+{
+    FragColor = texture(ourTexture, TexCoord);
+                        采样器         纹理坐标
+}
+```
+
+
+
+【】cpp侧赋值 采样器ourTexture：-----> TODO
+
+```
+glBindTexture(GL_TEXTURE_2D, texture);
+glBindVertexArray(VAO);
+glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+```
+
+
+
 # 网站
 
 正规的学习网站
